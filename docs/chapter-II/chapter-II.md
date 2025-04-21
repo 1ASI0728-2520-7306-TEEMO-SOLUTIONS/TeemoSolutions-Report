@@ -33,6 +33,9 @@
 
 ## 2.1. Competidores
 ### 2.1.1. Análisis competitivo
+
+*Análisis Competitivo organizado para todos los competidores potenciales de Mushroom.*
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
