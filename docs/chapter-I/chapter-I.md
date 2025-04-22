@@ -32,6 +32,14 @@
 # **CAPÍTULO I: INTRODUCCIÓN**
 
 ## 1.1. Startup Profile
+“Si la crisis se prolonga, es posible que aumenten los tiempos de espera, los precios y la congestión en los puertos. Esto puede acelerar el retorno a una mayor disposición a mantener niveles de inventario más altos por precaución” (Crédito y Caución, 2024) 
+
+Este es punto de partida para Teemo, en el contexto actual de la industria naviera, se enfrenta a un desafío global que está generando preocupación a nivel mundial. Las crecientes tensiones geopolíticas han creado dificultades significativas para las líneas navieras, obligándolas a buscar alternativas ante las condiciones actuales. 
+
+ABC International (2024) destaca que entre el 10% y 15% del comercio mundial se realiza a través de vías marítimas, lo cual resalta la importancia crítica de esta industria. La industria española ya está considerando detener operaciones debido a este conflicto, que podría afectar hasta 135.000 millones de euros en intercambios comerciales entre España y Asia. Además, compañías como Tesla han anunciado la paralización de su producción en Alemania debido a los problemas de suministro derivados del tráfico en el mar Rojo. 
+
+El Mar Rojo representa una línea comercial vital que en los últimos meses ha experimentado una desaceleración e incluso paralización debido a las acciones hostiles iniciadas por los hutíes en respuesta a conflictos regionales, como los ataques de Hamás del 7 de octubre. La cuál ha llevado a las compañías a desviar su ruta al rededor del Cabo de Buena Esperanza, lo que ha derivado en una contracción de la capacidad del mercado y aumento en los precios del transporte marítimo. 
+
 ### 1.1.1. Descripción de la Startup
 ### 1.1.2. Perfiles de integrantes del equipo
 
