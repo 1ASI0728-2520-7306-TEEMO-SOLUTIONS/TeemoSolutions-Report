@@ -48,7 +48,21 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
 
 
 - **Visión:** Ser la plataforma líder en gestión inteligente de rutas navieras a nivel mundial, reconocida por su capacidad de adaptación, precisión y aporte a la eficiencia del transporte marítimo en entornos complejos y cambiantes.
-
+  
+- **Valores** En Teemo Solutions, nos guiamos por una serie de valores fundamentales que definen nuestra cultura organizacional y nuestra manera de actuar como equipo. Estos principios representan nuestro compromiso con la excelencia, la integridad y la innovación en el sector obnbjetivo:
+  
+    -**Innovación continua:** Impulsamos soluciones creativas y tecnológicas frente a los desafíos dinámicos del comercio marítimo.
+  
+    -**Resiliencia:** Nos adaptamos a escenarios cambiantes para mantener la operatividad de las rutas marítimas globales.
+  
+    -**Sostenibilidad:** Priorizamos rutas que optimicen el uso de recursos y reduzcan el impacto ambiental del transporte marítimo.
+  
+    -**Transparencia:** Brindamos información clara, en tiempo real, para una toma de decisiones basada en datos.
+  
+    -**Colaboración:** Facilitamos la cooperación entre puertos, navieras y operadores logísticos para construir un ecosistema más eficiente.
+  
+    -**Compromiso con la seguridad:** Aseguramos el tránsito de mercancías minimizando riesgos derivados de conflictos o condiciones climáticas adversas.
+  
 
 ### 1.1.2. Perfiles de Integrantes del equipo
 
