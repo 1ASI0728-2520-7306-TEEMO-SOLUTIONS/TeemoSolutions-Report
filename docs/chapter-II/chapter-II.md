@@ -44,90 +44,84 @@
   </tr>
   <tr>
     <td colspan="2">(En la cabecera colocar por cada competidor nombre y logo)</td>
-    <td>Gogo Biking<br><img src="../assets/imgs/gogobikinglogo.png" alt="Gogo Biking"></td>
-    <td>City Bike Lima<br><img src="../assets/imgs/citybikelimalogo.png" alt="City Bike Lima"></td>
-    <td>Tembici<br><img src="../assets/imgs/tembici-logo.png" alt="Tembici"></td>
+    <td>MarineTraffic<br></td>
+    <td>Windward<br></td>
+    <td>FleetMon<br></td>
 </tr>
   <tr>
     <td rowspan="2">Perfil</td>
     <td>Overview</td>
-    <td>GogoBiking es una empresa de alquiler de bicicletas y tours guiados en bicicleta ubicada en Lima, con un enfoque principal en las zonas turísticas de Miraflores y Barranco. Ofrecen una variedad de bicicletas para alquilar, incluyendo bicicletas de ciudad, bicicletas de montaña y bicicletas eléctricas, así como tours guiados en bicicleta por la ciudad y alrededores.</td>
-    <td>CityBikeLima es un sistema de bicicletas compartidas que opera en Lima, con estaciones de autoservicio ubicadas en diferentes puntos de la ciudad. Los usuarios pueden alquilar bicicletas por períodos cortos o largos, utilizando una aplicación móvil o una tarjeta de membresía.</td>
-    <td>Tembici es una empresa líder en sistemas de bicicletas compartidas en Latinoamérica, con presencia en países como Brasil, Chile, y recientemente en Perú. Ofrecen un servicio de bicicletas compartidas con estaciones en diferentes puntos de la ciudad.
+    <td>MarineTraffic es una plataforma global de seguimiento de embarcaciones en tiempo real basada en datos AIS. Permite visualizar la posición de barcos, itinerarios, historial de rutas, y datos portuarios. Se usa ampliamente por operadores logísticos, agencias navieras y entusiastas del sector marítimo.</td>
+    <td>	Windward es una solución avanzada de inteligencia marítima que utiliza inteligencia artificial para evaluar riesgos, prever comportamientos sospechosos y optimizar operaciones navieras. Sus clientes incluyen gobiernos, aseguradoras y grandes navieras.</td>
+    <td>FleetMon ofrece datos AIS en tiempo real y servicios de análisis para rastreo de flotas, predicción de llegadas a puerto, y documentación logística. Su interfaz está dirigida tanto a usuarios corporativos como a operadores individuales.
   </td>
   </tr>
   <tr>
   <td>Ventaja Competitiva</td>
-  <td>Su principal ventaja competitiva radica en su enfoque en el turismo y la experiencia, ofreciendo tours guiados de alta calidad con guías expertos y conocedores de la ciudad. Además, cuentan con bicicletas en excelente estado y ofrecen servicios adicionales como alquiler de cascos, candados y mapas.</td>
-    <td>Su principal ventaja es la conveniencia y accesibilidad que ofrece su sistema de autoservicio, permitiendo a los usuarios alquilar y devolver bicicletas en diferentes puntos de la ciudad de manera rápida y sencilla.</td>
-    <td>Su mayor ventaja es su infraestructura sólida y experiencia en la gestión de sistemas de bicicletas compartidas a gran escala en varias ciudades latinoamericanas. Además, trabajan en alianza con grandes empresas como Itaú, lo que les permite ofrecer un servicio con altos estándares de calidad.</td>
+  <td>Alta cobertura AIS global, interfaz amigable, muy popular en el sector, especialmente para monitoreo pasivo de tráfico.</td>
+    <td>Potente capacidad analítica predictiva, análisis de riesgos en profundidad, clientes de alto nivel institucional.</td>
+    <td>Versatilidad en el rastreo de flotas con herramientas personalizadas y buena documentación para desarrolladores.</td>
     </tr>
 <tr>
     <td rowspan="2">Perfil de Marketing</td>
     <td>Mercado Objetivo</td>
-    <td>Su mercado objetivo principal son los turistas que visitan Lima y buscan explorar la ciudad de una manera activa y divertida. También atienden a locales que desean disfrutar de un paseo en bicicleta o participar en un tour guiado.</td>
-    <td>Su mercado objetivo son los residentes de Lima que buscan una opción de transporte sostenible y conveniente para desplazamientos cortos dentro de la ciudad. También atienden a turistas que desean explorar la ciudad en bicicleta.</td>
-    <td>Tembici está dirigido a usuarios urbanos que buscan una opción de transporte ecológica y rápida para desplazamientos dentro de la ciudad. Atraen tanto a residentes como a turistas que buscan alternativas de transporte en las ciudades donde operan.</td>
+    <td>Agencias logísticas, operadores portuarios, entusiastas del tracking marítimo.</td>
+    <td>Gobiernos, aseguradoras marítimas, grandes navieras.</td>
+    <td>Operadores logísticos, navieras pequeñas y medianas, desarrolladores.</td>
   </tr>
   <tr>
   <td>Estrategias de Marketing</td>
-  <td>GogoBiking utiliza una combinación de estrategias de marketing online y offline. Tienen una fuerte presencia en línea a través de su sitio web y redes sociales, donde promocionan sus servicios y tours. También trabajan con agencias de viajes y hoteles para llegar a un público más amplio.</td>
-    <td>CityBikeLima se enfoca en el marketing digital a través de su sitio web, redes sociales y aplicación móvil. También realizan campañas de publicidad en medios de transporte público y espacios públicos.</td>
-    <td>Utilizan una combinación de marketing digital y alianzas estratégicas con instituciones públicas y privadas para expandir su red de bicicletas compartidas. Además, realizan campañas en redes sociales y promociones para incentivar el uso del servicio.</td>
+  <td>SEO, presencia en ferias marítimas, partnerships con puertos y armadores.</td>
+    <td>Relaciones institucionales, ventas B2B, participación en foros de seguridad marítima.</td>
+    <td>Marketing técnico, tutoriales API, contenido especializado.</td>
     </tr>
 <tr>
     <td rowspan="3">Perfil de Producto</td>
     <td>Productos y Servicios</td>
-    <td>- Alquiler de bicicletas por hora o día.<br>
-    - Tours guiados en bicicleta por Lima y alrededores.<br>
-    - Alquiler de equipos de seguridad (cascos, candados).<br>
-    - Mapas y guías de la ciudad.</td>
-    <td>- Alquiler de bicicletas por períodos cortos (30 minutos, 1 hora) o largos (día, semana, mes, año). <br>
-- Membresías mensuales y anuales. <br>
-- Aplicación móvil para localizar estaciones y alquilar bicicletas.
+    <td>Seguimiento AIS global, historial de rutas, tráfico portuario, alertas personalizadas, informes mensuales.</td>
+    <td>Análisis de riesgo, predicción de comportamiento de flotas, detección de actividad sospechosa, insights de cumplimiento normativo.
 </td>
-    <td>Tembici ofrece alquiler de bicicletas por períodos cortos y largos, a través de estaciones autoservicio ubicadas en puntos clave de las ciudades. También cuentan con bicicletas eléctricas y aplicaciones móviles para la gestión de las reservas y la ubicación de estaciones.</td>
+    <td>Seguimiento de flotas, predicción de ETA, bases de datos de barcos, alertas personalizadas, informes descargables.</td>
   </tr>
   <tr>
   <td>Precios y Costos</td>
-  <td>- Alquiler de bicicletas: desde S/ 15 por hora hasta S/ 40 por día.<br>
-- Tours guiados: desde S/ 60 por persona.<br>
-- Equipos de seguridad: S/ 5 por artículo.</td>
-    <td>-Alquiler por viaje corto: desde S/ 5 por 30 minutos.<br>
+  <td>Planes desde $25 al mes hasta más de $250, dependiendo de acceso a datos históricos, API, y cobertura satelital.</td>
+    <td>Modelo enterprise, precios personalizados (usualmente desde $1,000+ mensuales).<br>
 -Membresías: desde S/ 15 por mes hasta S/ 120 por año.</td>
-    <td>Los precios de Tembici varían según la ciudad y el tipo de suscripción, pero generalmente ofrecen planes por viaje, mensualidades y anualidades a precios competitivos.</td>
+    <td>Planes desde €29 por mes hasta más de €150 mensuales. Acceso API premium se cobra adicional.</td>
     </tr>
 <td>Canales de distribución (Web y/o Móvil)</td>
-  <td>Sitio web: https://www.gogobiking.pe/</td>
-    <td>Sitio web: https://www.citybikelima.com/</td>
-    <td>Sitio web: https://www.tembici.com.br/es/</td>
+  <td>Web, app móvil, API.</td>
+    <td>Web, consultoría directa, integración con plataformas empresariales.</td>
+    <td>Web, app móvil, API para integración.</td>
     </tr>
 <tr>
     <td rowspan="4">Análisis SWOT</td>
     <td>Fortalezas</td>
-    <td>- Buena reputación, tours de calidad, bicicletas en buen estado, ubicación conveniente.</td>
-    <td>- Conveniencia, accesibilidad, sistema de autoservicio.</td>
-    <td>- Gran red de estaciones en diversas ciudades y sólida experiencia en el mercado latinoamericano.</td>
+    <td>Cobertura global, interfaz intuitiva, alta adopción.</td>
+    <td>Inteligencia predictiva avanzada, prestigio institucional.</td>
+    <td>Flexibilidad, personalización, buen soporte para desarrolladores.</td>
   </tr>
   <tr>
   <td>Debilidades</td>
-  <td>- Enfoque limitado en el mercado local, precios pueden ser elevados para algunos segmentos.</td>
-    <td>- Disponibilidad limitada de bicicletas en horas pico, sistema de autoservicio puede ser confuso para algunos usuarios.</td>
-    <td>- A veces, disponibilidad limitada de bicicletas en horas pico y estaciones más congestionadas.</td>
+  <td>Menor enfoque analítico, poco personalizable.</td>
+    <td>Precio alto, no enfocado en usuarios operativos.</td>
+    <td>Menor alcance global que MarineTraffic.</td>
     </tr>
 <td>Oportunidades</td>
-  <td>- Expandir su oferta de tours, desarrollar alianzas con más hoteles y agencias, ofrecer alquileres a largo plazo.</td>
-    <td>- Expandir la red de estaciones, mejorar la aplicación móvil, ofrecer servicios adicionales como tours guiados o alquiler de bicicletas eléctricas.</td>
-    <td>- Expansión a nuevas ciudades y mayor integración con otros servicios de transporte público.</td>
+  <td>Expansión de APIs e integración con puertos.</td>
+    <td>Colaboraciones con aseguradoras y gobiernos.</td>
+    <td>Expansión hacia soluciones logísticas especializadas.</td>
     </tr>
 <td>Amenazas</td>
-  <td>- Competencia de otras empresas de alquiler de bicicletas y tours, cambios en la demanda turística.</td>
-    <td>- Competencia de otras empresas de alquiler de bicicletas y servicios de transporte compartido, vandalismo o robo de bicicletas.</td>
-    <td>- Competencia con otros servicios de transporte como scooters eléctricos y taxis compartidos.</td>
+  <td>Saturación de plataformas similares.</td>
+    <td>Alto costo de entrada limita adopción.</td>
+    <td>Competencia con MarineTraffic y VesselFinder.</td>
 </table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores.
-Para posicionar BiciBreeze frente a competidores, se pueden implementar estrategias como alianzas con universidades para ofrecer descuentos exclusivos a estudiantes, programas de referidos para incentivar la recomendación entre amigos, y campañas de marketing digital enfocadas en resaltar la conveniencia y accesibilidad sobre el modelo de suscripción mensual. Además, se pueden organizar eventos y actividades en campus universitarios para generar comunidad y fidelizar a nuestros clientes. También, podemos considerar ofrecer servicios adicionales como talleres de mantenimiento de bicicletas o rutas guiadas para estudiantes, diferenciándonos aún más de la competencia.
+
+Teemo puede diferenciarse de sus competidores enfocándose en rutas críticas como el Mar Rojo, ofreciendo visualizaciones específicas, mapas de riesgo interactivos y alertas geopolíticas en tiempo real. A diferencia de herramientas reactivas, Teemo puede adoptar un enfoque proactivo con simuladores de rutas seguras y predicción de congestión mediante algoritmos inteligentes. Además, al priorizar una experiencia de usuario simplificada y localizada para capitanes y agencias pequeñas, con soporte offline y en idiomas clave como árabe e inglés, puede ganar terreno donde otros no llegan. Su modelo de precios accesible, con planes escalables y pruebas gratuitas, lo hace ideal para PYMEs del sector. Complementariamente, Teemo puede fortalecer su propuesta con alianzas en puertos estratégicos del Mar Rojo, una comunidad colaborativa estilo “Waze marítimo” para reportes en tiempo real, e integrar contexto geopolítico explicativo con fuentes verificadas, generando así una plataforma marítima más segura, útil y centrada en los usuarios más afectados por las crisis actuales.
 
 ## 2.2. Entrevistas
 Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología. Queremos saber qué piensan sobre los servicios en línea, los problemas que han tenido y qué esperan sobre nuestro proyecto.
@@ -142,33 +136,33 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
     - ¿En qué Distrito vive?
     - ¿Estado Civil?
     - ¿Cual es su ocupación? ¿Estudia y/o trabaja?
-    - Vamos relacionandonos un poco mas al tema tecnologico ¿Cuál es la herramienta tecnologica que mas usa? Entre PC y/o Celular, especificar si es Windows, Mac, Android o Iphone.
-    - ¿Cuales son los navegadores de internet que mas usa a dia de hoy? (Edge, Chrome, Firefox, Opera o Safari)
-    - ¿Qué canal de comunicación prefiere usar: Reuniones presenciales, llamadas telefónicas o mensajes de texto (WhatsApp, SMS, Redes Sociales)?
-    -¿Qué marcas y/o influencias han tenido mayor impacto en usted?
 
 **Preguntas para Estudiantes Universitarios**
-- ¿Cuáles son los principales desafíos que enfrentas al desplazarte a la universidad? (tráfico, costo, tiempo, etc.)
-- ¿Qué tan frecuentemente utilizas medios de transporte alternativos como bicicletas o scooters?
-- ¿Estarías dispuesto a considerar un servicio de suscripción de bicicletas para tus desplazamientos diarios a la universidad? ¿Por qué o por qué no?
-- ¿Qué características consideras más importantes en un servicio de suscripción de bicicletas? (precio, ubicación de estaciones, tipo de bicicletas, etc.)
-- ¿Qué precio mensual estarías dispuesto a pagar por un servicio de suscripción de bicicletas que te permita desplazarte a la universidad y a otros lugares de interés?
-- ¿Qué tipo de promociones o beneficios te gustaría recibir como estudiante universitario suscrito a BiciBreeze?
+- ¿Cuál es su rol a bordo o dentro del equipo de planificación de rutas del crucero?
+- ¿Cuántos años de experiencia tiene navegando o coordinando rutas internacionales?
+- ¿Qué tipo de cruceros opera actualmente (turísticos, de lujo, rutas regionales, etc.)?
+- ¿Con qué frecuencia transitan por el Mar Rojo o rutas cercanas?
+- ¿Qué herramientas o sistemas utilizan para planificar y monitorear rutas en tiempo real?
+- ¿Quién toma la decisión final cuando se necesita desviar una ruta por razones de seguridad?
+- ¿Cómo acceden a información meteorológica, geopolítica o logística antes de cada travesía?
 
-**Preguntas para Publico General**
-- ¿Con qué frecuencia utilizas la bicicleta como medio de transporte en tu vida diaria?
-- ¿Qué factores influyen en tu decisión de utilizar la bicicleta en lugar de otros medios de transporte?
-- ¿Qué barreras o desafíos encuentras al utilizar la bicicleta en la ciudad?
-- ¿Qué te atraería de un servicio de alquiler de bicicletas por horas o días?
-- ¿Qué características o servicios adicionales valorarías en un servicio de alquiler de bicicletas? (seguros, asistencia en carretera, rutas guiadas, etc.)
-- ¿Qué precio por hora o por día consideras razonable para alquilar una bicicleta en buen estado?
+**Preguntas para el segmento: Agencias de embarcaciones navieras**
+- ¿Cuál es su rol dentro de la agencia naviera?
+- ¿Cuántos barcos o rutas supervisa actualmente su agencia?
+- ¿Qué tipos de embarcaciones manejan con más frecuencia (mercantes, petroleros, cruceros, etc.)?
+- ¿Cómo han afectado las tensiones geopolíticas en el Mar Rojo (por ejemplo, los ataques hutíes) a la planificación de sus rutas?
+- ¿Qué decisiones operativas han debido tomar como resultado de los desvíos alrededor del Cabo de Buena Esperanza?
+- ¿Han experimentado demoras o incrementos en los costos de transporte en los últimos meses debido a esta situación?
+- ¿Qué tan difícil ha sido acceder a información confiable y oportuna sobre riesgos en rutas específicas?
+
+
 
 ### 2.2.2. Registro de entrevistas 
 En el proceso de investigación para nuestro proyecto, se llevaron a cabo entrevistas del público objetivo. Cada entrevista se documentó en video y se registraron los siguientes detalles:
 
-Link de la entrevista: https://upcedupe-my.sharepoint.com/:v:/g/personal/u201922146_upc_edu_pe/ET-wXZaUgZ5Bri_hw1N7cTgBe26622tOUkysmrLFjecIRA?e=5WUtQU&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+Link de la entrevista: 
 
-**Segmento 1: Universitarios**
+**Segmento 1: Capitanes de crucero o sus jefes de ruta**
 
 #### Entrevista 1:
 
@@ -225,7 +219,7 @@ Diego Flores, un estudiante de 20 años que vive en Barranco, utiliza principalm
 Joseph Ulises Yacho Peralta, de 20 años y estudiante de ingeniería de software en su sexto ciclo, utiliza principalmente su laptop para sus actividades diarias, llevándola consigo a la universidad y otros lugares. Prefiere navegar con Chrome y Edge y para comunicarse opta por llamadas virtuales a través de Zoom o Meet. En cuanto a transporte, su principal preocupación es el riesgo de robo al llevar su laptop en el transporte público, por lo que usa su carnet universitario para reducir costos. Aunque no tiene bicicleta propia, ocasionalmente utiliza la de su hermano para moverse por su zona. Está interesado en un servicio de suscripción de bicicletas, siempre que las estaciones estén a una distancia conveniente. Le gustan las bicicletas clásicas como las BMX, y estaría dispuesto a pagar entre 20 y 30 soles al mes, ya que actualmente gasta unos 60 soles en pasajes. Además, le gustaría ver promociones como descuentos por meses de uso o sorteos para suscriptores recurrentes, lo cual haría el servicio más atractivo para él y otros estudiantes.
 
 
-**Segmento 2: Profesionales Urbanos**
+**Segmento 2: Agencias de embarcaciones navieras**
 
 #### Entrevista 1:
 
@@ -299,7 +293,7 @@ En su tiempo libre, es probable que Miguel disfrute de actividades al aire libre
 
 ### 2.2.3. Análisis de entrevistas
 
-**_Segmento 1: Jovenes Universitarios_**
+**_Segmento 1: Capitanes de cruceros y jefes de ruta marítima_**
 
 **Edad:**
 
@@ -354,7 +348,7 @@ Microsoft: 1, 33.3%
 
 El 66.6% de los entrevistados está influenciado por marcas como Adidas y Apple. Solo un 33.3% menciona a Microsoft como marca influyente.
 
-**_Segmento 2: Profesionales Urbanos_**
+**_Segmento 2: Agencias de embarcaciones navieras_**
 
 **Edad:**
 
@@ -455,11 +449,7 @@ Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la 
 
 **Analisis y Explicación:**
 
--Los estudiantes universitarios buscan transporte diario eficiente y económico, con seguridad y opciones flexibles.
-
--El público general busca alternativas al tráfico y al transporte público, con opciones recreativas y familiares.
-
--BiciBreeze puede ofrecer soluciones a ambos segmentos, destacando la conveniencia, el ahorro y la sostenibilidad.
+Las agencias de embarcaciones navieras, al estar centradas en la planificación estratégica y la gestión logística, suelen actuar con un enfoque preventivo: evalúan rutas con antelación, generan reportes para toma de decisiones y necesitan simular escenarios posibles ante amenazas geopolíticas. Son usuarios que valoran la precisión, confiabilidad y anticipación, y que trabajan en horarios más estables pero bajo alta presión institucional. En contraste, los capitanes de crucero y sus jefes de ruta operan en un entorno de alta inmediatez, con necesidad de información clara y decisiones rápidas. Su comportamiento es más reactivo y está marcado por la necesidad de flujo continuo de datos en tiempo real, comunicación ágil con tierra y facilidad para adaptarse en situaciones críticas, como desvíos urgentes o interrupciones portuarias. 
 
 ### 2.3.3. User Journey Mapping
 
@@ -497,12 +487,20 @@ Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuest
 
 ### 2.3.6. Ubiquitous Language
 
-- **Estación de bicicletas:** Punto físico donde las bicicletas se encuentran disponibles para alquilar o devolver.
+- **Ruta Segura**:	Trayectoria marítima recomendada basada en criterios de seguridad actualizados, incluyendo riesgos geopolíticos.
 
-- **Suscripción:** Modelo de pago en el que un usuario paga de manera anticipada por el uso del servicio por un período de tiempo.
+- **Simulador de Ruta**:	Herramienta que permite visualizar, comparar y proyectar diferentes rutas posibles considerando variables críticas.
 
-- **Mantenimiento:** Estado o proceso en el que una bicicleta está siendo revisada o reparada.
+- **Alerta en Tiempo**: Real	Notificación automatizada que informa sobre amenazas o cambios relevantes (clima, ataques, cierre de puertos, etc).
 
-- **App:** Plataforma móvil que los usuarios utilizan para gestionar sus alquileres, reservas y suscripciones.
+- **Capitán**:	Usuario operativo que navega en el mar y requiere decisiones inmediatas sobre navegación y seguridad.
 
-- **Alquiler:** Acción en la que un usuario toma una bicicleta para su uso temporal.
+- **Jefe de Ruta**:	Perfil que acompaña o asiste al capitán en la planificación y monitoreo de trayectos marítimos.
+
+- **Agencia Naviera**:	Organización encargada de coordinar, planificar y aprobar rutas y operaciones logísticas de embarcaciones.
+
+- **Punto Crítico**:	Zona geográfica de alto riesgo para embarcaciones, ya sea por conflicto armado, condiciones climáticas o congestión.
+
+- **Panel de Monitoreo**:	Vista centralizada de la ubicación de embarcaciones, rutas activas y condiciones del entorno.
+
+- **Reporte de Ruta**:	Documento generado automáticamente o a solicitud, que resume el estado de una ruta, riesgos y alternativas sugeridas.
