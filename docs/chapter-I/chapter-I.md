@@ -96,45 +96,48 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
 
 ## 1.2. Solution Profile
 
+
 ### 1.2.1. Antecedentes y Problemática
 
-Los antecedentes son esenciales para una comprensión más profunda de la problemática en cuestión. Por esta razón, hemos aplicado la técnica de las "5W 2H":
+Los antecedentes son esenciales para una comprensión profunda de la problemática que Teemo Solutions busca abordar. Para ello, se ha aplicado la técnica de análisis "5W 2H" (Who, What, Where, When, Why, How & How Much), que permite estructurar el diagnóstico de la situación desde distintas perspectivas clave:
 
-1. **1. What (¿Qué está ocurriendo?)**
+1. **What (¿Qué está ocurriendo?):**
+El comercio marítimo global se encuentra en una situación crítica debido a crecientes tensiones geopolíticas, especialmente en el corredor del Mar Rojo. Esta inestabilidad ha generado interrupciones severas en las rutas tradicionales, ocasionando incrementos en los costos logísticos, tiempos de entrega impredecibles y una sobrecarga significativa en rutas alternativas, como la que rodea el Cabo de Buena Esperanza. Las empresas se ven obligadas a replantear sus estrategias de inventario, distribución y planificación operativa.
 
-El comercio marítimo global está siendo afectado por conflictos geopolíticos, especialmente en el Mar Rojo, lo que genera interrupciones de rutas, aumentos en los costos logísticos, tiempos de entrega impredecibles y sobrecarga en otras rutas alternativas como el Cabo de Buena Esperanza. Esta situación está obligando a las empresas a replantear sus estrategias de inventario y logística.
 
-2. **Why (¿Por qué está ocurriendo?)**
+2. **Why (¿Por qué está ocurriendo?):**
+La causa principal es la escalada del conflicto en Medio Oriente, particularmente los ataques de los hutíes en el Mar Rojo, que han transformado esta vía comercial en una zona de alto riesgo. Esta situación ha generado desvíos masivos de embarcaciones, falta de visibilidad sobre las condiciones en tiempo real y una carencia de herramientas inteligentes para la toma de decisiones logísticas ante escenarios de emergencia.
 
-El conflicto en la región del Mar Rojo, especialmente por los ataques de los hutíes, ha creado un entorno de alto riesgo para el tránsito marítimo. Esto ha provocado desvíos masivos de embarcaciones, escasez de información confiable en tiempo real, falta de herramientas para tomar decisiones rápidas y pérdida de confianza en los sistemas logísticos tradicionales.
 
-3. **When (¿Cuándo sucede?)**
+3. **When (¿Cuándo sucede?):**
+El conflicto ha escalado desde finales de 2023 y continúa afectando al comercio internacional durante 2024. Al no existir una fecha de resolución clara, se ha creado un entorno de incertidumbre permanente que demanda soluciones tecnológicas ágiles y adaptables para el corto y mediano plazo.
 
-Desde finales de 2023 y durante 2024, el conflicto ha escalado y sigue afectando de forma continua. Las interrupciones no tienen una fecha de término clara, lo que agrava la incertidumbre y obliga a buscar soluciones proactivas a corto y mediano plazo.
 
-4. **Where (¿Dónde ocurre?)**
+4. **Where (¿Dónde ocurre?):**
+La problemática se concentra en el Mar Rojo, una vía estratégica que conecta Europa, Asia y África. Sin embargo, el impacto se extiende a puertos en ambos continentes, generando cuellos de botella logísticos en zonas clave como el Mediterráneo, el Golfo de Adén y el Canal de Suez.
 
-Principalmente en el Mar Rojo, un corredor clave del comercio marítimo internacional que conecta Asia, Europa y África. Los efectos también se sienten en los puertos europeos y asiáticos, especialmente en aquellos que dependen de este paso estratégico.
 
-5. **Who (¿Quiénes están involucrados o afectados?)**
+5. **Who (¿Quiénes están involucrados o afectados?):** <br>
+   - Capitanes de embarcaciones y jefes de ruta, responsables de la seguridad y eficiencia del tránsito marítimo.
 
-- Capitanes de cruceros y jefes de ruta, responsables de navegación segura y eficiente.
+   - Agencias navieras y operadoras logísticas, que deben ajustar operaciones y comunicaciones en tiempo real.
 
-- Agencias de embarcaciones navieras cerca al Mar Rojo, que deben coordinar y gestionar rutas con clientes.
+   - Empresas exportadoras/importadoras, cuya competitividad depende de entregas puntuales y costos controlados.
 
-- Compañías navieras, importadores/exportadores y actores logísticos que dependen de este paso para operar.
+   - Industria tecnológica, llamada a ofrecer soluciones para afrontar esta nueva realidad.
 
-6. **How (¿Cómo está afectando?)**
 
-El conflicto está obligando a tomar rutas más largas y costosas, lo que retrasa las entregas, eleva el precio del transporte, congestiona otras rutas y reduce la capacidad disponible en el mercado. Además, la falta de herramientas para anticipar estos cambios en tiempo real dificulta una respuesta ágil y eficiente.
+6. **How (¿Cómo está afectando?):** La inestabilidad ha obligado a adoptar rutas más largas y costosas, lo que incrementa significativamente los precios del transporte, retrasa entregas y congestiona corredores alternativos. Esta situación disminuye la eficiencia operativa del sector y revela una necesidad crítica de herramientas de análisis predictivo que faciliten decisiones logísticas fundamentadas y rápidas.
 
-7. **How much (¿Cuánto cuesta o impacta?)**
 
-- A nivel global, se estima que el impacto podría alcanzar más de 135.000 millones de euros en intercambio comercial entre España y Asia.
+7. **How much (¿Cuánto cuesta o impacta?):**
 
-- Empresas como Tesla ya han paralizado producción en Alemania por estos problemas.
+   - Se estima que el comercio entre España y Asia podría perder más de 135.000 millones de euros debido a la interrupción de rutas (ABC International, 2024).
 
-- Para Teemo, esto representa un riesgo potencial en la cadena de suministro, costos adicionales por logística imprevista y pérdida de competitividad si no se adapta proactivamente.
+   - Empresas como Tesla han detenido su producción en Alemania por problemas de suministro derivados del conflicto.
+ 
+   - Para Teemo Solutions, esta problemática representa una oportunidad estratégica: desarrollar soluciones tecnológicas que minimicen los impactos financieros, mejoren la resiliencia de la cadena logística y mantengan la competitividad en entornos altamente volátiles.
+
 
 
 ### 1.2.2. Lean UX Process
