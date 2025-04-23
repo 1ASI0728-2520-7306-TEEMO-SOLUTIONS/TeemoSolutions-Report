@@ -51,14 +51,47 @@ Teemo es una startup inovadora que ofrece plataforma principal que permite a los
 
 ### 1.1.2. Perfiles de Integrantes del equipo
 
-| Nombre Completo del integrante       | Descripcion de Carrera                                                                           | Fotografía                                      | Conocimientos y Habilidades a apuntar                                                                                                                                                                                                                                               |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Augusto Mathias Vasquez Requejo      | Ingeniería de Software<br> 6to Ciclo<br>2024-2<br>Universidad Peruana de Ciencias Aplicadas      | [MathiasVasquez] | - Conocimientos en lenguajes de programación como C++, JavaScript, HTML, CSS.<br> - Responsabilidad y dedicación con los trabajos grupales.                                                                                                                                         |
-| Nombre     | Ingeniería de Software<br> 5to Ciclo<br>2024-2<br>Universidad Peruana de Ciencias Aplicadas      | imagen | - Conocimientos de lenguajes de programación html, css y Javascript.<br>- Contribución en equipo y responsabilidad.  |
-| Nombre  | Ingeniería de Software<br> 6to Ciclo<br>2024-2<br>Universidad Peruana de Ciencias Aplicadas      |  Imagen | - Conocimientos en lenguajes de programacion como C++, C#, Python, JavaScript, etc.<br>- Trabajo bien bajo presion y aporto con ideas óptimas para la solucion de diferentes problemas. |
-| Nombre | Ingeniería de Software<br> 6to Ciclo <br> 2024-2 <br> Universidad Peruana de Ciencias aplicadas | Imagen  | - Conocimientos en lenguajes de programación como C++, Python, Html y CSS.Considero que puedo aportar en el equipo, ya que soy responsable y trato de cumplir con las partes que se delegan en el equipo. A la vez, colaboro con ideas para poder lograr un buen trabajo en equipo. |.      
-| Nombre| 6to Ciclo 2024-2 Universidad Peruana de Ciencias Aplicada | Imagen | Desarrollé principalmente todo el diseño de la lading page y web aplication utlizando adecuadamente las herramientas Ux .|
+<table>
+  <tr>
+  <th colspan="2">Aru Acevedo, Yair Christofer</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/Yair-Aru.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
 
+  <tr>
+  <th colspan="2">Lizano Coll Cardenas, Fernando Jesus</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/Fernando-Lizano.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td>Me llamo Fernando Jesus Lizano Coll Cardenas. A mis 20 años me considero un apasionado por el mundo de la programación y aprendizaje constante. Actualmente tengo conocimientos en el lenguaje de C++, HTML, CSS, JavaScript y Python. Aunque mis conocimientos son todavía básicos. Me identifico como alguien de pensamiento de superación. Busco crecer en cada aspecto de mi vida y enfrentar desafíos con una actitud positiva y resoluta. Espero poder aportar y motivar a mis compañeros durante la elaboración de este proyecto.</td>
+  </tr>
+
+  <tr>
+  <th colspan="2">Pescorán Angulo, Juan Fabritzzio</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/Juan-Pescoran.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Riega Salas, Jose Miguel</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/Jose-Riega.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Vasquez Requejo, Augusto Mathias Leonardo</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/Mathias-Vasquez.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td>Soy estudiante de Ingeniería de Software en el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en lenguajes de programación como C++, JavaScript, HTML y CSS, y me destaco por mi responsabilidad y dedicación en los trabajos grupales, siempre buscando contribuir al logro de los objetivos del equipo.</td>
+  </tr>
+</table>
 
 ## 1.2. Solution Profile
 
