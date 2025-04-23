@@ -477,9 +477,9 @@ Para el desarrollo de los Empathy Map hemos utilizado la información recopilada
 ### 2.3.5. As-is Scenario Mapping
 Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
 
-**_Segmento 1: Estudiantes Universitarios_**
+**_Segmento 1: Transportista Maritimo (Capitan o Jefe de navegación)**
 
-![alt text](<../assets/imgs/as-is estudiantes.jpg>)
+<td><img src="../../assets/img/chapter-II/AS-IS_1.png" style="width:1000px; height:auto;" alt=""></td>
 
 **_Segmento 2: Profesional urbano_**
 
