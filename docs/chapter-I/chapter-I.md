@@ -73,7 +73,7 @@ Teemo es una startup inovadora que ofrece plataforma principal que permite a los
   </tr>
   <tr>
     <td><img src="../../assets/img/chapter-I/Juan-Pescoran.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td>Hola que tal, soy Juan Pescoran, tengo 19 años, estoy llevando la carrera de Ingenieria de Software en la UPC, voy en el 7mo ciclo. Me considero una persona responsable, puntual y comprometida con mis estudios. Me gusta aprender cosas nuevas y siempre estoy dispuesto a ayudar a mis compañeros.</td>
   </tr>
 
   <tr>
