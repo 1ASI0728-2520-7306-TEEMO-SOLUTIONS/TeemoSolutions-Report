@@ -422,30 +422,30 @@ Para desarrollar BiciBreeze, hemos entrevistado a estudiantes y usuarios de bici
 
 Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la frecuencia con la que los usuarios llevan a cabo diversas actividades, lo que nos permite visualizar la importancia de ciertas tareas.
 
-**_Segmento 1: Estudiantes Universitarios_**
+**_Segmento 1: Agencias de embarcaciones navieras_**
 
-| Tareas                                                        | Universitario/a Importancia   | Universitario/a  Frecuencia               |
+| Tareas                                                        |  Importancia   |  Frecuencia               |
 |---------------------------------------------------------------|--------------------------|--------------------------
-| Movilizarse a la universidad y otros lugares de interés	                        |Alta                     | Siempre
-| Buscar rutas eficientes y seguras en bicicleta	 |Alta                 | Siempre                  
-| Comparar precios y opciones de transporte |Media         | A veces           
-| Asistir a conferencias y eventos académicos                   |Media                   | A veces                  
-| Acceder a información sobre promociones y descuentos |Media            | A veces                  
-| Gestionar su tiempo y organizar su agenda        |Media                     | Diaria/Semanal                  
-| Lidiar con el tráfico y la congestión	     |Alta                    | Diaria                 
-| Preocuparse por la seguridad al viajar de noche                    |Media                     | Ocasionalmente    
+| Evaluar rutas marítimas antes de cada embarque.	                        |Alta                     | Siempre
+| Reprogramar rutas en tiempo real	 |Media                 | Siempre                  
+| Estimar tiempos de llegada y retrasos potenciales |Alta         | Siempre           
+| Coordinar logística con puertos alternos                   |Media                   | A veces                  
+| Acceder a reportes de riesgos marítimos |Media            | A veces                  
+| Comunicar cambios de ruta con embarcaciones        |Alta                     | Diaria/Semanal                  
+| Simular rutas con menor riesgo y costo     |Baja                    | Diaria                 
+| Generar informes para clientes o directivos                    |Media                     | Ocasionalmente    
 
-**_Segmento 2: Profesional urbano_**
+**_Segmento 2: Capitanes de crucero o jefes de ruta_**
 
-| Tareas                                                        | Profesional Importancia   | Profesional  Frecuencia               |
+| Tareas                                                        |  Importancia   |   Frecuencia               |
 |---------------------------------------------------------------|--------------------------|--------------------------
-| Desplazarse al trabajo		                        |Alta                     | Diaria
-| Ir a citas médicas, reuniones o eventos sociales	 |Media                 | Semanal/Mensual                  
-| Comparar precios y opciones de transporte |Media         | Diaria/Semanal
-| Evitar el tráfico y la congestión en horas pico                  |Alta                 | Diaria               
-| Reducir gastos en transporte	 |Alta            | Semanal                  
-| Gestionar su tiempo y organizar su agenda        |Media                     | Diaria/Semanal                              
-| Preocuparse por la seguridad al viajar de noche                    |Media                     | Ocasionalmente    
+| Planificar rutas seguras antes de cada viaje		                        |Alta                     | Diaria
+| Monitorear en tiempo real cambios meteorológicos y riesgos geopolíticos	 |Media                 | Semanal/Mensual                  
+| Comunicar emergencias y desvíos con su equipo en tierra |Media         | Diaria/Semanal
+| Asegurar cumplimiento del itinerario turístico                 |Alta                 | Diaria               
+| Verificar acceso a puertos alternativos en tiempo de crisis	 |Alta            | Semanal                  
+| Tomar decisiones de desvío inmediato        |Media                     | Diaria/Semanal                              
+| Realizar reportes post-ruta o bitácoras                    |Media                     | Ocasionalmente    
 
 **Analisis y Explicación:**
 
