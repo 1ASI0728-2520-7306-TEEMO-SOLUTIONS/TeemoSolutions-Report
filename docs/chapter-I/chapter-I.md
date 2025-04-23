@@ -96,7 +96,9 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
   </tr>
   <tr>
     <td><img src="../../assets/img/chapter-I/Jose-Riega.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td>Estudiante de 7mo ciclo de ingeniería de software en la UPC. Autopercibido como polivalente y responsable con aprendizaje continuo.
+
+Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicaciones web y metodologías ágiles. Mis objetivos son concretarse y seguir aprendiendo y ejerciendo mi carrera desarrollándome a nivel personal y profesional.</td>
   </tr>
 
   <tr>
