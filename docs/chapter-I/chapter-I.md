@@ -38,19 +38,16 @@ En un contexto global afectado por tensiones geopolíticas y disrupciones logís
 > _“Si la crisis se prolonga, es posible que aumenten los tiempos de espera, los precios y la congestión en los puertos_”  
 > Crédito y Caución, 2024
 
+### 1.1.1. Descripción de la StartUp
+
 Teemo Solutions nace como respuesta a esta realidad, con el objetivo de optimizar rutas marítimas mediante tecnología inteligente. Su producto, Mushroom, es una solución de software que calcula la mejor ruta entre puertos, considerando condiciones climáticas, cierres, conflictos y otros factores disruptivos.
 
 Según ABC International (2024), entre el 10% y 15% del comercio mundial depende del transporte marítimo. Con rutas clave como el Mar Rojo afectadas por conflictos, muchas navieras se ven obligadas a tomar desvíos costosos. Esto ha impactado incluso a grandes empresas como Tesla, que ha suspendido operaciones por interrupciones logísticas.
 
-Teemo Solutions ofrece una herramienta predictiva que permite a las compañías anticiparse y responder de forma estratégica, mejorando eficiencia, tiempos y costos en un entorno cada vez más incierto.
+- **Misión:** Desarrollar soluciones tecnológicas innovadoras que optimicen la logística marítima global, brindando a las navieras herramientas inteligentes para enfrentar los desafíos del comercio internacional en tiempo real.
 
-### 1.1.1. Descripción de la StartUp
 
-Teemo es una startup inovadora que ofrece plataforma principal que permite a los hoteles gestionar sus operaciones de manera más eficiente y mejorar la experiencia de sus huéspedes. KingReserve no solo es una herramienta para administrar reservas y personal, sino también para ofrecer servicios de manera accesible e intuitiva.
-
-- Misión: Nuestra misión se basa en apoyar a los jóvenes que quieran movilizarse de esta forma para que puedan conseguirlo sin tener que pagar tanto.
-<br>
-- Visión (Metas a medio o largo plazo): Poder asentarnos como la plataforma mas amigable para los jóvenes universitarios.
+- **Visión:** Ser la plataforma líder en gestión inteligente de rutas navieras a nivel mundial, reconocida por su capacidad de adaptación, precisión y aporte a la eficiencia del transporte marítimo en entornos complejos y cambiantes.
 
 
 ### 1.1.2. Perfiles de Integrantes del equipo
