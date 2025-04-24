@@ -202,63 +202,84 @@ Empresas navieras con operaciones activas en el corredor del Mar Rojo y el Océa
 
 #### 1.2.2.2 Lean Ux Assumptions 
 
+**Users**:
+
+- Empresas Navieras y Operadoras Logísticas: responsables del trazado y la ejecución de rutas marítimas seguras y eficientes, así como de la optimización de recursos operativos.
+- Exportadores e Importadores: empresas que dependen del transporte marítimo para movilizar productos y materias primas, afectadas por retrasos, cambios de ruta y falta de información confiable.
+
+**User Outcomes:** Para ambos segmentos se espera que 
+
+- Reduzcan los tiempos de planificación de rutas ante eventos inesperados.
+- Accedan a información integrada, confiable y actualizada en tiempo real.
+- Tomen decisiones informadas que reduzcan costos logísticos.
+- Aumenten la previsibilidad de sus operaciones marítimas.
+- Refuercen la resiliencia de su cadena de suministro ante conflictos geopolíticos y eventos climáticos extremos.
+
 **Business Assumptions**
 
-- Los usuarios principales son los encargados de logística de alguna embarcación y personas que trabajan como capitanes o similar en algún crucero.
+**Creemos que** los actores de la cadena logística marítima están buscando soluciones proactivas para enfrentar la incertidumbre global.
 
-- Los clientes valoran la estabilidad, visibilidad y previsibilidad en la cadena de suministro.
+**Asumimos que** la propuesta de valor de Mushroom atraerá a empresas con operaciones críticas en zonas sensibles como el Mar Rojo.
 
-- Los clientes estarían dispuestos a adoptar nuevas herramientas o procesos si les ayudan a anticipar y responder mejor ante interrupciones logísticas.
+**Consideramos que** la adopción inicial estará motivada por la necesidad urgente de reducir pérdidas financieras por desvíos y retrasos no planificados.
 
-- Podríamos enfrentar mucha incertidumbre y presión debido a los retrasos y al aumento de los costos logísticos.
+**Creemos que** el diferencial de Teemo Solutions es la integración de múltiples variables (clima, conflictos, capacidad portuaria) en una sola plataforma visual.
 
-- Si logramos reducir la incertidumbre en la planificación, mi equipo podrá minimizar el impacto de los retrasos y ahorrar costos a mediano y largo plazo.
+**Asumimos que** nuestros usuarios valorarán especialmente las funcionalidades predictivas y la capacidad de simular escenarios logísticos.
 
-- Si hacemos la cadena de suministro más resiliente, podemos asegurar la continuidad operativa de Teemo y mejorar la experiencia de mis clientes.
+- - - 
 
-- Si logramos tener una reacción rápida ante interrupciones podría convertirse en una ventaja competitiva clave frente a otras empresas del rubro.
+**User Assumptions:**
 
-- Si evitamos alguna parálisis en la producción por falta de insumos, podremos proteger ingresos clave y reduciendo pérdidas operativas.
+**¿Quién utiliza nuestra plataforma?:**
+Planificadores de rutas, analistas logísticos, gerentes de operaciones en navieras, y responsables de logística internacional en empresas exportadoras/importadoras.
 
-**User Assumptions**
+**¿Cómo se integra en su rutina?:**
+Como herramienta de consulta diaria para el trazado de rutas, evaluación de riesgos y toma de decisiones estratégicas.
 
-- ¿Quién es el usuario?
+**¿Qué desafíos resuelve?**
 
-Los usuarios de Teemo incluyen capitanes de cruceros o sus jefes de ruta, responsables de tomar decisiones críticas de navegación, así como agencias de embarcaciones navieras ubicadas cerca al Mar Rojo, encargadas de gestionar rutas, coordinar operaciones y comunicar riesgos a sus clientes. Todos ellos necesitan soluciones ágiles y confiables ante la creciente incertidumbre en las rutas marítimas.
+- Falta de datos unificados en un solo sistema.
+- Toma de decisiones basadas en información obsoleta o parcial.
+- Aumento de costos por desvíos no anticipados.
 
-- ¿Qué problemas resuelve nuestro producto?
+**¿Qué imagen queremos proyectar?:** Una solución confiable, especializada en inteligencia logística marítima, robusta pero simple de usar.
 
-Teemo resuelve problemas relacionados con la falta de información en tiempo real sobre condiciones geopolíticas y de seguridad en rutas marítimas clave, como el Mar Rojo. También combate la dificultad para anticipar desvíos, la poca visibilidad logística, y la pérdida de eficiencia operativa en las decisiones de navegación o planificación. Además, ayuda a prevenir demoras costosas, sobrecostos logísticos y errores en la toma de decisiones tácticas.
+**¿Propósito fundamental?:** Optimizar las decisiones de navegación y logística para mantener cadenas de suministro estables y rentables.
 
-- ¿Qué características son importantes?
+**¿Qué funcionalidades destacan?**
 
-Es fundamental que Teemo ofrezca visualización en tiempo real de las condiciones del tránsito marítimo y los riesgos geopolíticos, alertas inteligentes ante posibles interrupciones, recomendaciones automáticas de rutas alternativas y herramientas de simulación de escenarios logísticos. Para los jefes de ruta y agencias, también es clave contar con reportes que faciliten la comunicación y el soporte en la toma de decisiones estratégicas.
-
-- ¿Dónde encaja nuestro producto en su trabajo o vida?
-
-Para los capitanes y jefes de ruta, Teemo se integra directamente en su flujo diario de planificación y navegación, permitiéndoles reaccionar rápidamente a eventos de alto impacto. Para las agencias, el producto se convierte en una herramienta esencial de monitoreo, gestión de riesgo y asesoramiento a sus clientes embarcados, aportando valor a su operación comercial y logística.
-
-- ¿Cuándo y cómo es nuestro producto usado?
-
-Teemo es utilizado cuando los usuarios planifican rutas de embarcaciones que transitan zonas de alto riesgo, especialmente en contextos de tensión como el actual. También es clave durante la navegación para recibir alertas o tomar decisiones en tiempo real ante cambios inesperados. Las agencias lo usan continuamente para coordinar y adaptar operaciones con sus clientes navieros, anticipando desvíos y optimizando tiempos y costos.
-
-- ¿Cómo debe verse nuestro producto y cómo debe comportarse?
-
-Teemo debe ser visual, intuitivo y orientado a la acción. La interfaz debe presentar mapas dinámicos, indicadores de riesgo fácilmente interpretables y rutas sugeridas de forma clara. Debe comportarse como una herramienta confiable y rápida, que facilite la toma de decisiones en tiempo crítico y minimice la carga cognitiva del usuario. Todo debe estar pensado para un entorno operativo exigente y en constante cambio.
+- Simulación de rutas con condiciones dinámicas.
+- Alertas automatizadas por cambios climáticos o conflictos.
+- Comparación de tiempos y riesgos entre rutas.
+- Integración con plataformas de gestión logística (TMS, ERP).
 
 #### 1.2.2.3 Lean Ux Process Hypothesis Statement
 
-- Creemos que los capitanes de cruceros y sus jefes de ruta
-realizarán consultas frecuentes sobre condiciones de riesgo geopolítico y bloqueos marítimos a través de una plataforma digital con mapas interactivos y actualizaciones en tiempo real
-porque necesitan anticiparse a interrupciones en sus rutas y evitar decisiones de navegación costosas.
+- Hipótesis 1:<br>
+**Creemos que** las empresas navieras y operadoras logísticas adoptarán una plataforma que les permita visualizar, simular y ajustar rutas marítimas en tiempo real, considerando condiciones climáticas y geopolíticas. <br>
+**Esto logrará** una toma de decisiones más rápida, reducción de costos imprevistos y mayor eficiencia operativa. <br>
+**Sabremos que** esto es cierto cuando al menos el 70% de los usuarios realicen simulaciones de ruta y registren un ahorro operativo en los primeros 3 meses. <br>
 
-- Creemos que las agencias navieras ubicadas cerca al Mar Rojo
-realizarán recomendaciones logísticas más acertadas y proactivas a sus clientes
-a través del uso de reportes automatizados y escenarios de simulación que ofrece Teemo porque están buscando mejorar su eficiencia operativa y posicionarse como socios estratégicos en contextos de crisis.
 
-- Creemos que los jefes de ruta en operaciones internacionales
-realizarán ajustes dinámicos a sus planes de navegación con base en los datos de Teemo a través de una interfaz que les permite visualizar rutas sugeridas con menor riesgo y mayor eficiencia
-porque quieren reducir tiempos de entrega, costos adicionales por desvíos y presión operacional.
+- Hipótesis 2:<br>
+**Creemos que** los exportadores e importadores utilizarán Mushroom para anticiparse a interrupciones logísticas y ajustar sus decisiones comerciales.  <br>
+**Esto logrará** una mejor gestión de inventario, reducción de retrasos y mejora en la coordinación con clientes y proveedores.  <br>
+**Sabremos que** esto es cierto cuando los usuarios reporten una disminución del 20% en retrasos logísticos y una mejora en la previsión de entregas dentro de los primeros 2 meses. <br>
+
+
+- Hipótesis 3:<br>
+**Creemos que** integrar fuentes de datos confiables y en tiempo real (meteorología, conflictos, estado portuario) será un valor diferencial clave para los usuarios.  <br>
+**Esto logrará** una mayor confianza en la herramienta frente a soluciones genéricas del mercado.  <br>
+**Sabremos que** esto es cierto cuando el 80% de los usuarios destaque esta funcionalidad en encuestas de satisfacción y repita su uso semanalmente.<br>
+
+
+
+-  Hipótesis 4:<br>
+**Creemos que** ofrecer una interfaz visual e intuitiva, adaptable a distintos niveles técnicos, aumentará la adopción de la plataforma.  <br>
+**Esto logrará** que tanto técnicos como directivos puedan tomar decisiones basadas en los mismos datos.  <br>
+**Sabremos que** esto es cierto cuando al menos 3 perfiles distintos dentro de cada empresa usen la plataforma con frecuencia mensual.<br>
+
 
 #### 1.2.2.4. Lean UX Canvas
 
