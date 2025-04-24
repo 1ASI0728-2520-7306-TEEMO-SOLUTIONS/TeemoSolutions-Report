@@ -164,6 +164,8 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 
 ### 1.2.2. Lean UX Process
 
+En esta etapa damos inicio al enfoque Lean UX, una metodología que nos permitirá construir y afinar la visión del modelo de negocio que respaldará nuestra solución digital. Gracias a este enfoque, podremos centrar el diseño de nuestro producto en resolver necesidades concretas y generar valor real para los usuarios.
+
 #### 1.2.2.1  Problem Statement
 
 - **Domain**
