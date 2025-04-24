@@ -112,7 +112,7 @@ Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicacion
     <th colspan="2">Vasquez Requejo, Augusto Mathias Leonardo</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Mathias-Vasquez.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/Augusto Vasquez.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Soy estudiante de Ingeniería de Software en el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en lenguajes de programación como C++, JavaScript, HTML y CSS, y me destaco por mi responsabilidad y dedicación en los trabajos grupales, siempre buscando contribuir al logro de los objetivos del equipo.</td>
   </tr>
 </table>
