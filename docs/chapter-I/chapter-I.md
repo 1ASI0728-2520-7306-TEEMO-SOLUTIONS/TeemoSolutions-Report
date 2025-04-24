@@ -241,12 +241,43 @@ porque quieren reducir tiempos de entrega, costos adicionales por desvíos y pre
 
 ![Lean UX Canvas](../assets/BICIBREEZE%20CANVAS.png)
 
-## 1.3. Segmento Objetivo
+## 1.3. Segmentos Objetivos
 
-#### 1. Capitanes de cruceros y jefes de ruta marítima
+El producto Mushroom, desarrollado por Teemo Solutions, está dirigido a actores clave del ecosistema logístico y naviero internacional, especialmente aquellos que se ven directamente afectados por disrupciones en las rutas marítimas. Los segmentos objetivos se definen de la siguiente manera:
 
-Profesionales encargados de la navegación y planificación de rutas en embarcaciones de gran escala (cruceros, buques comerciales). Son responsables de tomar decisiones tácticas en tiempo real frente a condiciones cambiantes como conflictos geopolíticos, cierres de rutas o condiciones meteorológicas extremas. Buscan minimizar riesgos, garantizar la seguridad de la tripulación y cumplir con los tiempos estimados de llegada.
+1. **Empresas Navieras y Operadoras Logísticas Globales:** Compañías multinacionales que operan rutas marítimas internacionales, con flotas activas en zonas como el Mar Rojo, Mediterráneo, Canal de Suez y el Océano Índico.
 
-#### 2. Agencias de embarcaciones navieras ubicadas cerca al Mar Rojo
 
-Organizaciones que actúan como intermediarios logísticos, coordinando rutas, monitoreando el tránsito marítimo y asesorando a compañías navieras que transitan por zonas de alto riesgo como el Mar Rojo. Su objetivo es optimizar tiempos, minimizar desvíos y proveer información estratégica a sus clientes para tomar decisiones seguras y rentables. Estas agencias son sensibles a los cambios geopolíticos y necesitan herramientas confiables para anticiparse a interrupciones y proteger la continuidad operativa de sus operaciones y las de sus clientes.
+2. **Exportadores e Importadores de Alta Rotación:** Empresas industriales y comerciales que dependen de entregas constantes y puntuales, como fabricantes de vehículos, tecnología, farmacéuticas y bienes de consumo masivo.
+
+<table>
+  <thead>
+    <tr>
+      <th>Característica</th>
+      <th>Empresas Navieras y Operadoras Logísticas</th>
+      <th>Exportadores e Importadores de Alta Rotación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Demografía</strong></td>
+      <td>+500 empleados, flotas de +50 embarcaciones, presencia intercontinental.</td>
+      <td>Ubicadas principalmente en Europa, Asia y América, con alto volumen de exportación/importación.</td>
+    </tr>
+    <tr>
+      <td><strong>Necesidades</strong></td>
+      <td>Optimización de rutas, reducción de costos, gestión de riesgos logísticos.</td>
+      <td>Visibilidad en tiempo real, planificación de entregas, reducción de impacto por interrupciones.</td>
+    </tr>
+    <tr>
+      <td><strong>Impacto esperado</strong></td>
+      <td>Mayor eficiencia operativa, mejor adaptabilidad a crisis geopolíticas.</td>
+      <td>Menores pérdidas económicas, continuidad de la cadena de suministro.</td>
+    </tr>
+    <tr>
+      <td><strong>Ejemplo o Dato</strong></td>
+      <td>El 80% del comercio mundial se mueve por vía marítima (UNCTAD, 2023).</td>
+      <td>Tesla paralizó producción en Alemania por bloqueos en el Mar Rojo (2024).</td>
+    </tr>
+  </tbody>
+</table>
