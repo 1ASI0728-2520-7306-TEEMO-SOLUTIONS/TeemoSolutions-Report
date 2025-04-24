@@ -31,15 +31,13 @@
 
 # Capítulo III: Requirements Specification
 ##### 3.1. To-Be Scenario Mapping.
-###### Segmento 1: Empresas Hoteleras
- ![image](../imgs/TO-BE_MAPPING-EMPRESAS_HOTELERAS_1.png)
- ![image](../imgs/TO-BE_MAPPING-EMPRESAS_HOTELERAS_2.png)
+###### Segmento 1: Agencia de embarcaciones navieras
 
-###### Segmento 2: Huespedes
+<td><img src="../../assets/img/chapter-III/TO-BE_1.png" style="width:1000px; height:auto;" alt=""></td>
 
-![image](../imgs/TO-BE_MAPPING-HUESPEDES_1.png)
-![image](../imgs/TO-BE_MAPPING-HUESPEDES_2.png)
+###### Segmento 2: Transportista marítimo
 
+<td><img src="../../assets/img/chapter-III/TO-BE_2.png" style="width:1000px; height:auto;" alt=""></td>
 
 ##### 3.2. User Stories.
 
