@@ -166,14 +166,38 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 ### 1.2.2. Lean UX Process
 
 ### 1.2.2.1  Problem Statement
- 
-- **Incidentes en el mar rojo**
 
-En el contexto actual de tensiones geopolíticas y conflictos en el Mar Rojo, la industria naviera global enfrenta interrupciones críticas en las rutas comerciales, lo que ha generado congestión en los puertos, aumento en los precios del transporte y demoras en los tiempos de entrega. Este escenario afecta directamente a empresas como Teemo, que dependen del comercio marítimo para sostener su cadena de suministro eficiente y competitiva.
+- **Domain**
 
-Los operadores logísticos y los responsables de planificación de inventarios están experimentando una creciente incertidumbre y se ven forzados a reconsiderar sus estrategias tradicionales de inventario justo a tiempo (just in time), buscando ahora niveles de inventario más altos como medida de precaución. Esta transición no solo implica un cambio operacional significativo, sino también un incremento en los costos de almacenamiento, planificación y gestión de riesgo.
+La solución se ubica dentro del dominio de la logística marítima global, un sector clave para el comercio internacional, actualmente impactado por conflictos geopolíticos, variabilidad climática y congestión en rutas estratégicas como el Mar Rojo o el Canal de Suez.
 
-¿Cómo podría Teemo adaptarse proactivamente a esta nueva realidad logística, minimizando el impacto económico y operacional, mientras asegura la continuidad de su cadena de suministro ante una crisis prolongada en el transporte marítimo?
+- **Customer Segments**
+  - Empresas Navieras y Operadoras Logísticas: Gestionan flotas y rutas internacionales de carga.
+
+  - Exportadores e Importadores de Alta Rotación: Empresas industriales con alta dependencia de rutas marítimas estables.
+
+   
+- **Pain Points**
+  - Rutas tradicionales interrumpidas o congestionadas por conflictos o clima.
+
+  - Falta de visibilidad y datos confiables en tiempo real.
+
+  - Decisiones reactivas y no optimizadas ante desvíos o cierres portuarios.
+
+  - Aumento en los costos operativos y pérdida de competitividad.
+
+
+- **Gap (Brecha Identificada)**
+
+Actualmente, no existe una herramienta accesible y especializada que integre datos geopolíticos, climáticos y logísticos para ofrecer rutas óptimas, confiables y actualizadas para embarcaciones comerciales. Las decisiones se toman con herramientas fragmentadas, informes desactualizados o sistemas poco adaptables.
+
+- **Vision / Strategy**
+
+Desarrollar Mushroom, una solución SaaS que proporcione recomendaciones de rutas marítimas óptimas, basadas en algoritmos predictivos que combinan inteligencia climática, cierres portuarios, tráfico marítimo y factores geopolíticos. La estrategia es entregar una interfaz intuitiva, modular e integrable con otros sistemas logísticos.
+
+- **Initial Segment (Primer Segmento a Impactar)**
+
+Empresas navieras con operaciones activas en el corredor del Mar Rojo y el Océano Índico, donde las tensiones actuales han forzado desvíos frecuentes. Este segmento tiene alta urgencia, capacidad de adopción tecnológica y un impacto directo en costos operativos si se mejora la eficiencia de sus rutas.
 
 ### 1.2.2.2 Lean Ux Assumptions 
 
