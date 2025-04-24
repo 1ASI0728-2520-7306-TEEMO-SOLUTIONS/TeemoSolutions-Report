@@ -38,7 +38,7 @@ En un contexto global afectado por tensiones geopolíticas y disrupciones logís
 > _“Si la crisis se prolonga, es posible que aumenten los tiempos de espera, los precios y la congestión en los puertos_”  
 > Crédito y Caución, 2024
 
-### 1.1.1. Descripción de la StartUp
+### 1.1.1. Descripción de la Startup
 
 Teemo Solutions nace como respuesta a esta realidad, con el objetivo de optimizar rutas marítimas mediante tecnología inteligente. Su producto, Mushroom, es una solución de software que calcula la mejor ruta entre puertos, considerando condiciones climáticas, cierres, conflictos y otros factores disruptivos.
 
@@ -154,7 +154,6 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 
 
 7. **How much (¿Cuánto cuesta o impacta?):**
-
    - Se estima que el comercio entre España y Asia podría perder más de 135.000 millones de euros debido a la interrupción de rutas (ABC International, 2024).
 
    - Empresas como Tesla han detenido su producción en Alemania por problemas de suministro derivados del conflicto.
@@ -165,7 +164,7 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 
 ### 1.2.2. Lean UX Process
 
-### 1.2.2.1  Problem Statement
+#### 1.2.2.1  Problem Statement
 
 - **Domain**
 
@@ -199,7 +198,7 @@ Desarrollar Mushroom, una solución SaaS que proporcione recomendaciones de ruta
 
 Empresas navieras con operaciones activas en el corredor del Mar Rojo y el Océano Índico, donde las tensiones actuales han forzado desvíos frecuentes. Este segmento tiene alta urgencia, capacidad de adopción tecnológica y un impacto directo en costos operativos si se mejora la eficiencia de sus rutas.
 
-### 1.2.2.2 Lean Ux Assumptions 
+#### 1.2.2.2 Lean Ux Assumptions 
 
 **Business Assumptions**
 
@@ -245,7 +244,7 @@ Teemo es utilizado cuando los usuarios planifican rutas de embarcaciones que tra
 
 Teemo debe ser visual, intuitivo y orientado a la acción. La interfaz debe presentar mapas dinámicos, indicadores de riesgo fácilmente interpretables y rutas sugeridas de forma clara. Debe comportarse como una herramienta confiable y rápida, que facilite la toma de decisiones en tiempo crítico y minimice la carga cognitiva del usuario. Todo debe estar pensado para un entorno operativo exigente y en constante cambio.
 
-### 1.2.2.3 Lean Ux Process Hypothesis Statement
+#### 1.2.2.3 Lean Ux Process Hypothesis Statement
 
 - Creemos que los capitanes de cruceros y sus jefes de ruta
 realizarán consultas frecuentes sobre condiciones de riesgo geopolítico y bloqueos marítimos a través de una plataforma digital con mapas interactivos y actualizaciones en tiempo real
