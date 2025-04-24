@@ -466,24 +466,24 @@ Creamos los User Journey Maps con el objetivo de comprender la experiencia de nu
 ### 2.3.4. Empathy Mapping
 Para el desarrollo de los Empathy Map hemos utilizado la información recopilada en base a nuestros dos User Personas que representan nuestro segmento.
 
-**_Segmento 1: Estudiantes Universitarios_**
+**_Segmento 1: Agencias de embarcaciones navieras_**
 
 ![alt text](<../assets/imgs/Jorge Diaz Malca - Empathy.png>)
 
-**_Segmento 2: Profesional urbano_**
+**_Segmento 2:  Transportista Maritimo (Capitan o Jefe de navegación)_**
 
 ![alt text](<../assets/imgs/Alex Brocca - empathy.png>)
 
 ### 2.3.5. As-is Scenario Mapping
 Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
 
-**_Segmento 1: Transportista Maritimo (Capitan o Jefe de navegación)**
+**_Segmento 1: Agencias de embarcaciones navieras_**
+
+<td><img src="../../assets/img/chapter-II/AS-IS_2.png" style="width:1000px; height:auto;" alt=""></td>
+
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
 <td><img src="../../assets/img/chapter-II/AS-IS_1.png" style="width:1000px; height:auto;" alt=""></td>
-
-**_Segmento 2: Profesional urbano_**
-
-![alt text](<../assets/imgs/as-is publico.jpg>)
 
 ### 2.3.6. Ubiquitous Language
 
