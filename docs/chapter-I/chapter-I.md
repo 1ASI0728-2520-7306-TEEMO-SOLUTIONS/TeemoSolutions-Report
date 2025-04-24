@@ -167,7 +167,7 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 
 ### 1.2.2.1  Problem Statement
  
-## Incidentes en el mar rojo
+- **Incidentes en el mar rojo**
 
 En el contexto actual de tensiones geopolíticas y conflictos en el Mar Rojo, la industria naviera global enfrenta interrupciones críticas en las rutas comerciales, lo que ha generado congestión en los puertos, aumento en los precios del transporte y demoras en los tiempos de entrega. Este escenario afecta directamente a empresas como Teemo, que dependen del comercio marítimo para sostener su cadena de suministro eficiente y competitiva.
 
@@ -177,25 +177,25 @@ Los operadores logísticos y los responsables de planificación de inventarios e
 
 ### 1.2.2.2 Lean Ux Assumptions 
 
-### Buisness Assumptions
+**Business Assumptions**
 
-- Los usuarios principales son los encargados de logística de alguna embarcacion y personas que trabajan como capitanes o similar en algun crucero.
+- Los usuarios principales son los encargados de logística de alguna embarcación y personas que trabajan como capitanes o similar en algún crucero.
 
 - Los clientes valoran la estabilidad, visibilidad y previsibilidad en la cadena de suministro.
 
 - Los clientes estarían dispuestos a adoptar nuevas herramientas o procesos si les ayudan a anticipar y responder mejor ante interrupciones logísticas.
 
-- Podriamos enfrentar mucha incertidumbre y presión debido a los retrasos y al aumento de los costos logísticos.
+- Podríamos enfrentar mucha incertidumbre y presión debido a los retrasos y al aumento de los costos logísticos.
 
 - Si logramos reducir la incertidumbre en la planificación, mi equipo podrá minimizar el impacto de los retrasos y ahorrar costos a mediano y largo plazo.
 
 - Si hacemos la cadena de suministro más resiliente, podemos asegurar la continuidad operativa de Teemo y mejorar la experiencia de mis clientes.
 
-- Si logramos tener una reaccion rápida ante interrupciones podría convertirse en una ventaja competitiva clave frente a otras empresas del rubro.
+- Si logramos tener una reacción rápida ante interrupciones podría convertirse en una ventaja competitiva clave frente a otras empresas del rubro.
 
 - Si evitamos alguna parálisis en la producción por falta de insumos, podremos proteger ingresos clave y reduciendo pérdidas operativas.
 
-### User Assumptions
+**User Assumptions**
 
 - ¿Quién es el usuario?
 
@@ -221,7 +221,7 @@ Teemo es utilizado cuando los usuarios planifican rutas de embarcaciones que tra
 
 Teemo debe ser visual, intuitivo y orientado a la acción. La interfaz debe presentar mapas dinámicos, indicadores de riesgo fácilmente interpretables y rutas sugeridas de forma clara. Debe comportarse como una herramienta confiable y rápida, que facilite la toma de decisiones en tiempo crítico y minimice la carga cognitiva del usuario. Todo debe estar pensado para un entorno operativo exigente y en constante cambio.
 
-### 1.2.2.3Lean Ux Proccess Hypothesis Statement
+### 1.2.2.3 Lean Ux Process Hypothesis Statement
 
 - Creemos que los capitanes de cruceros y sus jefes de ruta
 realizarán consultas frecuentes sobre condiciones de riesgo geopolítico y bloqueos marítimos a través de una plataforma digital con mapas interactivos y actualizaciones en tiempo real
@@ -229,7 +229,7 @@ porque necesitan anticiparse a interrupciones en sus rutas y evitar decisiones d
 
 - Creemos que las agencias navieras ubicadas cerca al Mar Rojo
 realizarán recomendaciones logísticas más acertadas y proactivas a sus clientes
-a través de el uso de reportes automatizados y escenarios de simulación que ofrece Teemo porque están buscando mejorar su eficiencia operativa y posicionarse como socios estratégicos en contextos de crisis.
+a través del uso de reportes automatizados y escenarios de simulación que ofrece Teemo porque están buscando mejorar su eficiencia operativa y posicionarse como socios estratégicos en contextos de crisis.
 
 - Creemos que los jefes de ruta en operaciones internacionales
 realizarán ajustes dinámicos a sus planes de navegación con base en los datos de Teemo a través de una interfaz que les permite visualizar rutas sugeridas con menor riesgo y mayor eficiencia
@@ -237,7 +237,7 @@ porque quieren reducir tiempos de entrega, costos adicionales por desvíos y pre
 
 #### 1.2.2.4. Lean UX Canvas
 
-- Mediante la realizacion Lean UX Canvas podemos mostrar toda informacion anterior pero de una manera resumida, didactica y mas accesible al lector. Tambien se resume la problematica que estamos abordando y la solucion que proponemos, junto con los supuestos de las hipotesis y los puntos mas importantes de las mismas.
+- Mediante la realización Lean UX Canvas podemos mostrar toda información anterior pero de una manera resumida, didáctica y más accesible al lector. También se resume la problemática que estamos abordando y la solución que proponemos, junto con los supuestos de las hipótesis y los puntos más importantes de las mismas.
 
 ![Lean UX Canvas](../assets/BICIBREEZE%20CANVAS.png)
 
