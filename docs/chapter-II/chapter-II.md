@@ -342,9 +342,11 @@ Creamos los User Journey Maps con el objetivo de comprender la experiencia de nu
 
 **_Segmento 1: Agencias de embarcaciones navieras_**
 
+![alt text](<../../assets/img/chapter-II/Diego Bertie Journey Map.png>)
 
 **_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
+![alt text](<../../assets/img/chapter-II/Ronaldinho Luna journey map.png>)
 
 ### 2.3.4. Empathy Mapping
 Para el desarrollo de los Empathy Map hemos utilizado la información recopilada en base a nuestros dos User Personas que representan nuestro segmento.
