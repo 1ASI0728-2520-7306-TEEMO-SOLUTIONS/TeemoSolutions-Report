@@ -70,7 +70,7 @@ Las User Stories son una herramienta fundamental para definir los requisitos del
 ##### 3.3. Impact Mapping.
 
 ##### Segmento 1: Empresas Hoteleras
-![Impact Map Empresas Hoteleras](../imgs/Impact_map_Empresas_Hoteleras.png)
+<td><img src="../../assets/img/chapter-III/Impact-Mapping-2.png" style="width:1000px; height:auto;" alt=""></td>
 
 ##### Segmento 2: Huespedes
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
