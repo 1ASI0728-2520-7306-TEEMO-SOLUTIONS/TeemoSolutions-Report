@@ -162,19 +162,17 @@ En el proceso de investigación para nuestro proyecto, se llevaron a cabo entrev
 
 Link de la entrevista: 
 
-**Segmento 1: Capitanes de crucero o sus jefes de ruta**
+**Segmento 1: Agencias de embarcaciones navieras**
 
 #### Entrevista 1:
 
-**Nombre y Apellido:** Gabriel Garcia
+**Nombre y Apellido:** Arwen Vasquez
 
 **Edad:** 21 años
 
-**Distrito:** Carabayllo
+**Distrito:** Callao
 
 **Screenshot de la Entrevista:**
-
-![alt text](<../assets/imgs/Entrevista Gabo.png>)
 
 **Timelapse:** [Inicio: 00:00, Fin: 06:53]
 
@@ -186,15 +184,13 @@ Entre los desafíos para ir a la universidad menciona el tráfico excesivo, que 
 
 #### Entrevista 2:
 
-**Nombre y Apellido:** Diego Flores
+**Nombre y Apellido:** Mariela Sanchez
 
 **Edad:** 20 años
 
-**Distrito:** Barranco
+**Distrito:** Callao
 
 **Screenshot de la Entrevista:**
-
-![alt text](<../assets/imgs/Entrevista Diego.png>)
 
 **Timelapse:** [Inicio: 06:53, Fin: 10:28]
 
@@ -203,27 +199,27 @@ Diego Flores, un estudiante de 20 años que vive en Barranco, utiliza principalm
 
 #### Entrevista 3:
 
-**Nombre y Apellido:** Joseph Ulises Yacho Peralta
+**Nombre y Apellido:** Alejandro Rivas
 
 **Edad:** 20 años
 
-**Distrito:** Rimac 
+**Distrito:** Callao
 
 **Screenshot de la Entrevista:**
 
-![alt text](<../assets/imgs/Entrevista Mathifa.png>)
 
 **Timelapse:** [Inicio: 10:28, Fin: 16:46]
 
 **Resumen de la Entrevista:**
-Joseph Ulises Yacho Peralta, de 20 años y estudiante de ingeniería de software en su sexto ciclo, utiliza principalmente su laptop para sus actividades diarias, llevándola consigo a la universidad y otros lugares. Prefiere navegar con Chrome y Edge y para comunicarse opta por llamadas virtuales a través de Zoom o Meet. En cuanto a transporte, su principal preocupación es el riesgo de robo al llevar su laptop en el transporte público, por lo que usa su carnet universitario para reducir costos. Aunque no tiene bicicleta propia, ocasionalmente utiliza la de su hermano para moverse por su zona. Está interesado en un servicio de suscripción de bicicletas, siempre que las estaciones estén a una distancia conveniente. Le gustan las bicicletas clásicas como las BMX, y estaría dispuesto a pagar entre 20 y 30 soles al mes, ya que actualmente gasta unos 60 soles en pasajes. Además, le gustaría ver promociones como descuentos por meses de uso o sorteos para suscriptores recurrentes, lo cual haría el servicio más atractivo para él y otros estudiantes.
+
+Alejandro Rivas, de 20 años y estudiante de ingeniería de software en su sexto ciclo, utiliza principalmente su laptop para sus actividades diarias, llevándola consigo a la universidad y otros lugares. Prefiere navegar con Chrome y Edge y para comunicarse opta por llamadas virtuales a través de Zoom o Meet. En cuanto a transporte, su principal preocupación es el riesgo de robo al llevar su laptop en el transporte público, por lo que usa su carnet universitario para reducir costos. Aunque no tiene bicicleta propia, ocasionalmente utiliza la de su hermano para moverse por su zona. Está interesado en un servicio de suscripción de bicicletas, siempre que las estaciones estén a una distancia conveniente. Le gustan las bicicletas clásicas como las BMX, y estaría dispuesto a pagar entre 20 y 30 soles al mes, ya que actualmente gasta unos 60 soles en pasajes. Además, le gustaría ver promociones como descuentos por meses de uso o sorteos para suscriptores recurrentes, lo cual haría el servicio más atractivo para él y otros estudiantes.
 
 
-**Segmento 2: Agencias de embarcaciones navieras**
+**Segmento 2: Capitanes de crucero o sus jefes de ruta**
 
 #### Entrevista 1:
 
-**Nombre y Apellido:** Jeremy Morales
+**Nombre y Apellido:** Patricia Salas
 
 **Edad:** 24 años
 
@@ -231,11 +227,10 @@ Joseph Ulises Yacho Peralta, de 20 años y estudiante de ingeniería de software
 
 **Screenshot de la Entrevista:**
 
-![Entrevista Jeremy](<../assets/imgs/Entrevista Jeremy.png>)
-
 **Timelapse:** [Inicio: 16:46, Fin: 24:38]
 
 **Resumen de la Entrevista:**
+
 El entrevistado es un joven de 24 años que vive en el distrito de Surquillo. Es soltero pero tiene pareja actualmente. Terminó la universidad hace un par de años y trabaja como analista de datos en Culqui.
 
 En cuanto a herramientas tecnológicas, utiliza una PC con sistema operativo Windows en su trabajo debido a los programas que emplea, como SQL, Visual Code y Trino. Para su uso personal, utiliza un celular con sistema operativo Android. Prefiere el navegador Brave por su eficiencia y menor consumo de datos, aunque en su trabajo usa Google Chrome. Para comunicarse, prefiere los mensajes por WhatsApp porque le permite responder en su propio tiempo.
@@ -248,15 +243,13 @@ Le atrae la idea de un servicio de alquiler de bicicletas que permita tomar una 
 
 #### Entrevista 2:
 
-**Nombre y Apellido:**Mariela Sanchez
+**Nombre y Apellido:** Mariela Sanchez
 
-**Edad:** 39 años
+**Edad:** 40 años
 
 **Distrito:** Callao
 
 **Screenshot de la Entrevista:**
-
-![Entrevista Mariela](<../assets/imgs/Entrevista Mathifa2.png>)
 
 **Timelapse:** [Inicio: 24:38, Fin: 29:22]
 
@@ -271,15 +264,13 @@ De tal modo, la entrevista se realizó para entender mejor las preferencias y ne
 
 #### Entrevista 3:
 
-**Nombre y Apellido:** Miguel Polo
+**Nombre y Apellido:** Alejandro Rivas
 
-**Edad:** 19 años
+**Edad:** 45
 
-**Distrito:** Centro de Lima
+**Distrito:** Jesus Maria
 
 **Screenshot de la Entrevista:**
-
-![Entrevista Miguel](<../assets/imgs/Entrevista Mathifa3.png>)
 
 **Timelapse:** [Inicio: 29:22, Fin: 33:41]
 
@@ -293,130 +284,24 @@ En su tiempo libre, es probable que Miguel disfrute de actividades al aire libre
 
 ### 2.2.3. Análisis de entrevistas
 
-**_Segmento 1: Capitanes de cruceros y jefes de ruta marítima_**
+**_Segmento 1: Agencias de embarcaciones navieras_**
 
-**Edad:**
-
-21 años: 1, 33.3%
-20 años: 2, 66.6%
-
-De esto, se puede notar que la mayoría de los entrevistados (66.6%) tiene 20 años, mientras que solo el 33.3% tiene 21 años.
-
-**Distrito:**
-
-Carabayllo: 1, 33.3%
-Barranco: 1, 33.3%
-Rímac: 1, 33.3%
-
-Se observa que todos los entrevistados viven en distritos diferentes. Carabayllo y Rímac están más alejados del centro, mientras que Barranco está en una zona más céntrica de Lima.
-
-**Estado Civil:**
-
-Soltero: 3, 100%
-
-De esto, se determina que el 100% de los entrevistados es soltero.
-
-**Dispositivos:**
-iPhone: 2, 66.6% en celulares, 33.3% en general
-PC Windows: 2, 66.6% en computadoras, 33.3% en general
-Laptop Windows: 1, 33.3% en computadoras, 16.67% en general
-
-De esto, se puede notar que la mayoría (66.6%) utiliza iPhone como celular, y el 66.6% usa una PC con Windows, aunque el 33.3% también usa una laptop con Windows.
-
-**Navegadores:**
-
-Google Chrome: 3, 100%
-Opera (Opera GX): 2, 66.6%
-Safari: 1, 33.3%
-Edge: 1, 33.3%
-
-El 100% de los entrevistados usa Google Chrome. Además, el 66.6% utiliza Opera (incluyendo Opera GX), y Safari y Edge son usados por el 33.3% de los entrevistados, respectivamente.
-
-**Canales de Comunicación:**
-
-Redes sociales: 2, 66.6%
-Llamadas (telefónicas o virtuales): 2, 66.6%
-Encuentros presenciales: 1, 33.3%
-
-La mayoría de los entrevistados (66.6%) prefiere comunicarse mediante redes sociales o llamadas telefónicas o virtuales, mientras que un 33.3% prefiere los encuentros presenciales.
-
-**Marcas que le influencian:**
-
-Adidas: 2, 66.6%
-Apple: 2, 66.6%
-Microsoft: 1, 33.3%
-
-El 66.6% de los entrevistados está influenciado por marcas como Adidas y Apple. Solo un 33.3% menciona a Microsoft como marca influyente.
-
-**_Segmento 2: Agencias de embarcaciones navieras_**
-
-**Edad:**
-
-19 años: 1, 33.3%
-20 años: 1, 33.3%
-24 años: 1, 33.3%
-
-De esto, se puede notar que todos los entrevistados tienen edades distintas, representando cada uno un tercio del grupo.
-
-**Distrito:**
-
-Callao: 1, 33.3%
-Lima: 1, 33.3%
-Surquillo: 1, 33.3%
-
-Todos los entrevistados viven en distritos diferentes, lo que muestra una diversidad en la ubicación geográfica dentro de Lima y el Callao.
-
-**Estado Civil:**
-
-Soltero: 2, 66.6%
-Casado: 1, 33.3%
-
-De esto, se puede observar que la mayoría (66.6%) de los entrevistados es soltero, mientras que un tercio está casado.
-
-**Ocupación:**
-
-Trabaja: 3, 100%
-
-Todos los entrevistados están trabajando actualmente, a diferencia de los anteriores que eran estudiantes.
-
-**Dispositivos:**
-
-Celular Android: 2, 66.6%
-Celular (no especificado): 1, 33.3%
-Computadora con Windows: 3, 100%
-
-Todos los entrevistados usan una computadora con Windows. Además, la mayoría usa un celular Android.
-
-**Navegadores:**
-
-Chrome: 2, 66.6%
-Opera: 1, 33.3%
-Brave: 1, 33.3%
-
-De esto, se observa que Chrome es el navegador más utilizado, seguido por Opera y Brave, que son usados por un tercio de los entrevistados.
-
-**Canales de Comunicación:**
-
-WhatsApp: 2, 66.6%
-Google Meet: 1, 33.3%
-Reuniones presenciales: 1, 33.3%
-
-La mayoría de los entrevistados prefiere WhatsApp, mientras que Google Meet y las reuniones presenciales son utilizados por un tercio de los entrevistados.
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
 ## 2.3. Needfinding
 Posteriormente a las entrevistas, pudimos obtener la información sobre sus deseos, frustraciones, situación y múltiples datos que nos van a servir para satisfacer sus necesidades, mejorando la experiencia a nuestros usuarios. 
 Esta información también nos ayudará a realizar los esquemas para las secciones de User Personas, User Task Matrix, User Journey Maps y el Empathy Mapping.
 
 ### 2.3.1. User Persona
-Para desarrollar BiciBreeze, hemos entrevistado a estudiantes y usuarios de bicicletas. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
+Para desarrollar Mushroom, hemos entrevistado a estudiantes y usuarios de bicicletas. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
 
-**_Segmento 1: Estudiantes Universitarios_**
+**_Segmento 1: Agencias de embarcaciones navieras_**
 
-![alt text](<../assets/imgs/Jorge Diaz Malca - User Persona.png>)
+![alt text](<../../assets/img/chapter-II/Diego Bertie-User Persona.png>)
 
-**_Segmento 2: Profesional urbano_**
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
-![alt text](<../assets/imgs/Alex Brocca.png>)
+![alt text](<../../assets/img/chapter-II/Ronaldinho Luna-user persona.png>)
 
 ### 2.3.2. User Task Matrix
 
@@ -435,7 +320,7 @@ Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la 
 | Simular rutas con menor riesgo y costo     |Baja                    | Diaria                 
 | Generar informes para clientes o directivos                    |Media                     | Ocasionalmente    
 
-**_Segmento 2: Capitanes de crucero o jefes de ruta_**
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
 | Tareas                                                        |  Importancia   |   Frecuencia               |
 |---------------------------------------------------------------|--------------------------|--------------------------
@@ -455,24 +340,21 @@ Las agencias de embarcaciones navieras, al estar centradas en la planificación 
 
 Creamos los User Journey Maps con el objetivo de comprender la experiencia de nuestro cliente al utilizar nuestra aplicación. Por ende, cada paso que el cliente realiza se detalla minuciosamente, incluyendo el proceso, los obstáculos encontrados y los pensamientos o emociones que surgen a raíz de ello.
 
-**_Segmento 1: Estudiantes Universitarios_**
+**_Segmento 1: Agencias de embarcaciones navieras_**
 
-![alt text](<../assets/imgs/Jorge Diaz Malca - Journey.png>)
 
-**_Segmento 2: Profesional urbano_**
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
-![alt text](<../assets/imgs/Alex Brocca - Journey.png>)
 
 ### 2.3.4. Empathy Mapping
 Para el desarrollo de los Empathy Map hemos utilizado la información recopilada en base a nuestros dos User Personas que representan nuestro segmento.
 
 **_Segmento 1: Agencias de embarcaciones navieras_**
 
-![alt text](<../assets/imgs/Jorge Diaz Malca - Empathy.png>)
 
-**_Segmento 2:  Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
-![alt text](<../assets/imgs/Alex Brocca - empathy.png>)
+
 
 ### 2.3.5. As-is Scenario Mapping
 Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
