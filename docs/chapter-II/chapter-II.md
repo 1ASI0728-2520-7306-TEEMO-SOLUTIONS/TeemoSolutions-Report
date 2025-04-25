@@ -353,10 +353,11 @@ Para el desarrollo de los Empathy Map hemos utilizado la información recopilada
 
 **_Segmento 1: Agencias de embarcaciones navieras_**
 
+![alt text](<../../assets/img/chapter-II/Diego Bertie - Empathy map.png>)
 
 **_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
 
-
+![alt text](<../../assets/img/chapter-II/Ronaldinho Luna - Empathy map.png>)
 
 ### 2.3.5. As-is Scenario Mapping
 Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
