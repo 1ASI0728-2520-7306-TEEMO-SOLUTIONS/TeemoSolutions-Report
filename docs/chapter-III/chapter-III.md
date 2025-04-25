@@ -124,7 +124,7 @@ Requisitos definidos junto con el conjunto de User Stories y Epics para los requ
 ![Impact Map Empresas Hoteleras](../imgs/Impact_map_Empresas_Hoteleras.png)
 
 ##### Segmento 2: Huespedes
-![Impact Map Huespedes](../imgs/Impact_map_Huespedes.png)
+<td><img src="../../assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
 
 ##### 3.4. Product Backlog.
 
