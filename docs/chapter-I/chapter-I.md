@@ -285,7 +285,7 @@ Como herramienta de consulta diaria para el trazado de rutas, evaluación de rie
 
 - Mediante la realización Lean UX Canvas podemos mostrar toda información anterior pero de una manera resumida, didáctica y más accesible al lector. También se resume la problemática que estamos abordando y la solución que proponemos, junto con los supuestos de las hipótesis y los puntos más importantes de las mismas.
 
-![Lean UX Canvas](../assets/BICIBREEZE%20CANVAS.png)
+![Lean UX Canvas](../../assets/img/chapter-I/Lean%20UX%20Canvas%20Mushroom.png)
 
 ## 1.3. Segmentos Objetivos
 
