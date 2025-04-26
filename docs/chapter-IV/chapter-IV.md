@@ -49,7 +49,12 @@
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-
+Para la búsqueda eficiente de nuestra plataforma en los buscadores web se emplearon las siguientes tags:
+- Title: Mushroom
+- Meta Tags:
+    - Description: Plataforma de optimización de rutas marítimas mediante tecnología inteligente.
+    - Keywords: rutas marítimas, transporte de carga maritima, viajes maritimos, contenedores en embarcaciones de carga
+    - Author: TEEMO-SOLUTIONS
 
 ### 4.2.4. Searching Systems
 
