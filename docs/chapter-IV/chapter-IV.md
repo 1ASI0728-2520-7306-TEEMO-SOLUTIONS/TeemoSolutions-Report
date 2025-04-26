@@ -44,7 +44,7 @@ En esta seccion definiremos los estilos de diseño frontend que serán la base p
 **Typography:** Al seleccionar la tipografía para nuestro proyecto, hemos optado por utilizar Roboto siguiendo las pautas de estilo general. Ya que ofrece una combinación única de legibilidad, versatilidad y modernidad que se alinea perfectamente con la identidad visual y los objetivos de Mushroom. Su diseño limpio y contemporáneo proporciona una excelente lectura en una amplia gama de dispositivos, lo que garantiza una experiencia de usuario óptima para nuestros clientes, que incluyen tanto agencias de embarcaciones navieras como exportadores e importadores de alta rotacion.
 <img src="../../assets/img/chapter-IV/Tipografia.png" style="width:700px; height:auto;" alt="tipography">
 
-**Colors:** Hemos escogido una paleta basada en colores suaves y elegantes, algo frios para dar sensacion de premiun . De tal modo, estos generan un ambiente profesional y acogedor para el usuario final.
+**Colors:** Hemos escogido una paleta basada en colores suaves y elegantes, algo fríos para dar sensación de premium . De tal modo, estos generan un ambiente profesional y acogedor para el usuario final.
 Los tonos más claros pueden ser utilizados para fondos o elementos de diseño amplios, mientras que los colores más oscuros serán para textos o detalles más específicos asegurando legibilidad y contraste entre ellos.
 <img src="../../assets/img/chapter-IV/Styles colors.png" style="width:700px; height:auto;" alt="colors">
 
