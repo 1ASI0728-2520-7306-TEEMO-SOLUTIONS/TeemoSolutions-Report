@@ -137,7 +137,7 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
     - ¿Estado Civil?
     - ¿Cual es su ocupación? ¿Estudia y/o trabaja?
 
-**Preguntas para Estudiantes Universitarios**
+**Preguntas para Agencias de embarcaciones navieras**
 - ¿Cuál es su rol a bordo o dentro del equipo de planificación de rutas del crucero?
 - ¿Cuántos años de experiencia tiene navegando o coordinando rutas internacionales?
 - ¿Qué tipo de cruceros opera actualmente (turísticos, de lujo, rutas regionales, etc.)?
@@ -146,7 +146,7 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
 - ¿Quién toma la decisión final cuando se necesita desviar una ruta por razones de seguridad?
 - ¿Cómo acceden a información meteorológica, geopolítica o logística antes de cada travesía?
 
-**Preguntas para el segmento: Agencias de embarcaciones navieras**
+**Preguntas para el segmento: Capitanes de crucero o sus jefes de ruta**
 - ¿Cuál es su rol dentro de la agencia naviera?
 - ¿Cuántos barcos o rutas supervisa actualmente su agencia?
 - ¿Qué tipos de embarcaciones manejan con más frecuencia (mercantes, petroleros, cruceros, etc.)?
@@ -160,86 +160,49 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
 ### 2.2.2. Registro de entrevistas 
 En el proceso de investigación para nuestro proyecto, se llevaron a cabo entrevistas del público objetivo. Cada entrevista se documentó en video y se registraron los siguientes detalles:
 
-Link de la entrevista: 
+Link de la entrevista: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a955_upc_edu_pe/ERshpHqBeD1Btquo46R2npsBg3-ZqoIrr90kLY8Ix_a4qw?e=brkSf8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 **Segmento 1: Agencias de embarcaciones navieras**
 
 #### Entrevista 1:
 
-**Nombre y Apellido:** Arwen Vasquez
+**Nombre y Apellido:** Patricia Salas
 
-**Edad:** 21 años
-
-**Distrito:** Callao
-
-**Screenshot de la Entrevista:**
-
-**Timelapse:** [Inicio: 00:00, Fin: 06:53]
-
-**Resumen de la Entrevista:**
-El entrevistado es Gabriel García, un estudiante de 21 años que vive en Carabayllo. Usa principalmente su iPhone y prefiere navegadores como Safari, Opera y Chrome. Para comunicarse, prefiere llamadas telefónicas y redes sociales como Instagram, Facebook y WhatsApp. Sus marcas que han influenciado en el son Adidas y Apple ya que han tenido un gran impacto en él.
-
-Entre los desafíos para ir a la universidad menciona el tráfico excesivo, que retrasa su llegada. Aunque no usa bicicletas frecuentemente, estaría dispuesto a suscribirse a un servicio de alquiler de bicicletas para ahorrar tiempo y contribuir al medio ambiente. Considera importantes la calidad de las bicicletas, estaciones bien ubicadas y un precio accesible. Estaría dispuesto a pagar 30 soles al mes por el servicio y valora promociones en alimentos, descuentos en ropa y conexiones con servicios como gimnasios.
-
-
-#### Entrevista 2:
-
-**Nombre y Apellido:** Mariela Sanchez
-
-**Edad:** 20 años
+**Edad:** 45 años
 
 **Distrito:** Callao
 
-**Screenshot de la Entrevista:**
+**Screenshot de la Entrevista:** 
+![alt text](<../../assets/img/chapter-II/Captura entrevista 1.1.png>)
 
-**Timelapse:** [Inicio: 06:53, Fin: 10:28]
-
-**Resumen de la Entrevista:**
-Diego Flores, un estudiante de 20 años que vive en Barranco, utiliza principalmente un iPhone y una PC con Windows, y prefiere navegadores como Chrome y Opera GX. Para comunicarse, opta por redes sociales y encuentros presenciales. Las marcas que más influyen en él son Adidas, Apple y Microsoft. En cuanto a transporte, enfrenta problemas de tráfico y tiempo al desplazarse a la universidad, lo que lo motiva a usar medios alternativos como bicicletas y scooters. Le interesa un servicio de suscripción de bicicletas, considerando cruciales las ubicaciones de las estaciones y un precio accesible, estando dispuesto a pagar 10 soles mensuales. También valora promociones como viajes gratuitos tras un número determinado de viajes, lo que lo haría más atractivo para estudiantes como él.
-
-#### Entrevista 3:
-
-**Nombre y Apellido:** Alejandro Rivas
-
-**Edad:** 20 años
-
-**Distrito:** Callao
-
-**Screenshot de la Entrevista:**
-
-
-**Timelapse:** [Inicio: 10:28, Fin: 16:46]
+**Timelapse:** [Inicio: 14:45, Fin: 20:19]
 
 **Resumen de la Entrevista:**
 
-Alejandro Rivas, de 20 años y estudiante de ingeniería de software en su sexto ciclo, utiliza principalmente su laptop para sus actividades diarias, llevándola consigo a la universidad y otros lugares. Prefiere navegar con Chrome y Edge y para comunicarse opta por llamadas virtuales a través de Zoom o Meet. En cuanto a transporte, su principal preocupación es el riesgo de robo al llevar su laptop en el transporte público, por lo que usa su carnet universitario para reducir costos. Aunque no tiene bicicleta propia, ocasionalmente utiliza la de su hermano para moverse por su zona. Está interesado en un servicio de suscripción de bicicletas, siempre que las estaciones estén a una distancia conveniente. Le gustan las bicicletas clásicas como las BMX, y estaría dispuesto a pagar entre 20 y 30 soles al mes, ya que actualmente gasta unos 60 soles en pasajes. Además, le gustaría ver promociones como descuentos por meses de uso o sorteos para suscriptores recurrentes, lo cual haría el servicio más atractivo para él y otros estudiantes.
+Patricia ocupa el rol de directora de planificación de rutas en una empresa de cruceros turísticos de alta gama. Cuenta con 22 años de experiencia coordinando rutas internacionales, especialmente en itinerarios de lujo por el Mediterráneo, Caribe y algunas travesías transatlánticas. Actualmente opera cruceros turísticos de lujo que ocasionalmente incluyen tramos por el Mar Rojo, aunque enfatizó que debido a los riesgos geopolíticos actuales, las rutas por esa zona han sido reducidas significativamente.
+Para la planificación y monitoreo en tiempo real, su equipo utiliza una combinación de plataformas AIS, mapas satelitales interactivos y un software interno de optimización de rutas que les permite ajustar trayectos en función de condiciones climáticas y alertas de seguridad. En cuanto a decisiones de desvío, Patricia explicó que, aunque el capitán tiene la última palabra a bordo, todas las decisiones importantes se toman en coordinación con el centro de control en tierra, donde ella participa directamente.
+El acceso a información crítica antes de cada travesía se realiza a través de briefings diarios, reportes meteorológicos internacionales, alertas geopolíticas emitidas por agencias de seguridad marítima y consultores externos especializados en riesgos marítimos. Patricia resaltó la importancia de mantener un flujo constante de información actualizada para garantizar tanto la seguridad de los pasajeros como la eficiencia de las operaciones.
+
+
 
 
 **Segmento 2: Capitanes de crucero o sus jefes de ruta**
 
 #### Entrevista 1:
 
-**Nombre y Apellido:** Patricia Salas
+**Nombre y Apellido:** Arwen Vasquez
 
-**Edad:** 24 años
+**Edad:** 40 años
 
-**Distrito:** Surquillo
+**Distrito:** Callao
 
-**Screenshot de la Entrevista:**
+**Screenshot de la Entrevista:** ![alt text](<../../assets/img/chapter-II/Captura entrevista 1.png>)
 
-**Timelapse:** [Inicio: 16:46, Fin: 24:38]
+**Timelapse:** [Inicio: 00:00, Fin: 05:01]
 
 **Resumen de la Entrevista:**
 
-El entrevistado es un joven de 24 años que vive en el distrito de Surquillo. Es soltero pero tiene pareja actualmente. Terminó la universidad hace un par de años y trabaja como analista de datos en Culqui.
-
-En cuanto a herramientas tecnológicas, utiliza una PC con sistema operativo Windows en su trabajo debido a los programas que emplea, como SQL, Visual Code y Trino. Para su uso personal, utiliza un celular con sistema operativo Android. Prefiere el navegador Brave por su eficiencia y menor consumo de datos, aunque en su trabajo usa Google Chrome. Para comunicarse, prefiere los mensajes por WhatsApp porque le permite responder en su propio tiempo.
-
-Las marcas que han tenido mayor impacto en él son Samsung, Microsoft, Xbox y Sennheiser. Estas marcas están relacionadas con sus intereses en tecnología, trabajo y entretenimiento.
-
-Sobre el uso de la bicicleta, la utiliza como medio de transporte dos veces por semana para ir al trabajo, ya que le toma aproximadamente media hora y es más eficiente y económico que otros medios de transporte como el Metropolitano. Las principales barreras que encuentra al usar la bicicleta en la ciudad son la falta de ciclovías y la poca consideración de los conductores hacia los ciclistas.
-
-Le atrae la idea de un servicio de alquiler de bicicletas que permita tomar una bicicleta en un punto y dejarla en otro, con múltiples estaciones disponibles. De igual modo, valora especialmente los descuentos, promociones y planes de suscripción mensual o anual que ofrezcan precios más atractivos. A la vez, considera razonable pagar cinco soles por hora o entre cuarenta y sesenta soles por día para alquilar una bicicleta en buen estado.
+Arwen es capitana de embarcaciones pesqueras industriales. Tiene 20 años de experiencia en navegación de alta mar, en especial en el Pacífico Sur. Actualmente no trabaja con cruceros turísticos; opera embarcaciones de pesca de altura, pero conoce bien la planificación de rutas. No transita por el Mar Rojo, ya que su zona de operación está en aguas sudamericanas, pero comentó que entiende la importancia de esa región para el comercio mundial. Para planificar rutas, se apoya en sonares marinos avanzados, cartografía electrónica y informes de corrientes oceánicas. Ella misma, como capitana, decide cambios de ruta si la seguridad de la tripulación está en riesgo, actuando de forma autónoma en alta mar. Accede a informes meteorológicos de alta frecuencia, alertas de fenómenos climáticos, y a redes de información marina compartida entre capitanes pesqueros.
 
 #### Entrevista 2:
 
@@ -249,44 +212,40 @@ Le atrae la idea de un servicio de alquiler de bicicletas que permita tomar una 
 
 **Distrito:** Callao
 
-**Screenshot de la Entrevista:**
+**Screenshot de la Entrevista:** ![alt text](<../../assets/img/chapter-II/Captura entrevista 2.png>)
 
-**Timelapse:** [Inicio: 24:38, Fin: 29:22]
+**Timelapse:** [Inicio: 05:01, Fin: 10:45]
 
 **Resumen de la Entrevista:**
-Mariela Sánchez, una mujer de 39 años que vive en el Callao y está casada, nos comenta que trabaja actualmente y usa principalmente su celular Android y una laptop con Windows. Prefiere el navegador Chrome y las reuniones presenciales para comunicarse con sus amistades y en temas de trabajo.
 
-En cuanto a su uso de la bicicleta, Mariela la utiliza 2-3 veces por semana. Prefiere este medio de transporte por su rapidez, los beneficios para la salud y su contribución al medio ambiente. Sin embargo, enfrenta desafíos como la falta de respeto a las ciclovías por parte de algunos conductores y el mal mantenimiento de estas vías.
-
-Respecto al servicio de alquiler de bicicletas, Mariela prefiere alquilar por días y valora la asistencia en caso de problemas mecánicos, como llantas ponchadas o fallos en los cambios. Considera razonable un precio de 5-6 soles por día y sugiere promociones para uso frecuente de lunes a viernes, con la posibilidad de dejar la bicicleta el sábado para mantenimiento.
-
-De tal modo, la entrevista se realizó para entender mejor las preferencias y necesidades de los usuarios y así mejorar el servicio. A su vez, se destacó la importancia de contar con asistencia técnica y precios competitivos, lo cual ayudará a la startup a ofrecer un servicio más atractivo y eficiente para sus clientes.
+Mariela es jefa de operaciones navieras encargada de coordinar rutas para cruceros turísticos regionales. Tiene 16 años de experiencia en logística marítima. Actualmente opera principalmente cruceros turísticos y de lujo, orientados a recorridos en Sudamérica y el Caribe. Aunque su operación no es frecuente en el Mar Rojo, explicó que en temporadas especiales coordinan rutas alternativas que bordean África.
+Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con softwares propios de planificación naviera. En caso de desvíos por riesgos, el capitán del barco tiene la última palabra, pero siempre con el respaldo del equipo de tierra. Mariela recurre a boletines meteorológicos internacionales, reportes de situación política y consultores de riesgos marítimos para cada travesía.
 
 #### Entrevista 3:
 
 **Nombre y Apellido:** Alejandro Rivas
 
-**Edad:** 45
+**Edad:** 40
 
-**Distrito:** Jesus Maria
+**Distrito:** Callao
 
-**Screenshot de la Entrevista:**
+**Screenshot de la Entrevista:** ![alt text](<../../assets/img/chapter-II/Captura entrevista 3.png>)
 
-**Timelapse:** [Inicio: 29:22, Fin: 33:41]
+**Timelapse:** [Inicio: 10:45, Fin: 14:45]
 
 **Resumen de la Entrevista:**
-Miguel Polo es un joven de 19 años que trabaja en Tailoy y está soltero. Vive en Lima y, a pesar de su juventud, muestra una gran responsabilidad y organización en su vida diaria. Utiliza principalmente una computadora con Windows para sus actividades tecnológicas y prefiere los navegadores Opera y Chrome para navegar por Internet. En cuanto a la comunicación, Miguel se inclina por usar WhatsApp para mensajes de texto y Google Meet para videoconferencias, lo que indica su comodidad tanto con la tecnología como con la interacción digital.
 
-Miguel es un usuario frecuente de la bicicleta, utilizándola todos los días para ir y volver del trabajo. Esta elección refleja su preferencia por la eficiencia y la rapidez, ya que considera que la bicicleta es un medio de transporte más rápido y sencillo en comparación con el microbús. Sin embargo, también enfrenta desafíos significativos, como la inseguridad vial y la falta de respeto hacia las ciclovías por parte de algunos conductores, lo que demuestra su conciencia sobre los problemas de infraestructura y seguridad en la ciudad.
-
-En su tiempo libre, es probable que Miguel disfrute de actividades al aire libre, dado su uso diario de la bicicleta. Su elección de herramientas tecnológicas y su preferencia por la comunicación digital sugieren que es una persona adaptada a las nuevas tecnologías y que valora la eficiencia en su vida cotidiana. Además, su disposición a participar en la entrevista y compartir sus opiniones indica que es una persona colaborativa y abierta a contribuir con ideas para mejorar servicios que beneficien a la comunidad.
-
+Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando rutas tanto regionales como de larga distancia. Actualmente, opera principalmente cruceros de carga pesada, no turísticos. Respecto al Mar Rojo, comentó que transita la zona aproximadamente dos veces al año, y que debido a la situación geopolítica reciente, deben extremar precauciones. Para la planificación y monitoreo de rutas, utiliza sistemas ECDIS (Electronic Chart Display and Information System) combinados con radar de alta precisión. Cuando hay necesidad de desviar la ruta por seguridad, él mismo toma la decisión final, pero siempre consultando previamente con la compañía naviera. Sobre la información previa al viaje, accede a informes meteorológicos satelitales, briefings de inteligencia marítima y actualizaciones de tráfico marítimo en tiempo real.
 
 ### 2.2.3. Análisis de entrevistas
 
 **_Segmento 1: Agencias de embarcaciones navieras_**
 
+Patricia Salas, con 22 años de experiencia en la coordinación de rutas internacionales, actualmente se desempeña como directora de planificación de rutas en una empresa de cruceros turísticos de lujo. Su rol consiste en diseñar y supervisar las rutas de los cruceros, asegurando la optimización de los trayectos y la seguridad de los pasajeros. Aunque sus cruceros transitan ocasionalmente por el Mar Rojo, destacó que debido a la situación geopolítica reciente han disminuido considerablemente sus pasos por esa zona. Para planificar y monitorear en tiempo real, Patricia y su equipo utilizan plataformas AIS, mapas satelitales interactivos y un software interno especializado en optimización de rutas, lo que les permite realizar ajustes inmediatos ante cualquier alerta. En cuanto a las decisiones de desvío por seguridad, explicó que, aunque el capitán a bordo tiene la decisión final, todo se coordina estrechamente con el centro de control en tierra, donde ella participa directamente en la evaluación de riesgos. Para mantenerse actualizados antes de cada travesía, acceden a briefings diarios, reportes meteorológicos, alertas geopolíticas de agencias internacionales y consultorías externas de seguridad marítima, demostrando un enfoque sistemático y multidisciplinario en la gestión de riesgos y planificación estratégica.
+
 **_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+
+Los capitanes y jefes de embarcaciones entrevistados comparten un perfil de alta experiencia, con entre 16 y 20 años navegando o coordinando rutas internacionales, y todos coinciden en que la decisión final ante un desvío por razones de seguridad siempre recae en el capitán a bordo. También es común el uso de tecnología avanzada para la planificación y monitoreo de rutas, incluyendo sistemas electrónicos como ECDIS, AIS, radares o sonares, así como la consulta regular de información meteorológica y geopolítica antes de cada travesía, aunque las fuentes y herramientas específicas varían según el tipo de operación. A pesar de estos puntos en común, existen diferencias claras: Alejandro opera buques de carga, Mariela coordina cruceros turísticos y de lujo, y Arwen lidera embarcaciones pesqueras industriales. Asimismo, mientras Alejandro transita rutas internacionales incluyendo el Mar Rojo, Mariela solo ocasionalmente se acerca a esta zona y Arwen opera exclusivamente en el Pacífico Sur. En cuanto a la obtención de información crítica, Alejandro depende de informes internos de inteligencia marítima, Mariela trabaja con consultores de riesgos externos, y Arwen se apoya en redes informales entre capitanes. A pesar de las diferencias en el tipo de embarcación y las zonas de operación, todos destacan que la seguridad de la tripulación y la actualización tecnológica constante son elementos fundamentales en su labor diaria.
 
 ## 2.3. Needfinding
 Posteriormente a las entrevistas, pudimos obtener la información sobre sus deseos, frustraciones, situación y múltiples datos que nos van a servir para satisfacer sus necesidades, mejorando la experiencia a nuestros usuarios. 
