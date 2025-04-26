@@ -40,10 +40,32 @@
 
 ## 4.2. Information Architecture
 ### 4.2.1. Organization Systems
+
+
+
 ### 4.2.2. Labeling Systems
+
+
+
 ### 4.2.3. SEO Tags and Meta Tags
+
+
+
 ### 4.2.4. Searching Systems
+
+
+
 ### 4.2.5. Navigation Systems
+
+En esta parte, se indicará los sistemas de navegación que se utilizaron para la búsqueda rápida de las secciones que son de interés para los usuarios para el la landing page y la aplicación web.
+
+Landing Page:
+- Home: En esta sección, se lleva al usuario a la presentación de Mushroom.
+- About: En esta sección, se lleva al usuario a la presentación del equipo, nuestra misión y una explicación breve de las suscripciones.
+- Subscriptions: En esta sección, se lleva al usuario a los planes disponibles para el uso de la aplicación web.
+- Customers: En esta sección, se lleva al usuario a los testimonios de usuarios que utilizaron la aplicación web.
+- Contact: En esta sección, se lleva al usuario a las maneras en que puede contactarnos.
+- Log In: Este botón cumple la función de ser un Call to Action que redirige a la aplicación web.
 
 ## 4.3. Landing Page UI Design
 ### 4.3.1. Landing Page Wireframe
