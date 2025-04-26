@@ -152,19 +152,19 @@ Puede acceder al contenido del repositorio pulsando sobre el siguiente ícono:
   <tbody>
     <tr>
       <td>Aru Acevedo, Yair Christofer</td>
-      <td></td>
+      <td>Yair360</td>
     </tr>
     <tr>
       <td>Lizano Coll Cardenas, Fernando Jesus</td>
-      <td></td>
+      <td>GuardianDeity</td>
     </tr>
     <tr>
       <td>Pescorán Angulo, Juan Fabritzzio</td>
-      <td></td>
+      <td>JuanPescoran</td>
     </tr>
     <tr>
       <td>Riega Salas, Jose Miguel</td>
-      <td></td>
+      <td>JoseRiega</td>
     </tr>
     <tr>
       <td>Vasquez Requejo, Augusto Mathias Leonardo</td>
