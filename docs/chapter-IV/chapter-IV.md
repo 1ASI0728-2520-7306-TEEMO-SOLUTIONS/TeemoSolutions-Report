@@ -136,7 +136,7 @@ Landing Page:
 ### 4.6.2. Web Applications Wireflow Diagrams
 ### 4.6.3. Web Applications Mock-ups
 
-
+<img src="../../assets/img/chapter-IV/mock-up-web-home.jpg" style="width:700px; height:auto;" alt="mock up landing page">
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
