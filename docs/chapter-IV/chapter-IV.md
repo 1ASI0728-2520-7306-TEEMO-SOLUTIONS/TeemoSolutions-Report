@@ -41,7 +41,10 @@
 ## 4.2. Information Architecture
 ### 4.2.1. Organization Systems
 
-
+- Sistemas de Organización Visual:
+    - Organización secuencial: Se utilizará para explicar de manera consecutiva, la información sobre la plataforma web. De esta manera, el usuario podrá ir conociendo paso a paso el funcionamiento de la aplicación. Esto conectando desde la introducción de la aplicación web hasta la manera de contactarnos con nosotros mostrando información relevante como los beneficios que proporcionamos a partir de nuestros planes, e incluso una breve explicación del uso de la aplicación con testimonios de usuarios que ya la utilizaron. 
+- Esquemas de Categorización de Contenido:
+    - Por tópicos: Se utilizará para distribuir los diferentes temas a tratar de nuestra plataforma, presentando cada tópico de manera separada como una sección en donde se explicará de manera más detallada la información necesaria para el uso de la plataforma en diferentes aspectos. Esto permitira que los usuarios solo deban buscar el tópico en el que tienen dudas o directamente buscar la sección donde puede realizar estas mismas consultas con un contacto directo.
 
 ### 4.2.2. Labeling Systems
 
