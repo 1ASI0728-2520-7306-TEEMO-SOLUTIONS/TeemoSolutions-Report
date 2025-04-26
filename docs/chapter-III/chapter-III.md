@@ -80,18 +80,18 @@ Las User Stories son una herramienta fundamental para definir los requisitos del
 
 # **Product Backlog - Funcionalidades de Teemo**
 
-| **ID** | **Título** | **Descripción** | **Story Points** |
-|-------|-------------|------------------|------------------|
-| US01 | Visualizar lista de puertos disponibles | Permitir al usuario ver una lista básica de puertos habilitados en el sistema. | 1 |
-| US02 | Mostrar ruta más corta entre dos puertos | Calcular y mostrar una ruta simple basada en el algoritmo A* (sin eventos todavía). | 5 |
-| US03 | Permitir seleccionar puerto de origen y destino | Dar opción al usuario de elegir desde qué puerto sale y a cuál debe llegar. | 2 |
-| US04 | Simular cierre de puerto en la ruta | Agregar una función manual para simular que un puerto o tramo se vuelve inaccesible. | 3 |
-| US05 | Notificar al usuario si la ruta es afectada | Mostrar un mensaje de alerta si un cierre afecta la ruta actual. | 2 |
-| US06 | Recalcular la ruta en caso de cierre | Permitir al sistema recalcular automáticamente una nueva ruta si se detecta un cierre. | 5 |
-| US07 | Mostrar información básica del viaje | Al completar el trayecto, mostrar el tiempo estimado de llegada y cantidad de saltos/nodos recorridos. | 2 |
-| US08 | Reporte de navegación sencillo | Generar un pequeño resumen final con los datos de la ruta utilizada y posibles eventos. | 3 |
-| US09 | Visualizar de las rutas | Mostrar un gráfico simple de los puertos y las rutas conectadas (no un mapa real aún). | 3 |
-| US10 | Guardar último viaje realizado | Guardar en memoria local el último viaje hecho para poder consultarlo después. | 2 |
+| **ID** | **Título** | **Descripción (Formato User Story)** | **Story Points** |
+|-------|-------------|---------------------------------------|------------------|
+| US01 | Visualizar lista de puertos disponibles | Como usuario, quiero visualizar una lista de puertos disponibles para poder seleccionar el puerto de origen y destino en mi navegación. | 1 |
+| US02 | Mostrar ruta más corta entre dos puertos | Como usuario, quiero que el sistema calcule y muestre la ruta más corta entre dos puertos, para optimizar el tiempo de viaje. | 5 |
+| US03 | Permitir seleccionar puerto de origen y destino | Como usuario, quiero seleccionar manualmente el puerto de salida y el de llegada para personalizar mi trayecto. | 2 |
+| US04 | Simular cierre de puerto en la ruta | Como administrador, quiero poder simular el cierre de un puerto o tramo para evaluar el impacto en la navegación y planificar alternativas. | 3 |
+| US05 | Notificar al usuario si la ruta es afectada | Como usuario, quiero recibir notificaciones cuando un cierre afecte mi ruta, para poder actuar rápidamente y evitar retrasos. | 2 |
+| US06 | Recalcular la ruta en caso de cierre | Como usuario, quiero que el sistema recalcule automáticamente la mejor ruta disponible cuando ocurra un cierre, para seguir avanzando sin interrupciones. | 5 |
+| US07 | Mostrar información básica del viaje | Como usuario, quiero visualizar información básica del viaje como tiempo estimado y cantidad de nodos recorridos para tener control de mi navegación. | 2 |
+| US08 | Reporte de navegación sencillo | Como usuario, quiero recibir un reporte final de mi viaje para analizar la ruta tomada, eventos ocurridos y tiempos de recorrido. | 3 |
+| US09 | Visualizar mapa esquemático de las rutas | Como usuario, quiero ver un mapa esquemático de los puertos y rutas conectadas para entender gráficamente el trayecto. | 3 |
+| US10 | Guardar último viaje realizado | Como usuario, quiero guardar el último viaje realizado para poder revisarlo posteriormente y evaluar mi desempeño. | 2 |
 
 
 
