@@ -32,8 +32,26 @@
 # **CAPÍTULO IV: PRODUCT DESIGN**
 
 ## 4.1. Style Guidelines
+
+En esta seccion definiremos los estilos de diseño frontend que serán la base para dar forma a nuestro producto, utilizando patrones que consideren los aspectos de arquitectura de la información y accesibilidad necesarios para la implementación exitosa de UrProvider tanto en una Landing Page como en una Aplicación Web.
+
 ### 4.1.1. General Style Guidelines
+
+**Branding:** El branding del logo de nuestra plataforma “Mushroom” es una combinación de elementos que transmiten una imagen sólida y confiable. Nos enfocamos en la confianza de nuestro clientes al momento de tomar un servicio prestado. El nombre “Mushroom” se presenta en una tipografía elegante y profesional, mientras que la paleta de colores crea un contraste visual claro y transmite una sensación de miminalismo y profesionalismo. En resumen, este logo tiene un enfoque clásico y profesional, y podría ser un elemento distintivo en nuestro sitio web.
+
+<img src="../../assets/img/chapter-IV/Logo Mushroom.png" style="width:300px; height:auto;" alt="logo mushroom">
+
+**Typography:** Al seleccionar la tipografía para nuestro proyecto, hemos optado por utilizar Roboto siguiendo las pautas de estilo general. Ya que ofrece una combinación única de legibilidad, versatilidad y modernidad que se alinea perfectamente con la identidad visual y los objetivos de Mushroom. Su diseño limpio y contemporáneo proporciona una excelente lectura en una amplia gama de dispositivos, lo que garantiza una experiencia de usuario óptima para nuestros clientes, que incluyen tanto agencias de embarcaciones navieras como exportadores e importadores de alta rotacion.
+<img src="../../assets/img/chapter-IV/Tipografia.png" style="width:700px; height:auto;" alt="tipography">
+
+**Colors:** Hemos escogido una paleta basada en colores suaves y elegantes, algo frios para dar sensacion de premiun . De tal modo, estos generan un ambiente profesional y acogedor para el usuario final.
+Los tonos más claros pueden ser utilizados para fondos o elementos de diseño amplios, mientras que los colores más oscuros serán para textos o detalles más específicos asegurando legibilidad y contraste entre ellos.
+<img src="../../assets/img/chapter-IV/Styles colors.png" style="width:700px; height:auto;" alt="colors">
+
 ### 4.1.2. Web Style Guidelines
+
+Para el Web Style Guidelines del sitio web "Mushroom" se utilizó con mayor presencia los colores pasteles en base a una paleta de colores que genere confianza y un ambiente acogedor para el usuario. El logo genera presencia por la combinación de elementos que transmiten una imagen sólida y confiable. A su vez, se ideó un estilo minimalista en el desarrollo del Landing Page para que el usuario tenga la facilidad de navegar y pueda observar las secciones con mayor orden. El tipo de Roboto combina con los colores anteriormente seleccionados, ya que brinda mayor flexibilidad y versatilidad. Para el desarrollo de los mockups y wireframes se utilizó en base a desarrollo web para pantallas de escritorio.
+
 ### 4.1.3. Mobile Style Guidelines
 #### 4.1.3.1. iOS Mobile Style Guidelines
 #### 4.1.3.2. Android Mobile Style Guidelines
