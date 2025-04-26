@@ -131,14 +131,6 @@ Esta metodología garantiza una organización efectiva del flujo de trabajo, fac
   
 - **develop:** Esta rama agrupa los elementos en desarrollo relacionados con el frontend, que han sido aprobados por al menos un miembro del equipo diferente del autor de las modificaciones. Sirve como etapa de integración y prueba de nuevas funcionalidades del frontend antes de ser fusionadas con master.
 
-# Ramas de Funcionalidades (Feature Branches)
-
-## Tabla 24: Modelo de todas las ramas implementadas dentro de la organización del proyecto en GitHub
-
-| **Nombre**    | **Descripción** |
-|---------------|-----------------|
-| feat/iam      | Gestiona los cambios relacionados con la implementación del sistema de gestión de identidades y accesos (IAM) en el backend. Esta implementación asegura la autenticación, autorización y control de permisos de usuarios, garantizando la seguridad del sistema y un acceso adecuado a los recursos según los roles asignados. |
-| feat/roadmaps | Agrupa los cambios correspondientes a la gestión de los roadmaps en el backend, incluyendo la lógica para la creación, almacenamiento y procesamiento de los datos relacionados con los roadmaps de los usuarios. Esto abarca la implementación de endpoints para la manipulación de datos, así como la optimización de consultas y almacenamiento en la base de datos para asegurar un rendimiento eficiente. |
 
 ## Ramas Individuales
 
