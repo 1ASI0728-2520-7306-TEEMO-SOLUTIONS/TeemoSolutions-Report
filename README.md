@@ -168,7 +168,7 @@ Puede acceder al contenido del repositorio pulsando sobre el siguiente ícono:
     </tr>
     <tr>
       <td>Vasquez Requejo, Augusto Mathias Leonardo</td>
-      <td></td>
+      <td>Mathifa519</td>
     </tr>
   </tbody>
 </table>
@@ -409,7 +409,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
@@ -421,7 +421,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> He identificado las fortalezas y debilidades de trabajos realizados anteriores y he podido hacer una mejora continua.
       </td>
       </tr>
       <tr>
@@ -437,7 +437,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
@@ -449,7 +449,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Esta solucion tecnologica que se propone será util para una problematica actual que se presenta.
       </td>
 </tr>
 </tbody>
