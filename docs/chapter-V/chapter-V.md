@@ -415,7 +415,7 @@ Durante esta reunión, se abordarán las características a desarrollar, los pla
         </tr>
             <tr>
             <td>Prepared by</td>
-            <td>Yen Cerna, Lucio Heli</td>
+            <td>Riega Salas, José Miguel</td>
         </tr>
             <tr>
             <td>Attendees (to planning meeting)</td>
