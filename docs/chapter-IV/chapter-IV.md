@@ -109,6 +109,9 @@ Landing Page:
 - Log In: Este botón cumple la función de ser un Call to Action que redirige a la aplicación web.
 
 ## 4.3. Landing Page UI Design
+
+El desarrollo del UI Design de la Landing Page está en el siguiente link: https://www.figma.com/design/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=0-1&p=f&t=xftwdiVWdTtj2j2G-0
+
 ### 4.3.1. Landing Page Wireframe
 
 <img src="../../assets/img/chapter-IV/wireframe-landing.jpg" style="width:700px; height:auto;" alt="wireframe landing page">
@@ -128,6 +131,9 @@ Landing Page:
 ### 4.5.2. iOS Mobile Applications Prototyping
 
 ## 4.6. Web Applications UX/UI Design
+
+El desarrollo del UI Design del Web Applications está en el siguiente link: https://www.figma.com/design/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=0-1&p=f&t=xftwdiVWdTtj2j2G-0
+
 ### 4.6.1. Web Applications Wireframes
 
 <img src="../../assets/img/chapter-IV/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
