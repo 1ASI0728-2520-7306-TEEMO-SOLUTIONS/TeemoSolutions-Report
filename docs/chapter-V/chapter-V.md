@@ -403,7 +403,7 @@ Durante esta reunión, se abordarán las características a desarrollar, los pla
         </tr>
         <tr>
             <td>Date</td>
-            <td>2024-09-14</td>
+            <td>2025-04-24</td>
         </tr>
           <tr>
             <td>Time</td>
