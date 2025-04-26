@@ -45,7 +45,13 @@
 
 ### 4.2.2. Labeling Systems
 
-
+En la Landing Page, se hace uso de etiquetas que son cortas e indican con claridad al usuario la sección que van a ingresar para ver la información. Siendo las siguientes etiquetas:
+- Home: Esta etiqueta indica la sección inicial donde está la información introductoria de la plataforma web.
+- About: Esta etiqueta indica la sección donde se habla sobre quienes somos, nuestra misión, introducción a las suscripciones y miembros que conforman el startup.
+- Subscriptions: Esta etiqueta indica la sección donde se muestra los planes disponibles para el uso de la plataforma web y sus beneficios.
+- Customers: Esta etiqueta indica la sección donde se muestra los testimonios que iran haciendo los usuarios con respecto a nuestra aplicación.
+- Contact: Esta etiqueta indica la sección donde se informará las maneras en las que nos pueden contactar para el feedback o por el plan Enterprise.
+- Log In: Esta etiqueta indica la opción que permitirá a los usuarios ingresar a nuestra plataforma. 
 
 ### 4.2.3. SEO Tags and Meta Tags
 
