@@ -252,7 +252,7 @@ Posteriormente a las entrevistas, pudimos obtener la información sobre sus dese
 Esta información también nos ayudará a realizar los esquemas para las secciones de User Personas, User Task Matrix, User Journey Maps y el Empathy Mapping.
 
 ### 2.3.1. User Persona
-Para desarrollar Mushroom, hemos entrevistado a estudiantes y usuarios de bicicletas. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
+Para desarrollar Mushroom, hemos entrevistado una persona que trabaja en una empresa de navieras. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
 
 **_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
