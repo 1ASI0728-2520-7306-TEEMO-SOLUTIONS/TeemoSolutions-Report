@@ -401,7 +401,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
+        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> Durante esta entrega, se utilizó las herramientas adecuadas para lograr completar las tareas asignadas para esta entrega como el uso de figma para la elaboración del UI Design de la Landing Page y Web Applications.
         <br><br>
         <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
         <br><br>
@@ -429,7 +429,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
+        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> Durante esta entrega, se elaboró el diseño e implementación de la solución propuesta para la ejecución adecuada del uso de rutas.
         <br><br>
         <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
         <br><br>
