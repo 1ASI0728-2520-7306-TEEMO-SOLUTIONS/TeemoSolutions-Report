@@ -384,8 +384,71 @@ Implementar buenas prácticas de accesibilidad, como utilizar widgets Semantics 
 En esta sección, procederemos a detallar de manera exhaustiva la configuración necesaria para implementar y desplegar nuestra solución, centrándonos específicamente en las áreas del FrontEnd. A lo largo de este análisis, enfatizaremos las mejores prácticas que deben seguirse, así como las herramientas más adecuadas a utilizar y los flujos de trabajo recomendados para garantizar una implementación eficaz y coordinada de ambas partes de nuestra solución. Además, discutiremos cómo cada decisión técnica impacta en la funcionalidad y la experiencia del usuario, proporcionando así un enfoque integral para el desarrollo de nuestras aplicaciones.
 
 **Landing Page:**
+
 ## 5.2. Product Implementation & Deployment
+A continuación, describimos en detalle el enfoque técnico que adoptaremos para la implementación, pruebas y despliegue de nuestra infraestructura FrontEnd, centrado en la creación y gestión de los componentes de la interfaz de usuario, así como en la integración con los servicios externos y el manejo eficiente de las API necesarias para el correcto funcionamiento de la aplicación. Este proceso abarca el desarrollo de interfaces FrontEnd escalables, el diseño de la Landing Page, la validación exhaustiva mediante pruebas unitarias y de integración, y la optimización del rendimiento antes de cada ciclo de despliegue en el entorno de producción. Durante esta fase, nos aseguraremos de que cada componente se alinee con las mejores prácticas de desarrollo y diseño, garantizando así una experiencia de usuario fluida y atractiva. Además, se prestará especial atención a la accesibilidad y la compatibilidad en diferentes navegadores, asegurando que nuestra aplicación sea inclusiva y utilizable por la mayor cantidad de usuarios posible.
+
 ### 5.2.1. Sprint Backlogs
+En esta sección se explicarán los detalles presentados y analizados durante la reunión del Sprint Planning para el Sprint número 1 de la implementación del FrontEnd. El objetivo principal de esta reunión es establecer un plan claro y realista que guíe el desarrollo de la interfaz de usuario, identificando las tareas específicas a realizar y comprometiéndose con un conjunto de entregables concretos que contribuyan al avance del proyecto por el lado de las funcionalidades principales de generación y edición de TeemoSolution. Este enfoque permite asegurar que todos los miembros del equipo tengan una comprensión compartida de los objetivos y las expectativas del sprint, lo que resulta esencial para la coordinación y efectividad en el trabajo colaborativo.
+
+Durante esta reunión, se abordarán las características a desarrollar, los plazos para cada tarea y los criterios de aceptación correspondientes. Además, se fomentará un diálogo abierto entre los integrantes del equipo para identificar posibles desafíos y oportunidades de mejora, asegurando que cada aspecto del desarrollo del FrontEnd esté alineado con las metas del proyecto. 
+
+<table>
+        <tr>
+            <td colspan="1">Sprint #</td>
+            <td colspan="1">Sprint 1</td>
+        </tr>
+        <tr>
+            <td colspan="2">Sprint Planning Background</td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>2024-09-14</td>
+        </tr>
+          <tr>
+            <td>Time</td>
+            <td>16:34</td>
+        </tr>
+            <tr>
+            <td>Location</td>
+            <td>Discord</td>
+        </tr>
+            <tr>
+            <td>Prepared by</td>
+            <td>Yen Cerna, Lucio Heli</td>
+        </tr>
+            <tr>
+            <td>Attendees (to planning meeting)</td>
+            <td>Pescorán Angulo, Juan Fabritzzio; Riega Salas, José Miguel; Lizano Coll Cardenas, Fernando Jesus; Vasquez Requejo, Augusto Mathias Leonardo</td>
+        </tr>
+            <tr>
+            <td>Sprint 1 Review Summary</td>
+            <td>Al finalizar el Sprint 1, se llevó a cabo la reunión de Sprint Review para evaluar el avance logrado en el desarrollo del FrontEnd de nuestra aplicación. Durante este sprint, el trabajo se enfocó principalmente en la creación de la Landing Page del proyecto, así como en funciones clave de la aplicación, incluyendo la generación y edición de TeemoSolutions y las secciones de inicio de sesión y registro.
+
+La reunión fue productiva tanto en términos de progreso en el software como de colaboración del equipo. Se presentaron las funcionalidades implementadas, se realizaron demostraciones de la interfaz y se recogieron aportes constructivos de los miembros del equipo y otros interesados. Estos comentarios fueron fundamentales para detectar oportunidades de mejora y ajustar la planificación para el siguiente sprint. La comunicación efectiva y el trabajo en equipo durante la revisión fortalecieron la cohesión del grupo y aseguraron que el desarrollo del FrontEnd siguiera alineado con los objetivos del proyecto.</td> 
+        </tr>
+            <tr>
+            <td>Sprint 1 Retrospective Summary</td>
+            <td>Durante la Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora, fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
+
+En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar la calidad del trabajo entregado y asegurar que el producto final cumpla con las expectativas de los usuarios. Se abordaron temas como la usabilidad de la interfaz, la coherencia en el diseño y la adopción de mejores prácticas en el desarrollo FrontEnd. Este intercambio de ideas no solo fortaleció la colaboración entre los miembros del equipo, sino que también estableció una base sólida para un enfoque más eficiente en los próximos sprints, garantizando que nuestro producto sea funcional, intuitivo y atractivo para nuestros clientes. </td>
+        </tr>
+            <tr>
+            <td colspan="2">Sprint Goal & User Stories</td>
+        </tr>
+              <tr>
+            <td>Sprint 1 Goal</td>
+            <td>Alcanzar una métrica de cumplimiento del 100%, lo que indicará que se ha logrado todos los objetivos del sprint 1 con todas las historias de usuario y otros materiales necesarios.</td>
+        </tr>
+              <tr>
+            <td>Sprint 1 Velocity</td>
+            <td>Con el equipo para este sprint 1 decidimos aceptar 3 Story Points</td>
+        </tr>
+              <tr>
+            <td>Sum of Story Points</td>
+            <td>La suma de los Story Points para los User Stories que se están incluyendo en este Sprint 1 es 21</td>
+        </tr>
+    </table>
 ### 5.2.2. Implemented Landing Page Evidence
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 ### 5.2.4. Implemented Native-Mobile Application Evidence
