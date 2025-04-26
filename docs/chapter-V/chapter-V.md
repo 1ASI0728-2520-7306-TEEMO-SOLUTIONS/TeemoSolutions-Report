@@ -381,7 +381,9 @@ Implementar buenas prácticas de accesibilidad, como utilizar widgets Semantics 
 
 ---
 ### 5.1.4. Software Deployment Configuration
+En esta sección, procederemos a detallar de manera exhaustiva la configuración necesaria para implementar y desplegar nuestra solución, centrándonos específicamente en las áreas del FrontEnd. A lo largo de este análisis, enfatizaremos las mejores prácticas que deben seguirse, así como las herramientas más adecuadas a utilizar y los flujos de trabajo recomendados para garantizar una implementación eficaz y coordinada de ambas partes de nuestra solución. Además, discutiremos cómo cada decisión técnica impacta en la funcionalidad y la experiencia del usuario, proporcionando así un enfoque integral para el desarrollo de nuestras aplicaciones.
 
+**Landing Page:**
 ## 5.2. Product Implementation & Deployment
 ### 5.2.1. Sprint Backlogs
 ### 5.2.2. Implemented Landing Page Evidence
