@@ -130,23 +130,32 @@ Landing Page:
 ## 4.6. Web Applications UX/UI Design
 ### 4.6.1. Web Applications Wireframes
 
-<img src="../../assets/img/chapter-IV/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/wireframe-web-login.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/wireframe-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/wireframe-web-home.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/wireframe-web-home.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 
 ### 4.6.2. Web Applications Wireflow Diagrams
+
+- Inicio de sesión: El usuario debe ingresar a la plataforma, en esa sección se le muestra la opción de inicio de sesión y registrarse, al iniciar sesión ingresa a la plataforma.
+
+<img src="../../assets/img/chapter-IV/wireflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
+
 ### 4.6.3. Web Applications Mock-ups
 
-<img src="../../assets/img/chapter-IV/mock-up-web-first.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/mock-up-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-web-home.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-IV/mock-up-web-home.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 ### 4.6.4. Web Applications User Flow Diagrams
+
+- Inicio de sesión: El usuario debe ingresar a la plataforma, en esa sección se le muestra la opción de inicio de sesión y registrarse, al iniciar sesión ingresa a la plataforma.
+
+<img src="../../assets/img/chapter-IV/userflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 ## 4.7. Web Applications Prototyping
 
