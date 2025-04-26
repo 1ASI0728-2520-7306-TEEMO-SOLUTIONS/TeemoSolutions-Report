@@ -183,6 +183,208 @@ Fuente: (GitHub & Netlify, 2024)
 
 
 ### 5.1.3. Source Code Style Guide & Conventions
+
+En esta sección, nuestro equipo explicará y establecerá las referencias que adoptaremos para nombrar, estructurar, organizar y programar en los lenguajes de programación que se utilizarán en el desarrollo de nuestra solución de software, con un enfoque exclusivo en la implementación del frontend.
+
+Se detallarán las convenciones y mejores prácticas que se seguirán para asegurar un código coherente y eficiente en el uso de **Flutter**, **Dart**, **CSS**, **HTML** y **JavaScript**, principales herramientas del proyecto. Estas convenciones garantizarán la claridad, mantenibilidad y escalabilidad del código, facilitando la colaboración entre los diferentes miembros del equipo de desarrollo frontend.
+
+Asimismo, también investigaremos y presentaremos las directrices para la interacción con las interfaces de usuario y la implementación de una experiencia de usuario fluida y atractiva. Esto incluirá:
+
+- La gestión adecuada de los componentes visuales.
+- La optimización del rendimiento en la renderización.
+- El manejo efectivo de la interacción del usuario con la aplicación.
+
+---
+
+# Guías de Estilo y Referencias
+
+- [Guía de Estilos y Convenciones de Código para HTML (W3Schools)](https://www.w3schools.com/html/html5_syntax.asp)
+- [Guía de Estilos de Google para HTML y CSS](https://google.github.io/styleguide/htmlcssguide.html)
+- [Convenciones de Gherkin para especificaciones legibles](https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/)
+- [Guía de Google para el Estilo de JavaScript](https://google.github.io/styleguide/jsguide.html)
+- [Guía de Pautas de JavaScript de MDN (Mozilla)](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript)
+- [Guía de Estilos de JavaScript de W3Schools](https://www.w3schools.com/js/js_conventions.asp)
+- [Guía Oficial del Framework de Flutter](https://docs.flutter.dev/get-started/learn-flutter)
+- [Conjunto de Datos con Recursos de Aprendizaje de Flutter](https://github.com/rafathefull/flutterverso)
+- [Guía Oficial de Dart](https://dart.dev/language)
+- [Guía de Librerías Oficiales de Dart](https://dart.dev/libraries)
+
+---
+
+# Convenciones que Usaremos
+
+## HTML
+
+### Estructura Semántica
+Al construir una página web, es crucial utilizar etiquetas HTML semánticas como `<header>`, `<footer>`, `<article>`, `<section>`, y `<aside>` para reflejar el significado del contenido. Esto mejora la accesibilidad y optimiza el SEO.
+
+### Uso de Atributos "Alt" en Imágenes
+Cada imagen debe tener un atributo `alt` breve y descriptivo para accesibilidad y SEO.
+
+### Uso Adecuado de Encabezados
+Utilizar jerarquías correctas: `<h1>` para el título principal, seguido por `<h2>`, `<h3>`, etc., sin saltar niveles.
+
+### Validación del Código HTML
+Utilizar el validador de HTML del W3C para detectar errores y garantizar compatibilidad entre navegadores.
+
+### Evitar Inline CSS y JavaScript
+Separar los estilos y scripts en archivos externos para mejorar la organización, mantenibilidad y carga de la página.
+
+### Comentarios Claros y Concisos
+Agregar comentarios que expliquen secciones relevantes del código, sin exceso.
+
+### Uso de Clases e IDs Descriptivos
+Usar nombres descriptivos siguiendo una convención coherente como BEM (Block Element Modifier).
+
+### Mantenimiento de la Accesibilidad
+Aplicar prácticas como uso de etiquetas `<label>`, atributos ARIA y cumplir con WCAG.
+
+### Evitación de Elementos Obsoletos
+Evitar elementos obsoletos como `<font>` y `<center>`, utilizando CSS moderno.
+
+### Minimización de Redundancias
+Evitar duplicaciones usando clases, listas y componentes reutilizables.
+
+---
+
+## CSS
+
+### Estructura Modular y Organizativa
+Dividir los estilos en módulos o componentes específicos para facilitar mantenimiento y reutilización.
+
+### Uso de Nombres Descriptivos en Clases
+Adoptar convenciones como BEM para nombrar clases de manera clara y coherente.
+
+### Uso Eficiente de Selectores
+Preferir clases sobre IDs o selectores descendientes complejos para mantener flexibilidad.
+
+### Incorporación de Comentarios Claros
+Comentar secciones de código complejas para facilitar su comprensión.
+
+### Uso de Variables y Preprocesadores
+Utilizar variables (por ejemplo, en SASS o LESS) para colores, fuentes y tamaños.
+
+### Consistencia en Espaciado y Alineación
+Aplicar un sistema de espaciado coherente utilizando unidades relativas (`rem`, `em`).
+
+### Optimización del Rendimiento CSS
+Minificar archivos y evitar propiedades costosas como `box-shadow` y `opacity` excesivo.
+
+### Evitar el Uso de `!important`
+Estructurar correctamente el CSS para minimizar o eliminar el uso de `!important`.
+
+### Responsividad y Diseño Adaptable
+Utilizar Media Queries y diseño fluido para garantizar compatibilidad en diferentes dispositivos.
+
+### Pruebas y Validación del CSS
+Validar regularmente con herramientas automáticas y realizar pruebas en múltiples navegadores.
+
+---
+
+# JavaScript
+
+## Uso de `let` y `const` en lugar de `var`
+Adoptar `let` y `const` en vez de `var` mejora la claridad del código y evita problemas de alcance y hoisting.  
+- `let` declara variables de alcance de bloque.
+- `const` declara constantes inmutables.
+Esta práctica fomenta un estilo de programación más predecible y controlado, esencial para proyectos de gran escala.
+
+## Nomenclatura Consistente y Descriptiva
+Utilizar nombres claros y descriptivos para variables, funciones y clases, mejorando la comprensión del código y la colaboración en equipo.
+
+## Funciones Puramente Declarativas
+Escribir funciones puras que no dependan ni modifiquen estados externos, haciendo el código más predecible, reutilizable y fácil de probar.
+
+## Uso de Promesas y `async/await` para Manejo de Asincronía
+Emplear `async/await` facilita la lectura del código asincrónico, mejora el manejo de errores y reduce la complejidad de promesas anidadas.
+
+## Validación de Datos y Manejo de Errores
+Verificar tipos y formatos de datos antes de operar y usar `try/catch` para una captura y gestión controlada de errores, mejorando la robustez de las aplicaciones.
+
+## Modularización del Código
+Dividir el código en módulos utilizando ES6 Modules o herramientas como Webpack o Rollup, promoviendo reutilización, mantenibilidad y colaboración.
+
+## Uso de Comentarios Efectivos
+Agregar comentarios claros y concisos para explicar el "por qué" de las decisiones en el código, no lo obvio.
+
+## Consistencia en la Formateación del Código
+Aplicar una formateación consistente mediante herramientas como Prettier, asegurando un estilo uniforme que facilite la colaboración y revisión.
+
+## Optimización del Rendimiento
+Evitar funciones innecesarias en bucles, minimizar accesos al DOM y aplicar técnicas como delegación de eventos para mejorar la eficiencia de la aplicación.
+
+## Implementación de Pruebas Automatizadas
+Utilizar frameworks como Jest o Mocha para pruebas unitarias e integración, asegurando calidad continua y facilitando CI/CD.
+
+---
+
+# Dart
+
+## Uso de `final` y `const`
+Definir variables inmutables usando `final` y constantes en tiempo de compilación usando `const`, para mejorar claridad y rendimiento.
+
+## Nomenclatura Clara y Descriptiva
+Aplicar nombres significativos en clases, funciones y variables, mejorando la legibilidad y mantenibilidad del código.
+
+## Evitar el Uso de `dynamic`
+Preferir tipos específicos en lugar de `dynamic` para evitar errores de tipo en tiempo de ejecución y mejorar la documentación automática.
+
+## Organización en Módulos y Paquetes
+Organizar el proyecto en módulos lógicos con convenciones de nombres en minúsculas y guiones bajos para archivos y directorios.
+
+## Uso de Métodos y Clases de Extensión
+Crear extensiones para agregar funcionalidades a clases existentes de forma modular y reutilizable, sin modificar el código original.
+
+## Implementación de Manejo de Errores
+Utilizar bloques `try-catch` para capturar y gestionar excepciones de manera controlada, mejorando la estabilidad y experiencia de usuario.
+
+## Uso de `async` y `await` para Operaciones Asincrónicas
+Aplicar `async/await` para un manejo claro de la asincronía, reduciendo errores y mejorando el flujo lógico del código.
+
+## Utilización de `pubspec.yaml` para la Gestión de Dependencias
+Mantener actualizado el `pubspec.yaml` especificando versiones y organizando las dependencias para asegurar la estabilidad del proyecto.
+
+## Implementación de Pruebas Unitarias y de Integración
+Escribir pruebas usando el paquete de pruebas de Dart para verificar la funcionalidad individual y la integración de componentes.
+
+## Documentación Clara y Consistente
+Utilizar comentarios estructurados para generar documentación automática y facilitar la comprensión y mantenimiento del código.
+
+---
+
+# Flutter
+
+## Estructura de Proyecto Modular
+Organizar el código en carpetas como `lib/models`, `lib/views`, `lib/widgets` y `lib/services` para mejorar la escalabilidad y el trabajo colaborativo.
+
+## Uso de Widgets Compuestos y Personalizados
+Crear widgets reutilizables y configurables para evitar duplicación de código y facilitar la mantenibilidad.
+
+## Adopción del Patrón BLoC para Gestión de Estado
+Separar la lógica de negocio de la UI utilizando flujos de datos (`Streams`) y eventos con el patrón BLoC.
+
+## Optimización del Rendimiento con ListViews y Grids
+Utilizar `ListView.builder` y `GridView.builder` para listas dinámicas y optimizadas, reduciendo el uso de memoria.
+
+## Gestión de Rutas con Navigator y Rutas Nombradas
+Centralizar la navegación usando rutas nombradas definidas en el `MaterialApp`, facilitando la gestión y el paso de argumentos.
+
+## Uso de `pubspec.yaml` para Gestionar Dependencias
+Mantener el `pubspec.yaml` limpio, actualizado y documentado para gestionar las dependencias de Flutter eficientemente.
+
+## Implementación de Pruebas de Widget y de Integración
+Desarrollar pruebas de widgets individuales y de interacción entre múltiples widgets para asegurar la estabilidad de la aplicación.
+
+## Adopción de Temas Globales para Consistencia Visual
+Definir temas globales en el `MaterialApp` para mantener consistencia en colores, tipografías y estilos en toda la aplicación.
+
+## Documentación y Comentarios Claros
+Documentar la lógica de widgets, funciones y clases usando comentarios de estilo Dart, generando documentación técnica automáticamente.
+
+## Adopción de Prácticas de Accesibilidad
+Usar widgets de accesibilidad como `Semantics` y realizar pruebas para garantizar que la aplicación sea accesible para todos los usuarios.
+
+---
 ### 5.1.4. Software Deployment Configuration
 
 ## 5.2. Product Implementation & Deployment
