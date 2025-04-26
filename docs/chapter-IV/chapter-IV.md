@@ -130,6 +130,8 @@ Landing Page:
 ## 4.6. Web Applications UX/UI Design
 ### 4.6.1. Web Applications Wireframes
 
+<img src="../../assets/img/chapter-IV/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+
 <img src="../../assets/img/chapter-IV/wireframe-web-login.jpg" style="width:700px; height:auto;" alt="mock up landing page">
 
 <img src="../../assets/img/chapter-IV/wireframe-web-home.jpg" style="width:700px; height:auto;" alt="mock up landing page">
@@ -137,6 +139,8 @@ Landing Page:
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 ### 4.6.3. Web Applications Mock-ups
+
+<img src="../../assets/img/chapter-IV/mock-up-web-first.jpg" style="width:700px; height:auto;" alt="mock up landing page">
 
 <img src="../../assets/img/chapter-IV/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up landing page">
 
