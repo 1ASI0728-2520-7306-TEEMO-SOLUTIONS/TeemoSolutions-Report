@@ -43,8 +43,8 @@
     <td colspan="17">Este análisis nos ayuda a entender las particularidades de cada sitio web o aplicación, identificar la competencia en el mercado y planificar cómo abordar las oportunidades. También nos permite trabajar en la mejora continua de nuestras áreas de desarrollo.</td>
   </tr>
   <tr>
-    <td colspan="2">(En la cabecera colocar por cada competidor nombre y logo)</td>
-    <td>MarineTraffic<br></td>
+    <td colspan="2">(En la cabecera colocar por cada competidor su nombre )</td>
+    <td>MarineTraffic <br></td>
     <td>Windward<br></td>
     <td>FleetMon<br></td>
 </tr>
@@ -137,7 +137,7 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
     - ¿Estado Civil?
     - ¿Cual es su ocupación? ¿Estudia y/o trabaja?
 
-**Preguntas para Agencias de embarcaciones navieras**
+**Preguntas para Empresas Navieras y Operadoras Logísticas Globales**
 - ¿Cuál es su rol a bordo o dentro del equipo de planificación de rutas del crucero?
 - ¿Cuántos años de experiencia tiene navegando o coordinando rutas internacionales?
 - ¿Qué tipo de cruceros opera actualmente (turísticos, de lujo, rutas regionales, etc.)?
@@ -146,7 +146,7 @@ Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología
 - ¿Quién toma la decisión final cuando se necesita desviar una ruta por razones de seguridad?
 - ¿Cómo acceden a información meteorológica, geopolítica o logística antes de cada travesía?
 
-**Preguntas para el segmento: Capitanes de crucero o sus jefes de ruta**
+**Preguntas para el segmento: Exportadores e Importadores de Alta Rotación**
 - ¿Cuál es su rol dentro de la agencia naviera?
 - ¿Cuántos barcos o rutas supervisa actualmente su agencia?
 - ¿Qué tipos de embarcaciones manejan con más frecuencia (mercantes, petroleros, cruceros, etc.)?
@@ -162,7 +162,7 @@ En el proceso de investigación para nuestro proyecto, se llevaron a cabo entrev
 
 Link de la entrevista: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a955_upc_edu_pe/ERshpHqBeD1Btquo46R2npsBg3-ZqoIrr90kLY8Ix_a4qw?e=brkSf8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
-**Segmento 1: Agencias de embarcaciones navieras**
+**Segmento 1: Empresas Navieras y Operadoras Logísticas Globales**
 
 #### Entrevista 1:
 
@@ -186,7 +186,7 @@ El acceso a información crítica antes de cada travesía se realiza a través d
 
 
 
-**Segmento 2: Capitanes de crucero o sus jefes de ruta**
+**Segmento 2: Exportadores e Importadores de Alta Rotación**
 
 #### Entrevista 1:
 
@@ -239,11 +239,11 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
 
 ### 2.2.3. Análisis de entrevistas
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 Patricia Salas, con 22 años de experiencia en la coordinación de rutas internacionales, actualmente se desempeña como directora de planificación de rutas en una empresa de cruceros turísticos de lujo. Su rol consiste en diseñar y supervisar las rutas de los cruceros, asegurando la optimización de los trayectos y la seguridad de los pasajeros. Aunque sus cruceros transitan ocasionalmente por el Mar Rojo, destacó que debido a la situación geopolítica reciente han disminuido considerablemente sus pasos por esa zona. Para planificar y monitorear en tiempo real, Patricia y su equipo utilizan plataformas AIS, mapas satelitales interactivos y un software interno especializado en optimización de rutas, lo que les permite realizar ajustes inmediatos ante cualquier alerta. En cuanto a las decisiones de desvío por seguridad, explicó que, aunque el capitán a bordo tiene la decisión final, todo se coordina estrechamente con el centro de control en tierra, donde ella participa directamente en la evaluación de riesgos. Para mantenerse actualizados antes de cada travesía, acceden a briefings diarios, reportes meteorológicos, alertas geopolíticas de agencias internacionales y consultorías externas de seguridad marítima, demostrando un enfoque sistemático y multidisciplinario en la gestión de riesgos y planificación estratégica.
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 Los capitanes y jefes de embarcaciones entrevistados comparten un perfil de alta experiencia, con entre 16 y 20 años navegando o coordinando rutas internacionales, y todos coinciden en que la decisión final ante un desvío por razones de seguridad siempre recae en el capitán a bordo. También es común el uso de tecnología avanzada para la planificación y monitoreo de rutas, incluyendo sistemas electrónicos como ECDIS, AIS, radares o sonares, así como la consulta regular de información meteorológica y geopolítica antes de cada travesía, aunque las fuentes y herramientas específicas varían según el tipo de operación. A pesar de estos puntos en común, existen diferencias claras: Alejandro opera buques de carga, Mariela coordina cruceros turísticos y de lujo, y Arwen lidera embarcaciones pesqueras industriales. Asimismo, mientras Alejandro transita rutas internacionales incluyendo el Mar Rojo, Mariela solo ocasionalmente se acerca a esta zona y Arwen opera exclusivamente en el Pacífico Sur. En cuanto a la obtención de información crítica, Alejandro depende de informes internos de inteligencia marítima, Mariela trabaja con consultores de riesgos externos, y Arwen se apoya en redes informales entre capitanes. A pesar de las diferencias en el tipo de embarcación y las zonas de operación, todos destacan que la seguridad de la tripulación y la actualización tecnológica constante son elementos fundamentales en su labor diaria.
 
@@ -254,11 +254,11 @@ Esta información también nos ayudará a realizar los esquemas para las seccion
 ### 2.3.1. User Persona
 Para desarrollar Mushroom, hemos entrevistado a estudiantes y usuarios de bicicletas. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 ![alt text](<../../assets/img/chapter-II/Diego Bertie-User Persona.png>)
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 ![alt text](<../../assets/img/chapter-II/Ronaldinho Luna-user persona.png>)
 
@@ -266,7 +266,7 @@ Para desarrollar Mushroom, hemos entrevistado a estudiantes y usuarios de bicicl
 
 Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la frecuencia con la que los usuarios llevan a cabo diversas actividades, lo que nos permite visualizar la importancia de ciertas tareas.
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 | Tareas                                                        |  Importancia   |  Frecuencia               |
 |---------------------------------------------------------------|--------------------------|--------------------------
@@ -279,7 +279,7 @@ Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la 
 | Simular rutas con menor riesgo y costo     |Baja                    | Diaria                 
 | Generar informes para clientes o directivos                    |Media                     | Ocasionalmente    
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 | Tareas                                                        |  Importancia   |   Frecuencia               |
 |---------------------------------------------------------------|--------------------------|--------------------------
@@ -293,39 +293,39 @@ Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la 
 
 **Analisis y Explicación:**
 
-Las agencias de embarcaciones navieras, al estar centradas en la planificación estratégica y la gestión logística, suelen actuar con un enfoque preventivo: evalúan rutas con antelación, generan reportes para toma de decisiones y necesitan simular escenarios posibles ante amenazas geopolíticas. Son usuarios que valoran la precisión, confiabilidad y anticipación, y que trabajan en horarios más estables pero bajo alta presión institucional. En contraste, los capitanes de crucero y sus jefes de ruta operan en un entorno de alta inmediatez, con necesidad de información clara y decisiones rápidas. Su comportamiento es más reactivo y está marcado por la necesidad de flujo continuo de datos en tiempo real, comunicación ágil con tierra y facilidad para adaptarse en situaciones críticas, como desvíos urgentes o interrupciones portuarias. 
+Las Empresas Navieras y Operadoras Logísticas Globales, al estar centradas en la planificación estratégica y la gestión logística, suelen actuar con un enfoque preventivo: evalúan rutas con antelación, generan reportes para toma de decisiones y necesitan simular escenarios posibles ante amenazas geopolíticas. Son usuarios que valoran la precisión, confiabilidad y anticipación, y que trabajan en horarios más estables pero bajo alta presión institucional. En contraste, los capitanes de crucero y sus jefes de ruta operan en un entorno de alta inmediatez, con necesidad de información clara y decisiones rápidas. Su comportamiento es más reactivo y está marcado por la necesidad de flujo continuo de datos en tiempo real, comunicación ágil con tierra y facilidad para adaptarse en situaciones críticas, como desvíos urgentes o interrupciones portuarias. 
 
 ### 2.3.3. User Journey Mapping
 
 Creamos los User Journey Maps con el objetivo de comprender la experiencia de nuestro cliente al utilizar nuestra aplicación. Por ende, cada paso que el cliente realiza se detalla minuciosamente, incluyendo el proceso, los obstáculos encontrados y los pensamientos o emociones que surgen a raíz de ello.
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 ![alt text](<../../assets/img/chapter-II/Diego Bertie Journey Map.png>)
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 ![alt text](<../../assets/img/chapter-II/Ronaldinho Luna journey map.png>)
 
 ### 2.3.4. Empathy Mapping
 Para el desarrollo de los Empathy Map hemos utilizado la información recopilada en base a nuestros dos User Personas que representan nuestro segmento.
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 ![alt text](<../../assets/img/chapter-II/Diego Bertie - Empathy map.png>)
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 ![alt text](<../../assets/img/chapter-II/Ronaldinho Luna - Empathy map.png>)
 
 ### 2.3.5. As-is Scenario Mapping
 Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
 
-**_Segmento 1: Agencias de embarcaciones navieras_**
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
 
 <td><img src="../../assets/img/chapter-II/AS-IS_2.png" style="width:1000px; height:auto;" alt=""></td>
 
-**_Segmento 2: Transportista Maritimo (Capitan o Jefe de navegación)_**
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
 
 <td><img src="../../assets/img/chapter-II/AS-IS_1.png" style="width:1000px; height:auto;" alt=""></td>
 
