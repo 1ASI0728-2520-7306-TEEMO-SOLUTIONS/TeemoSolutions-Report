@@ -84,6 +84,112 @@ Las herramientas seleccionadas abarcan actividades críticas para el desarrollo 
 
 - **Página oficial de Figma:** [https://figma.com/](https://figma.com/)
 ### 5.1.2. Source Code Management
+En esta sección, se definirá la estrategia para utilizar GitHub como plataforma de control de versiones y colaboración durante el ciclo de vida del desarrollo del frontend. Se emplearán todas las herramientas proporcionadas por GitHub para garantizar una gestión eficaz del código fuente, incluyendo el seguimiento de versiones y la colaboración entre miembros del equipo. Se mantendrá un registro exhaustivo de las versiones del frontend, permitiendo rastrear cambios, identificar nuevos desarrollos y corregir errores de manera precisa.
+
+Se establecerán ramas específicas para diferentes etapas del desarrollo, tales como la integración continua, las pruebas y la producción. Además, se implementarán políticas de pull requests y revisiones de código para asegurar la calidad y coherencia del frontend. Esta metodología permitirá un control riguroso del ciclo de vida del desarrollo, facilitando la colaboración y asegurando que todos los cambios se registren de forma clara y ordenada.
+
+A continuación, se proporciona una lista con los enlaces a la organización de GitHub de WHAI y a los repositorios específicos relacionados con el desarrollo del frontend dentro de esta organización:
+# Repositorios en GitHub
+
+- **Organización:** [TEEMO-SOLUTIONS](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS)
+
+- **Reporte:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report)
+
+- **Aplicación Móvil:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-MobileApplication]()
+
+- **Landing Page:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage)
+
+- **Front End:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-FrontEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Front-End)
+
+-**Back End** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-BackEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Back-End)
+
+## Integrantes de la organización
+
+En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto WHAI, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
+
+# Modelo de integrantes del equipo dentro de la página de organización de Github
+
+| **Nombre de Usuario**  | **Nombre del Integrante del Equipo** |
+|------------------------|--------------------------------------|
+| JuanPescoran           | Pescorán Angulo, Juan Fabritzzio - U20221C936 |
+| JoseRiega              | Riega Salas José Miguel - U202211254 |
+| Yair360                | VAru Acevedo, Yair Christofer - U202125984 |
+| GuardianDeity          | Lizano Coll Cardenas, Fernando Jesus - U202214522|
+| Mathifaa               | Vasquez Requejo, Augusto Mathias Leonardo - u20221a955|
+
+# GitFlow Workflow
+
+En nuestro proyecto, implementaremos el modelo **GitFlow** para el control de versiones, el cual está estructurado en torno a ramas principales y secundarias. Las ramas principales actúan como las bases fundamentales para el desarrollo y la implementación final del frontend. La rama **master** representa la versión estable y en producción, mientras que **develop** se utiliza para integrar todas las características y correcciones que se encuentran en desarrollo.
+
+Las ramas secundarias se utilizan para gestionar desarrollos específicos y modificaciones puntuales. Estas ramas se crean para el desarrollo de nuevas funcionalidades, para abordar errores críticos en producción y para preparar la versión para su liberación final. Cada una de estas ramas se fusiona con **develop** a través de pull requests, los cuales son revisados por el equipo para asegurar la calidad y coherencia del código. Este enfoque asegura que cada cambio se maneje de manera organizada y que los errores críticos se aborden de forma eficiente, manteniendo la estabilidad del proyecto en todo momento.
+
+Esta metodología garantiza una organización efectiva del flujo de trabajo, facilita la colaboración entre los miembros del equipo y optimiza la gestión de versiones del frontend, asegurando que todos los cambios se integren de manera controlada y que el historial del proyecto sea claro y manejable. A continuación, se detallan las convenciones para nombrar las ramas dentro de nuestra organización:
+
+## Ramas Principales
+
+- **master:** Esta rama contiene la versión final y estable del frontend, lista para su despliegue en el entorno de producción. Las integraciones a esta rama deben pasar por una revisión exhaustiva por parte del equipo técnico para asegurar la calidad y estabilidad del código del frontend.
+  
+- **develop:** Esta rama agrupa los elementos en desarrollo relacionados con el frontend, que han sido aprobados por al menos un miembro del equipo diferente del autor de las modificaciones. Sirve como etapa de integración y prueba de nuevas funcionalidades del frontend antes de ser fusionadas con master.
+
+# Ramas de Funcionalidades (Feature Branches)
+
+## Tabla 24: Modelo de todas las ramas implementadas dentro de la organización del proyecto en GitHub
+
+| **Nombre**    | **Descripción** |
+|---------------|-----------------|
+| feat/iam      | Gestiona los cambios relacionados con la implementación del sistema de gestión de identidades y accesos (IAM) en el backend. Esta implementación asegura la autenticación, autorización y control de permisos de usuarios, garantizando la seguridad del sistema y un acceso adecuado a los recursos según los roles asignados. |
+| feat/roadmaps | Agrupa los cambios correspondientes a la gestión de los roadmaps en el backend, incluyendo la lógica para la creación, almacenamiento y procesamiento de los datos relacionados con los roadmaps de los usuarios. Esto abarca la implementación de endpoints para la manipulación de datos, así como la optimización de consultas y almacenamiento en la base de datos para asegurar un rendimiento eficiente. |
+
+## Ramas Individuales
+
+Estas ramas se utilizan para desarrollos individuales realizados por los miembros del equipo en el frontend.  
+Los cambios se integran a las ramas principales mediante pull requests, que deben ser aprobados por el líder del equipo.  
+Una vez que los cambios han sido completados y fusionados, estas ramas se eliminan para mantener un repositorio limpio y organizado.
+
+## Formato de Commit
+
+**Formato Estándar:**
+
+- `"branch"` debe indicar la rama en la que se realizaron los cambios.
+- La descripción debe iniciar con un verbo en inglés que refleje el cambio realizado.
+
+## Tabla 25: Modelo de escritura de verbos para todos los commits realizados en el proyecto de GitHub
+
+| **Verbo** | **Traducción** | **Uso en el proyecto de programación** |
+|-----------|----------------|----------------------------------------|
+| Add       | Añadir          | Para añadir nuevas funcionalidades, componentes o módulos al frontend. |
+| Create    | Crear           | Para crear nuevos componentes, estilos o rutas en el frontend. |
+| Update    | Actualizar      | Para modificar ligeramente funcionalidades existentes, optimizando o ajustando comportamientos. |
+| Modify    | Modificar       | Para cambios significativos en la lógica o arquitectura del frontend. |
+| Correct   | Corregir        | Para corregir errores menores sin gran impacto. |
+| Fix       | Arreglar        | Para solucionar bugs críticos que afectan la funcionalidad principal. |
+| Delete    | Borrar          | Para eliminar código obsoleto o recursos no necesarios. |
+| Drop      | Tirar           | Para eliminar rutas, configuraciones o estilos de forma crítica y controlada. |
+
+Esta norma sigue los principios de **Conventional Commits**, permitiendo:
+
+- Un historial de cambios más claro y ordenado.
+- Automatización de procesos como el **versionado semántico** y el **seguimiento de cambios**.
+- Mayor facilidad en la trazabilidad, revisiones y transparencia en el control de versiones.
+
+## Estructura del Mensaje de Commit
+type: description
+Donde `type` es uno de los verbos recomendados.
+
+## Versionado Semántico
+
+Se aplicará el **Versionado Semántico 2.0.0** siguiendo la estructura:
+
+Major.Minor.Patch
+
+- **Patch**: Correcciones de errores compatibles con versiones anteriores.
+- **Minor**: Nuevas funcionalidades compatibles con versiones anteriores.
+- **Major**: Cambios importantes que pueden romper la compatibilidad.
+
+Fuente: (GitHub & Netlify, 2024)
+
+
+
 ### 5.1.3. Source Code Style Guide & Conventions
 ### 5.1.4. Software Deployment Configuration
 
