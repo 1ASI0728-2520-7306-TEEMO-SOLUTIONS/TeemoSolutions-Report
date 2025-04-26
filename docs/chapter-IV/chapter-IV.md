@@ -52,6 +52,8 @@
 
 ### 4.3.2. Landing Page Mock-up
 
+<img src="../../assets/img/chapter-IV/mockup-landing.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+
 ## 4.4. Mobile Applications UX/UI Design
 ### 4.4.1. Mobile Applications Wireframes
 ### 4.4.2. Mobile Applications Wireflow Diagrams
