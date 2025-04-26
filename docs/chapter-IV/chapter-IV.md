@@ -47,6 +47,9 @@
 
 ## 4.3. Landing Page UI Design
 ### 4.3.1. Landing Page Wireframe
+
+<img src="../../assets/img/chapter-IV/wireframe-landing.jpg" style="width:700px; height:auto;" alt="wireframe landing page">
+
 ### 4.3.2. Landing Page Mock-up
 
 ## 4.4. Mobile Applications UX/UI Design
