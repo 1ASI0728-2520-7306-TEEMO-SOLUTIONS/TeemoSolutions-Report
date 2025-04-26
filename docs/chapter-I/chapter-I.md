@@ -57,7 +57,7 @@ Teemo es una startup inovadora que ofrece plataforma principal que permite a los
   </tr>
   <tr>
     <td><img src="../../assets/img/chapter-I/Yair-Aru.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td>Soy Yair Christofer Aru Acevedo, actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo conocimientos en el lenguaje de C++, Python, Javascript, Typescript y HTML5. Me encuentro interesado en las tecnologías que se utilizan en las áreas de ciberseguridad y bases de datos. </td>
   </tr>
 
   <tr>
