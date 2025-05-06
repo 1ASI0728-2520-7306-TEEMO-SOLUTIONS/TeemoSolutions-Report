@@ -199,53 +199,51 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 
 - **ENTREGABLE TB1:**
 
-# Contenido
+# Tabla de Contenidos
 
-## [Tabla de Contenidos]()
-## [Registro de versiones del informe]()
-## [Project Report Collaboration Insights]()
-## [Contenido]()
-## [Student Outcome]()
+## [Registro de versiones del informe](#registro-de-versiones-del-informe)
+## [Project Report Collaboration Insights](#project-report-collaboration-insights)
+## [Student Outcome](#student-outcome)
 
 ## Part I: As-Is Software Project
 
 ### [Capítulo I: Introducción]()
 - [1.1. Startup Profile](#11-startup-profile)
-    - [1.1.1. Descripción de la Startup](#111-descripcin-de-la-startup)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
 - [1.2. Solution Profile](#12-solution-profile)
-    - [1.2.1. Antecedentes y problemática](#13-segmentos-objetivo)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statement)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-- [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [1.3. Segmentos objetivo](#13-segmentos-objetivos)
 
-### [Capítulo II: Requirements Elicitation & Analysis](#captulo-ii-requirements-elicitation--analysis)
+### [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
 - [2.1. Competidores](#21-competidores)
-  - [2.1.1. Análisis competitivo](#211-anlisis-competitivo)
-  - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tcticas-frente-a-competidores)
+  - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+  - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
 - [2.2. Entrevistas](#22-entrevistas)
-  - [2.2.1. Diseño de entrevistas](#221-diseo-de-entrevistas)
+  - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
   - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-  - [2.2.3. Análisis de entrevistas](#223-anlisis-de-entrevistas)
+  - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
 - [2.3. Needfinding](#23-needfinding)
   - [2.3.1. User Persona](#231-user-persona)
   - [2.3.2. User Task Matrix](#232-user-task-matrix)
   - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
   - [2.3.4. Empathy Mapping](#234-empathy-mapping)
   - [2.3.5. As-is Scenario Mapping](#235-as-is-scenario-mapping)
-- [2.4. Ubiquitous Language](#24-ubiquitous-language)
+- [2.4. Ubiquitous Language](#236-ubiquitous-language)
 
 
-### [Capítulo III: Requirements Specification](#captulo-iii-requirements-specification)
+### [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
 - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
 - [3.2. User Stories](#32-user-stories)
-- [3.3. Product Backlog](#33-product-backlog)
-- [3.4. Impact Mapping](#34-impact-mapping)
+- [3.3. Impact Mapping](#33-impact-mapping)
+- [3.4. Product Backlog](#34-product-backlog)
 
-### [Capítulo IV: Product Design](#captulo-iv-product-design)
+### [Capítulo IV: Product Design](#capítulo-iv-product-design)
 - [4.1. Style Guidelines](#41-style-guidelines)
     - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
@@ -285,7 +283,7 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 - [4.10. Database Design](#410-database-design)
     - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
 
-### [Capítulo V: Product Implementation](#captulo-v-product-implementation)
+### [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
 - [5.1. Software Configuration Management](#51-software-configuration-management)
     - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
     - [5.1.2. Source Code Management](#512-source-code-management)
@@ -530,23 +528,12 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
   
 
 - **Valores** En Teemo Solutions, nos guiamos por una serie de valores fundamentales que definen nuestra cultura organizacional y nuestra manera de actuar como equipo. Estos principios representan nuestro compromiso con la excelencia, la integridad y la innovación en el sector objetivo:
-
-1. **Innovación continua:** Impulsamos soluciones creativas y tecnológicas frente a los desafíos dinámicos del comercio marítimo.
-  
-
-2. **Resiliencia:** Nos adaptamos a escenarios cambiantes para mantener la operatividad de las rutas marítimas globales.
-
-  
-3. **Sostenibilidad:** Priorizamos rutas que optimicen el uso de recursos y reduzcan el impacto ambiental del transporte marítimo.
-
-  
-4. **Transparencia:** Brindamos información clara, en tiempo real, para una toma de decisiones basada en datos.
-
-  
-5. **Colaboración:** Facilitamos la cooperación entre puertos, navieras y operadores logísticos para construir un ecosistema más eficiente.
-
-  
-6. **Compromiso con la seguridad:** Aseguramos el tránsito de mercancías minimizando riesgos derivados de conflictos o condiciones climáticas adversas.
+  1. **Innovación continua:** Impulsamos soluciones creativas y tecnológicas frente a los desafíos dinámicos del comercio marítimo.
+  2. **Resiliencia:** Nos adaptamos a escenarios cambiantes para mantener la operatividad de las rutas marítimas globales.
+  3. **Sostenibilidad:** Priorizamos rutas que optimicen el uso de recursos y reduzcan el impacto ambiental del transporte marítimo.
+  4. **Transparencia:** Brindamos información clara, en tiempo real, para una toma de decisiones basada en datos.
+  5. **Colaboración:** Facilitamos la cooperación entre puertos, navieras y operadores logísticos para construir un ecosistema más eficiente.
+  6. **Compromiso con la seguridad:** Aseguramos el tránsito de mercancías minimizando riesgos derivados de conflictos o condiciones climáticas adversas.
 
   
 
@@ -557,7 +544,7 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
   <th colspan="2">Aru Acevedo, Yair Christofer</th>
   </tr>
   <tr>
-    <td><img src="./assets/img/chapter-I/Yair-Aru.jpg" style="height:auto;" alt=""></td>
+    <td><img src="./assets/img/chapter-I/Yair-Aru.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Soy Yair Christofer Aru Acevedo, actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo conocimientos en el lenguaje de C++, Python, Javascript, Typescript y HTML5. Me encuentro interesado en las tecnologías que se utilizan en las áreas de ciberseguridad y bases de datos. </td>
   </tr>
 
@@ -565,7 +552,7 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
   <th colspan="2">Lizano Coll Cardenas, Fernando Jesus</th>
   </tr>
   <tr>
-    <td><img src="./assets/img/chapter-I/Fernando-Lizano.jpg" style=" height:auto;" alt=""></td>
+    <td><img src="./assets/img/chapter-I/Fernando-Lizano.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Me llamo Fernando Jesus Lizano Coll Cardenas. A mis 20 años me considero un apasionado por el mundo de la programación y aprendizaje constante. Actualmente tengo conocimientos en el lenguaje de C++, HTML, CSS, JavaScript y Python. Aunque mis conocimientos son todavía básicos. Me identifico como alguien de pensamiento de superación. Busco crecer en cada aspecto de mi vida y enfrentar desafíos con una actitud positiva y resoluta. Espero poder aportar y motivar a mis compañeros durante la elaboración de este proyecto.</td>
   </tr>
 
@@ -573,7 +560,7 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
   <th colspan="2">Pescorán Angulo, Juan Fabritzzio</th>
   </tr>
   <tr>
-    <td><img src="./assets/img/chapter-I/Juan-Pescoran.jpg" style="height:auto;" alt=""></td>
+    <td><img src="./assets/img/chapter-I/Juan-Pescoran.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Hola que tal, soy Juan Pescoran, tengo 19 años, estoy llevando la carrera de Ingenieria de Software en la UPC, voy en el 7mo ciclo. Me considero una persona responsable, puntual y comprometida con mis estudios. Me gusta aprender cosas nuevas y siempre estoy dispuesto a ayudar a mis compañeros.</td>
   </tr>
 
@@ -581,7 +568,7 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
     <th colspan="2">Riega Salas, Jose Miguel</th>
   </tr>
   <tr>
-    <td><img src="./assets/img/chapter-I/Jose-Riega.jpg" style="height:auto;" alt=""></td>
+    <td><img src="./assets/img/chapter-I/Jose-Riega.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Estudiante de 7mo ciclo de ingeniería de software en la UPC. Autopercibido como polivalente y responsable con aprendizaje continuo.
 
 Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicaciones web y metodologías ágiles. Mis objetivos son concretarse y seguir aprendiendo y ejerciendo mi carrera desarrollándome a nivel personal y profesional.</td>
@@ -591,7 +578,7 @@ Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicacion
     <th colspan="2">Vasquez Requejo, Augusto Mathias Leonardo</th>
   </tr>
   <tr>
-    <td><img src="./assets/img/chapter-I/Augusto Vasquez.jpg" style="height:auto;" alt=""></td>
+    <td><img src="./assets/img/chapter-I/Augusto Vasquez.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Soy estudiante de Ingeniería de Software en el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en lenguajes de programación como C++, JavaScript, HTML y CSS, y me destaco por mi responsabilidad y dedicación en los trabajos grupales, siempre buscando contribuir al logro de los objetivos del equipo.</td>
   </tr>
 </table>
@@ -645,7 +632,7 @@ La problemática se concentra en el Mar Rojo, una vía estratégica que conecta 
 
 En esta etapa damos inicio al enfoque Lean UX, una metodología que nos permitirá construir y afinar la visión del modelo de negocio que respaldará nuestra solución digital. Gracias a este enfoque, podremos centrar el diseño de nuestro producto en resolver necesidades concretas y generar valor real para los usuarios.
 
-#### 1.2.2.1  Problem Statement
+#### 1.2.2.1 Lean Ux Problem Statements
 
 - **Domain**
 
@@ -733,7 +720,7 @@ Como herramienta de consulta diaria para el trazado de rutas, evaluación de rie
 - Comparación de tiempos y riesgos entre rutas.
 - Integración con plataformas de gestión logística (TMS, ERP).
 
-#### 1.2.2.3 Lean Ux Process Hypothesis Statement
+#### 1.2.2.3 Lean Ux Hypothesis Statement
 
 - Hipótesis 1:<br>
 **Creemos que** las empresas navieras y operadoras logísticas adoptarán una plataforma que les permita visualizar, simular y ajustar rutas marítimas en tiempo real, considerando condiciones climáticas y geopolíticas. <br>
@@ -764,7 +751,10 @@ Como herramienta de consulta diaria para el trazado de rutas, evaluación de rie
 
 - Mediante la realización Lean UX Canvas podemos mostrar toda información anterior pero de una manera resumida, didáctica y más accesible al lector. También se resume la problemática que estamos abordando y la solución que proponemos, junto con los supuestos de las hipótesis y los puntos más importantes de las mismas.
 
-![Lean UX Canvas](./assets/img/chapter-I/Lean%20UX%20Canvas%20Mushroom.png)
+<p allign="center">
+  <img src="./assets/img/chapter-I/lean%20ux%20canvas.png"  style="width:1000px; height:auto;" alt="">
+</p>
+
 
 ## 1.3. Segmentos Objetivos
 
@@ -806,6 +796,358 @@ El producto Mushroom, desarrollado por Teemo Solutions, está dirigido a actores
     </tr>
   </tbody>
 </table>
+
+<style>
+  body {
+    font-family: 'Times New Roman', sans-serif;
+    text-align: justify;
+    font-size: 12px;
+    margin-left: 2em;
+    margin-right: 2em;
+    line-height: 2;
+  }
+  
+  p {
+    text-indent: 2em; /* Sangría en el primer renglón de cada párrafo */
+  }
+
+  h1 {
+    margin-left: 0; /* No aplica sangría para el título principal */
+  }
+
+  h2 {
+    margin-left: 0; /* No aplica sangría para subtítulos de nivel 2 */
+  }
+
+  h3 {
+    margin-left: 2em; /* Aplica una sangría de 2em para subtítulos de nivel 3 */
+  }
+
+  h4 {
+    margin-left: 4em; /* Aplica una sangría de 4em para subtítulos de nivel 4 */
+  }
+</style>
+
+# Capítulo II: Requirements Elicitation & Analysis
+
+## 2.1. Competidores
+
+### 2.1.1 Análisis Competitivo
+<table>
+  <tr>
+    <th colspan="22">Competitive Analysis Landscape</th>
+  </tr>
+  <tr>
+    <td colspan="1">¿Por qué llevar a cabo el análisis?</td>
+    <td colspan="17">Este análisis nos ayuda a entender las particularidades de cada sitio web o aplicación, identificar la competencia en el mercado y planificar cómo abordar las oportunidades. También nos permite trabajar en la mejora continua de nuestras áreas de desarrollo.</td>
+  </tr>
+  <tr>
+    <td colspan="2">(En la cabecera colocar por cada competidor su nombre )</td>
+    <td>MarineTraffic <br></td>
+    <td>Windward<br></td>
+    <td>FleetMon<br></td>
+</tr>
+  <tr>
+    <td rowspan="2">Perfil</td>
+    <td>Overview</td>
+    <td>MarineTraffic es una plataforma global de seguimiento de embarcaciones en tiempo real basada en datos AIS. Permite visualizar la posición de barcos, itinerarios, historial de rutas, y datos portuarios. Se usa ampliamente por operadores logísticos, agencias navieras y entusiastas del sector marítimo.</td>
+    <td>	Windward es una solución avanzada de inteligencia marítima que utiliza inteligencia artificial para evaluar riesgos, prever comportamientos sospechosos y optimizar operaciones navieras. Sus clientes incluyen gobiernos, aseguradoras y grandes navieras.</td>
+    <td>FleetMon ofrece datos AIS en tiempo real y servicios de análisis para rastreo de flotas, predicción de llegadas a puerto, y documentación logística. Su interfaz está dirigida tanto a usuarios corporativos como a operadores individuales.
+  </td>
+  </tr>
+  <tr>
+  <td>Ventaja Competitiva</td>
+  <td>Alta cobertura AIS global, interfaz amigable, muy popular en el sector, especialmente para monitoreo pasivo de tráfico.</td>
+    <td>Potente capacidad analítica predictiva, análisis de riesgos en profundidad, clientes de alto nivel institucional.</td>
+    <td>Versatilidad en el rastreo de flotas con herramientas personalizadas y buena documentación para desarrolladores.</td>
+    </tr>
+<tr>
+    <td rowspan="2">Perfil de Marketing</td>
+    <td>Mercado Objetivo</td>
+    <td>Agencias logísticas, operadores portuarios, entusiastas del tracking marítimo.</td>
+    <td>Gobiernos, aseguradoras marítimas, grandes navieras.</td>
+    <td>Operadores logísticos, navieras pequeñas y medianas, desarrolladores.</td>
+  </tr>
+  <tr>
+  <td>Estrategias de Marketing</td>
+  <td>SEO, presencia en ferias marítimas, partnerships con puertos y armadores.</td>
+    <td>Relaciones institucionales, ventas B2B, participación en foros de seguridad marítima.</td>
+    <td>Marketing técnico, tutoriales API, contenido especializado.</td>
+    </tr>
+<tr>
+    <td rowspan="3">Perfil de Producto</td>
+    <td>Productos y Servicios</td>
+    <td>Seguimiento AIS global, historial de rutas, tráfico portuario, alertas personalizadas, informes mensuales.</td>
+    <td>Análisis de riesgo, predicción de comportamiento de flotas, detección de actividad sospechosa, insights de cumplimiento normativo.
+</td>
+    <td>Seguimiento de flotas, predicción de ETA, bases de datos de barcos, alertas personalizadas, informes descargables.</td>
+  </tr>
+  <tr>
+  <td>Precios y Costos</td>
+  <td>Planes desde $25 al mes hasta más de $250, dependiendo de acceso a datos históricos, API, y cobertura satelital.</td>
+    <td>Modelo enterprise, precios personalizados (usualmente desde $1,000+ mensuales).<br>
+-Membresías: desde S/ 15 por mes hasta S/ 120 por año.</td>
+    <td>Planes desde €29 por mes hasta más de €150 mensuales. Acceso API premium se cobra adicional.</td>
+    </tr>
+<td>Canales de distribución (Web y/o Móvil)</td>
+  <td>Web, app móvil, API.</td>
+    <td>Web, consultoría directa, integración con plataformas empresariales.</td>
+    <td>Web, app móvil, API para integración.</td>
+    </tr>
+<tr>
+    <td rowspan="4">Análisis SWOT</td>
+    <td>Fortalezas</td>
+    <td>Cobertura global, interfaz intuitiva, alta adopción.</td>
+    <td>Inteligencia predictiva avanzada, prestigio institucional.</td>
+    <td>Flexibilidad, personalización, buen soporte para desarrolladores.</td>
+  </tr>
+  <tr>
+  <td>Debilidades</td>
+  <td>Menor enfoque analítico, poco personalizable.</td>
+    <td>Precio alto, no enfocado en usuarios operativos.</td>
+    <td>Menor alcance global que MarineTraffic.</td>
+    </tr>
+<td>Oportunidades</td>
+  <td>Expansión de APIs e integración con puertos.</td>
+    <td>Colaboraciones con aseguradoras y gobiernos.</td>
+    <td>Expansión hacia soluciones logísticas especializadas.</td>
+    </tr>
+<td>Amenazas</td>
+  <td>Saturación de plataformas similares.</td>
+    <td>Alto costo de entrada limita adopción.</td>
+    <td>Competencia con MarineTraffic y VesselFinder.</td>
+</table>
+
+### 2.1.2. Estrategias y tácticas frente a competidores.
+
+Teemo puede diferenciarse de sus competidores enfocándose en rutas críticas como el Mar Rojo, ofreciendo visualizaciones específicas, mapas de riesgo interactivos y alertas geopolíticas en tiempo real. A diferencia de herramientas reactivas, Teemo puede adoptar un enfoque proactivo con simuladores de rutas seguras y predicción de congestión mediante algoritmos inteligentes. Además, al priorizar una experiencia de usuario simplificada y localizada para capitanes y agencias pequeñas, con soporte offline y en idiomas clave como árabe e inglés, puede ganar terreno donde otros no llegan. Su modelo de precios accesible, con planes escalables y pruebas gratuitas, lo hace ideal para PYMEs del sector. Complementariamente, Teemo puede fortalecer su propuesta con alianzas en puertos estratégicos del Mar Rojo, una comunidad colaborativa estilo “Waze marítimo” para reportes en tiempo real, e integrar contexto geopolítico explicativo con fuentes verificadas, generando así una plataforma marítima más segura, útil y centrada en los usuarios más afectados por las crisis actuales.
+
+## 2.2. Entrevistas
+Las entrevistas buscan entender mejor a los usuarios y cómo usan la tecnología. Queremos saber qué piensan sobre los servicios en línea, los problemas que han tenido y qué esperan sobre nuestro proyecto.
+
+### 2.2.1 Diseño de entrevistas 
+
+**Preguntas para ambos segmentos**
+
+- Presentación:
+    - ¿Cual es su nombre?
+    - ¿Que edad tiene?
+    - ¿En qué Distrito vive?
+    - ¿Estado Civil?
+    - ¿Cual es su ocupación? ¿Estudia y/o trabaja?
+
+**Preguntas para Empresas Navieras y Operadoras Logísticas Globales**
+- ¿Cuál es su rol a bordo o dentro del equipo de planificación de rutas del crucero?
+- ¿Cuántos años de experiencia tiene navegando o coordinando rutas internacionales?
+- ¿Qué tipo de cruceros opera actualmente (turísticos, de lujo, rutas regionales, etc.)?
+- ¿Con qué frecuencia transitan por el Mar Rojo o rutas cercanas?
+- ¿Qué herramientas o sistemas utilizan para planificar y monitorear rutas en tiempo real?
+- ¿Quién toma la decisión final cuando se necesita desviar una ruta por razones de seguridad?
+- ¿Cómo acceden a información meteorológica, geopolítica o logística antes de cada travesía?
+
+**Preguntas para el segmento: Exportadores e Importadores de Alta Rotación**
+- ¿Cuál es su rol dentro de la agencia naviera?
+- ¿Cuántos barcos o rutas supervisa actualmente su agencia?
+- ¿Qué tipos de embarcaciones manejan con más frecuencia (mercantes, petroleros, cruceros, etc.)?
+- ¿Cómo han afectado las tensiones geopolíticas en el Mar Rojo (por ejemplo, los ataques hutíes) a la planificación de sus rutas?
+- ¿Qué decisiones operativas han debido tomar como resultado de los desvíos alrededor del Cabo de Buena Esperanza?
+- ¿Han experimentado demoras o incrementos en los costos de transporte en los últimos meses debido a esta situación?
+- ¿Qué tan difícil ha sido acceder a información confiable y oportuna sobre riesgos en rutas específicas?
+
+
+
+### 2.2.2. Registro de entrevistas 
+En el proceso de investigación para nuestro proyecto, se llevaron a cabo entrevistas del público objetivo. Cada entrevista se documentó en video y se registraron los siguientes detalles:
+
+Link de la entrevista: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a955_upc_edu_pe/ERshpHqBeD1Btquo46R2npsBg3-ZqoIrr90kLY8Ix_a4qw?e=brkSf8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
+**Segmento 1: Empresas Navieras y Operadoras Logísticas Globales**
+
+#### Entrevista 1:
+
+**Nombre y Apellido:** Patricia Salas
+
+**Edad:** 45 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** 
+![alt text](<./assets/img/chapter-II/Captura entrevista 1.1.png>)
+
+**Timelapse:** [Inicio: 14:45, Fin: 20:19]
+
+**Resumen de la Entrevista:**
+
+Patricia ocupa el rol de directora de planificación de rutas en una empresa de cruceros turísticos de alta gama. Cuenta con 22 años de experiencia coordinando rutas internacionales, especialmente en itinerarios de lujo por el Mediterráneo, Caribe y algunas travesías transatlánticas. Actualmente opera cruceros turísticos de lujo que ocasionalmente incluyen tramos por el Mar Rojo, aunque enfatizó que debido a los riesgos geopolíticos actuales, las rutas por esa zona han sido reducidas significativamente.
+Para la planificación y monitoreo en tiempo real, su equipo utiliza una combinación de plataformas AIS, mapas satelitales interactivos y un software interno de optimización de rutas que les permite ajustar trayectos en función de condiciones climáticas y alertas de seguridad. En cuanto a decisiones de desvío, Patricia explicó que, aunque el capitán tiene la última palabra a bordo, todas las decisiones importantes se toman en coordinación con el centro de control en tierra, donde ella participa directamente.
+El acceso a información crítica antes de cada travesía se realiza a través de briefings diarios, reportes meteorológicos internacionales, alertas geopolíticas emitidas por agencias de seguridad marítima y consultores externos especializados en riesgos marítimos. Patricia resaltó la importancia de mantener un flujo constante de información actualizada para garantizar tanto la seguridad de los pasajeros como la eficiencia de las operaciones.
+
+
+
+
+**Segmento 2: Exportadores e Importadores de Alta Rotación**
+
+#### Entrevista 1:
+
+**Nombre y Apellido:** Arwen Vasquez
+
+**Edad:** 40 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** ![alt text](<./assets/img/chapter-II/Captura entrevista 1.png>)
+
+**Timelapse:** [Inicio: 00:00, Fin: 05:01]
+
+**Resumen de la Entrevista:**
+
+Arwen es capitana de embarcaciones pesqueras industriales. Tiene 20 años de experiencia en navegación de alta mar, en especial en el Pacífico Sur. Actualmente no trabaja con cruceros turísticos; opera embarcaciones de pesca de altura, pero conoce bien la planificación de rutas. No transita por el Mar Rojo, ya que su zona de operación está en aguas sudamericanas, pero comentó que entiende la importancia de esa región para el comercio mundial. Para planificar rutas, se apoya en sonares marinos avanzados, cartografía electrónica y informes de corrientes oceánicas. Ella misma, como capitana, decide cambios de ruta si la seguridad de la tripulación está en riesgo, actuando de forma autónoma en alta mar. Accede a informes meteorológicos de alta frecuencia, alertas de fenómenos climáticos, y a redes de información marina compartida entre capitanes pesqueros.
+
+#### Entrevista 2:
+
+**Nombre y Apellido:** Mariela Sanchez
+
+**Edad:** 40 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** ![alt text](<./assets/img/chapter-II/Captura entrevista 2.png>)
+
+**Timelapse:** [Inicio: 05:01, Fin: 10:45]
+
+**Resumen de la Entrevista:**
+
+Mariela es jefa de operaciones navieras encargada de coordinar rutas para cruceros turísticos regionales. Tiene 16 años de experiencia en logística marítima. Actualmente opera principalmente cruceros turísticos y de lujo, orientados a recorridos en Sudamérica y el Caribe. Aunque su operación no es frecuente en el Mar Rojo, explicó que en temporadas especiales coordinan rutas alternativas que bordean África.
+Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con softwares propios de planificación naviera. En caso de desvíos por riesgos, el capitán del barco tiene la última palabra, pero siempre con el respaldo del equipo de tierra. Mariela recurre a boletines meteorológicos internacionales, reportes de situación política y consultores de riesgos marítimos para cada travesía.
+
+#### Entrevista 3:
+
+**Nombre y Apellido:** Alejandro Rivas
+
+**Edad:** 40
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** ![alt text](<./assets/img/chapter-II/Captura entrevista 3.png>)
+
+**Timelapse:** [Inicio: 10:45, Fin: 14:45]
+
+**Resumen de la Entrevista:**
+
+Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando rutas tanto regionales como de larga distancia. Actualmente, opera principalmente cruceros de carga pesada, no turísticos. Respecto al Mar Rojo, comentó que transita la zona aproximadamente dos veces al año, y que debido a la situación geopolítica reciente, deben extremar precauciones. Para la planificación y monitoreo de rutas, utiliza sistemas ECDIS (Electronic Chart Display and Information System) combinados con radar de alta precisión. Cuando hay necesidad de desviar la ruta por seguridad, él mismo toma la decisión final, pero siempre consultando previamente con la compañía naviera. Sobre la información previa al viaje, accede a informes meteorológicos satelitales, briefings de inteligencia marítima y actualizaciones de tráfico marítimo en tiempo real.
+
+### 2.2.3. Análisis de entrevistas
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+Patricia Salas, con 22 años de experiencia en la coordinación de rutas internacionales, actualmente se desempeña como directora de planificación de rutas en una empresa de cruceros turísticos de lujo. Su rol consiste en diseñar y supervisar las rutas de los cruceros, asegurando la optimización de los trayectos y la seguridad de los pasajeros. Aunque sus cruceros transitan ocasionalmente por el Mar Rojo, destacó que debido a la situación geopolítica reciente han disminuido considerablemente sus pasos por esa zona. Para planificar y monitorear en tiempo real, Patricia y su equipo utilizan plataformas AIS, mapas satelitales interactivos y un software interno especializado en optimización de rutas, lo que les permite realizar ajustes inmediatos ante cualquier alerta. En cuanto a las decisiones de desvío por seguridad, explicó que, aunque el capitán a bordo tiene la decisión final, todo se coordina estrechamente con el centro de control en tierra, donde ella participa directamente en la evaluación de riesgos. Para mantenerse actualizados antes de cada travesía, acceden a briefings diarios, reportes meteorológicos, alertas geopolíticas de agencias internacionales y consultorías externas de seguridad marítima, demostrando un enfoque sistemático y multidisciplinario en la gestión de riesgos y planificación estratégica.
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+Los capitanes y jefes de embarcaciones entrevistados comparten un perfil de alta experiencia, con entre 16 y 20 años navegando o coordinando rutas internacionales, y todos coinciden en que la decisión final ante un desvío por razones de seguridad siempre recae en el capitán a bordo. También es común el uso de tecnología avanzada para la planificación y monitoreo de rutas, incluyendo sistemas electrónicos como ECDIS, AIS, radares o sonares, así como la consulta regular de información meteorológica y geopolítica antes de cada travesía, aunque las fuentes y herramientas específicas varían según el tipo de operación. A pesar de estos puntos en común, existen diferencias claras: Alejandro opera buques de carga, Mariela coordina cruceros turísticos y de lujo, y Arwen lidera embarcaciones pesqueras industriales. Asimismo, mientras Alejandro transita rutas internacionales incluyendo el Mar Rojo, Mariela solo ocasionalmente se acerca a esta zona y Arwen opera exclusivamente en el Pacífico Sur. En cuanto a la obtención de información crítica, Alejandro depende de informes internos de inteligencia marítima, Mariela trabaja con consultores de riesgos externos, y Arwen se apoya en redes informales entre capitanes. A pesar de las diferencias en el tipo de embarcación y las zonas de operación, todos destacan que la seguridad de la tripulación y la actualización tecnológica constante son elementos fundamentales en su labor diaria.
+
+## 2.3. Needfinding
+Posteriormente a las entrevistas, pudimos obtener la información sobre sus deseos, frustraciones, situación y múltiples datos que nos van a servir para satisfacer sus necesidades, mejorando la experiencia a nuestros usuarios. 
+Esta información también nos ayudará a realizar los esquemas para las secciones de User Personas, User Task Matrix, User Journey Maps y el Empathy Mapping.
+
+### 2.3.1. User Persona
+Para desarrollar Mushroom, hemos entrevistado una persona que trabaja en una empresa de navieras. Estos datos nos permiten crear "User Personas" detalladas, que guiarán el diseño y desarrollo de nuestra plataforma para satisfacer las necesidades específicas de nuestros usuarios, ofreciendo una solución de movilidad eficiente y sostenible.
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+![alt text](<./assets/img/chapter-II/Diego Bertie-User Persona.png>)
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+![alt text](<./assets/img/chapter-II/Ronaldinho Luna-user persona.png>)
+
+### 2.3.2. User Task Matrix
+
+Elaboramos los User Task Matrix  del Usuario con el propósito de determinar la frecuencia con la que los usuarios llevan a cabo diversas actividades, lo que nos permite visualizar la importancia de ciertas tareas.
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+| Tareas                                                        |  Importancia   |  Frecuencia               |
+|---------------------------------------------------------------|--------------------------|--------------------------
+| Evaluar rutas marítimas antes de cada embarque.	                        |Alta                     | Siempre
+| Reprogramar rutas en tiempo real	 |Media                 | Siempre                  
+| Estimar tiempos de llegada y retrasos potenciales |Alta         | Siempre           
+| Coordinar logística con puertos alternos                   |Media                   | A veces                  
+| Acceder a reportes de riesgos marítimos |Media            | A veces                  
+| Comunicar cambios de ruta con embarcaciones        |Alta                     | Diaria/Semanal                  
+| Simular rutas con menor riesgo y costo     |Baja                    | Diaria                 
+| Generar informes para clientes o directivos                    |Media                     | Ocasionalmente    
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+| Tareas                                                        |  Importancia   |   Frecuencia               |
+|---------------------------------------------------------------|--------------------------|--------------------------
+| Planificar rutas seguras antes de cada viaje		                        |Alta                     | Diaria
+| Monitorear en tiempo real cambios meteorológicos y riesgos geopolíticos	 |Media                 | Semanal/Mensual                  
+| Comunicar emergencias y desvíos con su equipo en tierra |Media         | Diaria/Semanal
+| Asegurar cumplimiento del itinerario turístico                 |Alta                 | Diaria               
+| Verificar acceso a puertos alternativos en tiempo de crisis	 |Alta            | Semanal                  
+| Tomar decisiones de desvío inmediato        |Media                     | Diaria/Semanal                              
+| Realizar reportes post-ruta o bitácoras                    |Media                     | Ocasionalmente    
+
+**Analisis y Explicación:**
+
+Las Empresas Navieras y Operadoras Logísticas Globales, al estar centradas en la planificación estratégica y la gestión logística, suelen actuar con un enfoque preventivo: evalúan rutas con antelación, generan reportes para toma de decisiones y necesitan simular escenarios posibles ante amenazas geopolíticas. Son usuarios que valoran la precisión, confiabilidad y anticipación, y que trabajan en horarios más estables pero bajo alta presión institucional. En contraste, los capitanes de crucero y sus jefes de ruta operan en un entorno de alta inmediatez, con necesidad de información clara y decisiones rápidas. Su comportamiento es más reactivo y está marcado por la necesidad de flujo continuo de datos en tiempo real, comunicación ágil con tierra y facilidad para adaptarse en situaciones críticas, como desvíos urgentes o interrupciones portuarias. 
+
+### 2.3.3. User Journey Mapping
+
+Creamos los User Journey Maps con el objetivo de comprender la experiencia de nuestro cliente al utilizar nuestra aplicación. Por ende, cada paso que el cliente realiza se detalla minuciosamente, incluyendo el proceso, los obstáculos encontrados y los pensamientos o emociones que surgen a raíz de ello.
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+![alt text](<./assets/img/chapter-II/Diego Bertie Journey Map.png>)
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+![alt text](<./assets/img/chapter-II/Ronaldinho Luna journey map.png>)
+
+### 2.3.4. Empathy Mapping
+Para el desarrollo de los Empathy Map hemos utilizado la información recopilada en base a nuestros dos User Personas que representan nuestro segmento.
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+![alt text](<./assets/img/chapter-II/Diego Bertie - Empathy map.png>)
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+![alt text](<./assets/img/chapter-II/Ronaldinho Luna - Empathy map.png>)
+
+### 2.3.5. As-is Scenario Mapping
+Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuesto en los User Persona. De tal modo, hemos conseguido realizar los As-Is mapping para los segmentos dados.
+
+**_Segmento 1: Empresas Navieras y Operadoras Logísticas Globales_**
+
+<td><img src="./assets/img/chapter-II/AS-IS_2.png" style="width:1000px; height:auto;" alt=""></td>
+
+**_Segmento 2: Exportadores e Importadores de Alta Rotación_**
+
+<td><img src="./assets/img/chapter-II/AS-IS_1.png" style="width:1000px; height:auto;" alt=""></td>
+
+### 2.3.6. Ubiquitous Language
+
+- **Ruta Segura**:	Trayectoria marítima recomendada basada en criterios de seguridad actualizados, incluyendo riesgos geopolíticos.
+
+- **Simulador de Ruta**:	Herramienta que permite visualizar, comparar y proyectar diferentes rutas posibles considerando variables críticas.
+
+- **Alerta en Tiempo**: Real	Notificación automatizada que informa sobre amenazas o cambios relevantes (clima, ataques, cierre de puertos, etc).
+
+- **Capitán**:	Usuario operativo que navega en el mar y requiere decisiones inmediatas sobre navegación y seguridad.
+
+- **Jefe de Ruta**:	Perfil que acompaña o asiste al capitán en la planificación y monitoreo de trayectos marítimos.
+
+- **Agencia Naviera**:	Organización encargada de coordinar, planificar y aprobar rutas y operaciones logísticas de embarcaciones.
+
+- **Punto Crítico**:	Zona geográfica de alto riesgo para embarcaciones, ya sea por conflicto armado, condiciones climáticas o congestión.
+
+- **Panel de Monitoreo**:	Vista centralizada de la ubicación de embarcaciones, rutas activas y condiciones del entorno.
+
+- **Reporte de Ruta**:	Documento generado automáticamente o a solicitud, que resume el estado de una ruta, riesgos y alternativas sugeridas.
+
 
 <style>
   body {
@@ -885,62 +1227,22 @@ Las User Stories son una herramienta fundamental para definir los requisitos del
 <td><img src="./assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
 
 ##### 3.4. Product Backlog.
+# **Product Backlog - Funcionalidades de Teemo**
 
-| **Orden** | **User Story** | **Título**                              | **Descripción**                                                                                                                                                                                            | **Story Points** |
-|-----------|----------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| 1         | US001          | Acceso a la sección de Resumen           | Como visitante, quiero acceder a la sección de información de la página de resumen para obtener información clara sobre la aplicación.                                                            | 2                |
-| 2         | US002          | Acceso a la sección de Características   | Como visitante, quiero poder acceder a la página de "Características" para enterarme de las características claves de la aplicación.                                                              | 1                |
-| 3         | US003          | Envío de Correos a los CEO de Easylogistics | Como visitante, quiero enviar correos con información adicional sobre las funcionalidades de la aplicación.                                                                                         | 2                |
-| 4         | US004          | Registro de Nuevos Usuarios             | Como visitante, quiero poder registrarme como usuario para ponerme en contacto para el uso de la aplicación.                                                                                        | 3                |
-| 5         | US005          | Información de Funcionalidades          | Como visitante, quiero ver un sector que detalle todas las funcionalidades que ofrece la aplicación.                                                                                                   | 2                |
-| 6         | US006          | Sector de Planes Disponibles            | Como visitante, quiero ver los diferentes planes que ofrece la aplicación para escoger el que mejor se adapte a mis necesidades.                                                                      | 3                |
-| 7         | US007          | Sector de Preguntas Frecuentes          | Como visitante, quiero tener acceso a un sector de preguntas frecuentes para obtener respuestas rápidas a dudas comunes.                                                                               | 2                |
-| 8         | US008          | Conexión de Easylogistics con la Aplicación | Como visitante, quiero conocer cómo Easylogistics está conectado con esta aplicación para entender mejor su propósito y origen.                                                                         | 3                |
-| 9         | US009          | Conexión de Datos del Formulario a Firebase | Como desarrollador, quiero conectar los datos del formulario de contacto a una base de datos de Firebase para almacenar y gestionar las consultas de los usuarios.                                 | 2                |
-| 10        | US010          | Registro de Usuario                     | Como visitante, quiero poder registrarme como usuario para acceder a todas las funcionalidades de la aplicación.                                                                                     | 2                |
-| 11        | US011          | Inicio de Sesión                        | Como usuario registrado, quiero poder iniciar sesión para acceder a mi cuenta y utilizar las funcionalidades de la aplicación.                                                                      | 2                |
-| 12        | US012          | Recuperación de Contraseña              | Como usuario, quiero poder recuperar mi contraseña en caso de olvidarla para poder acceder nuevamente a mi cuenta.                                                                                    | 3                |
-| 13        | US013          | Configuración de Cuenta                 | Como usuario, quiero poder configurar mi cuenta para personalizar mi experiencia en la aplicación.                                                                                                  | 2                |
-| 14        | US014          | Crear Contenido                         | Como administrador, quiero poder crear nuevo contenido para mantener la información actualizada en la aplicación.                                                                                     | 3                |
-| 15         | US015          | Leer Contenido                          | Como usuario, quiero poder leer el contenido disponible en la aplicación para obtener información relevante.                           | 3               |
-| 16        | US016          | Actualizar Contenido                    | Como administrador, quiero poder actualizar el contenido existente para mantener la información relevante y actualizada.              | 2               |
-| 17         | US017          | Eliminar Contenido                      | Como administrador, quiero poder eliminar contenido obsoleto para mantener la información actualizada en la aplicación.               | 3               |
-| 18         | US018          | Agregar Comentarios                     | Como usuario, quiero poder agregar comentarios en el contenido para compartir mis opiniones y experiencias.                           | 1                |
-| 19         | US019          | Leer Comentarios                        | Como usuario, quiero poder leer los comentarios en el contenido para conocer las opiniones y experiencias de otros usuarios.          | 2                |
-| 20         | US020          | Moderar Comentarios                     | Como administrador, quiero poder moderar los comentarios para asegurar que cumplan con las normas de la comunidad.                    | 3               |
-| 21         | US021          | Recibir Notificaciones                  | Como usuario, quiero recibir notificaciones para estar al tanto de las actualizaciones y eventos importantes en la aplicación| 1 
-| 22        | US022          | Filtrar Contenido                       | Como usuario, quiero poder filtrar el contenido para ver solo la información que me interesa.        | 2                |
-| 23        | US023          | Buscar Contenido                        | Como usuario, quiero poder buscar contenido específico para encontrar información rápidamente.        | 3                |
-| 24        | US024          | Visualizar Calendario                   | Como usuario, quiero poder visualizar un calendario con todos mis eventos para tener una vista general de mis actividades. | 2               |
-| 25        | US025          | Agregar Eventos al Calendario           | Como usuario, quiero poder agregar eventos al calendario para planificar mis actividades.             | 3               |
-| 26        | US026          | Editar Eventos                          | Como usuario, quiero poder editar eventos en el calendario para actualizar la información de mis actividades. | 2               |
-| 27        | US027          | Eliminar Eventos                        | Como usuario, quiero poder eliminar eventos del calendario para mantener mi agenda actualizada.       | 3               |
-| 28        | US028          | Acceso a la Página de Inicio            | Como visitante, quiero poder acceder a la página de inicio para obtener información clara sobre la aplicación. | 2                | 
-|29        | US029          | Incluir el cambio de idioma (I18n)            | Como visitante, quiero que la aplicación soporte los idiomas español e inglés para poder utilizarla en mi idioma preferido. | 2                |
+# **Product Backlog - Funcionalidades de Teemo**
 
-
-
-| **Orden** | **User Story** | **Título**                                        | **Descripción**                                                                                                                                                                          | **Story Points** |
-|-----------|----------------|---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| 1         | TS001          | Crear Cuenta de Usuario                           | **Como** desarrollador, **quiero** permitir a los usuarios crear una cuenta                                                                                                              | 1                |
-| 2         | TS002          | Iniciar Sesión                                    | **Como** desarrollador, **quiero** permitir a los usuarios iniciar sesión con sus credenciales                                                                                           | 2                |
-| 3         | TS003          | Reconfigurar credenciales                         | **Como** desarrollador, **quiero** permitir a los usuarios restaurar y cambiar sus credenciales e información personal.                                                                  | 1                |
-| 4         | TS004          | Buscar hoteles                                    | **Como** desarrollador, **quiero** implementar una funcionalidad de búsqueda de hoteles por nombre, propietario ubicación y precio.                                                      | 3                |
-| 5         | TS005          | Agregar paginas de hotel                          | **Como** desarrollador, **quiero** permitir a las empresas hoteleras agregar nuevas páginas de hotel en la aplicación.                                                                   | 2                |
-| 6         | TS006          | Actualizar Información de la página               | **Como** desarrollador, **quiero** permitir a las empresas hoteleras actualizar la información de sus hoteles en sus páginas.                                                            | 1                |
-| 7         | TS007          | Eliminar página de hotel                          | **Como** desarrollador, **quiero** permitir a los administradores eliminar su página de hotel.                                                                                           | 3                |
-| 8         | TS008          | Implementar Sistema de Valoración y reseñas       | **Como** desarrollador, **quiero** implementar un sistema de valoración y opinión para que los usuarios puedan calificar los hoteles.                                                    | 3                |
-| 9         | TS009          | Implementar Funcionalidad de guardado             | **Como** desarrollador, **quiero** permitir a los usuarios guardar una página de hotel en su cuenta y marcarlo según lo prefiera.                                                        | 2                |
-| 10        | TS010          | Configurar Notificaciones de Nuevas Publicaciones | **Como** desarrollador, **quiero** crear un sistema que notifique a los usuarios sobre nuevas recomedaciones de hotel, avisos del hotel que reservaron, mensajes de otros usuarios, etc. | 1                |
-| 11        | TS011          | Implementar Funcionalidad de Filtros en Búsqueda  | **Como** desarrollador, **quiero** añadir filtros a la búsqueda para refinar resultados de hoteles según sus criterios.                                                                  | 2                |
-| 12        | TS012          | Implementar Funcionalidad de Exportación de Datos | **Como** desarrollador, **quiero** permitir a los usuarios exportar datos de reservas y otros trámites en formatos como docx, pdf o xml.                                                 | 3                |
-| 13        | TS013          | Implementar Funcionalidad de tramites             | **Como** desarrollador, **quiero** permitir a los usuarios realizar trámites en la aplicación.                                                                                           | 3                |
-| 14        | TS014          | Integrar API de Recomendaciones                   | **Como** desarrollador, **quiero** integrar una API externa para obtener recomendaciones de hoteles basadas en las preferencias del usuario y su información.                            | 3                |
-| 15        | TS015          | Implementar Funcionalidad de comunidad            | **Como** desarrollador, **quiero** permitir a los usuarios crear y comentar en foros y circulos de discuciones.                                                                          | 3                |
-| 16        | TS016          | Implementar Sistema de Mensajes Internos          | **Como** desarrollador, **quiero** implementar un sistema de mensajes internos para comunicación entre usuarios.                                                                         | 2                |
-| 17        | TS017          | Implementar Sistema de reservas                   | **Como** desarrollador, **quiero** implementar un sistema de procesamiento de reservaciones                                                                                              | 3                |
-| 18        | TS018          | Implementar editor de páginas web básico          | **Como** desarrollador, **quiero** implementar un editor de páginas web básico para las empresas de hoteles                                                                              | 3                | 
-
+| **ID** | **Título** | **Descripción (Formato User Story)** | **Story Points** |
+|-------|-------------|---------------------------------------|------------------|
+| US01 | Visualizar lista de puertos disponibles | Como usuario, quiero visualizar una lista de puertos disponibles para poder seleccionar el puerto de origen y destino en mi navegación. | 1 |
+| US02 | Mostrar ruta más corta entre dos puertos | Como usuario, quiero que el sistema calcule y muestre la ruta más corta entre dos puertos, para optimizar el tiempo de viaje. | 5 |
+| US03 | Permitir seleccionar puerto de origen y destino | Como usuario, quiero seleccionar manualmente el puerto de salida y el de llegada para personalizar mi trayecto. | 2 |
+| US04 | Simular cierre de puerto en la ruta | Como administrador, quiero poder simular el cierre de un puerto o tramo para evaluar el impacto en la navegación y planificar alternativas. | 3 |
+| US05 | Notificar al usuario si la ruta es afectada | Como usuario, quiero recibir notificaciones cuando un cierre afecte mi ruta, para poder actuar rápidamente y evitar retrasos. | 2 |
+| US06 | Recalcular la ruta en caso de cierre | Como usuario, quiero que el sistema recalcule automáticamente la mejor ruta disponible cuando ocurra un cierre, para seguir avanzando sin interrupciones. | 5 |
+| US07 | Mostrar información básica del viaje | Como usuario, quiero visualizar información básica del viaje como tiempo estimado y cantidad de nodos recorridos para tener control de mi navegación. | 2 |
+| US08 | Reporte de navegación sencillo | Como usuario, quiero recibir un reporte final de mi viaje para analizar la ruta tomada, eventos ocurridos y tiempos de recorrido. | 3 |
+| US09 | Visualizar mapa esquemático de las rutas | Como usuario, quiero ver un mapa esquemático de los puertos y rutas conectadas para entender gráficamente el trayecto. | 3 |
+| US10 | Guardar último viaje realizado | Como usuario, quiero guardar el último viaje realizado para poder revisarlo posteriormente y evaluar mi desempeño. | 2 |
 
 <style>
   body {
@@ -986,10 +1288,12 @@ En esta seccion definiremos los estilos de diseño frontend que serán la base p
 <img src="./assets/img/chapter-IV/Logo Mushroom.png" style="width:300px; height:auto;" alt="logo mushroom">
 
 **Typography:** Al seleccionar la tipografía para nuestro proyecto, hemos optado por utilizar Roboto siguiendo las pautas de estilo general. Ya que ofrece una combinación única de legibilidad, versatilidad y modernidad que se alinea perfectamente con la identidad visual y los objetivos de Mushroom. Su diseño limpio y contemporáneo proporciona una excelente lectura en una amplia gama de dispositivos, lo que garantiza una experiencia de usuario óptima para nuestros clientes, que incluyen tanto agencias de embarcaciones navieras como exportadores e importadores de alta rotacion.
+
 <img src="./assets/img/chapter-IV/Tipografia.png" style="width:700px; height:auto;" alt="tipography">
 
 **Colors:** Hemos escogido una paleta basada en colores suaves y elegantes, algo fríos para dar sensación de premium . De tal modo, estos generan un ambiente profesional y acogedor para el usuario final.
 Los tonos más claros pueden ser utilizados para fondos o elementos de diseño amplios, mientras que los colores más oscuros serán para textos o detalles más específicos asegurando legibilidad y contraste entre ellos.
+
 <img src="./assets/img/chapter-IV/Styles colors.png" style="width:700px; height:auto;" alt="colors">
 
 ### 4.1.2. Web Style Guidelines
