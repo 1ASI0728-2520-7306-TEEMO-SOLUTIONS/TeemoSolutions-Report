@@ -46,7 +46,7 @@
 
 ### PROFESOR: Noriega Melendez, Julio Manuel
 ### START UP: Teemo Solutions
-### PRODUCTO: name of the product
+### PRODUCTO: Mushroom
 
 ## INTEGRANTES:
 
@@ -168,7 +168,7 @@ Puede acceder al contenido del repositorio pulsando sobre el siguiente ícono:
     </tr>
     <tr>
       <td>Vasquez Requejo, Augusto Mathias Leonardo</td>
-      <td></td>
+      <td>Mathiwen519</td>
     </tr>
   </tbody>
 </table>
@@ -409,7 +409,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
@@ -421,7 +421,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, aportando a la realizacion eficiente del trabajo grupal.
       </td>
       </tr>
       <tr>
@@ -437,7 +437,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
@@ -449,7 +449,7 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> message here
+        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Esta solucion tecnologica que se propone será util para resolver una problematica actual que se presenta.
       </td>
 </tr>
 </tbody>
