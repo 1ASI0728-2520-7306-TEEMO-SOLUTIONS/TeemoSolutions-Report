@@ -199,13 +199,84 @@ El desarrollo del UI Design de la Landing Page está en el siguiente link: https
 
 ## 4.4. Mobile Applications UX/UI Design
 ### 4.4.1. Mobile Applications Wireframes
+
+- **El login y registro de usuarios:**
+<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Todas los servicios que ofrece nuestra aplicacion:**
+<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Todos los testimonios de otros usuarios:**
+<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Seccion de contacto para con los administradores de la aplicacion:**
+<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
 ### 4.4.2. Mobile Applications Wireflow Diagrams
+
+- **Usuario que desea saber en tiempo real cual será la mejor ruta para el viaje que desea hacer**
+<img src="../../assets/img/chapter-IV/Wireflow diagram1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Usuario que desea saber algunas predicciones a posibles contratiempos que pueda sufrir la embarcacion:**
+    
+<img src="../../assets/img/chapter-IV/Wireflow diagram2.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Usuario que desea recibir notificaciones o alertas de tormenta o problemas con el clima:**
+
+<img src="../../assets/img/chapter-IV/Wireflow diagram3.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Usuario que desea saber el costo posible del viaje para optimizar la ruta en base a costos:**
+
+<img src="../../assets/img/chapter-IV/Wireflow diagram4.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Usuario que ademas de la ruta principal desea una ruta alternativa para poder saber cual es el mejor planteamiento de ruta:**
+
+<img src="../../assets/img/chapter-IV/Wireflow diagram5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Usuario que desea saber datos estadisticos de sus viajes:**
+
+<img src="../../assets/img/chapter-IV/Wireflow diagram6.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
 ### 4.4.3. Mobile Applications Mock-ups
+ 
+- **El login y registro de usuarios:**
+<img src="../../assets/img/chapter-IV/Mobile Mockup1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Todas los servicios que ofrece nuestra aplicacion:**
+<img src="../../assets/img/chapter-IV//Mobile Mockup2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Todos los testimonios de otros usuarios:**
+<img src="../../assets/img/chapter-IV/Mobile Mockup3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **Seccion de contacto para con los administradores de la aplicacion:**
+<img src="../../assets/img/chapter-IV/Mobile Mockup4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
+- **User Flow Goal 1:** Como capitán, quiero que el sistema sugiera automáticamente la ruta más corta y segura según el algoritmo, para llegar eficientemente al puerto destino.
+
+<img src="../../assets/img/chapter-IV/User flow1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **User Flow Goal 2:** Como capitán, quiero recibir alertas si una ruta se vuelve no viable, para evitar zonas bloqueadas o peligrosas.
+
+<img src="../../assets/img/chapter-IV/User flow3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **User Flow Goal 3:** Como capitán, quiero que el sistema recalcule la ruta si hay cambios inesperados durante la navegación.
+
+<img src="../../assets/img/chapter-IV/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **User Flow Goal 4:** Como capitán, quiero que se guarden los datos del viaje realizado, para poder revisarlos o reportarlos al finalizar.
+
+<img src="../../assets/img/chapter-IV/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+- **User Flow Goal 5:** Como empresario, quiero ver un historial de rutas utilizadas en envíos pasados, para poder tomar decisiones basadas en evidencia. 
+
+<img src="../../assets/img/chapter-IV/User flow2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+
+
+
 ## 4.5. Mobile Applications Prototyping
-### 4.5.1. Android Mobile Applications Prototyping
-### 4.5.2. iOS Mobile Applications Prototyping
+### 4.5.1. iOS Mobile Applications Prototyping
 
 ## 4.6. Web Applications UX/UI Design
 
