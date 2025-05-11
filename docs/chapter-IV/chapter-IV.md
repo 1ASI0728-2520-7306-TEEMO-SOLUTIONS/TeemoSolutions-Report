@@ -53,8 +53,85 @@ Los tonos más claros pueden ser utilizados para fondos o elementos de diseño a
 Para el Web Style Guidelines del sitio web "Mushroom" se utilizó con mayor presencia los colores pasteles en base a una paleta de colores que genere confianza y un ambiente acogedor para el usuario. El logo genera presencia por la combinación de elementos que transmiten una imagen sólida y confiable. A su vez, se ideó un estilo minimalista en el desarrollo del Landing Page para que el usuario tenga la facilidad de navegar y pueda observar las secciones con mayor orden. El tipo de Roboto combina con los colores anteriormente seleccionados, ya que brinda mayor flexibilidad y versatilidad. Para el desarrollo de los mockups y wireframes se utilizó en base a desarrollo web para pantallas de escritorio.
 
 ### 4.1.3. Mobile Style Guidelines
+
+El diseño móvil debe mantener la identidad visual y la experiencia de usuario definidas en la guía de marca. La prioridad en plataformas móviles es la legibilidad, accesibilidad y rendimiento, garantizando una experiencia coherente tanto en iOS como en Android.
+
+Los principios clave incluyen:
+
+- Uso predominante de Roboto en todas las pantallas para una lectura limpia y moderna.
+
+- Aplicación estratégica de la paleta de colores:
+
+  - #10BEAE para elementos interactivos y destacados.
+
+  -  #FFFFFF como fondo principal para asegurar limpieza y claridad.
+
+  -  #000000 para textos principales y detalles de alto contraste.
+
+- Espaciados amplios y márgenes consistentes para facilitar la navegación táctil.
+
+- Iconografía clara y minimalista, preferentemente en línea con los colores definidos
+
 #### 4.1.3.1. iOS Mobile Style Guidelines
+
+En iOS se deben seguir los principios de Apple Human Interface Guidelines adaptados a la marca:
+
+- **Tipografía:** Roboto Regular para cuerpo de texto, Roboto Medium para encabezados.
+
+- **Tamaño de fuente recomendado:**
+
+  - Título: 24 pt
+
+  - Subtítulo: 18 pt
+
+  - Cuerpo: 14-16 pt
+
+- **Colores:**
+
+  - Botones primarios: fondo #10BEAE con texto #FFFFFF.
+
+  - Fondo general: #FFFFFF.
+
+  - Textos: principalmente #000000.
+
+- **Espaciado táctil:**  mínimo de 44x44 pt por elemento interactivo.
+
+- **Esquinas redondeadas:** usar bordes suaves (4-8 pt) para botones y tarjetas, manteniendo la estética moderna.
+
+- **Navegación intuitiva** con barras inferiores o pestañas según jerarquía de contenido.
+
 #### 4.1.3.2. Android Mobile Style Guidelines
+
+En Android se deben seguir las Material Design Guidelines personalizadas con el estilo propuesto por la empresa:
+
+
+- **Tipografía:** Roboto Regular para cuerpo de texto, Roboto Medium para encabezados.
+
+- **Tamaño de fuente recomendado:**
+
+  - Título: 22-24 sp
+
+  - Subtítulo: 16-18 sp
+
+  - Cuerpo: 14-16 sp
+
+- **Colores:**
+
+  - Botones primarios: fondo #10BEAE con texto #FFFFFF.
+
+  - Fondo general: #FFFFFF.
+
+  - Textos: principalmente #000000.
+
+- **Espaciado táctil:**  mínimo de 44x44 pt por elemento interactivo.
+
+- **Elevaciones y sombras:** utilizar sombras sutiles para elementos flotantes como botones de acción (FAB).
+
+- **Esquinas redondeadas:** usar bordes suaves (4-8 pt) para botones y tarjetas, manteniendo la estética moderna.
+
+- **Navegación intuitiva** con barras inferiores o pestañas según jerarquía de contenido.
+
+- **Seguir patrones de navegación** como Drawer, Bottom Navigation o Tabs dependiendo de la complejidad de la app.
 
 ## 4.2. Information Architecture
 ### 4.2.1. Organization Systems
