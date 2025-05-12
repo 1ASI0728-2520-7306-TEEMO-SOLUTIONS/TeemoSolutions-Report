@@ -315,12 +315,25 @@ El desarrollo del UI Design del Web Applications está en el siguiente link: htt
 
 ## 4.8. Domain-Driven Software Architecture
 ### 4.8.1. Software Architecture Context Diagram
+
+<img src="../../assets/img/chapter-IV/C4-Context-Diagram.png" style="width:700px; height:auto;" alt="c4 context diagram">
+
 ### 4.8.2. Software Architecture Container Diagrams
+
+
+
 ### 4.8.3. Software Architecture Components Diagrams
+
+
 
 ## 4.9. Software Object-Oriented Design
 ### 4.9.1. Class Diagrams
+
+
+
 ### 4.9.2. Class Dictionary
+
+
 
 ## 4.10. Database Design
 ### 4.10.1. Relational/Non-Relational Database Diagram
