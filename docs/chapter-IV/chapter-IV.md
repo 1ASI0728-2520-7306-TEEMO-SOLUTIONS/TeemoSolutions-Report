@@ -324,7 +324,7 @@ El desarrollo del UI Design del Web Applications está en el siguiente link: htt
 
 ### 4.8.3. Software Architecture Components Diagrams
 
-
+<img src="../../assets/img/chapter-IV/C4-Component-Diagram.png" style="width:700px; height:auto;" alt="c4 container diagram">
 
 ## 4.9. Software Object-Oriented Design
 ### 4.9.1. Class Diagrams
