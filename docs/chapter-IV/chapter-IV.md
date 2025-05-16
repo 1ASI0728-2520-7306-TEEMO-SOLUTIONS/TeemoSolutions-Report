@@ -278,6 +278,12 @@ El desarrollo del UI Design de la Landing Page está en el siguiente link: https
 ## 4.5. Mobile Applications Prototyping
 ### 4.5.1. iOS Mobile Applications Prototyping
 
+<a href="https://youtu.be/9WosMPSuCxs" target="_blank">
+  <img src="../../assets/img/chapter-IV/Prototyping-Mushroom.png" alt="Haz clic para ver el video en YouTube">
+</a>
+
+https://www.figma.com/proto/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=180-2173&p=f&t=gTWw4q4ijvLKKjSU-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=206%3A40 
+
 ## 4.6. Web Applications UX/UI Design
 
 El desarrollo del UI Design del Web Applications está en el siguiente link: https://www.figma.com/design/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=0-1&p=f&t=xftwdiVWdTtj2j2G-0
