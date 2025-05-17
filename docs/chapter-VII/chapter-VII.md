@@ -98,9 +98,41 @@ Su propósito es automatizar la integración y validación del código, aseguran
 **Aprobación del Despliegue:**
 
   - En este punto, el pipeline queda en pausa hasta que un miembro del equipo (como un desarrollador, administrador o responsable de operaciones) valide los resultados previos y autorice el paso final hacia producción.
-  
+
 ## 7.3. Continuous Deployment
+
+El propósito de Continuous Deployment (CD) es permitir que los cambios en el código, una vez validados, se publiquen automáticamente en producción sin requerir intervención manual. Siempre que el código supere todas las pruebas establecidas, cada nueva versión puede ser desplegada de forma continua y confiable desde el entorno de desarrollo hasta el usuario final.
+
 ### 7.3.1. Tools and Practices
+En esta sección se describen las herramientas y metodologías implementadas para asegurar un despliegue continuo, automatizado y confiable hacia entornos productivos.
+
+- **Tools (Herramientas):**
+  - GitHub Actions / GitLab CI:
+Se utilizan para automatizar el pipeline completo de CI/CD. Permiten definir workflows que ejecutan pruebas, construyen la aplicación y gestionan el despliegue automático en entornos como desarrollo, staging y producción.
+
+  - Docker:
+Se emplea para contenerizar el backend desarrollado en Spring Boot, empaquetando la aplicación junto con sus dependencias. Esto asegura que los entornos de desarrollo, pruebas y producción sean uniformes y reproducibles.
+
+  - Railway:
+Es la plataforma usada para alojar y automatizar la base de datos MySQL. Ofrece soporte para migraciones de esquema y backups automáticos, simplificando la gestión del entorno de datos.
+
+  - Render:
+Plataforma destinada al despliegue automático del backend en Spring Boot. Brinda capacidades de monitoreo, escalabilidad y administración del entorno de ejecución con mínima intervención manual.
+
+  - Firebase Hosting:
+Se encarga del despliegue del frontend construido en Angular. Esta herramienta facilita un despliegue rápido, seguro y automatizado de la aplicación web.
+<br>
+
+- **Prácticas**
+  - Feature Branching:
+Los desarrolladores trabajan en nuevas funcionalidades dentro de ramas específicas. Una vez que se completan y validan, estas se integran a la rama develop, la cual está configurada para gestionar los despliegues hacia producción.
+
+  - Despliegue basado en commits:
+Cada vez que se realiza un commit en la rama develop, se activa automáticamente el pipeline de CI/CD, que ejecuta los procesos de construcción, validación y despliegue. Este flujo garantiza que los cambios pasen de forma continua y eficiente al entorno productivo.
+
+  - Rollback automático:
+En caso de detectar fallos luego del despliegue en producción, el sistema está configurado para revertir automáticamente a la versión estable anterior. Además, se notifica al equipo sobre el incidente, permitiendo una rápida respuesta y asegurando la estabilidad del sistema.
+
 ### 7.3.2. Production Deployment Pipeline Components
 
 ## 7.4. Continuous Monitoring
