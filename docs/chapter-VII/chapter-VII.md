@@ -195,6 +195,24 @@ Una vez desplegada la nueva versión, Firebase invalida la caché anterior para 
 
 ## 7.4. Continuous Monitoring
 ### 7.4.1. Tools and Practices
+Algunas herramientas y prácticas que se emplearán para llevar a cabo un monitoreo continuo y eficaz en nuestra aplicación, son las siguientes:
+
+
+1. **Pruebas de carga y estrés:** Herramientas como JMeter y Locust permiten simular múltiples usuarios concurrentes y situaciones de alta demanda, evaluando cómo responde la aplicación ante escenarios críticos. Esto ayuda a detectar cuellos de botella y validar la capacidad de escalamiento del sistema.
+
+<img src="../../assets/img/chapter-VII/Apache J Meter.png" style="width:500px; height:auto;" alt="">
+
+2. **Monitoreo de experiencia del usuario:** Se utilizarán soluciones como GoogleAnalytics, que proporciona monitoreo en tiempo real sobre métricas clave como tiempos de carga, latencia y errores, permitiendo intervenir proactivamente ante degradaciones en el rendimiento. Complementariamente, Hotjar ofrecerá insights cualitativos a través de mapas de calor y grabaciones de sesiones, permitiendo entender cómo los usuarios realmente interactúan con la interfaz.
+
+<img src="../../assets/img/chapter-VII/Google Analytics.png" style="width:500px; height:auto;" alt="">
+
+3. **Supervisión de APIs:** La correcta disponibilidad y tiempos de respuesta de las APIs internas y externas será monitoreada usando herramientas como Postman (para pruebas automatizadas) y Uptrends (para monitoreo en línea desde diferentes ubicaciones). Esto asegura la integridad y rendimiento de las integraciones críticas.
+
+<img src="../../assets/img/chapter-VII/Postman.png" style="width:500px; height:auto;" alt="">
+
+4. **Auditorías de calidad web:** Utilizaremos Google Lighthouse y Selenium para evaluar aspectos como rendimiento, accesibilidad, SEO y mejores prácticas. Además, WebPageTest permitirá hacer pruebas más detalladas desde diversas ubicaciones y dispositivos, evaluando el comportamiento real de carga en diferentes condiciones de red.
+<img src="../../assets/img/chapter-VII/Selenium IDE.png" style="width:500px; height:auto;" alt="">
+
 ### 7.4.2. Monitoring Pipeline Components
 ### 7.4.3. Alerting Pipeline Components
 ### 7.4.4. Notification Pipeline Components
