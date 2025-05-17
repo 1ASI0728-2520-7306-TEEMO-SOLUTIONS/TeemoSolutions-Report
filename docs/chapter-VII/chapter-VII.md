@@ -77,9 +77,28 @@ Su propósito es automatizar la integración y validación del código, aseguran
 
 - *Rollback Manual:*
   - Aunque algunos pipelines permiten realizar reversiones automáticas ante fallos graves, en Continuous Delivery los rollbacks suelen ser gestionados manualmente por el equipo de desarrollo u operaciones, brindando mayor control sobre las acciones correctivas.
-  
+
 ### 7.2.2. Stages Deployment Pipeline Components
 
+**Integración Continua (CI):**
+  - Cada vez que se realiza un commit en una rama de desarrollo, se activa el pipeline para ejecutar pruebas automáticas que verifican la estabilidad y funcionamiento del código. Este proceso asegura que el código esté siempre en condiciones óptimas para un eventual despliegue.
+
+**Validación en Staging:**
+
+  - Antes de llevar el código a producción, se valida en un entorno de staging que simula condiciones reales. Esta etapa permite ejecutar pruebas adicionales —como pruebas manuales, de carga o seguridad— para detectar posibles fallos antes del lanzamiento.
+
+**Despliegue Manual:**
+
+  - Aunque el sistema puede dejar el código listo para su liberación, el despliegue final requiere una acción humana. Esta aprobación manual brinda un mayor nivel de control y evita errores que puedan impactar a los usuarios finales.
+
+**Monitoreo y Retroalimentación:**
+
+  - El pipeline incorpora herramientas de observabilidad que permiten analizar el comportamiento del sistema con los nuevos cambios. Esto incluye métricas de rendimiento, estabilidad y errores, lo cual permite tomar decisiones informadas antes de activar el despliegue completo.
+
+**Aprobación del Despliegue:**
+
+  - En este punto, el pipeline queda en pausa hasta que un miembro del equipo (como un desarrollador, administrador o responsable de operaciones) valide los resultados previos y autorice el paso final hacia producción.
+  
 ## 7.3. Continuous Deployment
 ### 7.3.1. Tools and Practices
 ### 7.3.2. Production Deployment Pipeline Components
