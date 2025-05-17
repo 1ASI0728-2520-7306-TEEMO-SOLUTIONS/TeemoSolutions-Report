@@ -69,7 +69,7 @@ Las User Stories son una herramienta fundamental para definir los requisitos del
 
 ##### 3.3. Impact Mapping.
 
-##### Segmento 1: 
+##### Segmento 1:
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-2.png" style="width:1000px; height:auto;" alt=""></td>
 
 ##### Segmento 2: Capitán o Jefe de Navegación
