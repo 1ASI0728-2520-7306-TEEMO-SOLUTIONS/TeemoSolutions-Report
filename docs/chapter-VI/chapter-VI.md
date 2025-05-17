@@ -47,6 +47,8 @@ Esta sección aborda las técnicas de prueba y verificación estática del códi
 
 El análisis estático consiste en examinar el código fuente sin necesidad de ejecutarlo, mediante herramientas automáticas y revisiones manuales. Este procedimiento facilita la identificación de errores, vulnerabilidades de seguridad y áreas de mejora, lo que favorece una mayor calidad del software y disminuye los costos asociados a correcciones en fases más avanzadas del proyecto.
 
+<img src="../../assets/img/chapter-VI/StaticCodeAnalysis.png" style="width:500px; height:auto;" alt="static code">
+
 #### 6.2.1.1. Coding Standard & Code Conventions
 En el desarrollo de software moderno, mantener un código claro, coherente y alineado con los objetivos del negocio es esencial para asegurar la escalabilidad, la mantenibilidad y la colaboración efectiva entre equipos. Para lograrlo, es indispensable adoptar buenas prácticas de codificación que garanticen tanto la calidad técnica como la comprensión funcional del sistema. Dos enfoques fundamentales que contribuyen a este propósito son Clean Code y Domain-Driven Design (DDD).
 
@@ -63,8 +65,20 @@ Domain-Driven Design es un enfoque centrado en modelar el software según el dom
 <img src="../../assets/img/chapter-VI/DDD.png" style="width:600px; height:auto;" alt="Domain-Driven Design">
 
 #### 6.2.1.2. Code Quality & Code Security
-### 6.2.2. Reviews
+La calidad del código y la seguridad son pilares fundamentales para garantizar el desarrollo de software confiable y sostenible.
 
+- **Calidad del Código:**
+La evaluación de la calidad del código debe apoyarse en métricas objetivas como la cobertura de pruebas y la complejidad ciclomática. Para ello, es recomendable emplear herramientas como SonarQube, que permite realizar un monitoreo continuo de la calidad del código. Esta herramienta proporciona un análisis detallado, identifica defectos potenciales y ofrece sugerencias para optimizar el rendimiento y la mantenibilidad del software, asegurando el cumplimiento de los estándares definidos.
+
+- **Seguridad del Código:**
+La protección del sistema requiere detectar y prevenir vulnerabilidades comunes, como inyecciones SQL y cross-site scripting (XSS), mediante revisiones constantes del código fuente. Aplicar prácticas de codificación segura y validar correctamente las entradas del usuario son medidas clave para minimizar riesgos y fortalecer la integridad del software.
+
+- **Herramienta de Apoyo – SonarLint:**
+Para reforzar el enfoque en calidad y seguridad, se recomienda el uso de SonarLint, una herramienta que realiza análisis de código en tiempo real dentro del entorno de desarrollo. SonarLint se integra con IDEs populares como IntelliJ IDEA, Eclipse y Visual Studio, ayudando a los desarrolladores a detectar errores y vulnerabilidades mientras programan. Ofrece recomendaciones inmediatas, promoviendo una cultura de mejora continua desde las primeras etapas del desarrollo y evitando que los problemas lleguen a fases críticas como revisión o pruebas.
+
+<img src="../../assets/img/chapter-VI/Sonarlint.png" style="width:600px; height:auto;" alt="Sonarlint">
+
+### 6.2.2. Reviews
 ## 6.3. Validation Interviews
 ### 6.3.1. Diseño de Entrevistas
 ### 6.3.2. Registro de Entrevistas
