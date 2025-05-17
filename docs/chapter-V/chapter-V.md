@@ -449,6 +449,7 @@ En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar
             <td>La suma de los Story Points para los User Stories que se están incluyendo en este Sprint 1 es 21</td>
         </tr>
     </table>
+
 ### 5.2.2. Implemented Landing Page Evidence
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 ### 5.2.4. Implemented Native-Mobile Application Evidence
