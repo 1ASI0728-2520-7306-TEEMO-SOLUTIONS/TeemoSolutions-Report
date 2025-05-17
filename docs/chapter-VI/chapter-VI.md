@@ -43,11 +43,25 @@ Las pruebas de integración central (Core Integration Tests) son esenciales para
 
 ## 6.2. Static Testing & Verification
 ### 6.2.1. Static Code Analysis
-
 Esta sección aborda las técnicas de prueba y verificación estática del código, con el objetivo de garantizar que el software cumpla con los criterios de calidad y seguridad antes de su ejecución. Estos métodos permiten detectar fallos desde las primeras etapas del ciclo de desarrollo.
 
 El análisis estático consiste en examinar el código fuente sin necesidad de ejecutarlo, mediante herramientas automáticas y revisiones manuales. Este procedimiento facilita la identificación de errores, vulnerabilidades de seguridad y áreas de mejora, lo que favorece una mayor calidad del software y disminuye los costos asociados a correcciones en fases más avanzadas del proyecto.
+
 #### 6.2.1.1. Coding Standard & Code Conventions
+En el desarrollo de software moderno, mantener un código claro, coherente y alineado con los objetivos del negocio es esencial para asegurar la escalabilidad, la mantenibilidad y la colaboración efectiva entre equipos. Para lograrlo, es indispensable adoptar buenas prácticas de codificación que garanticen tanto la calidad técnica como la comprensión funcional del sistema. Dos enfoques fundamentales que contribuyen a este propósito son Clean Code y Domain-Driven Design (DDD).
+
+- **Clean Code:**
+
+El concepto de Clean Code se basa en escribir código que sea fácil de leer, entender y modificar. Esto implica utilizar nombres claros y significativos para variables, funciones y clases, escribir funciones cortas que cumplan con una única responsabilidad, y eliminar el código muerto y los comentarios innecesarios. Un código limpio no solo facilita el mantenimiento, sino que también mejora la colaboración entre desarrolladores, reduce la probabilidad de errores y acelera los procesos de revisión y depuración.
+
+<img src="../../assets/img/chapter-VI/Clean Code.png" style="width:500px; height:auto;" alt="clean code">
+
+- **Domain-Driven Design (DDD):**
+
+Domain-Driven Design es un enfoque centrado en modelar el software según el dominio del negocio. Para ello, se recomienda el uso de un lenguaje ubicuo que refleje con precisión los términos y conceptos del negocio en el código. El sistema debe dividirse en bounded contexts, lo que permite separar claramente diferentes áreas funcionales y evitar ambigüedades. Dentro de cada contexto, se utilizan entidades y objetos de valor de forma adecuada para representar los conceptos clave del dominio. Además, la lógica del negocio se organiza mediante servicios de dominio y repositorios, promoviendo una arquitectura más estructurada, comprensible y alineada con las necesidades reales del negocio.
+
+<img src="../../assets/img/chapter-VI/DDD.png" style="width:600px; height:auto;" alt="Domain-Driven Design">
+
 #### 6.2.1.2. Code Quality & Code Security
 ### 6.2.2. Reviews
 
