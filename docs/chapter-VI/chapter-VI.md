@@ -79,6 +79,30 @@ Para reforzar el enfoque en calidad y seguridad, se recomienda el uso de SonarLi
 <img src="../../assets/img/chapter-VI/Sonarlint.png" style="width:600px; height:auto;" alt="Sonarlint">
 
 ### 6.2.2. Reviews
+Las revisiones de código representan una práctica esencial para asegurar tanto la calidad como la alineación del software con las normas definidas. Este proceso debe combinar revisiones manuales y automáticas, siguiendo una serie de lineamientos bien establecidos.
+
+- **Tipos de Revisiones:**
+  - Revisión por Pares: Un desarrollador examina el código de otro para verificar su claridad, funcionalidad y cumplimiento de los estándares del equipo.
+  - Revisión Formal: Se realiza en un entorno más estructurado, a través de reuniones donde se analiza el código utilizando listas de verificación detalladas, lo que permite una evaluación grupal más rigurosa.
+  - Revisión Automatizada: Herramientas como SonarLint y SonarQube se emplean para detectar fallos de calidad y errores en tiempo real, facilitando una revisión técnica continua.
+<br>
+
+- **Proceso de Revisión:**
+  - Generación de Pull Requests: Los desarrolladores deben presentar sus cambios mediante un PR, describiendo de forma clara qué se modificó y qué pruebas se realizaron.
+  - Lista de Verificación: Es indispensable utilizar un checklist que incluya criterios como legibilidad del código, cobertura de pruebas y tratamiento de errores.
+  - Retroalimentación y Comentarios: Los revisores deben brindar observaciones precisas y útiles. Los problemas identificados deben ser resueltos antes de dar paso a la integración.
+  - Validación del PR: Toda solicitud de incorporación de código debe ser aprobada por al menos un revisor antes de ser fusionada con la rama principal.
+<br>
+
+- **Criterios de Aceptación:**
+
+  - Calidad y Seguridad: El código debe respetar los estándares definidos y no introducir riesgos de seguridad.
+  - Cobertura de Pruebas: Se debe cumplir con una cobertura mínima de pruebas automatizadas (por ejemplo, al menos un 80%) para garantizar la confiabilidad del nuevo código.
+<br>
+
+- **Frecuencia de Revisión:**
+  - Las revisiones deben llevarse a cabo de manera periódica, idealmente al final de cada sprint o en ciclos definidos, para evitar acumulaciones de código sin revisar y preservar la calidad del proyecto en el tiempo.
+
 ## 6.3. Validation Interviews
 ### 6.3.1. Diseño de Entrevistas
 ### 6.3.2. Registro de Entrevistas
