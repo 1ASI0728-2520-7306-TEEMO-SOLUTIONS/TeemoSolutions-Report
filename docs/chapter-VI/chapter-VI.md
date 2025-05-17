@@ -198,13 +198,83 @@ Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con
 Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando rutas tanto regionales como de larga distancia. Actualmente, opera principalmente cruceros de carga pesada, no turísticos. Respecto al Mar Rojo, comentó que transita la zona aproximadamente dos veces al año, y que debido a la situación geopolítica reciente, deben extremar precauciones. Para la planificación y monitoreo de rutas, utiliza sistemas ECDIS (Electronic Chart Display and Information System) combinados con radar de alta precisión. Cuando hay necesidad de desviar la ruta por seguridad, él mismo toma la decisión final, pero siempre consultando previamente con la compañía naviera. Sobre la información previa al viaje, accede a informes meteorológicos satelitales, briefings de inteligencia marítima y actualizaciones de tráfico marítimo en tiempo real.
 ### 6.3.3. Evaluaciones según heurísticas
 
-## 6.4. Auditoría de Experiencias de Usuario
-### 6.4.1. Auditoría realizada
-#### 6.4.1.1. Información del grupo auditado
-#### 6.4.1.2. Cronograma de auditoría realizada
-#### 6.4.1.3. Contenido de auditoría realizada
-### 6.4.2. Auditoría recibida
-#### 6.4.2.1. Información del grupo auditor
-#### 6.4.2.2. Cronograma de auditoría recibida
-#### 6.4.2.3. Contenido de auditoría recibida
-#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+## Escala de Severidad
+
+| Escala | 1             | 2     | 3         | 4     | 5         |
+|--------|---------------|-------|-----------|-------|-----------|
+| Nivel  | No tan grave  | Leve  | Moderado  | Grave | Muy grave |
+
+--------------------------------------------------------
+
+<style>
+  table, th, td {
+    text-align: center;
+  }
+</style>
+
+| #Orden | Problema                                                                                         | Escala de Severidad | Heurística / Principio violado(a) |
+|--------|--------------------------------------------------------------------------------------------------|---------------------|------------------------------------|
+| #1     | No se muestra retroalimentación visual clara al iniciar sesión (ej. “Cargando” o validación visible).           | 4                   | Eficiencia de retroalimentación                  |
+| #2     | La interfaz presenta botones sin etiquetas claras o íconos sin descripción visible. | 3                   | Eficiencia de reconocimiento visual             |
+| #3     | No hay opción inmediata para deshacer acciones como cancelación o cambio de ruta.       | 3                   | Eficiencia de control del usuario                  |
+| #4     | No se presenta resumen comprensible del motivo por el que se eligió una ruta sobre otra.           | 4                   | Eficiencia de interpretación de decisiones                  |
+| #5     | Ausencia de mensajes proactivos o alertas sobre condiciones climáticas o bloqueos | 5                 | Eficiencia de prevención de errores
+| #6     | 	No hay acceso claro o visual a un historial de rutas anteriores desde la interfaz inicial. | 3                  | 	Eficiencia de recuperación de información
+
+**Heurísticas y Recomendaciones:**
+
+- **Problema #1: Falta de retroalimentación al iniciar sesión**
+  - *Heurística:* Visibilidad del estado del sistema
+  - *Recomendación:* Agregar un spinner o mensaje tipo “Verificando credenciales…” durante el login. Esto evita que el usuario piense que la app está congelada o fallando.
+<br>
+
+- **Problema #2: Botones e íconos sin etiquetas claras**
+  - *Heurística:* Reconocimiento antes que recuerdo
+  - *Recomendación:* Añadir etiquetas debajo o junto a los íconos, especialmente en funciones críticas como recalcular ruta o ver reportes. También aplicar tooltips si es web.
+<br>
+
+- **Problema #3: No se puede deshacer acciones fácilmente**
+  - *Heurística:* Control y libertad del usuario
+  - *Recomendación:* Incorporar botones de "Deshacer" o "Confirmar antes de proceder" para evitar errores graves, especialmente en funciones de recalculo de ruta o cierre de sesión.
+<br>
+
+- **Problema #4: Ruta seleccionada sin justificación visible**
+  - *Heurística:* Diagnóstico de errores / Explicabilidad
+  - *Recomendación:* Mostrar siempre un resumen breve del porqué de la ruta seleccionada (ej: “ruta óptima por menor tiempo estimado y condiciones climáticas favorables”).
+<br>
+
+- ¨**Problema #5: Falta de alertas proactivas visibles**
+  - *Heurística:* Prevención de errores
+  - *Recomendación:* Implementar un panel o ícono de alerta que indique eventos en tiempo real (cierres de puertos, tormentas, etc.) y permita actuar de inmediato.
+<br>
+
+- **Problema #6: Historial de rutas poco accesible**
+  - *Heurística:* Flexibilidad y eficiencia
+  - *Recomendación:* Añadir en el menú principal un acceso directo a “Historial de rutas” con filtrado por fecha, destino y embarcación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
