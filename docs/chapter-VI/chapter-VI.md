@@ -43,6 +43,10 @@ Las pruebas de integración central (Core Integration Tests) son esenciales para
 
 ## 6.2. Static Testing & Verification
 ### 6.2.1. Static Code Analysis
+
+Esta sección aborda las técnicas de prueba y verificación estática del código, con el objetivo de garantizar que el software cumpla con los criterios de calidad y seguridad antes de su ejecución. Estos métodos permiten detectar fallos desde las primeras etapas del ciclo de desarrollo.
+
+El análisis estático consiste en examinar el código fuente sin necesidad de ejecutarlo, mediante herramientas automáticas y revisiones manuales. Este procedimiento facilita la identificación de errores, vulnerabilidades de seguridad y áreas de mejora, lo que favorece una mayor calidad del software y disminuye los costos asociados a correcciones en fases más avanzadas del proyecto.
 #### 6.2.1.1. Coding Standard & Code Conventions
 #### 6.2.1.2. Code Quality & Code Security
 ### 6.2.2. Reviews
