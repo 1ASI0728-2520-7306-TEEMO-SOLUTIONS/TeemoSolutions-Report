@@ -134,6 +134,64 @@ Cada vez que se realiza un commit en la rama develop, se activa automáticamente
 En caso de detectar fallos luego del despliegue en producción, el sistema está configurado para revertir automáticamente a la versión estable anterior. Además, se notifica al equipo sobre el incidente, permitiendo una rápida respuesta y asegurando la estabilidad del sistema.
 
 ### 7.3.2. Production Deployment Pipeline Components
+En esta sección se detallan los elementos que componen el pipeline de despliegue hacia producción, así como la forma en que se interconectan para lograr una automatización completa del proceso.
+
+**Componentes del Pipeline de la Base de Datos (Railway)**
+En esta sección se explican los elementos clave que integran el pipeline de despliegue a producción de la base de datos MySQL, administrada mediante la plataforma Railway.
+
+1. **Migraciones Automáticas:**
+Cada vez que se realizan modificaciones en las entidades del backend (desarrollado con Spring Boot), el sistema aplica automáticamente los cambios al esquema de la base de datos en Railway. Esto garantiza que la estructura de datos se mantenga alineada con la lógica del código fuente.
+
+2. **Copias de Seguridad Previas:**
+Railway genera backups automáticos de la base de datos antes de ejecutar cualquier migración relevante. Esta medida preventiva permite restaurar el estado anterior en caso de que la migración cause errores o pérdida de información.
+
+3. **Supervisión Activa del Estado de la Base de Datos:**
+La plataforma ofrece herramientas de monitoreo que permiten analizar el comportamiento de la base de datos tras cada migración. Si se detectan fallos o caídas en el rendimiento, se generan alertas automáticas para que el equipo pueda intervenir oportunamente.
+
+4. **Validación del Esquema Migrado:**
+Una vez aplicadas las migraciones, es recomendable ejecutar pruebas automatizadas que verifiquen la integridad del nuevo esquema. Esto incluye la validación de tablas, relaciones y campos recientemente añadidos o modificados mediante scripts específicos.
+
+5. **Despliegue Automatizado a Producción:**
+Tras confirmar que todas las migraciones han sido aplicadas y validadas correctamente, los cambios se actualizan automáticamente en el entorno productivo, lo cual favorece un flujo de desarrollo y entrega continuo, estable y eficiente.
+
+<img src="../../assets/img/chapter-VII/Railway Logo.png" style="width:500px; height:auto;" alt="">
+
+**Componentes del Pipeline del Backend (Render para Spring Boot):**
+A continuación, se detallan los pasos que conforman el pipeline de despliegue automatizado del backend desarrollado con Spring Boot, utilizando la plataforma Render.
+
+1. **Integración continua:**
+Cada vez que se realiza un commit en la rama develop, Render detecta los cambios y obtiene el código actualizado. A continuación, inicia el proceso de construcción del proyecto utilizando Maven.
+
+2. **Generación de Imagen Docker:**
+Render crea automáticamente una imagen Docker del backend, incluyendo todas las dependencias necesarias para su ejecución. Esto garantiza que el entorno de producción sea consistente y replicable.
+
+3. **Despliegue Automatizado:**
+Una vez construida la imagen, Render despliega la nueva versión del backend directamente en el servidor de producción, asegurando una actualización fluida y sin intervención manual.
+
+4. **Monitoreo y Alertas:**
+Tras el despliegue, Render activa sus herramientas de monitoreo para supervisar el estado y rendimiento de la aplicación. Si se detectan errores o anomalías, el sistema emite alertas automáticas al equipo técnico para una pronta respuesta.
+
+<img src="../../assets/img/chapter-VII/Render Logo.png" style="width:500px; height:auto;" alt="">
+
+<br>
+
+**Componentes del Pipeline del Frontend (Firebase para Angular):**
+A continuación, se describen los pasos clave que conforman el pipeline automatizado para el despliegue del frontend desarrollado en Angular, utilizando Firebase Hosting.
+
+1. **Compilación del Proyecto:**
+Al detectar un nuevo commit, Firebase CLI inicia automáticamente el proceso de compilación de la aplicación Angular en modo producción, optimizando los recursos para su ejecución en entornos reales.
+
+2. **Ejecución de Pruebas Automatizadas:**
+Se llevan a cabo pruebas unitarias y de extremo a extremo (E2E) con el objetivo de verificar que la interfaz funcione correctamente y cumpla con los requisitos funcionales establecidos.
+
+3. **Despliegue en Producción:**
+Si todas las pruebas se completan con éxito, Firebase realiza el despliegue automático de la nueva versión del frontend en Firebase Hosting, distribuyéndola a través de una red CDN global para garantizar alta disponibilidad y rendimiento.
+
+4. **Actualización de Caché:**
+Una vez desplegada la nueva versión, Firebase invalida la caché anterior para asegurar que todos los usuarios accedan de inmediato a la versión más reciente de la aplicación web.
+
+
+<img src="../../assets/img/chapter-VII/Firebase Logo.png" style="width:500px; height:auto;" alt="">
 
 ## 7.4. Continuous Monitoring
 ### 7.4.1. Tools and Practices
