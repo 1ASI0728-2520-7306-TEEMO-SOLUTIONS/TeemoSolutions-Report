@@ -105,7 +105,97 @@ Las revisiones de código representan una práctica esencial para asegurar tanto
 
 ## 6.3. Validation Interviews
 ### 6.3.1. Diseño de Entrevistas
+
+A continuación, se presentan las preguntas que se aplicarán durante las entrevistas de validación con el objetivo de evaluar la usabilidad de la aplicación. Estas interrogantes están orientadas a explorar principios clave de usabilidad y a recopilar información significativa sobre la experiencia del usuario.
+
+1. ¿La aplicación te comunica claramente lo que está ocurriendo mientras la utilizas?
+2. ¿Percibes de forma clara el avance de las acciones que realizas, como cargar información o enviar formularios?
+3. ¿El lenguaje utilizado en la aplicación (palabras, frases, etiquetas) te resulta comprensible y natural?
+4. ¿Has tenido problemas al intentar retroceder a una pantalla anterior o al cancelar una operación?
+5. ¿Detectaste diferencias o incoherencias en el lenguaje, diseño o flujo de interacción a lo largo de la app?
+6. ¿Hay elementos visuales o funciones que te generen confusión o no se comporten como esperabas?
+7. ¿Te encontraste con fallos o errores durante el uso de la aplicación? ¿Podrías describir qué tipo fueron?
+8. ¿Qué tipo de mensajes de advertencia o ayudas consideras útiles para prevenir errores al interactuar con la app?
+9. ¿Puedes ubicar fácilmente las funciones de la aplicación sin necesidad de memorizar dónde están?
+10. ¿Consideras que el diseño de la aplicación es organizado, simple y libre de elementos innecesarios?
+
+Estas preguntas permitirán obtener una evaluación detallada sobre la experiencia de uso y señalar posibles oportunidades de mejora. Es importante fomentar un ambiente de confianza durante las entrevistas, donde los participantes se sientan cómodos para expresar sus opiniones y sugerencias con libertad.
 ### 6.3.2. Registro de Entrevistas
+
+**Segmento 1: Empresas Navieras y Operadoras Logísticas Globales**
+
+#### Entrevista 1:
+
+**Nombre y Apellido:** Patricia Salas
+
+**Edad:** 45 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** 
+<img src="../../assets/img/chapter-VI/Review-Entrevista1.png" style="width:600px; height:auto;" alt="Review1">
+
+**Timelapse:** [Inicio: 14:45, Fin: 20:19]
+
+**Resumen de la Entrevista:**
+
+Patricia ocupa el rol de directora de planificación de rutas en una empresa de cruceros turísticos de alta gama. Cuenta con 22 años de experiencia coordinando rutas internacionales, especialmente en itinerarios de lujo por el Mediterráneo, Caribe y algunas travesías transatlánticas. Actualmente opera cruceros turísticos de lujo que ocasionalmente incluyen tramos por el Mar Rojo, aunque enfatizó que debido a los riesgos geopolíticos actuales, las rutas por esa zona han sido reducidas significativamente.
+Para la planificación y monitoreo en tiempo real, su equipo utiliza una combinación de plataformas AIS, mapas satelitales interactivos y un software interno de optimización de rutas que les permite ajustar trayectos en función de condiciones climáticas y alertas de seguridad. En cuanto a decisiones de desvío, Patricia explicó que, aunque el capitán tiene la última palabra a bordo, todas las decisiones importantes se toman en coordinación con el centro de control en tierra, donde ella participa directamente.
+El acceso a información crítica antes de cada travesía se realiza a través de briefings diarios, reportes meteorológicos internacionales, alertas geopolíticas emitidas por agencias de seguridad marítima y consultores externos especializados en riesgos marítimos. Patricia resaltó la importancia de mantener un flujo constante de información actualizada para garantizar tanto la seguridad de los pasajeros como la eficiencia de las operaciones.
+
+**Segmento 2: Exportadores e Importadores de Alta Rotación**
+
+#### Entrevista 1:
+
+**Nombre y Apellido:** Arwen Vasquez
+
+**Edad:** 40 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** 
+<img src="../../assets/img/chapter-VI/Review-Entrevista2.png" style="width:600px; height:auto;" alt="Review2">
+
+**Timelapse:** [Inicio: 00:00, Fin: 05:01]
+
+**Resumen de la Entrevista:**
+
+Arwen es capitana de embarcaciones pesqueras industriales. Tiene 20 años de experiencia en navegación de alta mar, en especial en el Pacífico Sur. Actualmente no trabaja con cruceros turísticos; opera embarcaciones de pesca de altura, pero conoce bien la planificación de rutas. No transita por el Mar Rojo, ya que su zona de operación está en aguas sudamericanas, pero comentó que entiende la importancia de esa región para el comercio mundial. Para planificar rutas, se apoya en sonares marinos avanzados, cartografía electrónica y informes de corrientes oceánicas. Ella misma, como capitana, decide cambios de ruta si la seguridad de la tripulación está en riesgo, actuando de forma autónoma en alta mar. Accede a informes meteorológicos de alta frecuencia, alertas de fenómenos climáticos, y a redes de información marina compartida entre capitanes pesqueros.
+
+#### Entrevista 2:
+
+**Nombre y Apellido:** Mariela Sanchez
+
+**Edad:** 40 años
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** 
+<img src="../../assets/img/chapter-VI/Review-Entrevista3.png" style="width:600px; height:auto;" alt="Review3">
+
+**Timelapse:** [Inicio: 05:01, Fin: 10:45]
+
+**Resumen de la Entrevista:**
+
+Mariela es jefa de operaciones navieras encargada de coordinar rutas para cruceros turísticos regionales. Tiene 16 años de experiencia en logística marítima. Actualmente opera principalmente cruceros turísticos y de lujo, orientados a recorridos en Sudamérica y el Caribe. Aunque su operación no es frecuente en el Mar Rojo, explicó que en temporadas especiales coordinan rutas alternativas que bordean África.
+Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con softwares propios de planificación naviera. En caso de desvíos por riesgos, el capitán del barco tiene la última palabra, pero siempre con el respaldo del equipo de tierra. Mariela recurre a boletines meteorológicos internacionales, reportes de situación política y consultores de riesgos marítimos para cada travesía.
+
+#### Entrevista 3:
+
+**Nombre y Apellido:** Alejandro Rivas
+
+**Edad:** 40
+
+**Distrito:** Callao
+
+**Screenshot de la Entrevista:** 
+<img src="../../assets/img/chapter-VI/Review-Entrevista4.png" style="width:600px; height:auto;" alt="Review4">
+
+**Timelapse:** [Inicio: 10:45, Fin: 14:45]
+
+**Resumen de la Entrevista:**
+
+Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando rutas tanto regionales como de larga distancia. Actualmente, opera principalmente cruceros de carga pesada, no turísticos. Respecto al Mar Rojo, comentó que transita la zona aproximadamente dos veces al año, y que debido a la situación geopolítica reciente, deben extremar precauciones. Para la planificación y monitoreo de rutas, utiliza sistemas ECDIS (Electronic Chart Display and Information System) combinados con radar de alta precisión. Cuando hay necesidad de desviar la ruta por seguridad, él mismo toma la decisión final, pero siempre consultando previamente con la compañía naviera. Sobre la información previa al viaje, accede a informes meteorológicos satelitales, briefings de inteligencia marítima y actualizaciones de tráfico marítimo en tiempo real.
 ### 6.3.3. Evaluaciones según heurísticas
 
 ## 6.4. Auditoría de Experiencias de Usuario
