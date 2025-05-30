@@ -32,6 +32,7 @@
 # **CAPÍTULO V: PRODUCT IMPLEMENTATION**
 
 ## 5.1. Software Configuration Management
+
 En la gestión de la configuración del frontend para la aplicación Teemo, nos enfocamos en el desarrollo de una interfaz de usuario moderna, responsiva e intuitiva, utilizando Angular CLI standalone. Esta arquitectura basada en componentes independientes permite construir aplicaciones más livianas, eficientes y fácilmente escalables, optimizando el tiempo de carga y la experiencia de usuario tanto en desktop como en dispositivos móviles.
 
 La estructura del código se organiza mediante componentes standalone, servicios desacoplados y rutas gestionadas de forma modular. Esta metodología facilita la colaboración entre miembros del equipo, acelera el proceso de desarrollo, y permite iteraciones rápidas sobre nuevas funcionalidades. Además, se siguen las mejores prácticas de Angular como el uso de Lazy Loading, Reactive Forms y RxJS para el manejo de datos asíncronos.
@@ -39,6 +40,7 @@ La estructura del código se organiza mediante componentes standalone, servicios
 El control de versiones se gestiona a través de Git, aplicando flujos de trabajo basados en branches feature, merge requests y revisiones de código para mantener una alta calidad y cohesión entre los cambios. Asimismo, se ha integrado un pipeline de CI/CD (Integración Continua y Despliegue Continuo) que ejecuta automáticamente pruebas unitarias y pruebas de integración antes de cualquier despliegue, asegurando que las nuevas funcionalidades cumplan con los estándares de calidad establecidos.
 
 ### 5.1.1. Software Development Environment Configuration
+
 En esta sección, el equipo de desarrollo detallará las herramientas de software esenciales para el frontend de la aplicación web de **Teemo**, especificando el nombre de cada producto, su propósito dentro del proyecto y el método de acceso o instalación. Para las herramientas basadas en SaaS (Software como Servicio), se proporcionará la URL de acceso a sus respectivas páginas web, mientras que para aquellas que requieren instalación local, se indicará la ruta de descarga adecuada.
 
 Las herramientas seleccionadas abarcan actividades críticas para el desarrollo del frontend, incluyendo la gestión de componentes de interfaz de usuario, el control de versiones, el desarrollo y la prueba de aplicaciones. Cada herramienta ha sido cuidadosamente elegida para optimizar el flujo de trabajo del equipo, asegurando una colaboración efectiva y un desarrollo ágil. Estas herramientas no solo facilitan la implementación de una interfaz de usuario atractiva y funcional, sino que también permiten realizar pruebas exhaustivas y automatizar procesos repetitivos, lo que contribuye a una mayor eficiencia en el ciclo de desarrollo.
@@ -83,12 +85,15 @@ Las herramientas seleccionadas abarcan actividades críticas para el desarrollo 
 **Wireframes, Mock-ups y Prototypes:** Para el desarrollo de wireframes, mock-ups y prototipos relacionados con la landing page de nuestra startup y todas las secciones de la aplicación web orientadas al frontend, hemos decidido utilizar la plataforma **Figma**. Esta herramienta ha sido seleccionada por su especialización en el diseño de interfaces de usuario para aplicaciones móviles y sitios web, ofreciendo un conjunto robusto de características que abordan las necesidades tanto de diseñadores como de desarrolladores de productos digitales. Su capacidad para crear prototipos interactivos y simular experiencias reales de usuario nos permite probar y validar conceptos antes de pasar al desarrollo final. Otra de las razones clave para esta elección es el enfoque colaborativo de Figma, que permite que múltiples miembros del equipo trabajen simultáneamente en un mismo diseño. Otro aspecto importante de Figma es su vasta biblioteca de recursos y modelos predefinidos. Estos recursos proporcionan a nuestro equipo una base sólida sobre la cual construir los wireframes iniciales, mock-ups visuales y prototipos interactivos. Por último, la capacidad de Figma para simular la experiencia del usuario final en dispositivos móviles y navegadores es fundamental para garantizar que la aplicación web y la landing page proporcionen una experiencia de usuario óptima en todos los dispositivos y plataformas.
 
 - **Página oficial de Figma:** [https://figma.com/](https://figma.com/)
+
 ### 5.1.2. Source Code Management
+
 En esta sección, se definirá la estrategia para utilizar GitHub como plataforma de control de versiones y colaboración durante el ciclo de vida del desarrollo del frontend. Se emplearán todas las herramientas proporcionadas por GitHub para garantizar una gestión eficaz del código fuente, incluyendo el seguimiento de versiones y la colaboración entre miembros del equipo. Se mantendrá un registro exhaustivo de las versiones del frontend, permitiendo rastrear cambios, identificar nuevos desarrollos y corregir errores de manera precisa.
 
 Se establecerán ramas específicas para diferentes etapas del desarrollo, tales como la integración continua, las pruebas y la producción. Además, se implementarán políticas de pull requests y revisiones de código para asegurar la calidad y coherencia del frontend. Esta metodología permitirá un control riguroso del ciclo de vida del desarrollo, facilitando la colaboración y asegurando que todos los cambios se registren de forma clara y ordenada.
 
 A continuación, se proporciona una lista con los enlaces a la organización de GitHub de WHAI y a los repositorios específicos relacionados con el desarrollo del frontend dentro de esta organización:
+
 # Repositorios en GitHub
 
 - **Organización:** [TEEMO-SOLUTIONS](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS)
@@ -131,7 +136,6 @@ Esta metodología garantiza una organización efectiva del flujo de trabajo, fac
   
 - **develop:** Esta rama agrupa los elementos en desarrollo relacionados con el frontend, que han sido aprobados por al menos un miembro del equipo diferente del autor de las modificaciones. Sirve como etapa de integración y prueba de nuevas funcionalidades del frontend antes de ser fusionadas con master.
 
-
 ## Ramas Individuales
 
 Estas ramas se utilizan para desarrollos individuales realizados por los miembros del equipo en el frontend.  
@@ -165,6 +169,7 @@ Esta norma sigue los principios de **Conventional Commits**, permitiendo:
 - Mayor facilidad en la trazabilidad, revisiones y transparencia en el control de versiones.
 
 ## Estructura del Mensaje de Commit
+
 type: description
 Donde `type` es uno de los verbos recomendados.
 
@@ -179,8 +184,6 @@ Major.Minor.Patch
 - **Major**: Cambios importantes que pueden romper la compatibilidad.
 
 Fuente: (GitHub & Netlify, 2024)
-
-
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
@@ -216,21 +219,21 @@ Asimismo, también investigaremos y presentaremos las directrices para la intera
 **Estructura Semántica**
 Al construir una página web, es crucial utilizar etiquetas HTML semánticas como `<header>`, `<footer>`, `<article>`, `<section>`, y `<aside>` para reflejar el significado del contenido. Esto mejora la accesibilidad y optimiza el SEO.
 
-** Uso de Atributos "Alt" en Imágenes**
+**Uso de Atributos "Alt" en Imágenes**
 Cada imagen debe tener un atributo `alt` breve y descriptivo para accesibilidad y SEO.
 
-** Uso Adecuado de Encabezados**
+**Uso Adecuado de Encabezados**
 Utilizar jerarquías correctas: `<h1>` para el título principal, seguido por `<h2>`, `<h3>`, etc., sin saltar niveles.
-** Validación del Código HTML**
+**Validación del Código HTML**
 Utilizar el validador de HTML del W3C para detectar errores y garantizar compatibilidad entre navegadores.
 
-** Evitar Inline CSS y JavaScript**
+**Evitar Inline CSS y JavaScript**
 Separar los estilos y scripts en archivos externos para mejorar la organización, mantenibilidad y carga de la página.
 
-** Comentarios Claros y Concisos **
+**Comentarios Claros y Concisos**
 Agregar comentarios que expliquen secciones relevantes del código, sin exceso.
 
-** Uso de Clases e IDs Descriptivos**
+**Uso de Clases e IDs Descriptivos**
 Usar nombres descriptivos siguiendo una convención coherente como BEM (Block Element Modifier).
 
 **Mantenimiento de la Accesibilidad**
@@ -378,17 +381,18 @@ Utilizar comentarios de documentación ayuda a que otros desarrolladores compren
 **Adopción de Prácticas de Accesibilidad:**  
 Implementar buenas prácticas de accesibilidad, como utilizar widgets Semantics y realizar pruebas de accesibilidad, garantiza que la aplicación pueda ser utilizada por personas con discapacidades.
 
-
----
 ### 5.1.4. Software Deployment Configuration
+
 En esta sección, procederemos a detallar de manera exhaustiva la configuración necesaria para implementar y desplegar nuestra solución, centrándonos específicamente en las áreas del FrontEnd. A lo largo de este análisis, enfatizaremos las mejores prácticas que deben seguirse, así como las herramientas más adecuadas a utilizar y los flujos de trabajo recomendados para garantizar una implementación eficaz y coordinada de ambas partes de nuestra solución. Además, discutiremos cómo cada decisión técnica impacta en la funcionalidad y la experiencia del usuario, proporcionando así un enfoque integral para el desarrollo de nuestras aplicaciones.
 
 **Landing Page:**
 
 ## 5.2. Product Implementation & Deployment
+
 A continuación, describimos en detalle el enfoque técnico que adoptaremos para la implementación, pruebas y despliegue de nuestra infraestructura FrontEnd, centrado en la creación y gestión de los componentes de la interfaz de usuario, así como en la integración con los servicios externos y el manejo eficiente de las API necesarias para el correcto funcionamiento de la aplicación. Este proceso abarca el desarrollo de interfaces FrontEnd escalables, el diseño de la Landing Page, la validación exhaustiva mediante pruebas unitarias y de integración, y la optimización del rendimiento antes de cada ciclo de despliegue en el entorno de producción. Durante esta fase, nos aseguraremos de que cada componente se alinee con las mejores prácticas de desarrollo y diseño, garantizando así una experiencia de usuario fluida y atractiva. Además, se prestará especial atención a la accesibilidad y la compatibilidad en diferentes navegadores, asegurando que nuestra aplicación sea inclusiva y utilizable por la mayor cantidad de usuarios posible.
 
 ### 5.2.1. Sprint Backlogs
+
 En esta sección se explicarán los detalles presentados y analizados durante la reunión del Sprint Planning para el Sprint número 1 de la implementación del FrontEnd. El objetivo principal de esta reunión es establecer un plan claro y realista que guíe el desarrollo de la interfaz de usuario, identificando las tareas específicas a realizar y comprometiéndose con un conjunto de entregables concretos que contribuyan al avance del proyecto por el lado de las funcionalidades principales de generación y edición de TeemoSolution. Este enfoque permite asegurar que todos los miembros del equipo tengan una comprensión compartida de los objetivos y las expectativas del sprint, lo que resulta esencial para la coordinación y efectividad en el trabajo colaborativo.
 
 Durante esta reunión, se abordarán las características a desarrollar, los plazos para cada tarea y los criterios de aceptación correspondientes. Además, se fomentará un diálogo abierto entre los integrantes del equipo para identificar posibles desafíos y oportunidades de mejora, asegurando que cada aspecto del desarrollo del FrontEnd esté alineado con las metas del proyecto. 
@@ -451,10 +455,67 @@ En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar
     </table>
 
 ### 5.2.2. Implemented Landing Page Evidence
+
 ### 5.2.3. Implemented Frontend-Web Application Evidence
-### 5.2.4. Implemented Native-Mobile Application Evidence
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
-### 5.2.6. RESTful API Documentation
-### 5.2.7. Team Collaboration Insights
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo regula el uso de la plataforma Mushroom, una solución SaaS desarrollada por Teemo Solutions para optimizar rutas marítimas frente a disrupciones logísticas globales. Al registrarse o usar el servicio, el usuario acepta expresamente los siguientes términos clave:
+
+1. Licencia de Uso
+
+Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusivamente con fines comerciales/logísticos. No se permite sublicenciar, copiar o interferir con el software.
+
+2. Obligaciones del Usuario
+
+- Usar la plataforma legalmente.
+
+- Mantener la confidencialidad de sus credenciales.
+
+- No manipular el sistema ni violar la propiedad intelectual.
+
+3. Obligaciones del Proveedor
+
+- Garantizar alta disponibilidad del servicio (≥98% mensual).
+
+- Proteger los datos del cliente bajo estándares de seguridad internacional.
+
+- Brindar soporte técnico durante horarios establecidos.
+
+4. Propiedad Intelectual
+
+- El código fuente, diseño, algoritmos y demás componentes de Mushroom son propiedad exclusiva de Teemo Solutions.
+
+5. Privacidad y Datos
+
+- Los datos personales y logísticos serán tratados conforme a normativas como el GDPR, respetando la confidencialidad, integridad y trazabilidad de la información.
+
+6. Limitación de Responsabilidad
+
+- Mushroom se ofrece "tal cual", sin garantías absolutas. Teemo Solutions no es responsable de pérdidas indirectas derivadas de decisiones operativas basadas en la plataforma.
+
+7. Duración y Terminación
+
+- El contrato comienza al registrarse y puede finalizarse con 15 días de aviso. El incumplimiento grave habilita la suspensión inmediata del servicio.
+
+8. Cambios al Acuerdo
+
+- Teemo Solutions puede modificar este acuerdo. Los cambios se notifican en la web y entran en vigor tras 10 días calendario.
+
+9. Jurisdicción
+
+- Este acuerdo se rige por las leyes del Perú, y cualquier controversia será resuelta por los tribunales de Lima Metropolitana.
+
+10. Delimitaciones de alcance 
+
+- Por parte de Teemo Solutions en nuestra aplicacion "Mushroom" delimitamos como alcance solo los puertos presentados en nuestra Database, cualquier puerto nacional o internacional que no aparezca en dicha base de datos esta fuera de los servicios que ofrecemos.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
+
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+### 5.2.7. RESTful API Documentation
+
+### 5.2.8. Team Collaboration Insights
 
 ## 5.3. Video About-the-Product
