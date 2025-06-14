@@ -470,6 +470,18 @@ Las evidencias del funcionamiento del despliegue de la Landing Page se mostrará
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+El despliegue del Front End se encuentra en el siguiente enlace: https://teemosolutions-mushroom.firebaseapp.com
+
+Las evidencias del funcionamiento del despliegue se mostrarán a continuación:
+![login.PNG](../../assets/img/chapter-V/login.PNG)
+![register.PNG](../../assets/img/chapter-V/register.PNG)
+![front_1.PNG](../../assets/img/chapter-V/front_1.PNG)
+![front_2.PNG](../../assets/img/chapter-V/front_2.PNG)
+![front_3.PNG](../../assets/img/chapter-V/front_3.PNG)
+![front_4.PNG](../../assets/img/chapter-V/front_4.PNG)
+![front_5.PNG](../../assets/img/chapter-V/front_5.PNG)
+![front_6.PNG](../../assets/img/chapter-V/front_6.PNG)
+
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
 Este acuerdo regula el uso de la plataforma Mushroom, una solución SaaS desarrollada por Teemo Solutions para optimizar rutas marítimas frente a disrupciones logísticas globales. Al registrarse o usar el servicio, el usuario acepta expresamente los siguientes términos clave:
@@ -523,6 +535,8 @@ Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusi
 - Por parte de Teemo Solutions en nuestra aplicacion "Mushroom" delimitamos como alcance solo los puertos presentados en nuestra Database, cualquier puerto nacional o internacional que no aparezca en dicha base de datos esta fuera de los servicios que ofrecemos.
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
+
+
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
