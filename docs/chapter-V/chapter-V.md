@@ -536,9 +536,14 @@ Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusi
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-
-
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+El repositorio del back-end se encuentra en el siguiente enlace: https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend
+
+La evidencias del funcionamiento se mostrarán a continuación:
+
+![back_1.PNG](../../assets/img/chapter-V/back_1.PNG)
+![back_2.PNG](../../assets/img/chapter-V/back_2.PNG)
 
 ### 5.2.7. RESTful API Documentation
 
