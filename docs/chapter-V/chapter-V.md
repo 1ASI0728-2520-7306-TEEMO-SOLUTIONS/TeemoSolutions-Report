@@ -428,12 +428,11 @@ Durante esta reunión, se abordarán las características a desarrollar, los pla
             <tr>
             <td>Sprint 1 Review Summary</td>
             <td>Al finalizar el Sprint 1, se llevó a cabo la reunión de Sprint Review para evaluar el avance logrado en el desarrollo del FrontEnd de nuestra aplicación. Durante este sprint, el trabajo se enfocó principalmente en la creación de la Landing Page del proyecto, así como en funciones clave de la aplicación, incluyendo la generación y edición de TeemoSolutions y las secciones de inicio de sesión y registro.
-
-La reunión fue productiva tanto en términos de progreso en el software como de colaboración del equipo. Se presentaron las funcionalidades implementadas, se realizaron demostraciones de la interfaz y se recogieron aportes constructivos de los miembros del equipo y otros interesados. Estos comentarios fueron fundamentales para detectar oportunidades de mejora y ajustar la planificación para el siguiente sprint. La comunicación efectiva y el trabajo en equipo durante la revisión fortalecieron la cohesión del grupo y aseguraron que el desarrollo del FrontEnd siguiera alineado con los objetivos del proyecto.</td> 
+                La reunión fue productiva tanto en términos de progreso en el software como de colaboración del equipo. Se presentaron las funcionalidades implementadas, se realizaron demostraciones de la interfaz y se recogieron aportes constructivos de los miembros del equipo y otros interesados. Estos comentarios fueron fundamentales para detectar oportunidades de mejora y ajustar la planificación para el siguiente sprint. La comunicación efectiva y el trabajo en equipo durante la revisión fortalecieron la cohesión del grupo y aseguraron que el desarrollo del FrontEnd siguiera alineado con los objetivos del proyecto.</td> 
         </tr>
             <tr>
             <td>Sprint 1 Retrospective Summary</td>
-            <td>Durante la Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora, fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
+            <td>Durante el Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora, fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
 
 En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar la calidad del trabajo entregado y asegurar que el producto final cumpla con las expectativas de los usuarios. Se abordaron temas como la usabilidad de la interfaz, la coherencia en el diseño y la adopción de mejores prácticas en el desarrollo FrontEnd. Este intercambio de ideas no solo fortaleció la colaboración entre los miembros del equipo, sino que también estableció una base sólida para un enfoque más eficiente en los próximos sprints, garantizando que nuestro producto sea funcional, intuitivo y atractivo para nuestros clientes. </td>
         </tr>
@@ -455,6 +454,19 @@ En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar
     </table>
 
 ### 5.2.2. Implemented Landing Page Evidence
+
+El despliegue de la Landing Page fue realizado a través de GitHub Pages y este se encuentra en el siguiente link: https://1asi0732-2510-4441-teemo-solutions.github.io/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage/
+
+Las evidencias del funcionamiento del despliegue de la Landing Page se mostrarán a continuación:
+![landing_p1.PNG](../../assets/img/chapter-V/landing_p1.PNG)
+![landing_p2.PNG](../../assets/img/chapter-V/landing_p2.PNG)
+![landing_p3.PNG](../../assets/img/chapter-V/landing_p3.PNG)
+![landing_p4.PNG](../../assets/img/chapter-V/landing_p4.PNG)
+![landing_p5.PNG](../../assets/img/chapter-V/landing_p5.PNG)
+![landing_p6.PNG](../../assets/img/chapter-V/landing_p6.PNG)
+![landing_p7.PNG](../../assets/img/chapter-V/landing_p7.PNG)
+![landing_p8.PNG](../../assets/img/chapter-V/landing_p8.PNG)
+![landing_p9.PNG](../../assets/img/chapter-V/landing_p9.PNG)
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
