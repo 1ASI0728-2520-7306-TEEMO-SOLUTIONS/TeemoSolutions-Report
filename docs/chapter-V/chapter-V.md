@@ -538,14 +538,30 @@ Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusi
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-El repositorio del back-end se encuentra en el siguiente enlace: https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend
-
 La evidencias del funcionamiento se mostrarán a continuación:
 
 ![back_1.PNG](../../assets/img/chapter-V/back_1.PNG)
 ![back_2.PNG](../../assets/img/chapter-V/back_2.PNG)
 
 ### 5.2.7. RESTful API Documentation
+
+El repositorio del back-end se encuentra en el siguiente enlace: https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend
+
+| **Método** | **Endpoint**                        | **Descripción**                                               |
+|------------|-------------------------------------|---------------------------------------------------------------|
+| POST       | /api/authentication/sign-in         | Inicia de sesión del usuario con una cuenta ya creada.        |
+| POST       | /api/authentication/sign-up         | Registra un nuevo usuario con un usuario, contraseña y un rol |
+| POST       | /api/ports                          | Registra un nuevo puerto                                      |
+| GET        | /api/ports/{portId}                 | Devuelve el puerto solicitado por Id.                         |
+| DELETE     | /api/ports/{portId}                 | Elimina el puerto solicitado por Id.                          |
+| GET        | /api/ports/all-ports                | Devuelve todos los puertos creados.                           |
+| GET        | /api/ports/name/{name}              | Devuelve el puerto solicitado por nombre.                     |
+| GET        | /api/roles                          | Devuelve los roles creados.                                   |
+| GET        | /api/routes/all-routes              | Devuelve todas las rutas creadas.                             |
+| POST       | /api/routes/calculate-optimal-route | Crea una nueva ruta optima para el viaje.                     |
+| GET        | /api/routes/distance-between-ports  | Devuelve la distancia entre los puertos.                      |
+| GET        | /api/v1/users                       | Devuelve los usuarios registrados.                            |
+| GET        | /api/v1/users/{userId}              | Devuelve el usuario solicitado por Id.                        |
 
 ### 5.2.8. Team Collaboration Insights
 
