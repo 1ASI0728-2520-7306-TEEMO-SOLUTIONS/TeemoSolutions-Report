@@ -35,9 +35,15 @@
 ### 6.1.1. Core Entities Unit Tests
 
 Los Core Entities Unit Tests son esenciales en el desarrollo de software, ya que garantizan la calidad y correcto funcionamiento de las entidades centrales, previniendo errores y facilitando el mantenimiento del código.
+
+<img src="../../assets/img/chapter-VI/Entities-PortService.jpg" style="width:500px; height:auto;" alt="port service test">
+
 ### 6.1.2. Core Integration Tests
 
 Las pruebas de integración central (Core Integration Tests) son esenciales para verificar que los controladores se comuniquen de forma adecuada con otros elementos del sistema, como los servicios y las bases de datos. Al analizar situaciones de error, estas pruebas aseguran que el sistema responda correctamente ante eventos imprevistos, utilizando los códigos de estado apropiados. Esto no solo optimiza la experiencia del usuario, sino que también simplifica la depuración y favorece la creación de un software robusto y de calidad.
+
+<img src="../../assets/img/chapter-VI/Integration-AuthenticationController.jpg" style="width:500px; height:auto;" alt="auth controller test">
+
 ### 6.1.3. Core Behavior-Driven Development
 ### 6.1.4. Core System Tests
 
