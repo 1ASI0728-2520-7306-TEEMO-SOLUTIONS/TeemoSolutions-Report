@@ -315,16 +315,24 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 
 ## 8.3. Experimentation
 ### 8.3.1. To-Be User Stories
-### 8.3.2. To-Be Product Backlog
 
+| User Story ID | Titulo                             | Descripción                                                                                                  | Criterio de Aceptación                                                                                                                                                                                                                         |
+|---------------|------------------------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BS01          | Implementación del modo oscuro     | Como capitán, quiero utilizar la aplicación en modo oscuro para evitar problemas de visión en la oscuridad.  | Scenario 1: Utilizar la aplicación en un entorno oscuro. <br>Given el capitan utiliza la aplicación en modo oscuro <br>When ingresa a la página web <br>And selecciona el modo oscuro <br>So la aplicación cambiara los colores de la interfaz |
+| BS02          | Implementación del multilenguaje   | Como empresario, quiero utilizar la aplicación en mi idioma principal para familiarizarme con el contenido.  | Scenario 1: Utilizar la aplicación en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                       |
+| BS03          | Interacción en foros colaborativos | Como capitán, quiero interactuar con otros usuarios para intercambiar información relevante de la rutas.     | Scenario 1: Utilizar la aplicacion en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                                                                                                                                                                                                                                               |
+| BS04          | Notificaciones personalizadas      | Como capitán, quiero recibir información más especifica para mantenerme informado de manera rápida.          | Scenario 1: Utilizar la aplicacion en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                                                                                                                                                                                                                                               |
+| BS05          | Sección Comercial                  | Como empresario, quiero interactuar con otros usuarios para acordar negocios relacionados a la via maritima. | Scenario 1: Negociar en una sección comercial<br>Given el empresario quiere encontrar clientes<br>When selecciona la sección comercial<br>And reciba información de las ofertas o solicitudes<br>So buscara negociar con el cliente.                                                                                                                                                                                                                                               |
+
+### 8.3.2. To-Be Product Backlog
 
 | # Orden | User Story ID | Titulo                             | Story Point (1,2,3,5,8) |
 |---------|---------------|------------------------------------|-------------------------|
-| 1       | UA01          | Implementación del modo oscuro     | 1                       |
-| 2       | UA02          | Implementación del multilenguaje   | 3                       |
-| 3       | UA03          | Interaccion en foros colaborativos | 3                       |
-| 4       | UA04          | Notificaciones personalizadas      | 5                       |
-| 5       | UA05          | Seccion Comercial                  | 5                       |
+| 1       | BS01          | Implementación del modo oscuro     | 1                       |
+| 2       | BS02          | Implementación del multilenguaje   | 3                       |
+| 3       | BS03          | Interacción en foros colaborativos | 3                       |
+| 4       | BS04          | Notificaciones personalizadas      | 5                       |
+| 5       | BS05          | Sección Comercial                  | 5                       |
 
 ## Conclusiones
 
