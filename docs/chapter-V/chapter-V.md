@@ -432,7 +432,10 @@ Durante esta reunión, se abordarán las características a desarrollar, los pla
         </tr>
             <tr>
             <td>Sprint 1 Retrospective Summary</td>
-            <td>Durante el Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora, fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
+                <td>Durante el Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la
+                    retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del
+                    rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora,
+                    fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
 
 En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar la calidad del trabajo entregado y asegurar que el producto final cumpla con las expectativas de los usuarios. Se abordaron temas como la usabilidad de la interfaz, la coherencia en el diseño y la adopción de mejores prácticas en el desarrollo FrontEnd. Este intercambio de ideas no solo fortaleció la colaboración entre los miembros del equipo, sino que también estableció una base sólida para un enfoque más eficiente en los próximos sprints, garantizando que nuestro producto sea funcional, intuitivo y atractivo para nuestros clientes. </td>
         </tr>
@@ -458,29 +461,31 @@ En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar
 El despliegue de la Landing Page fue realizado a través de GitHub Pages y este se encuentra en el siguiente link: https://1asi0732-2510-4441-teemo-solutions.github.io/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage/
 
 Las evidencias del funcionamiento del despliegue de la Landing Page se mostrarán a continuación:
-![landing_p1.PNG](../../assets/img/chapter-V/landing_p1.PNG)
-![landing_p2.PNG](../../assets/img/chapter-V/landing_p2.PNG)
-![landing_p3.PNG](../../assets/img/chapter-V/landing_p3.PNG)
-![landing_p4.PNG](../../assets/img/chapter-V/landing_p4.PNG)
-![landing_p5.PNG](../../assets/img/chapter-V/landing_p5.PNG)
-![landing_p6.PNG](../../assets/img/chapter-V/landing_p6.PNG)
-![landing_p7.PNG](../../assets/img/chapter-V/landing_p7.PNG)
-![landing_p8.PNG](../../assets/img/chapter-V/landing_p8.PNG)
-![landing_p9.PNG](../../assets/img/chapter-V/landing_p9.PNG)
+
+<img src="../../assets/img/chapter-V/landing_p1.PNG" alt="Landing Page 1">
+<img src="../../assets/img/chapter-V/landing_p2.PNG" alt="Landing Page 2">
+<img src="../../assets/img/chapter-V/landing_p3.PNG" alt="Landing Page 3">
+<img src="../../assets/img/chapter-V/landing_p4.PNG" alt="Landing Page 4">
+<img src="../../assets/img/chapter-V/landing_p5.PNG" alt="Landing Page 5">
+<img src="../../assets/img/chapter-V/landing_p6.PNG" alt="Landing Page 6"> 
+<img src="../../assets/img/chapter-V/landing_p7.PNG" alt="Landing Page 7">
+<img src="../../assets/img/chapter-V/landing_p8.PNG" alt="Landing Page 8">
+<img src="../../assets/img/chapter-V/landing_p9.PNG" alt="Landing Page 9">
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
 El despliegue del Front End se encuentra en el siguiente enlace: https://teemosolutions-mushroom.firebaseapp.com
 
 Las evidencias del funcionamiento del despliegue se mostrarán a continuación:
-![login.PNG](../../assets/img/chapter-V/login.PNG)
-![register.PNG](../../assets/img/chapter-V/register.PNG)
-![front_1.PNG](../../assets/img/chapter-V/front_1.PNG)
-![front_2.PNG](../../assets/img/chapter-V/front_2.PNG)
-![front_3.PNG](../../assets/img/chapter-V/front_3.PNG)
-![front_4.PNG](../../assets/img/chapter-V/front_4.PNG)
-![front_5.PNG](../../assets/img/chapter-V/front_5.PNG)
-![front_6.PNG](../../assets/img/chapter-V/front_6.PNG)
+
+<img src="../../assets/img/chapter-V/login.PNG" alt="Login">
+<img src="../../assets/img/chapter-V/register.PNG" alt="Register">
+<img src="../../assets/img/chapter-V/front_1.PNG" alt="Front 1">
+<img src="../../assets/img/chapter-V/front_2.PNG" alt="Front 2">
+<img src="../../assets/img/chapter-V/front_3.PNG" alt="Front 3">
+<img src="../../assets/img/chapter-V/front_4.PNG" alt="Front 4">
+<img src="../../assets/img/chapter-V/front_5.PNG" alt="Front 5">
+<img src="../../assets/img/chapter-V/front_6.PNG" alt="Front 6">
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -538,14 +543,16 @@ Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusi
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
+El despliegue del back-end se encuentra en el siguiente enlace: https://my-spring-app-shk7.onrender.com/swagger-ui/index.html
 La evidencias del funcionamiento se mostrarán a continuación:
 
-![back_1.PNG](../../assets/img/chapter-V/back_1.PNG)
-![back_2.PNG](../../assets/img/chapter-V/back_2.PNG)
+<img src="../../assets/img/chapter-V/back_1.PNG" alt="Back 1">
+<img src="../../assets/img/chapter-V/back_2.PNG" alt="Back 2">
 
 ### 5.2.7. RESTful API Documentation
 
 El repositorio del back-end se encuentra en el siguiente enlace: https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend
+
 
 | **Método** | **Endpoint**                        | **Descripción**                                               |
 |------------|-------------------------------------|---------------------------------------------------------------|
@@ -564,5 +571,9 @@ El repositorio del back-end se encuentra en el siguiente enlace: https://github.
 | GET        | /api/v1/users/{userId}              | Devuelve el usuario solicitado por Id.                        |
 
 ### 5.2.8. Team Collaboration Insights
+
+<img src="../../assets/img/chapter-V/commit-p1.PNG" alt="commit-p1">
+
+<img src="../../assets/img/chapter-V/commit-p1.PNG" alt="commit-p1">
 
 ## 5.3. Video About-the-Product
