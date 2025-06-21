@@ -45,6 +45,9 @@ Adoptamos metodologías como el Desarrollo Guiado por Pruebas (TDD) y el Desarro
 | Cucumber    | Herramienta de BDD                | Ayuda a desarrollar programas centrándose en el comportamiento, usando un lenguaje simple llamado Gherkin para escribir ejemplos que todos entienden. | Crea y prueba ejemplos basados en cómo debería comportarse el sistema, asegurando que el desarrollo esté alineado con lo que necesita el negocio. |
 
 ### 7.1.2. Build & Test Suite Pipeline Components
+
+<img src="../../assets/img/chapter-VII/TestsPipelineComponents.PNG" style="width:500px; height:auto;" alt="Test Pipeline Components">
+
 ## 7.2. Continuous Delivery
 Su propósito es automatizar la integración y validación del código, asegurando que el sistema esté siempre en condiciones óptimas para ser desplegado en cualquier momento.
 
