@@ -45,7 +45,50 @@ Las pruebas de integración central (Core Integration Tests) son esenciales para
 <img src="../../assets/img/chapter-VI/Integration-AuthenticationController.jpg" style="width:500px; height:auto;" alt="auth controller test">
 
 ### 6.1.3. Core Behavior-Driven Development
+
+<img src="../../assets/img/chapter-VI/US-features.PNG" style="width:500px; height:auto;" alt="US features test">
+
 ### 6.1.4. Core System Tests
+
+US01
+
+<img src="../../assets/img/chapter-VI/SeleniumUS01.PNG" style="width:500px; height:auto;" alt="Selenium US01 test">
+
+US02
+
+<img src="../../assets/img/chapter-VI/SeleniumUS02.PNG" style="width:500px; height:auto;" alt="Selenium US02 test">
+
+US03
+
+<img src="../../assets/img/chapter-VI/SeleniumUS03.PNG" style="width:500px; height:auto;" alt="Selenium US03 test">
+
+US04
+
+<img src="../../assets/img/chapter-VI/SeleniumUS04.PNG" style="width:500px; height:auto;" alt="Selenium US04 test">
+
+US05
+
+<img src="../../assets/img/chapter-VI/SeleniumUS05.PNG" style="width:500px; height:auto;" alt="Selenium US05 test">
+
+US06
+
+<img src="../../assets/img/chapter-VI/SeleniumUS01.PNG" style="width:500px; height:auto;" alt="Selenium US06 test">
+
+US07
+
+<img src="../../assets/img/chapter-VI/SeleniumUS01.PNG" style="width:500px; height:auto;" alt="Selenium US07 test">
+
+US08
+
+<img src="../../assets/img/chapter-VI/SeleniumUS08.PNG" style="width:500px; height:auto;" alt="Selenium US08 test">
+
+US09
+
+<img src="../../assets/img/chapter-VI/SeleniumUS09.PNG" style="width:500px; height:auto;" alt="Selenium US09 test">
+
+US10
+
+<img src="../../assets/img/chapter-VI/SeleniumUS10.PNG" style="width:500px; height:auto;" alt="Selenium US10 test">
 
 ## 6.2. Static Testing & Verification
 ### 6.2.1. Static Code Analysis
