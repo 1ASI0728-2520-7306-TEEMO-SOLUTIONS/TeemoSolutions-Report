@@ -317,6 +317,15 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 ### 8.3.1. To-Be User Stories
 ### 8.3.2. To-Be Product Backlog
 
+
+| # Orden | User Story ID | Titulo                             | Story Point (1,2,3,5,8) |
+|---------|---------------|------------------------------------|-------------------------|
+| 1       | UA01          | Implementación del modo oscuro     | 1                       |
+| 2       | UA02          | Implementación del multilenguaje   | 3                       |
+| 3       | UA03          | Interaccion en foros colaborativos | 3                       |
+| 4       | UA04          | Notificaciones personalizadas      | 5                       |
+| 5       | UA05          | Seccion Comercial                  | 5                       |
+
 ## Conclusiones
 
 - La aplicación estructurada del enfoque Lean UX en nuestro proyecto Mushroom ha sido clave para definir con claridad los segmentos de usuarios, los competidores directos y las principales demandas del mercado. Desde los problem statements iniciales hasta los hypothesis statements y el desarrollo del Lean UX canvas, cada fase ha fortalecido tanto la agilidad como la precisión en el diseño y evolución de nuestra solución.
