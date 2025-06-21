@@ -45,6 +45,9 @@ Adoptamos metodologías como el Desarrollo Guiado por Pruebas (TDD) y el Desarro
 | Cucumber    | Herramienta de BDD                | Ayuda a desarrollar programas centrándose en el comportamiento, usando un lenguaje simple llamado Gherkin para escribir ejemplos que todos entienden. | Crea y prueba ejemplos basados en cómo debería comportarse el sistema, asegurando que el desarrollo esté alineado con lo que necesita el negocio. |
 
 ### 7.1.2. Build & Test Suite Pipeline Components
+
+<img src="../../assets/img/chapter-VII/TestsPipelineComponents.PNG" style="width:500px; height:auto;" alt="Test Pipeline Components">
+
 ## 7.2. Continuous Delivery
 Su propósito es automatizar la integración y validación del código, asegurando que el sistema esté siempre en condiciones óptimas para ser desplegado en cualquier momento.
 
@@ -193,40 +196,64 @@ Una vez desplegada la nueva versión, Firebase invalida la caché anterior para 
 
 <img src="../../assets/img/chapter-VII/Firebase Logo.png" style="width:500px; height:auto;" alt="">
 
+## 7.4. Continuous monitoring
 
-## Conclusiones
+Algunas herramientas y prácticas que se emplearán para llevar a cabo un monitoreo continuo y eficaz en nuestra aplicación, son las siguientes:
 
-- La aplicación estructurada del enfoque Lean UX en nuestro proyecto Mushroom ha sido clave para definir con claridad los segmentos de usuarios, los competidores directos y las principales demandas del mercado. Desde los problem statements iniciales hasta los hypothesis statements y el desarrollo del Lean UX canvas, cada fase ha fortalecido tanto la agilidad como la precisión en el diseño y evolución de nuestra solución.
+### 7.4.1. Tools and Practices
+
+En esta sección se describen las herramientas y metodologías implementadas para asegurar un monitoreo continuo, automatizado y confiable hacia entornos productivos.
+
+- **Tools (Herramientas):**
+  - Pruebas de carga y estrés: JMeter facilita la simulación de múltiples usuarios y escenarios de alta exigencia, garantizando que la aplicación conserve un buen desempeño incluso bajo condiciones de gran demanda.
+
+<img src="../../assets/img/chapter-VII/Apache.png" style="width:500px; height:auto;" alt="">
+
+  - Monitoreo de la Experiencia del Usuario: Para analizar cómo los usuarios interactúan con una aplicación, se emplean herramientas como Google Analytics, que recopilan información sobre el comportamiento y la navegación, ayudando a los equipos a optimizar la usabilidad y el desempeño de la interfaz. Asimismo, Datadog permite supervisar en tiempo real la experiencia del usuario; su versión gratuita es especialmente útil al ofrecer el seguimiento de métricas clave como la latencia y los tiempos de respuesta, así como el registro de eventos del usuario, incluyendo los tiempos de carga. Esto brinda a los equipos una visión clara de cómo el rendimiento afecta la experiencia, permitiendo detectar y solucionar problemas al instante.
+
+<img src="../../assets/img/chapter-VII/Monitoreo.png" style="width:500px; height:auto;" alt="">
+
+  - Supervisión de APIs: Monitorear la disponibilidad y tiempo de respuesta de APIs externas o internas es esencial, y herramientas como Postman y Pingdom ofrecen métricas en tiempo real para verificar su correcto funcionamiento.
+
+<img src="../../assets/img/chapter-VII/Postman1.png" style="width:500px; height:auto;" alt="">
+
+- Auditorías de Calidad Web: Google Lighthouse y Catchpoint permiten auditar la calidad y el rendimiento de las aplicaciones web. Lighthouse analiza accesibilidad, SEO y rendimiento para mejorar la experiencia del usuario, mientras que Catchpoint realiza pruebas de rendimiento desde diversas ubicaciones y dispositivos para asegurar una experiencia de usuario uniforme en diferentes entornos.
+
+
+### 7.4.2. Monitoring Pipeline Components
+
+Un pipeline de monitoreo continuo se compone de varias fases destinadas a preservar la calidad y el rendimiento de una aplicación. Estas fases abarcan la recopilación, almacenamiento, análisis y visualización de datos. En este contexto, herramientas como Google Lighthouse y Catchpoint resultan clave, ya que ofrecen evaluaciones complementarias que permiten comprender y optimizar la experiencia del usuario.
+Google Lighthouse es especialmente útil para llevar a cabo auditorías de calidad en sitios web, proporcionando informes detallados sobre aspectos como accesibilidad, buenas prácticas, SEO y rendimiento. Gracias a esta herramienta, los equipos pueden detectar fallos que afectan la experiencia del usuario, como los tiempos de carga prolongados o las variaciones en el diseño.
+
+<img src="../../assets/img/chapter-VII/GoogleLighthouse.png" style="width:500px; height:auto;" alt="">
+
+Catchpoint se enfoca en supervisar la experiencia digital desde múltiples ubicaciones y tipos de dispositivos, brindando información en tiempo real sobre la latencia de red, tiempos de respuesta del servidor, disponibilidad y rendimiento en distintos escenarios. Gracias a este enfoque centrado en la experiencia del usuario, los equipos pueden identificar y corregir fallos antes de que impacten al usuario final.
+
+
+<img src="../../assets/img/chapter-VII/catchpoint.png" style="width:500px; height:auto;" alt="">
+
+### 7.4.3. Alerting Pipeline Components
+
+El sistema de alertas dentro de un pipeline de monitoreo cumple un rol esencial en la detección oportuna y en la reacción rápida frente a fallos de rendimiento o interrupciones en la disponibilidad de la aplicación. Este mecanismo asegura que el equipo reciba notificaciones instantáneas ante eventos críticos o comportamientos inusuales que necesiten intervención. Para lograr una implementación efectiva de alertas, se emplean herramientas como Prometheus junto con Alertmanager y Grafana.
+
+
+1. **Prometheus junto con Alertmanager:** Prometheus es una herramienta de monitoreo que recolecta y guarda métricas de rendimiento en tiempo real. Permite establecer límites específicos para indicadores como el uso de CPU, memoria o latencia de red, y cuando estos se sobrepasan, se generan alertas. Dichas alertas son gestionadas por Alertmanager, un componente especializado de Prometheus que se encarga de distribuir las notificaciones. Alertmanager posibilita configurar el envío de alertas a distintos canales de comunicación (como correo electrónico, Slack o Microsoft Teams), ajustándose a la severidad del evento y a las preferencias del equipo. Además, permite agrupar alertas similares, silenciarlas temporalmente durante tareas de mantenimiento o redirigirlas adecuadamente, mejorando así la eficiencia en la gestión de incidentes.
+
+<img src="../../assets/img/chapter-VII/Prometheus.png" style="width:500px; height:auto;" alt="">
+
+2. **Grafana:** Es una herramienta orientada a la visualización avanzada de métricas, que permite crear paneles personalizados con alertas visuales. Facilita la definición de umbrales y el envío de notificaciones ante eventos críticos o comportamientos inusuales. Gracias a su capacidad de integrarse con Prometheus y diversas fuentes de datos, Grafana ofrece una interfaz visual clara e intuitiva para el monitoreo y la recepción de alertas en tiempo real sobre el rendimiento del sistema.
+
+<img src="../../assets/img/chapter-VII/Grafana.png" style="width:500px; height:auto;" alt="">
+
+La combinación de Prometheus, Alertmanager y Grafana permite al equipo contar con alertas en tiempo real, lo que favorece una detección temprana y una resolución ágil de problemas antes de que impacten al usuario final. Un sistema de alertas correctamente configurado garantiza una intervención rápida ante incidentes, reduciendo al mínimo los periodos de inactividad y elevando la calidad de la experiencia del usuario.
+
+### 7.4.4. Notification Pipeline Components
+
+Un pipeline de notificaciones cumple un rol clave al transmitir automáticamente los resultados de las pruebas y el estado general del pipeline. En este contexto, Jenkins es una herramienta central, ya que permite configurar alertas precisas que informan sobre el avance y los resultados de cada etapa del proceso de pruebas.
 <br>
-- A lo largo del capítulo II se llevó a cabo un análisis integral del entorno competitivo, junto con entrevistas y actividades de needfinding, lo cual permitió una comprensión profunda de los usuarios. Esta investigación fundamentó la propuesta de valor de Mushroom, asegurando que la solución responda directamente a necesidades reales del público objetivo.
-<br>
-- La identificación temprana de los requisitos del proyecto resultó esencial para cimentar una base sólida sobre la cual construir Mushroom. Herramientas como los empathy mappings, impact mappings, user personas, así como los As-Is y To-Be Scenario Mappings, ayudaron a visualizar y comprender los procesos del usuario antes y después de la implementación de nuestra aplicación. A su vez, las user stories detallaron cómo se espera que interactúen los usuarios con la solución, mientras que el product backlog permitió priorizar funcionalidades clave, optimizando el uso de recursos durante el desarrollo.
-<br>
-- La implementación del backend utilizando Spring Boot, junto con la alineación de los bounded contexts bajo la arquitectura DDD, permitió establecer una estructura técnica robusta y escalable. La documentación generada en Swagger fue fundamental para facilitar la comprensión de los distintos módulos del sistema y mejorar la colaboración entre los miembros del equipo. Además, las entrevistas de validación con usuarios proporcionaron retroalimentación valiosa: destacaron aspectos positivos como la utilidad de la Landing Page y la facilidad de navegación en la Web App, pero también señalaron oportunidades de mejora en aspectos como el diseño, la presentación de información y la navegación general. Estos aprendizajes ofrecen una base sólida para futuras iteraciones centradas en elevar la experiencia del usuario y la eficacia del producto final.
+<img src="../../assets/img/chapter-VII/Jenkins.png" style="width:300px; height:auto;" alt="">
 
-## Bibliografia
+Con Jenkins, es posible configurar notificaciones automáticas que se envían al concluir cada build o fase del pipeline, informando si las pruebas fueron exitosas o fallaron, cuánto tiempo tomaron y qué errores se detectaron. Esto permite al equipo estar al tanto en tiempo real de cualquier incidente durante las pruebas, lo que facilita una reacción rápida. Además, Jenkins ofrece la posibilidad de generar informes detallados y enviar resúmenes periódicos de manera automática, brindando una visión integral del estado de calidad del software en cada ciclo de pruebas.
 
-1. Lean UX, diseño centrado en el usuario y validación:
-
-- Gothelf, J., & Seiden, J. (2021). Lean UX: Designing Great Products with Agile Teams (3rd ed.). O’Reilly Media.
-- Norman, D. A. (2023). The Design of Everyday Things: Revised and Expanded Edition. Basic Books.
-- Nielsen Norman Group. (2020-2024). UX Research & User-Centered Design.
-
-2. Arquitectura backend, Spring Boot y DDD
-- Evans, E. (2021). Domain-Driven Design: Tackling Complexity in the Heart of Software. Addison-Wesley.
-- Walls, C. (2022). Spring in Action (6th ed.). Manning Publications.
-- Richardson, C. (2019). Microservices Patterns: With examples in Java. Manning Publications.
-
-3. Documentación de APIs y Swagger
-- SmartBear Software. (2023). OpenAPI Specification (Swagger). https://swagger.io/specification/
-
-4. UX y herramientas de diseño
-- Interaction Design Foundation. (2023). User Personas, Journey Mapping, As-Is & To-Be Scenarios. https://www.interaction-design.org
-
-5. Informacion de nuestra problematica:
-
-India Briefing. (2024, enero 10). La actual crisis del Mar Rojo obliga al transporte marítimo mundial a buscar nuevas rutas. https://www.india-briefing.com/news/la-actual-crisis-del-mar-rojo-obliga-al-transporte-maritimo-mundial-a-buscar-nuevas-rutas-31590.html
-
-- El Economista. (2024, enero 12). Tesla y Volvo frenan su producción de autos por la crisis del transporte marítimo en el mar Rojo. https://www.eleconomista.com.mx/empresas/Tesla-y-Volvo-frenan-su-produccion-de-autos-por-la-crisis-del-transporte-maritimo-en-el-mar-Rojo-20240112-0042.html
 
 
