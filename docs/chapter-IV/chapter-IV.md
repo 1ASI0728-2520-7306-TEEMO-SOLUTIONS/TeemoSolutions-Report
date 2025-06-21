@@ -311,7 +311,15 @@ El desarrollo del UI Design del Web Applications está en el siguiente link: htt
 
 <img src="../../assets/img/chapter-IV/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-web-home.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-IV/mock-up-web-dashboard.png" style="width:700px; height:auto;" alt="mock up web page">
+
+<img src="../../assets/img/chapter-IV/mock-up-nearby-ports.png" style="width:700px; height:auto;" alt="mock up web page">
+
+<img src="../../assets/img/chapter-IV/mock-up-new-route.png" style="width:700px; height:auto;" alt="mock up web page">
+
+<img src="../../assets/img/chapter-IV/mock-up-route-history.png" style="width:700px; height:auto;" alt="mock up web page">
+
+<img src="../../assets/img/chapter-IV/mock-up-shipment-reports.png" style="width:700px; height:auto;" alt="mock up web page">
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
