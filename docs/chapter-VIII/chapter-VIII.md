@@ -322,7 +322,10 @@ Este modelo se basa en el uso de métricas cuantificables para verificar el cump
 | Ruta automática reduce el tiempo estimado de navegación en un 20%. | <12% de reducción en tiempo estimado de navegación. | 12%–19% de mejora en tiempos planificados. | 20% de mejora en eficiencia de navegación. | 25% de mejora en precisión y ahorro de tiempo/logística. | Tiempo estimado de navegación + % de usuarios que aceptan la ruta sugerida. | Mantener el algoritmo de ruta automática como funcionalidad por defecto. Si el resultado es desfavorable, ajustar parámetros del cálculo o mejorar visualización de rutas para mayor comprensión. | X |
 | Recalcular rutas ante cierre mejora la continuidad operativa en un 25%. | <15% de mejora en continuidad o reducción de interrupciones. | 15%–24% de mejora en confiabilidad logística. | 25% de mejora en continuidad operativa y percepción de confiabilidad. | 31.25% de mejora en métricas de continuidad y respuesta ante imprevistos. | Cantidad de interrupciones, rutas recalculadas correctamente, y puntuación en confiabilidad del sistema. | Integrar algoritmo de recálculo con notificaciones inmediatas y sistema de contingencia visual para desvíos. Si es desfavorable, revisar fuentes de datos y frecuencia de actualización. | X |
 | Reporte de navegación sencillo mejora el control logístico y eficiencia en un 25% | <15% de mejora en visibilidad o reducción de tiempos. | 15%–24% de mejora en control operativo y análisis de rutas. | 31.25% de mejora en percepción de control y eficiencia logística. | Frecuencia de uso del reporte, reducción en tiempo de análisis, puntuación en visibilidad operativa. | Implementar reporte exportable con resumen de navegación. Si no se alcanzan métricas mínimas, ajustar contenido visual o nivel de detalle. | X |
-| Sección comercial aumenta transacciones y conexiones en un 40%. | <25% de aumento | 25%-39% de aumento | 40% de aumento | >50% de aumento | Cantidad de transacciones realizadas dentro del módulo comercial | Añadir sección de marketplace logístico para facilitar ofertas y demandas de servicios. | X |
+| Generar reportes post-viaje mejora la trazabilidad y análisis en un 30%| <20% de los usuarios accede o los usa para modificar decisiones. | 20%–29% de usuarios accede y aplica cambios. | 30% accede al reporte y modifica decisiones futuras. | >37.5% accede y modifica decisiones. |% de usuarios que acceden al reporte + % que modifican acciones posteriores. | Si es ideal o excelente, estandarizar esta funcionalidad en todas las rutas. Si es desfavorable, rediseñar el reporte para hacerlo más visual y útil. | X |
+| Visualización de puertos mejora la precisión de planificación de rutas en un 30%. | <20% de mejora en rutas planificadas correctamente. | 20%–29% de mejora en la selección de puertos disponibles. | 30% de mejora en la precisión de planificación. | >37.5% de mejora en exactitud y reducción de errores. | % de rutas sin errores + tiempo promedio de planificación. | Si se alcanza el valor ideal o excelente, mantener y extender esta funcionalidad a otros módulos de planificación. Si el resultado es desfavorable, rediseñar la interfaz de la lista y reforzar los indicadores. | X |
+| Almacenar el último viaje incrementa la trazabilidad en un 25%. | <15% de usuarios accede al historial dentro de las 72 horas. | 15%–24% accede. | 25% accede. | >31.25% accede al historial. | % de accesos al historial dentro de las 72 horas posteriores al viaje. |Si es ideal o superior, mantener activado por defecto. Si es desfavorable, hacer más visible el botón o agregar alertas sugeridas. | X |
+| Mostrar información del puerto actual mejora decisiones operativas en 40%. | <25% usa la información para decisiones. | 25%–34% lo usa. | 40% de uso en toma de decisiones. | >50% de uso con impacto declarado. | % de capitanes que consultan la información del puerto y reportan uso para decisión operativa. |Si ideal o excelente, mantener como acceso rápido. Si es desfavorable, reubicar el botón o incorporar más datos contextuales. | X |
 
 ### 8.2.5. Methods Selection
 
@@ -470,8 +473,6 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 | US016        | Preferencia de notificaciones                | TK32           | Enviar alertas según preferencias                                             | Emitir notificaciones solo si coinciden con la configuración del usuario.                                                                                                                          | 1 hora                | Juan Pescoran       | Done   |
 
 
-
-
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
@@ -479,16 +480,6 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
 ## 8.6.  To-Be Software Platform Pre-launch
 ### 8.6.1. About-the-Product Intro Video
-
-
-
-
-
-
-
-
-
-
 
 
 
