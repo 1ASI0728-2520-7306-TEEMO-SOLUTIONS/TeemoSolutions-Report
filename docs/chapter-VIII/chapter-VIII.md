@@ -111,19 +111,27 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------- |
 | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo en la plataforma?              | 7 – Alta confianza; se trata de una funcionalidad estándar en plataformas de navegación con buen historial de adopción por parte de usuarios.           | 2 – Bajo riesgo técnico; su implementación requiere mostrar datos ya disponibles en el sistema.      | 6 – Mejora la precisión y reduce errores sin modificar funcionalidades centrales.                       | 5 – Útil especialmente para operadores y capitanes que planifican rutas constantemente.           | **20**          |
 | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?          | 6 – Algoritmos de rutas optimizadas son estándar en soluciones logísticas actuales.   | 3 – Mejora sustancial en la eficiencia de navegación y uso de recursos.  | 7 – Facilita la internacionalización de la solución.                                            | 6 – Atractivo para operadores logísticos y tomadores de decisiones que gestionan múltiples rutas. | **22**          |
-| ¿Incrementará la participación de usuarios crear un **foro de eventos y rutas recomendadas**?             | 8 – Experiencias similares en plataformas B2B indican aumento en la interacción.  | 4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.   | 8 – Puede incentivar la colaboración entre actores del sector logístico.                        | 7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.        | **27**          |
-| ¿Mejorará la satisfacción de usuarios un sistema de **alertas personalizadas sobre disrupciones**?        | 9 – Alta confianza; soluciones similares en logística muestran buena recepción.   | 2 – Bajo riesgo; funcionalidad común en apps empresariales.                           | 9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.                   | 8 – Muy relevante para quienes buscan proactividad en la planificación logística.             | **28**          |
-| ¿Fortalecerá el vínculo con el ecosistema global una sección de **oportunidades comerciales/logísticas**? | 7 – Basado en el interés de navieras y exportadores en plataformas colaborativas. | 4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B. | 10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios. | 6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas. | **27**          |
+| ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación?             | 7 – Los algoritmos de rutas dinámicas ya se usan en sistemas de navegación terrestre y aérea.  | 4 – Riesgo medio por la dependencia de actualizaciones en tiempo real sobre el estado de los puertos.   | 9 – Alto impacto operativo al mantener activa la planificación incluso en situaciones imprevistas.                        | 6 – Valorado por operadores que gestionan grandes volúmenes y no pueden arriesgar interrupciones.        | **26**          |
+| ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas?        | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas?   | 2 – Bajo riesgo técnico; requiere integración de datos ya existentes.                           | 8 – Mejora la visibilidad de operaciones, facilitando decisiones tácticas en tiempo real.                   | 6 – Valioso para empresas que buscan eficiencia operativa sin depender de múltiples sistemas externos.             | **23**          |
+| ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido? | 7 – Existen sistemas similares en logística y transporte terrestre que ya ofrecen reportes post-ejecución. | 3 – Requiere trazabilidad de datos durante la navegación, pero es técnicamente viable. | 8 – Permite análisis y mejora continua del desempeño logístico. | 7 – Valioso para usuarios que deben justificar rutas, responder a eventos o mejorar procesos futuros. | **25**          |
+| ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles? | 8 – Visualizaciones geográficas ya son estándar en aplicaciones de logística. | 2 – Riesgo técnico bajo; se puede usar bibliotecas existentes para visualización de nodos. | 7 – Mejora la comprensión de la red de puertos y facilita decisiones rápidas. | 6 – Importante para usuarios nuevos y operadores que planifican visualmente.| **23**          |
+| ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado? | 6 – La persistencia de datos recientes es una práctica común en apps logísticas y de navegación. | 3 – Bajo riesgo técnico, aunque puede haber dudas sobre almacenamiento local vs. servidor. | 6 – Mejora la experiencia al evitar pérdidas de información reciente. | 5 – Apreciado por usuarios frecuentes que evalúan desempeño o repiten rutas. | **20**          |
+| ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran? |7 – Similar a sistemas de aeropuertos o plataformas portuarias con estado operativo en tiempo real. | 3 – Requiere mantener actualizada la información del estado de cada puerto. | 9 – Altamente relevante para decisiones inmediatas (detención, descarga, abastecimiento). | 7 – Fundamental para capitanes y jefes de ruta que manejan operaciones activas. | **26**          |
 
 ### 8.1.4. Question Backlog
 
 | **Prioridad (1,2,3,5,8)** | **Pregunta**                                                                                                                                          |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1**                     | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma?                                        |
-| **3**                     | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?                  |
-| **3**                     | ¿Fomentará la participación entre usuarios la implementación de un **foro colaborativo** para compartir alertas logísticas, rutas y buenas prácticas? |
-| **5**                     | ¿Incrementará la satisfacción del usuario la integración de un sistema de **notificaciones personalizadas** ante eventos críticos en rutas marítimas? |
-| **5**                     | ¿Fortalecerá la conexión con nuevos mercados una **sección de oportunidades comerciales** para navieras, exportadores y operadores logísticos?        |
+| **2**                     | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?                  |
+| **2**                     | ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación? |
+| **3**                     | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas? |
+| **3**                     | ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido?        |
+| **3**                     | ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles?       |
+| **5**                     | ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado?       |
+| **8**                     | ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran?       |
+
+
 
 ### 8.1.5. Experiment Cards
 
@@ -139,23 +147,41 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 | **What**     | Desarrollar un algoritmo que calcule y muestre la ruta más corta entre dos puertos seleccionados, considerando distancias geográficas y disponibilidad. Mostrar los resultados visualmente sobre el mapa de navegación con detalles de distancia y puertos intermedios. |
 | **Hypothesis** | Se espera que, tras implementar esta función, al menos el 70% de los usuarios elijan la ruta sugerida automáticamente y reporten una reducción del 20% en tiempo estimado de navegación. |
 
-| **Question** | ¿Se expandirá la audiencia de Mushroom con la incorporación de traducciones al inglés, chino u otros idiomas clave? |
+| **Question 3** | ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación? |
 |--------------|-------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Las traducciones mejoran la accesibilidad global y posicionan la plataforma en mercados internacionales con alto potencial logístico. |
-| **What**     | Traducir la interfaz y contenidos principales a inglés y chino, implementando un sistema automatizado que permita actualizar las traducciones conforme se actualiza la plataforma. |
-| **Hypothesis** | La base de usuarios de habla inglesa o china crecerá un 15% dentro de los tres meses siguientes a la publicación de la versión multilingüe. |
+| **Why**      | En operaciones marítimas, los cierres de puertos por clima o conflictos impactan gravemente la logística. Tener una función que recalcule rutas en tiempo real permite mantener operaciones fluidas y reducir demoras críticas.|
+| **What**     | Diseñar un sistema que detecte cierres de puertos registrados en la base de datos y actualice automáticamente la ruta hacia un destino alternativo, notificando al usuario y sugiriendo opciones de desvío sin interrumpir el servicio. |
+| **Hypothesis** | Se espera que el 75% de los usuarios reporten una reducción en demoras logísticas y que el 60% utilicen la funcionalidad ante eventos imprevistos. |
 
-| **Question** | ¿Mejorará la satisfacción de los usuarios la integración de notificaciones personalizadas ante disrupciones logísticas? |
+| **Question 4** | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas? |
 |--------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Las alertas proactivas mejoran la toma de decisiones y la planificación, especialmente ante eventos inesperados como cierres de puertos, tormentas o conflictos en rutas clave. |
-| **What**     | Desarrollar un sistema de notificaciones configurables basado en eventos externos, ubicación geográfica y preferencias del usuario. Las alertas deben ser útiles, oportunas y fáciles de gestionar. |
-| **Hypothesis** | Se proyecta que la tasa de uso de herramientas de planificación aumente un 40% y que la satisfacción general del usuario se eleve en un 20%, especialmente en usuarios operativos. |
+| **Why**      | Los operadores logísticos requieren información clara y accesible para monitorear sus embarques. Un reporte resumido de navegación ayudaría a identificar cuellos de botella, comparar rutas y mejorar el rendimiento general de las operaciones. |
+| **What**     | Diseñar un panel de reporte con información clave como tiempos estimados y reales, desvíos, incidentes y duración total del trayecto, exportable en PDF o CSV, con filtros básicos. |
+| **Hypothesis** | El 70% de los usuarios utilizarán la función regularmente, y al menos el 60% afirmarán que mejora la visibilidad y toma de decisiones operativas. |
 
-| **Question** | ¿Fortalecerá la conexión con otros actores del mercado logístico una sección de oportunidades comerciales dentro de Mushroom? |
+| **Question 5** | ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido? |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Permite crear alianzas estratégicas, publicar ofertas y demandas de servicios logísticos, y conectar actores relevantes del ecosistema marítimo. Esto podría convertir a Mushroom en un hub de colaboración sectorial. |
-| **What**     | Implementar una sección tipo marketplace donde operadores, navieras o clientes puedan listar servicios, buscar socios y cerrar tratos. Incluir filtros inteligentes y medidas de seguridad para garantizar transacciones confiables. |
-| **Hypothesis** | Se espera que las conexiones comerciales dentro de la plataforma aumenten un 50% en los primeros seis meses desde el lanzamiento del módulo de comercio colaborativo. |
+| **Why**      | Los usuarios que supervisan rutas marítimas necesitan acceso a información histórica para evaluar decisiones pasadas, detectar errores, y mejorar futuras rutas. Un reporte final permite comprender el desempeño del trayecto de forma clara y estructurada. |
+| **What**     | Diseñar una funcionalidad que genere un reporte automáticamente al finalizar el viaje. Este incluirá ruta seguida, eventos detectados (cierres, desvíos), tiempo total de recorrido y tiempos estimados vs. reales. Permitirá descargarlo en formato PDF o visualizarlo desde la plataforma. |
+| **Hypothesis** | El 60% de los usuarios revisará el reporte al finalizar el viaje y al menos el 40% lo usará como insumo para modificar futuras decisiones logísticas. |
+
+| **Question 6** | ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles? |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Los usuarios tienden a comprender mejor una red de transporte cuando la visualizan gráficamente. Un mapa esquemático de puertos facilita la planificación, evita confusión y mejora la experiencia de navegación. |
+| **What**     | Implementar un mapa interactivo con nodos representando puertos, líneas que conectan rutas navegables, y estados codificados por color (abierto/cerrado). Debe incluir funcionalidad de zoom y selección de nodos. |
+| **Hypothesis** | Al menos el 70% de los usuarios considerará el mapa útil para comprender su trayecto, y el 50% lo utilizará activamente en la planificación de su viaje.|
+
+| **Question 7** | ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado? |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | En entornos logísticos, registrar el último trayecto ayuda a validar decisiones previas, verificar tiempos de tránsito y retomar operaciones en caso de corte de sesión o emergencia. |
+| **What**     | Implementar una función que almacene automáticamente el último viaje completo realizado, incluyendo puertos recorridos y tiempo estimado. Permitirá visualizarlo desde la pantalla de inicio o perfil. |
+| **Hypothesis** | El 40% de los usuarios accederá al último viaje guardado al menos una vez por semana, y el 30% indicará que esto le ayudó a evaluar o continuar con operaciones anteriores. |
+
+| **Question 8** | ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran? |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Para decidir si detenerse, abastecerse o seguir navegando, los capitanes necesitan información confiable del puerto en tiempo real. El acceso inmediato a esta información reduce riesgos logísticos. |
+| **What**     | Diseñar una vista informativa que muestre el nombre, país y estado operativo (abierto/cerrado) del puerto donde se encuentra actualmente la embarcación, con actualización automática según localización. |
+| **Hypothesis** | El 65% de los capitanes usará esta información al menos una vez por trayecto, y un 50% afirmará que contribuyó directamente a tomar decisiones operativas acertadas.|
 
 ## 8.2. Experiment Design
 ### 8.2.1. Hypotheses
@@ -172,23 +198,41 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 | **Hypothesis** | El uso del algoritmo de ruta más corta disminuirá el tiempo estimado de navegación y aumentará la precisión en la planificación en al menos un 20%.|
 | **Null Hypothesis** | La implementación de una ruta automática más corta no generará mejoras significativas en la planificación ni reducirá el tiempo estimado de viaje. |
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+| **Question 3** | ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación? |
 |--------------|------------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Un foro de colaboración fomentará la interacción entre operadores logísticos, generando una comunidad activa y más comprometida con la plataforma. |
-| **Hypothesis** | La implementación del foro aumentará la participación de los usuarios en un 30% en comparación con el período anterior a su habilitación. |
-| **Null Hypothesis** | La introducción del foro no tendrá un efecto significativo en la participación de los usuarios. |
+| **Belief**   | Si el sistema recalcula automáticamente la ruta en caso de cierre de un puerto, se reduce el riesgo de interrupciones graves y se mantiene la continuidad operativa en entornos impredecibles. |
+| **Hypothesis** | El uso de esta funcionalidad disminuirá las interrupciones planificadas en al menos un 20% y aumentará la percepción de confiabilidad del sistema en un 25%. |
+| **Null Hypothesis** | El recálculo automático de rutas no tendrá un efecto significativo en la continuidad operativa ni en la percepción de confiabilidad del sistema. |
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+| **Question 4** | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas? |
 |--------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Las notificaciones personalizadas ayudarán a los usuarios a gestionar sus operaciones de forma más organizada y proactiva, mejorando la experiencia general. |
-| **Hypothesis** | La integración de este sistema aumentará la tasa de finalización de tareas o acciones logísticas en un 40% y la satisfacción general del usuario en un 20%. |
-| **Null Hypothesis** | La implementación de notificaciones personalizadas no tendrá un efecto significativo en la tasa de finalización de tareas ni en la satisfacción del usuario. |
+| **Belief**   | Un informe de navegación que resuma el trayecto de los embarques permitirá a los operadores tomar decisiones más rápidas y acertadas, reduciendo errores y tiempos muertos. |
+| **Hypothesis** | La implementación del reporte sencillo aumentará la satisfacción de los operadores logísticos en un 25% y reducirá los errores operativos en al menos 15%. |
+| **Null Hypothesis** | El reporte de navegación no tendrá un efecto significativo en la satisfacción de los usuarios ni en la eficiencia de las operaciones logísticas. |
 
-| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+| **Question 5** | ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido? |
 |--------------|------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Una sección comercial permitirá a los usuarios publicar servicios, buscar aliados estratégicos y realizar transacciones, fomentando un ecosistema logístico más dinámico. |
-| **Hypothesis** | La implementación de esta sección generará un incremento del 50% en el número de conexiones comerciales o transacciones en los primeros seis meses. |
-| **Null Hypothesis** | La inclusión de la sección comercial no tendrá un efecto significativo en la cantidad de transacciones realizadas. |
+| **Belief**   | Si los usuarios cuentan con un reporte estructurado del viaje, podrán identificar errores, comparar con trayectos anteriores y mejorar el planeamiento futuro. |
+| **Hypothesis** | El uso del reporte de navegación aumentará en un 25% la capacidad de evaluación post-viaje y reducirá en un 15% la reincidencia de errores logísticos. |
+| **Null Hypothesis** | El reporte de navegación no impactará significativamente en la mejora de análisis ni en la toma de decisiones posteriores.|
+
+| **Question 6** | ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Si los usuarios tienen acceso a una representación visual clara de los puertos, podrán entender mejor su ubicación, relaciones y opciones de ruta. |
+| **Hypothesis** | La incorporación del mapa esquemático incrementará en un 30% la comprensión de trayectos y disminuirá en un 20% los errores en la selección de rutas. |
+| **Null Hypothesis** | El mapa esquemático no tendrá impacto relevante en la comprensión ni en la planificación de trayectos.|
+
+| **Question 7** | ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Si el sistema almacena automáticamente el último viaje, los usuarios podrán revisarlo fácilmente para analizar decisiones anteriores o retomarlo sin pérdida de datos.|
+| **Hypothesis** |  Al menos el 40% de los usuarios accederá al último viaje guardado y lo utilizará como referencia en futuras decisiones dentro de los 3 días siguientes al viaje.|
+| **Null Hypothesis** | La opción de guardar el último viaje no será utilizada significativamente ni impactará en la trazabilidad o análisis por parte de los usuarios.|
+
+| **Question 8** | ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Si los capitanes reciben información completa del puerto actual, tomarán decisiones más informadas respecto a detenciones, cambios de curso o abastecimiento. |
+| **Hypothesis** | El 65% de los capitanes usará la información del puerto actual para validar su decisión de detenerse, y el 50% reportará una mejora en la eficiencia operativa. |
+| **Null Hypothesis** | La información mostrada sobre el puerto actual no tendrá un impacto perceptible en las decisiones tomadas durante la navegación.|
 
 ### 8.2.2. Measures
 
@@ -200,17 +244,29 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 |--------------|----------------------------------------------------------------------------------------------|
 | **Measure**  | Medir el tiempo estimado de navegación antes y después de usar la función de ruta automática, así como la frecuencia con la que los usuarios seleccionan la ruta sugerida frente a otras opciones.|
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+| **Question 3** | ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación? |
 |--------------|------------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Evaluar la cantidad de publicaciones, comentarios e interacciones dentro del foro. Comparar estos datos con el periodo previo a su lanzamiento. Complementar con encuestas para medir la percepción del valor que aporta esta funcionalidad. |
+| **Measure**  | Medir el número de interrupciones logísticas antes y después de usar el sistema de recálculo, además de encuestas de satisfacción relacionadas con confiabilidad ante eventos imprevistos. |
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+| **Question 4** | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas? |
 |--------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Medir la tasa de finalización de tareas o respuestas ante alertas antes y después de implementar el sistema de notificaciones. Complementar con encuestas que evalúen la satisfacción general respecto a la utilidad de esta nueva función. |
+| **Measure**  | Medir la frecuencia de uso del reporte, el tiempo promedio dedicado al análisis logístico y encuestas de percepción sobre visibilidad y control de rutas antes y después de habilitar la funcionalidad. |
 
-| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+| **Question 5** | ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido? |
 |--------------|------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Contar el número de transacciones realizadas dentro del módulo comercial y analizar métricas de uso (visitas, publicaciones, contactos) antes y después de su implementación. Evaluar si se incrementa la actividad comercial dentro del ecosistema de la plataforma. |
+| **Measure**  | Medir el porcentaje de usuarios que consultan o descargan el reporte final tras su viaje, y cuántos indican que realizaron ajustes en decisiones futuras gracias a dicho reporte. |
+
+| **Question 6** | ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Measure**  |  Medir la cantidad de veces que los usuarios interactúan con el mapa esquemático durante la planificación del viaje y cuántos indican que mejoraron su comprensión del trayecto gracias a esta visualización. |
+
+| **Question 7** | ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Measure**  | Medir la frecuencia con la que los usuarios acceden al último viaje guardado y si utilizan esta información como base para planear, modificar o justificar nuevos trayectos. |
+
+| **Question 8** | ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Measure**  | Medir el porcentaje de capitanes que consultan la información del puerto actual y reportan que esa información fue clave para su decisión de detenerse o continuar navegando. |
 
 ### 8.2.3. Conditions
 
@@ -224,20 +280,35 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 | **Condición Experimental** | El tiempo estimado de navegación se reducirá en un 20% o más en las rutas planificadas con la función de ruta automática. |
 | **Condición de Control**   | No habrá cambios significativos en el tiempo estimado de viaje o selección de rutas frente al método anterior sin sugerencia automática.|
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+| **Question 3** | ¿Puede mejorar la confiabilidad del sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación? |
 |--------------|-----------------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | La participación de los usuarios aumentará en un 30% después de la implementación del foro, medido por el número de interacciones y publicaciones. |
-| **Condición de Control**   | No habrá un aumento significativo en la participación de los usuarios tras la implementación del foro. |
+| **Condición Experimental** | Los usuarios reportarán una reducción del 20% o más en interrupciones logísticas tras usar el sistema de recálculo. |
+| **Condición de Control**   | No se observará diferencia significativa en interrupciones o percepción de confiabilidad entre usuarios con y sin acceso a la funcionalidad. |
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+| **Question 4** | ¿Ayudaría a los operadores logísticos disponer de un reporte de navegación sencillo para monitorear el estado y desempeño de sus rutas? |
 |--------------|---------------------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | La tasa de finalización de tareas aumentará en un 25% después de implementar el sistema de notificaciones personalizadas. |
-| **Condición de Control**   | No habrá un aumento significativo en la tasa de finalización de tareas tras la implementación del sistema de notificaciones. |
+| **Condición Experimental** | Los usuarios aumentarán en un 25% la satisfacción relacionada con la supervisión logística tras el uso del reporte, y se reducirá en un 15% el tiempo de análisis manual de rutas. |
+| **Condición de Control**   | No habrá mejoras significativas en satisfacción ni reducción en tiempos de análisis tras la implementación del reporte. |
 
-| **Question** | ¿Fortalecerá la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+| **Question 5** | ¿Mejorará la capacidad de análisis post-viaje ofrecer a los usuarios un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido? |
 |--------------|----------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | Se espera que el número de transacciones en la nueva sección de comercio aumente en un 50% durante un período específico tras su implementación. |
-| **Condición de Control**   | No habrá un aumento significativo en el número de transacciones en la sección de comercio durante el mismo período. |
+| **Condición Experimental** | Al menos el 40% de los usuarios consultarán el reporte final después del viaje y un 25% reportará mejoras en decisiones posteriores. |
+| **Condición de Control**   | Los usuarios tendrán acceso al sistema sin reporte final, y se medirá si hay cambios en su comportamiento o planificación posterior sin esa herramienta. |
+
+| **Question 6** | ¿Ayudará a los usuarios a comprender mejor sus trayectos un mapa esquemático visual de los puertos disponibles? |
+|--------------|----------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | Se habilita el mapa esquemático interactivo y se mide si al menos el 50% de los usuarios lo utilizan y un 30% indica que mejoró su comprensión. |
+| **Condición de Control**   | Se usa únicamente una lista textual sin visualización gráfica y se mide si existen diferencias significativas en la planificación y entendimiento del trayecto. |
+
+| **Question 7** | ¿Facilitará la evaluación y trazabilidad permitir que el sistema guarde automáticamente el último viaje realizado?|
+|--------------|----------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | Se habilita la función de guardado automático y se mide si al menos el 40% accede al historial dentro de las 72 horas siguientes. |
+| **Condición de Control**   | No se guarda el viaje anterior automáticamente; los usuarios deben registrar sus rutas manualmente si desean conservarlas. |
+
+| **Question 8** | ¿Ayudará a tomar mejores decisiones permitir a los capitanes ver información detallada (nombre, país, estado) del puerto en el que se encuentran?|
+|--------------|----------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | Mostrar información detallada del puerto actual y medir si al menos el 50% de los capitanes la usa para tomar decisiones de detención o continuidad.. |
+| **Condición de Control**   | No se muestra información del puerto actual; el capitán debe basarse en su experiencia o información externa para decidir. |
 
 ### 8.2.4. Scale Calculations and Decisions
 
@@ -249,8 +320,8 @@ Este modelo se basa en el uso de métricas cuantificables para verificar el cump
 |-----------|------------------|----------------|-----------|----------------|-------------|------------------------|------------|
 | Visualización de puertos mejora la precisión de planificación de rutas en un 30%. | <20% de mejora en rutas planificadas correctamente. | 20%–29% de mejora en la selección de puertos disponibles. | 30% de mejora en la precisión de planificación. | 37.5% de mejora en exactitud y reducción de errores. | % de rutas sin errores + tiempo promedio de planificación. | Si se alcanza el valor ideal o excelente, mantener y extender esta funcionalidad a otros módulos de planificación. Si el resultado es desfavorable, rediseñar la interfaz de la lista y reforzar los indicadores | X |
 | Ruta automática reduce el tiempo estimado de navegación en un 20%. | <12% de reducción en tiempo estimado de navegación. | 12%–19% de mejora en tiempos planificados. | 20% de mejora en eficiencia de navegación. | 25% de mejora en precisión y ahorro de tiempo/logística. | Tiempo estimado de navegación + % de usuarios que aceptan la ruta sugerida. | Mantener el algoritmo de ruta automática como funcionalidad por defecto. Si el resultado es desfavorable, ajustar parámetros del cálculo o mejorar visualización de rutas para mayor comprensión. | X |
-| Foro logístico incrementa la participación del usuario en un 30%. | <20% de incremento | 20%-29% de incremento | 30% de incremento | >37.5% de incremento | Número de publicaciones, respuestas e interacciones | Desarrollar foro con categorías temáticas logísticas para facilitar el intercambio entre usuarios. | X |
-| Notificaciones personalizadas mejoran la satisfacción en un 25%. | <15% de mejora | 15%-24% de mejora | 25% de mejora | >31.25% de mejora | Tasa de finalización de tareas y puntaje de satisfacción general | Integrar sistema de alertas configurables sobre eventos críticos y recordatorios. | X |
+| Recalcular rutas ante cierre mejora la continuidad operativa en un 25%. | <15% de mejora en continuidad o reducción de interrupciones. | 15%–24% de mejora en confiabilidad logística. | 25% de mejora en continuidad operativa y percepción de confiabilidad. | 31.25% de mejora en métricas de continuidad y respuesta ante imprevistos. | Cantidad de interrupciones, rutas recalculadas correctamente, y puntuación en confiabilidad del sistema. | Integrar algoritmo de recálculo con notificaciones inmediatas y sistema de contingencia visual para desvíos. Si es desfavorable, revisar fuentes de datos y frecuencia de actualización. | X |
+| Reporte de navegación sencillo mejora el control logístico y eficiencia en un 25% | <15% de mejora en visibilidad o reducción de tiempos. | 15%–24% de mejora en control operativo y análisis de rutas. | 31.25% de mejora en percepción de control y eficiencia logística. | Frecuencia de uso del reporte, reducción en tiempo de análisis, puntuación en visibilidad operativa. | Implementar reporte exportable con resumen de navegación. Si no se alcanzan métricas mínimas, ajustar contenido visual o nivel de detalle. | X |
 | Sección comercial aumenta transacciones y conexiones en un 40%. | <25% de aumento | 25%-39% de aumento | 40% de aumento | >50% de aumento | Cantidad de transacciones realizadas dentro del módulo comercial | Añadir sección de marketplace logístico para facilitar ofertas y demandas de servicios. | X |
 
 ### 8.2.5. Methods Selection
