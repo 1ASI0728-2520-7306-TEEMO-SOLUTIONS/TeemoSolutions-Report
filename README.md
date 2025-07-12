@@ -3698,11 +3698,57 @@ https://youtu.be/M0mf7QSNkeE
 
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
+
+Para la recopilación de datos con respecto a las implementaciones a evaluar, se ha realizado un formulario con preguntas relacionadas a las caracteristicas mencionadas a implementar en nuestra aplicación. Por lo se explicará los resultados obtenidos a partir de ellas, indicando que se obtuvieron un total de 11 respuestas. A continuación se mostrarán las preguntas realizadas y sus estadísticas:
+
+**Preguntas**: 
+
+1. ¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?
+2. ¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?
+3. ¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?
+4. ¿Incrementará la satisfacción del usuario la integración de un sistema de notificaciones personalizadas ante eventos críticos en rutas marítimas?
+5. ¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas, para validar el proceso de identificación y asociación con una organización?
+6. ¿Le mejoraría la experiencia la implementación de un sistema recalcular la ruta automáticamente en caso de cierre de un puerto durante la navegación?
+
+**Análisis de datos**:
+
+Información detallada del puerto:
+
+<img src="assets/img/chapter-VIII/pregunta1.png" style="width:500px; height:auto;" alt="pregunta 1">
+
+Almacenamiento automático del último viaje:
+
+<img src="assets/img/chapter-VIII/pregunta2.png" style="width:500px; height:auto;" alt="pregunta 1">
+
+Reporte final de todo el viaje:
+
+<img src="assets/img/chapter-VIII/pregunta3.png" style="width:500px; height:auto;" alt="pregunta 1">
+
+Sistema de notificaciones personalizadas:
+
+<img src="assets/img/chapter-VIII/pregunta4.png" style="width:500px; height:auto;" alt="pregunta 1">
+
+Registro de empresas navieras internacionales:
+
+<img src="assets/img/chapter-VIII/pregunta5.png" style="width:500px; height:auto;" alt="pregunta 1">
+
+Recalculo de rutas:
+
+<img src="assets/img/chapter-VIII/pregunta6.png" style="width:500px; height:auto;" alt="pregunta 1">
+
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+
+
 ## 8.5. Continuous Learning
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
+
+
+
 ## 8.6.  To-Be Software Platform Pre-launch
 ### 8.6.1. About-the-Product Intro Video
+
+
 
   
   ## Conclusiones
