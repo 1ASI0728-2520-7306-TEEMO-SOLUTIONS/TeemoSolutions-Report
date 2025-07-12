@@ -3696,13 +3696,17 @@ Estas son las preguntas que se le hicieron a cada entrevistado:
 Entrevista 1:
 https://youtu.be/Y2cJzHYxXtw
 
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%201.png" style="width:500px; height:auto;" alt="entrevista1">
+
 Entrevista 2:
 https://youtu.be/XF05WypyvtU 
+
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%202.png" style="width:500px; height:auto;" alt="entrevista1">
 
 Entrevista 3:
 https://youtu.be/M0mf7QSNkeE
 
-
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%203.png" style="width:500px; height:auto;" alt="entrevista1">
 
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
