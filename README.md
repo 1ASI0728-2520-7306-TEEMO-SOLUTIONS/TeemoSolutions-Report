@@ -3664,6 +3664,13 @@ Este enfoque permitirá validar si las hipótesis planteadas se traducen en mejo
 | US016        | Preferencia de notificaciones                | TK31           | Configurar notificaciones preferidas                                          | Permitir al usuario seleccionar tipos de alertas que desea recibir.                                                                                                                                | 1 hora                | Juan Pescoran       | Done   |
 | US016        | Preferencia de notificaciones                | TK32           | Enviar alertas según preferencias                                             | Emitir notificaciones solo si coinciden con la configuración del usuario.                                                                                                                          | 1 hora                | Juan Pescoran       | Done   |
 
+### 8.3.3.6 Team Collaboration Insights
+
+<img src="assets/img/chapter-VIII/collaboration1.png" style="width:500px; height:auto;" alt="collaboration 1">
+
+<img src="assets/img/chapter-VIII/collaboration2.png" style="width:500px; height:auto;" alt="collaboration 2">
+
+<img src="assets/img/chapter-VIII/collaboration3.png" style="width:500px; height:auto;" alt="collaboration 3">
 
 
 ### 8.3.4. Validation Interviews
@@ -3694,6 +3701,7 @@ https://youtu.be/XF05WypyvtU
 
 Entrevista 3:
 https://youtu.be/M0mf7QSNkeE
+
 
 
 ## 8.4. Experiment Aftermath & Analysis
