@@ -314,8 +314,6 @@ Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a
 
 Este modelo se basa en el uso de métricas cuantificables para verificar el cumplimiento de las hipótesis formuladas en el desarrollo del proyecto. A cada hipótesis se le asigna un indicador de éxito que permite clasificar los resultados en distintos niveles de desempeño. Se considera que una hipótesis se valida de forma ideal cuando los resultados alcanzan exactamente el objetivo establecido; aceptable, cuando se sitúan entre el mínimo esperado y el ideal; y desfavorable, si están por debajo del umbral mínimo, lo cual sugiere la necesidad de revisar la funcionalidad o el enfoque aplicado. Adicionalmente, se reconoce un nivel excelente cuando la métrica supera el valor ideal en un 25% o más, lo que representa un logro destacado. Este enfoque facilita la toma de decisiones objetivas, basadas en datos, para validar, ajustar o rediseñar elementos clave dentro del proyecto Mushroom.
 
-
-
 | **Factor**                                                                        | **Desfavorable**                                                 | **Aceptable**                                               | **Ideal**                                                             | **Excelente**                                                                                        | **Métrica**                                                                                                                                | **Decisión / Acción**                                                                                                                                                                                             | **Estado** |
 |-----------------------------------------------------------------------------------|------------------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | Visualización de puertos mejora la precisión de planificación de rutas en un 30%. | <20% de mejora en rutas planificadas correctamente.              | 20%–29% de mejora en la selección de puertos disponibles.   | 30% de mejora en la precisión de planificación.                       | 37.5% de mejora en exactitud y reducción de errores.                                                 | % de rutas sin errores + tiempo promedio de planificación.                                                                                 | Si se alcanza el valor ideal o excelente, mantener y extender esta funcionalidad a otros módulos de planificación. Si el resultado es desfavorable, rediseñar la interfaz de la lista y reforzar los indicadores  | X          |
@@ -388,6 +386,7 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 
 
 ## 8.3. Experimentation
+
 ### 8.3.1. To-Be User Stories
 
 | **ID** | **Título**                                      | **Descripción**                                                                                                                                                                                                           | **Criterios de aceptacion**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -433,7 +432,7 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
-### 8.3.3.1 To-Be Sprint Backlog
+#### 8.3.3.1 To-Be Sprint Backlog
 
 | **Sprint #1** | Sprint 1                                   |                |                                           |                                                                                               |                       |                 |        |
 |---------------|--------------------------------------------|----------------|-------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------|-----------------|--------|
@@ -472,8 +471,38 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 | US016         | Preferencia de notificaciones              | TK31           | Configurar notificaciones preferidas      | Permitir al usuario seleccionar tipos de alertas que desea recibir.                           | 1 hora                | Juan Pescoran   | Done   |
 | US016         | Preferencia de notificaciones              | TK32           | Enviar alertas según preferencias         | Emitir notificaciones solo si coinciden con la configuración del usuario.                     | 1 hora                | Juan Pescoran   | Done   |
 
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+
+
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+
+
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+
+
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+
+
+#### 8.3.3.5. Team Collaboration Insights
+
+
+
+### 8.3.4. To-Be Validation Interviews
+
+#### 8.3.4.1. Diseño de Entrevistas
+
+
+
+#### 8.3.4.2. Registro de Entrevistas
+
+
 
 ## 8.4. Experiment Aftermath & Analysis
+
 ### 8.4.1. Analysis and Interpretation of Results
 
 
