@@ -2721,86 +2721,109 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
 ## 8.1. Experiment Planning
 ### 8.1.1. As-Is Summary
 
-La aplicación actual se centra en ofrecer una plataforma para la optimizacion de las rutas marítimas internacionales utilizando datos contextuales en tiempo real, inteligencia predictiva y análisis de riesgos.
+La plataforma Mushroom ofrece trazado de rutas marítimas, pero aún presenta limitaciones clave para los usuarios operativos. No muestra información detallada de los puertos (nombre, país, estado), ni guarda automáticamente los viajes realizados, dificultando la trazabilidad. Tampoco genera reportes post-viaje ni integra notificaciones personalizadas ante eventos críticos, lo que reduce la capacidad de respuesta logística.
 
-Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a menudo superan los 3 segundos, lo que afecta la experiencia del usuario. La interfaz presenta limitaciones en términos de personalización, y no se adapta adecuadamente a diferentes condiciones de luz.
+El proceso de registro carece de validación automatizada con empresas navieras reconocidas, y no hay herramientas que permitan estimar costos según Incoterms, lo que limita su uso como solución integral para el comercio marítimo.
 
-**Problemas detectados**
-
-- Bajo rendimiento: La aplicación presenta demoras al acceder a distintas funcionalidades, lo que puede generar una experiencia frustrante para el usuario.
-
-- Limitaciones en usabilidad: La ausencia de un modo oscuro reduce la comodidad al utilizar la plataforma en ambientes con poca iluminación.
-
-- Experiencia de usuario inconsistente: La interfaz actual no está adaptada de forma óptima a distintos tipos de dispositivos, lo que provoca variaciones en la experiencia entre smartphones y equipos de escritorio.
-
-- Accesibilidad restringida: No contar con soporte multilingüe impide que usuarios de otros idiomas puedan interactuar adecuadamente con la aplicación, lo que limita su alcance global.
-
-**Objetivos de mejora:**
-
-
-- Mejorar el rendimiento: Optimizar la arquitectura y el uso de recursos para lograr tiempos de carga inferiores a 2 segundos.
-
-- Ampliar la accesibilidad y usabilidad: Incorporar un modo oscuro y rediseñar aspectos clave de la interfaz para facilitar el uso en distintas condiciones y dispositivos.
-
-- Alcanzar nuevos públicos: Integrar traducciones al inglés y al chino con el fin de atraer una audiencia más amplia y diversa.
-
-- Aumentar la interacción: Aplicar estrategias de gamificación para fomentar una mayor participación y fidelización de los usuarios dentro de la plataforma.
-
+**Problemas detectados:**
+- No hay datos completos sobre puertos al planificar.
+- No se guarda historial de viajes anteriores.
+- No existen reportes con métricas del viaje finalizado.
+- No hay alertas personalizadas ante disrupciones.
+- Registro sin validación por empresa naviera.
+- No se pueden calcular costos logísticos por Incoterm.
 
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
-**Assumptions (Supuestos):**
+**Assumptions:**
+- Información del puerto: Se asume que los capitanes y planificadores valoran contar con información detallada del puerto (nombre, país, estado operativo) para evitar errores de planificación y mejorar la toma de decisiones durante la navegación.
+- Trazabilidad de viajes anteriores: Se presupone que los usuarios operativos necesitan acceder fácilmente al historial de rutas realizadas para fines de seguimiento, análisis de eficiencia y aprendizaje organizacional.
+- Reportes post-viaje: Se parte del supuesto de que un resumen final de la operación (ruta tomada, eventos, tiempos de recorrido) facilitaría auditorías internas, retroalimentación y mejora continua.
+- Alertas contextuales: Se considera que los usuarios verán con buenos ojos un sistema que brinde notificaciones inteligentes ante eventos críticos (clima, cierre de puertos, conflictos), dado su impacto en la seguridad y planificación operativa.
+- Validación por empresa naviera: Se presupone que incluir una lista desplegable con empresas navieras reconocidas durante el registro facilitaría la verificación de identidad y la integración con estructuras organizativas reales.
+- Cálculo de costos logísticos según Incoterm: Se asume que operadores logísticos y exportadores valoran herramientas que les permitan anticipar los costos de importación/exportación en base a los términos comerciales seleccionados.
 
-- Modo oscuro: Se parte del supuesto de que los usuarios valoran opciones de personalización visual, especialmente cuando trabajan en entornos de baja iluminación, por lo que implementar un modo oscuro podría mejorar la experiencia de navegación.
+**Knowledge Gaps:**
+- Impacto real de mostrar datos portuarios: Se desconoce hasta qué punto los usuarios toman decisiones con base en la visibilidad del estado operativo del puerto, y si su inclusión tiene una correlación directa con la reducción de errores.
+- Utilización del historial de viajes: No se tiene información suficiente sobre la frecuencia y forma en que los usuarios reutilizan información de rutas anteriores para planificaciones futuras.
+- Valor asignado al reporte post-viaje: Se requiere validar si los usuarios finales consideran útil disponer de reportes detallados tras completar un trayecto, y cómo los utilizarían (informes internos, mejora operativa, entrenamiento).
+- Preferencias respecto a notificaciones personalizadas: Se necesita más evidencia sobre los tipos de alertas que los usuarios considerarían relevantes y cómo las desean recibir (push, email, dentro del sistema).
+- Facilidad de identificación mediante listado de empresas: Aún no está claro si los usuarios confían más en el sistema cuando se les permite asociarse con organizaciones registradas o si prefieren ingresar datos libremente.
+- Necesidad real del módulo de cálculo de costos logísticos: No se cuenta con una evaluación previa de la utilidad práctica de mostrar costos según Incoterm, ni si los usuarios tomarían decisiones basadas en esta función.
 
-- Multilingüismo: Se asume que un porcentaje importante de usuarios habla otros idiomas, como inglés o chino, lo cual justifica la necesidad de ofrecer traducciones en la plataforma.
+**Ideas:**
+- Diseñar interfaz de puertos inteligentes: Implementar una sección donde se visualicen los puertos por nombre, país y estado (abierto/cerrado), con colores e íconos distintivos. Evaluar su impacto con métricas de selección y planificación de rutas.
+- Habilitar historial de viajes automáticos: Guardar automáticamente los datos del último viaje (origen, destino, ruta, eventos) en una sección accesible para que el usuario los consulte, compare o replique.
+- Generar reportes post-viaje exportables: Diseñar un módulo que permita visualizar y exportar resúmenes de viajes, incluyendo ruta, incidencias, tiempos estimados vs. reales, y desviaciones.
+- Desarrollar sistema de alertas configurables: Crear un sistema de notificaciones inteligentes con personalización por tipo de evento, canal preferido y nivel de criticidad.
+- Optimizar el proceso de registro: Incluir un campo desplegable con una base de datos de navieras reconocidas a nivel global para facilitar la identificación de la organización a la que pertenece el usuario.
+- Implementar calculadora de costos logísticos: Diseñar una funcionalidad que estime los costos aproximados en función de los Incoterms elegidos, ruta, distancia y tipo de carga, para orientar decisiones económicas.
 
-- Espacio colaborativo logístico: Se presupone que los usuarios valoran una sección donde puedan compartir rutas recomendadas, experiencias logísticas y reportes de eventos, lo cual aumentaría la participación activa dentro del sistema.
+**Claims:**
+- Decisiones más informadas: Mostrar detalles del estado de los puertos al momento de la planificación reduce errores y mejora la precisión operativa, especialmente en zonas de alto tráfico o conflictos.
+- Mejor trazabilidad y eficiencia operativa: El historial automático de viajes permite comparar resultados, aprender de trayectos previos y reducir el tiempo necesario para futuras planificaciones.
+- Post efectivo: Los reportes posteriores al viaje fortalecen la cultura de mejora continua, permitiendo identificar cuellos de botella y zonas de riesgo en la cadena logística.
+- Planificación proactiva: Las alertas personalizadas permiten anticiparse a disrupciones críticas, elevando la eficiencia y reduciendo los costos asociados a desvíos o esperas innecesarias.
+- Mayor confianza institucional: La asociación con navieras reconocidas en el proceso de registro otorga mayor credibilidad al sistema y facilita la estructuración jerárquica de los usuarios por organización.
+- Transparencia en costos: Calcular anticipadamente los costos logísticos basados en Incoterms mejora la planificación financiera y facilita la comparación entre rutas u opciones de servicio.
 
-- Alertas personalizadas: Se considera que los recordatorios e indicadores contextuales pueden mejorar la gestión de rutas y decisiones operativas, elevando la satisfacción del usuario.
-
-- Módulo de oportunidades comerciales: Se asume que existe interés por integrar un espacio donde navieras, brokers logísticos y exportadores puedan intercambiar servicios o asociarse para operaciones compartidas.
-
-**Knowledge Gaps (Vacíos de conocimiento):**
-
-- Preferencias visuales: Se requiere mayor información sobre cómo los usuarios perciben el diseño de la plataforma y si funciones como el modo oscuro realmente impactan en su comodidad.
-
-- Perfil lingüístico de usuarios: Se necesita investigar más sobre la diversidad idiomática de los actuales y potenciales usuarios, para priorizar idiomas en futuras versiones.
-
-- Utilidad de la sección colaborativa: Aún no se cuenta con datos que indiquen qué tipo de contenido (eventos, alertas, rutas alternativas) es más valorado en espacios colaborativos logísticos.
-
-- Impacto de las notificaciones inteligentes: Hace falta evidencia sobre cómo las alertas personalizadas afectan la toma de decisiones o la fidelización del usuario en plataformas similares.
-
-- Demanda de funcionalidades comerciales: No se dispone aún de un análisis profundo sobre la viabilidad e interés real de una sección dedicada a networking logístico o intercambio de servicios en el sector marítimo.
-
-**Ideas (Propuestas de acción):**
-
-- Aplicar encuestas dirigidas: Realizar encuestas y entrevistas a usuarios actuales para conocer su opinión sobre funciones propuestas como modo oscuro, alertas o espacio colaborativo.
-
-- Desarrollar un módulo de comunidad logística: Crear una sección que permita a usuarios compartir experiencias, consejos operativos y rutas recomendadas ante disrupciones.
-
-- Lanzar un estudio de mercado logístico: Investigar la viabilidad y expectativas de los usuarios frente a un marketplace o espacio de colaboración entre operadores logísticos.
-
-- Analizar casos de éxito comparables: Estudiar plataformas del ámbito logístico o marítimo que han integrado características similares, para identificar buenas prácticas y errores a evitar.
-
-**Claims (Afirmaciones):**
-
-- Mejora en usabilidad: Se plantea que la inclusión de un modo oscuro contribuirá a una experiencia más confortable, especialmente para usuarios que operan en ambientes con poca luz.
-
-- Mayor interacción del usuario: Se sostiene que la creación de una sección colaborativa donde se compartan experiencias logísticas puede aumentar el compromiso y la recurrencia en el uso de la plataforma.
-
-- Incremento en satisfacción: Se afirma que las alertas inteligentes y personalizadas mejoran la gestión logística y refuerzan la percepción de valor por parte del usuario.
-
-- Impulso a redes logísticas: Se propone que la integración de un módulo comercial/logístico puede fomentar alianzas, generar nuevas oportunidades de negocio y fortalecer la comunidad de usuarios.
 
 ### 8.1.3. Experiment-Ready Questions
-| **Pregunta**                                                                                              | **Confianza**                                                                     | **Riesgo**                                                                            | **Impacto**                                                                                     | **Interés**                                                                                   | **Total Score** |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------- |
-| ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo en la plataforma?              | 7 – Alta confianza; se trata de una funcionalidad estándar en plataformas de navegación con buen historial de adopción por parte de usuarios.           | 2 – Bajo riesgo técnico; su implementación requiere mostrar datos ya disponibles en el sistema.      | 6 – Mejora la precisión y reduce errores sin modificar funcionalidades centrales.                       | 5 – Útil especialmente para operadores y capitanes que planifican rutas constantemente.           | **20**          |
-| ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?          | 6 – Algoritmos de rutas optimizadas son estándar en soluciones logísticas actuales.   | 3 – Mejora sustancial en la eficiencia de navegación y uso de recursos.  | 7 – Facilita la internacionalización de la solución.                                            | 6 – Atractivo para operadores logísticos y tomadores de decisiones que gestionan múltiples rutas. | **22**          |
-| ¿Incrementará la participación de usuarios crear un **foro de eventos y rutas recomendadas**?             | 8 – Experiencias similares en plataformas B2B indican aumento en la interacción.  | 4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.   | 8 – Puede incentivar la colaboración entre actores del sector logístico.                        | 7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.        | **27**          |
-| ¿Mejorará la satisfacción de usuarios un sistema de **alertas personalizadas sobre disrupciones**?        | 9 – Alta confianza; soluciones similares en logística muestran buena recepción.   | 2 – Bajo riesgo; funcionalidad común en apps empresariales.                           | 9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.                   | 8 – Muy relevante para quienes buscan proactividad en la planificación logística.             | **28**          |
-| ¿Fortalecerá el vínculo con el ecosistema global una sección de **oportunidades comerciales/logísticas**? | 7 – Basado en el interés de navieras y exportadores en plataformas colaborativas. | 4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B. | 10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios. | 6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas. | **27**          |
+
+<table>
+  <thead>
+    <tr>
+      <th>Pregunta</th>
+      <th>Confianza</th>
+      <th>Riesgo</th>
+      <th>Impacto</th>
+      <th>Interés</th>
+      <th>Total Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo en la plataforma?</td>
+      <td>7 – Alta confianza; se trata de una funcionalidad estándar en plataformas de navegación con buen historial de adopción por parte de usuarios.</td>
+      <td>2 – Bajo riesgo técnico; su implementación requiere mostrar datos ya disponibles en el sistema.</td>
+      <td>6 – Mejora la precisión y reduce errores sin modificar funcionalidades centrales.</td>
+      <td>5 – Útil especialmente para operadores y capitanes que planifican rutas constantemente.</td>
+      <td><strong>20</strong></td>
+    </tr>
+    <tr>
+      <td>¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?</td>
+      <td>6 – Algoritmos de rutas optimizadas son estándar en soluciones logísticas actuales.</td>
+      <td>3 – Mejora sustancial en la eficiencia de navegación y uso de recursos.</td>
+      <td>7 – Facilita la internacionalización de la solución.</td>
+      <td>6 – Atractivo para operadores logísticos y tomadores de decisiones que gestionan múltiples rutas.</td>
+      <td><strong>22</strong></td>
+    </tr>
+    <tr>
+      <td>¿Incrementará la participación de usuarios crear un <em>foro de eventos y rutas recomendadas</em>?</td>
+      <td>8 – Experiencias similares en plataformas B2B indican aumento en la interacción.</td>
+      <td>4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.</td>
+      <td>8 – Puede incentivar la colaboración entre actores del sector logístico.</td>
+      <td>7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.</td>
+      <td><strong>27</strong></td>
+    </tr>
+    <tr>
+      <td>¿Mejorará la satisfacción de usuarios un sistema de <em>alertas personalizadas sobre disrupciones</em>?</td>
+      <td>9 – Alta confianza; soluciones similares en logística muestran buena recepción.</td>
+      <td>2 – Bajo riesgo; funcionalidad común en apps empresariales.</td>
+      <td>9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.</td>
+      <td>8 – Muy relevante para quienes buscan proactividad en la planificación logística.</td>
+      <td><strong>28</strong></td>
+    </tr>
+    <tr>
+      <td>¿Fortalecerá el vínculo con el ecosistema global una sección de <em>oportunidades comerciales/logísticas</em>?</td>
+      <td>7 – Basado en el interés de navieras y exportadores en plataformas colaborativas.</td>
+      <td>4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B.</td>
+      <td>10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios.</td>
+      <td>6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas.</td>
+      <td><strong>27</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 ### 8.1.4. Question Backlog
 
