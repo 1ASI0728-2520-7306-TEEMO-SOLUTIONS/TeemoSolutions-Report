@@ -3664,6 +3664,38 @@ Este enfoque permitirá validar si las hipótesis planteadas se traducen en mejo
 | US016        | Preferencia de notificaciones                | TK31           | Configurar notificaciones preferidas                                          | Permitir al usuario seleccionar tipos de alertas que desea recibir.                                                                                                                                | 1 hora                | Juan Pescoran       | Done   |
 | US016        | Preferencia de notificaciones                | TK32           | Enviar alertas según preferencias                                             | Emitir notificaciones solo si coinciden con la configuración del usuario.                                                                                                                          | 1 hora                | Juan Pescoran       | Done   |
 
+
+
+### 8.3.4. Validation Interviews
+### 8.3.4.1 Diseño de entrevista
+
+Estas son las preguntas que se le hicieron a cada entrevistado: 
+
+1. ¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?
+
+2. ¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?
+
+3. ¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?
+
+5. ¿Incrementará la satisfacción del usuario la integración de un sistema de notificaciones personalizadas ante eventos críticos en rutas marítimas?
+
+4. ¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas, para validar el proceso de identificación y asociación con una organización?
+
+6. ¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm, para anticipar gastos logísticos?
+
+
+### 8.3.4.2 Registro de entrevista
+
+Entrevista 1:
+https://youtu.be/Y2cJzHYxXtw
+
+Entrevista 2:
+https://youtu.be/XF05WypyvtU 
+
+Entrevista 3:
+https://youtu.be/M0mf7QSNkeE
+
+
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
