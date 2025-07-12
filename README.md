@@ -187,7 +187,7 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 
 ## Part I: As-Is Software Project
 
-### [Capítulo I: Introducción]()
+### [Capítulo I: Introducción](#capítulo-i-introducción)
 - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
@@ -329,7 +329,7 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 
 ## Part III: Experiment-Driven Lifecycle
 
-### [Capítulo VIII: Experiment-Driven Development](#captulo-viii-experiment-driven-development)
+### [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
 - [8.1. Experiment Planning](#81-experiment-planning)
     - [8.1.1. As-Is Summary](#811-as-is-summary)
     - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
@@ -354,9 +354,9 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
         - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
         - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
         - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
-    - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
-        - [8.3.4.1. Diseño de Entrevistas](#8341-diseo-de-entrevistas)
-        - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
+    - [8.3.4. To-Be Validation Interviews](#834-validation-interviews)
+        - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevista)
+        - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevista)
 - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
     - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
     - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
@@ -365,15 +365,9 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 
-### [Conclusiones](#conclusiones)
-- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-- [Video About-the-Team](#video-about-the-team)
+### [Conclusiones](#Conclusiones)
 
-### [Bibliografía](#bibliografia)
-- [Referencias bibliográficas](#referencias-bibliogrficas)
-
-### [Anexos](#anexos)
-- [Anexos](#anexos)
+### [Bibliografía](#bibliografía)
 
 - - -
 # Student Outcome
