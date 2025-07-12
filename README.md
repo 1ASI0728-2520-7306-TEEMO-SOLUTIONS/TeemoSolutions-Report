@@ -34,7 +34,7 @@
 ---
 
 <p allign="center">
-  <img src="assets/logos/upc_logo.svg"  style="width:500px; height:auto;" alt="">
+  <img src="assets/img/chapter-I/upc_logo.svg"  style="width:500px; height:auto;" alt="">
 </p>
 
 
