@@ -2716,308 +2716,383 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
   
   Con Jenkins, es posible configurar notificaciones automáticas que se envían al concluir cada build o fase del pipeline, informando si las pruebas fueron exitosas o fallaron, cuánto tiempo tomaron y qué errores se detectaron. Esto permite al equipo estar al tanto en tiempo real de cualquier incidente durante las pruebas, lo que facilita una reacción rápida. Además, Jenkins ofrece la posibilidad de generar informes detallados y enviar resúmenes periódicos de manera automática, brindando una visión integral del estado de calidad del software en cada ciclo de pruebas.
 
-  # **CAPÍTULO VIII: EXPERIMENT-DRIVEN DEVELOPMENT**
-  
-  ## 8.1. Experiment Planning
-  ### 8.1.1. As-Is Summary
-  
-  La aplicación actual se centra en ofrecer una plataforma para la optimizacion de las rutas marítimas internacionales utilizando datos contextuales en tiempo real, inteligencia predictiva y análisis de riesgos.
-  
-  Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a menudo superan los 3 segundos, lo que afecta la experiencia del usuario. La interfaz presenta limitaciones en términos de personalización, y no se adapta adecuadamente a diferentes condiciones de luz.
-  
-  **Problemas detectados**
-  
-  - Bajo rendimiento: La aplicación presenta demoras al acceder a distintas funcionalidades, lo que puede generar una experiencia frustrante para el usuario.
-  
-  - Limitaciones en usabilidad: La ausencia de un modo oscuro reduce la comodidad al utilizar la plataforma en ambientes con poca iluminación.
-  
-  - Experiencia de usuario inconsistente: La interfaz actual no está adaptada de forma óptima a distintos tipos de dispositivos, lo que provoca variaciones en la experiencia entre smartphones y equipos de escritorio.
-  
-  - Accesibilidad restringida: No contar con soporte multilingüe impide que usuarios de otros idiomas puedan interactuar adecuadamente con la aplicación, lo que limita su alcance global.
-  
-  **Objetivos de mejora:**
-  
-  
-  - Mejorar el rendimiento: Optimizar la arquitectura y el uso de recursos para lograr tiempos de carga inferiores a 2 segundos.
-  
-  - Ampliar la accesibilidad y usabilidad: Incorporar un modo oscuro y rediseñar aspectos clave de la interfaz para facilitar el uso en distintas condiciones y dispositivos.
-  
-  - Alcanzar nuevos públicos: Integrar traducciones al inglés y al chino con el fin de atraer una audiencia más amplia y diversa.
-  
-  - Aumentar la interacción: Aplicar estrategias de gamificación para fomentar una mayor participación y fidelización de los usuarios dentro de la plataforma.
-  
-  
-  ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
-  
-  **Assumptions (Supuestos):**
-  
-  - Modo oscuro: Se parte del supuesto de que los usuarios valoran opciones de personalización visual, especialmente cuando trabajan en entornos de baja iluminación, por lo que implementar un modo oscuro podría mejorar la experiencia de navegación.
-  
-  - Multilingüismo: Se asume que un porcentaje importante de usuarios habla otros idiomas, como inglés o chino, lo cual justifica la necesidad de ofrecer traducciones en la plataforma.
-  
-  - Espacio colaborativo logístico: Se presupone que los usuarios valoran una sección donde puedan compartir rutas recomendadas, experiencias logísticas y reportes de eventos, lo cual aumentaría la participación activa dentro del sistema.
-  
-  - Alertas personalizadas: Se considera que los recordatorios e indicadores contextuales pueden mejorar la gestión de rutas y decisiones operativas, elevando la satisfacción del usuario.
-  
-  - Módulo de oportunidades comerciales: Se asume que existe interés por integrar un espacio donde navieras, brokers logísticos y exportadores puedan intercambiar servicios o asociarse para operaciones compartidas.
-  
-  **Knowledge Gaps (Vacíos de conocimiento):**
-  
-  - Preferencias visuales: Se requiere mayor información sobre cómo los usuarios perciben el diseño de la plataforma y si funciones como el modo oscuro realmente impactan en su comodidad.
-  
-  - Perfil lingüístico de usuarios: Se necesita investigar más sobre la diversidad idiomática de los actuales y potenciales usuarios, para priorizar idiomas en futuras versiones.
-  
-  - Utilidad de la sección colaborativa: Aún no se cuenta con datos que indiquen qué tipo de contenido (eventos, alertas, rutas alternativas) es más valorado en espacios colaborativos logísticos.
-  
-  - Impacto de las notificaciones inteligentes: Hace falta evidencia sobre cómo las alertas personalizadas afectan la toma de decisiones o la fidelización del usuario en plataformas similares.
-  
-  - Demanda de funcionalidades comerciales: No se dispone aún de un análisis profundo sobre la viabilidad e interés real de una sección dedicada a networking logístico o intercambio de servicios en el sector marítimo.
-  
-  **Ideas (Propuestas de acción):**
-  
-  - Aplicar encuestas dirigidas: Realizar encuestas y entrevistas a usuarios actuales para conocer su opinión sobre funciones propuestas como modo oscuro, alertas o espacio colaborativo.
-  
-  - Desarrollar un módulo de comunidad logística: Crear una sección que permita a usuarios compartir experiencias, consejos operativos y rutas recomendadas ante disrupciones.
-  
-  - Lanzar un estudio de mercado logístico: Investigar la viabilidad y expectativas de los usuarios frente a un marketplace o espacio de colaboración entre operadores logísticos.
-  
-  - Analizar casos de éxito comparables: Estudiar plataformas del ámbito logístico o marítimo que han integrado características similares, para identificar buenas prácticas y errores a evitar.
-  
-  **Claims (Afirmaciones):**
-  
-  - Mejora en usabilidad: Se plantea que la inclusión de un modo oscuro contribuirá a una experiencia más confortable, especialmente para usuarios que operan en ambientes con poca luz.
-  
-  - Mayor interacción del usuario: Se sostiene que la creación de una sección colaborativa donde se compartan experiencias logísticas puede aumentar el compromiso y la recurrencia en el uso de la plataforma.
-  
-  - Incremento en satisfacción: Se afirma que las alertas inteligentes y personalizadas mejoran la gestión logística y refuerzan la percepción de valor por parte del usuario.
-  
-  - Impulso a redes logísticas: Se propone que la integración de un módulo comercial/logístico puede fomentar alianzas, generar nuevas oportunidades de negocio y fortalecer la comunidad de usuarios.
-  
-  ### 8.1.3. Experiment-Ready Questions
-  | **Pregunta**                                                                                              | **Confianza**                                                                     | **Riesgo**                                                                            | **Impacto**                                                                                     | **Interés**                                                                                   | **Total Score** |
-  | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------- |
-  | ¿Mejorará la experiencia de los usuarios incorporar un **modo oscuro** en la plataforma web?              | 7 – Es una funcionalidad cada vez más esperada en plataformas modernas.           | 2 – Bajo riesgo técnico; implementación estandarizada.                                | 6 – Mejora la usabilidad, aunque no afecta funciones core del sistema.                          | 5 – Interés moderado, sobre todo en usuarios que operan en condiciones de baja luz.           | **20**          |
-  | ¿Se ampliará el alcance de usuarios al añadir **traducciones** (inglés, chino) en la plataforma?          | 6 – Puede captar nuevos mercados, aunque dependerá del perfil real de usuarios.   | 3 – Riesgo medio por la complejidad de mantener versiones multilingües actualizadas.  | 7 – Facilita la internacionalización de la solución.                                            | 6 – Atractivo para usuarios globales y clientes corporativos fuera del mundo hispanohablante. | **22**          |
-  | ¿Incrementará la participación de usuarios crear un **foro de eventos y rutas recomendadas**?             | 8 – Experiencias similares en plataformas B2B indican aumento en la interacción.  | 4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.   | 8 – Puede incentivar la colaboración entre actores del sector logístico.                        | 7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.        | **27**          |
-  | ¿Mejorará la satisfacción de usuarios un sistema de **alertas personalizadas sobre disrupciones**?        | 9 – Alta confianza; soluciones similares en logística muestran buena recepción.   | 2 – Bajo riesgo; funcionalidad común en apps empresariales.                           | 9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.                   | 8 – Muy relevante para quienes buscan proactividad en la planificación logística.             | **28**          |
-  | ¿Fortalecerá el vínculo con el ecosistema global una sección de **oportunidades comerciales/logísticas**? | 7 – Basado en el interés de navieras y exportadores en plataformas colaborativas. | 4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B. | 10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios. | 6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas. | **27**          |
-  
-  ### 8.1.4. Question Backlog
-  
-  | **Prioridad (1,2,3,5,8)** | **Pregunta**                                                                                                                                          |
-  | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | **1**                     | ¿Mejorará la experiencia de los usuarios al incorporar un **modo oscuro** en la plataforma web de *Mushroom*?                                         |
-  | **3**                     | ¿Aumentará la audiencia incorporar **traducciones** al inglés, chino u otros idiomas para mejorar la accesibilidad de la plataforma?                  |
-  | **3**                     | ¿Fomentará la participación entre usuarios la implementación de un **foro colaborativo** para compartir alertas logísticas, rutas y buenas prácticas? |
-  | **5**                     | ¿Incrementará la satisfacción del usuario la integración de un sistema de **notificaciones personalizadas** ante eventos críticos en rutas marítimas? |
-  | **5**                     | ¿Fortalecerá la conexión con nuevos mercados una **sección de oportunidades comerciales** para navieras, exportadores y operadores logísticos?        |
-  
-  ### 8.1.5. Experiment Cards
-  
-  | **Question** | ¿Mejorará la experiencia de los usuarios al añadir un modo oscuro a la plataforma web de Mushroom? |
-  |--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-  | **Why**      | Incluir un modo oscuro puede mejorar la experiencia visual de los usuarios, especialmente para quienes trabajan en turnos nocturnos o en entornos con poca iluminación. Esta funcionalidad reduce la fatiga ocular y puede aumentar el tiempo efectivo de uso, mejorando así el compromiso general. |
-  | **What**     | Desarrollar un modo oscuro que pueda activarse fácilmente desde las preferencias del usuario. Esto implica adaptar los colores de fondo, texto e íconos en toda la interfaz para ofrecer una navegación más cómoda sin comprometer la legibilidad o funcionalidad. |
-  | **Hypothesis** | Se espera que, tras la implementación del modo oscuro, el 60% de los usuarios reporten una mejor experiencia de uso y que el tiempo promedio de sesión aumente en al menos un 25%. |
-  
-  | **Question** | ¿Incrementará la participación de los usuarios al implementar un foro logístico para compartir alertas y rutas sugeridas? |
-  |--------------|-----------------------------------------------------------------------------------------------------------------------------|
-  | **Why**      | Un espacio colaborativo fortalece la comunidad, permite compartir experiencias útiles y genera mayor compromiso entre actores logísticos. |
-  | **What**     | Crear un foro moderado dentro de la plataforma donde los usuarios puedan compartir rutas, alertas y recomendaciones prácticas, con funciones de filtrado y control de calidad del contenido. |
-  | **Hypothesis** | Se estima que la participación aumente en un 30% respecto al periodo anterior a su implementación, especialmente entre usuarios activos y recurrentes. |
-  
-  | **Question** | ¿Se expandirá la audiencia de Mushroom con la incorporación de traducciones al inglés, chino u otros idiomas clave? |
-  |--------------|-------------------------------------------------------------------------------------------------------------------------|
-  | **Why**      | Las traducciones mejoran la accesibilidad global y posicionan la plataforma en mercados internacionales con alto potencial logístico. |
-  | **What**     | Traducir la interfaz y contenidos principales a inglés y chino, implementando un sistema automatizado que permita actualizar las traducciones conforme se actualiza la plataforma. |
-  | **Hypothesis** | La base de usuarios de habla inglesa o china crecerá un 15% dentro de los tres meses siguientes a la publicación de la versión multilingüe. |
-  
-  | **Question** | ¿Mejorará la satisfacción de los usuarios la integración de notificaciones personalizadas ante disrupciones logísticas? |
-  |--------------|----------------------------------------------------------------------------------------------------------------------------|
-  | **Why**      | Las alertas proactivas mejoran la toma de decisiones y la planificación, especialmente ante eventos inesperados como cierres de puertos, tormentas o conflictos en rutas clave. |
-  | **What**     | Desarrollar un sistema de notificaciones configurables basado en eventos externos, ubicación geográfica y preferencias del usuario. Las alertas deben ser útiles, oportunas y fáciles de gestionar. |
-  | **Hypothesis** | Se proyecta que la tasa de uso de herramientas de planificación aumente un 40% y que la satisfacción general del usuario se eleve en un 20%, especialmente en usuarios operativos. |
-  
-  | **Question** | ¿Fortalecerá la conexión con otros actores del mercado logístico una sección de oportunidades comerciales dentro de Mushroom? |
-  |--------------|----------------------------------------------------------------------------------------------------------------------------------|
-  | **Why**      | Permite crear alianzas estratégicas, publicar ofertas y demandas de servicios logísticos, y conectar actores relevantes del ecosistema marítimo. Esto podría convertir a Mushroom en un hub de colaboración sectorial. |
-  | **What**     | Implementar una sección tipo marketplace donde operadores, navieras o clientes puedan listar servicios, buscar socios y cerrar tratos. Incluir filtros inteligentes y medidas de seguridad para garantizar transacciones confiables. |
-  | **Hypothesis** | Se espera que las conexiones comerciales dentro de la plataforma aumenten un 50% en los primeros seis meses desde el lanzamiento del módulo de comercio colaborativo. |
-  
-  ## 8.2. Experiment Design
-  ### 8.2.1. Hypotheses
-  
-  | **Question** | ¿Mejorará la experiencia de los usuarios al añadir un modo oscuro a la plataforma web de Mushroom? |
-  |--------------|------------------------------------------------------------------------------------------------------|
-  | **Belief**   | Al incluir un modo oscuro, se mejora la usabilidad para usuarios que operan en ambientes con poca luz, reduciendo la fatiga visual y aumentando tanto la satisfacción como el tiempo de permanencia en la plataforma. |
-  | **Hypothesis** | La implementación de un modo oscuro incrementará el tiempo promedio de uso y la satisfacción del usuario en al menos un 20%. |
-  | **Null Hypothesis** | La habilitación del modo oscuro no afectará significativamente el tiempo de uso ni la satisfacción del usuario. |
-  
-  | **Question** | ¿Aumentará la audiencia al agregar traducciones al sistema en idiomas como inglés o chino? |
-  |--------------|----------------------------------------------------------------------------------------------|
-  | **Belief**   | Ofrecer la plataforma en múltiples idiomas facilitará el acceso de usuarios internacionales, aumentando la base de clientes y mejorando la aceptación en nuevos mercados logísticos. |
-  | **Hypothesis** | La implementación de traducciones al inglés y chino aumentará la cantidad de usuarios de estos mercados en un 15% en los tres meses posteriores al lanzamiento. |
-  | **Null Hypothesis** | La inclusión de traducciones no tendrá un impacto significativo en el número de nuevos usuarios de mercados de habla inglesa o china. |
-  
-  | **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-  |--------------|------------------------------------------------------------------------------------------------------------------------|
-  | **Belief**   | Un foro de colaboración fomentará la interacción entre operadores logísticos, generando una comunidad activa y más comprometida con la plataforma. |
-  | **Hypothesis** | La implementación del foro aumentará la participación de los usuarios en un 30% en comparación con el período anterior a su habilitación. |
-  | **Null Hypothesis** | La introducción del foro no tendrá un efecto significativo en la participación de los usuarios. |
-  
-  | **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-  |--------------|--------------------------------------------------------------------------------------------------------------------------|
-  | **Belief**   | Las notificaciones personalizadas ayudarán a los usuarios a gestionar sus operaciones de forma más organizada y proactiva, mejorando la experiencia general. |
-  | **Hypothesis** | La integración de este sistema aumentará la tasa de finalización de tareas o acciones logísticas en un 40% y la satisfacción general del usuario en un 20%. |
-  | **Null Hypothesis** | La implementación de notificaciones personalizadas no tendrá un efecto significativo en la tasa de finalización de tareas ni en la satisfacción del usuario. |
-  
-  | **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-  |--------------|------------------------------------------------------------------------------------------------------------------|
-  | **Belief**   | Una sección comercial permitirá a los usuarios publicar servicios, buscar aliados estratégicos y realizar transacciones, fomentando un ecosistema logístico más dinámico. |
-  | **Hypothesis** | La implementación de esta sección generará un incremento del 50% en el número de conexiones comerciales o transacciones en los primeros seis meses. |
-  | **Null Hypothesis** | La inclusión de la sección comercial no tendrá un efecto significativo en la cantidad de transacciones realizadas. |
-  
-  ### 8.2.2. Measures
-  
-  | **Question** | ¿Mejorará la experiencia de los usuarios al añadir un modo oscuro a la plataforma web de Mushroom? |
-  |--------------|------------------------------------------------------------------------------------------------------|
-  | **Measure**  | Medir la satisfacción de los usuarios a través de encuestas y puntuaciones de experiencia visual antes y después de habilitar el modo oscuro. Esto permitirá evaluar si la nueva funcionalidad mejora la comodidad visual y la percepción general de la plataforma. |
-  
-  | **Question** | ¿Aumentará la audiencia al agregar traducciones al sistema en idiomas como inglés o chino? |
-  |--------------|----------------------------------------------------------------------------------------------|
-  | **Measure**  | Analizar la cantidad de usuarios nuevos provenientes de países de habla inglesa y china, así como el tráfico en la plataforma antes y después de implementar las traducciones. Comparar métricas para determinar el impacto en la audiencia internacional. |
-  
-  | **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-  |--------------|------------------------------------------------------------------------------------------------------------------------|
-  | **Measure**  | Evaluar la cantidad de publicaciones, comentarios e interacciones dentro del foro. Comparar estos datos con el periodo previo a su lanzamiento. Complementar con encuestas para medir la percepción del valor que aporta esta funcionalidad. |
-  
-  | **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-  |--------------|--------------------------------------------------------------------------------------------------------------------------|
-  | **Measure**  | Medir la tasa de finalización de tareas o respuestas ante alertas antes y después de implementar el sistema de notificaciones. Complementar con encuestas que evalúen la satisfacción general respecto a la utilidad de esta nueva función. |
-  
-  | **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-  |--------------|------------------------------------------------------------------------------------------------------------------|
-  | **Measure**  | Contar el número de transacciones realizadas dentro del módulo comercial y analizar métricas de uso (visitas, publicaciones, contactos) antes y después de su implementación. Evaluar si se incrementa la actividad comercial dentro del ecosistema de la plataforma. |
-  
-  ### 8.2.3. Conditions
-  
-  | **Question** | ¿Mejorará la experiencia de los usuarios al añadir un modo oscuro a la plataforma web de Mushroom? |
-  |--------------|-----------------------------------------------------------------------------------------------------|
-  | **Condición Experimental** | La satisfacción del usuario aumentará en un 20% después de implementar el modo oscuro, medido a través de encuestas y puntajes de valoración de la experiencia visual. |
-  | **Condición de Control**   | No habrá un aumento significativo en la satisfacción del usuario tras la implementación del modo oscuro. |
-  
-  | **Question** | ¿Aumentará la audiencia al agregar traducciones al sistema en idiomas como inglés o chino? |
-  |--------------|---------------------------------------------------------------------------------------------|
-  | **Condición Experimental** | Se espera un aumento del 15% en el número de usuarios provenientes de países de habla inglesa y china tras habilitar las traducciones correspondientes. |
-  | **Condición de Control**   | No habrá un aumento significativo en el número de usuarios de países de habla inglesa y china tras la implementación de las traducciones. |
-  
-  | **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-  |--------------|-----------------------------------------------------------------------------------------------------------------------|
-  | **Condición Experimental** | La participación de los usuarios aumentará en un 30% después de la implementación del foro, medido por el número de interacciones y publicaciones. |
-  | **Condición de Control**   | No habrá un aumento significativo en la participación de los usuarios tras la implementación del foro. |
-  
-  | **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-  |--------------|---------------------------------------------------------------------------------------------------------------------------|
-  | **Condición Experimental** | La tasa de finalización de tareas aumentará en un 25% después de implementar el sistema de notificaciones personalizadas. |
-  | **Condición de Control**   | No habrá un aumento significativo en la tasa de finalización de tareas tras la implementación del sistema de notificaciones. |
-  
-  | **Question** | ¿Fortalecerá la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-  |--------------|----------------------------------------------------------------------------------------------------------------|
-  | **Condición Experimental** | Se espera que el número de transacciones en la nueva sección de comercio aumente en un 50% durante un período específico tras su implementación. |
-  | **Condición de Control**   | No habrá un aumento significativo en el número de transacciones en la sección de comercio durante el mismo período. |
-  
-  ### 8.2.4. Scale Calculations and Decisions
-  
-  Este modelo se basa en el uso de métricas cuantificables para verificar el cumplimiento de las hipótesis formuladas en el desarrollo del proyecto. A cada hipótesis se le asigna un indicador de éxito que permite clasificar los resultados en distintos niveles de desempeño. Se considera que una hipótesis se valida de forma ideal cuando los resultados alcanzan exactamente el objetivo establecido; aceptable, cuando se sitúan entre el mínimo esperado y el ideal; y desfavorable, si están por debajo del umbral mínimo, lo cual sugiere la necesidad de revisar la funcionalidad o el enfoque aplicado. Adicionalmente, se reconoce un nivel excelente cuando la métrica supera el valor ideal en un 25% o más, lo que representa un logro destacado. Este enfoque facilita la toma de decisiones objetivas, basadas en datos, para validar, ajustar o rediseñar elementos clave dentro del proyecto Mushroom.
+# **CAPÍTULO VIII: EXPERIMENT-DRIVEN DEVELOPMENT**
 
-  | **Factor** | **Desfavorable** | **Aceptable** | **Ideal** | **Excelente** | **Métrica** | **Decisión / Acción** | **Estado** |
-  |-----------|------------------|----------------|-----------|----------------|-------------|------------------------|------------|
-  | Modo oscuro mejora la experiencia del usuario en un 30% (satisfacción y tiempo de uso). | <20% de mejora | 20%-29% de mejora | 30% de mejora | >37.5% de mejora | Aumento en puntuación de satisfacción y tiempo de uso promedio | Implementar modo oscuro con alternancia entre claro y oscuro para mejorar comodidad visual. | X |
-  | Traducciones aumentan la audiencia internacional en un 15%. | <10% de aumento | 10%-14% de aumento | 15% de aumento | >18.75% de aumento | Nuevos usuarios de países de habla inglesa o china | Traducir la interfaz y contenido clave al inglés y chino. | X |
-  | Foro logístico incrementa la participación del usuario en un 30%. | <20% de incremento | 20%-29% de incremento | 30% de incremento | >37.5% de incremento | Número de publicaciones, respuestas e interacciones | Desarrollar foro con categorías temáticas logísticas para facilitar el intercambio entre usuarios. | X |
-  | Notificaciones personalizadas mejoran la satisfacción en un 25%. | <15% de mejora | 15%-24% de mejora | 25% de mejora | >31.25% de mejora | Tasa de finalización de tareas y puntaje de satisfacción general | Integrar sistema de alertas configurables sobre eventos críticos y recordatorios. | X |
-  | Sección comercial aumenta transacciones y conexiones en un 40%. | <25% de aumento | 25%-39% de aumento | 40% de aumento | >50% de aumento | Cantidad de transacciones realizadas dentro del módulo comercial | Añadir sección de marketplace logístico para facilitar ofertas y demandas de servicios. | X |
-  
-  ### 8.2.5. Methods Selection
-  
-  | **Herramienta**   | **Precio**                                      | **Capacidad de Análisis**                                                                                      | **Sencillez**                                                         | **Ventajas**                                                                                                                                   |
-  |-------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-  | **Google Analytics** | Plan gratuito con opción a créditos ampliables  | Análisis profundo de datos de usuarios, comportamiento y flujos de navegación.                                  | Aprendizaje progresivo y visualización clara de métricas.             | Generación robusta de reportes y gran integración con otros servicios de Google (Ads, Search Console, etc.).                               |
-  | **Catchpoint**    | Basado en suscripción, incluye versión de prueba | Monitoreo avanzado de rendimiento y experiencia de usuario desde múltiples ubicaciones y dispositivos.           | Interfaz detallada, dirigida a usuarios técnicos.                      | Ideal para proyectos con alcance global; permite observar desempeño desde diferentes contextos geográficos en tiempo real.                  |
-  | **RedLine13**     | Gratuito con limitaciones                        | Plataforma enfocada en pruebas de carga, estrés y rendimiento de aplicaciones web y backend.                    | Información condensada y centrada en simulaciones.                    | Simulación de tráfico masivo, útil para validar la escalabilidad de servicios antes del despliegue en producción.                           |
-  | **Lighthouse**    | Gratuito, disponible para ejecución local         | Auditoría de experiencia del usuario: rendimiento, accesibilidad, SEO y buenas prácticas.                        | Información simplificada y puntajes globales por categoría.           | Métricas claras para mejorar la experiencia de usuario, identificar cuellos de botella y optimizar la calidad general de la aplicación web. |
-  
-  ### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection
-  
-  Se llevaron a cabo pruebas de rendimiento, accesibilidad y mejores prácticas con Lighthouse en nuestra aplicación Agro Connect para evaluar su desempeño y optimizar la experiencia de usuario. A continuación, mostramos unos ejemplos de ambos segmentos objetivos.
-  
-  <img src="assets/img/chapter-VIII/Test1.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
-  
-  <img src="assets/img/chapter-VIII/Test2.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
-  
-  <img src="assets/img/chapter-VIII/Test3.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
-  
-  <img src="assets/img/chapter-VIII/Test4.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
-  
-  
-  ### 8.2.7. Web and Mobile Tracking Plan
-  
-  En Mushroom, nuestro objetivo es monitorear de forma estratégica tanto la versión web como móvil de la plataforma para optimizar la experiencia de los usuarios y mejorar la eficiencia operativa en la toma de decisiones logísticas. A medida que nos acercamos a la fase final del proyecto, se establecerá un plan de seguimiento robusto que permitirá evaluar el impacto real de las funcionalidades desarrolladas.
-  
-  **Etapa 1: Implementación Inicial**
-  
-  Durante esta primera fase se enfocará el monitoreo en la incorporación de nuevas funcionalidades clave y en la recolección de datos iniciales que servirán como línea base para futuras comparaciones.
-  
-  - Recolección de Datos
+## 8.1. Experiment Planning
+### 8.1.1. As-Is Summary
+
+La aplicación actual se centra en ofrecer una plataforma para la optimizacion de las rutas marítimas internacionales utilizando datos contextuales en tiempo real, inteligencia predictiva y análisis de riesgos.
+
+Sin embargo, el rendimiento general es inconsistente, con tiempos de carga que a menudo superan los 3 segundos, lo que afecta la experiencia del usuario. La interfaz presenta limitaciones en términos de personalización, y no se adapta adecuadamente a diferentes condiciones de luz.
+
+**Problemas detectados**
+
+- Bajo rendimiento: La aplicación presenta demoras al acceder a distintas funcionalidades, lo que puede generar una experiencia frustrante para el usuario.
+
+- Limitaciones en usabilidad: La ausencia de un modo oscuro reduce la comodidad al utilizar la plataforma en ambientes con poca iluminación.
+
+- Experiencia de usuario inconsistente: La interfaz actual no está adaptada de forma óptima a distintos tipos de dispositivos, lo que provoca variaciones en la experiencia entre smartphones y equipos de escritorio.
+
+- Accesibilidad restringida: No contar con soporte multilingüe impide que usuarios de otros idiomas puedan interactuar adecuadamente con la aplicación, lo que limita su alcance global.
+
+**Objetivos de mejora:**
+
+
+- Mejorar el rendimiento: Optimizar la arquitectura y el uso de recursos para lograr tiempos de carga inferiores a 2 segundos.
+
+- Ampliar la accesibilidad y usabilidad: Incorporar un modo oscuro y rediseñar aspectos clave de la interfaz para facilitar el uso en distintas condiciones y dispositivos.
+
+- Alcanzar nuevos públicos: Integrar traducciones al inglés y al chino con el fin de atraer una audiencia más amplia y diversa.
+
+- Aumentar la interacción: Aplicar estrategias de gamificación para fomentar una mayor participación y fidelización de los usuarios dentro de la plataforma.
+
+
+### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+**Assumptions (Supuestos):**
+
+- Modo oscuro: Se parte del supuesto de que los usuarios valoran opciones de personalización visual, especialmente cuando trabajan en entornos de baja iluminación, por lo que implementar un modo oscuro podría mejorar la experiencia de navegación.
+
+- Multilingüismo: Se asume que un porcentaje importante de usuarios habla otros idiomas, como inglés o chino, lo cual justifica la necesidad de ofrecer traducciones en la plataforma.
+
+- Espacio colaborativo logístico: Se presupone que los usuarios valoran una sección donde puedan compartir rutas recomendadas, experiencias logísticas y reportes de eventos, lo cual aumentaría la participación activa dentro del sistema.
+
+- Alertas personalizadas: Se considera que los recordatorios e indicadores contextuales pueden mejorar la gestión de rutas y decisiones operativas, elevando la satisfacción del usuario.
+
+- Módulo de oportunidades comerciales: Se asume que existe interés por integrar un espacio donde navieras, brokers logísticos y exportadores puedan intercambiar servicios o asociarse para operaciones compartidas.
+
+**Knowledge Gaps (Vacíos de conocimiento):**
+
+- Preferencias visuales: Se requiere mayor información sobre cómo los usuarios perciben el diseño de la plataforma y si funciones como el modo oscuro realmente impactan en su comodidad.
+
+- Perfil lingüístico de usuarios: Se necesita investigar más sobre la diversidad idiomática de los actuales y potenciales usuarios, para priorizar idiomas en futuras versiones.
+
+- Utilidad de la sección colaborativa: Aún no se cuenta con datos que indiquen qué tipo de contenido (eventos, alertas, rutas alternativas) es más valorado en espacios colaborativos logísticos.
+
+- Impacto de las notificaciones inteligentes: Hace falta evidencia sobre cómo las alertas personalizadas afectan la toma de decisiones o la fidelización del usuario en plataformas similares.
+
+- Demanda de funcionalidades comerciales: No se dispone aún de un análisis profundo sobre la viabilidad e interés real de una sección dedicada a networking logístico o intercambio de servicios en el sector marítimo.
+
+**Ideas (Propuestas de acción):**
+
+- Aplicar encuestas dirigidas: Realizar encuestas y entrevistas a usuarios actuales para conocer su opinión sobre funciones propuestas como modo oscuro, alertas o espacio colaborativo.
+
+- Desarrollar un módulo de comunidad logística: Crear una sección que permita a usuarios compartir experiencias, consejos operativos y rutas recomendadas ante disrupciones.
+
+- Lanzar un estudio de mercado logístico: Investigar la viabilidad y expectativas de los usuarios frente a un marketplace o espacio de colaboración entre operadores logísticos.
+
+- Analizar casos de éxito comparables: Estudiar plataformas del ámbito logístico o marítimo que han integrado características similares, para identificar buenas prácticas y errores a evitar.
+
+**Claims (Afirmaciones):**
+
+- Mejora en usabilidad: Se plantea que la inclusión de un modo oscuro contribuirá a una experiencia más confortable, especialmente para usuarios que operan en ambientes con poca luz.
+
+- Mayor interacción del usuario: Se sostiene que la creación de una sección colaborativa donde se compartan experiencias logísticas puede aumentar el compromiso y la recurrencia en el uso de la plataforma.
+
+- Incremento en satisfacción: Se afirma que las alertas inteligentes y personalizadas mejoran la gestión logística y refuerzan la percepción de valor por parte del usuario.
+
+- Impulso a redes logísticas: Se propone que la integración de un módulo comercial/logístico puede fomentar alianzas, generar nuevas oportunidades de negocio y fortalecer la comunidad de usuarios.
+
+### 8.1.3. Experiment-Ready Questions
+| **Pregunta**                                                                                              | **Confianza**                                                                     | **Riesgo**                                                                            | **Impacto**                                                                                     | **Interés**                                                                                   | **Total Score** |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------- |
+| ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo en la plataforma?              | 7 – Alta confianza; se trata de una funcionalidad estándar en plataformas de navegación con buen historial de adopción por parte de usuarios.           | 2 – Bajo riesgo técnico; su implementación requiere mostrar datos ya disponibles en el sistema.      | 6 – Mejora la precisión y reduce errores sin modificar funcionalidades centrales.                       | 5 – Útil especialmente para operadores y capitanes que planifican rutas constantemente.           | **20**          |
+| ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?          | 6 – Algoritmos de rutas optimizadas son estándar en soluciones logísticas actuales.   | 3 – Mejora sustancial en la eficiencia de navegación y uso de recursos.  | 7 – Facilita la internacionalización de la solución.                                            | 6 – Atractivo para operadores logísticos y tomadores de decisiones que gestionan múltiples rutas. | **22**          |
+| ¿Incrementará la participación de usuarios crear un **foro de eventos y rutas recomendadas**?             | 8 – Experiencias similares en plataformas B2B indican aumento en la interacción.  | 4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.   | 8 – Puede incentivar la colaboración entre actores del sector logístico.                        | 7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.        | **27**          |
+| ¿Mejorará la satisfacción de usuarios un sistema de **alertas personalizadas sobre disrupciones**?        | 9 – Alta confianza; soluciones similares en logística muestran buena recepción.   | 2 – Bajo riesgo; funcionalidad común en apps empresariales.                           | 9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.                   | 8 – Muy relevante para quienes buscan proactividad en la planificación logística.             | **28**          |
+| ¿Fortalecerá el vínculo con el ecosistema global una sección de **oportunidades comerciales/logísticas**? | 7 – Basado en el interés de navieras y exportadores en plataformas colaborativas. | 4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B. | 10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios. | 6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas. | **27**          |
+
+### 8.1.4. Question Backlog
+
+| **Prioridad (1,2,3,5,8)** | **Pregunta**                                                                                                                                          |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1**                     | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma?                                        |
+| **3**                     | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?                  |
+| **3**                     | ¿Fomentará la participación entre usuarios la implementación de un **foro colaborativo** para compartir alertas logísticas, rutas y buenas prácticas? |
+| **5**                     | ¿Incrementará la satisfacción del usuario la integración de un sistema de **notificaciones personalizadas** ante eventos críticos en rutas marítimas? |
+| **5**                     | ¿Fortalecerá la conexión con nuevos mercados una **sección de oportunidades comerciales** para navieras, exportadores y operadores logísticos?        |
+
+### 8.1.5. Experiment Cards
+|
+| **Question 1** |¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Permitir que los usuarios visualicen claramente qué puertos están abiertos o cerrados puede optimizar la planificación de sus rutas. Esta funcionalidad reduciría errores de navegación al evitar seleccionar puertos inaccesibles, mejorando la eficiencia operativa y la satisfacción general. |
+| **What**     | Diseñar una lista de puertos que indique de forma clara su nombre, país y estado operativo (abierto/cerrado), mediante texto y códigos visuales (colores o íconos). Esta funcionalidad debe estar accesible en la sección de navegación del sistema. |
+| **Hypothesis** | Se espera que, tras implementar esta lista, al menos el 80% de los usuarios eviten puertos cerrados al planificar rutas y reduzcan el tiempo promedio de planificación en un 25%. |
+
+| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | En logística marítima, reducir la distancia recorrida significa menor tiempo y menor consumo de recursos. Ofrecer rutas optimizadas permite a los usuarios tomar decisiones eficientes, reducir costos y aumentar la confiabilidad operativa. |
+| **What**     | Desarrollar un algoritmo que calcule y muestre la ruta más corta entre dos puertos seleccionados, considerando distancias geográficas y disponibilidad. Mostrar los resultados visualmente sobre el mapa de navegación con detalles de distancia y puertos intermedios. |
+| **Hypothesis** | Se espera que, tras implementar esta función, al menos el 70% de los usuarios elijan la ruta sugerida automáticamente y reporten una reducción del 20% en tiempo estimado de navegación. |
+
+| **Question** | ¿Se expandirá la audiencia de Mushroom con la incorporación de traducciones al inglés, chino u otros idiomas clave? |
+|--------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Las traducciones mejoran la accesibilidad global y posicionan la plataforma en mercados internacionales con alto potencial logístico. |
+| **What**     | Traducir la interfaz y contenidos principales a inglés y chino, implementando un sistema automatizado que permita actualizar las traducciones conforme se actualiza la plataforma. |
+| **Hypothesis** | La base de usuarios de habla inglesa o china crecerá un 15% dentro de los tres meses siguientes a la publicación de la versión multilingüe. |
+
+| **Question** | ¿Mejorará la satisfacción de los usuarios la integración de notificaciones personalizadas ante disrupciones logísticas? |
+|--------------|----------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Las alertas proactivas mejoran la toma de decisiones y la planificación, especialmente ante eventos inesperados como cierres de puertos, tormentas o conflictos en rutas clave. |
+| **What**     | Desarrollar un sistema de notificaciones configurables basado en eventos externos, ubicación geográfica y preferencias del usuario. Las alertas deben ser útiles, oportunas y fáciles de gestionar. |
+| **Hypothesis** | Se proyecta que la tasa de uso de herramientas de planificación aumente un 40% y que la satisfacción general del usuario se eleve en un 20%, especialmente en usuarios operativos. |
+
+| **Question** | ¿Fortalecerá la conexión con otros actores del mercado logístico una sección de oportunidades comerciales dentro de Mushroom? |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Why**      | Permite crear alianzas estratégicas, publicar ofertas y demandas de servicios logísticos, y conectar actores relevantes del ecosistema marítimo. Esto podría convertir a Mushroom en un hub de colaboración sectorial. |
+| **What**     | Implementar una sección tipo marketplace donde operadores, navieras o clientes puedan listar servicios, buscar socios y cerrar tratos. Incluir filtros inteligentes y medidas de seguridad para garantizar transacciones confiables. |
+| **Hypothesis** | Se espera que las conexiones comerciales dentro de la plataforma aumenten un 50% en los primeros seis meses desde el lanzamiento del módulo de comercio colaborativo. |
+
+## 8.2. Experiment Design
+### 8.2.1. Hypotheses
+
+| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma?|
+|--------------|------------------------------------------------------------------------------------------------------|
+| **Belief**   | Si se proporciona una lista clara de puertos con su estado, los usuarios podrán tomar decisiones de navegación más precisas, evitando errores y mejorando la eficiencia del proceso de planificación. |
+| **Hypothesis** | La visualización de puertos disponibles reducirá en al menos un 25% los errores de planificación y el tiempo promedio requerido para definir una ruta.|
+| **Null Hypothesis** | La incorporación de una lista visible de puertos no tendrá un efecto significativo sobre la reducción de errores ni el tiempo de planificación. |
+
+| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
+|--------------|----------------------------------------------------------------------------------------------|
+| **Belief**   | Ofrecer una ruta óptima directamente en la interfaz reduce la necesidad de cálculos manuales o externos, aumentando la eficiencia logística y reduciendo la incertidumbre para el usuario. |
+| **Hypothesis** | El uso del algoritmo de ruta más corta disminuirá el tiempo estimado de navegación y aumentará la precisión en la planificación en al menos un 20%.|
+| **Null Hypothesis** | La implementación de una ruta automática más corta no generará mejoras significativas en la planificación ni reducirá el tiempo estimado de viaje. |
+
+| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+|--------------|------------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Un foro de colaboración fomentará la interacción entre operadores logísticos, generando una comunidad activa y más comprometida con la plataforma. |
+| **Hypothesis** | La implementación del foro aumentará la participación de los usuarios en un 30% en comparación con el período anterior a su habilitación. |
+| **Null Hypothesis** | La introducción del foro no tendrá un efecto significativo en la participación de los usuarios. |
+
+| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+|--------------|--------------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Las notificaciones personalizadas ayudarán a los usuarios a gestionar sus operaciones de forma más organizada y proactiva, mejorando la experiencia general. |
+| **Hypothesis** | La integración de este sistema aumentará la tasa de finalización de tareas o acciones logísticas en un 40% y la satisfacción general del usuario en un 20%. |
+| **Null Hypothesis** | La implementación de notificaciones personalizadas no tendrá un efecto significativo en la tasa de finalización de tareas ni en la satisfacción del usuario. |
+
+| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Belief**   | Una sección comercial permitirá a los usuarios publicar servicios, buscar aliados estratégicos y realizar transacciones, fomentando un ecosistema logístico más dinámico. |
+| **Hypothesis** | La implementación de esta sección generará un incremento del 50% en el número de conexiones comerciales o transacciones en los primeros seis meses. |
+| **Null Hypothesis** | La inclusión de la sección comercial no tendrá un efecto significativo en la cantidad de transacciones realizadas. |
+
+### 8.2.2. Measures
+
+| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
+|--------------|------------------------------------------------------------------------------------------------------|
+| **Measure**  | Medir el porcentaje de rutas que omiten correctamente puertos cerrados, así como el tiempo promedio que tarda un usuario en completar la planificación de una ruta. Comparar los resultados antes y después de habilitar la lista visible. |
+
+| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
+|--------------|----------------------------------------------------------------------------------------------|
+| **Measure**  | Medir el tiempo estimado de navegación antes y después de usar la función de ruta automática, así como la frecuencia con la que los usuarios seleccionan la ruta sugerida frente a otras opciones.|
+
+| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+|--------------|------------------------------------------------------------------------------------------------------------------------|
+| **Measure**  | Evaluar la cantidad de publicaciones, comentarios e interacciones dentro del foro. Comparar estos datos con el periodo previo a su lanzamiento. Complementar con encuestas para medir la percepción del valor que aporta esta funcionalidad. |
+
+| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+|--------------|--------------------------------------------------------------------------------------------------------------------------|
+| **Measure**  | Medir la tasa de finalización de tareas o respuestas ante alertas antes y después de implementar el sistema de notificaciones. Complementar con encuestas que evalúen la satisfacción general respecto a la utilidad de esta nueva función. |
+
+| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Measure**  | Contar el número de transacciones realizadas dentro del módulo comercial y analizar métricas de uso (visitas, publicaciones, contactos) antes y después de su implementación. Evaluar si se incrementa la actividad comercial dentro del ecosistema de la plataforma. |
+
+### 8.2.3. Conditions
+
+| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
+|--------------|-----------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | El porcentaje de rutas correctamente planificadas (sin puertos cerrados) aumentará en al menos un 25% después de implementar la lista visible de puertos, medido con escenarios reales. |
+| **Condición de Control**   | No se observará un aumento significativo en la precisión de planificación o reducción de errores sin la lista visible de puertos. |
+
+| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?|
+|--------------|---------------------------------------------------------------------------------------------|
+| **Condición Experimental** | El tiempo estimado de navegación se reducirá en un 20% o más en las rutas planificadas con la función de ruta automática. |
+| **Condición de Control**   | No habrá cambios significativos en el tiempo estimado de viaje o selección de rutas frente al método anterior sin sugerencia automática.|
+
+| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
+|--------------|-----------------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | La participación de los usuarios aumentará en un 30% después de la implementación del foro, medido por el número de interacciones y publicaciones. |
+| **Condición de Control**   | No habrá un aumento significativo en la participación de los usuarios tras la implementación del foro. |
+
+| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
+|--------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | La tasa de finalización de tareas aumentará en un 25% después de implementar el sistema de notificaciones personalizadas. |
+| **Condición de Control**   | No habrá un aumento significativo en la tasa de finalización de tareas tras la implementación del sistema de notificaciones. |
+
+| **Question** | ¿Fortalecerá la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
+|--------------|----------------------------------------------------------------------------------------------------------------|
+| **Condición Experimental** | Se espera que el número de transacciones en la nueva sección de comercio aumente en un 50% durante un período específico tras su implementación. |
+| **Condición de Control**   | No habrá un aumento significativo en el número de transacciones en la sección de comercio durante el mismo período. |
+
+### 8.2.4. Scale Calculations and Decisions
+
+Este modelo se basa en el uso de métricas cuantificables para verificar el cumplimiento de las hipótesis formuladas en el desarrollo del proyecto. A cada hipótesis se le asigna un indicador de éxito que permite clasificar los resultados en distintos niveles de desempeño. Se considera que una hipótesis se valida de forma ideal cuando los resultados alcanzan exactamente el objetivo establecido; aceptable, cuando se sitúan entre el mínimo esperado y el ideal; y desfavorable, si están por debajo del umbral mínimo, lo cual sugiere la necesidad de revisar la funcionalidad o el enfoque aplicado. Adicionalmente, se reconoce un nivel excelente cuando la métrica supera el valor ideal en un 25% o más, lo que representa un logro destacado. Este enfoque facilita la toma de decisiones objetivas, basadas en datos, para validar, ajustar o rediseñar elementos clave dentro del proyecto Mushroom.
+
+
+
+| **Factor** | **Desfavorable** | **Aceptable** | **Ideal** | **Excelente** | **Métrica** | **Decisión / Acción** | **Estado** |
+|-----------|------------------|----------------|-----------|----------------|-------------|------------------------|------------|
+| Visualización de puertos mejora la precisión de planificación de rutas en un 30%. | <20% de mejora en rutas planificadas correctamente. | 20%–29% de mejora en la selección de puertos disponibles. | 30% de mejora en la precisión de planificación. | 37.5% de mejora en exactitud y reducción de errores. | % de rutas sin errores + tiempo promedio de planificación. | Si se alcanza el valor ideal o excelente, mantener y extender esta funcionalidad a otros módulos de planificación. Si el resultado es desfavorable, rediseñar la interfaz de la lista y reforzar los indicadores | X |
+| Ruta automática reduce el tiempo estimado de navegación en un 20%. | <12% de reducción en tiempo estimado de navegación. | 12%–19% de mejora en tiempos planificados. | 20% de mejora en eficiencia de navegación. | 25% de mejora en precisión y ahorro de tiempo/logística. | Tiempo estimado de navegación + % de usuarios que aceptan la ruta sugerida. | Mantener el algoritmo de ruta automática como funcionalidad por defecto. Si el resultado es desfavorable, ajustar parámetros del cálculo o mejorar visualización de rutas para mayor comprensión. | X |
+| Foro logístico incrementa la participación del usuario en un 30%. | <20% de incremento | 20%-29% de incremento | 30% de incremento | >37.5% de incremento | Número de publicaciones, respuestas e interacciones | Desarrollar foro con categorías temáticas logísticas para facilitar el intercambio entre usuarios. | X |
+| Notificaciones personalizadas mejoran la satisfacción en un 25%. | <15% de mejora | 15%-24% de mejora | 25% de mejora | >31.25% de mejora | Tasa de finalización de tareas y puntaje de satisfacción general | Integrar sistema de alertas configurables sobre eventos críticos y recordatorios. | X |
+| Sección comercial aumenta transacciones y conexiones en un 40%. | <25% de aumento | 25%-39% de aumento | 40% de aumento | >50% de aumento | Cantidad de transacciones realizadas dentro del módulo comercial | Añadir sección de marketplace logístico para facilitar ofertas y demandas de servicios. | X |
+
+### 8.2.5. Methods Selection
+
+| **Herramienta**   | **Precio**                                      | **Capacidad de Análisis**                                                                                      | **Sencillez**                                                         | **Ventajas**                                                                                                                                   |
+|-------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Google Analytics** | Plan gratuito con opción a créditos ampliables  | Análisis profundo de datos de usuarios, comportamiento y flujos de navegación.                                  | Aprendizaje progresivo y visualización clara de métricas.             | Generación robusta de reportes y gran integración con otros servicios de Google (Ads, Search Console, etc.).                               |
+| **Catchpoint**    | Basado en suscripción, incluye versión de prueba | Monitoreo avanzado de rendimiento y experiencia de usuario desde múltiples ubicaciones y dispositivos.           | Interfaz detallada, dirigida a usuarios técnicos.                      | Ideal para proyectos con alcance global; permite observar desempeño desde diferentes contextos geográficos en tiempo real.                  |
+| **RedLine13**     | Gratuito con limitaciones                        | Plataforma enfocada en pruebas de carga, estrés y rendimiento de aplicaciones web y backend.                    | Información condensada y centrada en simulaciones.                    | Simulación de tráfico masivo, útil para validar la escalabilidad de servicios antes del despliegue en producción.                           |
+| **Lighthouse**    | Gratuito, disponible para ejecución local         | Auditoría de experiencia del usuario: rendimiento, accesibilidad, SEO y buenas prácticas.                        | Información simplificada y puntajes globales por categoría.           | Métricas claras para mejorar la experiencia de usuario, identificar cuellos de botella y optimizar la calidad general de la aplicación web. |
+
+### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection
+
+Se llevaron a cabo pruebas de rendimiento, accesibilidad y mejores prácticas con Lighthouse en nuestra aplicación Agro Connect para evaluar su desempeño y optimizar la experiencia de usuario. A continuación, mostramos unos ejemplos de ambos segmentos objetivos.
+
+<img src="../../assets/img/chapter-VIII/Test1.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+
+<img src="../../assets/img/chapter-VIII/Test2.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+
+<img src="../../assets/img/chapter-VIII/Test3.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+
+<img src="../../assets/img/chapter-VIII/Test4.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+
+
+### 8.2.7. Web and Mobile Tracking Plan
+
+En Mushroom, nuestro objetivo es monitorear de forma estratégica tanto la versión web como móvil de la plataforma para optimizar la experiencia de los usuarios y mejorar la eficiencia operativa en la toma de decisiones logísticas. A medida que nos acercamos a la fase final del proyecto, se establecerá un plan de seguimiento robusto que permitirá evaluar el impacto real de las funcionalidades desarrolladas.
+
+**Etapa 1: Implementación Inicial**
+
+Durante esta primera fase se enfocará el monitoreo en la incorporación de nuevas funcionalidades clave y en la recolección de datos iniciales que servirán como línea base para futuras comparaciones.
+
+- Recolección de Datos
   Métricas de uso: Se medirá el número de usuarios activos, duración promedio de sesión, y tasa de conversión en funcionalidades críticas como simulación de rutas o recepción de alertas.
-  
-  - Interacciones del usuario: Se registrarán clics, navegación por secciones específicas (como panel de riesgos o mapa logístico), y participación en el foro colaborativo.
-  
-  - Feedback directo: A través de encuestas integradas y herramientas de retroalimentación, se recogerán impresiones sobre la usabilidad general y la utilidad de las funcionalidades añadidas.
-  
-  **Análisis Comparativo**
-  
-  Los datos recogidos se contrastarán con métricas históricas de la plataforma (previas a la actualización) para medir el impacto inmediato de las mejoras y determinar si se cumplen las hipótesis de valor.
-  
-  **Etapa 2: Seguimiento Continuo**
-  
-  Tras la implementación inicial, se establecerá un sistema de monitoreo continuo para mantener el control sobre el rendimiento y adaptar la plataforma a las necesidades cambiantes de los usuarios.
-  
-  **Recolección de Datos**
-  
-  - Métricas en tiempo real: Se emplearán herramientas como Google Analytics, Catchpoint o Lighthouse para observar el comportamiento del usuario en tiempo real.
-  
-  - Segmentación de usuarios: Se analizarán patrones de uso por tipo de actor (navieras, exportadores, operadores logísticos), permitiendo decisiones más focalizadas.
-  
-  - Tasa de retención: Se evaluará la retención de usuarios tras cada iteración para entender el impacto sostenido de las nuevas funcionalidades.
-  
-  **Evaluación y Ajustes**
-  
-  - Informes mensuales: Se elaborarán reportes periódicos con hallazgos clave, métricas de rendimiento y recomendaciones específicas.
-  
-  - Iteración guiada por datos: Basándose en los resultados cuantitativos y el feedback cualitativo, se realizarán mejoras iterativas que aseguren que Mushroom evoluciona según las necesidades reales del ecosistema logístico.
-  
-  
-  ## 8.3. Experimentation
-  ### 8.3.1. To-Be User Stories
-  
-  | User Story ID | Titulo                             | Descripción                                                                                                  | Criterio de Aceptación                                                                                                                                                                                                                         |
-  |---------------|------------------------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  | BS01          | Implementación del modo oscuro     | Como capitán, quiero utilizar la aplicación en modo oscuro para evitar problemas de visión en la oscuridad.  | Scenario 1: Utilizar la aplicación en un entorno oscuro. <br>Given el capitan utiliza la aplicación en modo oscuro <br>When ingresa a la página web <br>And selecciona el modo oscuro <br>So la aplicación cambiara los colores de la interfaz |
-  | BS02          | Implementación del multilenguaje   | Como empresario, quiero utilizar la aplicación en mi idioma principal para familiarizarme con el contenido.  | Scenario 1: Utilizar la aplicación en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                       |
-  | BS03          | Interacción en foros colaborativos | Como capitán, quiero interactuar con otros usuarios para intercambiar información relevante de la rutas.     | Scenario 1: Utilizar la aplicacion en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                                                                                                                                                                                                                                               |
-  | BS04          | Notificaciones personalizadas      | Como capitán, quiero recibir información más especifica para mantenerme informado de manera rápida.          | Scenario 1: Utilizar la aplicacion en ingles.<br>Given el empresario no entiende el idioma principal<br>When selecciona el cambio de idioma<br>And selecciona el ingles<br>So la aplicación cambiara el idioma al ingles                                                                                                                                                                                                                                               |
-  | BS05          | Sección Comercial                  | Como empresario, quiero interactuar con otros usuarios para acordar negocios relacionados a la via maritima. | Scenario 1: Negociar en una sección comercial<br>Given el empresario quiere encontrar clientes<br>When selecciona la sección comercial<br>And reciba información de las ofertas o solicitudes<br>So buscara negociar con el cliente.                                                                                                                                                                                                                                               |
-  
-  ### 8.3.2. To-Be Product Backlog
-  
-  | # Orden | User Story ID | Titulo                             | Story Point (1,2,3,5,8) |
-  |---------|---------------|------------------------------------|-------------------------|
-  | 1       | BS01          | Implementación del modo oscuro     | 1                       |
-  | 2       | BS02          | Implementación del multilenguaje   | 3                       |
-  | 3       | BS03          | Interacción en foros colaborativos | 3                       |
-  | 4       | BS04          | Notificaciones personalizadas      | 5                       |
-  | 5       | BS05          | Sección Comercial                  | 5                       |
+
+- Interacciones del usuario: Se registrarán clics, navegación por secciones específicas (como panel de riesgos o mapa logístico), y participación en el foro colaborativo.
+
+- Feedback directo: A través de encuestas integradas y herramientas de retroalimentación, se recogerán impresiones sobre la usabilidad general y la utilidad de las funcionalidades añadidas.
+
+**Análisis Comparativo**
+
+Los datos recogidos se contrastarán con métricas históricas de la plataforma (previas a la actualización) para medir el impacto inmediato de las mejoras y determinar si se cumplen las hipótesis de valor.
+
+**Etapa 2: Seguimiento Continuo**
+
+Tras la implementación inicial, se establecerá un sistema de monitoreo continuo para mantener el control sobre el rendimiento y adaptar la plataforma a las necesidades cambiantes de los usuarios.
+
+**Recolección de Datos**
+
+- Métricas en tiempo real: Se emplearán herramientas como Google Analytics, Catchpoint o Lighthouse para observar el comportamiento del usuario en tiempo real.
+
+- Segmentación de usuarios: Se analizarán patrones de uso por tipo de actor (navieras, exportadores, operadores logísticos), permitiendo decisiones más focalizadas.
+
+- Tasa de retención: Se evaluará la retención de usuarios tras cada iteración para entender el impacto sostenido de las nuevas funcionalidades.
+
+**Evaluación y Ajustes**
+
+- Informes mensuales: Se elaborarán reportes periódicos con hallazgos clave, métricas de rendimiento y recomendaciones específicas.
+
+- Iteración guiada por datos: Basándose en los resultados cuantitativos y el feedback cualitativo, se realizarán mejoras iterativas que aseguren que Mushroom evoluciona según las necesidades reales del ecosistema logístico.
+
+
+## 8.3. Experimentation
+### 8.3.1. To-Be User Stories
+
+| **ID** | **Título** | **Descripción** | **Criterios de aceptacion** |
+|-------|-------------|---------------------------------------|------------------|
+| US01 | Visualizar lista de puertos disponibles | Como usuario, quiero visualizar una lista de puertos disponibles para poder saber por donde no puedo navegar. | **Escenario 1:** Given que el usuario se encuentra en la sección de puertos disponibles, When accede a dicha sección desde el menú principal, Then el sistema debe mostrar una lista completa de puertos registrados, And debe incluir su nombre, país y estado (abierto o cerrado). <br> **Escenario 2:** Given que el usuario está en la sección de puertos, And desea visualizar solo los puertos restringidos, When activa el filtro de "puertos no disponibles", Then el sistema debe mostrar únicamente los puertos con estado “cerrado”. | 
+| US02 | Mostrar ruta más corta entre dos puertos | Como usuario, quiero que el sistema calcule y muestre la ruta más corta entre dos puertos, para optimizar el tiempo de viaje. | **Escenario 1:** Given que el usuario ha seleccionado un puerto de origen y otro de destino, When confirma su selección, Then el sistema debe calcular la ruta más corta entre ambos puertos, And mostrarla gráficamente y con detalles del trayecto. <br> **Escenario 2:** Given que existen múltiples rutas posibles, And el sistema ha evaluado todas las opciones, When identifica cuál es la más corta, Then debe destacarla como la opción recomendada, And notificar al usuario con un mensaje o ícono visual. |
+| US03 | Permitir seleccionar puerto de origen y destino | Como usuario, quiero seleccionar manualmente el puerto de salida y el de llegada para personalizar mi trayecto. | **Escenario 1:** Given que el usuario accede a la sección de planificación de rutas, When despliega las listas de puertos disponibles, Then puede seleccionar manualmente el puerto de salida, And también seleccionar el puerto de llegada. <br> **Escenario 2:** Given que el usuario ha seleccionado el mismo puerto como origen y destino, When intenta continuar con el proceso, Then el sistema debe impedir la acción, And mostrar un mensaje de error indicando que los puertos deben ser distintos.|
+| US04 | Mostrar información básica del viaje | Como usuario, quiero visualizar información básica del viaje como tiempo estimado y cantidad de nodos recorridos para tener control de mi navegación. | **Escenario 1:** Given que el usuario ha generado una ruta, When se presentan los resultados del cálculo, Then el sistema debe incluir el tiempo estimado de viaje, And mostrarlo en una unidad comprensible como horas o días. <br> **Escenario 2:** Given que se muestra una ruta en pantalla, When el usuario consulta los detalles, Then el sistema debe mostrar la cantidad total de puertos o nodos, And permitir entender la complejidad del trayecto. |
+| US05 | Reporte de navegación | Como usuario, quiero recibir un reporte final de mi viaje para analizar la ruta tomada, eventos ocurridos y tiempos de recorrido. | **Escenario 1:** Given que el usuario ha completado un trayecto, When el viaje ha concluido, Then el sistema debe generar automáticamente un reporte del recorrido And debe incluir los puertos visitados, el tiempo y cualquier evento relevante.<br> **Escenario 2:** Given que el reporte ha sido generado, When el usuario desea conservarlo, Then el sistema debe permitir exportarlo en formato PDF, And también guardarlo en el historial del usuario. |
+| US06 | Visualizar mapa esquemático de los puertos | Como usuario, quiero ver un mapa esquemático de los puertos para entender gráficamente el trayecto. | **Escenario 1:** Given que el usuario ha completado un trayecto, When el viaje ha concluido, Then el sistema debe generar automáticamente un reporte del recorrido And debe incluir los puertos visitados, el tiempo y cualquier evento relevante.<br>   |
+| US07 | Guardar último viaje realizado | Como usuario, quiero guardar el último viaje realizado para poder revisarlo posteriormente y evaluar mi desempeño. | **Escenario 1:** Given que el usuario ha finalizado un trayecto, When el sistema detecta que la ruta ha sido completada, Then debe guardar automáticamente el viaje en una sección de historial, And etiquetarlo como “último viaje realizado”.<br> **Escenario 2:** Given que el reporte ha sido generado, When el usuario desea conservarlo, Then el sistema debe permitir exportarlo en formato PDF, And también guardarlo en el historial del usuario. |
+| US08 | Ver información del puerto actual | Como capitán, quiero ver información de los puertos, para evaluar si puedo detenerme.El sistema debe mostrar nombre, país y estado (abierto/cerrado) de los puertos. | **Escenario 1:** Given que el usuario se encuentra navegando y desea información del puerto actual, When solicita esos datos, Then el sistema debe mostrar el nombre del puerto, el país y su estado, And permitir que el usuario decida si detenerse o continuar.<br> **Escenario 2:** Given que el puerto actual está cerrado, When el sistema presenta esta información, Then debe mostrar una advertencia al usuario, And recomendar cambiar la ruta si es necesario. |
+| US09 | Iniciar sesión | Como usuario registrado, quiero iniciar sesión para acceder a mi cuenta para usar el programa | **Escenario 1:** Given que el usuario registrado ingresa sus credenciales correctas, When hace clic en el botón de iniciar sesión, Then el sistema debe validar la información, And redirigirlo a su cuenta con acceso completo a funcionalidades.<br> **Escenario 2:** Given que el usuario ingresa datos incorrectos, When intenta iniciar sesión, Then el sistema debe rechazar el acceso, And mostrar un mensaje con opciones para recuperar la contraseña. |
+| US10 | Registrar un usuario | Como nuevo usuario, quiero registrarme en la plataforma para poder acceder a todas sus funcionalidades | **Escenario 1:**  Given que un nuevo usuario accede al formulario de registro, When completa correctamente todos los campos requeridos, Then el sistema debe registrar la cuenta, And confirmar el proceso mediante un mensaje de éxito.<br> **Escenario 2:** Given que el usuario deja campos incompletos o con errores, When intenta registrarse, Then el sistema debe rechazar la solicitud, And señalar los errores para ser corregidos. |
+| US11 | Puertos intermedios | Como capitan, quiero  poder añadir puertos intermedios a la ruta para poder redirigirme correctamente a el por si existe alguna emergencia. | **Escenario 1:**  Given que el usuario está creando una ruta, When selecciona puertos intermedios desde la lista disponible, Then el sistema debe permitir agregarlos correctamente, And actualizarlos en el orden de la ruta. <br> **Escenario 2:** Given que hay puertos intermedios en la ruta, When el usuario finaliza la selección, Then el sistema debe recalcular la ruta considerando los nuevos puntos, And mostrarlos gráficamente.  |
+| US12 | Historial de rutas |  Como capitán, quiero guardar una ruta personalizada después de calcularla, para reutilizarla en futuros viajes similares. | **Escenario 1:**  Given que el usuario ha finalizado un viaje, When decide guardarlo, Then el sistema debe permitir almacenarlo con sus detalles, And clasificarlo cronológicamente en el historial.  <br> **Escenario 2:** Given que el usuario accede a la sección de historial, When selecciona una ruta pasada, Then el sistema debe mostrar la información completa del trayecto, And permitir su reutilización. |
+| US13 | Rutas más Buscadas |  Como usuario, quiero poder visualizar las rutas mas buscadas entre los demas usuarios, para para ver si una coincide con la que estoy buscando. | **Escenario 1:**  Given que el usuario accede a la sección de rutas populares, When se carga la interfaz, Then el sistema debe listar las rutas más buscadas por otros usuarios, And mostrarlas ordenadas por frecuencia.  <br> **Escenario 2:** Given que una de las rutas le interesa, When el usuario hace clic sobre ella, Then el sistema debe mostrar los detalles completos de esa ruta, And ofrecer la opción de planificar un viaje similar. |
+| US14 | Cálculo de Incoterms |  Como usuario, quiero poder calcular el monto total que me costará una importacion o exportacion, para poder armar un presupuesto acorde a la operación. | **Escenario 1:**  Given que el usuario accede a la herramienta de Incoterms, When ingresa los datos necesarios como país de origen, destino y tipo de operación, Then el sistema debe calcular el monto total de la operación, And mostrarlo de forma clara. <br> **Escenario 2:** Given que el cálculo fue realizado, When el usuario lo revisa, Then el sistema debe mostrar el desglose de costos según el Incoterm aplicado, And permitir descargar la información. |
+| US15 | Cálculo de distancia |  Como usuario, quiero poder visualizar la distancia total que se recorre entre los puertos de origen, intermedios, y destino, para poder tomar dimension del tiempo que llevará el trayecto. | **Escenario 1:**  Given que el usuario ha seleccionado origen, puertos intermedios y destino, When confirma la ruta, Then el sistema debe calcular la distancia total del trayecto, And presentarla en millas náuticas o kilómetros. <br> **Escenario 2:** Given que la distancia total está disponible, When el usuario consulta detalles, Then el sistema debe mostrar la distancia entre cada tramo, And ayudar a estimar tiempos. |
+| US16 | Preferencia de notificaciones |  Como usuario, quiero poder elegir las notificaciones que me interesan recibir, como cierres de ruta o alertas de clima en distintas zonas, para poder tener en cuenta estos factores al elegir la ruta que quiero seguir. | **Escenario 1:**  Given que el usuario desea personalizar sus notificaciones, When accede a la configuración, Then debe poder activar o desactivar alertas específicas, And guardar sus preferencias. <br> **Escenario 2:** Given que un evento ocurre (como cierre de puerto o clima extremo), When el usuario tiene activada esa categoría de notificación, Then el sistema debe enviarle una alerta inmediata, And mostrar la información relevante. |
+
+### 8.3.2. To-Be Product Backlog
+
+| **ID** | **Título** | **Descripción (Formato User Story)** | **Story Points** |
+|-------|-------------|---------------------------------------|------------------|
+| US01 | Visualizar lista de puertos disponibles | Como usuario, quiero visualizar una lista de puertos disponibles para poder saber por donde no puedo navegar. | 8 |
+| US02 | Mostrar ruta más corta entre dos puertos | Como usuario, quiero que el sistema calcule y muestre la ruta más corta entre dos puertos, para optimizar el tiempo de viaje. | 8 |
+| US03 | Permitir seleccionar puerto de origen y destino | Como usuario, quiero seleccionar manualmente el puerto de salida y el de llegada para personalizar mi trayecto. | 8 |
+| US04 | Mostrar información básica del viaje | Como usuario, quiero visualizar información básica del viaje como tiempo estimado y cantidad de nodos recorridos para tener control de mi navegación. | 2 |
+| US05 | Reporte de navegación | Como usuario, quiero recibir un reporte final de mi viaje para analizar la ruta tomada, eventos ocurridos y tiempos de recorrido. | 3 |
+| US06 | Visualizar mapa esquemático de los puertos | Como usuario, quiero ver un mapa esquemático de los puertos para entender gráficamente el trayecto. | 3 |
+| US07 | Guardar último viaje realizado | Como usuario, quiero guardar el último viaje realizado para poder revisarlo posteriormente y evaluar mi desempeño. | 2 |
+| US08 | Ver información del puerto actual | Como capitán, quiero ver información de los puertos, para evaluar si puedo detenerme.El sistema debe mostrar nombre, país y estado (abierto/cerrado) de los puertos. | 5 |
+| US09 | Iniciar sesión | Como usuario registrado, quiero iniciar sesión para acceder a mi cuenta para usar el programa | 2 |
+| US10 | Registrar un usuario | Como nuevo usuario, quiero registrarme en la plataforma para poder acceder a todas sus funcionalidades | 2 |
+| US11 | Puertos intermedios | Como capitan, quiero  poder añadir puertos intermedios a la ruta para poder redirigirme correctamente a el por si existe alguna emergencia. | 8 |
+| US12 | Historial de rutas |  Como capitán, quiero guardar una ruta personalizada después de calcularla, para reutilizarla en futuros viajes similares. | 5 |
+| US13 | Rutas más Buscadas |  Como usuario, quiero poder visualizar las rutas mas buscadas entre los demas usuarios, para para ver si una coincide con la que estoy buscando. | 5 |
+| US14 | Cálculo de Incoterms |  Como usuario, quiero poder calcular el monto total que me costará una importacion o exportacion, para poder armar un presupuesto acorde a la operación. | 8 |
+| US15 | Cálculo de distancia |  Como usuario, quiero poder visualizar la distancia total que se recorre entre los puertos de origen, intermedios, y destino, para poder tomar dimension del tiempo que llevará el trayecto. | 3 |
+| US16 | Preferencia de notificaciones |  Como usuario, quiero poder elegir las notificaciones que me interesan recibir, como cierres de ruta o alertas de clima en distintas zonas, para poder tener en cuenta estos factores al elegir la ruta que quiero seguir. | 3 |
+
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+### 8.3.3.1 To-Be Sprint Backlog
+
+| **Sprint #1** | Sprint 1                                     |                |                                                                               |                                                                                                                                                                                                    |                       |              |        |
+|--------------|----------------------------------------------|----------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|--------------|--------|
+| User Story   |                                              | Work Item/Task |                                                                               |                                                                                                                                                                                                    |                       |              |        |
+| Id           | Title                                        | Id             | Title                                                                         | Description                                                                                                                                                                                        | Estimation<br>(Hours) | Assigned To   | Status |
+| US001        | Visualizar lista de puertos disponibles      | TK1            | Diseñar vista de listado de puertos                                           | Crear una lista visual con nombre, país y estado del puerto.                                                                                                                                       | 1 hora                | Jose M.       | Done   |
+| US001        | Visualizar lista de puertos disponibles      | TK2            | Implementar filtro de estado del puerto                                       | Agregar opción para mostrar solo puertos cerrados o abiertos.                                                                                                                                      | 1 hora                | Jose M.       | Done   |
+| US002        | Mostrar ruta más corta entre dos puertos     | TK3            | Diseñar lógica de cálculo de rutas                                            | Implementar algoritmo para calcular ruta más corta entre puertos.                                                                                                                                  | 2 horas               | Fernando Lizano       | Done   |
+| US002        | Mostrar ruta más corta entre dos puertos     | TK4            | Mostrar ruta calculada al usuario                                             | Desplegar la ruta más corta en una vista con detalles.                                                                                                                                             | 1 hora                | Fernando Lizano       | Done   |
+| US003        | Seleccionar puerto de origen y destino       | TK5            | Diseñar listas desplegables                                                   | Permitir seleccionar puertos desde listas desplegables.                                                                                                                                            | 1 hora                | Jose M.       | Done   |
+| US003        | Seleccionar puerto de origen y destino       | TK6            | Validar puertos seleccionados                                                 | Evitar selección de origen y destino iguales.                                                                                                                                                      | 1 hora                | Jose M.       | Done   |
+| US004        | Mostrar información básica del viaje         | TK7            | Mostrar tiempo estimado                                                       | Calcular y mostrar el tiempo estimado del viaje.                                                                                                                                                   | 1 hora                | Juan Pescoran       | Done   |
+| US004        | Mostrar información básica del viaje         | TK8            | Mostrar nodos recorridos                                                      | Mostrar número de puertos intermedios en la ruta.                                                                                                                                                  | 1 hora                | Juan Pescoran       | Done   |
+| US005        | Reporte de navegación                        | TK9            | Generar reporte de trayecto completo                                          | Crear un informe automático que incluya puertos visitados, tiempo total y eventos relevantes.                                                                                                      | 1 hora                | Jose M.       | Done   |
+| US005        | Reporte de navegación                        | TK10           | Exportar o guardar reporte                                                    | Implementar opción para exportar el reporte en PDF o guardarlo en el historial.                                                                                                                    | 1 hora                | Jose M.       | Done   |
+| US006        | Visualizar mapa esquemático de los puertos   | TK11           | Mostrar puertos en mapa esquemático                                           | Renderizar puertos conectados en una vista gráfica clara con rutas navegables.                                                                                                                    | 1 hora                | Jose M.       | Done   |
+| US006        | Visualizar mapa esquemático de los puertos   | TK12           | Mostrar información contextual por puerto                                     | Al hacer clic en un puerto, mostrar nombre, país y estado de operación.                                                                                                                            | 1 hora                | Jose M.       | Done   |
+| US007        | Guardar último viaje realizado               | TK13           | Guardar ruta finalizada como último viaje                                     | Al completar el trayecto, guardar los datos como última ruta realizada.                                                                                                                            | 1 hora                | Jose M.       | Done   |
+| US007        | Guardar último viaje realizado               | TK14           | Consultar último viaje guardado                                               | Permitir que el usuario acceda a los detalles del último trayecto.                                                                                                                                 | 1 hora                | Augusto V.       | Done   |
+| US008        | Ver información del puerto actual            | TK15           | Mostrar datos del puerto más cercano                                          | Mostrar nombre, país y estado del puerto más próximo al usuario.                                                                                                                                   | 1 hora                | Augusto V.       | Done   |
+| US008        | Ver información del puerto actual            | TK16           | Advertencia si el puerto está cerrado                                         | Notificar al usuario si el puerto actual está cerrado y sugerir cambiar de ruta.                                                                                                                  | 1 hora                | Jose M.       | Done   |
+| US009        | Iniciar sesión                               | TK17           | Validar credenciales                                                          | Verificar usuario y contraseña al iniciar sesión.                                                                                                                                                  | 1 hora                | Jose M.       | Done   |
+| US009        | Iniciar sesión                               | TK18           | Mostrar errores de autenticación                                              | Informar al usuario si las credenciales son incorrectas o faltan.                                                                                                                                  | 1 hora                | Jose M.       | Done   |
+| US010        | Registrar un usuario                         | TK19           | Diseñar formulario de registro                                                | Crear formulario para nuevo usuario con validación de campos.                                                                                                                                      | 1 hora                | Jose M.       | Done   |
+| US010        | Registrar un usuario                         | TK20           | Guardar nuevo usuario                                                         | Almacenar datos del nuevo usuario en el sistema tras validación.                                                                                                                                   | 1 hora                | Jose M.       | Done   |
+| US011        | Puertos intermedios                          | TK21           | Agregar puertos intermedios a ruta                                            | Permitir añadir puertos intermedios durante la planificación.                                                                                                                                      | 2 horas               | Jose M.       | Done   |
+| US011        | Puertos intermedios                          | TK22           | Actualizar ruta con nuevos puertos                                            | Recalcular y mostrar la ruta incluyendo los puertos agregados.                                                                                                                                     | 2 horas               | Jose M.       | Done   |
+| US012        | Historial de rutas                           | TK23           | Guardar ruta personalizada                                                    | Guardar rutas personalizadas para uso futuro del usuario.                                                                                                                                          | 1 hora                | Fernando Lizano       | Done   |
+| US012        | Historial de rutas                           | TK24           | Mostrar historial de rutas                                                    | Listar rutas guardadas con detalles para selección y reutilización.                                                                                                                                | 1 hora                | Fernando Lizano       | Done   |
+| US013        | Rutas más buscadas                           | TK25           | Listar rutas más consultadas                                                  | Mostrar al usuario rutas más buscadas por otros usuarios.                                                                                                                                          | 1 hora                | Jose M.       | Done   |
+| US013        | Rutas más buscadas                           | TK26           | Visualizar detalles de rutas populares                                        | Permitir explorar información detallada de cada ruta destacada.                                                                                                                                    | 1 hora                | Jose M.       | Done   |
+| US014        | Cálculo de Incoterms                         | TK27           | Recopilar datos para Incoterms                                                | Solicitar información necesaria para el cálculo según operación.                                                                                                                                   | 1 hora                | Jose M.       | Done   |
+| US014        | Cálculo de Incoterms                         | TK28           | Mostrar cálculo total y desglose                                              | Mostrar el monto total de operación y su desglose por ítems.                                                                                                                                       | 1 hora                | Jose M.       | Done   |
+| US015        | Cálculo de distancia                         | TK29           | Calcular distancia total de ruta                                              | Calcular la distancia total considerando origen, destino e intermedios.                                                                                                                            | 1 hora                | Jose M.       | Done   |
+| US015        | Cálculo de distancia                         | TK30           | Desglosar distancias por tramos                                               | Mostrar la distancia parcial entre cada par de puertos.                                                                                                                                            | 1 hora                | Jose M.       | Done   |
+| US016        | Preferencia de notificaciones                | TK31           | Configurar notificaciones preferidas                                          | Permitir al usuario seleccionar tipos de alertas que desea recibir.                                                                                                                                | 1 hora                | Juan Pescoran       | Done   |
+| US016        | Preferencia de notificaciones                | TK32           | Enviar alertas según preferencias                                             | Emitir notificaciones solo si coinciden con la configuración del usuario.                                                                                                                          | 1 hora                | Juan Pescoran       | Done   |
+
+
+## 8.4. Experiment Aftermath & Analysis
+### 8.4.1. Analysis and Interpretation of Results
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
+## 8.5. Continuous Learning
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
+## 8.6.  To-Be Software Platform Pre-launch
+### 8.6.1. About-the-Product Intro Video
+
   
   ## Conclusiones
   
