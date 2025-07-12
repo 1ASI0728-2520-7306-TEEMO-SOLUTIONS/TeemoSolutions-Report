@@ -2767,7 +2767,6 @@ El proceso de registro carece de validación automatizada con empresas navieras 
 - Mayor confianza institucional: La asociación con navieras reconocidas en el proceso de registro otorga mayor credibilidad al sistema y facilita la estructuración jerárquica de los usuarios por organización.
 - Transparencia en costos: Calcular anticipadamente los costos logísticos basados en Incoterms mejora la planificación financiera y facilita la comparación entre rutas u opciones de servicio.
 
-
 ### 8.1.3. Experiment-Ready Questions
 
 <table>
@@ -2783,245 +2782,803 @@ El proceso de registro carece de validación automatizada con empresas navieras 
   </thead>
   <tbody>
     <tr>
-      <td>¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo en la plataforma?</td>
-      <td>7 – Alta confianza; se trata de una funcionalidad estándar en plataformas de navegación con buen historial de adopción por parte de usuarios.</td>
-      <td>2 – Bajo riesgo técnico; su implementación requiere mostrar datos ya disponibles en el sistema.</td>
-      <td>6 – Mejora la precisión y reduce errores sin modificar funcionalidades centrales.</td>
-      <td>5 – Útil especialmente para operadores y capitanes que planifican rutas constantemente.</td>
+      <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+      <td>8 – Funcionalidad clara y valorada en entornos logísticos complejos</td>
+      <td>2 – Datos ya existentes, bajo riesgo técnico</td>
+      <td>7 – Mejora la precisión de planificación y reduce errores operativos</td>
+      <td>6 – Especialmente relevante para roles operativos como capitanes o planificadores</td>
+      <td><strong>23</strong></td>
+    </tr>
+    <tr>
+      <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+      <td>7 – Funcionalidad común en plataformas de monitoreo</td>
+      <td>2 – Implementación técnica sencilla (uso de logs persistentes)</td>
+      <td>6 – Ayuda en auditoría, trazabilidad y toma de decisiones futuras</td>
+      <td>5 – Interés medio-alto entre usuarios que hacen seguimiento operacional</td>
       <td><strong>20</strong></td>
     </tr>
     <tr>
-      <td>¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?</td>
-      <td>6 – Algoritmos de rutas optimizadas son estándar en soluciones logísticas actuales.</td>
-      <td>3 – Mejora sustancial en la eficiencia de navegación y uso de recursos.</td>
-      <td>7 – Facilita la internacionalización de la solución.</td>
-      <td>6 – Atractivo para operadores logísticos y tomadores de decisiones que gestionan múltiples rutas.</td>
-      <td><strong>22</strong></td>
-    </tr>
-    <tr>
-      <td>¿Incrementará la participación de usuarios crear un <em>foro de eventos y rutas recomendadas</em>?</td>
-      <td>8 – Experiencias similares en plataformas B2B indican aumento en la interacción.</td>
-      <td>4 – Riesgo medio por la necesidad de moderación y control de calidad del contenido.</td>
-      <td>8 – Puede incentivar la colaboración entre actores del sector logístico.</td>
-      <td>7 – Probable interés entre operadores y agentes logísticos con experiencia compartida.</td>
+      <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+      <td>8 – Funcionalidad crítica en sistemas de gestión de flotas</td>
+      <td>3 – Implica integración con sistema de monitoreo/logs</td>
+      <td>9 – Impacto alto en auditoría, eficiencia y justificación de decisiones</td>
+      <td>7 – Atractivo para administradores, jefes de operaciones y analistas</td>
       <td><strong>27</strong></td>
     </tr>
     <tr>
-      <td>¿Mejorará la satisfacción de usuarios un sistema de <em>alertas personalizadas sobre disrupciones</em>?</td>
-      <td>9 – Alta confianza; soluciones similares en logística muestran buena recepción.</td>
-      <td>2 – Bajo riesgo; funcionalidad común en apps empresariales.</td>
-      <td>9 – Alto impacto en la gestión operativa y toma de decisiones en tiempo real.</td>
-      <td>8 – Muy relevante para quienes buscan proactividad en la planificación logística.</td>
+      <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+      <td>9 – Evidencia de éxito en otras plataformas logísticas</td>
+      <td>2 – Bajo riesgo si se usa infraestructura de alertas ya existente</td>
+      <td>9 – Aumenta la proactividad y reduce el impacto de imprevistos</td>
+      <td>8 – Alta expectativa de valor percibido por el usuario</td>
       <td><strong>28</strong></td>
     </tr>
     <tr>
-      <td>¿Fortalecerá el vínculo con el ecosistema global una sección de <em>oportunidades comerciales/logísticas</em>?</td>
-      <td>7 – Basado en el interés de navieras y exportadores en plataformas colaborativas.</td>
-      <td>4 – Riesgo medio por la presencia de competidores ya establecidos en el comercio B2B.</td>
-      <td>10 – Potencial alto para abrir nuevas conexiones y generar ingresos por comisiones o servicios.</td>
-      <td>6 – Interés moderado al inicio, pero puede crecer con la implementación y campañas asociadas.</td>
-      <td><strong>27</strong></td>
+      <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+      <td>7 – Mejora validación y confianza en el onboarding</td>
+      <td>3 – Requiere base de datos verificada y mantenida</td>
+      <td>6 – Optimiza la identificación de usuarios y evita duplicidades</td>
+      <td>5 – Valor percibido principalmente por usuarios administrativos</td>
+      <td><strong>21</strong></td>
+    </tr>
+    <tr>
+      <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados según Incoterm para anticipar gastos logísticos?</td>
+      <td>8 – Alta confianza por uso común de Incoterms en comercio exterior</td>
+      <td>4 – Riesgo medio por variabilidad de tarifas y requerimientos legales</td>
+      <td>9 – Impacto directo en la toma de decisiones comerciales y presupuestarias</td>
+      <td>7 – Alta utilidad para exportadores, importadores y agentes de carga</td>
+      <td><strong>28</strong></td>
     </tr>
   </tbody>
 </table>
 
 ### 8.1.4. Question Backlog
 
-| **Prioridad (1,2,3,5,8)** | **Pregunta**                                                                                                                                          |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1**                     | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma?                                        |
-| **3**                     | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?                  |
-| **3**                     | ¿Fomentará la participación entre usuarios la implementación de un **foro colaborativo** para compartir alertas logísticas, rutas y buenas prácticas? |
-| **5**                     | ¿Incrementará la satisfacción del usuario la integración de un sistema de **notificaciones personalizadas** ante eventos críticos en rutas marítimas? |
-| **5**                     | ¿Fortalecerá la conexión con nuevos mercados una **sección de oportunidades comerciales** para navieras, exportadores y operadores logísticos?        |
+<table>
+  <thead>
+    <tr>
+      <th>Prioridad (1,2,3,5,8)</th>
+      <th>Pregunta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas, para validar el proceso de identificación y asociación con una organización?</td>
+    </tr>
+    <tr>
+      <td><strong>8</strong></td>
+      <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm, para anticipar gastos logísticos?</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 8.1.5. Experiment Cards
-|
-| **Question 1** |¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Permitir que los usuarios visualicen claramente qué puertos están abiertos o cerrados puede optimizar la planificación de sus rutas. Esta funcionalidad reduciría errores de navegación al evitar seleccionar puertos inaccesibles, mejorando la eficiencia operativa y la satisfacción general. |
-| **What**     | Diseñar una lista de puertos que indique de forma clara su nombre, país y estado operativo (abierto/cerrado), mediante texto y códigos visuales (colores o íconos). Esta funcionalidad debe estar accesible en la sección de navegación del sistema. |
-| **Hypothesis** | Se espera que, tras implementar esta lista, al menos el 80% de los usuarios eviten puertos cerrados al planificar rutas y reduzcan el tiempo promedio de planificación en un 25%. |
 
-| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | En logística marítima, reducir la distancia recorrida significa menor tiempo y menor consumo de recursos. Ofrecer rutas optimizadas permite a los usuarios tomar decisiones eficientes, reducir costos y aumentar la confiabilidad operativa. |
-| **What**     | Desarrollar un algoritmo que calcule y muestre la ruta más corta entre dos puertos seleccionados, considerando distancias geográficas y disponibilidad. Mostrar los resultados visualmente sobre el mapa de navegación con detalles de distancia y puertos intermedios. |
-| **Hypothesis** | Se espera que, tras implementar esta función, al menos el 70% de los usuarios elijan la ruta sugerida automáticamente y reporten una reducción del 20% en tiempo estimado de navegación. |
+<table>
+  <tr>
+    <th colspan="2">Question 1</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>Brindar información visible y actualizada sobre puertos permite a los capitanes evitar errores, ahorrar tiempo y mejorar la planificación.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Incluir una lista de puertos con estado (abierto/cerrado), país y condiciones, integrada al flujo de planificación de rutas.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>Al menos el 80% de los capitanes usarán esta vista y se reducirá el error en planificación en un 25%.</td>
+  </tr>
+</table>
 
-| **Question** | ¿Se expandirá la audiencia de Mushroom con la incorporación de traducciones al inglés, chino u otros idiomas clave? |
-|--------------|-------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Las traducciones mejoran la accesibilidad global y posicionan la plataforma en mercados internacionales con alto potencial logístico. |
-| **What**     | Traducir la interfaz y contenidos principales a inglés y chino, implementando un sistema automatizado que permita actualizar las traducciones conforme se actualiza la plataforma. |
-| **Hypothesis** | La base de usuarios de habla inglesa o china crecerá un 15% dentro de los tres meses siguientes a la publicación de la versión multilingüe. |
+<br>
 
-| **Question** | ¿Mejorará la satisfacción de los usuarios la integración de notificaciones personalizadas ante disrupciones logísticas? |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Las alertas proactivas mejoran la toma de decisiones y la planificación, especialmente ante eventos inesperados como cierres de puertos, tormentas o conflictos en rutas clave. |
-| **What**     | Desarrollar un sistema de notificaciones configurables basado en eventos externos, ubicación geográfica y preferencias del usuario. Las alertas deben ser útiles, oportunas y fáciles de gestionar. |
-| **Hypothesis** | Se proyecta que la tasa de uso de herramientas de planificación aumente un 40% y que la satisfacción general del usuario se eleve en un 20%, especialmente en usuarios operativos. |
+<table>
+  <tr>
+    <th colspan="2">Question 2</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>El registro automático del viaje anterior permite al usuario analizar recorridos, detectar fallos y mejorar la trazabilidad operativa.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Guardar automáticamente datos clave del último viaje (ruta, eventos, fecha) y mostrarlo en el panel del usuario.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El 70% de los usuarios consultarán el historial para evaluar rutas previas y optimizar decisiones logísticas.</td>
+  </tr>
+</table>
 
-| **Question** | ¿Fortalecerá la conexión con otros actores del mercado logístico una sección de oportunidades comerciales dentro de Mushroom? |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **Why**      | Permite crear alianzas estratégicas, publicar ofertas y demandas de servicios logísticos, y conectar actores relevantes del ecosistema marítimo. Esto podría convertir a Mushroom en un hub de colaboración sectorial. |
-| **What**     | Implementar una sección tipo marketplace donde operadores, navieras o clientes puedan listar servicios, buscar socios y cerrar tratos. Incluir filtros inteligentes y medidas de seguridad para garantizar transacciones confiables. |
-| **Hypothesis** | Se espera que las conexiones comerciales dentro de la plataforma aumenten un 50% en los primeros seis meses desde el lanzamiento del módulo de comercio colaborativo. |
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 3</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>El análisis posterior a un viaje permite mejorar decisiones futuras, evaluar retrasos y justificar decisiones operativas.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Generar automáticamente un reporte descargable al finalizar cada viaje con detalles de ruta, eventos y duración.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El 60% de los usuarios utilizarán el reporte para revisión interna o presentación ante stakeholders.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 4</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>Las alertas proactivas reducen riesgos, permiten respuestas oportunas y refuerzan la percepción de seguridad operativa.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Incluir un sistema configurable de notificaciones basadas en eventos externos, preferencias del usuario y condiciones de ruta.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>Al menos el 75% de usuarios manifestarán mayor confianza y satisfacción tras activarlas.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 5</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>Validar la organización desde el inicio mejora la seguridad, personalización y trazabilidad del sistema.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Agregar una lista desplegable de navieras reconocidas con validación automática de la selección durante el registro.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El 85% de los usuarios seleccionará su empresa correctamente, reduciendo registros defectuosos.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 6</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm?</td>
+  </tr>
+  <tr>
+    <td><strong>Why</strong></td>
+    <td>Anticipar costos logísticos mejora la planificación y evita sobrecostos o conflictos contractuales.</td>
+  </tr>
+  <tr>
+    <td><strong>What</strong></td>
+    <td>Crear una herramienta que calcule automáticamente el costo estimado por tipo de Incoterm, volumen y destino de la carga.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El 65% de los usuarios utilizarán este cálculo previo a la planificación de operaciones internacionales.</td>
+  </tr>
+</table>
 
 ## 8.2. Experiment Design
 ### 8.2.1. Hypotheses
 
-| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma?|
-|--------------|------------------------------------------------------------------------------------------------------|
-| **Belief**   | Si se proporciona una lista clara de puertos con su estado, los usuarios podrán tomar decisiones de navegación más precisas, evitando errores y mejorando la eficiencia del proceso de planificación. |
-| **Hypothesis** | La visualización de puertos disponibles reducirá en al menos un 25% los errores de planificación y el tiempo promedio requerido para definir una ruta.|
-| **Null Hypothesis** | La incorporación de una lista visible de puertos no tendrá un efecto significativo sobre la reducción de errores ni el tiempo de planificación. |
+<table>
+  <tr>
+    <th colspan="2">Question 1</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>Si los capitanes pueden acceder a información detallada de cada puerto, tomarán decisiones más informadas y evitarán errores operativos.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>La inclusión de información detallada reducirá en al menos un 25% los errores de planificación y aumentará la satisfacción de navegación.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>La visualización de información de puertos no tendrá impacto en la precisión ni en la experiencia de planificación.</td>
+  </tr>
+</table>
 
-| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
-|--------------|----------------------------------------------------------------------------------------------|
-| **Belief**   | Ofrecer una ruta óptima directamente en la interfaz reduce la necesidad de cálculos manuales o externos, aumentando la eficiencia logística y reduciendo la incertidumbre para el usuario. |
-| **Hypothesis** | El uso del algoritmo de ruta más corta disminuirá el tiempo estimado de navegación y aumentará la precisión en la planificación en al menos un 20%.|
-| **Null Hypothesis** | La implementación de una ruta automática más corta no generará mejoras significativas en la planificación ni reducirá el tiempo estimado de viaje. |
+<br>
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-|--------------|------------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Un foro de colaboración fomentará la interacción entre operadores logísticos, generando una comunidad activa y más comprometida con la plataforma. |
-| **Hypothesis** | La implementación del foro aumentará la participación de los usuarios en un 30% en comparación con el período anterior a su habilitación. |
-| **Null Hypothesis** | La introducción del foro no tendrá un efecto significativo en la participación de los usuarios. |
+<table>
+  <tr>
+    <th colspan="2">Question 2</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>El acceso automático al historial de viaje mejora la trazabilidad y permite aprender de recorridos anteriores.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El guardado automático aumentará en un 30% la eficiencia en la revisión post-operación y reducirá la necesidad de replanificar manualmente.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>El almacenamiento del último viaje no tendrá un impacto significativo en la trazabilidad ni en la eficiencia operativa.</td>
+  </tr>
+</table>
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-|--------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Las notificaciones personalizadas ayudarán a los usuarios a gestionar sus operaciones de forma más organizada y proactiva, mejorando la experiencia general. |
-| **Hypothesis** | La integración de este sistema aumentará la tasa de finalización de tareas o acciones logísticas en un 40% y la satisfacción general del usuario en un 20%. |
-| **Null Hypothesis** | La implementación de notificaciones personalizadas no tendrá un efecto significativo en la tasa de finalización de tareas ni en la satisfacción del usuario. |
+<br>
 
-| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-|--------------|------------------------------------------------------------------------------------------------------------------|
-| **Belief**   | Una sección comercial permitirá a los usuarios publicar servicios, buscar aliados estratégicos y realizar transacciones, fomentando un ecosistema logístico más dinámico. |
-| **Hypothesis** | La implementación de esta sección generará un incremento del 50% en el número de conexiones comerciales o transacciones en los primeros seis meses. |
-| **Null Hypothesis** | La inclusión de la sección comercial no tendrá un efecto significativo en la cantidad de transacciones realizadas. |
+<table>
+  <tr>
+    <th colspan="2">Question 3</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>Un reporte estructurado permite realizar mejoras operativas al identificar cuellos de botella o eventos críticos durante el viaje.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El 60% de los usuarios utilizará el reporte post-viaje para análisis operativos y retroalimentación de decisiones logísticas.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>La generación del reporte no aportará valor significativo en el análisis o mejora de operaciones futuras.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 4</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>Las alertas en tiempo real mejoran la toma de decisiones en situaciones críticas y fortalecen la percepción de control del usuario.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>El uso de notificaciones personalizadas aumentará en un 25% la satisfacción de los usuarios y reducirá tiempos de respuesta ante eventos.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>La inclusión de notificaciones no tendrá un efecto significativo sobre la satisfacción ni la capacidad de respuesta del usuario.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 5</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>Validar la asociación del usuario desde el inicio garantiza mayor seguridad y personalización del sistema.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>La lista desplegable mejorará la precisión del registro en un 40% y facilitará la segmentación posterior de usuarios.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>El uso de una lista de navieras no tendrá impacto en la seguridad ni en la segmentación de usuarios.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 6</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm?</td>
+  </tr>
+  <tr>
+    <td><strong>Belief</strong></td>
+    <td>Proveer cálculos de costos logísticos basados en Incoterms permitirá a los usuarios anticipar gastos y planificar con mayor exactitud.</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothesis</strong></td>
+    <td>La herramienta de cálculo será utilizada por al menos el 65% de los usuarios para tomar decisiones económicas más acertadas.</td>
+  </tr>
+  <tr>
+    <td><strong>Null Hypothesis</strong></td>
+    <td>La funcionalidad de cálculo de costos no influirá significativamente en la planificación financiera del usuario.</td>
+  </tr>
+</table>
+
 
 ### 8.2.2. Measures
 
-| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
-|--------------|------------------------------------------------------------------------------------------------------|
-| **Measure**  | Medir el porcentaje de rutas que omiten correctamente puertos cerrados, así como el tiempo promedio que tarda un usuario en completar la planificación de una ruta. Comparar los resultados antes y después de habilitar la lista visible. |
+<table>
+  <tr>
+    <th colspan="2">Question 1</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Medir el porcentaje de decisiones de ruta que incluyen puertos cerrados antes y después de implementar la funcionalidad. Evaluar también la tasa de cambios en la ruta tras acceder a la información detallada.</td>
+  </tr>
+</table>
 
-| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma? |
-|--------------|----------------------------------------------------------------------------------------------|
-| **Measure**  | Medir el tiempo estimado de navegación antes y después de usar la función de ruta automática, así como la frecuencia con la que los usuarios seleccionan la ruta sugerida frente a otras opciones.|
+<br>
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-|--------------|------------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Evaluar la cantidad de publicaciones, comentarios e interacciones dentro del foro. Comparar estos datos con el periodo previo a su lanzamiento. Complementar con encuestas para medir la percepción del valor que aporta esta funcionalidad. |
+<table>
+  <tr>
+    <th colspan="2">Question 2</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Evaluar el número de veces que los usuarios consultan el viaje anterior guardado y cuánto tiempo ahorran en la replanificación respecto a procesos sin dicha funcionalidad.</td>
+  </tr>
+</table>
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-|--------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Medir la tasa de finalización de tareas o respuestas ante alertas antes y después de implementar el sistema de notificaciones. Complementar con encuestas que evalúen la satisfacción general respecto a la utilidad de esta nueva función. |
+<br>
 
-| **Question** | ¿Aumentaría la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-|--------------|------------------------------------------------------------------------------------------------------------------|
-| **Measure**  | Contar el número de transacciones realizadas dentro del módulo comercial y analizar métricas de uso (visitas, publicaciones, contactos) antes y después de su implementación. Evaluar si se incrementa la actividad comercial dentro del ecosistema de la plataforma. |
+<table>
+  <tr>
+    <th colspan="2">Question 3</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Medir cuántos usuarios acceden al reporte generado, cuántos reportes son compartidos o exportados, y cuántos ajustes en futuras rutas se basan en datos extraídos del análisis post-viaje.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 4</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Evaluar la tasa de interacción con las notificaciones, el tiempo de respuesta ante eventos críticos, y los resultados de encuestas de satisfacción posteriores a recibir alertas.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 5</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Comparar la tasa de errores y correcciones en el proceso de registro con y sin la lista desplegable. Analizar también el porcentaje de registros asociados correctamente a organizaciones reales.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 6</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm?</td>
+  </tr>
+  <tr>
+    <td><strong>Measure</strong></td>
+    <td>Medir el número de veces que se utiliza la herramienta de cálculo, los cambios en decisiones comerciales tras visualizar costos estimados, y la tasa de satisfacción expresada por los usuarios en relación con la función.</td>
+  </tr>
+</table>
 
 ### 8.2.3. Conditions
 
-| **Question 1** | ¿Mejorará la toma de decisiones de los usuarios al incorporar una lista visible de puertos con su estado operativo (abierto o cerrado) en la plataforma? |
-|--------------|-----------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | El porcentaje de rutas correctamente planificadas (sin puertos cerrados) aumentará en al menos un 25% después de implementar la lista visible de puertos, medido con escenarios reales. |
-| **Condición de Control**   | No se observará un aumento significativo en la precisión de planificación o reducción de errores sin la lista visible de puertos. |
+<table>
+  <tr>
+    <th colspan="2">Question 1</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>Los usuarios reducirán en al menos un 25% los errores al seleccionar puertos no disponibles, mejorando la planificación de rutas.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>No se observará una reducción significativa de errores ni mejoras en la planificación sin la información detallada del puerto.</td>
+  </tr>
+</table>
 
-| **Question 2** | ¿Ayudará a optimizar la logística mostrar automáticamente la ruta más corta entre dos puertos en la plataforma?|
-|--------------|---------------------------------------------------------------------------------------------|
-| **Condición Experimental** | El tiempo estimado de navegación se reducirá en un 20% o más en las rutas planificadas con la función de ruta automática. |
-| **Condición de Control**   | No habrá cambios significativos en el tiempo estimado de viaje o selección de rutas frente al método anterior sin sugerencia automática.|
+<br>
 
-| **Question** | ¿Mejorará la participación de los usuarios la implementación de un foro logístico para compartir alertas y consejos? |
-|--------------|-----------------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | La participación de los usuarios aumentará en un 30% después de la implementación del foro, medido por el número de interacciones y publicaciones. |
-| **Condición de Control**   | No habrá un aumento significativo en la participación de los usuarios tras la implementación del foro. |
+<table>
+  <tr>
+    <th colspan="2">Question 2</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>Al menos el 60% de los usuarios reutilizarán o consultarán el último viaje guardado, mostrando mayor eficiencia en el seguimiento y trazabilidad.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>Sin esta función, no habrá mejoras relevantes en la eficiencia ni en la trazabilidad de operaciones anteriores.</td>
+  </tr>
+</table>
 
-| **Question** | ¿Mejorará la satisfacción del usuario la integración de notificaciones personalizadas ante eventos logísticos críticos? |
-|--------------|---------------------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | La tasa de finalización de tareas aumentará en un 25% después de implementar el sistema de notificaciones personalizadas. |
-| **Condición de Control**   | No habrá un aumento significativo en la tasa de finalización de tareas tras la implementación del sistema de notificaciones. |
+<br>
 
-| **Question** | ¿Fortalecerá la conexión con otros mercados la inclusión de una sección comercial dentro de Mushroom? |
-|--------------|----------------------------------------------------------------------------------------------------------------|
-| **Condición Experimental** | Se espera que el número de transacciones en la nueva sección de comercio aumente en un 50% durante un período específico tras su implementación. |
-| **Condición de Control**   | No habrá un aumento significativo en el número de transacciones en la sección de comercio durante el mismo período. |
+<table>
+  <tr>
+    <th colspan="2">Question 3</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>El uso del reporte final contribuirá a que al menos el 70% de los usuarios realicen ajustes en futuras rutas basadas en datos previos.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>No se observará un cambio en la planificación de futuras rutas sin la disponibilidad de reportes post-viaje.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 4</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Incrementará la satisfacción del usuario la integración de un sistema de <em>notificaciones personalizadas</em> ante eventos críticos en rutas marítimas?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>La satisfacción del usuario aumentará en al menos un 20% y la tasa de reacción ante eventos críticos se incrementará significativamente tras activar las notificaciones.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>Sin el sistema de alertas, no se registrarán mejoras en satisfacción ni en la capacidad de respuesta ante disrupciones.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 5</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>Al menos el 90% de los registros estarán correctamente asociados a una naviera reconocida gracias al uso de la lista desplegable.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>Con campos de texto libres, habrá mayor tasa de errores o inconsistencias en la identificación de empresas durante el registro.</td>
+  </tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">Question 6</th>
+  </tr>
+  <tr>
+    <td><strong>Pregunta</strong></td>
+    <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm?</td>
+  </tr>
+  <tr>
+    <td><strong>Condición Experimental</strong></td>
+    <td>El uso de la herramienta aumentará en un 30% la precisión en la estimación de costos logísticos por parte de los usuarios.</td>
+  </tr>
+  <tr>
+    <td><strong>Condición de Control</strong></td>
+    <td>Los usuarios sin acceso a esta función mostrarán mayores dificultades o errores en la proyección de costos.</td>
+  </tr>
+</table>
+
 
 ### 8.2.4. Scale Calculations and Decisions
 
 Este modelo se basa en el uso de métricas cuantificables para verificar el cumplimiento de las hipótesis formuladas en el desarrollo del proyecto. A cada hipótesis se le asigna un indicador de éxito que permite clasificar los resultados en distintos niveles de desempeño. Se considera que una hipótesis se valida de forma ideal cuando los resultados alcanzan exactamente el objetivo establecido; aceptable, cuando se sitúan entre el mínimo esperado y el ideal; y desfavorable, si están por debajo del umbral mínimo, lo cual sugiere la necesidad de revisar la funcionalidad o el enfoque aplicado. Adicionalmente, se reconoce un nivel excelente cuando la métrica supera el valor ideal en un 25% o más, lo que representa un logro destacado. Este enfoque facilita la toma de decisiones objetivas, basadas en datos, para validar, ajustar o rediseñar elementos clave dentro del proyecto Mushroom.
 
-
-
-| **Factor** | **Desfavorable** | **Aceptable** | **Ideal** | **Excelente** | **Métrica** | **Decisión / Acción** | **Estado** |
-|-----------|------------------|----------------|-----------|----------------|-------------|------------------------|------------|
-| Visualización de puertos mejora la precisión de planificación de rutas en un 30%. | <20% de mejora en rutas planificadas correctamente. | 20%–29% de mejora en la selección de puertos disponibles. | 30% de mejora en la precisión de planificación. | 37.5% de mejora en exactitud y reducción de errores. | % de rutas sin errores + tiempo promedio de planificación. | Si se alcanza el valor ideal o excelente, mantener y extender esta funcionalidad a otros módulos de planificación. Si el resultado es desfavorable, rediseñar la interfaz de la lista y reforzar los indicadores | X |
-| Ruta automática reduce el tiempo estimado de navegación en un 20%. | <12% de reducción en tiempo estimado de navegación. | 12%–19% de mejora en tiempos planificados. | 20% de mejora en eficiencia de navegación. | 25% de mejora en precisión y ahorro de tiempo/logística. | Tiempo estimado de navegación + % de usuarios que aceptan la ruta sugerida. | Mantener el algoritmo de ruta automática como funcionalidad por defecto. Si el resultado es desfavorable, ajustar parámetros del cálculo o mejorar visualización de rutas para mayor comprensión. | X |
-| Foro logístico incrementa la participación del usuario en un 30%. | <20% de incremento | 20%-29% de incremento | 30% de incremento | >37.5% de incremento | Número de publicaciones, respuestas e interacciones | Desarrollar foro con categorías temáticas logísticas para facilitar el intercambio entre usuarios. | X |
-| Notificaciones personalizadas mejoran la satisfacción en un 25%. | <15% de mejora | 15%-24% de mejora | 25% de mejora | >31.25% de mejora | Tasa de finalización de tareas y puntaje de satisfacción general | Integrar sistema de alertas configurables sobre eventos críticos y recordatorios. | X |
-| Sección comercial aumenta transacciones y conexiones en un 40%. | <25% de aumento | 25%-39% de aumento | 40% de aumento | >50% de aumento | Cantidad de transacciones realizadas dentro del módulo comercial | Añadir sección de marketplace logístico para facilitar ofertas y demandas de servicios. | X |
+<table>
+  <thead>
+    <tr>
+      <th><strong>Factor</strong></th>
+      <th><strong>Desfavorable</strong></th>
+      <th><strong>Aceptable</strong></th>
+      <th><strong>Ideal</strong></th>
+      <th><strong>Excelente</strong></th>
+      <th><strong>Métrica</strong></th>
+      <th><strong>Decisión / Acción</strong></th>
+      <th><strong>Estado</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Información detallada del puerto mejora la toma de decisiones en un 25%</td>
+      <td>&lt;15% de mejora</td>
+      <td>15%-24%</td>
+      <td>25%</td>
+      <td>&gt;31.25%</td>
+      <td>% de rutas sin errores + tiempo promedio de planificación</td>
+      <td>Conservar función si cumple mínimo. Rediseñar visual si es desfavorable.</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Guardado automático del último viaje incrementa trazabilidad en un 30%</td>
+      <td>&lt;18% de reutilización</td>
+      <td>18%-29%</td>
+      <td>30%</td>
+      <td>&gt;37.5%</td>
+      <td>% de usuarios que reutilizan o consultan su viaje anterior</td>
+      <td>Mantener como función por defecto si se valida. Revisar UX si no.</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Reporte post-viaje mejora análisis futuro en un 35%</td>
+      <td>&lt;21% de uso</td>
+      <td>21%-34%</td>
+      <td>35%</td>
+      <td>&gt;43.75%</td>
+      <td>% de usuarios que ajustan rutas con base en el reporte</td>
+      <td>Mejorar visualización y filtros si se valida. Rediseñar si es bajo.</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Notificaciones personalizadas mejoran satisfacción del usuario en un 25%</td>
+      <td>&lt;15% de mejora</td>
+      <td>15%-24%</td>
+      <td>25%</td>
+      <td>&gt;31.25%</td>
+      <td>Encuestas de satisfacción + tasa de respuesta ante alertas</td>
+      <td>Integrar sistema completo de alertas con configuración.</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Lista desplegable de empresas mejora la validación de registro en un 40%</td>
+      <td>&lt;25% de registros correctos</td>
+      <td>25%-39%</td>
+      <td>40%</td>
+      <td>&gt;50%</td>
+      <td>% de registros vinculados a empresas navieras reconocidas</td>
+      <td>Mantener lista si se valida. Evaluar nuevos métodos si no cumple.</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Cálculo por Incoterm mejora estimación de costos logísticos en un 30%</td>
+      <td>&lt;18% de mejora</td>
+      <td>18%-29%</td>
+      <td>30%</td>
+      <td>&gt;37.5%</td>
+      <td>Exactitud entre presupuesto estimado y costos reales</td>
+      <td>Optimizar interfaz si se valida. Añadir educación sobre Incoterms si no.</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 8.2.5. Methods Selection
 
-| **Herramienta**   | **Precio**                                      | **Capacidad de Análisis**                                                                                      | **Sencillez**                                                         | **Ventajas**                                                                                                                                   |
-|-------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **Google Analytics** | Plan gratuito con opción a créditos ampliables  | Análisis profundo de datos de usuarios, comportamiento y flujos de navegación.                                  | Aprendizaje progresivo y visualización clara de métricas.             | Generación robusta de reportes y gran integración con otros servicios de Google (Ads, Search Console, etc.).                               |
-| **Catchpoint**    | Basado en suscripción, incluye versión de prueba | Monitoreo avanzado de rendimiento y experiencia de usuario desde múltiples ubicaciones y dispositivos.           | Interfaz detallada, dirigida a usuarios técnicos.                      | Ideal para proyectos con alcance global; permite observar desempeño desde diferentes contextos geográficos en tiempo real.                  |
-| **RedLine13**     | Gratuito con limitaciones                        | Plataforma enfocada en pruebas de carga, estrés y rendimiento de aplicaciones web y backend.                    | Información condensada y centrada en simulaciones.                    | Simulación de tráfico masivo, útil para validar la escalabilidad de servicios antes del despliegue en producción.                           |
-| **Lighthouse**    | Gratuito, disponible para ejecución local         | Auditoría de experiencia del usuario: rendimiento, accesibilidad, SEO y buenas prácticas.                        | Información simplificada y puntajes globales por categoría.           | Métricas claras para mejorar la experiencia de usuario, identificar cuellos de botella y optimizar la calidad general de la aplicación web. |
+<table>
+  <thead>
+    <tr>
+      <th><strong>Pregunta</strong></th>
+      <th><strong>Herramienta</strong></th>
+      <th><strong>Precio</strong></th>
+      <th><strong>Capacidad de Análisis</strong></th>
+      <th><strong>Sencillez</strong></th>
+      <th><strong>Ventajas</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?</td>
+      <td>Google Analytics</td>
+      <td>Gratis (con opciones de pago)</td>
+      <td>Permite rastrear interacciones con listas de puertos, clics y navegación.</td>
+      <td>Alta, requiere configuración básica.</td>
+      <td>Visualiza qué tan útil es la información mostrada al usuario en la toma de decisiones.</td>
+    </tr>
+    <tr>
+      <td>¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?</td>
+      <td>Firebase Analytics</td>
+      <td>Gratis (según uso)</td>
+      <td>Permite analizar patrones de uso, frecuencia de consulta del historial, reuso de datos.</td>
+      <td>Alta, especialmente en entornos móviles.</td>
+      <td>Ideal para rastrear eventos personalizados y evaluar el impacto de funcionalidades persistentes.</td>
+    </tr>
+    <tr>
+      <td>¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?</td>
+      <td>Google Data Studio</td>
+      <td>Gratis</td>
+      <td>Visualización de datos personalizados sobre logs de navegación y eventos del viaje.</td>
+      <td>Moderada, requiere conexión con bases de datos o herramientas de backend.</td>
+      <td>Permite presentar datos post-viaje de manera gráfica, útil para análisis y toma de decisiones.</td>
+    </tr>
+    <tr>
+      <td>¿Incrementará la satisfacción del usuario la integración de un sistema de notificaciones personalizadas ante eventos críticos en rutas marítimas?</td>
+      <td>RedLine13 + Firebase Cloud Messaging</td>
+      <td>RedLine13: gratis con límites; FCM: gratis</td>
+      <td>Analiza desempeño de notificaciones bajo carga y su recepción efectiva.</td>
+      <td>Media, requiere pruebas automatizadas.</td>
+      <td>Permite validar eficiencia y relevancia de alertas críticas en contextos reales de operación.</td>
+    </tr>
+    <tr>
+      <td>¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas?</td>
+      <td>Google Tag Manager + Google Analytics</td>
+      <td>Gratis</td>
+      <td>Monitorea si los usuarios completan el campo correctamente y su efecto en el flujo de registro.</td>
+      <td>Alta</td>
+      <td>Fácil integración para observar validación y asociación con entidades reconocidas.</td>
+    </tr>
+    <tr>
+      <td>¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm?</td>
+      <td>Lighthouse + Custom Tracking</td>
+      <td>Gratis</td>
+      <td>Evalúa si los usuarios entienden la funcionalidad y acceden con frecuencia.</td>
+      <td>Alta</td>
+      <td>Valida usabilidad y claridad del módulo de cálculo de costos logísticos.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection
 
 Se llevaron a cabo pruebas de rendimiento, accesibilidad y mejores prácticas con Lighthouse en nuestra aplicación Agro Connect para evaluar su desempeño y optimizar la experiencia de usuario. A continuación, mostramos unos ejemplos de ambos segmentos objetivos.
 
-<img src="../../assets/img/chapter-VIII/Test1.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+<img src="assets/img/chapter-VIII/Test1.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
 
-<img src="../../assets/img/chapter-VIII/Test2.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+<img src="assets/img/chapter-VIII/Test2.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
 
-<img src="../../assets/img/chapter-VIII/Test3.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+<img src="assets/img/chapter-VIII/Test3.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
 
-<img src="../../assets/img/chapter-VIII/Test4.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
+<img src="assets/img/chapter-VIII/Test4.png" style="width:600px; height:auto;" alt="Test Pipeline Components">
 
 
 ### 8.2.7. Web and Mobile Tracking Plan
 
-En Mushroom, nuestro objetivo es monitorear de forma estratégica tanto la versión web como móvil de la plataforma para optimizar la experiencia de los usuarios y mejorar la eficiencia operativa en la toma de decisiones logísticas. A medida que nos acercamos a la fase final del proyecto, se establecerá un plan de seguimiento robusto que permitirá evaluar el impacto real de las funcionalidades desarrolladas.
+En **Mushroom**, nuestro objetivo es monitorear de forma estratégica tanto la versión web como móvil de la plataforma para optimizar la experiencia de los usuarios y mejorar la eficiencia operativa en la toma de decisiones logísticas. Este plan de seguimiento forma parte integral de la validación empírica de nuestras hipótesis y funcionalidades clave.
 
 **Etapa 1: Implementación Inicial**
 
-Durante esta primera fase se enfocará el monitoreo en la incorporación de nuevas funcionalidades clave y en la recolección de datos iniciales que servirán como línea base para futuras comparaciones.
+Durante esta primera fase se enfocará el monitoreo en la incorporación de nuevas funcionalidades priorizadas y en la recolección de datos iniciales, los cuales establecerán una **línea base comparativa** para las futuras evaluaciones.
 
-- Recolección de Datos
-  Métricas de uso: Se medirá el número de usuarios activos, duración promedio de sesión, y tasa de conversión en funcionalidades críticas como simulación de rutas o recepción de alertas.
+- **Recolección de Datos Iniciales:**
+  - **Métricas de uso:**
+    - Número de usuarios activos por día/semana.
+    - Duración promedio de sesión en la plataforma.
+    - Tasa de conversión en funcionalidades críticas como simulación de rutas, cálculo de costos o alertas.
+  - **Interacciones del usuario:**
+    - Clics en componentes clave (visualización de puertos, alertas, Incoterms).
+    - Tiempo promedio en secciones críticas (registro, mapa, simulador).
+    - Participación en el foro logístico colaborativo.
+  - **Feedback directo:**
+    - Encuestas de satisfacción post-uso.
+    - Opiniones sobre funcionalidades específicas.
+    - Formularios emergentes tras usar funcionalidades clave.
 
-- Interacciones del usuario: Se registrarán clics, navegación por secciones específicas (como panel de riesgos o mapa logístico), y participación en el foro colaborativo.
+- **Análisis Comparativo:**
+  - Los datos recogidos se contrastarán con métricas históricas de la plataforma (previas a la actualización), o con un grupo de usuarios sin acceso a las nuevas funciones, para medir el impacto inmediato de las mejoras.
 
-- Feedback directo: A través de encuestas integradas y herramientas de retroalimentación, se recogerán impresiones sobre la usabilidad general y la utilidad de las funcionalidades añadidas.
-
-**Análisis Comparativo**
-
-Los datos recogidos se contrastarán con métricas históricas de la plataforma (previas a la actualización) para medir el impacto inmediato de las mejoras y determinar si se cumplen las hipótesis de valor.
-
-**Etapa 2: Seguimiento Continuo**
+**Etapa 2: Seguimiento Continuo:**
 
 Tras la implementación inicial, se establecerá un sistema de monitoreo continuo para mantener el control sobre el rendimiento y adaptar la plataforma a las necesidades cambiantes de los usuarios.
 
-**Recolección de Datos**
+- **Recolección de Datos:**
+  - **Métricas en tiempo real:** uso de herramientas como Google Analytics, Firebase, Catchpoint o Lighthouse.
+  - **Segmentación de usuarios:** análisis por perfiles (capitanes, operadores logísticos, exportadores/importadores).
+  - **Tasa de retención:** porcentaje de usuarios que regresan tras cada iteración funcional.
 
-- Métricas en tiempo real: Se emplearán herramientas como Google Analytics, Catchpoint o Lighthouse para observar el comportamiento del usuario en tiempo real.
+- **Evaluación y Ajustes:**
+  - **Informes mensuales:**
+    - Comparativos de KPIs por funcionalidad.
+    - Resúmenes visuales para decisiones estratégicas.
+  - **Iteración guiada por datos:**
+    - Mejora de flujos según resultados cuantitativos y cualitativos.
+    - Priorización de funcionalidades según nivel de adopción y feedback.
 
-- Segmentación de usuarios: Se analizarán patrones de uso por tipo de actor (navieras, exportadores, operadores logísticos), permitiendo decisiones más focalizadas.
-
-- Tasa de retención: Se evaluará la retención de usuarios tras cada iteración para entender el impacto sostenido de las nuevas funcionalidades.
-
-**Evaluación y Ajustes**
-
-- Informes mensuales: Se elaborarán reportes periódicos con hallazgos clave, métricas de rendimiento y recomendaciones específicas.
-
-- Iteración guiada por datos: Basándose en los resultados cuantitativos y el feedback cualitativo, se realizarán mejoras iterativas que aseguren que Mushroom evoluciona según las necesidades reales del ecosistema logístico.
-
+Este enfoque permitirá validar si las hipótesis planteadas se traducen en mejoras reales para los usuarios y garantizará que la evolución de Mushroom responda directamente a las dinámicas y necesidades del sector logístico.
 
 ## 8.3. Experimentation
 ### 8.3.1. To-Be User Stories
@@ -3106,7 +3663,6 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 | US015        | Cálculo de distancia                         | TK30           | Desglosar distancias por tramos                                               | Mostrar la distancia parcial entre cada par de puertos.                                                                                                                                            | 1 hora                | Jose M.       | Done   |
 | US016        | Preferencia de notificaciones                | TK31           | Configurar notificaciones preferidas                                          | Permitir al usuario seleccionar tipos de alertas que desea recibir.                                                                                                                                | 1 hora                | Juan Pescoran       | Done   |
 | US016        | Preferencia de notificaciones                | TK32           | Enviar alertas según preferencias                                             | Emitir notificaciones solo si coinciden con la configuración del usuario.                                                                                                                          | 1 hora                | Juan Pescoran       | Done   |
-
 
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
