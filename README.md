@@ -34,7 +34,7 @@
 ---
 
 <p allign="center">
-  <img src="assets/img/chapter-I/upc_logo.svg"  style="width:500px; height:auto;" alt="">
+  <img src="assets/img/chapter-I/upc_logo.svg"  style="width:250px; height:auto;" alt="">
 </p>
 
 
@@ -103,46 +103,26 @@
     <tr>
       <td>TB1</td>
       <td>26/04/25</td>
-      <td>- Juan Fabritzzio Pescoran Angulo<br>
-      - Yair Christofer Aru Acevedo<br>
-      - Fernando Jesus Lizano Coll Cardenas<br> 
-      - Jose Miguel Riega Salas<br>
-      - Augusto Mathias Leonardo Vasquez Requejo
-      </td>
-      <td>Avance del capitulo I, II, III y IV, creando las bases mediante los Lean Ux Problem Statements reuniendolos en un Lean Ux Canvas, luego cada integrante tuvo la misión de encontrar una persona que pertenece a nuestro segmento objetivo para entrevistar y recopilar información para convertirlos en User Personas, luego se crearon las historias de usuario a partir de las necesidades encontradas en la información recopilada, lo que llevó a la creación del Product Backlog. Finalmente, en el capítulo IV, se eligieron los styleguidelines para el diseño de las futuras aplicaciones, junto a los mockups y wireframes correspondientes.</td>
+      <td> Todos los miembros del equipo. </td>
+      <td>Avance del capítulo I, II, III y IV, creando las bases mediante los Lean Ux Problem Statements reuniendolos en un Lean Ux Canvas, luego cada integrante tuvo la misión de encontrar una persona que pertenece a nuestro segmento objetivo para entrevistar y recopilar información para convertirlos en User Personas, luego se crearon las historias de usuario a partir de las necesidades encontradas en la información recopilada, lo que llevó a la creación del Product Backlog. Finalmente, en el capítulo IV, se eligieron los styleguidelines para el diseño de las futuras aplicaciones, junto a los mockups y wireframes correspondientes.</td>
     </tr>
     <tr>
       <td>TP1</td>
       <td>10/05/25</td>
-      <td>- Juan Fabritzzio Pescoran Angulo<br>
-      - Yair Christofer Aru Acevedo<br>
-      - Fernando Jesus Lizano Coll Cardenas<br> 
-      - Jose Miguel Riega Salas<br>
-      - Augusto Mathias Leonardo Vasquez Requejo
-      </td>
+      <td> Todos los miembros del equipo. </td>
       <td>En esta entrega se mejoró muchos aspectos con respecto al TB1, como el product Backlog, aspectos generales que faltaban agregar, refactorización de History Users, entre otros. Tambien se hizo la adición de lo requerido dentro del project statement, en este caso, las pruebas unitarias pertenecientes al capítulo VI y la implementación de prácticas DevOps sobre el trabajo en el apartado del Capítulo VII.</td>
     </tr>
     <tr>
       <td>TB2</td>
       <td>21/06/25</td>
-      <td>- Juan Fabritzzio Pescoran Angulo<br>
-      - Yair Christofer Aru Acevedo<br>
-      - Fernando Jesus Lizano Coll Cardenas<br> 
-      - Jose Miguel Riega Salas<br>
-      - Augusto Mathias Leonardo Vasquez Requejo
-      </td>
+      <td> Todos los miembros del equipo. </td>
       <td>En esta entrega se mejoró el frontend tanto web como móvil, además de resaltar nuevos puntos que no habían sido agregados anteriormente. Se volvió a desplegar el frontend, backend y landing page para el correcto funcionamiento.</td>
     </tr>
     <tr>
       <td>TF1</td>
-      <td>--/--/25</td>
-      <td>- Juan Fabritzzio Pescoran Angulo<br>
-      - Yair Christofer Aru Acevedo<br>
-      - Fernando Jesus Lizano Coll Cardenas<br> 
-      - Jose Miguel Riega Salas<br>
-      - Augusto Mathias Leonardo Vasquez Requejo
-      </td>
-      <td></td>
+      <td>12/07/25</td>
+      <td> Todos los miembros del equipo. </td>
+      <td>En esta entrega se han desarrollado los pasos finales del proyecto, comenzando con la implementación de los detalles en el frontend, conforme a las recomendaciones brindadas por el profesor durante la retroalimentación de la TB2. Asimismo, se desplegó la versión final del backend para asegurar su correcta conexión con el frontend. Adicionalmente, se formularon las hipótesis de validación, basadas en lo planteado en la entrega anterior. A partir de estas, se inició la elaboración de formularios para la recolección de estadísticas, con el objetivo de contrastar nuestras primeras suposiciones y obtener datos empíricos que respalden o refuten los planteamientos realizados.</td>
     </tr>
   </tbody>
 </table>
@@ -156,7 +136,7 @@ Puede acceder a nuestra organización pulsando sobre el siguiente ícono:
 
 <p allign="center">
   <a href="https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS">
-    <img src="assets/logos/teemo_solutions_logo.jpg" style="widht:auto;" alt="Teemo Solutions">
+    <img src="assets/img/chapter-I/teemo_solutions_icon.jpg" style="width:400px;" alt="Teemo Solutions">
   </a>
 </p>
 
@@ -197,7 +177,7 @@ Puede acceder a nuestra organización pulsando sobre el siguiente ícono:
 
 A continuación, se presentan los gráficos de colaboración de los integrantes del equipo en el repositorio de nuestro primer sprint. Estos gráficos ofrecen una representación visual de la cantidad de contribuciones realizadas por cada miembro del equipo, junto con la fecha en que se llevaron a cabo. Además, se presenta información sobre la cantidad de líneas de código que se han modificado en cada uno de los commits.
 
-- **ENTREGABLE TB1:**
+- **ENTREGABLE TF:**
 
 # Tabla de Contenidos
 
@@ -1218,15 +1198,15 @@ Las User Stories son una herramienta fundamental para definir los requisitos del
 | US009               | Obtener reporte del envío                                 | Como empresario, quiero ver un informe al final del envío con los datos operativos, para evaluar el desempeño del servicio contratado.                     | El sistema debe generar un reporte descargable con tiempo total, ruta usada, eventos registrados y emisiones estimadas.                                                              | EPIC003                       |
 | US010               | Visualizar historial de rutas contratadas                 | Como empresario, quiero ver un historial de rutas utilizadas en envíos pasados, para poder tomar decisiones basadas en evidencia.                          | El sistema debe listar todos los envíos previos con sus datos asociados, y permitir filtrado por fecha, destino o tipo de embarcación.                                               | EPIC003                       |
 
-##### 3.3. Impact Mapping.
+## 3.3. Impact Mapping.
 
-##### Segmento 1: 
+- Segmento 1: 
 <td><img src="./assets/img/chapter-III/Impact-Mapping-2.png" style="width:1000px; height:auto;" alt=""></td>
 
-##### Segmento 2: Capitán o Jefe de Navegación
+- Segmento 2: Capitán o Jefe de Navegación
 <td><img src="./assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
 
-##### 3.4. Product Backlog.
+## 3.4. Product Backlog.
 # **Product Backlog - Funcionalidades de Teemo**
 
 | **ID** | **Título** | **Descripción (Formato User Story)** | **Story Points** |
@@ -1596,11 +1576,7 @@ El desarrollo del UI Design del Web Applications está en el siguiente link: htt
 ## 4.9. Software Object-Oriented Design
 ### 4.9.1. Class Diagrams
 
-
-
 ### 4.9.2. Class Dictionary
-
-
 
 ## 4.10. Database Design
 ### 4.10.1. Relational/Non-Relational Database Diagram
@@ -1701,35 +1677,64 @@ Se establecerán ramas específicas para diferentes etapas del desarrollo, tales
 
 A continuación, se proporciona una lista con los enlaces a la organización de GitHub de WHAI y a los repositorios específicos relacionados con el desarrollo del frontend dentro de esta organización:
 
-# Repositorios en GitHub
+Repositorios en GitHub
 
 - **Organización:** [TEEMO-SOLUTIONS](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS)
 
-- **Reporte:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report)
+- **Report** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report)
 
-- **Aplicación Móvil:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-MobileApplication]()
+- **Mobile Application:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-MobileApplication](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)
 
 - **Landing Page:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage)
 
 - **Front End:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-FrontEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Front-End)
 
--**Back End** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-BackEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Back-End)
+- **Front End - Staging** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Frontend-Staging](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)
 
-## Integrantes de la organización
+- **Back End** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-BackEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Back-End)
+
+- **Back End - Staging** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-BackEnd-Staging](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend-Staging)
+
+- - -
+
+- Integrantes de la organización
 
 En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto WHAI, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
 
 # Modelo de integrantes del equipo dentro de la página de organización de Github
 
-| **Nombre de Usuario**  | **Nombre del Integrante del Equipo** |
-|------------------------|--------------------------------------|
-| JuanPescoran           | Pescorán Angulo, Juan Fabritzzio - U20221C936 |
-| JoseRiega              | Riega Salas José Miguel - U202211254 |
-| Yair360                | VAru Acevedo, Yair Christofer - U202125984 |
-| GuardianDeity          | Lizano Coll Cardenas, Fernando Jesus - U202214522|
-| Mathifaa               | Vasquez Requejo, Augusto Mathias Leonardo - u20221a955|
+<table>
+  <thead>
+    <tr>
+      <th style="background-color: #333; color: #fff;">Apellidos y Nombres</th>
+      <th style="background-color: #333; color: #fff;">Github Account</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aru Acevedo, Yair Christofer</td>
+      <td><a href="https://github.com/Yair360">Yair360</a></td>
+    </tr>
+    <tr>
+      <td>Lizano Coll Cardenas, Fernando Jesus</td>
+      <td><a href="https://github.com/GuardianDeity">GuardianDeity</a></td>
+    </tr>
+    <tr>
+      <td>Pescorán Angulo, Juan Fabritzzio</td>
+      <td><a href="https://github.com/JuanPescoran">JuanPescoran</a></td>
+    </tr>
+    <tr>
+      <td>Riega Salas, Jose Miguel</td>
+      <td><a href="https://github.com/JoseRiega">JoseRiega</a></td>
+    </tr>
+    <tr>
+      <td>Vasquez Requejo, Augusto Mathias Leonardo</td>
+      <td><a href="https://github.com/Mathifaa519">Mathifaa519</a></td>
+    </tr>
+  </tbody>
+</table>
 
-# GitFlow Workflow
+- **GitFlow Workflow**
 
 En nuestro proyecto, implementaremos el modelo **GitFlow** para el control de versiones, el cual está estructurado en torno a ramas principales y secundarias. Las ramas principales actúan como las bases fundamentales para el desarrollo y la implementación final del frontend. La rama **master** representa la versión estable y en producción, mientras que **develop** se utiliza para integrar todas las características y correcciones que se encuentran en desarrollo.
 
@@ -1737,26 +1742,25 @@ Las ramas secundarias se utilizan para gestionar desarrollos específicos y modi
 
 Esta metodología garantiza una organización efectiva del flujo de trabajo, facilita la colaboración entre los miembros del equipo y optimiza la gestión de versiones del frontend, asegurando que todos los cambios se integren de manera controlada y que el historial del proyecto sea claro y manejable. A continuación, se detallan las convenciones para nombrar las ramas dentro de nuestra organización:
 
-## Ramas Principales
+- **Ramas Principales**
 
-- **master:** Esta rama contiene la versión final y estable del frontend, lista para su despliegue en el entorno de producción. Las integraciones a esta rama deben pasar por una revisión exhaustiva por parte del equipo técnico para asegurar la calidad y estabilidad del código del frontend.
-  
+- **master:** Esta rama contiene la versión final y estable del frontend, lista para su despliegue en el entorno de producción. Las integraciones a esta rama deben pasar por una revisión exhaustiva por parte del equipo técnico para asegurar la calidad y estabilidad del código del frontend. 
 - **develop:** Esta rama agrupa los elementos en desarrollo relacionados con el frontend, que han sido aprobados por al menos un miembro del equipo diferente del autor de las modificaciones. Sirve como etapa de integración y prueba de nuevas funcionalidades del frontend antes de ser fusionadas con master.
 
-## Ramas Individuales
+- **Ramas Individuales**
 
 Estas ramas se utilizan para desarrollos individuales realizados por los miembros del equipo en el frontend.  
 Los cambios se integran a las ramas principales mediante pull requests, que deben ser aprobados por el líder del equipo.  
 Una vez que los cambios han sido completados y fusionados, estas ramas se eliminan para mantener un repositorio limpio y organizado.
 
-## Formato de Commit
+- **Formato de Commit**
 
 **Formato Estándar:**
 
 - `"branch"` debe indicar la rama en la que se realizaron los cambios.
 - La descripción debe iniciar con un verbo en inglés que refleje el cambio realizado.
 
-## Tabla 25: Modelo de escritura de verbos para todos los commits realizados en el proyecto de GitHub
+- **Modelo de escritura de verbos para todos los commits realizados en el proyecto de GitHub**
 
 | **Verbo** | **Traducción** | **Uso en el proyecto de programación** |
 |-----------|----------------|----------------------------------------|
@@ -1775,12 +1779,14 @@ Esta norma sigue los principios de **Conventional Commits**, permitiendo:
 - Automatización de procesos como el **versionado semántico** y el **seguimiento de cambios**.
 - Mayor facilidad en la trazabilidad, revisiones y transparencia en el control de versiones.
 
-## Estructura del Mensaje de Commit
+- - -
+
+- Estructura del Mensaje de Commit
 
 type: description
 Donde `type` es uno de los verbos recomendados.
 
-## Versionado Semántico
+- **Versionado Semántico**
 
 Se aplicará el **Versionado Semántico 2.0.0** siguiendo la estructura:
 
@@ -1854,7 +1860,7 @@ Evitar duplicaciones usando clases, listas y componentes reutilizables.
 
 ---
 
-## CSS
+- **CSS**
 
 **Estructura Modular y Organizativa**
 Dividir los estilos en módulos o componentes específicos para facilitar mantenimiento y reutilización.
@@ -2360,7 +2366,7 @@ Estas preguntas permitirán obtener una evaluación detallada sobre la experienc
 
 **Segmento 1: Empresas Navieras y Operadoras Logísticas Globales**
 
-#### Entrevista 1:
+- **Entrevista 1:**
 
 **Nombre y Apellido:** Patricia Salas
 
@@ -2381,7 +2387,7 @@ El acceso a información crítica antes de cada travesía se realiza a través d
 
 **Segmento 2: Exportadores e Importadores de Alta Rotación**
 
-#### Entrevista 1:
+- **Entrevista 1:**
 
 **Nombre y Apellido:** Arwen Vasquez
 
@@ -2398,7 +2404,7 @@ El acceso a información crítica antes de cada travesía se realiza a través d
 
 Arwen es capitana de embarcaciones pesqueras industriales. Tiene 20 años de experiencia en navegación de alta mar, en especial en el Pacífico Sur. Actualmente no trabaja con cruceros turísticos; opera embarcaciones de pesca de altura, pero conoce bien la planificación de rutas. No transita por el Mar Rojo, ya que su zona de operación está en aguas sudamericanas, pero comentó que entiende la importancia de esa región para el comercio mundial. Para planificar rutas, se apoya en sonares marinos avanzados, cartografía electrónica y informes de corrientes oceánicas. Ella misma, como capitana, decide cambios de ruta si la seguridad de la tripulación está en riesgo, actuando de forma autónoma en alta mar. Accede a informes meteorológicos de alta frecuencia, alertas de fenómenos climáticos, y a redes de información marina compartida entre capitanes pesqueros.
 
-#### Entrevista 2:
+- **Entrevista 2:**
 
 **Nombre y Apellido:** Mariela Sanchez
 
@@ -2416,7 +2422,7 @@ Arwen es capitana de embarcaciones pesqueras industriales. Tiene 20 años de exp
 Mariela es jefa de operaciones navieras encargada de coordinar rutas para cruceros turísticos regionales. Tiene 16 años de experiencia en logística marítima. Actualmente opera principalmente cruceros turísticos y de lujo, orientados a recorridos en Sudamérica y el Caribe. Aunque su operación no es frecuente en el Mar Rojo, explicó que en temporadas especiales coordinan rutas alternativas que bordean África.
 Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con softwares propios de planificación naviera. En caso de desvíos por riesgos, el capitán del barco tiene la última palabra, pero siempre con el respaldo del equipo de tierra. Mariela recurre a boletines meteorológicos internacionales, reportes de situación política y consultores de riesgos marítimos para cada travesía.
 
-#### Entrevista 3:
+- **Entrevista 3:**
 
 **Nombre y Apellido:** Alejandro Rivas
 
@@ -2434,19 +2440,13 @@ Utiliza plataformas de monitoreo AIS (Automatic Identification System) junto con
 Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando rutas tanto regionales como de larga distancia. Actualmente, opera principalmente cruceros de carga pesada, no turísticos. Respecto al Mar Rojo, comentó que transita la zona aproximadamente dos veces al año, y que debido a la situación geopolítica reciente, deben extremar precauciones. Para la planificación y monitoreo de rutas, utiliza sistemas ECDIS (Electronic Chart Display and Information System) combinados con radar de alta precisión. Cuando hay necesidad de desviar la ruta por seguridad, él mismo toma la decisión final, pero siempre consultando previamente con la compañía naviera. Sobre la información previa al viaje, accede a informes meteorológicos satelitales, briefings de inteligencia marítima y actualizaciones de tráfico marítimo en tiempo real.
 ### 6.3.3. Evaluaciones según heurísticas
 
-## Escala de Severidad
+- Escala de Severidad
 
 | Escala | 1             | 2     | 3         | 4     | 5         |
 |--------|---------------|-------|-----------|-------|-----------|
 | Nivel  | No tan grave  | Leve  | Moderado  | Grave | Muy grave |
 
 --------------------------------------------------------
-
-<style>
-  table, th, td {
-    text-align: center;
-  }
-</style>
 
 | #Orden | Problema                                                                                         | Escala de Severidad | Heurística / Principio violado(a) |
 |--------|--------------------------------------------------------------------------------------------------|---------------------|------------------------------------|
@@ -2475,8 +2475,8 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
 <br>
 
 - **Problema #4: Ruta seleccionada sin justificación visible**
-  - *Heurística:* Diagnóstico de errores / Explicabilidad
-  - *Recomendación:* Mostrar siempre un resumen breve del porqué de la ruta seleccionada (ej: “ruta óptima por menor tiempo estimado y condiciones climáticas favorables”).
+  - *Heurística:* Diagnóstico de errores
+  - *Recomendación:* Mostrar siempre un resumen breve del porqué de la ruta seleccionada (Ejem: “ruta óptima por menor tiempo estimado y condiciones climáticas favorables”).
 <br>
 
 - ¨**Problema #5: Falta de alertas proactivas visibles**
@@ -2487,38 +2487,9 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
 - **Problema #6: Historial de rutas poco accesible**
   - *Heurística:* Flexibilidad y eficiencia
   - *Recomendación:* Añadir en el menú principal un acceso directo a “Historial de rutas” con filtrado por fecha, destino y embarcación.
+ 
+- - -
 
-  <style>
-    body {
-      font-family: 'Times New Roman', sans-serif;
-      text-align: justify;
-      font-size: 12px;
-      margin-left: 2em;
-      margin-right: 2em;
-      line-height: 2;
-    }
-    
-    p {
-      text-indent: 2em; /* Sangría en el primer renglón de cada párrafo */
-    }
-  
-    h1 {
-      margin-left: 0; /* No aplica sangría para el título principal */
-    }
-  
-    h2 {
-      margin-left: 0; /* No aplica sangría para subtítulos de nivel 2 */
-    }
-  
-    h3 {
-      margin-left: 2em; /* Aplica una sangría de 2em para subtítulos de nivel 3 */
-    }
-  
-    h4 {
-      margin-left: 4em; /* Aplica una sangría de 4em para subtítulos de nivel 4 */
-    }
-  </style>
-  
   # **CAPÍTULO VII: DEVOPS PRACTICES**
   
   ## 7.1. Continuous Integration
@@ -2744,38 +2715,7 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
   <img src="assets/img/chapter-VII/Jenkins.png" style="width:300px; height:auto;" alt="">
   
   Con Jenkins, es posible configurar notificaciones automáticas que se envían al concluir cada build o fase del pipeline, informando si las pruebas fueron exitosas o fallaron, cuánto tiempo tomaron y qué errores se detectaron. Esto permite al equipo estar al tanto en tiempo real de cualquier incidente durante las pruebas, lo que facilita una reacción rápida. Además, Jenkins ofrece la posibilidad de generar informes detallados y enviar resúmenes periódicos de manera automática, brindando una visión integral del estado de calidad del software en cada ciclo de pruebas.
-  
-  <style>
-    body {
-      font-family: 'Times New Roman', sans-serif;
-      text-align: justify;
-      font-size: 12px;
-      margin-left: 2em;
-      margin-right: 2em;
-      line-height: 2;
-    }
-    
-    p {
-      text-indent: 2em; /* Sangría en el primer renglón de cada párrafo */
-    }
-  
-    h1 {
-      margin-left: 0; /* No aplica sangría para el título principal */
-    }
-  
-    h2 {
-      margin-left: 0; /* No aplica sangría para subtítulos de nivel 2 */
-    }
-  
-    h3 {
-      margin-left: 2em; /* Aplica una sangría de 2em para subtítulos de nivel 3 */
-    }
-  
-    h4 {
-      margin-left: 4em; /* Aplica una sangría de 4em para subtítulos de nivel 4 */
-    }
-  </style>
-  
+
   # **CAPÍTULO VIII: EXPERIMENT-DRIVEN DEVELOPMENT**
   
   ## 8.1. Experiment Planning
@@ -2989,9 +2929,7 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
   ### 8.2.4. Scale Calculations and Decisions
   
   Este modelo se basa en el uso de métricas cuantificables para verificar el cumplimiento de las hipótesis formuladas en el desarrollo del proyecto. A cada hipótesis se le asigna un indicador de éxito que permite clasificar los resultados en distintos niveles de desempeño. Se considera que una hipótesis se valida de forma ideal cuando los resultados alcanzan exactamente el objetivo establecido; aceptable, cuando se sitúan entre el mínimo esperado y el ideal; y desfavorable, si están por debajo del umbral mínimo, lo cual sugiere la necesidad de revisar la funcionalidad o el enfoque aplicado. Adicionalmente, se reconoce un nivel excelente cuando la métrica supera el valor ideal en un 25% o más, lo que representa un logro destacado. Este enfoque facilita la toma de decisiones objetivas, basadas en datos, para validar, ajustar o rediseñar elementos clave dentro del proyecto Mushroom.
-  
-  
-  
+
   | **Factor** | **Desfavorable** | **Aceptable** | **Ideal** | **Excelente** | **Métrica** | **Decisión / Acción** | **Estado** |
   |-----------|------------------|----------------|-----------|----------------|-------------|------------------------|------------|
   | Modo oscuro mejora la experiencia del usuario en un 30% (satisfacción y tiempo de uso). | <20% de mejora | 20%-29% de mejora | 30% de mejora | >37.5% de mejora | Aumento en puntuación de satisfacción y tiempo de uso promedio | Implementar modo oscuro con alternancia entre claro y oscuro para mejorar comodidad visual. | X |
@@ -3091,7 +3029,7 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
   <br>
   - La implementación del backend utilizando Spring Boot, junto con la alineación de los bounded contexts bajo la arquitectura DDD, permitió establecer una estructura técnica robusta y escalable. La documentación generada en Swagger fue fundamental para facilitar la comprensión de los distintos módulos del sistema y mejorar la colaboración entre los miembros del equipo. Además, las entrevistas de validación con usuarios proporcionaron retroalimentación valiosa: destacaron aspectos positivos como la utilidad de la Landing Page y la facilidad de navegación en la Web App, pero también señalaron oportunidades de mejora en aspectos como el diseño, la presentación de información y la navegación general. Estos aprendizajes ofrecen una base sólida para futuras iteraciones centradas en elevar la experiencia del usuario y la eficacia del producto final.
   
-  ## Bibliografia
+  ## Bibliografía
   
   1. Lean UX, diseño centrado en el usuario y validación:
   
@@ -3104,14 +3042,14 @@ Alejandro es capitán de buque de carga internacional. Lleva 18 años navegando 
   - Walls, C. (2022). Spring in Action (6th ed.). Manning Publications.
   - Richardson, C. (2019). Microservices Patterns: With examples in Java. Manning Publications.
   
-  3. Documentación de APIs y Swagger
+  3. Documentación de API y Swagger
   - SmartBear Software. (2023). OpenAPI Specification (Swagger). https://swagger.io/specification/
   
   4. UX y herramientas de diseño
   - Interaction Design Foundation. (2023). User Personas, Journey Mapping, As-Is & To-Be Scenarios. https://www.interaction-design.org
   
-  5. Informacion de nuestra problematica:
+  5. Información de nuestra problematica:
   
-  India Briefing. (2024, enero 10). La actual crisis del Mar Rojo obliga al transporte marítimo mundial a buscar nuevas rutas. https://www.india-briefing.com/news/la-actual-crisis-del-mar-rojo-obliga-al-transporte-maritimo-mundial-a-buscar-nuevas-rutas-31590.html
+  - India Briefing. (2024, enero 10). La actual crisis del Mar Rojo obliga al transporte marítimo mundial a buscar nuevas rutas. https://www.india-briefing.com/news/la-actual-crisis-del-mar-rojo-obliga-al-transporte-maritimo-mundial-a-buscar-nuevas-rutas-31590.html
   
   - El Economista. (2024, enero 12). Tesla y Volvo frenan su producción de autos por la crisis del transporte marítimo en el mar Rojo. https://www.eleconomista.com.mx/empresas/Tesla-y-Volvo-frenan-su-produccion-de-autos-por-la-crisis-del-transporte-maritimo-en-el-mar-Rojo-20240112-0042.html
