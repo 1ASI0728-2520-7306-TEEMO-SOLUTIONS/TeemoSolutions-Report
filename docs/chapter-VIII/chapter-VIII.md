@@ -510,6 +510,7 @@ Tras la implementación inicial, se establecerá un sistema de monitoreo continu
 - Evans, E. (2021). Domain-Driven Design: Tackling Complexity in the Heart of Software. Addison-Wesley.
 - Walls, C. (2022). Spring in Action (6th ed.). Manning Publications.
 - Richardson, C. (2019). Microservices Patterns: With examples in Java. Manning Publications.
+- Khononov, V. (2021). Learning Domain-Driven Design: Aligning software architecture and business strategy (1st ed.) [Kindle version]. O’Reilly Media. 
 
 3. Documentación de APIs y Swagger
 - SmartBear Software. (2023). OpenAPI Specification (Swagger). https://swagger.io/specification/
