@@ -92,27 +92,11 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
 
 <table>
   <tr>
-  <th colspan="2">Apellido, Nombre</th>
+  <th colspan="2">Mallma Quispe, Ruben Elias</th>
   </tr>
   <tr>
     <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
     <td> </td>
-  </tr>
-
-  <tr>
-  <th colspan="2">Apellido, Nombre</th>
-  </tr>
-  <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
-  </tr>
-
-  <tr>
-  <th colspan="2">Apellido, Nombre</th>
-  </tr>
-  <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
   </tr>
 
   <tr>
@@ -126,7 +110,23 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   </tr>
 
   <tr>
-    <th colspan="2">Apellido, Nombre</th>
+  <th colspan="2">Sanchez Zamora, Fabrizio Alessandro</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
+
+  <tr>
+  <th colspan="2">Trigueros Chumacero, Flavio Eduardo</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Valenzuela Huillcaya, Aldhair Johan Juan </th>
   </tr>
   <tr>
     <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
@@ -136,6 +136,21 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
 
 ## 1.2. Solution Profile
 
+En Teemo Solutions diseñamos Mushroom como una plataforma integral pensada para enfrentar de forma práctica y escalable los retos que hoy condicionan el ruteo marítimo: pérdida de visibilidad operacional, riesgos de seguridad en corredores críticos y elevada volatilidad de costos que obligan a desviarse a rutas mucho más largas (United Nations Conference on Trade and Development, 2024; International Maritime Organization, 2024). Mushroom combina ingestión y mezcla de fuentes, modelado predictivo y un motor de optimización multi-criterio para ofrecer rutas recomendadas y alternativas evaluadas según tiempo estimado, coste proyectado, probabilidad de riesgo y métricas de sostenibilidad (emisiones estimadas). 
+
+Funcionalidades principales de Mushroom:
+
+1.  Ingestión y normalización de datos, enlazada con feeds meteorológicos, avisos de autoridades, reportes de incidentes y datos portuarios para generar un contexto operativo unificado en tiempo real.<br><br>
+
+2. Modelos predictivos que estiman tiempo de tránsito por tramo, probabilidad de retraso o incidente y varianza asociada; estos puntajes alimentan el motor de ruteo para calcular caminos óptimos.<br><br>
+
+3. Motor de optimización híbrido (A* + pesos dinámicos generados por Machine Learning) capaz de ofrecer alternativas con explicación de las causas principales que llevaron a cada recomendación. Esta trazabilidad facilita la intervención humana y la auditoría operacional.<br><br>
+
+4. Interfaz operativa orientada a usuarios reales, utilizando un mapa interactivo con rutas, ventanas de detalle, notificaciones configurables y un módulo de historial.<br><br>
+
+El diseño de producto está orientado a generar valor medible desde el primer uso al proporcionar estimaciones más precisas del tiempo de llegada y riesgo. Mushroom pretende reducir desvíos innecesarios, optimizar consumo de combustible y minimizar costes asociados a demoras y envíos perdidos. La propuesta comercial emplea un modelo SaaS por nivel de uso.
+
+Mushroom se concibe no solo como una herramienta de optimización, sino como un componente de resiliencia estratégica para la industria. La plataforma ofrece a capitanes y operadores una capacidad accionable para anticipar, justificar y ejecutar rutas que equilibran seguridad, coste y sostenibilidad, reduciendo vulnerabilidades de la cadena logística global.
 
 ### 1.2.1. Antecedentes y Problemática
 
