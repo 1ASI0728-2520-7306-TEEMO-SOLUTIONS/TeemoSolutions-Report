@@ -33,58 +33,86 @@
 
 ## 1.1. Startup Profile
 
-En un contexto global afectado por tensiones geopolíticas y disrupciones logísticas, la industria naviera enfrenta retos críticos. Como señala Crédito y Caución (2024):
+En un contexto global donde el transporte marítimo moviliza la mayor parte del volumen del comercio internacional, las recientes tensiones geopolíticas han dejado en evidencia la fragilidad de las rutas tradicionales y la necesidad de herramientas que permitan decisiones operativas rápidas y fundadas en datos (United Nations Conference on Trade and Development, 2024). El tránsito marítimo sigue siendo el pilar del comercio mundial, con más del 80 % del volumen moviéndose por mar, lo que magnifica el efecto sistémico de cualquier interrupción en corredores críticos y convierte la optimización del ruteo en una palanca directa para reducir costos y mantener la continuidad de la cadena logística (United Nations Conference on Trade and Development, 2024).
 
-> _“Si la crisis se prolonga, es posible que aumenten los tiempos de espera, los precios y la congestión en los puertos_”  
-> Crédito y Caución, 2024
+La escalada de incidentes en el corredor del Mar Rojo desde finales de 2023 ha provocado desvíos masivos y cambios estructurales en los flujos marítimos. Se han documentado decenas de incidentes, aproximadamente entre 67 y 69 reportados por la Organización Marítima Internacional en sus comunicados de 2024, y estos episodios han aumentado la percepción de riesgo y empujado a embarcaciones a evitar pasajes anteriormente habituales (International Maritime Organization, 2024). Estos efectos se han traducido en impactos económicos y operativos medibles: durante el período crítico, índices clave del transporte de contenedores mostraron aumentos pronunciados, con incrementos cercanos al 130 % en ciertos índices de contenedor entre noviembre de 2023 y marzo de 2024, mientras que el número de travesías por la zona se redujo drásticamente en meses concretos, afectando la disponibilidad de llamadas portuarias (International Transport Forum, Organisation for Economic Co-operation and Development, 2024; Reuters, 2024). Además, análisis económicos comparativos han estimado que las embarcaciones que evitan el Mar Rojo experimentaron aumentos sustantivos en distancia recorrida y tiempo de tránsito (por ejemplo, incrementos del orden del 48 % para ciertos cargueros y 38 % para petroleros), con el consiguiente impacto en consumo de combustible, costes por demora y presión sobre rutas alternativas (World Bank, 2024).
+
+Además del efecto inmediato sobre costes y tiempos, la complejidad del problema exige soluciones que combinen ingestión de señales en tiempo real (Sistemas de Identificación Automática, datos meteorológicos, avisos de seguridad y estado portuario), modelos predictivos y motores de optimización. La literatura técnica reciente muestra que enfoques basados en aprendizaje automático y redes que preservan la estructura de grafo pueden mejorar de forma sustancial la predicción de trayectorias y la estimación de tiempos: estudios empíricos reportan reducciones del error medio en métricas de desplazamiento en rangos significativos (por ejemplo, reducciones de entre un 44% y 56 % en comparativas experimentales para arquitecturas de Redes de Atención Gráfica con Memoria a Corto y Largo Plazo frente a baselines convencionales), lo que convierte a estas técnicas en insumos valiosos para generar pesos dinámicos y estimaciones de incertidumbre que alimenten motores de ruteo más fiables (Zhao et al., 2023). La combinación de estas capacidades permite no sólo optimizar tiempo y coste, sino también ponderar riesgo y sostenibilidad en decisiones de rerouting en escenarios altamente volátiles.
+
+En respuesta a los desafíos identificados, un equipo de estudiantes de la Universidad Peruana de Ciencias Aplicadas fundó Teemo Solutions, una startup dedicada al desarrollo de soluciones tecnológicas avanzadas para la optimización de rutas navieras. Nuestra propuesta, Mushroom, es una plataforma de software que integra ingestión de datos meteorológicos, avisos de seguridad y estado portuario, junto al uso de Machine Learning, algoritmo A* y un motor de optimización que pondera objetivos múltiples (tiempo, costo, riesgo y emisiones). Mushroom produce rutas recomendadas y alternativas, además de explicar las razones principales detrás de cada recomendación. Esta solución busca reducir la exposición al riesgo operativo, mitigar sobrecostes por desvíos y demora, y proporcionar a embarcaciones, operadores y autoridades portuarias una base de evidencias y trazabilidad para la toma de decisiones en tiempo real (United Nations Conference on Trade and Development, 2024; World Bank, 2024).
 
 ### 1.1.1. Descripción de la Startup
 
-Teemo Solutions nace como respuesta a esta realidad, con el objetivo de optimizar rutas marítimas mediante tecnología inteligente. Su producto, Mushroom, es una solución de software que calcula la mejor ruta entre puertos, considerando condiciones climáticas, cierres, conflictos y otros factores disruptivos.
+- **Misión** 
 
-Según ABC International (2024), entre el 10% y 15% del comercio mundial depende del transporte marítimo. Con rutas clave como el Mar Rojo afectadas por conflictos, muchas navieras se ven obligadas a tomar desvíos costosos. Esto ha impactado incluso a grandes empresas como Tesla, que ha suspendido operaciones por interrupciones logísticas.
+  Desarrollar soluciones tecnológicas inteligentes, fiables y orientadas a impacto operativo que permitan a operadores logísticos y autoridades portuarias optimizar la gestión de rutas marítimas en entornos volátiles. Nuestra propuesta busca mitigar riesgos y mejorar la resiliencia de la cadena de suministro marítima.<br><br>
 
-- **Misión:** Desarrollar soluciones tecnológicas innovadoras que optimicen la logística marítima global, brindando a las navieras herramientas inteligentes para enfrentar los desafíos del comercio internacional en tiempo real.
-
-
-- **Visión:** Ser la plataforma líder en gestión inteligente de rutas navieras a nivel mundial, reconocida por su capacidad de adaptación, precisión y aporte a la eficiencia del transporte marítimo en entornos complejos y cambiantes.
+- **Visión**
   
+  Convertirnos en la plataforma de referencia a nivel internacional en gestión inteligente de rutas navieras, reconocida por ofrecer soluciones que combinan precisión, transparencia y un impacto comprobable en la eficiencia operativa y la sostenibilidad. Aspiramos a que nuestras herramientas sean un estándar de confianza para la industria marítima. <br><br>
 
-- **Valores** En Teemo Solutions, nos guiamos por una serie de valores fundamentales que definen nuestra cultura organizacional y nuestra manera de actuar como equipo. Estos principios representan nuestro compromiso con la excelencia, la integridad y la innovación en el sector objetivo:
-  1. **Innovación continua:** Impulsamos soluciones creativas y tecnológicas frente a los desafíos dinámicos del comercio marítimo.
-  2. **Resiliencia:** Nos adaptamos a escenarios cambiantes para mantener la operatividad de las rutas marítimas globales.
-  3. **Sostenibilidad:** Priorizamos rutas que optimicen el uso de recursos y reduzcan el impacto ambiental del transporte marítimo.
-  4. **Transparencia:** Brindamos información clara, en tiempo real, para una toma de decisiones basada en datos.
-  5. **Colaboración:** Facilitamos la cooperación entre puertos, navieras y operadores logísticos para construir un ecosistema más eficiente.
-  6. **Compromiso con la seguridad:** Aseguramos el tránsito de mercancías minimizando riesgos derivados de conflictos o condiciones climáticas adversas.
+- **Valores** 
 
-  
+  En Teemo Solutions, nuestros valores guían la concepción, desarrollo e implementación de cada producto y servicio. Estos principios reflejan nuestro compromiso con la excelencia técnica, la seguridad operacional y la responsabilidad social, y orientan la cultura interna y las relaciones con clientes, socios y reguladores: <br><br> 
+
+  1. **Aprendizaje continuo**
+Fomentamos la capacitación, la retroalimentación y el crecimiento profesional dentro del equipo. Valoramos la diversidad de competencias como motor de soluciones más robustas y adaptadas al mundo real.<br><br>
+
+  1. **Calidad**
+Sustentamos nuestras decisiones técnicas en evidencia y validación empírica. Nuestras metodologías siguen buenas prácticas y verificación, con métricas objetivas para evaluar desempeño y detectar desviaciones.<br><br>
+
+  1. **Colaboración**
+Creemos que la eficiencia del transporte marítimo se alcanza mediante la cooperación entre actores. Facilitamos interfaces y acuerdos de datos que permitan compartir información crítica y coordinar respuestas frente a incidentes.<br><br>
+
+  1. **Eficiencia**
+Buscamos optimizar tiempo, costos y recursos mediante soluciones que traduzcan análisis complejos en operaciones concretas y medibles, con métricas claras de mejora.<br><br>
+
+  1. **Ética**
+Actuamos bajo principios éticos rigurosos: protección de la privacidad, cumplimiento normativo y uso responsable de datos. Establecemos políticas claras de gobernanza y seguridad para asegurar integridad, confidencialidad y disponibilidad de la información.<br><br>
+
+  1. **Innovación continua**
+Fomentamos la investigación aplicada y la experimentación responsable. Adoptamos metodologías ágiles y tecnologías emergentes para convertir datos complejos en acciones útiles y mejorar continuamente las capacidades de la plataforma.<br><br>
+
+  1.  **Responsabilidad social**
+Reconocemos el impacto sistémico del transporte marítimo y trabajamos por soluciones que favorezcan la seguridad de las personas, la estabilidad de las comunidades portuarias y la sostenibilidad económica de las cadenas logísticas a las que servimos.<br><br>
+
+  1. **Seguridad y resiliencia**
+Priorizamos la integridad operativa y la protección de las tripulaciones y las mercancías. Diseñamos nuestras soluciones para anticipar y mitigar riesgos y soportar escenarios de alta incertidumbre.<br><br>
+
+  1. **Sostenibilidad**
+Promovemos decisiones que reduzcan el impacto ambiental del transporte marítimo, favoreciendo alternativas que optimicen recursos sin comprometer la seguridad ni la eficiencia.<br><br>
+
+  10. **Transparencia**
+Garantizamos que las recomendaciones y alertas generadas por nuestras herramientas sean comprensibles y auditables. Proveemos trazabilidad de decisiones para impulsar la confianza y permitir la intervención humana informada.<br><br>
+
+  1.  **Usabilidad**
+Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos priorizan claridad, rapidez de acción y adaptación a los distintos perfiles operativos, reduciendo la fricción en la toma de decisiones.<br><br>
 
 ### 1.1.2. Perfiles de Integrantes del equipo
 
 <table>
   <tr>
-  <th colspan="2">Aru Acevedo, Yair Christofer</th>
+  <th colspan="2">Apellido, Nombre</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Yair-Aru.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td>Soy Yair Christofer Aru Acevedo, actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo conocimientos en el lenguaje de C++, Python, Javascript, Typescript y HTML5. Me encuentro interesado en las tecnologías que se utilizan en las áreas de ciberseguridad y bases de datos. </td>
-  </tr>
-
-  <tr>
-  <th colspan="2">Lizano Coll Cardenas, Fernando Jesus</th>
-  </tr>
-  <tr>
-    <td><img src="../../assets/img/chapter-I/Fernando-Lizano.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td>Me llamo Fernando Jesus Lizano Coll Cardenas. A mis 20 años me considero un apasionado por el mundo de la programación y aprendizaje constante. Actualmente tengo conocimientos en el lenguaje de C++, HTML, CSS, JavaScript y Python. Aunque mis conocimientos son todavía básicos. Me identifico como alguien de pensamiento de superación. Busco crecer en cada aspecto de mi vida y enfrentar desafíos con una actitud positiva y resoluta. Espero poder aportar y motivar a mis compañeros durante la elaboración de este proyecto.</td>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td> </td>
   </tr>
 
   <tr>
-  <th colspan="2">Pescorán Angulo, Juan Fabritzzio</th>
+  <th colspan="2">Apellido, Nombre</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Juan-Pescoran.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td>Hola que tal, soy Juan Pescoran, tengo 19 años, estoy llevando la carrera de Ingenieria de Software en la UPC, voy en el 7mo ciclo. Me considero una persona responsable, puntual y comprometida con mis estudios. Me gusta aprender cosas nuevas y siempre estoy dispuesto a ayudar a mis compañeros.</td>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
+  </tr>
+
+  <tr>
+  <th colspan="2">Apellido, Nombre</th>
+  </tr>
+  <tr>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
   </tr>
 
   <tr>
@@ -94,15 +122,15 @@ Según ABC International (2024), entre el 10% y 15% del comercio mundial depende
     <td><img src="../../assets/img/chapter-I/Jose-Riega.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Estudiante de 7mo ciclo de ingeniería de software en la UPC. Autopercibido como polivalente y responsable con aprendizaje continuo.
 
-Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicaciones web y metodologías ágiles. Mis objetivos son concretarse y seguir aprendiendo y ejerciendo mi carrera desarrollándome a nivel personal y profesional.</td>
+  Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicaciones web y metodologías ágiles. Mis objetivos son concretarse y seguir aprendiendo y ejerciendo mi carrera desarrollándome a nivel personal y profesional.</td>
   </tr>
 
   <tr>
-    <th colspan="2">Vasquez Requejo, Augusto Mathias Leonardo</th>
+    <th colspan="2">Apellido, Nombre</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Augusto Vasquez.jpg" style="width:700px; height:auto;" alt=""></td>
-    <td>Soy estudiante de Ingeniería de Software en el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Cuento con conocimientos en lenguajes de programación como C++, JavaScript, HTML y CSS, y me destaco por mi responsabilidad y dedicación en los trabajos grupales, siempre buscando contribuir al logro de los objetivos del equipo.</td>
+    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
+    <td></td>
   </tr>
 </table>
 
