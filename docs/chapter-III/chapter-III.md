@@ -30,18 +30,44 @@
 </style>
 
 # Capítulo III: Requirements Specification
-##### 3.1. To-Be Scenario Mapping.
-###### Segmento 1: Agencia de embarcaciones navieras
 
-<td><img src="../../assets/img/chapter-III/TO-BE_1.png" style="width:1000px; height:auto;" alt=""></td>
+Este capítulo establece de manera precisa la especificación de requisitos de Macetech, incorporando prácticas consolidadas en el análisis de requisitos. Siguiendo el marco propuesto por Robertson, Robertson y Reed (2024) en Mastering the Requirements Process, se adopta un enfoque estructurado que abarca la obtención, modelado y priorización de necesidades, con el propósito de elaborar un documento de requisitos que cumpla con criterios de claridad, completitud, consistencia, trazabilidad y capacidad de modificación. El punto de partida es un análisis detallado de los resultados obtenidos en la fase de investigación, que incluye estudios de usuarios, procesos de needfinding y análisis competitivo, desde los cuales se construye la estructura conceptual que servirá de base para todo el desarrollo. Como enfoque metodológico, se presentan las secciones de To-Be Scenario Mapping, User Stories, Impact Map y Product Backlog, lo que asegura un ciclo de vida del producto flexible y centrado en la entrega continua de valor.
 
-###### Segmento 2: Transportista marítimo
+## 3.1. To-Be Scenario Mapping
 
-<td><img src="../../assets/img/chapter-III/TO-BE_2.png" style="width:1000px; height:auto;" alt=""></td>
+En esta sección se documenta el proceso metodológico y los resultados obtenidos del To-Be Scenario Mapping, una herramienta clave para diseñar la experiencia futura de cada User Persona y compararla con el escenario actual (As-Is). A partir de un análisis detallado de los mapas As-Is, se proyectan las acciones, pensamientos y emociones del usuario a través de las columnas Steps, Doing, Thinking y Feeling, de manera que quede claro cómo Macetech transformará cada etapa de la interacción.
 
-##### 3.2. User Stories.
+El procedimiento seguido por el equipo incluyó las siguientes etapas, alineadas con las recomendaciones de Kalbach (2020) para el mapeo de experiencias:
 
-Tabla de épicas establecidas para las historias de usuarios de TeemoSolutions
+1. Preparación: Revisión exhaustiva de los mapas As-Is existentes y definición del alcance para cada User Persona.
+
+2. Lluvia de ideas individual: Generación de propuestas de mejora enfocadas en optimizar actividades, percepciones y motivaciones del usuario.
+
+3. Revisión colaborativa: Consolidación de ideas, identificación de fases clave como columnas del mapa y validación de su relevancia.
+
+4. Nombramiento de fases: Asignación de títulos descriptivos a cada columna, representando los estados ideales del flujo de interacción.
+
+5. Comparación As-Is vs. To-Be: Identificación y análisis de las diferencias más significativas, destacando las innovaciones y beneficios esperados en términos de eficiencia, usabilidad y satisfacción.
+
+A continuación se presentan capturas de los mapas To-Be Scenario Mapping generados en la herramienta asignada para cada User Persona, con sus respectivas filas Steps, Doing, Thinking y Feeling, que muestran de forma clara las mejoras proyectadas en la experiencia del usuario.
+
+###### Figura 19
+*To-Be Scenario Mapping de nuestro segmento de agencias de embarcaciones navieras*
+
+<td><img src="../../assets/img/chapter-III/to-be-shipping-agency.png" style="width:1000px; height:auto;" alt=""></td>
+
+###### Figura 20
+*To-Be Scenario Mapping de nuestro segmento de transportistas marítimos*
+
+<td><img src="../../assets/img/chapter-III/to-be-maritime-carrier.png" style="width:1000px; height:auto;" alt=""></td>
+
+## 3.2. User Stories
+
+En esta sección se describe la estructura y el propósito de nuestras User Stories y Epics, que formalizan los requisitos identificados a lo largo del ciclo de vida de Mushroom. El objetivo es traducir las necesidades y expectativas de los segmentos objetivos, así como los visitantes de la Landing Page y desarrolladores, en historias accionables, asegurando la satisfacción total de los usuarios finales. Cada Epic agrupa funcionalidades de alto nivel y sirve como un contenedor lógico para un conjunto de User Stories, mientras que estas últimas representan incrementos de valor independientes y verificables. Cada historia será acompañada de criterios de aceptación escritos en formato Gherkin (Given–When–Then), lo que permite una definición precisa y verificable de las condiciones para considerar un éxito.
+
+El mapeo de Epics y User Stories seguirá las mejores prácticas de User Story Mapping, ayudándonos a "descubrir la historia completa" y a "construir el producto correcto" (Patton, 2021). Comenzaremos con un listado organizado de Epics que abarcan tanto la experiencia web, móvil y Landing Page con contenido segmentado para visitantes generales y subgrupos específicos. Luego, desglosaremos cada Epic en User Stories orientadas al usuario, y Technical Stories dirigidas al equipo de desarrollo, cubriendo tanto la interacción final como los requisitos de infraestructura.
+
+Para garantizar la calidad y efectividad de nuestras historias, aplicaremos las recomendaciones de Stevenson (2020) sobre la redacción de User Stories y criterios de aceptación. Cada historia describirá el rol, la acción y el beneficio esperado, y sus criterios se mantendrán en tiempo presente, en tercera persona, sin referencias de interfaz, para asegurar que sean neutrales y evaluables. De esta manera, aseguramos que todo comportamiento previsto quede claramente definido y sea verificable.
 
 | **Epic / Story ID** | **Título**                                   | **Descripción**                                                                                                                                  | 
 |---------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,6 +79,8 @@ Tabla de épicas establecidas para las historias de usuarios de TeemoSolutions
 
 Las User Stories son una herramienta fundamental para definir los requisitos del proyecto. Cada User Story incluye criterios de aceptación que deben ser comprobables y redactados en tiempo presente, tercera persona, siguiendo la estructura de Gherkin (Given-When-Then). Además, se consideran User Stories para el sitio web estático (Landing Page) y Technical Stories para los features del RESTful API.
 
+###### Tabla 11
+Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushroom
 
 | **Epic / Story ID** | **Título**                                                | **Descripción**                                                                                                                                             | **Criterios de Aceptación**                                                                                                                                                         | **Relacionado con (Epic ID)** |
 |---------------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
