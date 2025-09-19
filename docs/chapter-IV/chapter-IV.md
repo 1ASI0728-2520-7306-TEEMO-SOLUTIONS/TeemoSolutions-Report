@@ -79,6 +79,18 @@ A continuación, se detallan los Epics y User Stories clave, con su respectiva r
 ### 4.2.5.	Context Mapping.
 ## 4.3.	Software Architecture.
 ### 4.3.1.	Software Architecture System Landscape Diagram.
+
+<img src="../..//assets/img/chapter-IV/sytstem-landscape.png">
+
 ### 4.3.1.	Software Architecture Context Level Diagrams.
+
+<img src="../..//assets/img/chapter-IV/context-level.png">
+
 ### 4.3.2.	Software Architecture Container Level Diagrams.
+
+<img src="../..//assets/img/chapter-IV/container-diagram.png">
+
 ### 4.3.3.	Software Architecture Deployment Diagrams.
+
+<img src="../..//assets/img/chapter-IV/deployment-diagram.png">
+
