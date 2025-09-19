@@ -69,8 +69,8 @@ El mapeo de Epics y User Stories seguirá las mejores prácticas de User Story M
 
 Para garantizar la calidad y efectividad de nuestras historias, aplicaremos las recomendaciones de Stevenson (2020) sobre la redacción de User Stories y criterios de aceptación. Cada historia describirá el rol, la acción y el beneficio esperado, y sus criterios se mantendrán en tiempo presente, en tercera persona, sin referencias de interfaz, para asegurar que sean neutrales y evaluables. De esta manera, aseguramos que todo comportamiento previsto quede claramente definido y sea verificable.
 
-| **Epic / Story ID** | **Título**                                   | **Descripción**                                                                                                                                  | 
-|---------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Epic / Story ID** | **Título** | **Descripción** | **Criterios de aceptación** | **Relacionado con (Epic ID)** |
+|---------------------|------------|-----------------|-----------------------------|--------------------------|
 | EPIC001             | Planificación Inteligente de Rutas Marítimas | Como desarrollador, quiero implementar un sistema que calcule rutas seguras y eficientes usando A*, considerando clima, cierres y peligrosidad. | 
 | EPIC002             | Monitoreo en Tiempo Real y Gestión Dinámica  | Como desarrollador, quiero permitir a los usuarios seguir sus rutas en tiempo real y adaptar el trayecto ante eventos inesperados.              | 
 | EPIC003             | Visualización y Reporte de Información       | Como desarrollador, quiero que los usuarios puedan ver y descargar métricas operativas como tiempo, emisiones y consumo por viaje.              |
@@ -95,7 +95,47 @@ Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushro
 | US009               | Obtener reporte del envío                                 | Como empresario, quiero ver un informe al final del envío con los datos operativos, para evaluar el desempeño del servicio contratado.                     | El sistema debe generar un reporte descargable con tiempo total, ruta usada, eventos registrados y emisiones estimadas.                                                              | EPIC003                       |
 | US010               | Visualizar historial de rutas contratadas                 | Como empresario, quiero ver un historial de rutas utilizadas en envíos pasados, para poder tomar decisiones basadas en evidencia.                          | El sistema debe listar todos los envíos previos con sus datos asociados, y permitir filtrado por fecha, destino o tipo de embarcación.                                               | EPIC003                       |
 
-##### 3.3. Impact Mapping.
+## 3.3. Requisitos Funcionales
+
+| **ID** | **Actor** | **Descripción** |
+|--------|-----------|-----------------|
+| RF001 | Visitante | El sistema debe permitir al visitante acceder a la landing page pública con contenido informativo sobre la propuesta de valor, casos de uso y formulario de contacto, asegurando entrega del contenido estático. | 
+| RF002 | Visitante | El sistema debe permitir al visitante entrar directamente a la Single Page Application a través de un Call-to-Action en la sección de encabezado, después de mostrar las funcionalidades y antes de llegar al footer. |
+| RF003 | Usuario | El sistema debe permitir a un usuario registrarse creando una cuenta con email válido y contraseña que cumpla políticas mínimas (longitud mínima de 8 caracteres, letras minúsculas y mayúsculas, un número y un símbolo), y enviar un correo de verificación para activar la cuenta. |
+| RF005 | Usuario | El sistema debe permitir al usuario iniciar sesión con credenciales válidas y, tras autenticación exitosa, emitir token de sesión con roles asociados. | 
+| RF006 | Usuario | El sistema debe permitir listar todos los puertos registrados con estado operativo (abierto/cerrado/restringido) y metadatos básicos (nombre, país, latitud/longitud). |
+| RF007 | Usuario | El sistema debe permitir buscar y seleccionar un puerto de origen y un puerto de destino válidos para iniciar el cálculo de rutas, validando que ambos pertenezcan al grafo de navegación y no sean idénticos. |
+| RF008 | Sistema | El sistema debe calcular la ruta más corta (optimizada por distancia) entre origen y destino usando la topología del grafo y devolver nodos, distancia total y el tiempo estimado de llegada, o indicar por qué no existe ruta viable. |
+| RF009 | Sistema | El sistema debe calcular la ruta óptima multi-criterio (considerando tiempo, coste, riesgo y emisiones) cuando se solicite, ponderando pesos dinámicos y estáticos según disponibilidad de datos. | 
+| RF010 | Sistema | El sistema debe presentar, junto con la ruta calculada, un desglose funcional con la información (distancia por tramo, tiempo estimado de llegada por tramo, coste estimado por tramo y posibles riesgos por tramo). | 
+| RF011 | Agencias de embarcaciones navieras | El sistema debe ofrecer top-3 alternativas de rutas ordenadas por el criterio solicitado (tiempo/coste/riesgo), incluyendo métricas comparativas (Tiempo estimado de llegada, coste, emisiones), o indicar si no existen suficientes alternativas.
+| RF012 | Usuario | El sistema debe registrar inmutablemente cada cálculo de ruta (inputs, timestamp, usuario solicitante y parámetros) para auditoría y también en el historial. | 
+| RF013 | Agencias de embarcaciones navieras | El sistema debe permitir al usuario solicitar la explicación funcional de por qué se eligió una ruta y devolver valores cuantitativos que justifiquen la elección. | 
+| RF014 | Usuario | El sistema debe almacenar automáticamente el último viaje realizado y permitir su guardado explícito en historial para futura consulta, manteniendo registros de tiempo de inicio, fin, ruta usada y eventos. | 
+| RF015 | Exportadores e importadores de alta rotación | El sistema debe generar, al finalizar un viaje, un reporte descargable (PDF/CSV) con: tiempo total, ruta y nodos, eventos ocurridos con timestamps, consumo estimado y emisiones estimadas. | 
+| RF016 | Usuario | El sistema debe exponer un historial de envíos y rutas que permita filtrar por fecha, destino, tipo de embarcación y estado del envío, y paginar resultados para consultas de gran volumen. | 
+| RF017 | Usuario | El sistema debe permitir seleccionar puertos intermedios a una ruta en edición y recalcular impactos en distancia y tiempo estimado de llegada inmediatamente, validando la aptitud del puerto antes de incluirlo.
+| RF018 | Usuario | El sistema debe consultar las restricciones del puerto (horarios, estado operativo) y rechazar automáticamente la inclusión de un puerto intermedio o de llegada no apto, informando la razón funcional. |
+| RF019 | Usuario | El sistema debe detectar eventos (cierres, incidentes, cambios de estado) y recalcular automáticamente la ruta activa cuando la viabilidad de la ruta cambie, generando una nueva ruta sugerida y registrando la diferencia de métricas. | 
+| RF020 | Usuario | El sistema debe notificar a usuarios cuando una ruta se vuelve no viable o cuando el tiempo estimado de llegada cambia más allá de un umbral definido, registrando el motivo de la notificación y el canal (in-app/push/email). | 
+| RF021 | Usuario | El sistema debe permitir a cada usuario configurar preferencias de notificaciones (tipos de alertas, umbrales, canales) y aplicar dichas preferencias a las entregas de mensajes. | 
+| RF022 | Usuario | El sistema debe implementar reintentos con backoff para envíos de notificaciones fallidos y marcar el estado de entrega (entregado, pendiente, fallido) en los logs. | 
+| RF023 | Usuario | El sistema debe permitir consultar la ficha de un puerto seleccionado dentro del mapa, devolviendo nombre, país y estado operativo y restricciones aplicables. | 
+| RF024 | Usuario | El sistema debe visualizar la geometría de la ruta y los identificadores de tramo para permitir renderizado de mapas y mostrar una animación del viaje esperado en esa ruta. | 
+| RF025 | Usuario | El sistema debe exponer un cálculo funcional de distancia total sumando tramos (en millas náuticas) para cualquier ruta que incluya puertos intermedios y devolver desglose por tramo. | 
+| RF026 | Usuario | El sistema debe ofrecer funcionalidad de “Rutas más buscadas” que agregue y devuelva las rutas más consultadas por la comunidad durante un período configurable, permitiendo filtrado por región y tipo de embarcación. |
+| RF027 | Usuario | El sistema debe calcular el coste estimado completo asociado a una operación (incoterms) cuando el usuario proporcione parámetros (peso, valor mercadería, incoterm, origen/destino), devolviendo desglose de flete, seguros, aranceles (si disponibles) y total estimado; en ausencia de tablas de aranceles devolver error funcional indicando datos faltantes. | 
+| RF028 | Sistema | El sistema debe ingerir pronósticos meteorológicos y datos oceanográficos, mapearlos espacialmente a aristas del grafo y marcar validez para que los consumidores funcionen con la versión más reciente o el último forecast válido. | 
+
+## 3.4. Requisitos No Funcionales
+
+| **ID** | **Categoría (QA)** | **Descripción** |
+|--------|--------------------|-----------------|
+
+
+descargar whitepapers o solicitar contacto mediante un formulario que valide el correo electrónico y registre el lead en la base de datos de marketing.
+
+## 3.5. Impact Mapping
 
 ##### Segmento 1:
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-2.png" style="width:1000px; height:auto;" alt=""></td>
@@ -103,8 +143,7 @@ Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushro
 ##### Segmento 2: Capitán o Jefe de Navegación
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
 
-##### 3.4. Product Backlog.
-# **Product Backlog - Funcionalidades de Teemo**
+##### 3.4. Product Backlog
 
 # **Product Backlog - Funcionalidades de Teemo**
 
