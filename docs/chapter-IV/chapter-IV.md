@@ -107,7 +107,189 @@ El Architectural Drivers Backlog se construyó tras un proceso iterativo de prio
 | CT-05 | Reportes descargables | Generar reportes operativos exportables en PDF y Excel. | Medium | Low |
 
 ### 4.1.4.	Architectural Design Decisions.
+
+Durante el Quality Attribute Workshop (QAW) el equipo analizó los drivers de mayor prioridad y, en cada iteración, se identificó el driver crítico (funcional, de calidad o constraint), se seleccionaron los patrones candidatos que podían dar respuesta, se evaluaron sus pros y contras considerando el impacto en la arquitectura y la satisfacción de los stakeholders, y finalmente se tomó una decisión basada en los trade-offs entre complejidad, escalabilidad, rendimiento y facilidad de implementación.
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; text-align: center; width: 100%;">
+  <thead style="background-color: #333; color: #fff;">
+    <tr>
+      <th>Driver ID</th>
+      <th>Título de Driver</th>
+      <th colspan="2">Pattern 1</th>
+      <th colspan="2">Pattern 2</th>
+      <th colspan="2">Pattern 3</th>
+    </tr>
+    <tr style="background-color: #444; color: #fff;">
+      <th></th>
+      <th></th>
+      <th>Pro</th>
+      <th>Con</th>
+      <th>Pro</th>
+      <th>Con</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">FD-01</td>
+      <td rowspan="2">Planificación inteligente de rutas</td>
+      <td>Flexibilidad para intercambiar algoritmos (A*, Dijkstra, ML)</td>
+      <td>Complejidad en pruebas unitarias</td>
+      <td>Separación clara de etapas (ingestión, cálculo, optimización)</td>
+      <td>Posible latencia si no se optimizan colas</td>
+      <td>Extensibilidad para agregar heurísticas</td>
+      <td>Mayor overhead de arquitectura</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="2">FD-02</td>
+      <td rowspan="2">Monitoreo y recalculo dinámico</td>
+      <td>Reacción inmediata a eventos externos (clima, cierres)</td>
+      <td>Mayor complejidad en debugging</td>
+      <td>Notificaciones automáticas y desacoplamiento</td>
+      <td>Difícil de escalar si hay muchos suscriptores</td>
+      <td>Optimiza lectura/escritura y recalculo</td>
+      <td>Mayor complejidad en sincronización</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="2">QAD-01</td>
+      <td rowspan="2">Rendimiento en cálculo de rutas</td>
+      <td>Reducción de latencia en consultas repetidas</td>
+      <td>Riesgo de datos obsoletos</td>
+      <td>Uso de threads para cálculos en paralelo</td>
+      <td>Sobrecarga de coordinación</td>
+      <td>Distribución de carga entre instancias</td>
+      <td>Dependencia de infraestructura en la nube</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="2">QAD-02</td>
+      <td rowspan="2">Disponibilidad 24/7</td>
+      <td>Alta disponibilidad ante fallos</td>
+      <td>Costos de infraestructura</td>
+      <td>Aísla fallos en servicios externos</td>
+      <td>Puede generar latencia inicial</td>
+      <td>Recuperación automática ante caídas</td>
+      <td>Configuración compleja</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="2">QAD-03</td>
+      <td rowspan="2">Seguridad y cifrado de datos</td>
+      <td>Cumple GDPR/IMO</td>
+      <td>Penalización mínima en rendimiento</td>
+      <td>Estándar y escalable</td>
+      <td>Riesgo en manejo de expiración</td>
+      <td>Máxima protección en red pública</td>
+      <td>Complejidad de implementación</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="2">CT-02</td>
+      <td rowspan="2">Plataforma SaaS en la nube</td>
+      <td>Escalabilidad y despliegue independiente</td>
+      <td>Mayor complejidad en orquestación</td>
+      <td>Escala automática y pago por uso</td>
+      <td>Menor control de rendimiento</td>
+      <td>Simplicidad inicial para MVP</td>
+      <td>Escalabilidad limitada a largo plazo</td>
+    </tr>
+    <tr></tr>
+  </tbody>
+</table>
+
+
+ 
 ### 4.1.5.	Quality Attribute Scenario Refinements.
+
+Al finalizar el Quality Attribute Workshop (QAW), el equipo priorizó los escenarios de atributos de calidad más críticos para el éxito de Mushroom. Se consideraron tanto los requisitos de negocio como las expectativas de los stakeholders, poniendo especial énfasis en la capacidad del sistema para mantenerse disponible 24/7, responder con baja latencia bajo cargas concurrentes, garantizar seguridad en la transmisión y almacenamiento de datos, y escalar conforme aumente la demanda.
+
+<!-- Escenario 1: Rendimiento -->
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width:100%; background-color:#1c1c1c; color:#fff;">
+  <tr><th colspan="2" style="background-color:#333;">Scenario Refinement for Scenario 1</th></tr>
+  <tr><td style="width:30%;">Scenario(s):</td><td>Cálculo de rutas bajo alta carga concurrente</td></tr>
+  <tr><td>Business Goals:</td><td>Garantizar tiempos de respuesta rápidos para cálculos críticos, incluso bajo demanda elevada.</td></tr>
+  <tr><td>Relevant Quality Attributes:</td><td>Rendimiento, Fiabilidad</td></tr>
+  <tr><td>Stimulus:</td><td>Se reciben múltiples solicitudes de cálculo de rutas simultáneamente (≥100).</td></tr>
+  <tr><td>Stimulus Source:</td><td>Usuarios concurrentes (capitanes/empresarios).</td></tr>
+  <tr><td>Environment:</td><td>Operación normal con alta concurrencia.</td></tr>
+  <tr><td>Artifact (if Known):</td><td>Motor de cálculo de rutas y predicciones.</td></tr>
+  <tr><td>Response:</td><td>Procesar solicitudes sin degradación significativa del servicio.</td></tr>
+  <tr><td>Response Measure:</td><td>Tiempo de respuesta ≤ 2 segundos para el 95% de las solicitudes.</td></tr>
+  <tr><td>Questions:</td><td>¿Qué mecanismos de cache y paralelismo se aplicarán?</td></tr>
+  <tr><td>Issues:</td><td>Posible saturación de infraestructura en picos de demanda.</td></tr>
+</table>
+<br>
+
+<!-- Escenario 2: Disponibilidad -->
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width:100%; background-color:#1c1c1c; color:#fff;">
+  <tr><th colspan="2" style="background-color:#333;">Scenario Refinement for Scenario 2</th></tr>
+  <tr><td style="width:30%;">Scenario(s):</td><td>Acceso continuo a funciones críticas del sistema</td></tr>
+  <tr><td>Business Goals:</td><td>Asegurar continuidad operativa de la plataforma para usuarios globales.</td></tr>
+  <tr><td>Relevant Quality Attributes:</td><td>Disponibilidad, Fiabilidad</td></tr>
+  <tr><td>Stimulus:</td><td>Usuario intenta calcular ruta o consultar estado en cualquier momento.</td></tr>
+  <tr><td>Stimulus Source:</td><td>Operadores y capitanes.</td></tr>
+  <tr><td>Environment:</td><td>Entorno de operación productivo (24/7).</td></tr>
+  <tr><td>Artifact (if Known):</td><td>Servicios principales (cálculo, notificaciones).</td></tr>
+  <tr><td>Response:</td><td>El sistema mantiene los servicios activos sin interrupciones no planificadas.</td></tr>
+  <tr><td>Response Measure:</td><td>≥ 99% de disponibilidad mensual garantizada.</td></tr>
+  <tr><td>Questions:</td><td>¿Cómo se manejarán redundancias y failover?</td></tr>
+  <tr><td>Issues:</td><td>Costos adicionales por infraestructura redundante.</td></tr>
+</table>
+<br>
+
+<!-- Escenario 3: Seguridad -->
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width:100%; background-color:#1c1c1c; color:#fff;">
+  <tr><th colspan="2" style="background-color:#333;">Scenario Refinement for Scenario 3</th></tr>
+  <tr><td style="width:30%;">Scenario(s):</td><td>Protección de datos sensibles y credenciales</td></tr>
+  <tr><td>Business Goals:</td><td>Cumplir con regulaciones internacionales y generar confianza en clientes.</td></tr>
+  <tr><td>Relevant Quality Attributes:</td><td>Seguridad, Privacidad</td></tr>
+  <tr><td>Stimulus:</td><td>Intento de acceder o interceptar información sensible.</td></tr>
+  <tr><td>Stimulus Source:</td><td>Atacante externo en red pública.</td></tr>
+  <tr><td>Environment:</td><td>Comunicación a través de internet.</td></tr>
+  <tr><td>Artifact (if Known):</td><td>Módulos de datos y comunicaciones.</td></tr>
+  <tr><td>Response:</td><td>El sistema cifra datos y bloquea accesos no autorizados.</td></tr>
+  <tr><td>Response Measure:</td><td>0 filtraciones de datos en pruebas de seguridad; cifrado AES-256 y TLS 1.3 activos.</td></tr>
+  <tr><td>Questions:</td><td>¿Cómo se gestionarán las llaves de cifrado?</td></tr>
+  <tr><td>Issues:</td><td>Posible impacto en rendimiento por encriptación.</td></tr>
+</table>
+<br>
+
+<!-- Escenario 4: Escalabilidad -->
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width:100%; background-color:#1c1c1c; color:#fff;">
+  <tr><th colspan="2" style="background-color:#333;">Scenario Refinement for Scenario 4</th></tr>
+  <tr><td style="width:30%;">Scenario(s):</td><td>Aumento en volumen de datos y peticiones</td></tr>
+  <tr><td>Business Goals:</td><td>Mantener el desempeño del sistema pese al crecimiento en uso.</td></tr>
+  <tr><td>Relevant Quality Attributes:</td><td>Escalabilidad, Rendimiento</td></tr>
+  <tr><td>Stimulus:</td><td>Incremento del 75% en peticiones y 50% en volumen de datos.</td></tr>
+  <tr><td>Stimulus Source:</td><td>Usuarios y fuentes de datos externas.</td></tr>
+  <tr><td>Environment:</td><td>Entorno de alta demanda.</td></tr>
+  <tr><td>Artifact (if Known):</td><td>Capa de cálculo y predicción.</td></tr>
+  <tr><td>Response:</td><td>El sistema escala horizontal y verticalmente según la carga.</td></tr>
+  <tr><td>Response Measure:</td><td>Tiempo de respuesta ≤ 3 segundos pese al incremento de carga.</td></tr>
+  <tr><td>Questions:</td><td>¿Qué balanceo de carga se aplicará?</td></tr>
+  <tr><td>Issues:</td><td>Riesgo de costos altos en nube por escalado dinámico.</td></tr>
+</table>
+
+<!-- Escenario 5: Usabilidad -->
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width:100%; background-color:#1c1c1c; color:#fff;">
+  <tr><th colspan="2" style="background-color:#333;">Scenario Refinement for Scenario 5</th></tr>
+  <tr><td style="width:30%;">Scenario(s):</td><td>Interacción de un usuario con conocimientos básicos para calcular una ruta</td></tr>
+  <tr><td>Business Goals:</td><td>Facilitar el uso de la aplicación incluso a usuarios sin experiencia técnica, reduciendo fricción en la adopción.</td></tr>
+  <tr><td>Relevant Quality Attributes:</td><td>Usabilidad, Accesibilidad</td></tr>
+  <tr><td>Stimulus:</td><td>Un usuario con conocimientos básicos interactúa con la aplicación para calcular una ruta.</td></tr>
+  <tr><td>Stimulus Source:</td><td>Usuario final (capitán o empresario).</td></tr>
+  <tr><td>Environment:</td><td>Operación normal en aplicación web/móvil.</td></tr>
+  <tr><td>Artifact (if Known):</td><td>Interfaz web/móvil de Mushroom.</td></tr>
+  <tr><td>Response:</td><td>El usuario completa la acción principal en pocos pasos sin dificultad adicional.</td></tr>
+  <tr><td>Response Measure:</td><td>≥ 90% de los usuarios logran calcular una ruta en menos de 3 pasos durante pruebas de usabilidad.</td></tr>
+  <tr><td>Questions:</td><td>¿Qué métricas de usabilidad se medirán (tiempo de tarea, tasa de éxito, errores)?</td></tr>
+  <tr><td>Issues:</td><td>Necesidad de pruebas de UX iterativas y soporte multilenguaje.</td></tr>
+</table>
+
+
 ## 4.2.	Strategic-Level Domain-Driven Design.
 ### 4.2.1.	EventStorming.
 ### 4.2.2.	Candidate Context Discovery.
