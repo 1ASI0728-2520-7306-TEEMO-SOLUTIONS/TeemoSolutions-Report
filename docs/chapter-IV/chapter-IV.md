@@ -86,6 +86,26 @@ En esta sección se agrupan las condiciones obligatorias que surgen directamente
 | TUS007    | Notificaciones en tiempo real                   | Las alertas y notificaciones deben enviarse en tiempo real a los usuarios mediante la aplicación web y móvil.                                       | Los usuarios deben recibir notificaciones dentro de los 5 segundos posteriores al evento disparador.                                    | EPIC005                       |
 
 ### 4.1.3.	Architectural Drivers Backlog.
+El Architectural Drivers Backlog se construyó tras un proceso iterativo de priorización realizado en el Quality Attribute Workshop (QAW). En este taller se identificaron los Functional Drivers, los Quality Attribute Drivers y los Constraints más relevantes para Mushroom, considerando su impacto en los stakeholders principales (navieras, exportadores/importadores y operadores logísticos) y la complejidad técnica que representan en el diseño arquitectónico. 
+
+| Driver ID |	Título de Driver |	Descripción	| Importancia para Stakeholders (High, Medium, Low) |	Impacto en Architecture Technical Complexity (High, Medium, Low) |
+|-----------|------------------|--------------|---------------------------------------------------|------------------------------------------------------------------|
+| FD-01 | Planificación inteligente de rutas | Calcular rutas seguras y eficientes en tiempo real utilizando A* considerando clima, cierres portuarios y riesgos. | High | High |
+| FD-02 | Monitoreo y recalculo dinámico | Permitir seguimiento de buques en tiempo real y recalcular rutas automáticamente ante eventos inesperados. | High | High |
+| QAD-01 | Rendimiento en cálculo de rutas | Responder a solicitudes de cálculo de rutas bajo cargas concurrentes manteniendo baja latencia. | High | High |
+| QAD-02 | Disponibilidad 24/7 | Garantizar que las funciones principales (cálculo, monitoreo, alertas) estén siempre disponibles. | High | High |
+| CT-01 | Uso de algoritmo A* | La planificación de rutas debe basarse obligatoriamente en el algoritmo A*. | High | High |
+| CT-02 | Plataforma SaaS en la nube | Mushroom debe desplegarse como SaaS global para garantizar acceso, disponibilidad y escalabilidad. | High | High |
+| QAD-03 | Seguridad y cifrado de datos | Proteger credenciales y comunicaciones con cifrado AES-256 y TLS 1.3. | High | High |
+| CT-03 | Integración con APIs externas | Consumo de datos en tiempo real (clima, tráfico marítimo, geopolítica) mediante APIs externas. | High | High |
+| FD-03 | Visualización y reportes de información | Mostrar rutas, métricas y generar reportes descargables en PDF/Excel. | High | Medium |
+| FD-04 | Notificaciones y alertas | Enviar notificaciones proactivas sobre riesgos, cierres de rutas y cambios de ETA. | High | Medium |
+| QAD-04 | Escalabilidad | Adaptarse a incrementos en usuarios, datos y peticiones sin degradar el rendimiento. | High | High |
+| QAD-05 | Usabilidad y accesibilidad | La interfaz debe ser intuitiva, accesible (web/móvil) y usable por distintos perfiles. | High | Medium |
+| CT-04 | Compatibilidad web y móvil | La aplicación debe ser funcional en navegadores y sistemas móviles (Android/iOS). | Medium | Medium |
+| QAD-06 | Trazabilidad y explicabilidad | Explicar de manera comprensible las decisiones del motor de ruteo. | Medium | Medium |
+| CT-05 | Reportes descargables | Generar reportes operativos exportables en PDF y Excel. | Medium | Low |
+
 ### 4.1.4.	Architectural Design Decisions.
 ### 4.1.5.	Quality Attribute Scenario Refinements.
 ## 4.2.	Strategic-Level Domain-Driven Design.
