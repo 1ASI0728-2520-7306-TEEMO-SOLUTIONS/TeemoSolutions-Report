@@ -295,6 +295,17 @@ Al finalizar el Quality Attribute Workshop (QAW), el equipo priorizó los escena
 ### 4.2.2.	Candidate Context Discovery.
 ### 4.2.3.	Domain Message Flows Modeling.
 ### 4.2.4.	Bounded Context Canvases.
+
+En esta sección se presentan los Bounded Context Canvases, los cuales describen el propósito, responsabilidades y relaciones de cada contexto. Esta herramienta permite alinear el diseño de la solución con los objetivos del negocio y asegurar consistencia en la arquitectura propuesta.
+
+<img src="../..//assets/img/chapter-IV/IAM CANVAS.png">
+<img src="../..//assets/img/chapter-IV/ARM CANVAS.png">
+<img src="../..//assets/img/chapter-IV/AI CANVAS.png">
+<img src="../..//assets/img/chapter-IV/PROFILE CANVAS.png">
+<img src="../..//assets/img/chapter-IV/NOTIFICATION CANVAS.png">
+<img src="../..//assets/img/chapter-IV/SERVICE CANVAS.png">
+<img src="../..//assets/img/chapter-IV/MONITORING CANVAS.png">
+
 ### 4.2.5.	Context Mapping.
 ## 4.3.	Software Architecture.
 ### 4.3.1.	Software Architecture System Landscape Diagram.
