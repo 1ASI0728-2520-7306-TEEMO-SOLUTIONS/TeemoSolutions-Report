@@ -299,7 +299,7 @@ Al finalizar el Quality Attribute Workshop (QAW), el equipo priorizó los escena
 ## 4.3.	Software Architecture.
 ### 4.3.1.	Software Architecture System Landscape Diagram.
 
-<img src="../..//assets/img/chapter-IV/sytstem-landscape.png">
+<img src="../..//assets/img/chapter-IV/system-landscape.png">
 
 ### 4.3.1.	Software Architecture Context Level Diagrams.
 
