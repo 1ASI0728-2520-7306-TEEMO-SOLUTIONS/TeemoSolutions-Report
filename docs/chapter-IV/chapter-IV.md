@@ -413,6 +413,66 @@ En esta sección se presentan los Bounded Context Canvases, los cuales describen
 <img src="../..//assets/img/chapter-IV/MONITORING CANVAS.png">
 
 ### 4.2.5.	Context Mapping.
+En esta sección, se analizan las relaciones entre los bounded contexts identificados y se asignan patrones de context mapping adecuados para cada uno:
+
+IAM process ➔ Profile
+Descripción: IAM actúa como proveedor de identidad y autenticación. El contexto de Profile consume esta información para validar usuarios y gestionar credenciales de forma segura.
+
+IAM process ➔ Notification
+Descripción: IAM publica eventos de registro, login y validación. Notification consume estos eventos para enviar alertas de confirmación o error al usuario.
+
+Profile ➔ Notification
+Descripción: Notification depende de cambios en los datos del perfil (ejemplo: actualización de correo electrónico) para redirigir notificaciones correctamente.
+
+Service Operation and Monitoring ➔ Notification
+Descripción: El contexto de Operación y Monitoreo genera eventos técnicos (fallos, desvíos de ruta, cambios de ETA) que Notification traduce en mensajes entendibles para los usuarios finales.
+
+Service Operation and Monitoring ➔ Report
+Descripción: Los datos operativos de rendimiento, métricas de viajes y estados de rutas son entregados al contexto de Report, que los transforma en documentos descargables.
+
+Asset & Resource Management ➔ A/AI process*
+Descripción: La gestión de activos y recursos provee información crítica de puertos, restricciones y disponibilidad. El motor A*/AI consume estos datos para calcular rutas viables.
+
+Service Design and Planning ➔ A/AI process*
+Descripción: El diseño de servicios utiliza el motor de rutas para evaluar tiempos, costos y riesgos, incluyendo procesos de cálculo relacionados con Incoterm.
+
+Service Design and Planning ➔ Asset & Resource Management
+Descripción: El contexto de planificación de servicios consume datos de puertos y recursos para garantizar la viabilidad de los cálculos de planificación.
+
+A/AI process ➔ Report*
+Descripción: Los resultados del motor de rutas (tiempos, alternativas, riesgos) son consumidos directamente por Report para generar visualizaciones e informes.
+
+Service Design and Planning ➔ Report
+Descripción: Los cálculos de planificación (incluyendo costos y condiciones de servicio) se integran en Report para mostrar información consolidada al usuario final.
+
+Preguntas estratégicas de reflexión:
+
+¿Qué pasaría si separamos Incoterm en un bounded context independiente?
+Se evaluó, pero se decidió mantenerlo dentro de Service Design and Planning porque sus reglas están fuertemente acopladas a la planificación de servicios y dividirlo generaría duplicación de lógica y mayor complejidad de sincronización.
+
+¿Qué pasaría si Notification se integrara dentro de Profile?
+Se descartó porque Notification tiene responsabilidades transversales que van más allá de cambios en el perfil (ejemplo: alertas de operación, seguridad, clima). Mantenerlo como contexto independiente facilita la escalabilidad.
+
+¿Qué pasaría si Report se dividiera en dos contextos (operativo vs. estratégico)?
+Aunque se analizó, se decidió mantenerlo unido dado que la escala actual del sistema no justifica la complejidad adicional.
+
+¿Qué pasaría si Service Operation and Monitoring se integrara dentro de Asset & Resource Management?
+No se consideró viable porque ambos contextos tienen responsabilidades distintas: Asset & Resource Management gestiona recursos estáticos (puertos, activos), mientras que Monitoring se centra en la operación dinámica de los viajes.
+
+Conclusión del análisis:
+
+No se crean nuevos bounded contexts adicionales.
+
+Se mantienen los 7 bounded contexts principales: IAM process, Profile, Notification, Service Operation and Monitoring, Asset & Resource Management, A*/AI process y Report.
+
+IAM actúa como Supplier de identidad y autenticación.
+
+Notification funciona como consumidor transversal de eventos generados por IAM, Profile y Monitoring.
+
+Report se comporta como Conformist, consumiendo resultados de A*/AI, Planning y Monitoring.
+
+El diagrama de Context Mapping nos permite visualizar claramente las relaciones y dependencias entre los contextos delimitados del sistema, mostrando el flujo de datos y la responsabilidad de cada subdominio.
+<img src="../..//assets/img/chapter-IV/Context_mapping.jpg">
 ## 4.3.	Software Architecture.
 ### 4.3.1.	Software Architecture System Landscape Diagram.
 
