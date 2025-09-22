@@ -391,59 +391,56 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
   </thead>
   <tbody>
     <tr>
-      <td>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </td>
+      <td>Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería</td>
         <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
+        <strong>Mallma Quispe, Rubén Elías - TB1:</strong>
+        <br>Expone con objetividad la arquitectura de Mushroom, articulando el System Landscape, los diagramas Context/Container y el Deployment para audiencias técnicas y gerenciales. Demuestra dominio al explicar cómo las decisiones de capas, contenedores y nodos de despliegue soportan el cómputo de rutas con A* e IA, integrando el consumo de APIs de eventos meteorológicos y geopolíticos. Adapta el discurso según el nivel jerárquico, responde preguntas con evidencia y vincula la arquitectura con riesgos, disponibilidad y escalabilidad requeridas por clientes navieros.<br>
         <br><br>
-        <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
+        <strong>Riega Salas, José Miguel - TB1:</strong>
+        <br>Presenta con claridad la organización, el Event Storming y el Domain Message Flow Modeling, destacando cómo los flujos de eventos (clima, incidentes, alertas de piratería) se transforman en comandos y proyecciones útiles para planeamiento de rutas seguras. Comunica a operaciones, data y management usando un lenguaje preciso y objetivos verificables; argumenta el valor del enfoque dirigido por dominio para reducir ambigüedades y alinear negocio-tecnología en el contexto marítimo.<br>
         <br><br>
-        <strong>Pescorán Angulo, Juan Fabritzzio - TB1:</strong> message here
+        <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong>
+        <br>Sustenta oralmente el Design purpose, los atributos de diseño de entrada, la funcionalidad primaria y los quality attributes, explicando cómo cada atributo (confiabilidad, rendimiento, resiliencia) impacta en la promesa de “ruta más segura y rápida”. Expone con ejemplos comprensibles para distintas especialidades y niveles jerárquicos, y justifica prioridades de diseño frente a restricciones reales (latencia del API, ventanas de actualización de datos, zonas de exclusión).<br>
         <br><br>
-        <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
+        <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong>
+        <br>Comunica con objetividad los requisitos funcionales y no funcionales y la sección de Candidate Context Mapping, enlazando necesidades de usuarios (planificadores, capitanes) con capacidades del sistema (cálculo A*, ingestión de eventos, monitor de riesgos). Co-presenta resultados del Event Storming, gestionando preguntas de diversas áreas y jerarquías; explica trade-offs entre precisión de predicción, costo computacional y experiencia de usuario en el puente de mando.<br>
         <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
+        <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
+        <br>Explica con solvencia el Architectural Drivers Backlog, las decisiones de diseño arquitectural y los refinamientos de escenarios de quality attributes, mostrando trazabilidad desde drivers (seguridad, disponibilidad, actualizaciones de riesgo) hasta soluciones concretas (patrones, particionamiento, tolerancia a fallas). Adapta ejemplos y métricas para audiencias mixtas, y concluye con implicancias operativas para empresas navieras y reguladores.<br>
+        <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
+        <br>El equipo demostró, de forma objetiva y ante públicos de diversa especialidad y jerarquía, dominio integral del proyecto Temmo/Mushroom. La exposición abarcó desde la arquitectura (paisaje de sistema, contextos, contenedores y despliegue) hasta la traducción de eventos del dominio marítimo (meteorológicos y geopolíticos) en decisiones operativas mediante Event Storming y Domain Message Flow Modeling. Se evidenció capacidad para explicar el propósito de diseño, la funcionalidad primaria y los atributos de calidad —confiabilidad, rendimiento, resiliencia—, así como para argumentar drivers arquitecturales, decisiones y escenarios refinados que sustentan el cálculo de rutas óptimas con A* e IA.<br>
         <br><br>
-        <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
-        <br><br>
-        <strong>Pescorán Angulo, Juan Fabritzzio - TB1:</strong> message here
-        <br><br>
-        <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
-        <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, aportando a la realizacion eficiente del trabajo grupal.
       </td>
       </tr>
       <tr>
-      <td>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
+      <td>Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería</td>
+      <td>
+        <br><br>
+        <strong>Mallma Quispe, Rubén Elías - TB1:</strong> message here
+        <br>Documenta la arquitectura de Mushroom con System Landscape, Context/Container y Deployment Diagrams, empleando notación consistente, supuestos explícitos y criterios de aceptación. Redacta secciones que conectan la topología de servicios con el algoritmo A* y la integración de APIs climáticas/geopolíticas, asegurando comprensión transversal (desarrollo, operaciones, dirección) y facilitando decisiones de infraestructura.<br>
+        <br><br>
+        <strong>Riega Salas, José Miguel - TB1:</strong> message here
+        <br>Elabora documentación de Event Storming y Domain Message Flow Modeling con catálogos de eventos, comandos y políticas, acompañados de glosario de términos del dominio marítimo. Presenta diagramas y narrativas breves que permiten a áreas técnicas y de negocio seguir el flujo de información desde los eventos (tormentas, cierres de rutas) hasta las actualizaciones de la ruta óptima, con criterios de objetividad y verificabilidad.<br>
+        <br><br>
+        <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong> message here
+        <br>Produce el Design purpose, atributos de diseño de entrada, funcionalidad primaria y quality attributes, organizados en secciones trazables a riesgos y metas del cliente. Redacta tablas de escenarios (estímulo-ambiente-respuesta-métrica) que comunican, para distintos lectores, cómo el sistema mantiene tiempos de cómputo y precisión del ruteo bajo condiciones adversas, manteniendo lenguaje claro y evidencia técnica.<br>
+        <br><br>
+        <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong> message here
+        <br>Redacta los requisitos funcionales y no funcionales y la propuesta de Candidate Context Mapping con criterios de completitud, coherencia y testabilidad. Presenta historias de usuario, restricciones y criterios de aceptación que vinculan el cálculo de rutas con fuentes de datos externas, permitiendo a equipos de desarrollo, QA y stakeholders ejecutivos comprender alcance, supuestos y dependencias del sistema.<br>
+        <br><br>
+        <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
+        <br>Compila el Architectural Drivers Backlog, las decisiones de diseño y los refinamientos de escenarios de calidad, registrando alternativas evaluadas, justificaciones y consecuencias. Emplea plantillas estandarizadas y matrices de decisión que permiten a lectores de diferentes especialidades y jerarquías contrastar opciones (p. ej., estrategias de resiliencia, patrones de integración) y entender su impacto en la operación marítima.<br>
+        <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
+        <br>La documentación producida por el equipo mostró objetividad, trazabilidad y claridad para lectores de distintas áreas y niveles. Se consolidaron entregables coherentes: arquitectura formal (System Landscape, Context/Container, Deployment), catálogos y narrativas de Event Storming y flujos de mensajes, definiciones de propósito de diseño, funcionalidad primaria y atributos de calidad, además de requisitos funcionales/no funcionales y Context Mapping candidatos. El backlog de drivers, las decisiones arquitecturales y los escenarios de calidad quedaron registrados con alternativas, justificaciones y consecuencias, empleando plantillas, tablas y métricas verificables que vinculan el algoritmo A*, la integración con APIs externas y las necesidades del cliente marítimo.<br>
         <br><br>
-        <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
-        <br><br>
-        <strong>Pescorán Angulo, Juan Fabritzzio - TB1:</strong> message here
-        <br><br>
-        <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
-        <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Aportes a lo largo de los capitulos, principalmente en el capitulo 2 y 4.
-      <td>
-        <strong>ENTREGABLE TB1:</strong>
-        <br><br>
-        <strong>Aru Acevedo, Yair Christofer - TB1:</strong> message here
-        <br><br>
-        <strong>Lizano Coll Cardenas, Fernando Jesus - TB1:</strong> message here
-        <br><br>
-        <strong>Pescorán Angulo, Juan Fabritzzio - TB1:</strong> message here
-        <br><br>
-        <strong>Riega Salas, Jose Miguel - TB1:</strong> message here
-        <br><br>
-        <strong>Vasquez Requejo, Augusto Mathias Leonardo - TB1:</strong> Esta solucion tecnologica que se propone será util para resolver una problematica actual que se presenta.
       </td>
 </tr>
 </tbody>
