@@ -348,3 +348,5 @@ Realizamos una lluvia de ideas e identificamos las fases de acorde a lo propuest
 - **Panel de Monitoreo**:	Vista centralizada de la ubicación de embarcaciones, rutas activas y condiciones del entorno.
 
 - **Reporte de Ruta**:	Documento generado automáticamente o a solicitud, que resume el estado de una ruta, riesgos y alternativas sugeridas.
+  
+- **Incoterms**: Los Incoterms (abreviatura de International Commercial Terms) son términos utilizados en los contratos internacionales que detallan las obligaciones de cada una de las partes (exportador-vendedor e importador-comprador) a la hora de entregar las mercancías.
