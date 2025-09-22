@@ -95,8 +95,8 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   <th colspan="2">Mallma Quispe, Ruben Elias</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td> </td>
+    <td><img src="../../assets/img/chapter-I/rub-wus-here-lmao.png" style="width:700px; height:auto;" alt=""></td>
+    <td>Estudiante de 8vo ciclo de ingeniería de software en la UPC. Me percibo como rápido, sencillo y proactivo. Si alguien está leyendo esto, espero que tengas un muy buen día. Ayer fui a pasear y me di cuenta que no tengo tiempo: ¿qué hago paseando cuanto tengo muchas cosas que hacer? Pero aún así decidí pasear porque me hizo feliz por unos momentos.</td>
   </tr>
 
   <tr>
