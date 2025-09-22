@@ -380,6 +380,193 @@ El último paso de una sesión de tormenta de eventos es buscar agregados que es
 <img src="../..//assets/img/chapter-IV/EventStep10.png">
 
 ### 4.2.2.	Candidate Context Discovery.
+
+En esta sección, el equipo describe detalladamente el proceso seguido para la sesión de Candidate Context Discovery, partiendo del modelo de dominio previamente construido mediante EventStorming, con el propósito de identificar y delimitar los Bounded Contexts que compondrán la arquitectura de Mushroom. Según Khononov (2021), este enfoque estratégico de Domain‑Driven Design (DDD) requiere una combinación de análisis colaborativo y técnicas sistemáticas para aislar fragmentos del dominio que posean coherencia interna y aporten el mayor valor al negocio
+
+Para asegurar una exploración efectiva de los límites contextuales, se combinaron tres técnicas complementarias, tal como recomienda Khononov (2021):
+
+* **Start‑with‑Value:** consiste en identificar primero aquellos subdominios o flujos de negocio cuyo impacto en la propuesta de valor sea más significativo, de modo que las decisiones de acotamiento prioricen las funcionalidades críticas para el usuario y el negocio
+
+* **Start‑with‑Simple:** implica descomponer el proceso principal en un conjunto mínimo de pasos secuenciales, desde el registro de usuario hasta la generación de recomendaciones, lo cual facilita la visualización y evita solapamientos entre candidatos de contexto
+
+* **Look‑for‑Pivotal‑Events:** se centra en detectar aquellos eventos de dominio que representan cambios de estado fundamentales, ya que estos hitos indefectiblemente marcan fronteras naturales entre contextos
+
+La sesión de Candidate Context Discovery, cuya duración no excedió las dos horas, se organizó como un taller interactivo en el que participaron todos los miembros de nuestro equipo de TEEMO Solutions, empleando una herramienta colaborativa de EventStorming, Miro. Durante la misma, se capturaron iterativamente pantallazos que documentan la evolución del modelo de eventos, desde la visión inicial hasta la estructuración final de los contextos. Estas imágenes se incorporarán en la sección para evidenciar la progresión metodológica y facilitar la trazabilidad de las decisiones tomadas.
+
+A partir del modelo de dominio generado con EventStorming, el equipo explica y evidencia el proceso realizado para la sesión de Candidate Context Discovery, en la que se busca identificar los Bounded Contexts. Durante la sesión se siguieron estos pasos:
+
+1. **Preparación y definición de alcance**
+
+    Para garantizar una sesión estructurada y productiva, se llevaron a cabo las siguientes actividades previas:<br><br>
+
+
+   * **Convocatoria y roles de los participantes**
+
+      Se conformó un grupo interdisciplinario bajo la coordinación de TEEMO Solutions, integrado por:
+
+
+      - Desarrolladores backend y frontend, responsables de la viabilidad técnica.
+      - Diseñadores UX/UI, encargados de asegurar la coherencia en la experiencia de usuario.<br><br>
+
+
+    * **Definición de objetivos y alcance**
+
+
+       * **Propósito principal:** Descomponer el dominio de Mushroom, desde el registro inicial del usuario hasta la emisión de rutas óptimas.
+       * **Alcance temporal:** Taller de mínimo dos horas y máximo tres horas en la plataforma Miro utilizando la técnica de EventStorming.<br><br>
+
+     * **Herramientas y materiales de trabajo**
+
+        * **Lienzo colaborativo en Miro:** para la colocación y organización dinámica de eventos y comandos.
+        * **Post‑its codificados por color:** diferenciando eventos de dominio, comandos de acción e integraciones externas.
+        * **Marcadores y cámaras:** para anotar aclaraciones y capturar iteraciones de la evolución del modelo.
+
+
+     * **Asignación de responsabilidades**
+        * **Facilitador:** orientó la dinámica del taller, gestionó los tiempos y promovió la participación activa.
+        * **Escritor:** trasladó al lienzo digital las notas y agrupaciones, asegurando la trazabilidad de cada modificación.
+        * **Expertos de dominio**: validaron definiciones, aclararon términos y garantizaron la precisión del lenguaje ubicuo. <br><br>
+
+
+2.  **Técnica Start‑with‑Value**
+
+      Con el fin de enfocar el análisis en las áreas de mayor impacto, se realizó:
+
+
+      * **Identificación de “valores núcleo”**
+         Cada integrante propuso los flujos de negocio que, a su juicio, aportan el mayor valor a usuario y organización:
+          
+           * Consulta de rutas entre dos puertos distintos y proceso de optimización usando el algoritmo A*
+          * Identificación de riesgos en la ruta, tanto metereológicos como políticos, con el uso de Machine Learning.
+          * Generación de reportes de rutas designadas por los usuarios, además de permitir el cálculo de Incoterms recomendados.
+
+       * **Priorización de eventos**
+        Se listaron todos los eventos detectados y se clasificaron según su impacto (alto, medio, bajo). Solo los catalogados como alto impacto se trasladaron a la siguiente etapa, garantizando que la sesión permaneciera centrada en las funciones críticas.<br><br>
+
+3. **Técnica Start‑with‑Simple**
+
+    Para clarificar la secuencia de operaciones esenciales, se procedió a:
+
+    * **Modelado visual con post‑its**
+
+      Cada uno de los pasos se representó con post‑its de un único color, evitando superposiciones y facilitando la delimitación de responsabilidades entre los distintos subdominios.
+
+    * **Descomposición en pasos mínimos**
+
+      Se esbozó un timeline básico que recogiera el flujo de valor, compuesto por:
+
+###### Tabla 13
+*Flujo de valor identificado en el proceso de EventStorming de Mushroom*
+
+| Paso |	Descripción | Artefactos de Dominio / Evento Pivotal |
+|-|-|-|
+| 1 |	Registro del usuario en la plataforma (onboarding)| **Comando:** RegisterUser, **Evento:** UserRegistered|
+|2	|Creación / actualización de perfil y aceptación de políticas (consentimiento)	|**Comando:** CreateOrUpdateProfile, AcceptPrivacyPolicy,  **Evento:** ProfileCreated / PrivacyPolicyAccepted|
+|3|	Autenticación del usuario (login) y verificación de credenciales	|**Comando:** AuthenticateUser,  **Evento:** UserLoginSucceeded / UserLoginFailed|
+|4|	Visualización del catálogo de puertos / selección de puertos para planificar|	**Comando:** RequestPortList, SelectPort,  **Evento:** PortListViewed / PortSelected
+|5	|Consulta del estado del puerto (disponibilidad, avisos, port news)|	**Comando:** GetPortStatus, **Evento:** PortStatusViewed / PortStatusUpdated|
+|6|	Solicitud de cálculo de ruta (inicia el proceso A*/AI) |	**Comando:** RequestRouteCalculation, **Evento:** RouteCalculationRequested|
+|7	|Publicación de rutas sugeridas por el motor A*/AI y presentación al usuario	|**Comando:** (interno) PublishSuggestedRoutes, **Evento:** SuggestedRoutePublished
+|8|	Selección de la ruta final por parte del usuario y guardado en historial	|**Comando:** SelectSuggestedRoute, SaveRoute,  **Evento:** RouteSelected / RouteSaved
+|9|	Cálculo de Incoterm y estimación de precio asociado a la ruta seleccionada	| **Comando:** CalculateIncoterm, EstimatePrice, **Evento:** IncotermCalculated / PriceEstimated
+|10	|Generación de reporte (PDF/Excel) y notificación al usuario; registro en historial de reportes	|**Comando:** GenerateReport, DownloadReport, **Evento:** ReportGenerated / ReportDownloaded|
+|11	|Notificación in-app / email (registro, resultado de ruta, report listo, alertas)	|**Comando:** CreateInAppNotification, SendEmailNotification, **Evento:** NotificationCreated / NotificationSent|
+|12|	Operación y monitorización: detección de fallos, reintentos y alertas de sistema	|**Comando:** ReportSystemHealth, RetryRouteCalculation, **Evento:** RouteCalculationFailed, ExternalServiceUnavailable, SystemHealthAlert
+
+4. **Técnica Look‑for‑Pivotal‑Events**
+
+    Con el propósito de delimitar con precisión los contextos, se identificaron eventos de transición. Un evento de transición, según Khononov (2021), no solo marca un cambio de estado significativo, por ejemplo el paso de “usuario anónimo” a “usuario registrado”, sino que también permite priorizar de forma rigurosa el modelado y el desarrollo. Al centrarse en aquellos eventos de mayor impacto, el equipo puede determinar con claridad qué áreas requieren atención inmediata y cuáles funcionalidades deben implementarse primero, garantizando así que las decisiones de diseño estén siempre alineadas con los objetivos de negocio y el valor aportado al usuario.
+
+###### Tabla 14
+*Lista de transiciones identificadas en el proceso de EventStorming de Mushroom*
+
+|Transición	|Descripción|
+|-|-|
+|UserRegistered	|Un usuario anónimo se convierte en usuario registrado, creando una cuenta válida en el sistema.|
+|PrivacyPolicyAccepted	|Un usuario sin consentimiento previo acepta los términos y políticas, quedando habilitado para el uso del sistema.|
+|PrivacyPolicyRejected	|Un usuario que rechaza los términos y políticas no puede continuar con el registro, finalizando el proceso.|
+|UserLoginSucceeded	|Una sesión no iniciada se valida exitosamente con credenciales correctas, permitiendo acceso al sistema.|
+|UserLoginFailed	|Un intento de inicio de sesión falla debido a credenciales incorrectas o datos inválidos.|
+|AccountUpdated	|Un perfil de usuario existente es modificado con nuevos datos o credenciales.|
+|PortListViewed	|El usuario visualiza la lista de puertos disponibles en el sistema.|
+|PortSelected|	Un puerto de la lista es seleccionado por el usuario para iniciar la planificación de ruta.|
+|PortStatusViewed	|El usuario consulta el estado de un puerto específico (disponibilidad, avisos, posición.).|
+|PortStatusUpdated|	El sistema actualiza la información de estado de un puerto en base a fuentes externas o monitoreo.
+|RouteCalculationRequested	|Un usuario solicita el cálculo de una nueva ruta a partir de puertos seleccionados.|
+|RouteCalculated	|Una ruta es generada por el motor de cálculo (A* o IA) y queda disponible para el usuario.|
+|SuggestedRoutePublished|	El sistema publica una o varias rutas sugeridas al usuario para su evaluación.|
+|RouteSelected	|El usuario elige una de las rutas sugeridas como la definitiva.|
+|RouteSaved|	Una ruta seleccionada es almacenada en el historial del usuario.|
+|IncotermCalculated|	Se calcula el Incoterm correspondiente a la ruta seleccionada, generando un resultado con base legal y comercial.|
+|PriceEstimated|	El sistema calcula una estimación de costos para la ruta seleccionada.|
+|ReportGenerated|	Se crea un reporte (PDF o Excel) a partir de una ruta seleccionada y su información asociada.|
+|ReportDownloaded	|El usuario descarga un reporte previamente generado.|
+|NotificationCreated	|El sistema crea una notificación (in-app o email) relacionada con un evento relevante (registro, ruta, reporte).|
+|NotificationSent|	Una notificación es enviada al canal correspondiente (correo electrónico, aplicación).|
+|NotificationDisplayed	|El sistema muestra una notificación en la bandeja del usuario.|
+|NotificationRead	|El usuario marca una notificación como leída.
+|NotificationDeleted	|El usuario elimina una notificación de su bandeja.|
+|RouteCalculationFailed	|Un intento de cálculo de ruta falla debido a datos incompletos o indisponibilidad del motor de cálculo.|
+|ExternalServiceUnavailable	|Un servicio externo requerido (IA, Incoterm, Gmail) no responde, quedando registrado como incidente.|
+
+* **Agrupación por afinidad de eventos**
+
+  Sobre el lienzo, los post‑its se reagruparon alrededor de cada evento pivotal, permitiendo visualizar con claridad los límites naturales entre posibles contextos.
+
+5. **Visualización evolutiva**
+
+    Con el objetivo de documentar de manera sistemática el avance del modelo y garantizar su trazabilidad, se implementó un proceso de registro visual en intervalos regulares:
+
+
+   * **Capturas iterativas**
+    
+      Para conservar un historial detallado de la evolución del tablero, se generaron capturas de pantalla en Miro a lo largo de toda la sesión de trabajo, siguiendo estos hitos:
+
+     * **Estado inicial:** todos los eventos recolectados, aún sin clasificar ni ordenar, reflejando la materia prima del modelado.
+     * **Después de Start-with-Value:** se destacaron exclusivamente aquellos eventos con mayor repercusión en la generación de valor, lo que permitió centrar el análisis en los aspectos críticos del dominio.
+     * **Después de Start-with-Simple:** se reorganizó el conjunto de eventos siguiendo un criterio cronológico básico, facilitando la comprensión del flujo secuencial de las interacciones.
+     * **Después de Look-for-Pivotal-Events:** se identificaron y agruparon los eventos clave que actúan como puntos de inflexión, sentando las bases para la delimitación de subdominios.
+     * **Versión final:** se plasmó la consolidación de los candidatos a contextos delimitados, incorporando agregados, políticas y responsabilidades, y validando la coherencia global del modelo.
+
+   * **Registro meticuloso:**
+
+      Cada imagen se anotó con fecha, hora y una breve descripción de los ajustes realizados, asegurando que el informe refleje con exactitud la evolución metodológica, y facilitando la inclusión de estas evidencias en la sección correspondiente.<br><br>
+
+1. **Candidatos a Bounded Context**
+A continuación presentamos la sección de Candidatos a Bounded Contexts, donde listamos todos los contextos identificados en la sesión inicial (incluyendo aquellos que finalmente no se consolidaron) y la justificación de su inclusión o exclusión en el conjunto definitivo.
+
+###### Tabla 15
+*Lista de candidatos a Bounded Context identificados en el proceso de EventStorming de Mushroom*
+
+|Contexto	|Responsabilidades clave	|¿Pasa al diseño?
+|-|-|-|
+|IAM|	Registro de usuarios, validación de datos, login/logout, gestión de credenciales, aceptación/rechazo de políticas de privacidad, cifrado de datos.	|**Consolidado:** Este es transversal e indispensable. Centraliza seguridad, autenticación y ciclo de vida de usuarios. Garantiza cumplimiento de políticas y auditabilidad.|
+|Profile & Preferences|	Creación y actualización del perfil de usuario, datos de contacto, credenciales, preferencias, actualización de contraseñas, cambio de configuración de cuenta.	|**Consolidado:** Permite desacoplar información personal del contexto de autenticación. Facilita personalización y cambios de perfil sin impactar IAM.
+|Asset & Resource Management|	Gestión de puertos: catálogo de puertos, metadatos, visualización en mapas, estado de puertos y noticias relacionadas.|	**Consolidado:** Constituye una fuente de verdad para el dominio. Se mantiene independiente para alimentar Routing y Reporting.|
+|A* / AI Process	|Cálculo de rutas mediante A* y sistemas de IA, publicación de rutas sugeridas, selección y guardado de rutas en historial, integración con datos de puertos y clima.|	**Consolidado:** Es el Core Domain de Mushroom. La lógica de negocio más diferenciadora. Debe aislarse claramente.|
+|Service Design and Planning|	Cálculo de Incoterms y precios estimados para rutas seleccionadas. Interacción con sistemas externos de reglas comerciales.	|**Consolidado:** Soporta la toma de decisiones económicas y legales en la planificación. Mantener separado asegura flexibilidad ante cambios normativos.|
+|Notifications|	Gestión de notificaciones in-app y vía email: creación, envío, visualización, marcado como leído o eliminado.|	**Consolidado:** Aunque transversal, es mejor mantenerlo separado por su naturaleza de canalización de eventos.|
+|Service Operation & Monitoring	|Supervisión de estado del sistema, detección de fallos, desarrollo de reportes, alertas de indisponibilidad de servicios externos (IA, Gmail, Incoterm).|	**Consolidado:** Asegura confiabilidad del sistema. Centraliza observabilidad y reacción ante errores.|
+|Hardware Device Management	|Administración de dispositivos físicos (sensores, gateways, calibración, mantenimiento).	|**Excluido:** Mushroom es una aplicación software, no gestiona hardware físico como IoT.|
+|Payment & Subscription|	Gestión de planes de pago, pasarelas, facturación recurrente.	|**Excluido:** El modelo actual de Mushroom no contempla monetización vía suscripciones ni facturación directa, por lo que se descarta.|
+|External Data Acquisition	|Módulo independiente para ingesta de datos climáticos y marítimos (APIs de terceros) con pipelines propios.	|**Excluido:** Aunque hay integración con datos de clima y noticias de puertos, se maneja dentro de Routing & Optimization y Port Catalog para simplificar.|
+
+7. **Bounded Contexts finales**
+
+    Como resultado de la sesión de Candidate Context Discovery y tras identificar los eventos cruciales (pivotal events), se definieron y refinaron siete Bounded Contexts a partir de los candidatos iniciales. Para cada uno se establecieron sus responsabilidades principales, su lenguaje ubicuo y los contratos de integración, garantizando así una delimitación clara y coherente entre dominios.
+
+###### Tabla 16
+*Lista de Bounded Context finales identificados en el proceso de EventStorming de Mushroom*
+|Contexto|	Responsabilidades clave|	Ubiquitous Language|
+|--|-|-|
+|1. IAM	|- Registro y autenticación de usuarios: login/logout, validación de credenciales. <br>- Gestión de políticas de privacidad y cifrado de datos.<br>- Emisión y validación de tokens de sesión.|	- User: persona que accede al sistema. <br>- Credentials: conjunto de datos secretos usados para autenticarse.<br>- Session: período autorizado de interacción activa.<br>- AccessToken: token de corta duración que permite acceso seguro a recursos.<br>- RefreshToken: token usado para renovar la sesión.|
+|2. Profile & Preferences	|- Creación y actualización de perfiles de usuario (nombre, email, contacto).<br>- Configuración de preferencias: idioma, notificaciones, tema de la app.<br>- Recuperación y actualización de contraseñas.	|- Profile: datos personales y de configuración de un usuario.<br>- Preference: opciones personalizadas (idioma, notificaciones, tema).<br>- PasswordRecoveryToken: token temporal para recuperación de cuenta.
+|3. Asset & Resource Management |- Gestión de puertos: creación, actualización y eliminación de entradas.<br>- Administración de metadatos: nombre, ubicación, estado.<br>- Integración con noticias de puertos y datos contextuales.	|- Port: entidad que representa un puerto marítimo con su ubicación.<br>- PortMetadata: atributos descriptivos del puerto (estado, noticias, coordenadas).<br>- PortCatalog: colección de puertos gestionados en el sistema.
+|4. A* / AI Process|	- Cálculo de rutas marítimas usando algoritmo A* y procesos de IA.<br>- Generación de rutas sugeridas según clima, puertos y preferencias.<br>- Selección y guardado de rutas en historial.|	- Route: trayectoria calculada entre puertos.<br>- RouteNode: punto intermedio o escala en la ruta.<br>- OptimizedRoute: ruta sugerida tras aplicación de IA/A*.<br>- RouteHistory: registro de rutas seleccionadas o usadas previamente.|
+|5. Service Design and Planning |	- Cálculo de Incoterms aplicables a una ruta.<br>- Estimación de precios de transporte.<br>- Integración con reglas comerciales externas.|	- Incoterm: regla internacional que define responsabilidades de transporte.<br>- PriceEstimate: costo calculado para una ruta.<br>- CommercialRule: regla de negocio aplicada en el cálculo.
+|6. Notifications |	- Creación, envío y recepción de notificaciones in-app y vía email.<br>- Gestión de notificaciones: marcar como leído, archivado o eliminado.|	- Notification: mensaje emitido al usuario.<br>- NotificationChannel: medio de entrega (in-app, correo electrónico).<br>- NotificationStatus: estado de la notificación (leída, pendiente, eliminada).|
+|7. Service Operation & Monitoring	|- Supervisión del estado de servicios internos y externos (IA, Gmail, Incoterm).<br>- Registro de errores.<br>- Alertas y reportes de fallos o indisponibilidad.	|- ServiceStatus: estado de un servicio (activo, caído, en mantenimiento).<br>- SystemAlert: evento que indica un fallo crítico.<br>- ErrorLog: registro de errores o eventos inesperados.|
+
 ### 4.2.3.	Domain Message Flows Modeling.
 
 En esta sección, el equipo presenta y documenta de forma detallada el proceso seguido para ilustrar la colaboración entre los distintos bounded contexts al abordar los casos de uso planteados por los usuarios del sistema. A través de la aplicación de la técnica de visualización Domain Storytelling, se evidenciará cada interacción y flujo de información entre los contextos, apoyándose en capturas de pantalla que muestran los diagramas elaborados durante el ejercicio. Este enfoque colaborativo permite validar y ajustar las fronteras de los dominios, garantizando que el diseño del software refleje fielmente las necesidades del negocio y del usuario.
@@ -473,20 +660,38 @@ Report se comporta como Conformist, consumiendo resultados de A*/AI, Planning y 
 
 El diagrama de Context Mapping nos permite visualizar claramente las relaciones y dependencias entre los contextos delimitados del sistema, mostrando el flujo de datos y la responsabilidad de cada subdominio.
 <img src="../..//assets/img/chapter-IV/Context_mapping.jpg">
-## 4.3.	Software Architecture.
-### 4.3.1.	Software Architecture System Landscape Diagram.
+
+## 4.3.	Software Architecture
+
+La visión general de la arquitectura describe la estructura fundamental de un sistema, abarcando sus componentes principales y la interacción entre ellos. En el contexto de desarrollo de aplicaciones móviles, una arquitectura sólida es esencial para garantizar que la aplicación sea escalable, segura y eficiente. Este enfoque permite una implementación ordenada, donde cada parte del sistema tiene una responsabilidad clara, y facilita la integración de nuevas funcionalidades o la modificación de las existentes sin afectar la estabilidad general de la plataforma (Richards & Ford, 2021).
+
+El diseño arquitectónico de Mushroom se basa en una arquitectura modular, donde cada componente del sistema está desacoplado, permitiendo un desarrollo y mantenimiento más flexible. Además, se integra con servicios externos de autenticación, bases de datos en la nube, y plataformas de análisis, asegurando que la aplicación pueda manejar grandes volúmenes de datos de manera eficiente y con una alta disponibilidad.
+
+La arquitectura también contempla la seguridad como un aspecto central, con la implementación de técnicas de cifrado para proteger los datos sensibles del usuario y garantizar que las comunicaciones dentro de la aplicación sean seguras. Además, se diseña para ser compatible con diversas plataformas móviles, adaptándose a las especificaciones de iOS y Android, lo que facilita una experiencia de usuario consistente y de alta calidad en ambos entornos.
+
+De acuerdo con Brown (2023), el modelo C4 para la diagramación y esquematización de la arquitectura de software ofrece un enfoque estructurado y escalable que facilita la descripción clara de sus secciones y componentes. Al dividir la arquitectura en cuatro niveles, Contexto, Contenedores, Componentes y Código, permite una comprensión más accesible tanto para técnicos como para partes interesadas sin experiencia técnica. Esta estructura promueve una comunicación más fluida y efectiva entre los equipos de desarrollo y las partes involucradas, optimizando el proceso colaborativo y resultando en un desarrollo más eficiente y en una arquitectura de software más robusta y mantenible.
+
+### 4.3.1.	Software Architecture System Landscape Diagram
+
+El diagrama de landscape o paisaje del sistema corresponde al nivel organizacional del modelo C4 y ofrece una visión integral de todos los sistemas de software relevantes y sus interacciones dentro de un entorno empresarial o tecnológico más amplio. Este tipo de visualización resulta clave para comprender arquitecturas distribuidas, ya que permite mapear tanto sistemas internos como externos, así como los flujos de información que los conectan (Brown, 2023).
 
 <img src="../..//assets/img/chapter-IV/system-landscape.png">
 
-### 4.3.1.	Software Architecture Context Level Diagrams.
+### 4.3.1.	Software Architecture Context Level Diagrams
+
+El diagrama de contexto, como nivel más alto de abstracción del modelo C4, ofrece una visión global del sistema de Mushroom y su entorno externo, mostrando las interacciones de alto nivel con actores y servicios externos. Esta representación clarifica cómo la plataforma se vincula con usuarios, sistemas externos y otros subsistemas independientes que se pueda requerir, estableciendo los límites de responsabilidad de Mushroom (Brown, 2023).
 
 <img src="../..//assets/img/chapter-IV/context-level.png">
 
-### 4.3.2.	Software Architecture Container Level Diagrams.
+### 4.3.2.	Software Architecture Container Level Diagrams
+
+El diagrama de contenedores, ubicado en un nivel intermedio del modelo C4, ofrece una visión detallada de la arquitectura interna de Mushroom, identificando los principales contenedores (aplicaciones cliente, servicios backend, bases de datos) y sus protocolos de comunicación. Esta representación facilita la comprensión de cómo cada pieza colabora para cumplir con los casos de uso del sistema, permitiendo al equipo técnico y a los stakeholders visualizar claramente responsabilidades, flujos de datos y tecnologías empleadas (Brown, 2023).
 
 <img src="../..//assets/img/chapter-IV/container-diagram.png">
 
-### 4.3.3.	Software Architecture Deployment Diagrams.
+### 4.3.3.	Software Architecture Deployment Diagrams
+
+El diagrama de despliegue muestra la distribución física de los contenedores de software sobre la infraestructura tecnológica, detallando nodos (servidores, gateways) y las conexiones de red que los interconectan. Este nivel del modelo C4 permite visualizar dónde se ejecuta cada componente, desde el backend y las bases de datos hasta la aplicación embebida y edge, así como los protocolos de comunicación, volúmenes de tráfico y requisitos de seguridad y redundancia (Brown, 2023).
 
 <img src="../..//assets/img/chapter-IV/deployment-diagram.png">
 
