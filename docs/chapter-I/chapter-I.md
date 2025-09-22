@@ -113,8 +113,8 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   <th colspan="2">Sanchez Zamora, Fabrizio Alessandro</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td><img src="../../assets/img/chapter-I/Fabrizio-Sanchez.png" style="width:700px; height:auto;" alt=""></td>
+    <td>Mi nombre es Fabrizio Alessandro Sanchez Zamora con código de estudiante U202213652, soy estudiante de Ingeniería de Software. Entre mis conocimientos se encuentran el manejo de lenguajes de programacion como C++, JavaScript y Python, asi como también se manejar SQL, Html y CSS. Como miembro del equipo, me comprometo a colaborar con mis compañeros para poder presentar un buen proyecto grupal</td>
   </tr>
 
   <tr>
