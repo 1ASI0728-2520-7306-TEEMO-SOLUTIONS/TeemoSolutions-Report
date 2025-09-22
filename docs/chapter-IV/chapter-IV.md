@@ -381,6 +381,25 @@ El último paso de una sesión de tormenta de eventos es buscar agregados que es
 
 ### 4.2.2.	Candidate Context Discovery.
 ### 4.2.3.	Domain Message Flows Modeling.
+
+En esta sección, el equipo presenta y documenta de forma detallada el proceso seguido para ilustrar la colaboración entre los distintos bounded contexts al abordar los casos de uso planteados por los usuarios del sistema. A través de la aplicación de la técnica de visualización Domain Storytelling, se evidenciará cada interacción y flujo de información entre los contextos, apoyándose en capturas de pantalla que muestran los diagramas elaborados durante el ejercicio. Este enfoque colaborativo permite validar y ajustar las fronteras de los dominios, garantizando que el diseño del software refleje fielmente las necesidades del negocio y del usuario.
+
+Domain Storytelling es una técnica visual y ágil que utiliza historias narradas y representadas gráficamente para describir cómo los distintos actores y componentes del sistema interactúan en situaciones reales. Cada flujo se descompone en pasos secuenciales que combinan narración textual y símbolos estandarizados (actores, mensajes y artefactos), facilitando la comprensión colectiva y la detección temprana de inconsistencias o vacíos en el modelo de dominio (Hofer & Schwentner, 2021).
+
+*Domain Message Flow relacionado al creación de un perfil tras el primer inicio de sesión del usuario*
+<img src="../..//assets/img/chapter-IV/Flow1.png">
+
+*Domain Message Flow relacionado al cálculo de rutas*
+<img src="../..//assets/img/chapter-IV/Flow2.png">
+
+*Domain Message Flow relacionado al seleccion de rutas populares*
+<img src="../..//assets/img/chapter-IV/Flow3.png">
+
+*Domain Message Flow relacionado al cálculo de incoterms*
+<img src="../..//assets/img/chapter-IV/Flow4.png">
+
+
+
 ### 4.2.4.	Bounded Context Canvases.
 
 En esta sección se presentan los Bounded Context Canvases, los cuales describen el propósito, responsabilidades y relaciones de cada contexto. Esta herramienta permite alinear el diseño de la solución con los objetivos del negocio y asegurar consistencia en la arquitectura propuesta.
