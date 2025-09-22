@@ -292,6 +292,93 @@ Al finalizar el Quality Attribute Workshop (QAW), el equipo priorizó los escena
 
 ## 4.2.	Strategic-Level Domain-Driven Design.
 ### 4.2.1.	EventStorming.
+
+
+En esta sección se describe el proceso llevado a cabo mediante la técnica de EventStorming para construir una visión compartida del dominio del problema y elaborar una primera versión del modelo del sistema. Siguiendo a Zimarev (2019), EventStorming consiste en un taller colaborativo en el que, a través de la identificación y secuenciación de eventos de negocio, expertos del dominio y miembros del equipo técnico pueden descubrir puntos críticos y dependencias ocultas dentro de procesos complejos (Zimarev, 2019). Además, Tune y Perrin (2024) resaltan cómo esta técnica no solo facilita la generación de requisitos claros, sino que también promueve la alineación socio-técnica al conectar las decisiones de arquitectura con la estrategia organizacional (Tune & Perrin, 2024).
+
+Para ilustrar su alcance, Tune y Perrin definen EventStorming en términos prácticos:
+
+“El EventStorming es un taller dinámico que alinea a los distintos actores, tanto de negocio como técnicos, mediante la identificación de eventos de dominio, permitiendo desentrañar la complejidad del sistema y sentar las bases para un diseño coherente” (Tune & Perrin, 2024).
+
+Como objetivos de la sesión de EventStorming planteamos:
+
+- Reconocer y catalogar los eventos de dominio más significativos, definiendo con precisión su naturaleza y alcance.
+  
+- Mapear las dependencias causales y la secuencia temporal entre esos eventos, para visibilizar flujos y puntos de decisión críticos.
+
+- Identificar los procesos de negocio subyacentes, así como los comandos que los activan y los actores responsables de cada acción.
+
+- Generar un insumo estructurado que facilite la posterior delimitación de Bounded Contexts y sirva de base para la definición del modelo de dominio.
+
+**Desarrollo de la sesión**
+
+**Step 1: Unstructured Exploration**
+
+En esta etapa inicial, todos los participantes plasmaron en notas adhesivas los eventos más relevantes del sistema, redactados en pasado para enfatizar que son hechos consumados dentro del negocio. El objetivo fue generar una “fotografía” global de todos los sucesos críticos, sin filtrar o depurar, de modo que emergiera un panorama amplio de qué ocurre en el dominio.
+
+<img src="../..//assets/img/chapter-IV/EventStep1.png">
+
+**Step 2: Timelines**
+
+Los participantes revisan los eventos de dominio generados y los organizan en el orden en que ocurren en el dominio empresarial. Los eventos deben comenzar con el happy path: el flujo que describe un escenario empresarialexitoso. Una vez que se realiza el happy path, se pueden agregar escenarios alternativos.
+
+<img src="../..//assets/img/chapter-IV/EventStep2.png">
+
+**Step 3: Paint Points**
+
+Una vez que tenga los eventos organizados en una línea de tiempo, use esta vista amplia para identificar puntos en el proceso que requieren atención. Estos pueden ser cuellos de botella, pasos manuales que requieren automatización, documentación faltante o conocimiento de dominio faltante.
+
+<img src="../..//assets/img/chapter-IV/EventStep3.png">
+
+**Step 4: Pivotal Points**
+
+Una vez que tenga una línea de tiempo de eventos aumentada con paint points, busque eventos comerciales importantes que indiquen un cambio en el contexto o la fase. Estos se denominan eventos fundamentales y están marcados con una barra vertical que divide los eventos antes y después del evento fundamental.
+
+<img src="../..//assets/img/chapter-IV/EventStep4.png">
+
+
+**Step 5: Commmands**
+
+Mientras que un evento de dominio describe algo que ya sucedió, un comando describe qué desencadenó el evento o el flujo de eventos. Los comandos describen las operaciones del sistema y, contrariamente a los eventos de dominio, se formulan en imperativo.
+
+<img src="../..//assets/img/chapter-IV/EventStep5.png">
+
+
+**Step 6: Policies**
+
+Algunos comandos se agregan al modelo, pero no tienen un actor específico asociado con ellos. Durante este paso, busca automation policies que puedan ejecutar esos comandos. Una automation policy un escenario en el que un evento desencadena la ejecución de un comando. En otras palabras, un comando se ejecuta automáticamente cuando ocurre un evento de dominio específico.
+
+<img src="../..//assets/img/chapter-IV/EventStep6.png">
+
+
+**Step 7: Read Models**
+
+
+Un modelo de lectura es la vista de datos dentro del dominio que el actor usa para tomar la decisión de ejecutar un comando. Puede ser una de las pantallas del sistema, un informe, una notificación, etc..
+
+<img src="../..//assets/img/chapter-IV/EventStep7.png">
+
+
+**Step 8: External Systems**
+
+Este paso consiste en aumentar el modelo con sistemas externos. Un sistema externo se define como cualquier sistema que no forma parte del dominio que se está explorando. Puede ejecutar comandos (entrada) o puede ser notificado sobre eventos (salida).
+
+<img src="../..//assets/img/chapter-IV/EventStep8.png">
+
+
+**Step 9: Aggregates**
+
+Una vez que todos los eventos y comandos están representados, los participantes pueden comenzar a pensar en organizar conceptos relacionados en agregados. Un agregado recibe comandos y produce eventos.
+
+<img src="../..//assets/img/chapter-IV/EventStep9.png">
+
+
+**Step 10: Bounded Contexts**
+
+El último paso de una sesión de tormenta de eventos es buscar agregados que estén relacionados entre sí, ya sea porque representan una funcionalidad estrechamente relacionada o porque están acoplados a través de políticas. Los grupos de agregados forman candidatos naturales para los límites de los contextos delimitados.
+
+<img src="../..//assets/img/chapter-IV/EventStep10.png">
+
 ### 4.2.2.	Candidate Context Discovery.
 ### 4.2.3.	Domain Message Flows Modeling.
 ### 4.2.4.	Bounded Context Canvases.
