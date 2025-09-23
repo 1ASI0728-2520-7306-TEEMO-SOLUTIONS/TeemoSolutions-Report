@@ -121,16 +121,16 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   <th colspan="2">Trigueros Chumacero, Flavio Eduardo</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td><img src="../../assets/img/chapter-I/Flavio.png" style="width:700px; height:auto;" alt=""></td>
+    <td>Mi nombre es Flavio Eduardo Trigueros Chumacero, estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas en el 8° ciclo, con código de alumno U202210190. Me considero una persona meticulosa y profundamente dedicada, con un firme compromiso hacia la mejora continua en todas las áreas de mi trabajo. Mi enfoque detallista y preciso me permite avanzar de manera eficiente y ágil en los proyectos, con especial énfasis en la documentación, la identificación de errores y la detección de oportunidades de mejora.<br>Además, cuento con un amplio conocimiento en diversas áraes como Scrum y Ciberseguridad, y lenguajes de programación, incluyendo JavaScript, Python, HTML, CSS, MySQL, MongoDB, Flutter, y GitHub, entre otros. Estas competencias no solo son valiosas para el resultado del curso, sino que también aseguran un desarrollo favorable y multidisciplinario a lo largo del proyecto.</td>
   </tr>
 
   <tr>
     <th colspan="2">Valenzuela Huillcaya, Aldhair Johan Juan </th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/" style="width:700px; height:auto;" alt=""></td>
-    <td></td>
+    <td><img src="../../assets/img/chapter-I/Aldhair.png" style="width:700px; height:auto;" alt=""></td>
+    <td>Soy estudiante de 8vo ciclo de la carrera Ingeniería de Software, con conocimientos en .NET, SQL Server, Flutter y desarrollo web. He participado en proyectos académicos y personales, aplicando metodologías ágiles y buenas prácticas de programación. Me caracterizo por ser responsable, colaborativo y aportar soluciones prácticas para cumplir los objetivos del equipo.</td>
   </tr>
 </table>
 
