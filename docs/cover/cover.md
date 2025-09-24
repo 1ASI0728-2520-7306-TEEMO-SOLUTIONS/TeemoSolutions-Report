@@ -81,8 +81,6 @@
   </tbody>
 </table>
 
---- 
-
 **2025-20**
 
 ---
@@ -167,6 +165,12 @@
     </tr>
     <tr>
       <td>1.11.0.</td>
+      <td>17/09/25</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Avance capítulo III: Desarrollo de las historias de usuario junto a los requisitos funcionales y los requisitos no funcionales de Mushroom</td>
+    </tr>
+    <tr>
+      <td>1.12.0.</td>
       <td>17/09/25</td>
       <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
       <td>Avance capítulo III: Desarrollo de las historias de usuario junto a los requisitos funcionales y los requisitos no funcionales de Mushroom</td>
@@ -353,7 +357,11 @@ A continuación, se presentan los gráficos de colaboración de los integrantes 
 - - -
 # Student Outcome
 
+Al finalizar el curso, el estudiante comunica resultados y proceso de ingeniería aplicado para el ciclo de desarrollo y despliegue de una solución basada en tecnologías emergentes, distribuida bajo una arquitectura de soluciones multicomponente con tecnologías diversas, que satisface requisitos para empresas o público en general, con un enfoque innovador e inclusivo, en un ambiente ágil y colaborativo, desplegada sobre plataformas Server Side, Cloud y Web3, haciendo uso de tecnologías open-source para los distintos niveles de los componentes para la solución.
 
+En Ingeniería de Software, el logro contribuye a alcanzar el:
+
+**ABET – EAC - Student Outcome 3: Capacidad de comunicarse efectivamente con un rango de audiencias.**
 
 En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuyen al cumplimiento de los aspectos que maneja el Outcome y las conclusiones realizadas de manera grupal.
 
