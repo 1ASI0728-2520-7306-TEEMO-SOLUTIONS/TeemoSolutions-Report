@@ -29,551 +29,649 @@
   }
 </style>
 
-# **CAPÍTULO V: PRODUCT IMPLEMENTATION**
+# **Capítulo V: Tactical-Level Software Design**
 
-## 5.1. Software Configuration Management
+En esta sección, el equipo aborda el diseño táctico de la solución siguiendo los principios de Domain‑Driven Design (DDD), traduciendo los Bounded Contexts previamente definidos en patrones y estructuras de código concretos. Cada sección se centra en uno de los contextos, describiendo sus agregados, repositorios, servicios de dominio y fábricas, así como las variantes y contratos que rigen su comportamiento interno. De este modo, se conecta la visión estratégica del dominio con decisiones de implementación precisas, garantizando que el software refleje fielmente las reglas de negocio y mantenga la coherencia del lenguaje ubicuo.
 
-En la gestión de la configuración del frontend para la aplicación Teemo, nos enfocamos en el desarrollo de una interfaz de usuario moderna, responsiva e intuitiva, utilizando Angular CLI standalone. Esta arquitectura basada en componentes independientes permite construir aplicaciones más livianas, eficientes y fácilmente escalables, optimizando el tiempo de carga y la experiencia de usuario tanto en desktop como en dispositivos móviles.
+Para cada Bounded Context, se propone una arquitectura modular basada en capas tácticas, modelos de entidad, lógica de dominio, interfaces de infraestructura y adaptadores, y se aplican patrones de diseño. Además, se incluyen diagramas de clases. Este enfoque permite iterar rápidamente sobre el diseño interno sin perder alineación con los objetivos del negocio ni generar acoplamientos indebidos entre contextos (Ford et al., 2021).
 
-La estructura del código se organiza mediante componentes standalone, servicios desacoplados y rutas gestionadas de forma modular. Esta metodología facilita la colaboración entre miembros del equipo, acelera el proceso de desarrollo, y permite iteraciones rápidas sobre nuevas funcionalidades. Además, se siguen las mejores prácticas de Angular como el uso de Lazy Loading, Reactive Forms y RxJS para el manejo de datos asíncronos.
+### 5.1. Bounded Context: IAM (Identity and Access Management)
 
-El control de versiones se gestiona a través de Git, aplicando flujos de trabajo basados en branches feature, merge requests y revisiones de código para mantener una alta calidad y cohesión entre los cambios. Asimismo, se ha integrado un pipeline de CI/CD (Integración Continua y Despliegue Continuo) que ejecuta automáticamente pruebas unitarias y pruebas de integración antes de cualquier despliegue, asegurando que las nuevas funcionalidades cumplan con los estándares de calidad establecidos.
+En el contexto táctico, el Bounded Context IAM (Identity and Access Management) agrupa toda la funcionalidad relacionada con la identificación, autenticación y autorización de los usuarios de Mushroom. Este módulo centraliza el ciclo de vida de las cuentas: desde el registro y recuperación de credenciales hasta la gestión segura de sesiones. Incluye la generación y validación de JSON Web Tokens (access y refresh tokens) para mantener la persistencia de las sesiones sin comprometer la seguridad. Además, IAM ejerce el control de permisos y roles, definiendo y verificando privilegios de usuario conforme a las políticas establecidas, y expone interfaces limpias para su consumo por otros bounded contexts, garantizando una fuente única de verdad en toda la plataforma.
 
-### 5.1.1. Software Development Environment Configuration
+#### 5.1.1. IAM Bounded Context Domain Layer
 
-En esta sección, el equipo de desarrollo detallará las herramientas de software esenciales para el frontend de la aplicación web de **Teemo**, especificando el nombre de cada producto, su propósito dentro del proyecto y el método de acceso o instalación. Para las herramientas basadas en SaaS (Software como Servicio), se proporcionará la URL de acceso a sus respectivas páginas web, mientras que para aquellas que requieren instalación local, se indicará la ruta de descarga adecuada.
+En la capa de dominio de IAM se definen las entidades y objetos de valor esenciales junto con sus reglas de negocio. Además, en este nivel residen los Domain Services encargados de orquestar procesos complejos, garantizando la coherencia y la reutilización de toda la lógica central.
 
-Las herramientas seleccionadas abarcan actividades críticas para el desarrollo del frontend, incluyendo la gestión de componentes de interfaz de usuario, el control de versiones, el desarrollo y la prueba de aplicaciones. Cada herramienta ha sido cuidadosamente elegida para optimizar el flujo de trabajo del equipo, asegurando una colaboración efectiva y un desarrollo ágil. Estas herramientas no solo facilitan la implementación de una interfaz de usuario atractiva y funcional, sino que también permiten realizar pruebas exhaustivas y automatizar procesos repetitivos, lo que contribuye a una mayor eficiencia en el ciclo de desarrollo.
+# Esto es solo un ejemplo de como hacer esta parte:
 
-**Project Management:** Esta sección aborda la planificación y supervisión del proyecto durante todo su ciclo de vida, incluyendo la coordinación del equipo, la gestión de sus tareas y colaboraciones, así como la asignación de responsabilidades previamente establecidas. Para estructurar esta gestión, hemos dividido el enfoque en métodos distintos de comunicación y administración del equipo.
+**User:**
 
-**Reuniones de Trabajo:** Para la coordinación de las tareas del equipo de frontend, utilizamos **Discord** como nuestra plataforma principal de comunicación. Esta elección se fundamenta en la familiaridad del equipo con la herramienta, lo que permite una comunicación ágil y efectiva para la discusión de temas técnicos relacionados con el desarrollo de la interfaz de usuario y la experiencia del usuario. A pesar de que Discord puede no contar con ciertas características avanzadas que ofrecen otras plataformas, su interfaz intuitiva y la posibilidad de realizar reuniones sin restricciones de tiempo nos facilitan la planificación detallada de los componentes de la aplicación y la resolución de problemas complejos relacionados con el frontend. Además, los canales temáticos en Discord permiten organizar conversaciones específicas sobre desarrollo de UI, pruebas de usabilidad, optimización del rendimiento y gestión de bibliotecas y frameworks, lo que mejora significativamente el seguimiento de los temas relevantes al frontend.
+###### Tabla 17
 
-- **Página oficial de Discord:** [https://discord.com/](https://discord.com/)
+_Tabla de User en el Domain Layer de IAM_
 
-**Control de Versiones:** Para la gestión del control de versiones del frontend, utilizamos las herramientas integradas de **GitHub**. Esta plataforma permite al equipo colaborar de manera eficiente a través de commits y pull requests específicos para el código de la interfaz de usuario. Los commits documentan detalladamente los cambios realizados en la lógica del cliente, así como en los componentes visuales y estilos CSS, proporcionando un historial claro que facilita la revisión y el seguimiento de las modificaciones en el frontend. Los pull requests permiten una revisión exhaustiva y discusión de los cambios propuestos antes de su integración en la rama principal, asegurando que las nuevas funcionalidades y mejoras en la interfaz se implementen de forma controlada y sin comprometer la estabilidad y la usabilidad de la aplicación. Además, el uso de GitHub como herramienta de control de versiones facilita la implementación de estrategias de ramificación, lo que permite a los miembros del equipo trabajar en características individuales o mejoras sin afectar el flujo de trabajo general.
+| Propiedad     | Valor                                                                                                            |
+|---------------|------------------------------------------------------------------------------------------------------------------|
+| **Nombre**    | User                                                                                                             |
+| **Categoría** | Aggregate Root                                                                                                   |
+| **Propósito** | Representar a un usuario autenticado en el sistema, encapsulando su información personal, credenciales y estado. |
 
-- **Página oficial de GitHub:** [https://github.com/](https://github.com/)
+###### Tabla 18
 
-**Requirements Management:** Para asegurar una organización efectiva del trabajo en nuestro equipo de frontend, en esta sección hemos implementado una metodología que utiliza herramientas específicamente diseñadas para la asignación y seguimiento de tareas relacionadas con el desarrollo de la interfaz de usuario. Estas herramientas no solo facilitan la gestión de los requisitos del proyecto, sino que también permiten una comunicación fluida entre los miembros del equipo, asegurando que cada uno esté alineado con los objetivos y plazos establecidos.
+_Tabla de atributos de User en el Domain Layer de IAM_
 
-**Organización de tareas:** Hemos adoptado **ClickUp** como nuestra herramienta principal para la gestión de tareas del frontend. La plataforma ofrece una interfaz amigable que facilita la división de las actividades relacionadas con el diseño y desarrollo de la interfaz de usuario entre los miembros del equipo. Al crear tableros personalizados y asignar tareas específicas del frontend, podemos establecer plazos, designar responsables y monitorear el progreso de cada tarea técnica de manera eficiente. Esta configuración nos permite evaluar el avance en la implementación de componentes de interfaz, pruebas de usabilidad y optimización del rendimiento, así como analizar el desempeño general del equipo de frontend. ClickUp también proporciona la capacidad de revisar las contribuciones individuales y el trabajo realizado en la parte visual de la aplicación, promoviendo la transparencia y la colaboración efectiva.
+| Nombre      | Tipo de dato    | Visibilidad | Descripción                                               |
+|-------------|-----------------|-------------|-----------------------------------------------------------|
+| Id          | `unsigned long` | private     | Identificador único del usuario                           |
+| FullName    | `FullName`      | private     | 	Nombre completo del usuario                              |
+| Email       | `Email`         | private     | 	Correo electrónico asociado al usuario                   |
+| Password    | `PasswordHash`  | private     | Hash seguro de la contraseña                              |
+| Role        | `List<Role>`    | private     | Lista de roles asignados al usuario                       |
+| CreatedDate | `DateTime`      | private     | 	Fecha de creación del registro del usuario               |
+| Status      | `Status` (enum) | private     | Estado actual del usuario (activo, suspendido, eliminado) |
 
-- **Página oficial de ClickUp:** [https://clickup.com/](https://clickup.com/)
+###### Tabla 19
 
-**Product Architecture Design:** Esta sección se centra en el desarrollo y diseño de las diferentes capas de la arquitectura del producto a lo largo de su ciclo de vida. Las herramientas seleccionadas deben ofrecer una amplia gama de funcionalidades y estilos, permitiendo la creación de diagramas complejos que capturen de manera precisa cada componente de la arquitectura, incluidos los frameworks, IDEs y lenguajes de programación utilizados. La capacidad para diagramar de manera clara y detallada es crucial para identificar cada una de las capas que componen nuestra solución.
+_Tabla de métodos de User en el Domain Layer de IAM_
 
-**Diagramas C4:** Para la creación de los diagramas C4 relacionados con la arquitectura del producto, el equipo ha optado unánimemente por la plataforma **Visual Paradigm**. Esta elección se fundamenta en varios aspectos clave que consideramos esenciales para un modelado claro, comprensible y efectivo, dirigido tanto a miembros técnicos como no técnicos del proyecto. Visual Paradigm se distingue por ofrecer modelos optimizados y especializados para el desarrollo de diagramas C4, que permiten una representación clara de los sistemas complejos del FrontEnd. Su enfoque en la arquitectura y la visualización facilita la creación de diagramas que no solo son comprensibles para los desarrolladores, sino también para otros stakeholders, lo que es fundamental para alinear a todo el equipo en la evolución del proyecto.
+| Nombre         | Tipo de retorno | Visibilidad | Descripción                                  |
+|----------------|-----------------|-------------|----------------------------------------------|
+| ChangeName     | `void`          | public      | 	Modifica el nombre completo del usuario     |
+| ChangeEmail    | `void`          | public      | 	Actualiza el correo electrónico del usuario |
+| ChangePassword | `void`          | public      | Cambia la contraseña del usuario             |
+| ChangeRole     | `void`          | public      | Asigna nuevos roles al usuario               |
+| Suspend        | `void`          | public      | 	Marca al usuario como suspendido            |
+| Activate       | `void`          | public      | Reactiva a un usuario suspendido             |
+| Delete         | `void`          | public      | Marca lógicamente al usuario como eliminado  |
 
-- **Página oficial de Visual Paradigm:** [https://www.visual-paradigm.com/](https://www.visual-paradigm.com/)
+**UserId:**
 
-**Diagramas UML:** Para abordar el diseño de todos los diagramas UML relacionados con el frontend de nuestro proyecto y asegurar una representación precisa y detallada de la estructura de la interfaz y la interacción entre los componentes, nuestro equipo ha decidido utilizar **LucidChart**. Esta plataforma es reconocida por su especialización en la creación de diagramas UML, lo que la convierte en la herramienta perfecta para nuestras necesidades de modelado de la interfaz de usuario y flujo de datos en el frontend.
+###### Tabla 20
 
-- **Página oficial de LucidChart:** [https://lucidchart.com/](https://lucidchart.com/)
-**Product UX/UI Design:** Esta sección respecta al desarrollo y diseño de las secciones basadas en el UX y UI correspondientes a nuestro proyecto durante todo su ciclo de vida. Las herramientas utilizadas deben estar compuestas de varias aplicaciones con estilos variados que permitan modificar la estética de todas las páginas que vamos a programar y cómo estas se verían para nuestros clientes finales, siguiendo las historias de usuario y toda metodología de desarrollo web. Asimismo, estas herramientas también deben permitir la estructuración y diagramación de todas las tablas y organizadores necesarios.
+_Tabla de UserId en el Domain Layer de IAM_
 
-**Mapas de guía:** En relación con el diseño de los diagramas necesarios para el frontend de la aplicación, como el Empathy Map, el Journey Map y el Impact Map, hemos llegado a la conclusión unánime de que la plataforma **UXPressia** es la opción más adecuada para llevar a cabo esta tarea. Esta decisión se fundamenta en varios aspectos que consideramos esenciales para un proceso de diseño eficaz y colaborativo en el desarrollo de la interfaz de usuario. UXPressia se destaca por ofrecer un entorno de diseño más cómodo y accesible en comparación con otras soluciones disponibles en el mercado. Su interfaz intuitiva y herramientas integradas simplifican la creación de mapas de experiencia de usuario de manera rápida y precisa, lo cual es clave para el diseño centrado en el usuario. Además, la plataforma soporta un flujo de trabajo colaborativo, lo que permite que nuestro equipo de frontend trabaje de forma coordinada y eficiente en la creación de los mapas.
+| Propiedad     | Valor                                        |
+|---------------|----------------------------------------------|
+| **Nombre**    | UserId                                       |
+| **Categoría** | Value Object                                 |
+| **Propósito** | Encapsular el identificador único de usuario |
 
-**User Personas:** En cuanto al diseño de User Personas para cada segmento objetivo identificado en nuestra startup y producto, hemos decidido utilizar también la plataforma **UXPressia**. Aunque somos conscientes de que existen otras herramientas que ofrecen características más avanzadas, consideramos que UXPressia proporciona modelos predefinidos y formatos visualmente atractivos que nos permiten crear User Personas de manera eficaz y comprensible. Si bien reconocemos que la plataforma presenta algunas limitaciones en cuanto al desarrollo de gráficos más grandes y diagramas complejos, las ventajas que ofrece en términos de usabilidad, simplicidad y diseño compensan estos aspectos. Además, su interfaz amigable nos permite trabajar de manera ágil, enfocándonos en la creación de perfiles que reflejen con precisión los comportamientos, necesidades y objetivos de nuestros usuarios, facilitando así el desarrollo de una estrategia más centrada en el usuario.
+###### Tabla 21
 
-- **Página oficial de UXPressia:** [https://uxpressia.com/](https://uxpressia.com/)
+_Tabla de atributos de UserId en el Domain Layer de IAM_
 
-**Escenarios:** Para la creación de escenarios correspondientes al AS-IS y TO-BE para nuestros segmentos de mercado, hemos seleccionado la plataforma web **Miro** como nuestra herramienta principal. Miro es una solución extremadamente versátil que ofrece una amplia gama de funcionalidades para el modelado de escenarios, tanto del estado actual (AS-IS) como del estado ideal o futuro (TO-BE). La plataforma permite visualizar y mapear fácilmente todos los puntos de contacto y acciones que el cliente realiza, ayudando a identificar las áreas de mejora y potenciales innovaciones en nuestro producto. Asimismo, la usabilidad de las plantillas de Miro permite a los diseñadores concentrarse en el análisis y la resolución de problemas sin tener que preocuparse por las cuestiones técnicas o de diseño que puedan surgir durante el modelado. Además, la función de trabajo colaborativo de Miro ofrece una ventaja significativa. Varios miembros del equipo pueden trabajar de manera simultánea y en tiempo real sobre un mismo tablero, lo que favorece la participación activa.
+| Nombre | Tipo de dato | Visibilidad | Descripción                      |
+|--------|--------------|-------------|----------------------------------|
+| Value  | `Long`       | private     | Valor numérico del identificador |
 
-- **Página oficial de Miro:** [https://miro.com/](https://miro.com/)
+**FullName:**
 
-**Wireframes, Mock-ups y Prototypes:** Para el desarrollo de wireframes, mock-ups y prototipos relacionados con la landing page de nuestra startup y todas las secciones de la aplicación web orientadas al frontend, hemos decidido utilizar la plataforma **Figma**. Esta herramienta ha sido seleccionada por su especialización en el diseño de interfaces de usuario para aplicaciones móviles y sitios web, ofreciendo un conjunto robusto de características que abordan las necesidades tanto de diseñadores como de desarrolladores de productos digitales. Su capacidad para crear prototipos interactivos y simular experiencias reales de usuario nos permite probar y validar conceptos antes de pasar al desarrollo final. Otra de las razones clave para esta elección es el enfoque colaborativo de Figma, que permite que múltiples miembros del equipo trabajen simultáneamente en un mismo diseño. Otro aspecto importante de Figma es su vasta biblioteca de recursos y modelos predefinidos. Estos recursos proporcionan a nuestro equipo una base sólida sobre la cual construir los wireframes iniciales, mock-ups visuales y prototipos interactivos. Por último, la capacidad de Figma para simular la experiencia del usuario final en dispositivos móviles y navegadores es fundamental para garantizar que la aplicación web y la landing page proporcionen una experiencia de usuario óptima en todos los dispositivos y plataformas.
+###### Tabla 22
 
-- **Página oficial de Figma:** [https://figma.com/](https://figma.com/)
+_Tabla de FullName en el Domain Layer de IAM_
 
-### 5.1.2. Source Code Management
+| Propiedad     | Valor                                         |
+|---------------|-----------------------------------------------|
+| **Nombre**    | FullName                                      |
+| **Categoría** | Value Object                                  |
+| **Propósito** | 	Representar el nombre completo de un usuario |
 
-En esta sección, se definirá la estrategia para utilizar GitHub como plataforma de control de versiones y colaboración durante el ciclo de vida del desarrollo del frontend. Se emplearán todas las herramientas proporcionadas por GitHub para garantizar una gestión eficaz del código fuente, incluyendo el seguimiento de versiones y la colaboración entre miembros del equipo. Se mantendrá un registro exhaustivo de las versiones del frontend, permitiendo rastrear cambios, identificar nuevos desarrollos y corregir errores de manera precisa.
+###### Tabla 23
 
-Se establecerán ramas específicas para diferentes etapas del desarrollo, tales como la integración continua, las pruebas y la producción. Además, se implementarán políticas de pull requests y revisiones de código para asegurar la calidad y coherencia del frontend. Esta metodología permitirá un control riguroso del ciclo de vida del desarrollo, facilitando la colaboración y asegurando que todos los cambios se registren de forma clara y ordenada.
+_Tabla de atributos de FullName en el Domain Layer de IAM_
 
-A continuación, se proporciona una lista con los enlaces a la organización de GitHub de WHAI y a los repositorios específicos relacionados con el desarrollo del frontend dentro de esta organización:
+| Nombre     | Tipo de dato | Visibilidad | Descripción               |
+|------------|--------------|-------------|---------------------------|
+| name       | `string`     | private     | Nombre del usuario        |
+| LastNames  | `string`     | private     | Apellidos del usuario     |
 
-# Repositorios en GitHub
+**Email:**
 
-- **Organización:** [TEEMO-SOLUTIONS](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS)
+###### Tabla 24
 
-- **Reporte:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Report)
+_Tabla de Email en el Domain Layer de IAM_
 
-- **Aplicación Móvil:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-MobileApplication]()
+| Propiedad     | Valor                                     |
+|---------------|-------------------------------------------|
+| **Nombre**    | Email                                     |
+| **Categoría** | Value Object                              |
+| **Propósito** | 	Representar un correo electrónico válido |
 
-- **Landing Page:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage)
+###### Tabla 25
 
-- **Front End:** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-FrontEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Front-End)
+_Tabla de atributos de Email en el Domain Layer de IAM_
 
--**Back End** [upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-BackEnd](https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-Back-End)
+| Nombre | Tipo de dato | Visibilidad | Descripción                     |
+|--------|--------------|-------------|---------------------------------|
+| Email  | `string`     | private     | Dirección de correo electrónico |
 
-## Integrantes de la organización
+**PasswordHash:**
 
-En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto WHAI, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
+###### Tabla 26
 
-# Modelo de integrantes del equipo dentro de la página de organización de Github
+_Tabla de PasswordHash en el Domain Layer de IAM_
 
-| **Nombre de Usuario**  | **Nombre del Integrante del Equipo** |
-|------------------------|--------------------------------------|
-| JuanPescoran           | Pescorán Angulo, Juan Fabritzzio - U20221C936 |
-| JoseRiega              | Riega Salas José Miguel - U202211254 |
-| Yair360                | VAru Acevedo, Yair Christofer - U202125984 |
-| GuardianDeity          | Lizano Coll Cardenas, Fernando Jesus - U202214522|
-| Mathifaa               | Vasquez Requejo, Augusto Mathias Leonardo - u20221a955|
+| Propiedad     | Valor                                                      |
+|---------------|------------------------------------------------------------|
+| **Nombre**    | PasswordHash                                               |
+| **Categoría** | Value Object                                               |
+| **Propósito** | 	Almacenar la versión en hash de la contraseña del usuario |
 
-# GitFlow Workflow
+###### Tabla 27
 
-En nuestro proyecto, implementaremos el modelo **GitFlow** para el control de versiones, el cual está estructurado en torno a ramas principales y secundarias. Las ramas principales actúan como las bases fundamentales para el desarrollo y la implementación final del frontend. La rama **master** representa la versión estable y en producción, mientras que **develop** se utiliza para integrar todas las características y correcciones que se encuentran en desarrollo.
+_Tabla de atributos de PasswordHash en el Domain Layer de IAM_
 
-Las ramas secundarias se utilizan para gestionar desarrollos específicos y modificaciones puntuales. Estas ramas se crean para el desarrollo de nuevas funcionalidades, para abordar errores críticos en producción y para preparar la versión para su liberación final. Cada una de estas ramas se fusiona con **develop** a través de pull requests, los cuales son revisados por el equipo para asegurar la calidad y coherencia del código. Este enfoque asegura que cada cambio se maneje de manera organizada y que los errores críticos se aborden de forma eficiente, manteniendo la estabilidad del proyecto en todo momento.
+| Nombre | Tipo de dato | Visibilidad | Descripción                       |
+|--------|--------------|-------------|-----------------------------------|
+| email  | `string`     | private     | Hash de la contraseña del usuario |
 
-Esta metodología garantiza una organización efectiva del flujo de trabajo, facilita la colaboración entre los miembros del equipo y optimiza la gestión de versiones del frontend, asegurando que todos los cambios se integren de manera controlada y que el historial del proyecto sea claro y manejable. A continuación, se detallan las convenciones para nombrar las ramas dentro de nuestra organización:
+###### Tabla 28
 
-## Ramas Principales
+_Tabla de métodos de PasswordHash en el Domain Layer de IAM_
 
-- **master:** Esta rama contiene la versión final y estable del frontend, lista para su despliegue en el entorno de producción. Las integraciones a esta rama deben pasar por una revisión exhaustiva por parte del equipo técnico para asegurar la calidad y estabilidad del código del frontend.
-  
-- **develop:** Esta rama agrupa los elementos en desarrollo relacionados con el frontend, que han sido aprobados por al menos un miembro del equipo diferente del autor de las modificaciones. Sirve como etapa de integración y prueba de nuevas funcionalidades del frontend antes de ser fusionadas con master.
+| Nombre  | Tipo de retorno | Visibilidad | Descripción                                                               |
+|---------|-----------------|-------------|---------------------------------------------------------------------------|
+| Matches | `bool`          | public      | Verifica si una contraseña en texto plano coincide con el hash almacenado |
 
-## Ramas Individuales
+**UserFactory:**
 
-Estas ramas se utilizan para desarrollos individuales realizados por los miembros del equipo en el frontend.  
-Los cambios se integran a las ramas principales mediante pull requests, que deben ser aprobados por el líder del equipo.  
-Una vez que los cambios han sido completados y fusionados, estas ramas se eliminan para mantener un repositorio limpio y organizado.
+###### Tabla 29
 
-## Formato de Commit
+_Tabla de UserFactory en el Domain Layer de IAM_
 
-**Formato Estándar:**
+| Propiedad     | Valor                             |
+|---------------|-----------------------------------|
+| **Nombre**    | UserFactory                       |
+| **Categoría** | Factory                           |
+| **Propósito** | 	Crear instancias válidas de User |
 
-- `"branch"` debe indicar la rama en la que se realizaron los cambios.
-- La descripción debe iniciar con un verbo en inglés que refleje el cambio realizado.
+###### Tabla 30
 
-## Tabla 25: Modelo de escritura de verbos para todos los commits realizados en el proyecto de GitHub
+_Tabla de métodos de UserFactory en el Domain Layer de IAM_
 
-| **Verbo** | **Traducción** | **Uso en el proyecto de programación** |
-|-----------|----------------|----------------------------------------|
-| Add       | Añadir          | Para añadir nuevas funcionalidades, componentes o módulos al frontend. |
-| Create    | Crear           | Para crear nuevos componentes, estilos o rutas en el frontend. |
-| Update    | Actualizar      | Para modificar ligeramente funcionalidades existentes, optimizando o ajustando comportamientos. |
-| Modify    | Modificar       | Para cambios significativos en la lógica o arquitectura del frontend. |
-| Correct   | Corregir        | Para corregir errores menores sin gran impacto. |
-| Fix       | Arreglar        | Para solucionar bugs críticos que afectan la funcionalidad principal. |
-| Delete    | Borrar          | Para eliminar código obsoleto o recursos no necesarios. |
-| Drop      | Tirar           | Para eliminar rutas, configuraciones o estilos de forma crítica y controlada. |
+| Nombre | Tipo de retorno | Visibilidad | Descripción                           |
+|--------|-----------------|-------------|---------------------------------------|
+| Create | `User`          | public      | Construye una nueva instancia de User |
 
-Esta norma sigue los principios de **Conventional Commits**, permitiendo:
+**IUserRepository:**
 
-- Un historial de cambios más claro y ordenado.
-- Automatización de procesos como el **versionado semántico** y el **seguimiento de cambios**.
-- Mayor facilidad en la trazabilidad, revisiones y transparencia en el control de versiones.
+###### Tabla 31
 
-## Estructura del Mensaje de Commit
+_Tabla de IUserRepository en el Domain Layer de IAM_
 
-type: description
-Donde `type` es uno de los verbos recomendados.
+| Propiedad     | Valor                                  |
+|---------------|----------------------------------------|
+| **Nombre**    | IUserRepository                        |
+| **Categoría** | Repository                             |
+| **Propósito** | Interfaz para persistencia de usuarios |
 
-## Versionado Semántico
+###### Tabla 32
 
-Se aplicará el **Versionado Semántico 2.0.0** siguiendo la estructura:
+_Tabla de métodos de IUserRepository en el Domain Layer de IAM_
 
-Major.Minor.Patch
+| Nombre               | Tipo de retorno | Visibilidad | Descripción                                                        |
+|----------------------|-----------------|-------------|--------------------------------------------------------------------|
+| GetByIdAsync         | `User?`         | public      | Obtiene un usuario por su identificador                            |
+| FindByEmailAsync     | `User?`         | public      | Busca un usuario por su correo electrónico                         |
+| ExistsByEmailAsync   | `bool`          | public      | Verifica si un usuario ya está registrado con un email determinado |
+| FindAllAsync         | `List<User>`    | public      | Recupera todos los usuarios registrados (uso administrativo)       |
+| SaveAsync            | `User`          | public      | Persiste o actualiza un usuario                                    |
+| DeleteLogicallyAsync | `bool`          | public      | Marca un usuario como eliminado lógicamente                        |
+| CountAsync           | `long`          | public      | Devuelve el total de usuarios registrados                          |
 
-- **Patch**: Correcciones de errores compatibles con versiones anteriores.
-- **Minor**: Nuevas funcionalidades compatibles con versiones anteriores.
-- **Major**: Cambios importantes que pueden romper la compatibilidad.
+**ISessionRepository:**
 
-Fuente: (GitHub & Netlify, 2024)
+###### Tabla 33
 
-### 5.1.3. Source Code Style Guide & Conventions
+_Tabla de ISessionRepository en el Domain Layer de IAM_
 
-En esta sección, nuestro equipo explicará y establecerá las referencias que adoptaremos para nombrar, estructurar, organizar y programar en los lenguajes de programación que se utilizarán en el desarrollo de nuestra solución de software, con un enfoque exclusivo en la implementación del frontend.
+| Propiedad     | Valor                                    |
+|---------------|------------------------------------------|
+| **Nombre**    | ISessionRepository                       |
+| **Categoría** | Repository                               |
+| **Propósito** | Interfaz para gestionar sesiones activas |
 
-Se detallarán las convenciones y mejores prácticas que se seguirán para asegurar un código coherente y eficiente en el uso de **Flutter**, **Dart**, **CSS**, **HTML** y **JavaScript**, principales herramientas del proyecto. Estas convenciones garantizarán la claridad, mantenibilidad y escalabilidad del código, facilitando la colaboración entre los diferentes miembros del equipo de desarrollo frontend.
+###### Tabla 34
 
-Asimismo, también investigaremos y presentaremos las directrices para la interacción con las interfaces de usuario y la implementación de una experiencia de usuario fluida y atractiva. Esto incluirá:
+_Tabla de métodos de ISessionRepository en el Domain Layer de IAM_
 
-- La gestión adecuada de los componentes visuales.
-- La optimización del rendimiento en la renderización.
-- El manejo efectivo de la interacción del usuario con la aplicación.
+| Nombre                  | Tipo de retorno | Visibilidad | Descripción                                      |
+|-------------------------|-----------------|-------------|--------------------------------------------------|
+| FindByTokenId           | `SessionToken?` | public      | Recupera un token de sesión por su identificador |
+| Store                   | `void`          | public      | Persiste un nuevo token de sesión                |
+| Revoke                  | `void`          | public      | Revoca un token de sesión específico             |
+| RevokeAllSessionForUser | `void`          | public      | Revoca todas las sesiones activas de un usuario  |
+
+**Authenticator:**
+
+###### Tabla 35
+
+_Tabla de Authenticator en el Domain Layer de IAM_
+
+| Propiedad     | Valor                                           |
+|---------------|-------------------------------------------------|
+| **Nombre**    | Authenticator                                   |
+| **Categoría** | Domain Service                                  |
+| **Propósito** | Validar credenciales y generar tokens de sesión |
+
+###### Tabla 36
+
+_Tabla de métodos de Authenticator en el Domain Layer de IAM_
+
+| Nombre       | Tipo de retorno | Visibilidad | Descripción                                              |
+|--------------|-----------------|-------------|----------------------------------------------------------|
+| authenticate | `SessionToken`  | public      | Autentica a un usuario y emite un token de sesión válido |
+
+**SessionToken:**
+
+###### Tabla 37
+
+_Tabla de SessionToken en el Domain Layer de IAM_
+
+| Propiedad     | Valor                                     |
+|---------------|-------------------------------------------|
+| **Nombre**    | SessionToken                              |
+| **Categoría** | Entity                                    |
+| **Propósito** | Representar una sesión autenticada activa |
+
+###### Tabla 38
+
+_Tabla de métodos de SessionToken en el Domain Layer de IAM_
+
+| Nombre    | Tipo de dato | Visibilidad | Descripción                          |
+|-----------|--------------|-------------|--------------------------------------|
+| TokenId   | `string`     | private     | Identificador único del token        |
+| userId    | `UserId`     | private     | Identificador del usuario asociado   |
+| createdAt | `DateTime`   | private     | Fecha y hora de creación del token   |
+| expiresAt | `DateTime`   | private     | Fecha y hora de expiración del token |
+| revoked   | `bool`       | private     | Indica si el token ha sido revocado  |
+
+#### 5.1.2. IAM Bounded Context Interface Layer
+
+En la capa de interfaz del Bounded Context de IAM se exponen los endpoints necesarios para interactuar con las funcionalidades de autenticación, autorización y gestión de usuarios. A través de controladores especializados, esta capa actúa como punto de entrada para solicitudes externas, facilitando la comunicación entre clientes (como aplicaciones web o móviles) y la lógica de negocio. Su diseño busca garantizar una separación clara de responsabilidades, manteniendo la simplicidad en la orquestación de comandos y consultas sin comprometer la seguridad ni la escalabilidad del sistema.
+
+**UserController:**
+
+###### Tabla 39
+
+_Tabla de SessionToken en el Interface Layer de IAM_
+
+| Propiedad     | Valor                                      |
+|---------------|--------------------------------------------|
+| **Nombre**    | UserController                             |
+| **Categoría** | Controller                                 |
+| **Propósito** | Exponer endpoints para gestión de usuarios |
+| **Ruta**      | `/api/users`                               |
+
+###### Tabla 40
+
+_Tabla de métodos de SessionToken en el Interface Layer de IAM_
+
+| Nombre         | Ruta                 | Acción                          | Handle                                                           |
+|----------------|----------------------|---------------------------------|------------------------------------------------------------------|
+| GetById        | `/{userId}`          | Obtiene los datos de un usuario | `GetUserByIdQuery`                                               |
+| ChangeName     | `/{userId}/name`     | Cambia `FullName`               | `ChangeUserNameCommand`                                          |
+| ChangeEmail    | `/{userId}/email`    | Cambia `Email`                  | `ChangeUserEmailCommand`                                         |
+| ChangePassword | `/{userId}/password` | Cambia `PasswordHash`           | `ChangeUserPasswordCommand`                                      |
+| ChangeStatus   | `/{userId}/status`   | Cambia `Status`                 | `ActivateUserCommand`, `SuspendUserCommand`, `DeleteUserCommand` |
+
+**AuthController**
+
+###### Tabla 41
+
+_Tabla de AuthController en el Interface Layer de IAM_
+
+| Propiedad     | Valor                                                                 |
+|---------------|-----------------------------------------------------------------------|
+| **Nombre**    | AuthController                                                        |
+| **Categoría** | Controller                                                            |
+| **Propósito** | Encargado de todo lo relacionado con registro y autenticación         |
+| **Ruta**      | `/api/auth`                                                           |
+
+###### Tabla 42
+
+_Tabla de métodos de AuthController en el Interface Layer de IAM_
+
+| Nombre   | Ruta         | Acción                                    | Handle                     |
+|----------|--------------|-------------------------------------------|----------------------------|
+| Register | `/register`  | Crea un nuevo usuario                     | `RegisterUserCommand`      |
+| Login    | `/login`     | Valida credenciales y devuelve token      | `LoginUserCommand`         |
+| Refresh  | `/refresh`   | Renueva el acceso; nuevo token            | `~`                        |
+| Logout   | `/logout`    | Revoca el token activo                    | `RevokeSessionCommand`     |
+
+#### 4.2.1.3. IAM Bounded Context Application Layer 
+
+La capa de aplicación del Bounded Context de IAM coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin mezclar reglas de negocio. Aquí residen los Command Handlers, Query Handlers y Event Handlers, responsables de ejecutar operaciones como el registro, inicio o cierre de sesión, así como la gestión de eventos relacionados con la identidad de los usuarios. Esta capa asegura que las acciones se realicen de manera transaccional, manteniendo la integridad del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según corresponda.
+
+**UserRegisterCommandHandler:**
+
+###### Tabla 43
+
+_Tabla de UserRegisterCommandHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                      |
+|---------------|----------------------------|
+| **Nombre**    | UserRegisterCommandHandler |
+| **Categoría** | Command Handler            |
+| **Propósito** | Registrar un usuario       |
+| **Comando**   | RegisterUserCommand        |
+
+**UserLoginCommandHandler:**
+
+###### Tabla 44
+
+_Tabla de UserLoginCommandHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                       |
+|---------------|-----------------------------|
+| **Nombre**    | UserLoginCommandHandler     |
+| **Categoría** | Command Handler             |
+| **Propósito** | Iniciar sesión a un usuario |
+| **Comando**   | LoginUserCommand            |
+
+**UserLogoutCommandHandler:**
+
+###### Tabla 45
+
+_Tabla de UserLogoutCommandHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                       |
+|---------------|-----------------------------|
+| **Nombre**    | UserLogoutCommandHandler    |
+| **Categoría** | Command Handler             |
+| **Propósito** | Cerrar sesión de un usuario |
+| **Comando**   | LogoutUserCommand           |
+
+**RegisteredUserEventHandle:r**
+
+###### Tabla 46
+
+_Tabla de RegisteredUserEventHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                               |
+|---------------|-------------------------------------|
+| **Nombre**    | RegisteredUserEventHandler          |
+| **Categoría** | Event Handler                       |
+| **Propósito** | Gestionar el registro de un usuario |
+| **Evento**    | UserRegisteredEvent                 |
+
+**UserLoggedInEventHandler:**
+
+###### Tabla 47
+
+_Tabla de UserLoggedInEventHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                               |
+|---------------|-------------------------------------|
+| **Nombre**    | UserLoggedInEventHandler            |
+| **Categoría** | Event Handler                       |
+| **Propósito** | Gestionar el registro de un usuario |
+| **Evento**    | UserLoggedInEvent                   |
+
+**UserLoggedOutEventHandler:**
+
+###### Tabla 48
+
+_Tabla de UserLoggedOutEventHandler en el Application Layer de IAM_
+
+| Propiedad     | Valor                               |
+|---------------|-------------------------------------|
+| **Nombre**    | UserLoggedOutEventHandler           |
+| **Categoría** | Event Handler                       |
+| **Propósito** | Gestionar el registro de un usuario |
+| **Evento**    | UserLoggedOutEvent                  |
+
+#### 4.2.1.4. Infrastructure Layer
+
+La capa de infraestructura del Bounded Context de IAM actúa como el puente entre la lógica de negocio y los mecanismos técnicos de persistencia, comunicación y ejecución. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, proveedores de autenticación, mecanismos de almacenamiento de sesiones y otros servicios externos o compartidos.
+
+Esta capa concreta las abstracciones definidas en el dominio mediante implementaciones de repositorios. Su diseño busca mantener el desacoplamiento respecto a la lógica central, permitiendo la evolución tecnológica sin comprometer la integridad del dominio. Además, garantiza la eficiencia, seguridad y confiabilidad en la gestión de identidades, roles y sesiones, alineándose con los objetivos funcionales y no funcionales del sistema.
+
+**UserRepository:**
+
+###### Tabla 49
+
+_Tabla de UserRepository en el Infraestructure Layer de IAM_
+
+| Propiedad     | Valor                                     |
+|---------------|-------------------------------------------|
+| **Nombre**    | UserRepository                            |
+| **Categoría** | Repositorio                               |
+| **Propósito** | Persistir y consultar entidades de `User` |
+| **Interfaz**  | `IUserRepository`                         |
+
+**SessionRepository:**
+
+###### Tabla 50
+
+_Tabla de SessionRepository en el Infraestructure Layer de IAM_
+
+| Propiedad     | Valor                                     |
+|---------------|-------------------------------------------|
+| **Nombre**    | SessionRepository                         |
+| **Categoría** | Repositorio                               |
+| **Propósito** | Persistir y consultar entidades de `User` |
+| **Interfaz**  | `ISessionRepository`                      |
+
+**AppDbContext:**
+
+###### Tabla 51
+
+_Tabla de AppDbContext en el Infraestructure Layer de IAM_
+
+| Propiedad     | Valor                                          |
+|---------------|------------------------------------------------|
+| **Nombre**    | AppDbContext                                   |
+| **Categoría** | ORM Context                                    |
+| **Propósito** | Punto central de acceso a la base de datos     |
+
+#### 4.2.1.5. IAM Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de IAM. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales del contexto de gestión de identidad y acceso.
+
+Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y seguridad del sistema.
+
+###### Figura 80
+*Participación del Bounded Context de IAM con la aplicación móvil mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-MobileComponent.png"></image>
+
+###### Figura 81
+*Participación del Bounded Context de IAM con la aplicación web mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-WebComponent.png"></image>
+
+###### Figura 82
+*Participación del Bounded Context de IAM con la Cloud API mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-APIComponent.png"></image>
+
+#### 4.2.1.6. IAM Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de IAM, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
+
+Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
+
+##### 4.2.1.6.1. IAM Bounded Context Domain Layer Class Diagrams
+
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de IAM. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica de dominio, así como sus relaciones fundamentales. El nivel de detalle abarca la definición de atributos y métodos para cada clase, especificando su tipo de dato, visibilidad y su rol dentro del modelo.
+
+Asimismo, se incluyen las relaciones entre elementos del dominio, calificadas con nombres descriptivos, direccionalidad cuando corresponde, y multiplicidad para reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada del diseño táctico favorece la comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación efectiva dentro de la arquitectura de software.
+
+###### Figura 83
+*Diagrama de clases de la capa de dominio del Bounded Context de IAM*
+
+<image src="../assets/img/capitulo-4/bounded-context-iam/class-diagram.png"></image>
+
+##### 4.2.1.6.2. IAM Bounded Context Database Design Diagram
+
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de IAM. Esta representación permite visualizar de forma estructurada y precisa las clases, interfaces y enumeraciones que conforman la lógica de dominio, junto con sus atributos, métodos y responsabilidades específicas dentro del modelo.
+
+El diagrama incluye detalles esenciales como el tipo de dato y la visibilidad de cada miembro, así como las relaciones entre los distintos elementos del dominio. Estas relaciones están calificadas con nombres descriptivos, indican la dirección cuando aplica, e incorporan multiplicidades para representar con fidelidad la cardinalidad de cada asociación.
+
+Esta visualización detallada contribuye significativamente a la comprensión compartida del modelo conceptual, funcionando como un nexo clave entre el análisis de dominio y su posterior implementación en la arquitectura del sistema.
+
+###### Figura 84
+*Diagrama de base de datos del Bounded Context de IAM*
+
+<image src="../assets/img/capitulo-4/bounded-context-iam/database-diagram.png"></image>
 
 ---
 
-# Guías de Estilo y Referencias
+### 4.2.2. Bounded Context: Profile and Preferences
 
-- [Guía de Estilos y Convenciones de Código para HTML (W3Schools)](https://www.w3schools.com/html/html5_syntax.asp)
-- [Guía de Estilos de Google para HTML y CSS](https://google.github.io/styleguide/htmlcssguide.html)
-- [Convenciones de Gherkin para especificaciones legibles](https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/)
-- [Guía de Google para el Estilo de JavaScript](https://google.github.io/styleguide/jsguide.html)
-- [Guía de Pautas de JavaScript de MDN (Mozilla)](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript)
-- [Guía de Estilos de JavaScript de W3Schools](https://www.w3schools.com/js/js_conventions.asp)
-- [Guía Oficial del Framework de Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Conjunto de Datos con Recursos de Aprendizaje de Flutter](https://github.com/rafathefull/flutterverso)
-- [Guía Oficial de Dart](https://dart.dev/language)
-- [Guía de Librerías Oficiales de Dart](https://dart.dev/libraries)
+En el contexto táctico, el Bounded Context Profiles and Preferences concentra toda la funcionalidad relacionada con la gestión personalizada de los perfiles de usuario en la plataforma Mushroom. Este módulo se encarga de almacenar, actualizar y exponer información detallada sobre las preferencias individuales, hábitos de uso, configuraciones personalizadas y características del entorno del usuario. Entre sus responsabilidades se incluyen la edición de datos personales no sensibles y la persistencia de hábitos o preferencias.
 
----
+Profiles and Preferences permite adaptar la experiencia digital a las necesidades particulares de cada usuario, y lo hace mediante una interfaz limpia e interoperable, disponible para otros bounded contexts. Al ofrecer un punto centralizado para el perfilado y la personalización, garantiza consistencia, reutilización y separación de preocupaciones dentro de la arquitectura de la solución.
 
-# HTML
+#### 4.2.2.1. Profile and Preferences Bounded Context Domain Layer
 
-**Estructura Semántica**
-Al construir una página web, es crucial utilizar etiquetas HTML semánticas como `<header>`, `<footer>`, `<article>`, `<section>`, y `<aside>` para reflejar el significado del contenido. Esto mejora la accesibilidad y optimiza el SEO.
+En la capa de dominio de Profiles and Preferences se modelan las entidades, objetos de valor y reglas de negocio fundamentales asociadas a la gestión de perfiles y preferencias personalizadas. Esta capa encapsula la lógica central vinculada al almacenamiento, validación y actualización de datos relacionados con la configuración del usuario, sus preferencias de uso y hábitos de interacción con la plataforma. Asimismo, se definen los Domain Services responsables de coordinar operaciones complejas que involucran múltiples objetos, asegurando la coherencia del comportamiento del sistema y promoviendo su reutilización en otros contextos.
 
-**Uso de Atributos "Alt" en Imágenes**
-Cada imagen debe tener un atributo `alt` breve y descriptivo para accesibilidad y SEO.
+#### 4.2.2.2. Profile and Preferences Bounded Context Interface Layer
 
-**Uso Adecuado de Encabezados**
-Utilizar jerarquías correctas: `<h1>` para el título principal, seguido por `<h2>`, `<h3>`, etc., sin saltar niveles.
-**Validación del Código HTML**
-Utilizar el validador de HTML del W3C para detectar errores y garantizar compatibilidad entre navegadores.
+En la capa de interfaz del Bounded Context de Profiles and Preferences se exponen los endpoints necesarios para gestionar la información de perfil de usuario y sus preferencias personalizadas dentro de la plataforma Macetech. A través de controladores dedicados, esta capa actúa como intermediaria entre las aplicaciones cliente y la lógica de negocio, permitiendo operaciones como la visualización, edición y actualización de datos personales y configuraciones. Su diseño promueve una arquitectura segura, enfocada en mantener una experiencia fluida y adaptable para el usuario sin comprometer la coherencia del sistema.
 
-**Evitar Inline CSS y JavaScript**
-Separar los estilos y scripts en archivos externos para mejorar la organización, mantenibilidad y carga de la página.
+#### 4.2.2.3. Profile and Preferences Bounded Context Application Layer
 
-**Comentarios Claros y Concisos**
-Agregar comentarios que expliquen secciones relevantes del código, sin exceso.
+La capa de aplicación del Bounded Context de Profiles and Preferences coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se implementan los Command Handlers, Query Handlers y Event Handlers responsables de operaciones como la edición de información personal, actualización de preferencias del usuario y notificación de cambios relevantes. Su rol es garantizar que dichas acciones se ejecuten de forma consistente y transaccional, delegando la lógica central al dominio y apoyándose en la infraestructura cuando sea necesario, manteniendo así la cohesión funcional del sistema.
 
-**Uso de Clases e IDs Descriptivos**
-Usar nombres descriptivos siguiendo una convención coherente como BEM (Block Element Modifier).
+#### 4.2.2.4. Profile and Preferences Bounded Context Infrastructure Layer
 
-**Mantenimiento de la Accesibilidad**
-Aplicar prácticas como uso de etiquetas `<label>`, atributos ARIA y cumplir con WCAG.
+La capa de infraestructura del Bounded Context de Profile and Preferences sirve como enlace entre la lógica de negocio y los mecanismos técnicos que permiten la persistencia y comunicación con recursos externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, servicios de almacenamiento y otros módulos relevantes que permiten gestionar la información de perfil y preferencias de los usuarios.
 
-**Evitación de Elementos Obsoletos**
-Evitar elementos obsoletos como `<font>` y `<center>`, utilizando CSS moderno.
+Esta capa materializa las abstracciones definidas en el dominio mediante la implementación de repositorios y adaptadores técnicos. Su diseño favorece el desacoplamiento de la lógica central, facilitando la evolución tecnológica sin afectar la integridad del modelo. Asimismo, asegura una gestión consistente, eficiente y segura de los datos personales, configuraciones y preferencias del usuario, en línea con los objetivos funcionales y no funcionales del sistema.
 
-**Minimización de Redundancias**
-Evitar duplicaciones usando clases, listas y componentes reutilizables.
+#### 4.2.2.5. Profile and Preferences Bounded Context Software Architecture Component Level Diagrams
 
----
+En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Profiles and Preferences. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías utilizadas y las interacciones entre ellos. Esta representación es fundamental para comprender en detalle cómo se organiza internamente cada parte del sistema, qué funcionalidades asume cada componente, y de qué manera colaboran para gestionar la información personal, preferencias y configuración personalizada del usuario dentro de Mushroom.
 
-## CSS
+Tal como establece el C4 Model, el nivel de componentes representa el cuarto nivel de abstracción en la visualización de arquitecturas de software, y resulta especialmente útil para desarrolladores y arquitectos al ofrecer una visión clara de las decisiones de diseño adoptadas en cada contenedor (Brown, 2023). Este nivel facilita la trazabilidad entre los elementos de alto nivel y su implementación específica, fortaleciendo la mantenibilidad, extensibilidad y coherencia del sistema.
 
-**Estructura Modular y Organizativa**
-Dividir los estilos en módulos o componentes específicos para facilitar mantenimiento y reutilización.
+###### Figura 85
+*Participación del Bounded Context de Profile and Preferences con la aplicación móvil mediante el diagrama de componentes*
 
-**Uso de Nombres Descriptivos en Clases**
-Adoptar convenciones como BEM para nombrar clases de manera clara y coherente.
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-MobileComponent.png"></image>
 
-**Uso Eficiente de Selectores**
-Preferir clases sobre IDs o selectores descendientes complejos para mantener flexibilidad.
+###### Figura 86
+*Participación del Bounded Context de Profile and Preferences con la aplicación web mediante el diagrama de componentes*
 
-**Incorporación de Comentarios Claros**
-Comentar secciones de código complejas para facilitar su comprensión.
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-WebComponent.png"></image>
 
-**Uso de Variables y Preprocesadores**
-Utilizar variables (por ejemplo, en SASS o LESS) para colores, fuentes y tamaños.
+###### Figura 87
+*Participación del Bounded Context de Profile and Preferences con la Cloud API mediante el diagrama de componentes*
 
-**Consistencia en Espaciado y Alineación**
-Aplicar un sistema de espaciado coherente utilizando unidades relativas (`rem`, `em`).
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-APIComponent.png"></image>
 
-**Optimización del Rendimiento CSS**
-Minificar archivos y evitar propiedades costosas como `box-shadow` y `opacity` excesivo.
+#### 4.2.2.6. Profile and Preferences Bounded Context Software Architecture Code Level Diagrams
 
-**Evitar el Uso de `!important`**
-Estructurar correctamente el CSS para minimizar o eliminar el uso de `!important`.
+En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Profiles and Preferences, presentando diagramas que permiten visualizar con mayor precisión la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos del sistema que gestionan la configuración del perfil de usuario, sus intereses, preferencias y datos personales.
 
-**Responsividad y Diseño Adaptable**
-Utilizar Media Queries y diseño fluido para garantizar compatibilidad en diferentes dispositivos.
+Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico y la implementación concreta. Esta aproximación garantiza que las decisiones tomadas a nivel táctico se materialicen en estructuras coherentes, sólidas y alineadas con los objetivos funcionales del contexto, brindando claridad y sostenibilidad al proceso de desarrollo y evolución del sistema.
 
-**Pruebas y Validación del CSS**
-Validar regularmente con herramientas automáticas y realizar pruebas en múltiples navegadores.
+##### 4.2.2.6.1. Profile and Preferences Bounded Context Domain Layer Class Diagrams
+
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Profiles and Preferences. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que componen la lógica de dominio relacionada con la gestión del perfil del usuario, sus intereses, configuraciones personalizadas y preferencias de interacción dentro del ecosistema de Macetech.
+
+El nivel de detalle incluye la definición de atributos y métodos para cada clase, especificando sus tipos de datos, visibilidad y rol dentro del modelo, así como las relaciones fundamentales entre los distintos elementos del dominio. Estas relaciones se representan con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, lo que permite reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada facilita una comprensión común del modelo conceptual, sirviendo como puente entre el diseño del dominio y su posterior implementación técnica.
+
+###### Figura 88
+*Diagrama de clases de la capa de dominio del Bounded Context de Profile and Preferences*
+
+<image src="../assets/img/capitulo-4/bounded-context-profile-and-personal-data/class-diagram-profile-and-personal-data.png"></image>
+
+##### 4.2.2.6.2. Profile and Preferences Bounded Context Database Design Diagram
+
+En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Profiles and Preferences. Esta representación estructurada permite visualizar con claridad las entidades persistentes asociadas a la gestión de perfiles, intereses y preferencias del usuario, junto con sus atributos clave, tipos de datos, claves primarias y foráneas, y restricciones asociadas.
+
+El diagrama refleja las relaciones entre las distintas tablas o entidades, indicando la dirección de las asociaciones, su naturaleza y la cardinalidad, lo que facilita el entendimiento de la estructura lógica que respalda el almacenamiento y la recuperación eficiente de datos dentro de este contexto.
+
+Esta visualización resulta esencial para asegurar la coherencia entre el modelo conceptual y su implementación en la capa de persistencia, contribuyendo a una arquitectura sólida, escalable y alineada con los requerimientos funcionales y no funcionales del sistema.
+
+###### Figura 89
+*Diagrama de base de datos del Bounded Context de Profile and Preferences*
+
+<image src="../assets/img/capitulo-4/bounded-context-profile-and-personal-data/database-diagram-profile-and-personal-data.png"></image>
 
 ---
 
-**JavaScript:**
+### 4.2.3. Bounded Context: Asset & Resource Management
 
-**Uso de let y const en lugar de var:**  
-Es fundamental adoptar el uso de let y const para declarar variables en lugar de var, ya que esto ayuda a evitar confusiones relacionadas con el alcance de las variables y la hoisting (elevación). let permite declarar variables con un alcance de bloque, lo que significa que su visibilidad está limitada al bloque en el que se define, mientras que const se utiliza para declarar constantes que no deben cambiar su valor. Al emplear const para valores que no se reasignarán, y let para aquellos que lo harán, se mejora la claridad del código y se previene la re-declaración accidental de variables. Esta práctica también fomenta un estilo de programación más predecible y controlado, lo cual es vital en proyectos de gran escala.
+En el contexto táctico, el Bounded Context Asset & Resource Management agrupa toda la funcionalidad vinculada a la administración de activos físicos y recursos operativos dentro del ecosistema Macetech. Este módulo se encarga del registro, monitoreo y mantenimiento de los dispositivos IoT desplegados (como sensores de humedad, temperatura, pH, entre otros), permitiendo llevar un control detallado de su estado, ubicación, historial de intervenciones y condiciones operativas.
 
-**Nomenclatura Consistente y Descriptiva:**  
-Adoptar una convención de nomenclatura clara y consistente para las variables, funciones y clases es crucial para mantener la legibilidad del código. Los nombres deben ser descriptivos y reflejar claramente la función o el propósito de la variable o función. Esto no solo facilita la comprensión del código, sino que también ayuda a los desarrolladores a identificar rápidamente la funcionalidad sin necesidad de leer toda la implementación. Mantener esta consistencia a lo largo del proyecto asegura que el equipo pueda trabajar de manera más eficiente y reduzca la posibilidad de errores.
+Asset & Resource Management centraliza el ciclo de vida de cada dispositivo, desde su activación inicial hasta su posible retiro o sustitución, asegurando trazabilidad completa y continuidad en la gestión técnica. Asimismo, incorpora mecanismos para la asignación de recursos a usuarios o entornos específicos, facilitando una administración eficiente y contextualizada. Este bounded context expone interfaces estandarizadas para permitir su integración con otros contextos funcionales, y actúa como fuente confiable de verdad sobre los activos tecnológicos desplegados en la plataforma.
 
-**Funciones Puramente Declarativas:**  
-Escribir funciones puras que no dependan de estados externos ni causen efectos secundarios facilita la depuración y el mantenimiento. Las funciones puras toman una entrada y producen una salida sin modificar datos externos, lo que las hace predecibles y más fáciles de probar.
+#### 4.2.3.1. Asset & Resource Management Bounded Context Domain Layer
 
-**Uso de Promesas y async/await para Manejo de Asincronía:**  
-El uso de promesas y la sintaxis async/await mejora la gestión de operaciones asincrónicas en JavaScript. Esto facilita la lectura del código, mejora la captura de errores mediante bloques try/catch, y evita el "callback hell" (infierno de callbacks) que puede ocurrir con funciones anidadas.
+En la capa de dominio de Asset & Resource Management se definen las entidades y objetos de valor fundamentales relacionados con los puertos y mapas de navegación presentados en la aplicación. Esta capa encapsula las reglas de negocio desde la definición de cada puerto y su ubicación exacta, la revisión del estado de cada puerto y la selección de un puerto de inicio y uno final. Además, en este nivel se ubican los Domain Services encargados de la entrega de información de cada puerto específico para su visualización por el usuario, asegurando coherencia, integridad y rendimiento.
 
-**Validación de Datos y Manejo de Errores:**  
-Siempre validar los tipos y formatos de datos recibidos antes de operar sobre ellos ayuda a evitar errores de ejecución. Además, implementar un manejo adecuado de errores, como usar bloques try/catch, garantiza que las excepciones se capturen y gestionen de manera controlada, mejorando la robustez de las aplicaciones.
+#### 4.2.3.2. Asset & Resource Management Bounded Context Interface Layer
 
-**Modularización del Código:**  
-Dividir el código en módulos separados facilita la organización, el mantenimiento y la reutilización. Utilizar ES6 Modules (import/export) o herramientas como Webpack o Rollup para estructurar el código en pequeños componentes hace que el proyecto sea más escalable y permite un trabajo colaborativo más eficiente.
+En la capa de interfaz del Bounded Context de Asset & Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
 
-**Uso de Comentarios Efectivos:**  
-Los comentarios deben utilizarse para explicar el "por qué" detrás de decisiones complejas en el código, no para describir lo obvio. Comentarios efectivos y bien ubicados mejoran la comprensión y facilitan futuras modificaciones.
+#### 4.2.3.3. Asset & Resource Management Bounded Context Application Layer
 
-**Consistencia en la Formateación del Código:**  
-Mantener un estilo de codificación consistente en todo el proyecto es vital. Herramientas como Prettier o configuraciones de ESLint ayudan a aplicar reglas uniformes de estilo de código, como sangrías, uso de comillas, longitud de línea, entre otros.
+La capa de aplicación del Bounded Context de Asset & Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
 
-**Optimización del Rendimiento:**  
-Optimizar el rendimiento implica evitar operaciones innecesarias dentro de bucles, minimizar accesos al DOM y usar técnicas como delegación de eventos. También es importante utilizar estructuras de datos adecuadas y escribir código eficiente para tareas intensivas.
+#### 4.2.2.4. Asset & Resource Management Bounded Context Infrastructure Layer
 
-**Implementación de Pruebas Automatizadas:**  
-Implementar pruebas unitarias e integración utilizando frameworks como Jest o Mocha asegura que el código funcione como se espera y facilita la detección de errores tempranos. Esto también promueve la confianza al realizar cambios o agregar nuevas funcionalidades.
+La capa de infraestructura del Bounded Context de Asset & Resource Management actúa como el vínculo entre la lógica de negocio y las tecnologías subyacentes que permiten la persistencia, comunicación e integración con sistemas externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, coordenadas y representación de mapas de forma adecuada.
+
+Esta capa concreta las abstracciones del dominio a través de implementaciones de repositorios y componentes técnicos especializados. Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, facilitando la evolución tecnológica sin afectar la consistencia de las reglas de negocio. Asimismo, garantiza eficiencia y confiabilidad en la gestión de los puertos y sus respectivos estados operativos, en línea con los requerimientos estratégicos de la solución.
+
+#### 4.2.3.5. Asset & Resource Management Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Asset & Resource Management. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión de de puertos y sus ubicaciones en mapa dentro de Mushroom.
+
+Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
+
+###### Figura 90
+*Participación del Bounded Context de Asset & Resource Management con la aplicación móvil mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-MobileComponent.png"></image>
+
+###### Figura 91
+*Participación del Bounded Context de Asset & Resource Management con la aplicación web mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-WebComponent.png"></image>
+
+###### Figura 92
+*Participación del Bounded Context de Asset & Resource Management con la Cloud API mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-APIComponent.png"></image>
+
+#### 4.2.3.6. Asset & Resource Management Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Asset & Resource Management, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
+
+Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
+
+##### 4.2.3.6.1. Asset & Resource Management Bounded Context Domain Layer Class Diagrams
+
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Asset & Resource Management. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en la gestión de ubicaciones de puertos y estados en la plataforma de Mushroom.
+
+El nivel de detalle abarca la definición de atributos y métodos para cada clase, especificando su tipo de dato, visibilidad y propósito en el modelo. Asimismo, se incluyen las relaciones entre elementos del dominio, cualificadas mediante nombres representativos, dirección cuando aplica y multiplicidad adecuada para reflejar con precisión las asociaciones entre entidades.
+
+Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
+
+###### Figura 93
+*Diagrama de clases de la capa de dominio del Bounded Context de Asset & Resource Management*
+
+<image src="../assets/img/capitulo-4/bounded-context-pot-management/class-diagram-pot-management.png"></image>
+
+##### 4.2.3.6.2. Asset & Resource Management Bounded Context Database Design Diagram
+
+En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Asset & Resource Management. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
+
+El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
+
+Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
+
+###### Figura 94
+*Diagrama de base de datos del Bounded Context de Asset & Resource Management*
+
+<image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
 
 ---
 
-**Dart:**
-
-**Uso de final y const:**  
-Utilizar final para variables cuyo valor no cambiará después de su asignación inicial y const para valores que son constantes en tiempo de compilación ayuda a mejorar la claridad del código y optimizar el rendimiento.
-
-**Nomenclatura Clara y Descriptiva:**  
-Aplicar nombres claros y descriptivos a clases, funciones y variables mejora la legibilidad del código y facilita su mantenimiento. Seguir las convenciones de estilo de Dart, como usar lowerCamelCase para variables y funciones, y UpperCamelCase para clases y enums.
-
-**Evitar el Uso de dynamic:**  
-Preferir tipos de datos específicos en lugar de dynamic reduce errores en tiempo de ejecución y facilita la documentación automática del código.
-
-**Organización en Módulos y Paquetes:**  
-Organizar el código en módulos y paquetes separados por funcionalidad mejora la estructura del proyecto. En Dart, se acostumbra a usar minúsculas y guiones bajos (_) para los nombres de archivos y carpetas.
-
-**Uso de Métodos y Clases de Extensión:**  
-Dart permite crear extensiones que agregan funcionalidades a clases existentes sin modificar su código fuente. Esto mejora la modularidad y la reutilización del código.
-
-**Implementación de Manejo de Errores:**  
-Utilizar bloques try-catch para capturar y manejar excepciones asegura que la aplicación pueda responder de manera adecuada ante fallos, mejorando la experiencia de usuario.
-
-**Uso de async y await para Operaciones Asincrónicas:**  
-Utilizar async y await proporciona un manejo de asincronía más claro y fácil de leer, evitando el uso excesivo de callbacks anidados.
-
-**Utilización de pubspec.yaml para la Gestión de Dependencias:**  
-Mantener actualizado el archivo pubspec.yaml asegurando versiones compatibles de las dependencias y utilizando la sección dev_dependencies para herramientas de desarrollo.
-
-**Implementación de Pruebas Unitarias y de Integración:**  
-Desarrollar pruebas unitarias e integraciones utilizando el paquete de pruebas de Dart ayuda a validar la funcionalidad de forma temprana y mejora la calidad del código.
-
-**Documentación Clara y Consistente:**  
-Utilizar comentarios de documentación (///) para describir clases, métodos y funciones permite la generación automática de documentación y facilita la comprensión del código.
-
----
-
-**Flutter:**
-
-**Estructura de Proyecto Modular:**  
-Organizar el proyecto en carpetas como lib/models, lib/views, lib/widgets, y lib/services facilita la escalabilidad y el mantenimiento del proyecto. Esto permite una separación clara de responsabilidades y mejora la colaboración en equipo.
-
-**Uso de Widgets Compuestos y Personalizados:**  
-Crear widgets reutilizables y configurables permite mantener la DRY principle (Don’t Repeat Yourself) y facilita el mantenimiento del código, ya que los cambios se aplican en un solo lugar.
-
-**Adopción del Patrón BLoC para Gestión de Estado:**  
-El patrón BLoC (Business Logic Component) separa la lógica de negocio de la UI utilizando Streams y eventos. Esto resulta en un código más organizado y testeable, además de mejorar la escalabilidad de la aplicación.
-
-**Optimización del Rendimiento con ListViews y Grids:**  
-Utilizar ListView.builder y GridView.builder para listas largas permite que solo se rendericen los elementos visibles en pantalla, reduciendo el uso de memoria y mejorando el rendimiento.
-
-**Gestión de Rutas con Navigator y Rutas Nombradas:**  
-Centralizar la gestión de rutas utilizando rutas nombradas definidas en el MaterialApp facilita la navegación entre pantallas y el paso de argumentos entre ellas.
-
-**Uso de pubspec.yaml para Gestionar Dependencias:**  
-Gestionar correctamente las dependencias declaradas en pubspec.yaml garantiza la compatibilidad y evita conflictos en el proyecto. Es importante documentar el propósito de cada dependencia agregada.
-
-**Implementación de Pruebas de Widget y de Integración:**  
-Escribir pruebas para widgets individuales y flujos de interacción asegura la estabilidad y calidad de la aplicación, además de permitir la detección temprana de errores.
-
-**Adopción de Temas Globales para Consistencia Visual:**  
-Definir un ThemeData global en el MaterialApp permite mantener una apariencia coherente en toda la aplicación en cuanto a colores, tipografías y estilos de botones.
-
-**Documentación y Comentarios Claros:**  
-Utilizar comentarios de documentación ayuda a que otros desarrolladores comprendan fácilmente la lógica detrás de cada widget, función o clase, facilitando el mantenimiento y escalabilidad.
-
-**Adopción de Prácticas de Accesibilidad:**  
-Implementar buenas prácticas de accesibilidad, como utilizar widgets Semantics y realizar pruebas de accesibilidad, garantiza que la aplicación pueda ser utilizada por personas con discapacidades.
-
-### 5.1.4. Software Deployment Configuration
-
-En esta sección, procederemos a detallar de manera exhaustiva la configuración necesaria para implementar y desplegar nuestra solución, centrándonos específicamente en las áreas del FrontEnd. A lo largo de este análisis, enfatizaremos las mejores prácticas que deben seguirse, así como las herramientas más adecuadas a utilizar y los flujos de trabajo recomendados para garantizar una implementación eficaz y coordinada de ambas partes de nuestra solución. Además, discutiremos cómo cada decisión técnica impacta en la funcionalidad y la experiencia del usuario, proporcionando así un enfoque integral para el desarrollo de nuestras aplicaciones.
-
-**Landing Page:**
-
-## 5.2. Product Implementation & Deployment
-
-A continuación, describimos en detalle el enfoque técnico que adoptaremos para la implementación, pruebas y despliegue de nuestra infraestructura FrontEnd, centrado en la creación y gestión de los componentes de la interfaz de usuario, así como en la integración con los servicios externos y el manejo eficiente de las API necesarias para el correcto funcionamiento de la aplicación. Este proceso abarca el desarrollo de interfaces FrontEnd escalables, el diseño de la Landing Page, la validación exhaustiva mediante pruebas unitarias y de integración, y la optimización del rendimiento antes de cada ciclo de despliegue en el entorno de producción. Durante esta fase, nos aseguraremos de que cada componente se alinee con las mejores prácticas de desarrollo y diseño, garantizando así una experiencia de usuario fluida y atractiva. Además, se prestará especial atención a la accesibilidad y la compatibilidad en diferentes navegadores, asegurando que nuestra aplicación sea inclusiva y utilizable por la mayor cantidad de usuarios posible.
-
-### 5.2.1. Sprint Backlogs
-
-En esta sección se explicarán los detalles presentados y analizados durante la reunión del Sprint Planning para el Sprint número 1 de la implementación del FrontEnd. El objetivo principal de esta reunión es establecer un plan claro y realista que guíe el desarrollo de la interfaz de usuario, identificando las tareas específicas a realizar y comprometiéndose con un conjunto de entregables concretos que contribuyan al avance del proyecto por el lado de las funcionalidades principales de generación y edición de TeemoSolution. Este enfoque permite asegurar que todos los miembros del equipo tengan una comprensión compartida de los objetivos y las expectativas del sprint, lo que resulta esencial para la coordinación y efectividad en el trabajo colaborativo.
-
-Durante esta reunión, se abordarán las características a desarrollar, los plazos para cada tarea y los criterios de aceptación correspondientes. Además, se fomentará un diálogo abierto entre los integrantes del equipo para identificar posibles desafíos y oportunidades de mejora, asegurando que cada aspecto del desarrollo del FrontEnd esté alineado con las metas del proyecto. 
-
-<table>
-        <tr>
-            <td colspan="1">Sprint #</td>
-            <td colspan="1">Sprint 1</td>
-        </tr>
-        <tr>
-            <td colspan="2">Sprint Planning Background</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>2025-04-24</td>
-        </tr>
-          <tr>
-            <td>Time</td>
-            <td>16:34</td>
-        </tr>
-            <tr>
-            <td>Location</td>
-            <td>Discord</td>
-        </tr>
-            <tr>
-            <td>Prepared by</td>
-            <td>Riega Salas, José Miguel</td>
-        </tr>
-            <tr>
-            <td>Attendees (to planning meeting)</td>
-            <td>Pescorán Angulo, Juan Fabritzzio; Riega Salas, José Miguel; Lizano Coll Cardenas, Fernando Jesus; Vasquez Requejo, Augusto Mathias Leonardo</td>
-        </tr>
-            <tr>
-            <td>Sprint 1 Review Summary</td>
-            <td>Al finalizar el Sprint 1, se llevó a cabo la reunión de Sprint Review para evaluar el avance logrado en el desarrollo del FrontEnd de nuestra aplicación. Durante este sprint, el trabajo se enfocó principalmente en la creación de la Landing Page del proyecto, así como en funciones clave de la aplicación, incluyendo la generación y edición de TeemoSolutions y las secciones de inicio de sesión y registro.
-                La reunión fue productiva tanto en términos de progreso en el software como de colaboración del equipo. Se presentaron las funcionalidades implementadas, se realizaron demostraciones de la interfaz y se recogieron aportes constructivos de los miembros del equipo y otros interesados. Estos comentarios fueron fundamentales para detectar oportunidades de mejora y ajustar la planificación para el siguiente sprint. La comunicación efectiva y el trabajo en equipo durante la revisión fortalecieron la cohesión del grupo y aseguraron que el desarrollo del FrontEnd siguiera alineado con los objetivos del proyecto.</td> 
-        </tr>
-            <tr>
-            <td>Sprint 1 Retrospective Summary</td>
-                <td>Durante el Sprint Retrospective del Sprint 1, el equipo se enfocó en analizar a fondo toda la
-                    retroalimentación obtenida tras la finalización de este primer sprint. Esta evaluación detallada del
-                    rendimiento tanto grupal como individual nos ayudó a identificar áreas clave de mejora,
-                    fundamentales para perfeccionar nuestra aplicación móvil desde el enfoque del FrontEnd.
-
-En este espacio de reflexión, surgieron varias estrategias orientadas a mejorar la calidad del trabajo entregado y asegurar que el producto final cumpla con las expectativas de los usuarios. Se abordaron temas como la usabilidad de la interfaz, la coherencia en el diseño y la adopción de mejores prácticas en el desarrollo FrontEnd. Este intercambio de ideas no solo fortaleció la colaboración entre los miembros del equipo, sino que también estableció una base sólida para un enfoque más eficiente en los próximos sprints, garantizando que nuestro producto sea funcional, intuitivo y atractivo para nuestros clientes. </td>
-        </tr>
-            <tr>
-            <td colspan="2">Sprint Goal & User Stories</td>
-        </tr>
-              <tr>
-            <td>Sprint 1 Goal</td>
-            <td>Alcanzar una métrica de cumplimiento del 100%, lo que indicará que se ha logrado todos los objetivos del sprint 1 con todas las historias de usuario y otros materiales necesarios.</td>
-        </tr>
-              <tr>
-            <td>Sprint 1 Velocity</td>
-            <td>Con el equipo para este sprint 1 decidimos aceptar 3 Story Points</td>
-        </tr>
-              <tr>
-            <td>Sum of Story Points</td>
-            <td>La suma de los Story Points para los User Stories que se están incluyendo en este Sprint 1 es 21</td>
-        </tr>
-    </table>
-
-### 5.2.2. Implemented Landing Page Evidence
-
-El despliegue de la Landing Page fue realizado a través de GitHub Pages y este se encuentra en el siguiente link: https://1asi0732-2510-4441-teemo-solutions.github.io/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage/
-
-Las evidencias del funcionamiento del despliegue de la Landing Page se mostrarán a continuación:
-
-<img src="../../assets/img/chapter-V/landing_p1.PNG" alt="Landing Page 1">
-<img src="../../assets/img/chapter-V/landing_p2.PNG" alt="Landing Page 2">
-<img src="../../assets/img/chapter-V/landing_p3.PNG" alt="Landing Page 3">
-<img src="../../assets/img/chapter-V/landing_p4.PNG" alt="Landing Page 4">
-<img src="../../assets/img/chapter-V/landing_p5.PNG" alt="Landing Page 5">
-<img src="../../assets/img/chapter-V/landing_p6.PNG" alt="Landing Page 6"> 
-<img src="../../assets/img/chapter-V/landing_p7.PNG" alt="Landing Page 7">
-<img src="../../assets/img/chapter-V/landing_p8.PNG" alt="Landing Page 8">
-<img src="../../assets/img/chapter-V/landing_p9.PNG" alt="Landing Page 9">
-
-### 5.2.3. Implemented Frontend-Web Application Evidence
-
-El despliegue del Front End se encuentra en el siguiente enlace: https://teemosolutions-mushroom.firebaseapp.com
-
-Las evidencias del funcionamiento del despliegue se mostrarán a continuación:
-
-<img src="../../assets/img/chapter-V/login.PNG" alt="Login">
-<img src="../../assets/img/chapter-V/register.PNG" alt="Register">
-<img src="../../assets/img/chapter-V/front_1.PNG" alt="Front 1">
-<img src="../../assets/img/chapter-V/front_2.PNG" alt="Front 2">
-<img src="../../assets/img/chapter-V/front_3.PNG" alt="Front 3">
-<img src="../../assets/img/chapter-V/front_4.PNG" alt="Front 4">
-<img src="../../assets/img/chapter-V/front_5.PNG" alt="Front 5">
-<img src="../../assets/img/chapter-V/front_6.PNG" alt="Front 6">
-
-### 5.2.4. Acuerdo de Servicio - SaaS
-
-Este acuerdo regula el uso de la plataforma Mushroom, una solución SaaS desarrollada por Teemo Solutions para optimizar rutas marítimas frente a disrupciones logísticas globales. Al registrarse o usar el servicio, el usuario acepta expresamente los siguientes términos clave:
-
-1. Licencia de Uso
-
-Se otorga una licencia no exclusiva y limitada para el uso del servicio, exclusivamente con fines comerciales/logísticos. No se permite sublicenciar, copiar o interferir con el software.
-
-2. Obligaciones del Usuario
-
-- Usar la plataforma legalmente.
-
-- Mantener la confidencialidad de sus credenciales.
-
-- No manipular el sistema ni violar la propiedad intelectual.
-
-3. Obligaciones del Proveedor
-
-- Garantizar alta disponibilidad del servicio (≥98% mensual).
-
-- Proteger los datos del cliente bajo estándares de seguridad internacional.
-
-- Brindar soporte técnico durante horarios establecidos.
-
-4. Propiedad Intelectual
-
-- El código fuente, diseño, algoritmos y demás componentes de Mushroom son propiedad exclusiva de Teemo Solutions.
-
-5. Privacidad y Datos
-
-- Los datos personales y logísticos serán tratados conforme a normativas como el GDPR, respetando la confidencialidad, integridad y trazabilidad de la información.
-
-6. Limitación de Responsabilidad
-
-- Mushroom se ofrece "tal cual", sin garantías absolutas. Teemo Solutions no es responsable de pérdidas indirectas derivadas de decisiones operativas basadas en la plataforma.
-
-7. Duración y Terminación
-
-- El contrato comienza al registrarse y puede finalizarse con 15 días de aviso. El incumplimiento grave habilita la suspensión inmediata del servicio.
-
-8. Cambios al Acuerdo
-
-- Teemo Solutions puede modificar este acuerdo. Los cambios se notifican en la web y entran en vigor tras 10 días calendario.
-
-9. Jurisdicción
-
-- Este acuerdo se rige por las leyes del Perú, y cualquier controversia será resuelta por los tribunales de Lima Metropolitana.
-
-10. Delimitaciones de alcance 
-
-- Por parte de Teemo Solutions en nuestra aplicacion "Mushroom" delimitamos como alcance solo los puertos presentados en nuestra Database, cualquier puerto nacional o internacional que no aparezca en dicha base de datos esta fuera de los servicios que ofrecemos.
-
-### 5.2.5. Implemented Native-Mobile Application Evidence
-
-### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
-
-El despliegue del back-end se encuentra en el siguiente enlace: https://my-spring-app-shk7.onrender.com/swagger-ui/index.html
-La evidencias del funcionamiento se mostrarán a continuación:
-
-<img src="../../assets/img/chapter-V/back_1.PNG" alt="Back 1">
-<img src="../../assets/img/chapter-V/back_2.PNG" alt="Back 2">
-
-### 5.2.7. RESTful API Documentation
-
-El repositorio del back-end se encuentra en el siguiente enlace: https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend
-
-
-| **Método** | **Endpoint**                        | **Descripción**                                               |
-|------------|-------------------------------------|---------------------------------------------------------------|
-| POST       | /api/authentication/sign-in         | Inicia de sesión del usuario con una cuenta ya creada.        |
-| POST       | /api/authentication/sign-up         | Registra un nuevo usuario con un usuario, contraseña y un rol |
-| POST       | /api/ports                          | Registra un nuevo puerto                                      |
-| GET        | /api/ports/{portId}                 | Devuelve el puerto solicitado por Id.                         |
-| DELETE     | /api/ports/{portId}                 | Elimina el puerto solicitado por Id.                          |
-| GET        | /api/ports/all-ports                | Devuelve todos los puertos creados.                           |
-| GET        | /api/ports/name/{name}              | Devuelve el puerto solicitado por nombre.                     |
-| GET        | /api/roles                          | Devuelve los roles creados.                                   |
-| GET        | /api/routes/all-routes              | Devuelve todas las rutas creadas.                             |
-| POST       | /api/routes/calculate-optimal-route | Crea una nueva ruta optima para el viaje.                     |
-| GET        | /api/routes/distance-between-ports  | Devuelve la distancia entre los puertos.                      |
-| GET        | /api/v1/users                       | Devuelve los usuarios registrados.                            |
-| GET        | /api/v1/users/{userId}              | Devuelve el usuario solicitado por Id.                        |
-
-### 5.2.8. Team Collaboration Insights
-
-<img src="../../assets/img/chapter-V/commit-p1.PNG" alt="commit-p1">
-
-<img src="../../assets/img/chapter-V/commit-p1.PNG" alt="commit-p1">
-
-## 5.3. Video About-the-Product
