@@ -43,249 +43,132 @@ En el contexto táctico, el Bounded Context IAM (Identity and Access Management)
 
 En la capa de dominio de IAM se definen las entidades y objetos de valor esenciales junto con sus reglas de negocio. Además, en este nivel residen los Domain Services encargados de orquestar procesos complejos, garantizando la coherencia y la reutilización de toda la lógica central.
 
-# Esto es solo un ejemplo de como hacer esta parte:
 
-**User:**
+---
+
+##  User 
+
+## **AuditableAbstractAggregateRoot** 
 
 ###### Tabla 17
 
-_Tabla de User en el Domain Layer de IAM_
+## Tabla de AuditableAbstractAggregateRoot en el Domain Layer 
 
-| Propiedad     | Valor                                                                                                            |
-|---------------|------------------------------------------------------------------------------------------------------------------|
-| **Nombre**    | User                                                                                                             |
-| **Categoría** | Aggregate Root                                                                                                   |
-| **Propósito** | Representar a un usuario autenticado en el sistema, encapsulando su información personal, credenciales y estado. |
+| Propiedad     | Valor                                                                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | AuditableAbstractAggregateRoot<T extends AbstractAggregateRoot<T>>                                                                        |
+| **Categoría** | Base Class (Aggregate Root con auditoría)                                                                                                 |
+| **Propósito** | Proveer a los aggregate roots campos de identificación y auditoría (**id**, **createdAt**, **updatedAt**) y soporte de eventos de dominio |
+
+###### Tabla 2
+
+## Atributos de AuditableAbstractAggregateRoot
+
+| Nombre    | Tipo de dato | Visibilidad | Descripción                               |
+| --------- | ------------ | ----------- | ----------------------------------------- |
+| id        | `String`     | private     | Identificador único (`@Id` en MongoDB)    |
+| createdAt | `Date`       | private     | Fecha de creación (`@CreatedDate`)        |
+| updatedAt | `Date`       | private     | Última modificación (`@LastModifiedDate`) |
+
+---
+
+## **User**
 
 ###### Tabla 18
 
-_Tabla de atributos de User en el Domain Layer de IAM_
+## Tabla de User en el Domain Layer 
 
-| Nombre      | Tipo de dato    | Visibilidad | Descripción                                               |
-|-------------|-----------------|-------------|-----------------------------------------------------------|
-| Id          | `unsigned long` | private     | Identificador único del usuario                           |
-| FullName    | `FullName`      | private     | 	Nombre completo del usuario                              |
-| Email       | `Email`         | private     | 	Correo electrónico asociado al usuario                   |
-| Password    | `PasswordHash`  | private     | Hash seguro de la contraseña                              |
-| Role        | `List<Role>`    | private     | Lista de roles asignados al usuario                       |
-| CreatedDate | `DateTime`      | private     | 	Fecha de creación del registro del usuario               |
-| Status      | `Status` (enum) | private     | Estado actual del usuario (activo, suspendido, eliminado) |
+| Propiedad     | Valor                                                                                                      |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | User                                                                                                       |
+| **Categoría** | Aggregate Root (extiende `AuditableAbstractAggregateRoot<User>`)                                           |
+| **Propósito** | Representar a un usuario del sistema con credenciales y roles, con trazabilidad de creación/actualización. |
 
 ###### Tabla 19
 
-_Tabla de métodos de User en el Domain Layer de IAM_
+## Atributos de User
 
-| Nombre         | Tipo de retorno | Visibilidad | Descripción                                  |
-|----------------|-----------------|-------------|----------------------------------------------|
-| ChangeName     | `void`          | public      | 	Modifica el nombre completo del usuario     |
-| ChangeEmail    | `void`          | public      | 	Actualiza el correo electrónico del usuario |
-| ChangePassword | `void`          | public      | Cambia la contraseña del usuario             |
-| ChangeRole     | `void`          | public      | Asigna nuevos roles al usuario               |
-| Suspend        | `void`          | public      | 	Marca al usuario como suspendido            |
-| Activate       | `void`          | public      | Reactiva a un usuario suspendido             |
-| Delete         | `void`          | public      | Marca lógicamente al usuario como eliminado  |
-
-**UserId:**
+| Nombre    | Tipo de dato | Visibilidad | Descripción                                                               |
+| --------- | ------------ | ----------- | ------------------------------------------------------------------------- |
+| id        | `String`     | inherited   | Identificador único (heredado de la clase base)                           |
+| createdAt | `Date`       | inherited   | Fecha de creación (heredado)                                              |
+| updatedAt | `Date`       | inherited   | Fecha de última modificación (heredado)                                   |
+| username  | `String`     | private     | Nombre de usuario (`@NotBlank`, `@Size(max=50)`)                          |
+| password  | `String`     | private     | Contraseña **codificada/hasheada** (`@NotBlank`, `@Size(max=120)`)        |
+| roles     | `Set<Role>`  | private     | Conjunto de roles asociados al usuario (inicializa con `new HashSet<>()`) |
 
 ###### Tabla 20
 
-_Tabla de UserId en el Domain Layer de IAM_
+# Métodos de User
 
-| Propiedad     | Valor                                        |
-|---------------|----------------------------------------------|
-| **Nombre**    | UserId                                       |
-| **Categoría** | Value Object                                 |
-| **Propósito** | Encapsular el identificador único de usuario |
+| Nombre                                                   | Tipo de retorno | Visibilidad | Descripción                                                                                    |
+| -------------------------------------------------------- | --------------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| User()                                                   | — (ctor)        | public      | Constructor por defecto. Inicializa `roles` como `HashSet<>`.                                  |
+| User(String username, String password)                   | — (ctor)        | public      | Constructor básico con username/password.                                                      |
+| User(String username, String password, List<Role> roles) | — (ctor)        | public      | Constructor con roles iniciales (invoca `addRoles`).                                           |
+| addRoles(List<Role> roles)                               | `void`          | public      | Valida y agrega roles mediante `Role.validateRoleSet`; asegura set no vacío (rol por defecto). |
+
+---
+
+## Role
 
 ###### Tabla 21
 
-_Tabla de atributos de UserId en el Domain Layer de IAM_
+## Tabla de Role
 
-| Nombre | Tipo de dato | Visibilidad | Descripción                      |
-|--------|--------------|-------------|----------------------------------|
-| Value  | `Long`       | private     | Valor numérico del identificador |
-
-**FullName:**
+| Propiedad     | Valor                                                     |
+| ------------- | --------------------------------------------------------- |
+| **Nombre**    | Role                                                      |
+| **Categoría** | Entity (`@Document(collection = "roles")`)                |
+| **Propósito** | Representar un rol del sistema basado en el enum `Roles`. |
 
 ###### Tabla 22
 
-_Tabla de FullName en el Domain Layer de IAM_
+## Atributos de Role
 
-| Propiedad     | Valor                                         |
-|---------------|-----------------------------------------------|
-| **Nombre**    | FullName                                      |
-| **Categoría** | Value Object                                  |
-| **Propósito** | 	Representar el nombre completo de un usuario |
+| Nombre | Tipo de dato | Visibilidad | Descripción                                  |
+| ------ | ------------ | ----------- | -------------------------------------------- |
+| id     | `String`     | private     | Identificador único del rol (`@Id`)          |
+| name   | `Roles`      | private     | Valor del rol (`ROLE_USER`, `ROLE_ADMIN`, …) |
 
 ###### Tabla 23
 
-_Tabla de atributos de FullName en el Domain Layer de IAM_
+## Métodos de Role
 
-| Nombre     | Tipo de dato | Visibilidad | Descripción               |
-|------------|--------------|-------------|---------------------------|
-| name       | `string`     | private     | Nombre del usuario        |
-| LastNames  | `string`     | private     | Apellidos del usuario     |
+| Nombre                      | Tipo de retorno | Visibilidad   | Descripción                                                                    |
+| --------------------------- | --------------- | ------------- | ------------------------------------------------------------------------------ |
+| Role(Roles name)            | — (ctor)        | public        | Crea un rol con el valor del enum.                                             |
+| getStringName()             | `String`        | public        | Devuelve el nombre del enum (`name.name()`).                                   |
+| getDefaultRole()            | `Role`          | public static | Retorna el rol por defecto (`ROLE_USER`).                                      |
+| toRoleFromName(String name) | `Role`          | public static | Convierte el nombre a enum y construye `Role`.                                 |
+| validateRoleSet(List<Role>) | `List<Role>`    | public static | Si null/vacía → `[getDefaultRole()]`; en otro caso, retorna la lista provista. |
 
-**Email:**
+---
+
+## Roles (enum)
 
 ###### Tabla 24
 
-_Tabla de Email en el Domain Layer de IAM_
+## Tabla de Roles
 
-| Propiedad     | Valor                                     |
-|---------------|-------------------------------------------|
-| **Nombre**    | Email                                     |
-| **Categoría** | Value Object                              |
-| **Propósito** | 	Representar un correo electrónico válido |
+| Propiedad     | Valor                                                   |
+| ------------- | ------------------------------------------------------- |
+| **Nombre**    | Roles                                                   |
+| **Categoría** | Enum                                                    |
+| **Propósito** | Definir los valores válidos para los roles del sistema. |
 
 ###### Tabla 25
 
-_Tabla de atributos de Email en el Domain Layer de IAM_
+## Valores de Roles
 
-| Nombre | Tipo de dato | Visibilidad | Descripción                     |
-|--------|--------------|-------------|---------------------------------|
-| Email  | `string`     | private     | Dirección de correo electrónico |
+| Valor             | Descripción                               |
+| ----------------- | ----------------------------------------- |
+| `ROLE_USER`       | Rol por defecto de usuario final.         |
+| `ROLE_ADMIN`      | Rol administrativo.                       |
+| `ROLE_INSTRUCTOR` | Rol de instructor (si aplica al dominio). |
 
-**PasswordHash:**
+---
 
-###### Tabla 26
-
-_Tabla de PasswordHash en el Domain Layer de IAM_
-
-| Propiedad     | Valor                                                      |
-|---------------|------------------------------------------------------------|
-| **Nombre**    | PasswordHash                                               |
-| **Categoría** | Value Object                                               |
-| **Propósito** | 	Almacenar la versión en hash de la contraseña del usuario |
-
-###### Tabla 27
-
-_Tabla de atributos de PasswordHash en el Domain Layer de IAM_
-
-| Nombre | Tipo de dato | Visibilidad | Descripción                       |
-|--------|--------------|-------------|-----------------------------------|
-| email  | `string`     | private     | Hash de la contraseña del usuario |
-
-###### Tabla 28
-
-_Tabla de métodos de PasswordHash en el Domain Layer de IAM_
-
-| Nombre  | Tipo de retorno | Visibilidad | Descripción                                                               |
-|---------|-----------------|-------------|---------------------------------------------------------------------------|
-| Matches | `bool`          | public      | Verifica si una contraseña en texto plano coincide con el hash almacenado |
-
-**UserFactory:**
-
-###### Tabla 29
-
-_Tabla de UserFactory en el Domain Layer de IAM_
-
-| Propiedad     | Valor                             |
-|---------------|-----------------------------------|
-| **Nombre**    | UserFactory                       |
-| **Categoría** | Factory                           |
-| **Propósito** | 	Crear instancias válidas de User |
-
-###### Tabla 30
-
-_Tabla de métodos de UserFactory en el Domain Layer de IAM_
-
-| Nombre | Tipo de retorno | Visibilidad | Descripción                           |
-|--------|-----------------|-------------|---------------------------------------|
-| Create | `User`          | public      | Construye una nueva instancia de User |
-
-**IUserRepository:**
-
-###### Tabla 31
-
-_Tabla de IUserRepository en el Domain Layer de IAM_
-
-| Propiedad     | Valor                                  |
-|---------------|----------------------------------------|
-| **Nombre**    | IUserRepository                        |
-| **Categoría** | Repository                             |
-| **Propósito** | Interfaz para persistencia de usuarios |
-
-###### Tabla 32
-
-_Tabla de métodos de IUserRepository en el Domain Layer de IAM_
-
-| Nombre               | Tipo de retorno | Visibilidad | Descripción                                                        |
-|----------------------|-----------------|-------------|--------------------------------------------------------------------|
-| GetByIdAsync         | `User?`         | public      | Obtiene un usuario por su identificador                            |
-| FindByEmailAsync     | `User?`         | public      | Busca un usuario por su correo electrónico                         |
-| ExistsByEmailAsync   | `bool`          | public      | Verifica si un usuario ya está registrado con un email determinado |
-| FindAllAsync         | `List<User>`    | public      | Recupera todos los usuarios registrados (uso administrativo)       |
-| SaveAsync            | `User`          | public      | Persiste o actualiza un usuario                                    |
-| DeleteLogicallyAsync | `bool`          | public      | Marca un usuario como eliminado lógicamente                        |
-| CountAsync           | `long`          | public      | Devuelve el total de usuarios registrados                          |
-
-**ISessionRepository:**
-
-###### Tabla 33
-
-_Tabla de ISessionRepository en el Domain Layer de IAM_
-
-| Propiedad     | Valor                                    |
-|---------------|------------------------------------------|
-| **Nombre**    | ISessionRepository                       |
-| **Categoría** | Repository                               |
-| **Propósito** | Interfaz para gestionar sesiones activas |
-
-###### Tabla 34
-
-_Tabla de métodos de ISessionRepository en el Domain Layer de IAM_
-
-| Nombre                  | Tipo de retorno | Visibilidad | Descripción                                      |
-|-------------------------|-----------------|-------------|--------------------------------------------------|
-| FindByTokenId           | `SessionToken?` | public      | Recupera un token de sesión por su identificador |
-| Store                   | `void`          | public      | Persiste un nuevo token de sesión                |
-| Revoke                  | `void`          | public      | Revoca un token de sesión específico             |
-| RevokeAllSessionForUser | `void`          | public      | Revoca todas las sesiones activas de un usuario  |
-
-**Authenticator:**
-
-###### Tabla 35
-
-_Tabla de Authenticator en el Domain Layer de IAM_
-
-| Propiedad     | Valor                                           |
-|---------------|-------------------------------------------------|
-| **Nombre**    | Authenticator                                   |
-| **Categoría** | Domain Service                                  |
-| **Propósito** | Validar credenciales y generar tokens de sesión |
-
-###### Tabla 36
-
-_Tabla de métodos de Authenticator en el Domain Layer de IAM_
-
-| Nombre       | Tipo de retorno | Visibilidad | Descripción                                              |
-|--------------|-----------------|-------------|----------------------------------------------------------|
-| authenticate | `SessionToken`  | public      | Autentica a un usuario y emite un token de sesión válido |
-
-**SessionToken:**
-
-###### Tabla 37
-
-_Tabla de SessionToken en el Domain Layer de IAM_
-
-| Propiedad     | Valor                                     |
-|---------------|-------------------------------------------|
-| **Nombre**    | SessionToken                              |
-| **Categoría** | Entity                                    |
-| **Propósito** | Representar una sesión autenticada activa |
-
-###### Tabla 38
-
-_Tabla de métodos de SessionToken en el Domain Layer de IAM_
-
-| Nombre    | Tipo de dato | Visibilidad | Descripción                          |
-|-----------|--------------|-------------|--------------------------------------|
-| TokenId   | `string`     | private     | Identificador único del token        |
-| userId    | `UserId`     | private     | Identificador del usuario asociado   |
-| createdAt | `DateTime`   | private     | Fecha y hora de creación del token   |
-| expiresAt | `DateTime`   | private     | Fecha y hora de expiración del token |
-| revoked   | `bool`       | private     | Indica si el token ha sido revocado  |
 
 #### 5.1.2. IAM Bounded Context Interface Layer
 
@@ -528,6 +411,102 @@ Profiles and Preferences permite adaptar la experiencia digital a las necesidade
 #### 4.2.2.1. Profile and Preferences Bounded Context Domain Layer
 
 En la capa de dominio de Profiles and Preferences se modelan las entidades, objetos de valor y reglas de negocio fundamentales asociadas a la gestión de perfiles y preferencias personalizadas. Esta capa encapsula la lógica central vinculada al almacenamiento, validación y actualización de datos relacionados con la configuración del usuario, sus preferencias de uso y hábitos de interacción con la plataforma. Asimismo, se definen los Domain Services responsables de coordinar operaciones complejas que involucran múltiples objetos, asegurando la coherencia del comportamiento del sistema y promoviendo su reutilización en otros contextos.
+
+
+> **Límite del BC:** Perfil NO gestiona credenciales ni roles; solo datos de cuenta y preferencias ligadas a UX/operación.
+
+## **Profile**
+
+###### Tabla 11
+
+## Tabla de Profile en el Domain Layer 
+
+| Propiedad     | Valor                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------- |
+| **Nombre**    | Profile                                                                               |
+| **Categoría** | Aggregate Root (puede extender la clase base auditable si se desea consistencia)      |
+| **Propósito** | Gestionar datos de cuenta y preferencias del usuario (no sensibles de autenticación). |
+
+###### Tabla 12
+
+## Atributos de Profile
+
+| Nombre               | Tipo de dato           | Visibilidad | Descripción                                                    |
+| -------------------- | ---------------------- | ----------- | -------------------------------------------------------------- |
+| id                   | `String`               | private     | Identificador del perfil (propio del BC Profile).              |
+| userId               | `String`               | private     | Identificador del usuario en **User BC** (referencia cruzada). |
+| displayName          | `String`               | private     | Nombre mostrado.                                               |
+| fullName             | `FullName`             | private     | VO con nombre completo (opcional si usas solo `displayName`).  |
+| avatarUrl            | `String`               | private     | URL del avatar.                                                |
+| phone                | `String`               | private     | Teléfono de contacto.                                          |
+| locale               | `String`               | private     | Idioma preferido (ej. `es-PE`).                                |
+| timezone             | `String`               | private     | Zona horaria (ej. `America/Lima`).                             |
+| notificationSettings | `NotificationSettings` | private     | Preferencias de notificación (email/push/quiet hours).         |
+| createdAt            | `Date`                 | private     | Fecha de creación.                                             |
+| updatedAt            | `Date`                 | private     | Última modificación.                                           |
+
+###### Tabla 13
+
+## Métodos de Profile
+
+| Nombre                 | Tipo de retorno | Visibilidad | Descripción                                             |
+| ---------------------- | --------------- | ----------- | ------------------------------------------------------- |
+| changeDisplayName(...) | `void`          | public      | Actualiza el nombre mostrado.                           |
+| updateFullName(...)    | `void`          | public      | Modifica `FullName`.                                    |
+| changeAvatarUrl(...)   | `void`          | public      | Actualiza el avatar.                                    |
+| updateContactInfo(...) | `void`          | public      | Actualiza teléfono y datos de contacto.                 |
+| updatePreferences(...) | `void`          | public      | Actualiza `notificationSettings`, `locale`, `timezone`. |
+
+---
+
+## FullName 
+
+###### Tabla 14
+
+## Tabla de FullName 
+
+| Propiedad     | Valor                                      |
+| ------------- | ------------------------------------------ |
+| **Nombre**    | FullName                                   |
+| **Categoría** | Value Object                               |
+| **Propósito** | Representar el nombre completo del usuario |
+
+###### Tabla 15
+
+## Atributos de FullName
+
+| Nombre    | Tipo de dato | Visibilidad | Descripción |
+| --------- | ------------ | ----------- | ----------- |
+| name      | `string`     | private     | Nombres     |
+| lastNames | `string`     | private     | Apellidos   |
+
+---
+
+### **NotificationSettings** (VO en Profile)
+
+###### Tabla 16
+
+## Tabla de NotificationSettings
+
+| Propiedad     | Valor                                                  |
+| ------------- | ------------------------------------------------------ |
+| **Nombre**    | NotificationSettings                                   |
+| **Categoría** | Value Object                                           |
+| **Propósito** | Encapsular preferencias de notificaciones del usuario. |
+
+###### Tabla 17
+
+## Atributos de NotificationSettings
+
+| Nombre     | Tipo de dato | Visibilidad | Descripción                                     |
+| ---------- | ------------ | ----------- | ----------------------------------------------- |
+| emailOptIn | `boolean`    | private     | Recibir notificaciones por email.               |
+| pushOptIn  | `boolean`    | private     | Recibir notificaciones push.                    |
+| quietHours | `String`     | private     | Ventanas de silencio (ej. `22:00-07:00` local). |
+
+---
+
+
 
 #### 4.2.2.2. Profile and Preferences Bounded Context Interface Layer
 
