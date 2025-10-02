@@ -174,54 +174,97 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 
 En la capa de interfaz del Bounded Context de IAM se exponen los endpoints necesarios para interactuar con las funcionalidades de autenticación, autorización y gestión de usuarios. A través de controladores especializados, esta capa actúa como punto de entrada para solicitudes externas, facilitando la comunicación entre clientes (como aplicaciones web o móviles) y la lógica de negocio. Su diseño busca garantizar una separación clara de responsabilidades, manteniendo la simplicidad en la orquestación de comandos y consultas sin comprometer la seguridad ni la escalabilidad del sistema.
 
-**UserController:**
+¡Perfecto, Fabrizio! Tomé tus controladores y los documenté en el **Interface Layer** con el mismo formato de tablas que mostraste (Nombre, Categoría, Propósito, Ruta + métodos con Ruta, Acción y Handle). Mantengo todo en español y agrego una nota breve por controlador con consideraciones de respuesta/seguridad.
 
-###### Tabla 39
+---
 
-_Tabla de SessionToken en el Interface Layer de IAM_
+## **AuthenticationController**
 
-| Propiedad     | Valor                                      |
-|---------------|--------------------------------------------|
-| **Nombre**    | UserController                             |
-| **Categoría** | Controller                                 |
-| **Propósito** | Exponer endpoints para gestión de usuarios |
-| **Ruta**      | `/api/users`                               |
+###### Tabla 26
 
-###### Tabla 40
+*Tabla de **AuthenticationController** en el Interface Layer*
 
-_Tabla de métodos de SessionToken en el Interface Layer de IAM_
+| Propiedad         | Valor                                           |
+| ----------------- | ----------------------------------------------- |
+| **Nombre**        | AuthenticationController                        |
+| **Categoría**     | Controller                                      |
+| **Propósito**     | Exponer endpoints para registro y autenticación |
+| **Ruta**          | `/api/authentication`                           |
+| **Tag (OpenAPI)** | `Authentication`                                |
 
-| Nombre         | Ruta                 | Acción                          | Handle                                                           |
-|----------------|----------------------|---------------------------------|------------------------------------------------------------------|
-| GetById        | `/{userId}`          | Obtiene los datos de un usuario | `GetUserByIdQuery`                                               |
-| ChangeName     | `/{userId}/name`     | Cambia `FullName`               | `ChangeUserNameCommand`                                          |
-| ChangeEmail    | `/{userId}/email`    | Cambia `Email`                  | `ChangeUserEmailCommand`                                         |
-| ChangePassword | `/{userId}/password` | Cambia `PasswordHash`           | `ChangeUserPasswordCommand`                                      |
-| ChangeStatus   | `/{userId}/status`   | Cambia `Status`                 | `ActivateUserCommand`, `SuspendUserCommand`, `DeleteUserCommand` |
+###### Tabla 27
 
-**AuthController**
+*Tabla de métodos de **AuthenticationController***
 
-###### Tabla 41
+| Nombre | Ruta       | Acción                     | Handle                                        |
+| ------ | ---------- | -------------------------- | --------------------------------------------- |
+| signUp | `/sign-up` | Registrar usuario          | `SignUpCommand` → `userCommandService.handle` |
+| signIn | `/sign-in` | Autenticar usuario (login) | `SignInCommand` → `userCommandService.handle` |
 
-_Tabla de AuthController en el Interface Layer de IAM_
+> **Notas:**
+> * `signUp` devuelve `201 Created` con `UserResource` o `400 Bad Request`.
+> * `signIn` devuelve `200 OK` con `AuthenticatedUserResource` o `404 Not Found` si credenciales inválidas.
 
-| Propiedad     | Valor                                                                 |
-|---------------|-----------------------------------------------------------------------|
-| **Nombre**    | AuthController                                                        |
-| **Categoría** | Controller                                                            |
-| **Propósito** | Encargado de todo lo relacionado con registro y autenticación         |
-| **Ruta**      | `/api/auth`                                                           |
+---
 
-###### Tabla 42
+## **RolesController**
 
-_Tabla de métodos de AuthController en el Interface Layer de IAM_
+###### Tabla 28
 
-| Nombre   | Ruta         | Acción                                    | Handle                     |
-|----------|--------------|-------------------------------------------|----------------------------|
-| Register | `/register`  | Crea un nuevo usuario                     | `RegisterUserCommand`      |
-| Login    | `/login`     | Valida credenciales y devuelve token      | `LoginUserCommand`         |
-| Refresh  | `/refresh`   | Renueva el acceso; nuevo token            | `~`                        |
-| Logout   | `/logout`    | Revoca el token activo                    | `RevokeSessionCommand`     |
+*Tabla de **RolesController** en el Interface Layer*
+
+| Propiedad         | Valor                     |
+| ----------------- | ------------------------- |
+| **Nombre**        | RolesController           |
+| **Categoría**     | Controller                |
+| **Propósito**     | Exponer catálogo de roles |
+| **Ruta**          | `/api/roles`              |
+| **Tag (OpenAPI)** | `Roles`                   |
+
+###### Tabla 28
+
+*Tabla de métodos de **RolesController***
+
+| Nombre      | Ruta | Acción                 | Handle                                         |
+| ----------- | ---- | ---------------------- | ---------------------------------------------- |
+| getAllRoles | `/`  | Listar todos los roles | `GetAllRolesQuery` → `roleQueryService.handle` |
+
+> **Notas:**
+>
+> * Respuesta: `200 OK` con `List<RoleResource>`.
+> * Protección recomendada: solo accesible a `ROLE_ADMIN` si el catálogo no es público.
+
+---
+
+## **UsersController**
+
+###### Tabla 29
+
+*Tabla de **UsersController** en el Interface Layer*
+
+| Propiedad     | Valor                                |
+| ------------- | ------------------------------------ |
+| **Nombre**    | UsersController                      |
+| **Categoría** | Controller                           |
+| **Propósito** | Exponer consultas de usuarios (CQRS) |
+| **Ruta**      | `/api/v1/users`                      |
+
+###### Tabla 30
+
+*Tabla de métodos de **UsersController***
+
+| Nombre      | Ruta        | Acción                 | Handle                                         |
+| ----------- | ----------- | ---------------------- | ---------------------------------------------- |
+| getAllUsers | `/`         | Listar usuarios        | `GetAllUsersQuery` → `userQueryService.handle` |
+| getUserById | `/{userId}` | Obtener usuario por ID | `GetUserByIdQuery` → `userQueryService.handle` |
+
+> **Notas:**
+> * `getAllUsers`: `200 OK` con `List<UserResource>`.
+> * `getUserById`: `200 OK` con `UserResource` o `404 Not Found`.
+
+
+---
+
 
 #### 4.2.1.3. IAM Bounded Context Application Layer 
 
@@ -511,6 +554,38 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 #### 4.2.2.2. Profile and Preferences Bounded Context Interface Layer
 
 En la capa de interfaz del Bounded Context de Profiles and Preferences se exponen los endpoints necesarios para gestionar la información de perfil de usuario y sus preferencias personalizadas dentro de la plataforma Macetech. A través de controladores dedicados, esta capa actúa como intermediaria entre las aplicaciones cliente y la lógica de negocio, permitiendo operaciones como la visualización, edición y actualización de datos personales y configuraciones. Su diseño promueve una arquitectura segura, enfocada en mantener una experiencia fluida y adaptable para el usuario sin comprometer la coherencia del sistema.
+
+
+## **ProfileController**
+
+###### Tabla PRF-1
+
+*Tabla de **ProfileController** en el Interface Layer (Profile)*
+
+| Propiedad         | Valor                                                        |
+| ----------------- | ------------------------------------------------------------ |
+| **Nombre**        | ProfileController                                            |
+| **Categoría**     | Controller                                                   |
+| **Propósito**     | Exponer endpoints de perfil y preferencias (no credenciales) |
+| **Ruta base**     | `/api/v1/profiles`                                           |
+| **Tag (OpenAPI)** | `Profiles`                                                   |
+
+###### Tabla PRF-2
+
+*Métodos de **ProfileController***
+
+| Nombre            | Ruta                     | Acción                                           | Handle                                                      |
+| ----------------- | ------------------------ | ------------------------------------------------ | ----------------------------------------------------------- |
+| getByUserId       | `/{userId}`              | Obtener perfil por `userId`                      | `GetProfileByUserIdQuery` → `profileQueryService.handle`    |
+| updateDisplayName | `/{userId}/display-name` | Actualizar nombre mostrado                       | `UpdateDisplayNameCommand` → `profileCommandService.handle` |
+| updateFullName    | `/{userId}/full-name`    | Actualizar nombre completo (VO)                  | `UpdateFullNameCommand` → `profileCommandService.handle`    |
+| updateAvatar      | `/{userId}/avatar`       | Actualizar avatar                                | `UpdateAvatarCommand` → `profileCommandService.handle`      |
+| updateContact     | `/{userId}/contact`      | Actualizar teléfono u otros datos de contacto    | `UpdateContactInfoCommand` → `profileCommandService.handle` |
+| updatePreferences | `/{userId}/preferences`  | Actualizar preferencias (notifs/locale/timezone) | `UpdatePreferencesCommand` → `profileCommandService.handle` |
+
+
+
+---
 
 #### 4.2.2.3. Profile and Preferences Bounded Context Application Layer
 
