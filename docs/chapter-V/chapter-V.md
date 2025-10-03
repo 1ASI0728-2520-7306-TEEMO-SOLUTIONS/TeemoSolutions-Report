@@ -715,7 +715,7 @@ En la capa de dominio de Asset & Resource Management se modelan las entidades y 
 |id|	String (ObjectId)|	private	|Identificador único del documento (_id).|
 |name	|String|	private|	Nombre descriptivo del puerto.|
 |coordinates| Coordinates {type: "Point", coordinates: [lon, lat]}	|private|	Coordenadas geoespaciales para ubicar cada puerto |
-|restrictions |Array<Object>| private | Lista de restricciones dadas para un puerto en específico.|
+|restrictions |Array < Object >| private | Lista de restricciones dadas para un puerto en específico.|
 |status	|String (enum)	|private	|Estado operativo: OPEN, RESTRICTED, CLOSED.|
 |createdAt	|Date	|private|	Fecha de creación.|
 |updatedAt	|Date|	private	|Fecha de última modificación.|
@@ -729,6 +729,29 @@ En la capa de dominio de Asset & Resource Management se modelan las entidades y 
 |changeStatus(newStatus, reason, actor)|	void|	public|	Valida transición de estados y registra evento PortStatusChanged.|
 |addRestriction(restriction)|	void	|public	|Añade restricción para un puerto en específico en el mapa|
 |removeRestriction(restrictionId)|	void|	public	|Elimina restricción y registra PortRestrictionRemoved.|
+
+###### Tabla 4
+*Value Object de Coordinates en el Domain Layer de Asset & Resource Management*
+
+| Propiedad	|Valor|
+|-|-|
+|Nombre	|Coordinates|
+|Categoría	|Value Object|
+|Propósito	|Representar y validar coordenadas geoespaciales con precisión y normalizar formato para persistencia.|
+|Atributos	|latitude: double, longitude: double, validación de rango.|
+
+---
+
+**Asset:**
+
+###### Tabla 5
+*Descripción de Asset en el Domain Layer de Asset & Resource*
+
+|Propiedad	|Valor|
+|-|-|
+|Nombre	|Asset|
+|Categoría	|Entity (puede existir como documento independiente assets y/o embebido en ports) |
+|Propósito	|Representar un activo físico, que en este caso | Gestiona estado de puertos (activated, maintenance, retired) y métricas de salud.
 
 #### 4.2.3.2. Asset & Resource Management Bounded Context Interface Layer
 
