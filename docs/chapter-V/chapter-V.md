@@ -270,83 +270,45 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 
 La capa de aplicación del Bounded Context de IAM coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin mezclar reglas de negocio. Aquí residen los Command Handlers, Query Handlers y Event Handlers, responsables de ejecutar operaciones como el registro, inicio o cierre de sesión, así como la gestión de eventos relacionados con la identidad de los usuarios. Esta capa asegura que las acciones se realicen de manera transaccional, manteniendo la integridad del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según corresponda.
 
-**UserRegisterCommandHandler:**
+## SeedRolesCommandHandler
+Tabla de SeedRolesCommandHandler en el Application Layer de IAM
+| Propiedad        | Valor                                           |
+| ---------------- | ----------------------------------------------- |
+| **Nombre**       | SeedRolesCommandHandler                         |
+| **Categoría**    | Command Handler                                 |
+| **Propósito**    | Sembrar (crear si faltan) los roles del sistema |
+| **Comando**      | `SeedRolesCommand`                              |
+| **Dependencias** | `RoleRepositoryImpl`                            |
 
-###### Tabla 43
+## ApplicationReadyEventHandler
+Tabla de ApplicationReadyEventHandler en el Application Layer de IAM'
+| Propiedad           | Valor                                                 |
+| ------------------- | ----------------------------------------------------- |
+| **Nombre**          | ApplicationReadyEventHandler                          |
+| **Categoría**       | Event Handler (Application Event)                     |
+| **Propósito**       | Disparar la siembra de roles al iniciar la aplicación |
+| **Comando** | `SeedRolesCommand` → `RoleCommandService.handle`      |
 
-_Tabla de UserRegisterCommandHandler en el Application Layer de IAM_
+## SignUpCommandHandler
+Tabla de SignUpCommandHandler en el Application Layer de IAM
+| Propiedad        | Valor                                                |
+| ---------------- | ---------------------------------------------------- |
+| **Nombre**       | SignUpCommandHandler                                 |
+| **Categoría**    | Command Handler                                      |
+| **Propósito**    | Registrar un usuario                                 |
+| **Comando**      | `SignUpCommand`                                      |
+| **Dependencias** | `UserRepository`, `HashingService`, `RoleRepository` |
 
-| Propiedad     | Valor                      |
-|---------------|----------------------------|
-| **Nombre**    | UserRegisterCommandHandler |
-| **Categoría** | Command Handler            |
-| **Propósito** | Registrar un usuario       |
-| **Comando**   | RegisterUserCommand        |
-
-**UserLoginCommandHandler:**
-
-###### Tabla 44
-
-_Tabla de UserLoginCommandHandler en el Application Layer de IAM_
-
-| Propiedad     | Valor                       |
-|---------------|-----------------------------|
-| **Nombre**    | UserLoginCommandHandler     |
-| **Categoría** | Command Handler             |
-| **Propósito** | Iniciar sesión a un usuario |
-| **Comando**   | LoginUserCommand            |
-
-**UserLogoutCommandHandler:**
-
-###### Tabla 45
-
-_Tabla de UserLogoutCommandHandler en el Application Layer de IAM_
-
-| Propiedad     | Valor                       |
-|---------------|-----------------------------|
-| **Nombre**    | UserLogoutCommandHandler    |
-| **Categoría** | Command Handler             |
-| **Propósito** | Cerrar sesión de un usuario |
-| **Comando**   | LogoutUserCommand           |
-
-**RegisteredUserEventHandle:r**
-
-###### Tabla 46
-
-_Tabla de RegisteredUserEventHandler en el Application Layer de IAM_
-
-| Propiedad     | Valor                               |
-|---------------|-------------------------------------|
-| **Nombre**    | RegisteredUserEventHandler          |
-| **Categoría** | Event Handler                       |
-| **Propósito** | Gestionar el registro de un usuario |
-| **Evento**    | UserRegisteredEvent                 |
-
-**UserLoggedInEventHandler:**
-
-###### Tabla 47
-
-_Tabla de UserLoggedInEventHandler en el Application Layer de IAM_
-
-| Propiedad     | Valor                               |
-|---------------|-------------------------------------|
-| **Nombre**    | UserLoggedInEventHandler            |
-| **Categoría** | Event Handler                       |
-| **Propósito** | Gestionar el registro de un usuario |
-| **Evento**    | UserLoggedInEvent                   |
-
-**UserLoggedOutEventHandler:**
-
-###### Tabla 48
-
-_Tabla de UserLoggedOutEventHandler en el Application Layer de IAM_
-
-| Propiedad     | Valor                               |
-|---------------|-------------------------------------|
-| **Nombre**    | UserLoggedOutEventHandler           |
-| **Categoría** | Event Handler                       |
-| **Propósito** | Gestionar el registro de un usuario |
-| **Evento**    | UserLoggedOutEvent                  |
+## SignInCommandHandler
+Tabla de SignInCommandHandler en el Application Layer de IAM
+| Propiedad        | Valor                                                     |
+| ---------------- | --------------------------------------------------------- |
+| **Nombre**       | SignInCommandHandler                                      |
+| **Categoría**    | Command Handler                                           |
+| **Propósito**    | Autenticar usuario y emitir token                         |
+| **Comando**      | `SignInCommand`                                           |
+| **Dependencias** | `UserRepository`, `HashingService`, `TokenService`        |
+| **Retorno**      | `Optional<ImmutablePair<User, String>>` (usuario + token) |
 
 #### 4.2.1.4. Infrastructure Layer
 
@@ -590,6 +552,82 @@ En la capa de interfaz del Bounded Context de Profiles and Preferences se expone
 #### 4.2.2.3. Profile and Preferences Bounded Context Application Layer
 
 La capa de aplicación del Bounded Context de Profiles and Preferences coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se implementan los Command Handlers, Query Handlers y Event Handlers responsables de operaciones como la edición de información personal, actualización de preferencias del usuario y notificación de cambios relevantes. Su rol es garantizar que dichas acciones se ejecuten de forma consistente y transaccional, delegando la lógica central al dominio y apoyándose en la infraestructura cuando sea necesario, manteniendo así la cohesión funcional del sistema.
+
+## UserCreatedEventHandler
+Tabla de UserCreatedEventHandler en el Application Layer de Profile
+
+| Propiedad        | Valor                                            |
+| ---------------- | ------------------------------------------------ |
+| **Nombre**       | UserCreatedEventHandler                          |
+| **Categoría**    | Event Handler                                    |
+| **Propósito**    | Crear `Profile` cuando IAM publica `UserCreated` |
+| **Evento**       | `UserCreated`                  |
+| **Dependencias** | `ProfileRepository` |
+
+## GetProfileByUserIdQueryHandler
+Tabla de GetProfileByUserIdQueryHandler en el Application Layer de Profile
+
+| Propiedad        | Valor                                        |
+| ---------------- | -------------------------------------------- |
+| **Nombre**       | GetProfileByUserIdQueryHandler               |
+| **Categoría**    | Query Handler                                |
+| **Propósito**    | Obtener `Profile` por `userId`               |
+| **Query**        | `GetProfileByUserIdQuery`                    |
+| **Dependencias** | `ProfileQueryRepository`/`ProfileRepository` |
+
+
+## UpdateDisplayNameCommandHandler
+Tabla de UpdateDisplayNameCommandHandler en el Application Layer de Profile
+| Propiedad        | Valor                               |
+| ---------------- | ----------------------------------- |
+| **Nombre**       | UpdateDisplayNameCommandHandler     |
+| **Categoría**    | Command Handler                     |
+| **Propósito**    | Actualizar `displayName` del perfil |
+| **Comando**      | `UpdateDisplayNameCommand`          |
+| **Dependencias** | `ProfileRepository`                 |
+
+## UpdateFullNameCommandHandler
+Tabla de UpdateFullNameCommandHandler en el Application Layer de Profile
+| Propiedad        | Valor                        |
+| ---------------- | ---------------------------- |
+| **Nombre**       | UpdateFullNameCommandHandler |
+| **Categoría**    | Command Handler              |
+| **Propósito**    | Actualizar `FullName` (VO)   |
+| **Comando**      | `UpdateFullNameCommand`      |
+| **Dependencias** | `ProfileRepository`          |
+
+## UpdateAvatarCommandHandler
+Tabla de UpdateAvatarCommandHandler en el Application Layer de Profile
+
+| Propiedad        | Valor                      |
+| ---------------- | -------------------------- |
+| **Nombre**       | UpdateAvatarCommandHandler |
+| **Categoría**    | Command Handler            |
+| **Propósito**    | Actualizar `avatarUrl`     |
+| **Comando**      | `UpdateAvatarCommand`      |
+| **Dependencias** | `ProfileRepository`        |
+
+## UpdateContactInfoCommandHandler
+Tabla de UpdateContactInfoCommandHandler en el Application Layer de Profile
+
+| Propiedad        | Valor                                  |
+| ---------------- | -------------------------------------- |
+| **Nombre**       | UpdateContactInfoCommandHandler        |
+| **Categoría**    | Command Handler                        |
+| **Propósito**    | Actualizar datos de contacto (`phone`) |
+| **Comando**      | `UpdateContactInfoCommand`             |
+| **Dependencias** | `ProfileRepository`                    |
+
+## UpdatePreferencesCommandHandler
+Tabla de UpdatePreferencesCommandHandler en el Application Layer de Profile
+| Propiedad        | Valor                                                   |
+| ---------------- | ------------------------------------------------------- |
+| **Nombre**       | UpdatePreferencesCommandHandler                         |
+| **Categoría**    | Command Handler                                         |
+| **Propósito**    | Actualizar `NotificationSettings`, `locale`, `timezone` |
+| **Comando**      | `UpdatePreferencesCommand`                              |
+| **Dependencias** | `ProfileRepository`                                     |
+
 
 #### 4.2.2.4. Profile and Preferences Bounded Context Infrastructure Layer
 
