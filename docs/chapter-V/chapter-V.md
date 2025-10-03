@@ -696,7 +696,39 @@ Asset & Resource Management centraliza el ciclo de vida de cada dispositivo, des
 
 #### 4.2.3.1. Asset & Resource Management Bounded Context Domain Layer
 
-En la capa de dominio de Asset & Resource Management se definen las entidades y objetos de valor fundamentales relacionados con los puertos y mapas de navegación presentados en la aplicación. Esta capa encapsula las reglas de negocio desde la definición de cada puerto y su ubicación exacta, la revisión del estado de cada puerto y la selección de un puerto de inicio y uno final. Además, en este nivel se ubican los Domain Services encargados de la entrega de información de cada puerto específico para su visualización por el usuario, asegurando coherencia, integridad y rendimiento.
+En la capa de dominio de Asset & Resource Management se modelan las entidades y objetos de valor que encapsulan las reglas de negocio de los puertos, waypoints y activos. Aquí residen los aggregates, value objects, domain services y eventos que garantizan la coherencia e invariantes del dominio.
+
+###### Tabla 
+*Descripción de Port en el Domain Layer de Asset & Resource Management*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre	|Port|
+|Categoría|	Aggregate Root (document MongoDB, colección ports)|
+|Propósito|	Representar la ficha del puerto con ubicación, capacidades y estado operativo.|
+
+###### Tabla 2
+*Atributos de Port en el Domain Layer de Asset & Resource Management*
+
+|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
+|-|-|-|-|
+|id|	String (ObjectId)|	private	|Identificador único del documento (_id).|
+|name	|String|	private|	Nombre descriptivo del puerto.|
+|coordinates| Coordinates {type: "Point", coordinates: [lon, lat]}	|private|	Coordenadas geoespaciales para ubicar cada puerto |
+|restrictions |Array<Object>| private | Lista de restricciones dadas para un puerto en específico.|
+|status	|String (enum)	|private	|Estado operativo: OPEN, RESTRICTED, CLOSED.|
+|createdAt	|Date	|private|	Fecha de creación.|
+|updatedAt	|Date|	private	|Fecha de última modificación.|
+
+###### Tabla 3 
+*Métodos de Port en el Domain Layer de Asset & Resource Management*
+
+|Nombre	|Tipo de retorno	|Visibilidad	|Descripción|
+|-|-|-|-|
+|Port	|Constructor |	public|Constructor que valida ubicación.|
+|changeStatus(newStatus, reason, actor)|	void|	public|	Valida transición de estados y registra evento PortStatusChanged.|
+|addRestriction(restriction)|	void	|public	|Añade restricción para un puerto en específico en el mapa|
+|removeRestriction(restrictionId)|	void|	public	|Elimina restricción y registra PortRestrictionRemoved.|
 
 #### 4.2.3.2. Asset & Resource Management Bounded Context Interface Layer
 
