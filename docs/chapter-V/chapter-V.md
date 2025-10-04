@@ -365,21 +365,6 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y seguridad del sistema.
 
-###### Figura 80
-*Participación del Bounded Context de IAM con la aplicación móvil mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-MobileComponent.png"></image>
-
-###### Figura 81
-*Participación del Bounded Context de IAM con la aplicación web mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-WebComponent.png"></image>
-
-###### Figura 82
-*Participación del Bounded Context de IAM con la Cloud API mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-IAM-APIComponent.png"></image>
-
 #### 4.2.1.6. IAM Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de IAM, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
@@ -392,10 +377,7 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 Asimismo, se incluyen las relaciones entre elementos del dominio, calificadas con nombres descriptivos, direccionalidad cuando corresponde, y multiplicidad para reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada del diseño táctico favorece la comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación efectiva dentro de la arquitectura de software.
 
-###### Figura 83
-*Diagrama de clases de la capa de dominio del Bounded Context de IAM*
-
-<image src="../assets/img/capitulo-4/bounded-context-iam/class-diagram.png"></image>
+![IAM CLASS DIAGRAM](../../assets/img/chapter-V/iam-class-diagram.png)
 
 ##### 4.2.1.6.2. IAM Bounded Context Database Design Diagram
 
@@ -405,10 +387,7 @@ El diagrama incluye detalles esenciales como el tipo de dato y la visibilidad de
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del modelo conceptual, funcionando como un nexo clave entre el análisis de dominio y su posterior implementación en la arquitectura del sistema.
 
-###### Figura 84
-*Diagrama de base de datos del Bounded Context de IAM*
 
-<image src="../assets/img/capitulo-4/bounded-context-iam/database-diagram.png"></image>
 
 ---
 
@@ -669,20 +648,6 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como establece el C4 Model, el nivel de componentes representa el cuarto nivel de abstracción en la visualización de arquitecturas de software, y resulta especialmente útil para desarrolladores y arquitectos al ofrecer una visión clara de las decisiones de diseño adoptadas en cada contenedor (Brown, 2023). Este nivel facilita la trazabilidad entre los elementos de alto nivel y su implementación específica, fortaleciendo la mantenibilidad, extensibilidad y coherencia del sistema.
 
-###### Figura 85
-*Participación del Bounded Context de Profile and Preferences con la aplicación móvil mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-MobileComponent.png"></image>
-
-###### Figura 86
-*Participación del Bounded Context de Profile and Preferences con la aplicación web mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-WebComponent.png"></image>
-
-###### Figura 87
-*Participación del Bounded Context de Profile and Preferences con la Cloud API mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Profile-APIComponent.png"></image>
 
 #### 4.2.2.6. Profile and Preferences Bounded Context Software Architecture Code Level Diagrams
 
@@ -696,10 +661,11 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 El nivel de detalle incluye la definición de atributos y métodos para cada clase, especificando sus tipos de datos, visibilidad y rol dentro del modelo, así como las relaciones fundamentales entre los distintos elementos del dominio. Estas relaciones se representan con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, lo que permite reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada facilita una comprensión común del modelo conceptual, sirviendo como puente entre el diseño del dominio y su posterior implementación técnica.
 
-###### Figura 88
-*Diagrama de clases de la capa de dominio del Bounded Context de Profile and Preferences*
 
-<image src="../assets/img/capitulo-4/bounded-context-profile-and-personal-data/class-diagram-profile-and-personal-data.png"></image>
+
+![PROFILE CLASS DIAGRAM](../../assets/img/chapter-V//profile-class-diagram.png)
+
+
 
 ##### 4.2.2.6.2. Profile and Preferences Bounded Context Database Design Diagram
 
