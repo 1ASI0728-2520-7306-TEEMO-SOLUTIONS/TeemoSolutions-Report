@@ -316,43 +316,48 @@ La capa de infraestructura del Bounded Context de IAM actúa como el puente entr
 
 Esta capa concreta las abstracciones definidas en el dominio mediante implementaciones de repositorios. Su diseño busca mantener el desacoplamiento respecto a la lógica central, permitiendo la evolución tecnológica sin comprometer la integridad del dominio. Además, garantiza la eficiencia, seguridad y confiabilidad en la gestión de identidades, roles y sesiones, alineándose con los objetivos funcionales y no funcionales del sistema.
 
-**UserRepository:**
+## RoleRepository
+Tabla de RoleRepository en el Infrastructure Layer de IAM
+| Propiedad          | Valor                                       |
+| ------------------ | ------------------------------------------- |
+| **Nombre**         | RoleRepository                              |
+| **Categoría**      | Repositorio                                 |
+| **Propósito**      | Persistir y consultar entidades de `Role`   |
+| **Interfaz**       | `RoleRepository`                            |
+| **Implementación** | `RoleRepositoryImpl` (Spring `@Repository`) |
+| **Colección**      | `roles` (MongoDB)                           |
+| **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)       |
 
-###### Tabla 49
+Métodos de RoleRepository / RoleRepositoryImpl
 
-_Tabla de UserRepository en el Infraestructure Layer de IAM_
+| Método         | Firma                                   | Descripción                               |
+| -------------- | --------------------------------------- | ----------------------------------------- |
+| `findByName`   | `Optional<Role> findByName(Roles name)` | Busca un rol por nombre (enum).           |
+| `findAll`      | `List<Role> findAll()`                  | Retorna todos los roles.                  |
+| `saveRole`     | `void saveRole(Role role)`              | Persiste/actualiza un `Role`.             |
+| `existsByName` | `boolean existsByName(Roles name)`      | Verifica existencia de un rol por nombre. |
 
-| Propiedad     | Valor                                     |
-|---------------|-------------------------------------------|
-| **Nombre**    | UserRepository                            |
-| **Categoría** | Repositorio                               |
-| **Propósito** | Persistir y consultar entidades de `User` |
-| **Interfaz**  | `IUserRepository`                         |
 
-**SessionRepository:**
+## UserRepository
+Tabla de UserRepository en el Infrastructure Layer de IAM
+| Propiedad          | Valor                                       |
+| ------------------ | ------------------------------------------- |
+| **Nombre**         | UserRepository                              |
+| **Categoría**      | Repositorio                                 |
+| **Propósito**      | Persistir y consultar entidades de `User`   |
+| **Interfaz**       | `UserRepository`                            |
+| **Implementación** | `UserRepositoryImpl` (Spring `@Repository`) |
+| **Colección**      | `users` (MongoDB)                           |
+| **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)       |
 
-###### Tabla 50
-
-_Tabla de SessionRepository en el Infraestructure Layer de IAM_
-
-| Propiedad     | Valor                                     |
-|---------------|-------------------------------------------|
-| **Nombre**    | SessionRepository                         |
-| **Categoría** | Repositorio                               |
-| **Propósito** | Persistir y consultar entidades de `User` |
-| **Interfaz**  | `ISessionRepository`                      |
-
-**AppDbContext:**
-
-###### Tabla 51
-
-_Tabla de AppDbContext en el Infraestructure Layer de IAM_
-
-| Propiedad     | Valor                                          |
-|---------------|------------------------------------------------|
-| **Nombre**    | AppDbContext                                   |
-| **Categoría** | ORM Context                                    |
-| **Propósito** | Punto central de acceso a la base de datos     |
+Métodos de UserRepository / UserRepositoryImpl
+| Método             | Firma                                            | Descripción                         |
+| ------------------ | ------------------------------------------------ | ----------------------------------- |
+| `findByUsername`   | `Optional<User> findByUsername(String username)` | Busca usuario por `username`.       |
+| `findById`         | `Optional<User> findById(String id)`             | Busca usuario por `id`.             |
+| `findAll`          | `List<User> findAll()`                           | Lista todos los usuarios.           |
+| `saveUser`         | `void saveUser(User user)`                       | Persiste/actualiza un `User`.       |
+| `existsByUsername` | `boolean existsByUsername(String username)`      | Verifica existencia por `username`. |
 
 #### 4.2.1.5. IAM Bounded Context Software Architecture Component Level Diagrams
 
@@ -634,6 +639,29 @@ Tabla de UpdatePreferencesCommandHandler en el Application Layer de Profile
 La capa de infraestructura del Bounded Context de Profile and Preferences sirve como enlace entre la lógica de negocio y los mecanismos técnicos que permiten la persistencia y comunicación con recursos externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, servicios de almacenamiento y otros módulos relevantes que permiten gestionar la información de perfil y preferencias de los usuarios.
 
 Esta capa materializa las abstracciones definidas en el dominio mediante la implementación de repositorios y adaptadores técnicos. Su diseño favorece el desacoplamiento de la lógica central, facilitando la evolución tecnológica sin afectar la integridad del modelo. Asimismo, asegura una gestión consistente, eficiente y segura de los datos personales, configuraciones y preferencias del usuario, en línea con los objetivos funcionales y no funcionales del sistema.
+
+## ProfileRepository
+Tabla de ProfileRepository en el Infrastructure Layer de Profile
+
+| Propiedad          | Valor                                          |
+| ------------------ | ---------------------------------------------- |
+| **Nombre**         | ProfileRepository                              |
+| **Categoría**      | Repositorio                                    |
+| **Propósito**      | Persistir y consultar agregados de `Profile`   |
+| **Interfaz**       | `ProfileRepository`                            |
+| **Implementación** | `ProfileRepositoryImpl` (Spring `@Repository`) |
+| **Colección**      | `profiles` (MongoDB)                           |
+| **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)          |
+
+Métodos de ProfileRepository (propuestos)
+
+| Método           | Firma                                           | Descripción                                                         |
+| ---------------- | ----------------------------------------------- | ------------------------------------------------------------------- |
+| `findByUserId`   | `Optional<Profile> findByUserId(String userId)` | Busca el perfil asociado a un `userId` (clave de relación con IAM). |
+| `findById`       | `Optional<Profile> findById(String id)`         | Busca perfil por su `id` propio.                                    |
+| `findAll`        | `List<Profile> findAll()`                       | Lista todos los perfiles.                                           |
+| `saveProfile`    | `void saveProfile(Profile profile)`             | Persiste/actualiza un `Profile`.                                    |
+| `existsByUserId` | `boolean existsByUserId(String userId)`         | Verifica existencia por `userId`.                                   |
 
 #### 4.2.2.5. Profile and Preferences Bounded Context Software Architecture Component Level Diagrams
 
