@@ -983,14 +983,14 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 
 <image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
 
-### 4.2.4. Bounded Context: Asset and Resource Management
+### 4.2.4. Bounded Context: A*/AI Process
 En el contexto táctico, el Bounded Context A/AI process* concentra la funcionalidad asociada al cálculo de rutas óptimas y a la predicción climática que complementa la experiencia de navegación. Este módulo encapsula la lógica del algoritmo A* para determinar la ruta mínima entre puntos definidos, integrando además un componente de inteligencia artificial orientado a anticipar condiciones meteorológicas que puedan afectar la planificación del trayecto.
 
 El proceso se apoya en datos obtenidos de APIs externas, que pueden proveer información climática en tiempo real o registros históricos especializados, según se defina en etapas posteriores del proyecto. A partir de esta información, el sistema ajusta dinámicamente las rutas propuestas, otorgando a los navegantes un soporte predictivo que incrementa tanto la eficiencia como la seguridad del recorrido.
 
 De esta forma, el bounded context actúa como el núcleo de cálculo y predicción, exponiendo interfaces bien delimitadas para que otros módulos del sistema consuman sus resultados sin acoplarse a la complejidad interna de los algoritmos. Esto asegura independencia, escalabilidad y una fuente única de verdad en lo referente a optimización de trayectorias y análisis del entorno climático.
 
-#### 4.2.4.1. Asset and Resource Management Bounded Context Domain Layer
+#### 4.2.4.1. A*/AI Process Bounded Context Domain Layer
 
 Route:
 *Tabla de Route en el Domain Layer de A*/AI process*
@@ -1025,12 +1025,12 @@ Node:
 | Propósito | Representar un punto geográfico o de grafo en el cálculo de rutas. |
 
 *Tabla de atributos de Node en el Domain Layer de A*/AI process*
-| Nombre | Tipo de dato | Visibilidad | Descripción |
-|--------|--------------|-------------|-------------|
-| Id | UUID | private | Identificador único del nodo |
-| Latitude | double | private | Coordenada de latitud del nodo |
-| Longitude | double | private | Coordenada de longitud del nodo |
-| Cost | double | private | Costo heurístico acumulado en el algoritmo |
+| Nombre    | Tipo de dato | Visibilidad | Descripción |
+|-----------|--------------|-------------|-------------|
+| Id        | UUID         | private     | Identificador único del nodo |
+| Latitude  | double       | private     | Coordenada de latitud del nodo |
+| Longitude | double       | private     | Coordenada de longitud del nodo |
+| Cost      | double       | private     | Costo heurístico acumulado en el algoritmo |
 
 WeatherPrediction:
 *Tabla de WeatherPrediction en el Domain Layer de A*/AI process*
@@ -1108,18 +1108,241 @@ IWeatherRepository:
 | FindByRoute | List<WeatherPrediction> | public | Recupera predicciones asociadas a una ruta |
 
 
+#### 4.2.4.2. A*/AI Process Bounded Context Interface Layer
 
-#### 4.2.4.2. Asset and Resource Management Bounded Context Interface Layer
+La capa de Interface (Presentation) del bounded context A/AI process* contiene los controllers REST que exponen la funcionalidad del core (cálculo de rutas, obtención de datos de puertos, consulta de distancias, listados de rutas). Además expone los DTOs/Resources que representan las peticiones y respuestas de la API, y los assemblers que transforman recursos a comandos del Application Layer (y viceversa). Esta capa no contiene lógica de negocio; su única responsabilidad es traducir HTTP ↔ objetos del dominio/aplicación y manejar respuestas/errores.
 
-#### 4.2.4.3. Asset and Resource Management Bounded Context Application Layer
+RouteController
+*Tabla de RouteController en el Interface Layer del A*/AI process*
+| Propiedad     | Valor                                                                                     |
+|---------------|-------------------------------------------------------------------------------------------|
+| Nombre        | RouteController                                                                           |
+| Categoría     | Controller                                                                                |
+| Propósito     | Exponer endpoints relacionados con operaciones sobre rutas (cálculo, consulta, listados). |
+| Base Path     | /api/routes (convención; el controller usa recursos RouteCalculationResource, etc.)       |
 
-#### 4.2.4.4. Asset and Resource Management Bounded Context Infrastructure Layer
+*Tabla de métodos (ejemplos relevantes encontrados en el código)*
+|Nombre (Método)        | Ruta (ejemplo)        | Acción                                | Handle / Resource utilizado                  |
+|--------------------   |-----------------------|---------------------------------------|----------------------------------------------|
+| calculateRoute (POST) | /api/routes/calculate | Recibe datos de inicio/destino y solicita cálculo de ruta óptima | RouteCalculationResource / RouteRequestResource |
+| getRouteById (GET)    | /api/routes/{routeId} | Recupera una ruta por ID                    | RouteDocument / RouteResource |
+| getAllRoutes (GET)    | /api/routes/all-routes| Lista todas las rutas guardadas (historial) | List<RouteDocument> |
 
-#### 4.2.4.5. Asset and Resource Management Bounded Context Software Architecture Component Level Diagrams
+PortController
+*Tabla de PortController en el Interface Layer del A*/AI process*
+| Propiedad     | Valor                                                                                     |
+|---------------|-------------------------------------------------------------------------------------------|
+| Nombre        | PortController                                                                           |
+| Categoría     | Controller                                                                                |
+| Propósito     | Exponer endpoints para gestión/consulta de puertos y utilitarios relacionados (ej. distancia entre puertos). |
+| Base Path     | /api/ports (convención; el controller usa PortResource, CreatePortResource)      |
 
-#### 4.2.4.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
+*Tabla de métodos (ejemplos relevantes encontrados en el código)*
+|Nombre (Método)        | Ruta (ejemplo)        | Acción                                | 
+|--------------------   |-----------------------|---------------------------------------|
+| createPort (POST) | /api/ports | Crea un nuevo puerto a partir del DTO CreatePortResource | 
+| getPortById (GET)    | /api/ports/{portId} | Obtiene información del puerto                   | 
+| getDistanceBetweenPorts (GET)    | /api/ports/distance-between-ports | Devuelve distancia/resultado entre dos puertos (usa RouteDistanceResource) | 
 
-##### 4.2.4.6.1. Asset and Resource Management Bounded Context Domain Layer Class Diagrams
+Resources / DTOs
+*Tabla breve de los recursos encontrados y su propósito*
+| Recurso | Propósito/Uso |
+|---------|---------------|
+| RouteCalculationResource | Representa respuesta con datos de la ruta calculada (nodos, coste). |
+| RouteRequestResource | DTO de petición para calcular una ruta (puerto inicio/fin, parámetros). |
+| RouteDistanceResource | DTO de respuesta para distancias / mensajes de error relacionados. |
+| PortResource | DTO de salida con datos de un puerto. |
+| PortResource | DTO de entrada para creación de puerto. |
 
-##### 4.2.4.6.2. Asset and Resource Management Bounded Context Database Design Diagram
+Assemblers / Transformers
+*Tabla de assemblers presentes y su propósito*
+| Clase | Propósito |
+|-------|-----------|
+| CreatePortCommandFromResourceAssembler | Transforma CreatePortResource → CreatePortCommand del Application Layer |
+| PortResourceFromEntityAssembler | Transforma Port entity → PortResource para respuesta al cliente |
+
+
+#### 4.2.4.3. A*/AI Process Bounded Context Application Layer
+La capa de Application del bounded context A/AI process* orquesta los flujos de negocio que coordinan el dominio (A*, modelos y repositorios) y la capa de presentación (controllers). En el repositorio actual esta capa está implementada principalmente mediante Application Services (clases *Service y *ServiceImpl) que exponen las capacidades (capabilities) del bounded context: cálculo de rutas, construcción del grafo, provisión de condiciones de navegación y gestión de puertos y rutas persistidas. En este monolito no hay Event Handlers ni Command Handlers explícitos como clases independientes; las responsabilidades de manejo de comandos se realizan desde los servicios de aplicación (simple y apropiado para un entregable académico/monolito).
+
+RouteService
+*Tabla de RouteService en el Application Layer*
+| Propiedad     | Valor                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `RouteService`                                                                                                      |
+| **Categoría** | Application Service                                                                                                 |
+| **Propósito** | Orquestar operaciones de negocio relacionadas con rutas: cálculo, persistencia y consultas (historial, existencia). |
+
+*Métodos clave (extraídos del código)*
+| Nombre                                                            | Tipo de retorno            | Descripción                                                                                                                                                                 |
+| ----------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `calculateOptimalRoute(String startPortName, String endPortName)` | `RouteCalculationResource` | Orquesta el cálculo de la ruta óptima entre dos puertos (invoca servicios de dominio como `RouteCalculatorService` y `NavigationConditionsService`, arma la respuesta DTO). |
+| `calculateTotalDistance(List<Port> route)`                        | `double`                   | Calcula distancia total para una lista de puertos (utilidad usada en reports/mediciones).                                                                                   |
+| `findAllRoutes()`                                                 | `List<RouteDocument>`      | Recupera todas las rutas guardadas (historial).                                                                                                                             |
+| `saveAllRoutes(List<RouteDocument> routes)`                       | `void`                     | Persiste una lista de rutas.                                                                                                                                                |
+| `existsByHomePortAndDestinationPort(String h, String d)`          | `boolean`                  | Valida existencia de ruta entre puertos (para lógica de “popular routes”).                                                                                                  |
+| `deleteAllRoutes()`                                               | `void`                     | Operación administrativa para limpiar rutas.                                                                                                                                |
+
+PortService
+*Tabla de PortService en el Application Layer*
+| Propiedad     | Valor                                                                                                                   |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `PortService`                                                                                                           |
+| **Categoría** | Application Service                                                                                                     |
+| **Propósito** | Operaciones CRUD y consultas sobre puertos; integrador de comandos de creación y de lectura para la capa de interfaces. |
+
+*Métodos clave*
+| Nombre                                                    | Tipo de retorno          | Descripción                                                                                 |
+| --------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------- |
+| `createPort(CreatePortCommand command)`                   | `Port`                   | Crea un nuevo `Port` a partir del comando (se usa el assembler desde la capa de Interface). |
+| `saveAllPorts(List<Port> ports)`                          | `void`                   | Persiste una lista de puertos.                                                              |
+| `findByNameAndContinent(String name, String continent)`   | `Optional<PortDocument>` | Busca puerto por nombre y continente.                                                       |
+| `getPortById(String id)`                                  | `Optional<Port>`         | Recupera puerto por id.                                                                     |
+| `getPortByName(String name)`                              | `Optional<Port>`         | Busca puerto por nombre.                                                                    |
+| `getAllPorts()`                                           | `List<Port>`             | Recupera todos los puertos.                                                                 |
+| `existsByNameAndContinent(String name, String continent)` | `boolean`                | Chequeo de existencia.                                                                      |
+| `deletePort(String id)` / `deleteAllPorts()`              | `void`                   | Eliminación (individual/masiva).                                                            |
+
+RouteCalculatorServiceImpl
+*Tabla de RouteCalculatorServiceImpl en el Application Layer*
+| Propiedad     | Valor                                                                                                                 |
+| ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `RouteCalculatorServiceImpl`                                                                                          |
+| **Categoría** | Application / Inbound Service (implementación de la capability de cálculo)                                            |
+| **Propósito** | Implementa la orquestación concreta para calcular una ruta óptima: utiliza el grafo, las condiciones y el pathfinder. |
+
+Métodos clave
+| Nombre                                        | Tipo de retorno | Descripción                                                                             |
+| --------------------------------------------- | --------------- | --------------------------------------------------------------------------------------- |
+| `calculateOptimalRoute(Port start, Port end)` | `List<Port>`    | Devuelve la secuencia de puertos que conforman la ruta calculada entre `start` y `end`. |
+
+RouteGraphBuilder
+*Tabla de RouteGraphBuilder en el Application Layer*
+| Propiedad     | Valor                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `RouteGraphBuilder`                                                                                   |
+| **Categoría** | Application Service / Utility                                                                         |
+| **Propósito** | Construir dinámicamente la representación de grafo (`RouteGraph`) que será usada por el algoritmo A*. |
+
+*Métodos clave*
+| Nombre                                     | Tipo de retorno | Descripción                                                   |
+| ------------------------------------------ | --------------- | ------------------------------------------------------------- |
+| `buildDynamicRouteGraph()`                 | `RouteGraph`    | Construye y devuelve el grafo actual (nodos y aristas).       |
+| `calculateTotalDistance(List<Port> route)` | `double`        | Calcula la distancia total de una ruta (servicio utilitario). |
+
+NavigationConditionsService
+*Tabla de NavigationConditionsService en el Application Layer*
+| Propiedad     | Valor                                                                                                                                                                                                             |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `NavigationConditionsService`                                                                                                                                                                                     |
+| **Categoría** | Application Service (adapter/inbound)                                                                                                                                                                             |
+| **Propósito** | Proveer ajustes y penalizaciones de coste en función de condiciones de navegación (corrientes, clima, peligros). Consume/o prepara datos que vienen de `NavigationConditionsProvider` (Domain) y/o APIs externas. |
+
+*Métodos clave*
+| Nombre                                                                           | Tipo de retorno | Descripción                                                          |
+| -------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------- |
+| `getAdjustedCost(Route route, Port homePort, Port destinationPort, Clock clock)` | `double`        | Retorna costo ajustado para una ruta basada en condiciones actuales. |
+| `isAlongFavorableCurrent(Port from, Port to)`                                    | `boolean`       | Indica si el tramo cuenta con corrientes favorables.                 |
+| `isAgainstStrongCurrent(Port from, Port to)`                                     | `boolean`       | Indica si el tramo va contra corriente fuerte.                       |
+
+
+Comandos
+| Nombre              | Tipo / ubicación                                                | Propósito                                                                                       |
+| ------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `CreatePortCommand` | `mapping/domain/model/commands/CreatePortCommand.java` (record) | Estructura de datos para la creación de un `Port`. Consumido por `PortService.createPort(...)`. |
+
+
+
+
+
+#### 4.2.4.4. A*/AI Process Bounded Context Infrastructure Layer
+La capa de Infrastructure contiene las implementaciones concretas que interactúan con sistemas externos: la base de datos (MongoDB), mapeadores entre documentos y entidades, y adaptadores para servicios externos. En este proyecto las implementaciones de repositorios (SDMDB documents/repositories), mappers y configuraciones de MongoDB se ubican aquí. Esta capa implementa las interfaces definidas en el Domain Layer y expone adaptadores que la Application Layer consume.
+
+*RouteDocument*
+| Propiedad            | Valor                                                                                                                                                                                                                                                     |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)** | `RouteDocument.java`                                                                                                                                                                                                                                      |
+| **Categoría**        | Document / Persistence Model                                                                                                                                                                                                                              |
+| **Propósito**        | Representar la entidad Route en la capa de persistencia (documento Mongo).                                                                                                                                                                                |
+| **Campos típicos**   | `id` (String/UUID), `homePort` (String o subdocument con id/nombre), `destinationPort`, `nodes` (lista de nodos o referencias), `distance` (double), `cost` (double), `createdAt` (DateTime), `metadata` (map con info adicional como emisiones, eventos) |
+| **Uso**              | Persistido vía `RouteRepository` para historial y consultas.                                                                                                                                                                                              |
+*PortDocument*
+| Propiedad            | Valor                                                                                                                        |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)** | `PortDocument.java`                                                                                                          |
+| **Categoría**        | Document / Persistence Model                                                                                                 |
+| **Propósito**        | Representar un puerto en la base de datos (documento Mongo).                                                                 |
+| **Campos típicos**   | `id` (String/UUID), `name` (String), `coordinates` (lat,long), `continent` (String), `metadata` (capacidad, servicios, etc.) |
+| **Uso**              | Persistido vía `PortRepository`, utilizado por `PortService` y para construir el grafo de rutas.                             |
+
+*RouteRepository*
+| Propiedad               | Valor                                                                                                                                                                                                       |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)**    | `RouteRepository.java`                                                                                                                                                                                      |
+| **Categoría**           | Repository (Infra implementation / Spring Data repository)                                                                                                                                                  |
+| **Propósito**           | Persistir y recuperar `RouteDocument` desde MongoDB. Implementa la abstracción definida en Domain (`IRouteRepository` o similar).                                                                           |
+| **Operaciones típicas** | `save(RouteDocument)`, `saveAll(List<RouteDocument>)`, `findById(String)`, `findAll()`, `deleteById(String)`, consultas por `homePort` y `destinationPort` (p. ej. `findByHomePortAndDestinationPort(...)`) |
+| **Notas**               | En la práctica suele extender `MongoRepository<RouteDocument, String>` o usar `@Repository` con `MongoTemplate` para consultas personalizadas.                                                              |
+*RouteRepository*
+| Propiedad               | Valor                                                                                                                                                                                                       |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)**    | `RouteRepository.java`                                                                                                                                                                                      |
+| **Categoría**           | Repository (Infra implementation / Spring Data repository)                                                                                                                                                  |
+| **Propósito**           | Persistir y recuperar `RouteDocument` desde MongoDB. Implementa la abstracción definida en Domain (`IRouteRepository` o similar).                                                                           |
+| **Operaciones típicas** | `save(RouteDocument)`, `saveAll(List<RouteDocument>)`, `findById(String)`, `findAll()`, `deleteById(String)`, consultas por `homePort` y `destinationPort` (p. ej. `findByHomePortAndDestinationPort(...)`) |
+| **Notas**               | En la práctica suele extender `MongoRepository<RouteDocument, String>` o usar `@Repository` con `MongoTemplate` para consultas personalizadas.                                                              |
+*PortRepository*
+| Propiedad               | Valor                                                                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)**    | `PortRepository.java`                                                                                                              |
+| **Categoría**           | Repository (Infra implementation / Spring Data repository)                                                                         |
+| **Propósito**           | Persistir y recuperar `PortDocument` desde MongoDB. Implementa la abstracción definida en Domain (`IPortRepository` o similar).    |
+| **Operaciones típicas** | `save(PortDocument)`, `findById(String)`, `findByName(String)`, `findAll()`, `existsByNameAndContinent(...)`, `deleteById(String)` |
+| **Notas**               | Soporta las operaciones que `PortService` necesita para crear puertos y construir grafo.                                           |
+
+*Mappers*
+| Propiedad           | Valor                                                                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (ej.)**    | `PortMapper.java`, `RouteMapper.java`                                                                                                                   |
+| **Categoría**       | Mapper / Adapter                                                                                                                                        |
+| **Propósito**       | Convertir entre documentos de persistencia (`PortDocument`, `RouteDocument`) y entidades/VO del Domain Layer (`Port`, `Route`, `Node`).                 |
+| **Métodos típicos** | `toDocument(Port)`, `toEntity(PortDocument)`, `toDocument(Route)`, `toEntity(RouteDocument)`                                                            |
+| **Uso**             | Los Application Services y Repositories usan los mappers para no exponer documentos directamente al dominio; mantienen separación de responsabilidades. |
+
+
+*MongoConfig*
+| Propiedad            | Valor                                                                                                                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre (archivo)** | `MongoConfig.java` (o configuración en `application.properties`)                                                                                                                  |
+| **Categoría**        | Configuration                                                                                                                                                                     |
+| **Propósito**        | Configurar conexión a MongoDB (URI, cliente, `MongoTemplate`, serializadores), y parámetros de conexión (pool, timeouts).                                                         |
+| **Uso**              | La infraestructura utiliza esta configuración para instanciar repositorios y `MongoTemplate`. En el repo hay referencias a `spring.data.mongodb.uri` en `application.properties`. |
+
+
+*Adaptadores externos*
+| Propiedad               | Valor                                                                                                                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Ejemplos**            | Adaptadores para APIs externas de clima / geopolitica (no necesariamente ya implementados en código).                                                                                            |
+| **Categoría**           | External Adapter / HTTP Client                                                                                                                                                                   |
+| **Propósito**           | Implementar llamadas HTTP a proveedores externos (weather API, geopolitical API), parsear respuestas y exponer un contrato interno (p. ej. `WeatherApiClient` → `NavigationConditionsProvider`). |
+| **Tecnología sugerida** | `WebClient` (Spring WebFlux) o `RestTemplate` (simple) según preferencia del proyecto.                                                                                                           |
+| **Consideración**       | Para la entrega del curso es aceptable simular (mocks) o usar un adapter con configuraciones que permitan habilitar/inhabilitar llamadas reales.                                                 |
+
+*Logs / Monitoring*
+| Propiedad               | Valor                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**              | `ErrorLog` (modelo de persistencia), `ServiceStatus` (si se implementa)                                                                        |
+| **Categoría**           | Observability / Persistence                                                                                                                    |
+| **Propósito**           | Guardar registros de errores críticos, estado de servicios externos y alertas; pueden persistirse en MongoDB para auditoría y debugging.       |
+| **Operaciones típicas** | `save(ErrorLog)`, `findRecentByService(String)`, `storeServiceStatus(ServiceStatus)`                                                           |
+| **Notas**               | No es necesario un stack complejo; un collection simple en MongoDB con timestamp y nivel de severidad es suficiente para el alcance del curso. |
+
+
+#### 4.2.4.5. A*/AI Process Bounded Context Software Architecture Component Level Diagrams
+
+#### 4.2.4.6. A*/AI Process Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. A*/AI Process Bounded Context Domain Layer Class Diagrams
+
+##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
