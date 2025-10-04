@@ -716,18 +716,18 @@ Esta visualización resulta esencial para asegurar la coherencia entre el modelo
 
 ---
 
-### 4.2.3. Bounded Context: Asset & Resource Management
+### 4.2.3. Bounded Context: Asset and Resource Management
 
-En el contexto táctico, el Bounded Context Asset & Resource Management agrupa toda la funcionalidad vinculada a la administración de activos físicos y recursos operativos dentro del ecosistema Macetech. Este módulo se encarga del registro, monitoreo y mantenimiento de los dispositivos IoT desplegados (como sensores de humedad, temperatura, pH, entre otros), permitiendo llevar un control detallado de su estado, ubicación, historial de intervenciones y condiciones operativas.
+En el contexto táctico, el Bounded Context Asset and Resource Management agrupa toda la funcionalidad vinculada a la administración de activos físicos y recursos operativos dentro del ecosistema Macetech. Este módulo se encarga del registro, monitoreo y mantenimiento de los dispositivos IoT desplegados (como sensores de humedad, temperatura, pH, entre otros), permitiendo llevar un control detallado de su estado, ubicación, historial de intervenciones y condiciones operativas.
 
-Asset & Resource Management centraliza el ciclo de vida de cada dispositivo, desde su activación inicial hasta su posible retiro o sustitución, asegurando trazabilidad completa y continuidad en la gestión técnica. Asimismo, incorpora mecanismos para la asignación de recursos a usuarios o entornos específicos, facilitando una administración eficiente y contextualizada. Este bounded context expone interfaces estandarizadas para permitir su integración con otros contextos funcionales, y actúa como fuente confiable de verdad sobre los activos tecnológicos desplegados en la plataforma.
+Asset and Resource Management centraliza el ciclo de vida de cada dispositivo, desde su activación inicial hasta su posible retiro o sustitución, asegurando trazabilidad completa y continuidad en la gestión técnica. Asimismo, incorpora mecanismos para la asignación de recursos a usuarios o entornos específicos, facilitando una administración eficiente y contextualizada. Este bounded context expone interfaces estandarizadas para permitir su integración con otros contextos funcionales, y actúa como fuente confiable de verdad sobre los activos tecnológicos desplegados en la plataforma.
 
-#### 4.2.3.1. Asset & Resource Management Bounded Context Domain Layer
+#### 4.2.3.1. Asset and Resource Management Bounded Context Domain Layer
 
-En la capa de dominio de Asset & Resource Management se modelan las entidades y objetos de valor que encapsulan las reglas de negocio de los puertos, waypoints y activos. Aquí residen los aggregates, value objects, domain services y eventos que garantizan la coherencia e invariantes del dominio.
+En la capa de dominio de Asset and Resource Management se modelan las entidades y objetos de valor que encapsulan las reglas de negocio de los puertos, waypoints y activos. Aquí residen los aggregates, value objects, domain services y eventos que garantizan la coherencia e invariantes del dominio.
 
 ###### Tabla 
-*Descripción de Port en el Domain Layer de Asset & Resource Management*
+*Descripción de Port en el Domain Layer de Asset and Resource Management*
 
 |Propiedad|Valor|
 |-|-|
@@ -736,719 +736,283 @@ En la capa de dominio de Asset & Resource Management se modelan las entidades y 
 |Propósito|	Representar la ficha del puerto con ubicación, capacidades y estado operativo.|
 
 ###### Tabla 2
-*Atributos de Port en el Domain Layer de Asset & Resource Management*
+*Atributos de Port en el Domain Layer de Asset and Resource Management*
 
 |Nombre	|Tipo de dato	|Visibilidad|	Descripción|
 |-|-|-|-|
 |id|	String (ObjectId)|	private	|Identificador único del documento (_id).|
 |name	|String|	private|	Nombre descriptivo del puerto.|
 |coordinates| Coordinates {type: "Point", coordinates: [lon, lat]}	|private|	Coordenadas geoespaciales para ubicar cada puerto |
-|restrictions |Array < Object >| private | Lista de restricciones dadas para un puerto en específico.|
+|continent | String | private | Continente en el que se encuentra el puerto. |
 |status	|String (enum)	|private	|Estado operativo: OPEN, RESTRICTED, CLOSED.|
 |createdAt	|Date	|private|	Fecha de creación.|
 |updatedAt	|Date|	private	|Fecha de última modificación.|
 
 ###### Tabla 3 
-*Métodos de Port en el Domain Layer de Asset & Resource Management*
+*Métodos de Port en el Domain Layer de Asset and Resource Management*
 
 |Nombre	|Tipo de retorno	|Visibilidad	|Descripción|
 |-|-|-|-|
 |Port	|Constructor |	public|Constructor que valida ubicación.|
 |changeStatus(newStatus, reason, actor)|	void|	public|	Valida transición de estados y registra evento PortStatusChanged.|
-|addRestriction(restriction)|	void	|public	|Añade restricción para un puerto en específico en el mapa|
-|removeRestriction(restrictionId)|	void|	public	|Elimina restricción y registra PortRestrictionRemoved.|
-
-###### Tabla 4
-*Value Object de Coordinates en el Domain Layer de Asset & Resource Management*
-
-| Propiedad	|Valor|
-|-|-|
-|Nombre	|Coordinates|
-|Categoría	|Value Object|
-|Propósito	|Representar y validar coordenadas geoespaciales con precisión y normalizar formato para persistencia.|
-|Atributos	|latitude: double, longitude: double, validación de rango.|
 
 ---
 
-**Asset:**
+**Location:**
 
-###### Tabla 5
-*Descripción de Asset en el Domain Layer de Asset & Resource*
+###### Tabla 4
+*Value Object de Location en el Domain Layer de Asset and Resource Management*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre	|Coordinates |
+|Categoría|	Value Object|
+|Propósito	|Representar y validar coordenadas geoespaciales con precisión de los puertos.|
+|Atributos|	latitude, longitude, validación de rango |
+
+###### Tabla 7
+
+*Atributos de Location en el Domain Layer de Asset and Resource Management*
+
+|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
+|-|-|-|-|
+|latitude	|Double	|private	|Latitud (-90..90) |
+|longitude	|Double	|private	|Longitud (-180..180) |
+
+---
+
+**Continent:**
+
+###### Tabla 4
+*Value Object de Continent en el Domain Layer de Asset and Resource Management*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre	|Continent |
+|Categoría|	Value Object|
+|Propósito	|Presentar los continentes en los que pueden encontrarse los puertos. Útil especialmente para filtros.|
+|Atributos|	name, portsNumber |
+
+###### Tabla 7
+
+*Atributos de Location en el Domain Layer de Asset and Resource Management*
+
+|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
+|-|-|-|-|
+|name | String | private | El nombre del continente indicado |
+| portsNumber | int | private | Cantidad de puertos integrados en un continente específico. |
+
+---
+
+**Domain Services:**
+
+###### Tabla 10
+
+*Descripción de PortSelectionService en el Domain Layer de Asset and Resource Management*
+
+|Propiedad | Valor|
+|-|-|
+| Nombre | PortSelectionService |
+| Categoría | Domain Service |
+| Propósito | Lógica para seleccionar puertos candidatos en el mapa de la aplicación. Devuelve nombre, ubicación, continente y restricciones. |
+
+###### Tabla 11
+
+*Descripción de PortSyncService en el Domain Layer de Asset and Resource Management*
+
+|Propiedad|Valor|
+|-|-|
+| Nombre | PortSyncService |
+| Categoría | Domain Service |
+| Propósito | Aplicar reglas de reconciliación cuando se reciben datos de fuentes externas (normalización).|
+
+---
+
+**Domain Events:**
+
+###### Tabla 11
+
+*Tabla de eventos de dominio en el Domain Layer de Asset and Resource Management*
+
+|Evento	|Descripción|
+|-|-|
+|PortRegistered	|Se registró nuevo puerto.|
+|PortUpdated	|Datos del puerto fueron actualizados.|
+|PortStatusChanged|	Cambió el estado operativo del puerto.|
+
+---
+
+#### 4.2.3.2. Asset and Resource Management Bounded Context Interface Layer
+
+En la capa de interfaz del Bounded Context de Asset and Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
+
+**PortsController:**
+
+###### Tabla 12
+
+*Descripción de PortsController en el Interface Layer de Asset and Resource Management*
 
 |Propiedad	|Valor|
 |-|-|
-|Nombre	|Asset|
-|Categoría	|Entity (puede existir como documento independiente assets y/o embebido en ports) |
-|Propósito	|Representar un activo físico, que en este caso | Gestiona estado de puertos (activated, maintenance, retired) y métricas de salud.
+|Nombre	|PortsController|
+|Categoría	|Controller (REST)|
+|Propósito	|Proveer endpoints para CRUD y consultas geoespaciales sobre puertos. |
 
-#### 4.2.3.2. Asset & Resource Management Bounded Context Interface Layer
+###### Tabla 13
 
-En la capa de interfaz del Bounded Context de Asset & Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
+*Métodos de PortsController en el Interface Layer de Asset and Resource Management*
 
-#### 4.2.3.3. Asset & Resource Management Bounded Context Application Layer
+|Nombre|Ruta	|Acción	|Handle|
+|-|-|-|-|
+|getPorts|	GET / |	Listar puertos (filtros: status, country, bbox, near, page)`|	GetPortsQuery -> GetPortsQueryHandler|
+|getPortById	|GET /{portId}|	Obtener ficha detallada del puerto|GetPortByIdQuery -> GetPortByIdQueryHandler|
+|createPort	|POST /	|Registrar nuevo puerto (solo ROLE_ADMIN)	|RegisterPortCommand -> RegisterPortCommandHandler|
+|updatePort	|PUT /{portId}	|Actualizar datos del puerto	|UpdatePortCommand -> UpdatePortCommandHandler|
+|changeStatus	|PATCH /{portId}/status	|Cambiar estado operativo del puerto|	ChangePortStatusCommand -> ChangePortStatusCommandHandler|
+|getPortsByContinent|	GET /continent/{continentCode}	|Filtrar por continente |	GetPortsByContinentQuery -> GetPortsByContinentQueryHandler|
 
-La capa de aplicación del Bounded Context de Asset & Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
+###### Tabla 14
 
-#### 4.2.2.4. Asset & Resource Management Bounded Context Infrastructure Layer
+*Descripción de Eventos asincronos relevantes publicados por Assets and Resource Management*
 
-La capa de infraestructura del Bounded Context de Asset & Resource Management actúa como el vínculo entre la lógica de negocio y las tecnologías subyacentes que permiten la persistencia, comunicación e integración con sistemas externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, coordenadas y representación de mapas de forma adecuada.
+|Eventos|	Propósito|
+|-|-|
+|ports.events	|Publica eventos "PortRegistered", "PortUpdated", "PortStatusChanged", consumido para Ruteo y Notification.|
+
+---
+
+#### 4.2.3.3. Asset and Resource Management Bounded Context Application Layer
+
+La capa de aplicación del Bounded Context de Asset and Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
+
+**Command Handlers:**
+
+###### Tabla 15
+
+*Listado de Command Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre	|Categoría	|Propósito	|Comando|
+|-|-|-|-|
+|RegisterPortCommandHandler	|Command Handler	|Registrar nuevo puerto, validar unicidad y persistir	|RegisterPortCommand|
+|UpdatePortCommandHandler	|Command Handler	|Actualizar datos del puerto|	UpdatePortCommand|
+|ChangePortStatusCommandHandler|	Command Handler|	Validar transición de estado, persistir y publicar evento	|ChangePortStatusCommand|
+
+---
+
+**Query Handlers:**
+
+###### Tabla 16
+
+**Listado de Query Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre|	Categoría	|Propósito	|Query|
+|-|-|-|-|
+|GetPortsQueryHandler	|Query Handler|	Retornar lista denormalizada ports_read	|GetPortsQuery|
+|GetPortByIdQueryHandler	|Query Handler	|Retornar PortView detallado	|GetPortByIdQuery|
+
+---
+
+**Event Handlers:**
+
+###### Tabla 17
+
+*Listado de Event Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre	|Categoría	|Propósito	|Evento consumido|
+|-|-|-|-|
+|PortRegisteredEventHandler	|Event Handler|	Construir o actualizar ports_read y limpiar caches|	PortRegistered|
+|PortUpdatedEventHandler	|Event Handler	|Actualizar ports_read con cambios	|PortUpdated|
+|PortStatusChangedEventHandler	|Event Handler|	Notificar en la página principal con las funciones de ruteo |	PortStatusChanged|
+
+---
+
+#### 4.2.2.4. Asset and Resource Management Bounded Context Infrastructure Layer
+
+La capa de infraestructura del Bounded Context de Asset and Resource Management actúa como el vínculo entre la lógica de negocio y las tecnologías subyacentes que permiten la persistencia, comunicación e integración con sistemas externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, coordenadas y representación de mapas de forma adecuada.
 
 Esta capa concreta las abstracciones del dominio a través de implementaciones de repositorios y componentes técnicos especializados. Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, facilitando la evolución tecnológica sin afectar la consistencia de las reglas de negocio. Asimismo, garantiza eficiencia y confiabilidad en la gestión de los puertos y sus respectivos estados operativos, en línea con los requerimientos estratégicos de la solución.
 
-#### 4.2.3.5. Asset & Resource Management Bounded Context Software Architecture Component Level Diagrams
+**Repositorios:**
 
-En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Asset & Resource Management. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión de de puertos y sus ubicaciones en mapa dentro de Mushroom.
+###### Tabla 18
+
+*Listado de repositorios en el Infrastructure Layer de Asset and Resource Management*
+
+|Nombre|	Categoría	|Propósito	|Interfaz|
+|-|-|-|-|
+|PortRepository	|Repositorio	|Persistir y consultar documentos ports|	IPortRepository|
+
+###### Tabla 19
+
+*Métodos de IPortRepository en el Infrastructure Layer de Asset and Resource Management*
+
+|Nombre	|Tipo de retorno|	Descripción|
+|-|-|-|
+|findById(portId)	|Port|	Recupera port por id.|
+|findByCode(code)	|Port|	Recupera por código único.|
+|save(port, session?)	|void|	Persiste aggregate (usar session para transacciones).|
+|updateStatus(portId, newStatus, actor, session?)|	void|	Actualiza estado con control optimista.|
+
+**Implementaciones MongoDB:**
+
+###### Tabla 20
+
+**Tabla de colecciones y notas de implementación para MongoDB**
+
+|Componente	|Colección|	Notas|
+|-|-|-|
+|Ports	|ports|	Documento Port. Índice único code. Índice 2dsphere en location. Campos createdAt y updatedAt. version para control optimista.|
+|Ports read|	ports_read	|Denormalización con resumen y geometría simplificada para UI; actualizada por event handlers.|
+
+#### 4.2.3.5. Asset and Resource Management Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Asset and Resource Management. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión de de puertos y sus ubicaciones en mapa dentro de Mushroom.
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
 ###### Figura 90
-*Participación del Bounded Context de Asset & Resource Management con la aplicación móvil mediante el diagrama de componentes*
+*Participación del Bounded Context de Asset and Resource Management con la aplicación móvil mediante el diagrama de componentes*
 
 <image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-MobileComponent.png"></image>
 
 ###### Figura 91
-*Participación del Bounded Context de Asset & Resource Management con la aplicación web mediante el diagrama de componentes*
+*Participación del Bounded Context de Asset and Resource Management con la aplicación web mediante el diagrama de componentes*
 
 <image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-WebComponent.png"></image>
 
 ###### Figura 92
-*Participación del Bounded Context de Asset & Resource Management con la Cloud API mediante el diagrama de componentes*
+*Participación del Bounded Context de Asset and Resource Management con la Cloud API mediante el diagrama de componentes*
 
 <image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-APIComponent.png"></image>
 
-#### 4.2.3.6. Asset & Resource Management Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.3.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Asset & Resource Management, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
+En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Asset and Resource Management, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
 
 Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
 
-##### 4.2.3.6.1. Asset & Resource Management Bounded Context Domain Layer Class Diagrams
+##### 4.2.3.6.1. Asset and Resource Management Bounded Context Domain Layer Class Diagrams
 
-En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Asset & Resource Management. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en la gestión de ubicaciones de puertos y estados en la plataforma de Mushroom.
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Asset and Resource Management. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en la gestión de ubicaciones de puertos y estados en la plataforma de Mushroom.
 
 El nivel de detalle abarca la definición de atributos y métodos para cada clase, especificando su tipo de dato, visibilidad y propósito en el modelo. Asimismo, se incluyen las relaciones entre elementos del dominio, cualificadas mediante nombres representativos, dirección cuando aplica y multiplicidad adecuada para reflejar con precisión las asociaciones entre entidades.
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
 ###### Figura 93
-*Diagrama de clases de la capa de dominio del Bounded Context de Asset & Resource Management*
+*Diagrama de clases de la capa de dominio del Bounded Context de Asset and Resource Management*
 
 <image src="../assets/img/capitulo-4/bounded-context-pot-management/class-diagram-pot-management.png"></image>
 
-##### 4.2.3.6.2. Asset & Resource Management Bounded Context Database Design Diagram
+##### 4.2.3.6.2. Asset and Resource Management Bounded Context Database Design Diagram
 
-En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Asset & Resource Management. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
+En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Asset and Resource Management. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
 
 El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
 ###### Figura 94
-*Diagrama de base de datos del Bounded Context de Asset & Resource Management*
+*Diagrama de base de datos del Bounded Context de Asset and Resource Management*
 
 <image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
-
-### 5.7. Bounded Context: Service Operation and Monitoring
-En el contexto táctico, el Bounded Context Service Operation and Monitoring concentra la observabilidad, el monitoreo operativo y el control de las operaciones de Mushroom. Su objetivo es ofrecer una fuente única de verdad sobre el estado del sistema (servicios internos y dependencias externas como IA, clima y geopolítica) y sobre la ejecución de rutas marítimas (cumplimiento de ETA, desvíos, incidencias y cambios de riesgo), habilitando la detección temprana de anomalías y la reacción informada ante eventos.
-
-Este módulo centraliza métricas, logs y eventos operativos, normaliza su semántica y los transforma en señales accionables: estados de servicio (ServiceStatus), alertas críticas (SystemAlert) y registros de error (ErrorLog). Desde allí, expone interfaces claras para que otros bounded contexts—por ejemplo, Report (que genera documentos descargables de desempeño, riesgos y emisiones) y Notification (que comunica fallos, desviaciones y cambios de ETA a usuarios finales)—consuman información consistente y confiable. Además, provee capacidades de control operacional (p. ej., pausar/reanudar monitoreo de una ruta, ajustar umbrales de alerta, forzar revalidaciones) que cierran el ciclo entre la supervisión y la acción.
-
-Los límites de este bounded context están definidos para evitar acoplamientos indebidos: no calcula rutas ni optimiza trayectorias (responsabilidad del Core de Cálculo de Rutas), ni gestiona identidades o permisos (IAM). En su lugar, observa la ejecución, correla eventos de sistema y de operación, evalúa condiciones contra SLO/umbrales, y publica estados/alertas estandarizados. En el monolito con DDD, sus responsabilidades se organizan por capas (Domain, Application, Interface, Infrastructure) y se integran con el resto de la plataforma mediante servicios de aplicación e interfaces explícitas, manteniendo baja complejidad (sin brokers ni event bus) y privilegiando integraciones HTTP sencillas con las APIs externas.
-
-#### 5.7.1. Service Operation and Monitoring Bounded Context Domain Layer
-
-Entities & Aggregates
-
-ServiceStatus
-
-Tabla de ServiceStatus en Domain Layer
-
-| Propiedad     | Valor                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------- |
-| **Nombre**    | ServiceStatus                                                                         |
-| **Categoría** | **Aggregate Root**                                                                    |
-| **Propósito** | Representar el estado “vivo” de un servicio (interno/externo) y su última evaluación. |
-
-Atributos
-
-| Nombre      | Tipo                   | Visibilidad | Descripción                                          |
-| ----------- | ---------------------- | ----------- | ---------------------------------------------------- |
-| id          | `ServiceId`            | private     | Identidad del servicio monitorizado                  |
-| name        | `ServiceName`          | private     | Nombre canónico (p. ej. `RouteEngine`, `WeatherAPI`) |
-| kind        | `ServiceKind` (enum)   | private     | `INTERNAL` / `EXTERNAL`                              |
-| endpoint    | `EndpointUrl?`         | private     | URL base si aplica (servicio externo)                |
-| status      | `ServiceHealth` (enum) | private     | `UP` / `DEGRADED` / `DOWN` / `MAINTENANCE`           |
-| lastCheck   | `Instant`              | private     | Timestamp de última evaluación                       |
-| lastLatency | `Duration?`            | private     | Latencia reciente agregada                           |
-| errorRate   | `Double?`              | private     | % de errores reciente (ventana corta)                |
-| version     | `long`                 | private     | Versión para control de concurrencia optimista       |
-
-Métodos
-
-| Nombre                       | Retorno          | Visibilidad | Descripción                                                                                  |
-| ---------------------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------- |
-| applyHealthCheck             | `void`           | public      | Aplica un `HealthCheckResult` y actualiza `status`, `lastLatency`, `errorRate`, `lastCheck`. |
-| markMaintenance              | `void`           | public      | Pone el servicio en `MAINTENANCE`.                                                           |
-| markDown                     | `void`           | public      | Pone el servicio en `DOWN`.                                                                  |
-| markUp                       | `void`           | public      | Pone el servicio en `UP` y limpia métricas degradadas.                                       |
-| toDomainEventIfStatusChanged | `StatusChanged?` | public      | Devuelve evento si cambió el estado desde la última evaluación.                              |
-
-SystemAlert
-
-Tabla de SystemAlert en Domain Layer
-
-| Propiedad     | Valor                                                                                                 |
-| ------------- | ----------------------------------------------------------------------------------------------------- |
-| **Nombre**    | SystemAlert                                                                                           |
-| **Categoría** | **Aggregate Root**                                                                                    |
-| **Propósito** | Gestionar el ciclo de vida de una alerta (apertura, actualización, resolución) con severidad y causa. |
-
-Atributos
-
-| Nombre       | Tipo                     | Visibilidad | Descripción                                             |
-| ------------ | ------------------------ | ----------- | ------------------------------------------------------- |
-| id           | `AlertId`                | private     | Identificador de alerta                                 |
-| serviceId    | `ServiceId`              | private     | Servicio afectado                                       |
-| type         | `AlertType` (enum)       | private     | `AVAILABILITY`, `LATENCY`, `ERROR_SPIKE`, `INTEGRATION` |
-| severity     | `Severity` (VO)          | private     | Severidad estándar (mapea a OTel)                       |
-| status       | `AlertStatus` (enum)     | private     | `OPEN` / `ACKED` / `RESOLVED`                           |
-| title        | `String`                 | private     | Resumen                                                 |
-| description  | `String`                 | private     | Detalle técnico/negocio                                 |
-| openedAt     | `Instant`                | private     | Fecha de apertura                                       |
-| lastUpdateAt | `Instant`                | private     | Última actualización                                    |
-| resolvedAt   | `Instant?`               | private     | Fecha de resolución si aplica                           |
-| evidence     | `List<IncidentEvidence>` | private     | Evidencias adjuntas (latencias, errores, eventos)       |
-
-Métodos
-
-| Nombre        | Retorno                       | Visibilidad | Descripción                                         |
-| ------------- | ----------------------------- | ----------- | --------------------------------------------------- |
-| escalate      | `void`                        | public      | Incrementa severidad (p. ej., de `WARN` a `ERROR`). |
-| acknowledge   | `void`                        | public      | Marca como reconocida por operaciones.              |
-| addEvidence   | `void`                        | public      | Adjunta `IncidentEvidence`.                         |
-| resolve       | `void`                        | public      | Cierra la alerta, set `RESOLVED` y `resolvedAt`.    |
-| toDomainEvent | `AlertRaised`/`AlertResolved` | public      | Emite evento de apertura/cierre.                    |
-
-ErrorLog
-
-Tabla de ErrorLog en Domain Layer
-
-| Propiedad     | Valor                                                                         |
-| ------------- | ----------------------------------------------------------------------------- |
-| **Nombre**    | ErrorLog                                                                      |
-| **Categoría** | **Entity**                                                                    |
-| **Propósito** | Registrar errores o eventos inesperados con severidad y trazabilidad opcional |
-
-Atributos
-
-| Nombre     | Tipo                  | Visibilidad | Descripción                                        |
-| ---------- | --------------------- | ----------- | -------------------------------------------------- |
-| id         | `ErrorId`             | private     | Identificador                                      |
-| serviceId  | `ServiceId?`          | private     | Servicio asociado (si aplica)                      |
-| occurredAt | `Instant`             | private     | Momento de ocurrencia                              |
-| severity   | `Severity`            | private     | Nivel de severidad                                 |
-| code       | `String?`             | private     | Código o categoría (p. ej., `WEATHER_API_TIMEOUT`) |
-| message    | `String`              | private     | Mensaje                                            |
-| details    | `Map<String,Object>?` | private     | Datos estructurados (requestId, endpoint, etc.)    |
-| traceId    | `String?`             | private     | Correlación con trazas                             |
-| spanId     | `String?`             | private     | Correlación con spans                              |
-
-Value Objects (VO)
-
-ServiceId
-
-| Propiedad     | Valor                           |
-| ------------- | ------------------------------- |
-| **Nombre**    | ServiceId                       |
-| **Categoría** | Value Object                    |
-| **Propósito** | Encapsular el ID de un servicio |
-
-ServiceName
-
-| Propiedad     | Valor                                |
-| ------------- | ------------------------------------ |
-| **Nombre**    | ServiceName                          |
-| **Categoría** | Value Object                         |
-| **Propósito** | Nombre legible y único en el dominio |
-
-EndpointUrl
-
-| Propiedad     | Valor                             |
-| ------------- | --------------------------------- |
-| **Nombre**    | EndpointUrl                       |
-| **Categoría** | Value Object                      |
-| **Propósito** | URL válida de dependencia externa |
-
-Severity
-
-| Propiedad     | Valor                                     |
-| ------------- | ----------------------------------------- |
-| **Nombre**    | Severity                                  |
-| **Categoría** | Value Object                              |
-| **Propósito** | Nivel estándar de severidad interoperable |
-
-| Propiedad     | Valor                                     |
-| ------------- | ----------------------------------------- |
-| **Nombre**    | Severity                                  |
-| **Categoría** | Value Object                              |
-| **Propósito** | Nivel estándar de severidad interoperable |
-
-HealthCheckResult
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | HealthCheckResult                          |
-| **Categoría** | Value Object                               |
-| **Propósito** | Resultado inmutable de un chequeo de salud |
-
-IncidentEvidence
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | IncidentEvidence                           |
-| **Categoría** | Value Object                               |
-| **Propósito** | Evidencia compacta que respalda una alerta |
-
-Enums
-
-ServiceKind: INTERNAL, EXTERNAL
-
-ServiceHealth: UP, DEGRADED, DOWN, MAINTENANCE
-
-AlertType: AVAILABILITY, LATENCY, ERROR_SPIKE, INTEGRATION
-
-AlertStatus: OPEN, ACKED, RESOLVED
-
-HealthAssessmentService
-
-| Propiedad     | Valor                                                                        |
-| ------------- | ---------------------------------------------------------------------------- |
-| **Nombre**    | HealthAssessmentService                                                      |
-| **Categoría** | Domain Service                                                               |
-| **Propósito** | Evaluar un `HealthCheckResult` y decidir `ServiceHealth` + si amerita alerta |
-
-Métodos
-
-| Nombre           | Retorno         | Descripción                                                               |
-| ---------------- | --------------- | ------------------------------------------------------------------------- |
-| assess           | `ServiceHealth` | Aplica reglas (umbral latencia, % error, reachability) y devuelve estado. |
-| shouldRaiseAlert | `boolean`       | Determina si se abre/escala alerta según política y estado previo.        |
-| buildAlertFor    | `SystemAlert`   | Crea instancia inicial de `SystemAlert` usando `SystemAlertFactory`.      |
-
-Factories
-
-SystemAlertFactory
-
-| Propósito | Construir `SystemAlert` válido (ID, timestamps, severidad inicial) a partir de un `ServiceId`, `AlertType` y evidencia. |
-| --------- | ----------------------------------------------------------------------------------------------------------------------- |
-
-Repositories
-
-ServiceStatusRepository
-
-| Método     | Retorno               | Descripción                               |
-| ---------- | --------------------- | ----------------------------------------- |
-| findById   | `ServiceStatus?`      | Busca por `ServiceId`.                    |
-| findAll    | `List<ServiceStatus>` | Lista todos.                              |
-| save       | `ServiceStatus`       | Persiste (upsert) con control de versión. |
-| findByKind | `List<ServiceStatus>` | Filtra por `INTERNAL/EXTERNAL`.           |
-
-SystemAlertRepository
-
-| Método                   | Retorno             | Descripción                        |
-| ------------------------ | ------------------- | ---------------------------------- |
-| findOpenByServiceAndType | `SystemAlert?`      | Alerta abierta para servicio+tipo. |
-| save                     | `SystemAlert`       | Persiste/actualiza.                |
-| findOpen                 | `List<SystemAlert>` | Todas abiertas.                    |
-| findById                 | `SystemAlert?`      | Por `AlertId`.                     |
-
-ErrorLogRepository
-
-| Método              | Retorno          | Descripción                |
-| ------------------- | ---------------- | -------------------------- |
-| save                | `ErrorLog`       | Persiste log.              |
-| findRecentByService | `List<ErrorLog>` | Últimos N por `serviceId`. |
-| findByTraceId       | `List<ErrorLog>` | Útiles para correlación.   |
-
-#### 5.7.2. Service Operation and Monitoring Bounded Context Interface Layer
-
-OpsStatusController
-
-Tabla de OpsStatusController
-
-| Propiedad     | Valor                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------- |
-| **Nombre**    | OpsStatusController                                                                           |
-| **Categoría** | Controller                                                                                    |
-| **Propósito** | Exponer el **estado de servicios** internos/externos del sistema (vista simple de operación). |
-| **Ruta base** | `/api/ops/status`                                                                             |
-
-Tabla de endpoints
-
-| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
-| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
-| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
-| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
-| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
-| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
-
-OpsAlertController
-
-Tabla de OpsAlertController
-
-| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
-| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
-| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
-| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
-| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
-| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
-
-Tabla de endpoints
-
-| Nombre      | Ruta                 | Método | Acción                                                                                      | Handle (Application)      |
-| ----------- | -------------------- | ------ | ------------------------------------------------------------------------------------------- | ------------------------- |
-| List        | `/`                  | GET    | Lista alertas con filtros `status`, `type`, `serviceId` y paginación simple (`page`,`size`) | `ListAlertsQuery`         |
-| GetById     | `/{alertId}`         | GET    | Detalle de una alerta (incluye evidencias)                                                  | `GetAlertByIdQuery`       |
-| Open        | `/`                  | POST   | (Opcional) Abrir alerta manual (para pruebas)                                               | `OpenAlertCommand`        |
-| Acknowledge | `/{alertId}/ack`     | POST   | Marcar alerta como **reconocida**                                                           | `AcknowledgeAlertCommand` |
-| Resolve     | `/{alertId}/resolve` | POST   | Cerrar alerta con mensaje de resolución                                                     | `ResolveAlertCommand`     |
-
-OpsErrorController
-
-Tabla de OpsErrorController
-
-| Propiedad     | Valor                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| **Nombre**    | OpsErrorController                                                                        |
-| **Categoría** | Controller                                                                                |
-| **Propósito** | Consultar **registros de errores** del sistema de manera simple para soporte/diagnóstico. |
-| **Ruta base** | `/api/ops/errors`                                                                         |
-
-Tabla de endpoints
-
-| Nombre  | Ruta         | Método | Acción                                                                                                               | Handle (Application)   |
-| ------- | ------------ | ------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Search  | `/`          | GET    | Búsqueda por `serviceId`, rango de tiempo (`from`,`to`) y `severity` (INFO/WARN/ERROR/FATAL). Soporta `page`,`size`. | `SearchErrorLogsQuery` |
-| GetById | `/{errorId}` | GET    | Detalle de un error puntual                                                                                          | `GetErrorLogByIdQuery` |
-
-#### 5.7.1.3. Service Operation and Monitoring Bounded Context Application Layer 
-
-Command Handlers
-
-RecordHealthCheckCommandHandler
-
-| Propiedad     | Valor                                                                                                                      |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | RecordHealthCheckCommandHandler                                                                                            |
-| **Categoría** | Command Handler                                                                                                            |
-| **Propósito** | Registrar un `HealthCheckResult` y actualizar `ServiceStatus` (UP/DEGRADED/DOWN/MAINTENANCE) usando reglas del dominio.    |
-| **Comando**   | `RecordHealthCheckCommand { serviceId, measuredAt, latencyMs?, errorRate?, isReachable, notes? }`                          |
-| **Efectos**   | Llama a `HealthAssessmentService` (dominio), `ServiceStatusRepository.save`. Si cambia el estado, publica `StatusChanged`. |
-
-MarkServiceMaintenanceCommandHandler
-
-| Propiedad     | Valor                                                                           |
-| ------------- | ------------------------------------------------------------------------------- |
-| **Nombre**    | MarkServiceMaintenanceCommandHandler                                            |
-| **Categoría** | Command Handler                                                                 |
-| **Propósito** | Marcar un servicio como `MAINTENANCE`.                                          |
-| **Comando**   | `MarkServiceMaintenanceCommand { serviceId, reason? }`                          |
-| **Efectos**   | `ServiceStatus.markMaintenance()` + `save` y publica `StatusChanged` si aplica. |
-
-ClearServiceMaintenanceCommandHandler
-
-| Propiedad     | Valor                                                              |
-| ------------- | ------------------------------------------------------------------ |
-| **Nombre**    | ClearServiceMaintenanceCommandHandler                              |
-| **Categoría** | Command Handler                                                    |
-| **Propósito** | Salir de mantenimiento → `UP` (si corresponde).                    |
-| **Comando**   | `ClearServiceMaintenanceCommand { serviceId }`                     |
-| **Efectos**   | `ServiceStatus.markUp()` + `save` y `StatusChanged` si hay cambio. |
-
-OpenAlertCommandHandler
-
-| Propiedad     | Valor                                                                             |
-| ------------- | --------------------------------------------------------------------------------- |
-| **Nombre**    | OpenAlertCommandHandler                                                           |
-| **Categoría** | Command Handler                                                                   |
-| **Propósito** | Abrir alerta manual (para pruebas o acción operativa).                            |
-| **Comando**   | `OpenAlertCommand { serviceId, type, severity, title, description, evidence?[] }` |
-| **Efectos**   | Usa `SystemAlertFactory.create(...)`, persiste y publica `AlertRaised`.           |
-
-AcknowledgeAlertCommandHandler
-
-| Propiedad     | Valor                                        |
-| ------------- | -------------------------------------------- |
-| **Nombre**    | AcknowledgeAlertCommandHandler               |
-| **Categoría** | Command Handler                              |
-| **Propósito** | Marcar alerta como **ACKED**.                |
-| **Comando**   | `AcknowledgeAlertCommand { alertId, note? }` |
-| **Efectos**   | `SystemAlert.acknowledge()`, `save`.         |
-
-ResolveAlertCommandHandler
-
-| Propiedad     | Valor                                                     |
-| ------------- | --------------------------------------------------------- |
-| **Nombre**    | ResolveAlertCommandHandler                                |
-| **Categoría** | Command Handler                                           |
-| **Propósito** | Resolver alerta abierta.                                  |
-| **Comando**   | `ResolveAlertCommand { alertId, resolutionMessage? }`     |
-| **Efectos**   | `SystemAlert.resolve()`, `save`, publica `AlertResolved`. |
-
-LogErrorCommandHandler
-
-| Propiedad     | Valor                                                                            |
-| ------------- | -------------------------------------------------------------------------------- |
-| **Nombre**    | LogErrorCommandHandler                                                           |
-| **Categoría** | Command Handler                                                                  |
-| **Propósito** | Registrar un `ErrorLog` con severidad/código y detalles.                         |
-| **Comando**   | `LogErrorCommand { serviceId?, occurredAt, severity, code?, message, details? }` |
-| **Efectos**   | Crea `ErrorLog`, persiste y publica `ErrorLogged`.                               |
-
-Query Handlers
-
-ListServiceStatusQueryHandler
-
-| Propiedad     | Valor                                                                      |
-| ------------- | -------------------------------------------------------------------------- |
-| **Nombre**    | ListServiceStatusQueryHandler                                              |
-| **Categoría** | Query Handler                                                              |
-| **Propósito** | Listar estados con filtros (`kind`, `name`, `health`) y paginación simple. |
-| **Query**     | `ListServiceStatusQuery { filters..., page?, size? }`                      |
-| **Efectos**   | Lectura en `ServiceStatusRepository`.                                      |
-
-GetServiceStatusByIdQueryHandler
-
-| Propiedad     | Valor                                     |
-| ------------- | ----------------------------------------- |
-| **Nombre**    | GetServiceStatusByIdQueryHandler          |
-| **Categoría** | Query Handler                             |
-| **Propósito** | Obtener estado por `serviceId`.           |
-| **Query**     | `GetServiceStatusByIdQuery { serviceId }` |
-| **Efectos**   | Lectura en `ServiceStatusRepository`.     |
-
-ListAlertsQueryHandler
-
-| Propiedad     | Valor                                                                   |
-| ------------- | ----------------------------------------------------------------------- |
-| **Nombre**    | ListAlertsQueryHandler                                                  |
-| **Categoría** | Query Handler                                                           |
-| **Propósito** | Listar alertas por `status`, `type`, `serviceId`, severidad (paginado). |
-| **Query**     | `ListAlertsQuery { filters..., page?, size? }`                          |
-| **Efectos**   | Lectura en `SystemAlertRepository`.                                     |
-
-GetAlertByIdQueryHandler
-
-| Propiedad     | Valor                               |
-| ------------- | ----------------------------------- |
-| **Nombre**    | GetAlertByIdQueryHandler            |
-| **Categoría** | Query Handler                       |
-| **Propósito** | Detalle de alerta.                  |
-| **Query**     | `GetAlertByIdQuery { alertId }`     |
-| **Efectos**   | Lectura en `SystemAlertRepository`. |
-
-SearchErrorLogsQueryHandler
-
-| Propiedad     | Valor                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------- |
-| **Nombre**    | SearchErrorLogsQueryHandler                                                           |
-| **Categoría** | Query Handler                                                                         |
-| **Propósito** | Buscar `ErrorLog` por `serviceId`, rango de tiempo, severidad, `traceId`, paginación. |
-| **Query**     | `SearchErrorLogsQuery { criteria..., page?, size? }`                                  |
-| **Efectos**   | Lectura en `ErrorLogRepository`.                                                      |
-
-GetErrorLogByIdQueryHandler
-
-| Propiedad     | Valor                              |
-| ------------- | ---------------------------------- |
-| **Nombre**    | GetErrorLogByIdQueryHandler        |
-| **Categoría** | Query Handler                      |
-| **Propósito** | Detalle de un error.               |
-| **Query**     | `GetErrorLogByIdQuery { errorId }` |
-| **Efectos**   | Lectura en `ErrorLogRepository`.   |
-
-GetOpsHealthSummaryQueryHandler
-
-| Propiedad     | Valor                                                           |
-| ------------- | --------------------------------------------------------------- |
-| **Nombre**    | GetOpsHealthSummaryQueryHandler                                 |
-| **Categoría** | Query Handler                                                   |
-| **Propósito** | Resumen agregado (porcentaje UP/DEGRADED/DOWN, top degradados). |
-| **Query**     | `GetOpsHealthSummaryQuery { window? }`                          |
-| **Efectos**   | Lee `ServiceStatusRepository` y/o caches simples.               |
-
-GetOpsHealthByServiceQueryHandler
-
-| Propiedad     | Valor                                                       |
-| ------------- | ----------------------------------------------------------- |
-| **Nombre**    | GetOpsHealthByServiceQueryHandler                           |
-| **Categoría** | Query Handler                                               |
-| **Propósito** | Vista de salud para un servicio (últimos n chequeos).       |
-| **Query**     | `GetOpsHealthByServiceQuery { serviceId, window? }`         |
-| **Efectos**   | Lee `ServiceStatusRepository` (+ snapshots si los guardan). |
-
-Event Handlers
-
-OnStatusChangedEventHandler
-
-| Propiedad     | Valor                                                                                                           |
-| ------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | OnStatusChangedEventHandler                                                                                     |
-| **Categoría** | Event Handler                                                                                                   |
-| **Evento**    | `StatusChanged { serviceId, previous, current, at }`                                                            |
-| **Propósito** | Política simple: si `current == DOWN` abrir alerta `AVAILABILITY`; si vuelve a `UP`, resolver alertas abiertas. |
-| **Efectos**   | Invoca `OpenAlertCommand` o `ResolveAlertCommand`.                                                              |
-
-OnAlertRaisedEventHandler
-
-| Propiedad     | Valor                                                                            |
-| ------------- | -------------------------------------------------------------------------------- |
-| **Nombre**    | OnAlertRaisedEventHandler                                                        |
-| **Categoría** | Event Handler                                                                    |
-| **Evento**    | `AlertRaised { alertId, serviceId, type, severity, at }`                         |
-| **Propósito** | Auditoría/notificación interna (ej.: persistir un registro de actividad simple). |
-| **Efectos**   | Guardar actividad en una colección simple (opcional).                            |
-
-OnAlertResolvedEventHandler
-
-| Propiedad     | Valor                                                      |
-| ------------- | ---------------------------------------------------------- |
-| **Nombre**    | OnAlertResolvedEventHandler                                |
-| **Categoría** | Event Handler                                              |
-| **Evento**    | `AlertResolved { alertId, serviceId, at }`                 |
-| **Propósito** | Auditoría al resolver; podría recalcular “score” de salud. |
-| **Efectos**   | Actualiza métricas resumidas (si las almacenan).           |
-
-OnErrorLoggedEventHandler
-
-| Propiedad     | Valor                                                                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------- |
-| **Nombre**    | OnErrorLoggedEventHandler                                                                            |
-| **Categoría** | Event Handler                                                                                        |
-| **Evento**    | `ErrorLogged { errorId, serviceId?, severity, at }`                                                  |
-| **Propósito** | Correlacionar errores recientes con estado del servicio (si muchos errores → degradar/abrir alerta). |
-| **Efectos**   | Podría encadenar `OpenAlertCommand` tipo `ERROR_SPIKE`.                                              |
-
-#### 5.7.1.4. Service Operation and Monitoring Bounded Context Infrastructure Layer
-
-Configuración de acceso a datos
-
-MongoConfig (reutilizable)
-
-| Propiedad     | Valor                                                                    |
-| ------------- | ------------------------------------------------------------------------ |
-| **Nombre**    | `MongoConfig`                                                            |
-| **Categoría** | Configuración (DataSource/MongoTemplate)                                 |
-| **Propósito** | Exponer `MongoClient` y `MongoTemplate` para el resto de la capa.        |
-| **Detalles**  | Lee `spring.data.mongodb.uri` y base de datos; registra `MongoTemplate`. |
-
-ServiceStatusDocument
-
-| Propiedad     | Valor                                                                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ServiceStatusDocument`                                                                                                                                              |
-| **Colección** | `ops_service_status`                                                                                                                                                 |
-| **Campos**    | `id:String`, `name:String` (único), `kind:String`, `endpoint:String?`, `status:String`, `lastCheck:Date`, `lastLatencyMs:Long?`, `errorRate:Double?`, `version:Long` |
-| **Índices**   | Único por `name`; secundario por `status` y `kind`                                                                                                                   |
-
-SystemAlertDocument
-
-| Propiedad     | Valor                                                                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
-| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
-| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
-| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
-
-ErrorLogDocument
-
-| Propiedad     | Valor                                                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
-| **Colección** | `ops_error_logs`                                                                                                                        |
-| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
-| **Índices**   | **TTL en `occurredAt`** (por ejemplo 30 días) + `{ serviceId:1, occurredAt:-1 }`                                                        |
-
-ServiceStatusDocumentMapper
-
-| Propiedad     | Valor                                                                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
-| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
-| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
-| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
-
-ErrorLogDocument
-
-| Propiedad     | Valor                                                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
-| **Colección** | `ops_error_logs`                                                                                                                        |
-| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
-| **Índices**   | **TTL en `occurredAt`** (por ejemplo 30 días) + `{ serviceId:1, occurredAt:-1 }`                                                        |
-
-ServiceStatusDocumentMapper
-
-| Propiedad     | Valor                                                                  |
-| ------------- | ---------------------------------------------------------------------- |
-| **Nombre**    | `ServiceStatusDocumentMapper`                                          |
-| **Categoría** | Mapper                                                                 |
-| **Propósito** | Convertir `ServiceStatus` (dominio) ↔ `ServiceStatusDocument` (infra). |
-
-SystemAlertDocumentMapper
-
-| Propiedad     | Valor                                                                       |
-| ------------- | --------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocumentMapper`                                                 |
-| **Categoría** | Mapper                                                                      |
-| **Propósito** | Convertir `SystemAlert` ↔ `SystemAlertDocument` (incl. `IncidentEvidence`). |
-
-ErrorLogDocumentMapper
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | `ErrorLogDocumentMapper`                   |
-| **Categoría** | Mapper                                     |
-| **Propósito** | Convertir `ErrorLog` ↔ `ErrorLogDocument`. |
-
-ServiceStatusMongoRepository
-
-| Propiedad     | Valor                                                              |
-| ------------- | ------------------------------------------------------------------ |
-| **Nombre**    | `ServiceStatusMongoRepository`                                     |
-| **Categoría** | Spring Data `MongoRepository<ServiceStatusDocument, String>`       |
-| **Propósito** | CRUD y búsquedas por convención                                    |
-| **Métodos**   | `findByName(String)`, `findByKind(String)`, `findByStatus(String)` |
-
-SystemAlertMongoRepository
-
-| Propiedad     | Valor                                                                          |
-| ------------- | ------------------------------------------------------------------------------ |
-| **Nombre**    | `SystemAlertMongoRepository`                                                   |
-| **Categoría** | `MongoRepository<SystemAlertDocument, String>`                                 |
-| **Propósito** | CRUD y listados                                                                |
-| **Métodos**   | `findByStatus(String, PageRequest)`, `findByServiceIdAndStatus(String,String)` |
-
-ErrorLogMongoRepository
-
-| Propiedad     | Valor                                                             |
-| ------------- | ----------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogMongoRepository`                                         |
-| **Categoría** | `MongoRepository<ErrorLogDocument, String>`                       |
-| **Propósito** | CRUD y búsquedas con filtros                                      |
-| **Métodos**   | `findByServiceIdAndOccurredAtBetween(...)`, `findBySeverity(...)` |
-
-#### 5.7.1.5. Service Operation and Monitoring Bounded Context Software Architecture Component Level Diagrams
-
-[not_yet]
-
-#### 5.7.1.6. Service Operation and Monitoring Bounded Context Software Architecture Code Level Diagrams
-
-##### 5.7.1.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
-
-[not_yet]
-
-##### 5.7.1.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
-
-<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
-
