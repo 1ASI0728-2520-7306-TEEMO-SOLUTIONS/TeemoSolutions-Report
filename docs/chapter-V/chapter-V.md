@@ -1016,3 +1016,144 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 *Diagrama de base de datos del Bounded Context de Asset and Resource Management*
 
 <image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
+
+### 4.2.4. Bounded Context: Asset and Resource Management
+En el contexto táctico, el Bounded Context A/AI process* concentra la funcionalidad asociada al cálculo de rutas óptimas y a la predicción climática que complementa la experiencia de navegación. Este módulo encapsula la lógica del algoritmo A* para determinar la ruta mínima entre puntos definidos, integrando además un componente de inteligencia artificial orientado a anticipar condiciones meteorológicas que puedan afectar la planificación del trayecto.
+
+El proceso se apoya en datos obtenidos de APIs externas, que pueden proveer información climática en tiempo real o registros históricos especializados, según se defina en etapas posteriores del proyecto. A partir de esta información, el sistema ajusta dinámicamente las rutas propuestas, otorgando a los navegantes un soporte predictivo que incrementa tanto la eficiencia como la seguridad del recorrido.
+
+De esta forma, el bounded context actúa como el núcleo de cálculo y predicción, exponiendo interfaces bien delimitadas para que otros módulos del sistema consuman sus resultados sin acoplarse a la complejidad interna de los algoritmos. Esto asegura independencia, escalabilidad y una fuente única de verdad en lo referente a optimización de trayectorias y análisis del entorno climático.
+
+#### 4.2.4.1. Asset and Resource Management Bounded Context Domain Layer
+
+Route:
+*Tabla de Route en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | Route |
+| Categoría | Aggregate Root |
+| Propósito | Representar una ruta calculada por el algoritmo A*, incluyendo nodos, distancia y costo total. |
+
+*Tabla de Route en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| Id | UUID | private | Identificador único de la ruta |
+| Nodes | List<Node> | private | Lista de nodos que conforman el trayecto |
+| Distance | double | private | Distancia total de la ruta |
+| Cost | double | private | Costo acumulado según heurística A* |
+| CreatedAt | DateTime | private | Fecha en que fue calculada la ruta |
+
+*Tabla de métodos de Route en el Domain Layer de A*/AI process*
+| Nombre | Tipo de retorno | Visibiilidad | Descripción |
+|--------|-----------------|--------------|-------------|
+| CalculateCost | void | public | Recalcula el costo total de la ruta |
+| AddNode | void | public | Agrega un nodo al trayecto de la ruta |
+| Optimize | void | public | Permite optimizar el orden de los nodos |
+
+Node:
+*Tabla de Node en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | Node |
+| Categoría | Entity |
+| Propósito | Representar un punto geográfico o de grafo en el cálculo de rutas. |
+
+*Tabla de atributos de Node en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| Id | UUID | private | Identificador único del nodo |
+| Latitude | double | private | Coordenada de latitud del nodo |
+| Longitude | double | private | Coordenada de longitud del nodo |
+| Cost | double | private | Costo heurístico acumulado en el algoritmo |
+
+WeatherPrediction:
+*Tabla de WeatherPrediction en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | WeatherPrediction |
+| Categoría | Entity |
+| Propósito | Representar una predicción climática asociada a un trayecto en una fecha dada |
+
+*Tabla de atributos de WeatherPrediction en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| Id | UUID | private | Identificador único de la predicción |
+| RouteId | UUID | private | Identificador de la ruta asociada |
+| Date | DateTime | private | Fecha y hora de la predicción |
+| Condition | string | private | Condición climática (ej. lluvia, soleado) |
+| Confidence | double | private | Nivel de confianza en la predicción |
+
+AStarAlgorithm:
+*Tabla de AStarAlgorithm en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | AStarAlgorithm |
+| Categoría | Domain Service |
+| Propósito | Implementar la lógica de cálculo de rutas mínimas con A* |
+
+*Tabla de métodos de AStarAlgorithm en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| FindShortest | Route | public | Ejecuta el algoritmo A* y devuelve la mejor ruta |
+| Heuristic | Double | private | Calcula la heurística (distancia estimada) entre nodos |
+
+WeatherService:
+*Tabla de WeatherService en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | WeatherService |
+| Categoría | Domain Service |
+| Propósito | Centralizar la lógica de predicción de clima consumiendo IA y APIs externas |
+
+*Tabla de métodos de WeatherService en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| PredictCondition | WeatherPrediction | public | Devuelve una predicción climática para una ruta |
+| AdjustRoute | Route | public | Ajusta la ruta considerando las predicciones climáticas |
+
+IRouteRepository:
+*Tabla de IRouteRepository en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | IRouteRepository |
+| Categoría | Repository |
+| Propósito | Abstracción para persistencia y consulta de rutas |
+
+*Tabla de métodos de IRouteRepository en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| Save | Route | public | Guarda una ruta calculada |
+| FindById | Route? | public | Recupera una ruta por su identificador |
+| FindAll | List<Route> | public | Lista todas las rutas registradas |
+
+IWeatherRepository:
+*Tabla de IWeatherRepository en el Domain Layer de A*/AI process*
+| Propiedad   | Valor   |
+|-------------|---------|
+| Nombre | IWeatherRepository |
+| Categoría | Repository |
+| Propósito | Abstracción para almacenar y recuperar predicciones climáticas |
+
+*Tabla de métodos de IWeatherRepository en el Domain Layer de A*/AI process*
+| Nombre | Tipo de dato | Visibilidad | Descripción |
+|--------|--------------|-------------|-------------|
+| Save | WeatherPrediction | public | Guarda una predicción de clima |
+| FindById | WeatherPrediction? | public | Recupera una predicción por identificador |
+| FindByRoute | List<WeatherPrediction> | public | Recupera predicciones asociadas a una ruta |
+
+
+
+#### 4.2.4.2. Asset and Resource Management Bounded Context Interface Layer
+
+#### 4.2.4.3. Asset and Resource Management Bounded Context Application Layer
+
+#### 4.2.4.4. Asset and Resource Management Bounded Context Infrastructure Layer
+
+#### 4.2.4.5. Asset and Resource Management Bounded Context Software Architecture Component Level Diagrams
+
+#### 4.2.4.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Asset and Resource Management Bounded Context Domain Layer Class Diagrams
+
+##### 4.2.4.6.2. Asset and Resource Management Bounded Context Database Design Diagram
+
