@@ -1349,7 +1349,7 @@ El nivel de detalle mostrado abarca la definición de clases, interfaces y servi
 
 Esta vista detallada facilita una comprensión integral del modelo conceptual del A/AI Process, sirviendo como base para la alineación entre el diseño del dominio y las capas de aplicación e infraestructura que soportan la ejecución del algoritmo de búsqueda A* y la orquestación de servicios inteligentes en el sistema.
 
-<image src="../assets/img/chapter-V/AI Process Class Diagram.jpg"></image>
+![A*/AI CLASS DIAGRAM](../../assets/img/chapter-V/AI-Process-Class-Diagram.jpg)
 
 
 ##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
