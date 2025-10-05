@@ -1373,3 +1373,202 @@ Esta vista detallada facilita una comprensión integral del modelo conceptual de
 
 ##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
+### 4.2.4. Bounded Context: Notification
+
+Este bounded context **Notification** cubre dos usos bien acotados en Mushroom:
+1) **Notificación de registro exitoso** (correo al usuario inmediatamente después del sign-up).
+2) **Notificaciones in-app** básicas en el **Dashboard** (listar, marcar como leídas y eliminar).
+
+Se mantiene deliberadamente **simple** y desacoplado del resto de BCs. La capa de infraestructura usa un adaptador de e-mail (SMTP — configurado con Gmail en este MVP) y un repositorio para persistir notificaciones in-app.
+
+---
+
+#### 4.2.4.1. Notification Bounded Context **Domain Layer**
+
+**Notification**
+
+###### Tabla 1 — _Entidad_ `Notification`
+
+| Propiedad     | Valor                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------|
+| **Nombre**    | `Notification`                                                                          |
+| **Categoría** | Entity                                                                                  |
+| **Propósito** | Representar una notificación mostrada en el dashboard o enviada por correo electrónico. |
+
+###### Tabla 2 — _Atributos_ de `Notification`
+
+| Nombre        | Tipo de dato     | Visibilidad | Descripción                                                        |
+|---------------|------------------|-------------|--------------------------------------------------------------------|
+| id            | `String`         | private     | Identificador único                                                |
+| recipientId   | `String`         | private     | Usuario destinatario                                               |
+| title         | `String`         | private     | Título breve                                                       |
+| message       | `String`         | private     | Contenido                                                          |
+| channel       | `Channel` (enum) | private     | `IN_APP` o `EMAIL`                                                 |
+| status        | `Status` (enum)  | private     | `UNREAD`, `READ`, `DELETED`                                        |
+| createdAt     | `DateTime`       | private     | Fecha/hora de creación                                             |
+| readAt        | `DateTime?`      | private     | Fecha de lectura (opcional)                                        |
+
+###### Tabla 3 — _Métodos_ de `Notification`
+
+| Nombre        | Tipo de retorno | Visibilidad | Descripción                               |
+|---------------|-----------------|-------------|-------------------------------------------|
+| markRead      | `void`          | public      | Cambia `status` a `READ` y setea `readAt` |
+| delete        | `void`          | public      | Cambia `status` a `DELETED`               |
+
+**Channel**
+
+###### Tabla 4 — _Enum_ `Channel`
+
+| Valor     | Descripción                                  |
+|-----------|----------------------------------------------|
+| `IN_APP`  | Notificación mostrada en dashboard           |
+| `EMAIL`   | Notificación enviada por correo electrónico  |
+
+**Status**
+
+###### Tabla 5 — _Enum_ `Status`
+
+| Valor      | Descripción                 |
+|------------|-----------------------------|
+| `UNREAD`   | No leída                    |
+| `READ`     | Leída                       |
+| `DELETED`  | Eliminada (soft-delete)     |
+
+**INotificationRepository**
+
+###### Tabla 6 — _Repositorio_ `INotificationRepository`
+
+| Método                        | Retorno                   | Descripción                                     |
+|------------------------------|---------------------------|-------------------------------------------------|
+| `save(notification)`         | `Notification`            | Persiste/actualiza                              |
+| `findById(id)`               | `Optional<Notification>`  | Busca por id                                    |
+| `findByRecipient(recipient)` | `List<Notification>`      | Lista por usuario                               |
+| `deleteById(id)`             | `void`                    | Soft-delete (status = `DELETED`)                |
+
+> Nota: el alcance es pequeño; no se modelan eventos de dominio ni patrones de consistencia cross-servicio. Si más adelante se disparan notificaciones desde otros BCs, puede evolucionar a **event-driven** y, de requerirse, **Transactional Outbox**.
+
+---
+
+#### 4.2.4.2. Notification Bounded Context **Interface Layer**
+
+**NotificationController**
+
+###### Tabla 7 — _Controller_ `NotificationController`
+
+| Propiedad     | Valor                                   |
+|---------------|-----------------------------------------|
+| **Nombre**    | `NotificationController`                |
+| **Categoría** | Controller                              |
+| **Ruta base** | `/api/notifications`                    |
+| **Produces**  | `application/json`                      |
+
+###### Tabla 8 — _Endpoints_ expuestos
+
+| Método | Ruta                                   | Acción                                      | Body / Query                     | Respuesta                       |
+|-------:|----------------------------------------|---------------------------------------------|----------------------------------|---------------------------------|
+| `GET`  | `/`                                    | Listar notificaciones del usuario           | `recipientId` (query)            | `List<NotificationResource>`    |
+| `POST` | `/{id}/read`                           | Marcar notificación como leída              | —                                | `204 No Content`                |
+| `DELETE` | `/{id}`                              | Eliminar (soft-delete)                       | —                                | `204 No Content`                |
+| `POST` | `/registration-success`                | Crear notificación de registro y (si aplica) enviar e-mail | `RegistrationSuccessResource` | `201 Created` (`NotificationResource`) |
+
+**DTOs (Resources)**
+
+###### Tabla 9 — `NotificationResource`
+
+| Campo       | Tipo          |
+|-------------|---------------|
+| id          | `String`      |
+| recipientId | `String`      |
+| title       | `String`      |
+| message     | `String`      |
+| channel     | `String` (`IN_APP`/`EMAIL`) |
+| status      | `String` (`UNREAD`/`READ`/`DELETED`) |
+| createdAt   | `string (ISO)`|
+| readAt      | `string (ISO)?`|
+
+###### Tabla 10 — `RegistrationSuccessResource`
+
+| Campo        | Tipo      | Descripción                                |
+|--------------|-----------|--------------------------------------------|
+| recipientId  | `String`  | Usuario registrado                         |
+| email        | `String`  | Correo del usuario                         |
+| fullName     | `String`  | Nombre para personalizar el e-mail         |
+
+**Assemblers**
+
+- `NotificationResourceFromEntityAssembler` — `Notification -> NotificationResource`  
+- `CreateRegistrationNotificationAssembler` — `RegistrationSuccessResource -> Notification (EMAIL/IN_APP)`
+
+---
+
+#### 4.2.4.3. Notification Bounded Context **Application Layer**
+
+**Servicios**
+
+###### Tabla 11 — Servicios y responsabilidades
+
+| Servicio              | Responsabilidad                                                                                                   |
+|----------------------|---------------------------------------------------------------------------------------------------------------------|
+| `NotificationService`| Orquestar notificaciones in-app (listar, marcar como leída, eliminar) y la creación de notificación de registro.   |
+| `EmailService`       | Abstracción de envío de e-mails. En esta versión se provee un adapter SMTP (configurado con Gmail).                 |
+
+**Flujo de “Registro exitoso”**
+
+1) El **controller** recibe `RegistrationSuccessResource`.  
+2) `NotificationService` crea la notificación **IN_APP** para el usuario.  
+3) Si la política indica canal **EMAIL**, delega en `EmailService` → adapter SMTP.  
+4) El servicio devuelve estado de entrega para registro/auditoría.
+
+**Plantillas y contenido**
+
+- Asunto sugerido: **“Bienvenido a Mushroom”**.  
+- Cuerpo: saludo personalizado con `fullName`, confirmación de alta y enlaces útiles (login/ayuda).  
+- Idioma: respetar la *locale* del usuario si está disponible.
+
+---
+
+#### 4.2.4.4. Notification Bounded Context **Infrastructure Layer** (con Gmail)
+
+**Componentes**
+
+###### Tabla 12 — Componentes de infraestructura para e-mail
+
+| Componente                | Tipo            | Propósito                                                                                 |
+|--------------------------|-----------------|-------------------------------------------------------------------------------------------|
+| `SpringEmailService`     | Service Adapter | Adaptador de infraestructura que encapsula el envío de correos vía SMTP (Gmail).         |
+| `EmailProperties`        | Config          | Propiedades de configuración (host, puerto, usuario, TLS/SSL, *timeouts*).                |
+| `NotificationRepository` | Repository      | Persistencia de notificaciones in-app (in-memory o relacional).                           |
+
+**Configuración operativa (MVP)**
+
+- SMTP: `smtp.gmail.com` (STARTTLS 587 o SSL 465).  
+- Autenticación: **App Password** (cuenta con 2FA).  
+- Cuenta dedicada de envío (p. ej., `noreply@mushroom.example`).  
+- Variables de entorno / secret manager para credenciales.
+
+**Resiliencia**
+
+- Reintentos transitorios con *backoff* (2–3 intentos).  
+- Registro de fallos y posibilidad de reproceso programado.  
+- Si el volumen crece: incorporar **Outbox/Queue** y un **Email Worker**.
+
+---
+
+#### 4.2.4.5. Notification BC — **Software Architecture Component Level Diagrams**
+
+- **Interface**: `NotificationController`  
+- **Application**: `NotificationService`, `EmailService`  
+- **Domain**: `Notification` (Entity), `Channel`/`Status` (Enums), `INotificationRepository`  
+- **Infrastructure**: `SpringEmailService` (adapter SMTP), `NotificationRepository`
+
+---
+
+#### 4.2.4.6. Notification BC — **Software Architecture Code Level Diagrams**
+
+##### 4.2.4.6.1. **Domain Layer Class Diagram**
+
+![NotificationsClassDiagram](../../assets/img/chapter-V/NotificationsDiagramC.png)
+
+##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
+
+
