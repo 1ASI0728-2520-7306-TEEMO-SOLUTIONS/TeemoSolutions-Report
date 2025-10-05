@@ -1343,6 +1343,14 @@ La capa de Infrastructure contiene las implementaciones concretas que interactú
 #### 4.2.4.6. A*/AI Process Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.4.6.1. A*/AI Process Bounded Context Domain Layer Class Diagrams
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context A/AI Process*. Esta representación estructurada permite visualizar de forma clara los principales componentes que conforman la lógica de dominio asociada al cálculo y optimización de rutas marítimas mediante algoritmos inteligentes, integrando factores como condiciones meteorológicas, distancias geográficas y costos operativos.
+
+El nivel de detalle mostrado abarca la definición de clases, interfaces y servicios de dominio involucrados en el proceso de navegación y planificación óptima de rutas, especificando sus atributos, operaciones y responsabilidades dentro del modelo. Además, se incluyen las relaciones fundamentales entre los distintos elementos del dominio, indicando su multiplicidad y direccionalidad, lo que permite representar con precisión las dependencias entre entidades, servicios y repositorios.
+
+Esta vista detallada facilita una comprensión integral del modelo conceptual del A/AI Process, sirviendo como base para la alineación entre el diseño del dominio y las capas de aplicación e infraestructura que soportan la ejecución del algoritmo de búsqueda A* y la orquestación de servicios inteligentes en el sistema.
+
+<image src="../assets/img/chapter-V/AI Process Class Diagram.jpg"></image>
+
 
 ##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
