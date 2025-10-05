@@ -684,213 +684,247 @@ Esta visualización resulta esencial para asegurar la coherencia entre el modelo
 
 ### 4.2.3. Bounded Context: Asset and Resource Management
 
-En el contexto táctico, el Bounded Context Asset and Resource Management agrupa toda la funcionalidad vinculada a la administración de activos físicos y recursos operativos dentro del ecosistema Macetech. Este módulo se encarga del registro, monitoreo y mantenimiento de los dispositivos IoT desplegados (como sensores de humedad, temperatura, pH, entre otros), permitiendo llevar un control detallado de su estado, ubicación, historial de intervenciones y condiciones operativas.
 
-Asset and Resource Management centraliza el ciclo de vida de cada dispositivo, desde su activación inicial hasta su posible retiro o sustitución, asegurando trazabilidad completa y continuidad en la gestión técnica. Asimismo, incorpora mecanismos para la asignación de recursos a usuarios o entornos específicos, facilitando una administración eficiente y contextualizada. Este bounded context expone interfaces estandarizadas para permitir su integración con otros contextos funcionales, y actúa como fuente confiable de verdad sobre los activos tecnológicos desplegados en la plataforma.
+En el contexto táctico, el Bounded Context Asset & Resource Management agrupa la funcionalidad asociada al catálogo y selección de puertos dentro de Mushroom. Este módulo expone los puertos con su identidad, nombre, continente y coordenadas, provee endpoints para listar/consultar puertos y habilita la selección de origen/destino (y opcionalmente intermedios) como paso previo a la visualización y cálculo de rutas. De manera complementaria, la interfaz de usuario consume un contrato de puertos cercanos/estado para apoyar la toma de decisiones operativas.  
 
 #### 4.2.3.1. Asset and Resource Management Bounded Context Domain Layer
+En la capa de dominio de Asset & Resource Management se definen las entidades y objetos de valor fundamentales relacionados con los puertos y mapas de navegación presentados en la aplicación. Esta capa encapsula las reglas de negocio desde la definición de cada puerto y su ubicación exacta, la revisión del estado de cada puerto y la selección de un puerto de inicio y uno final. Además, en este nivel se ubican los Domain Services encargados de la entrega de información de cada puerto específico para su visualización por el usuario, asegurando coherencia, integridad y rendimiento.
+**Port**
 
-En la capa de dominio de Asset and Resource Management se modelan las entidades y objetos de valor que encapsulan las reglas de negocio de los puertos, waypoints y activos. Aquí residen los aggregates, value objects, domain services y eventos que garantizan la coherencia e invariantes del dominio.
+###### Tabla 1
+_Tabla de Port en el Domain Layer de ARM_
 
-###### Tabla 
-*Descripción de Port en el Domain Layer de Asset and Resource Management*
-
-|Propiedad|Valor|
-|-|-|
-|Nombre	|Port|
-|Categoría|	Aggregate Root (document MongoDB, colección ports)|
-|Propósito|	Representar la ficha del puerto con ubicación, capacidades y estado operativo.|
+| Propiedad     | Valor                                                                                                   |
+|---------------|---------------------------------------------------------------------------------------------------------|
+| **Nombre**    | Port                                                                                                    |
+| **Categoría** | Entity                                                                                                  |
+| **Propósito** | Representa un puerto del catálogo maestro, con datos mínimos para selección y referencia geográfica.   |
 
 ###### Tabla 2
-*Atributos de Port en el Domain Layer de Asset and Resource Management*
+_Atributos de Port (alineado a `PortResource`)_
 
-|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
-|-|-|-|-|
-|id|	String (ObjectId)|	private	|Identificador único del documento (_id).|
-|name	|String|	private|	Nombre descriptivo del puerto.|
-|coordinates| Coordinates {type: "Point", coordinates: [lon, lat]}	|private|	Coordenadas geoespaciales para ubicar cada puerto |
-|continent | String | private | Continente en el que se encuentra el puerto. |
-|status	|String (enum)	|private	|Estado operativo: OPEN, RESTRICTED, CLOSED.|
-|createdAt	|Date	|private|	Fecha de creación.|
-|updatedAt	|Date|	private	|Fecha de última modificación.|
+| Nombre                | Tipo de dato | Visibilidad | Descripción                         |
+|-----------------------|--------------|-------------|-------------------------------------|
+| id                    | `string`     | private     | Identificador único del puerto      |
+| name                  | `string`     | private     | Nombre del puerto                   |
+| coordinates.latitude  | `number`     | private     | Latitud                             |
+| coordinates.longitude | `number`     | private     | Longitud                            |
+| continent             | `string`     | private     | Continente                          |
 
-###### Tabla 3 
-*Métodos de Port en el Domain Layer de Asset and Resource Management*
+**GeoPoint (coordinates)**
 
-|Nombre	|Tipo de retorno	|Visibilidad	|Descripción|
-|-|-|-|-|
-|Port	|Constructor |	public|Constructor que valida ubicación.|
-|changeStatus(newStatus, reason, actor)|	void|	public|	Valida transición de estados y registra evento PortStatusChanged.|
+###### Tabla 3
+_Tabla de GeoPoint_
 
----
-
-**Location:**
+| Propiedad     | Valor                                 |
+|---------------|---------------------------------------|
+| **Nombre**    | GeoPoint                              |
+| **Categoría** | Value Object                          |
+| **Propósito** | Encapsular `latitude` y `longitude`.  |
 
 ###### Tabla 4
-*Value Object de Location en el Domain Layer de Asset and Resource Management*
+_Atributos de GeoPoint_
 
-|Propiedad|Valor|
-|-|-|
-|Nombre	|Coordinates |
-|Categoría|	Value Object|
-|Propósito	|Representar y validar coordenadas geoespaciales con precisión de los puertos.|
-|Atributos|	latitude, longitude, validación de rango |
+| Nombre    | Tipo de dato | Visibilidad | Descripción |
+|-----------|--------------|-------------|-------------|
+| latitude  | `number`     | private     | Latitud     |
+| longitude | `number`     | private     | Longitud    |
+
+**PortStatus (Near-by / Estado)**
+
+> La UI utiliza un servicio `NearbyPortService` que espera una lista de puertos cercanos con estado (`open/closed`), distancia y facilidades. Este contrato de front se mapea a entidad de estado/puerto cercano.
+
+###### Tabla 5
+_Tabla de PortStatus/NearbyPort en el Domain Layer de ARM_
+
+| Propiedad     | Valor                                                                                                   |
+|---------------|---------------------------------------------------------------------------------------------------------|
+| **Nombre**    | PortStatus (ó NearbyPort)                                                                               |
+| **Categoría** | Entity                                                                                                  |
+| **Propósito** | Representar el **estado operativo** y metadatos de puertos cercanos a una posición/vessel.              |
+
+###### Tabla 6
+_Atributos de PortStatus/NearbyPort (según la UI)_
+
+| Nombre       | Tipo de dato                   | Visibilidad | Descripción                                           |
+|--------------|--------------------------------|-------------|-------------------------------------------------------|
+| id           | `number`                        | private     | Identificador del puerto cercano                      |
+| name         | `string`                        | private     | Nombre                                                |
+| country      | `string`                        | private     | País/Región                                           |
+| latitude     | `number`                        | private     | Latitud                                               |
+| longitude    | `number`                        | private     | Longitud                                              |
+| distance     | `number`                        | private     | Distancia desde la referencia                         |
+| status       | `"open" \| "closed"`            | private     | Estado operativo                                      |
+| facilities   | `string[]`                      | private     | Servicios disponibles                                 |
+| maxDepth     | `number`                        | private     | Calado máximo                                         |
+| contactInfo  | `{ phone,email,vhfChannel }`    | private     | Datos de contacto                                     |
+
+**SelectionSession**
+
+> La UI mantiene una sesión de selección de origen/destino e intermedios para iniciar cálculo/visualización de ruta. Se modela como aggregate para mantener consistencia local.
 
 ###### Tabla 7
+_Tabla de SelectionSession en el Domain Layer de ARM_
 
-*Atributos de Location en el Domain Layer de Asset and Resource Management*
+| Propiedad     | Valor                                                                                                                 |
+|---------------|-----------------------------------------------------------------------------------------------------------------------|
+| **Nombre**    | SelectionSession                                                                                                      |
+| **Categoría** | Aggregate Root                                                                                                        |
+| **Propósito** | Gestionar la **selección de puertos** (origen/destino/intermedios) del usuario y marcar la sesión lista para ruteo.  |
 
-|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
-|-|-|-|-|
-|latitude	|Double	|private	|Latitud (-90..90) |
-|longitude	|Double	|private	|Longitud (-180..180) |
+###### Tabla 8
+_Atributos de SelectionSession_
 
----
+| Nombre                | Tipo de dato   | Visibilidad | Descripción                                                 |
+|-----------------------|----------------|-------------|-------------------------------------------------------------|
+| sessionId             | `string`       | private     | Identificador de la sesión                                  |
+| originPortId          | `string?`      | private     | Puerto de origen                                            |
+| destinationPortId     | `string?`      | private     | Puerto de destino                                           |
+| intermediatePortIds   | `string[]`     | private     | Puertos intermedios seleccionados                           |
+| readyForRouting       | `boolean`      | private     | `true` si la selección es válida/completa                   |
+| createdAt             | `DateTime`     | private     | Fecha de creación                                           |
+| updatedAt             | `DateTime`     | private     | Última actualización                                        |
 
-**Continent:**
+###### Tabla 9
+_Métodos de SelectionSession_
 
-###### Tabla 4
-*Value Object de Continent en el Domain Layer de Asset and Resource Management*
+| Nombre            | Tipo de retorno | Visibilidad | Descripción                                             |
+|-------------------|-----------------|-------------|---------------------------------------------------------|
+| setOrigin         | `void`          | public      | Define el puerto de origen                              |
+| setDestination    | `void`          | public      | Define el puerto de destino                             |
+| addIntermediate   | `void`          | public      | Agrega un puerto intermedio                             |
+| removeIntermediate| `void`          | public      | Quita un puerto intermedio                              |
+| swapPorts         | `void`          | public      | Intercambia origen/destino                              |
+| validateReadiness | `boolean`       | public      | Verifica que origen y destino existan y no sean iguales |
+| markReady         | `void`          | public      | Establece `readyForRouting = true`                      |
 
-|Propiedad|Valor|
-|-|-|
-|Nombre	|Continent |
-|Categoría|	Value Object|
-|Propósito	|Presentar los continentes en los que pueden encontrarse los puertos. Útil especialmente para filtros.|
-|Atributos|	name, portsNumber |
-
-###### Tabla 7
-
-*Atributos de Location en el Domain Layer de Asset and Resource Management*
-
-|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
-|-|-|-|-|
-|name | String | private | El nombre del continente indicado |
-| portsNumber | int | private | Cantidad de puertos integrados en un continente específico. |
-
----
-
-**Domain Services:**
+**Repositorios (interfaces)**
 
 ###### Tabla 10
+_Tabla de repositorios del Domain Layer de ARM_
 
-*Descripción de PortSelectionService en el Domain Layer de Asset and Resource Management*
+| Nombre                       | Categoría  | Propósito                                |
+|-----------------------------|------------|------------------------------------------|
+| PortRepository              | Repository | Persistencia/consulta de `Port`          |
+| PortStatusRepository        | Repository | Persistencia/consulta de `PortStatus`    |
+| SelectionSessionRepository  | Repository | Persistencia/consulta de `SelectionSession` |
 
-|Propiedad | Valor|
-|-|-|
-| Nombre | PortSelectionService |
-| Categoría | Domain Service |
-| Propósito | Lógica para seleccionar puertos candidatos en el mapa de la aplicación. Devuelve nombre, ubicación, continente y restricciones. |
-
-###### Tabla 11
-
-*Descripción de PortSyncService en el Domain Layer de Asset and Resource Management*
-
-|Propiedad|Valor|
-|-|-|
-| Nombre | PortSyncService |
-| Categoría | Domain Service |
-| Propósito | Aplicar reglas de reconciliación cuando se reciben datos de fuentes externas (normalización).|
-
----
-
-**Domain Events:**
+**Eventos de dominio (principales)**
 
 ###### Tabla 11
+_Tabla de eventos de dominio en ARM_
 
-*Tabla de eventos de dominio en el Domain Layer de Asset and Resource Management*
-
-|Evento	|Descripción|
-|-|-|
-|PortRegistered	|Se registró nuevo puerto.|
-|PortUpdated	|Datos del puerto fueron actualizados.|
-|PortStatusChanged|	Cambió el estado operativo del puerto.|
-
+| Evento                  | Descripción                                         |
+|------------------------|-----------------------------------------------------|
+| PortCatalogUpdated     | Actualización de catálogo de puertos                |
+| PortStatusChanged      | Cambio de estado de un puerto                       |
+| PortSelectionCompleted | Selección válida (origen/destino) lista para ruteo  |
 ---
 
 #### 4.2.3.2. Asset and Resource Management Bounded Context Interface Layer
 
-En la capa de interfaz del Bounded Context de Asset and Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
+En la capa de interfaz del Bounded Context de Asset & Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
 
-**PortsController:**
+**PortController (backend, código real)**
 
 ###### Tabla 12
+_Tabla de PortController en el Interface Layer de ARM_
 
-*Descripción de PortsController en el Interface Layer de Asset and Resource Management*
-
-|Propiedad	|Valor|
-|-|-|
-|Nombre	|PortsController|
-|Categoría	|Controller (REST)|
-|Propósito	|Proveer endpoints para CRUD y consultas geoespaciales sobre puertos. |
+| Propiedad     | Valor                                                                                     |
+|---------------|-------------------------------------------------------------------------------------------|
+| **Nombre**    | `PortController`                                                                          |
+| **Categoría** | Controller                                                                                |
+| **Ruta base** | `/api/ports`                                                                              |
+| **Produces**  | `application/json`                                                                        |
+| **Descripción** | Endpoints REST para gestionar el catálogo de puertos.                                    |
 
 ###### Tabla 13
+_Métodos expuestos por PortController (del código real)_
 
-*Métodos de PortsController en el Interface Layer de Asset and Resource Management*
+| Método   | Ruta                         | Acción                                | Request body            | Response / Status                  |
+|----------|------------------------------|----------------------------------------|-------------------------|------------------------------------|
+| `POST`   | `/api/ports`                 | Crear un nuevo puerto                  | `CreatePortResource`    | `PortResource` — `201 Created`     |
+| `GET`    | `/api/ports/{portId}`        | Obtener un puerto por **ID**           | —                       | `PortResource` — `200 OK` / `404`  |
+| `GET`    | `/api/ports/name/{name}`     | Obtener un puerto por **nombre**       | —                       | `PortResource` — `200 OK` / `404`  |
+| `DELETE` | `/api/ports/{portId}`        | Eliminar un puerto por **ID**          | —                       | `204 No Content`                   |
+| `GET`    | `/api/ports/all-ports`       | Listar **todos los puertos**           | —                       | `List<PortResource>` — `200 OK`    |
 
-|Nombre|Ruta	|Acción	|Handle|
-|-|-|-|-|
-|getPorts|	GET / |	Listar puertos (filtros: status, country, bbox, near, page)`|	GetPortsQuery -> GetPortsQueryHandler|
-|getPortById	|GET /{portId}|	Obtener ficha detallada del puerto|GetPortByIdQuery -> GetPortByIdQueryHandler|
-|createPort	|POST /	|Registrar nuevo puerto (solo ROLE_ADMIN)	|RegisterPortCommand -> RegisterPortCommandHandler|
-|updatePort	|PUT /{portId}	|Actualizar datos del puerto	|UpdatePortCommand -> UpdatePortCommandHandler|
-|changeStatus	|PATCH /{portId}/status	|Cambiar estado operativo del puerto|	ChangePortStatusCommand -> ChangePortStatusCommandHandler|
-|getPortsByContinent|	GET /continent/{continentCode}	|Filtrar por continente |	GetPortsByContinentQuery -> GetPortsByContinentQueryHandler|
+**DTOs del back (código real)**
 
 ###### Tabla 14
+_`CreatePortResource`_
 
-*Descripción de Eventos asincronos relevantes publicados por Assets and Resource Management*
+| Campo        | Tipo               | Obligatorio | Descripción                 |
+|--------------|--------------------|-------------|-----------------------------|
+| name         | `String`           | Sí          | Nombre del puerto           |
+| coordinates  | `CoordinatesResource` | Sí       | Lat/Long                    |
+| continent    | `String`           | Sí          | Continente                  |
 
-|Eventos|	Propósito|
-|-|-|
-|ports.events	|Publica eventos "PortRegistered", "PortUpdated", "PortStatusChanged", consumido para Ruteo y Notification.|
+###### Tabla 15
+_`PortResource`_
+
+| Campo        | Tipo                  | Descripción                           |
+|--------------|-----------------------|---------------------------------------|
+| id           | `String`              | Identificador del puerto              |
+| name         | `String`              | Nombre del puerto                     |
+| coordinates  | `CoordinatesResource` | Lat/Long                              |
+| continent    | `String`              | Continente                            |
+
+**Nearby Ports / Estado (frontend, código real)**
+
+> En el front, `NearbyPortService` consulta `GET {environment.apiUrl}/api/v1/vessels/{vesselId}/nearby-ports` y espera un `NearbyPort[]`. Este es el **contrato consumido por la UI** para estado/puertos cercanos.
+
+###### Tabla 16
+_Contrato esperado por la UI (Nearby Ports)_
+
+| Método | Ruta (consumida por el front)                        | Acción                                   | Response           |
+|--------|-------------------------------------------------------|------------------------------------------|--------------------|
+| `GET`  | `/api/v1/vessels/{vesselId}/nearby-ports`            | Puertos cercanos + estado/facilities     | `NearbyPort[]`     |
+
+###### Tabla 17
+_DTO `NearbyPort` esperado por la UI_
+
+| Campo        | Tipo                                                     |
+|--------------|----------------------------------------------------------|
+| id           | `number`                                                 |
+| name         | `string`                                                 |
+| country      | `string`                                                 |
+| latitude     | `number`                                                 |
+| longitude    | `number`                                                 |
+| distance     | `number`                                                 |
+| status       | `"open" \| "closed"`                                     |
+| facilities   | `string[]`                                               |
+| maxDepth     | `number`                                                 |
+| contactInfo  | `{ phone: string; email: string; vhfChannel: string }`   |
+
+**Selección de Puertos en la UI (frontend, código real)**
+
+> `PortSelectorComponent` consume `PortService.getAllPorts()` para poblar **origen/destino** e **intermedios**, y dispara la visualización/cálculo de rutas mediante `RouteService`.
+
+###### Tabla 18
+_Interacciones UI relevantes_
+
+| UI / Servicio                             | Propósito                                                                 |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `PortService.getAllPorts()`               | Poblar listas de puertos (origen/destino/intermedios)                     |
+| `NearbyPortService.getNearbyPorts(id)`    | Mostrar puertos cercanos/estado para el vessel                            |
+| `RouteService.calculateOptimalRoute(...)` | Visualizar ruta (otro BC; se activa tras la selección ARM)                |
 
 ---
 
 #### 4.2.3.3. Asset and Resource Management Bounded Context Application Layer
 
-La capa de aplicación del Bounded Context de Asset and Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
+La capa de aplicación del Bounded Context de Asset & Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
 
-**Command Handlers:**
+**Servicio de aplicación invocado por el Controller (backend)**
 
-###### Tabla 15
+###### Tabla 19
+_Tabla de servicios de aplicación invocados por el `PortController`_
 
-*Listado de Command Handlers del Application Layer de Assets and Resource Management*
+| Servicio       | Método(s) en el Controller                                        | Propósito                                   |
+|----------------|--------------------------------------------------------------------|---------------------------------------------|
+| `PortService`  | `createPort(...)`, `getPortById(...)`, `getPortByName(...)`, `deletePort(...)`, `getAllPorts()` | Orquestar la lógica de gestión de puertos   |
 
-|Nombre	|Categoría	|Propósito	|Comando|
-|-|-|-|-|
-|RegisterPortCommandHandler	|Command Handler	|Registrar nuevo puerto, validar unicidad y persistir	|RegisterPortCommand|
-|UpdatePortCommandHandler	|Command Handler	|Actualizar datos del puerto|	UpdatePortCommand|
-|ChangePortStatusCommandHandler|	Command Handler|	Validar transición de estado, persistir y publicar evento	|ChangePortStatusCommand|
-
----
-
-**Query Handlers:**
-
-###### Tabla 16
-
-**Listado de Query Handlers del Application Layer de Assets and Resource Management*
-
-|Nombre|	Categoría	|Propósito	|Query|
-|-|-|-|-|
-|GetPortsQueryHandler	|Query Handler|	Retornar lista denormalizada ports_read	|GetPortsQuery|
-|GetPortByIdQueryHandler	|Query Handler	|Retornar PortView detallado	|GetPortByIdQuery|
-
----
-
-**Event Handlers:**
-
-###### Tabla 17
-
-*Listado de Event Handlers del Application Layer de Assets and Resource Management*
-
-|Nombre	|Categoría	|Propósito	|Evento consumido|
-|-|-|-|-|
-|PortRegisteredEventHandler	|Event Handler|	Construir o actualizar ports_read y limpiar caches|	PortRegistered|
-|PortUpdatedEventHandler	|Event Handler	|Actualizar ports_read con cambios	|PortUpdated|
-|PortStatusChangedEventHandler	|Event Handler|	Notificar en la página principal con las funciones de ruteo |	PortStatusChanged|
-
----
 
 #### 4.2.2.4. Asset and Resource Management Bounded Context Infrastructure Layer
 
@@ -936,21 +970,6 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
-###### Figura 90
-*Participación del Bounded Context de Asset and Resource Management con la aplicación móvil mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-MobileComponent.png"></image>
-
-###### Figura 91
-*Participación del Bounded Context de Asset and Resource Management con la aplicación web mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-WebComponent.png"></image>
-
-###### Figura 92
-*Participación del Bounded Context de Asset and Resource Management con la Cloud API mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-APIComponent.png"></image>
-
 #### 4.2.3.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Asset and Resource Management, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
@@ -968,7 +987,7 @@ Esta vista detallada del diseño táctico facilita una comprensión compartida d
 ###### Figura 93
 *Diagrama de clases de la capa de dominio del Bounded Context de Asset and Resource Management*
 
-<image src="../assets/img/capitulo-4/bounded-context-pot-management/class-diagram-pot-management.png"></image>
+![DiagramaClasesARM](../../assets/img/chapter-V/DiagramaClasesARM.png)
 
 ##### 4.2.3.6.2. Asset and Resource Management Bounded Context Database Design Diagram
 
