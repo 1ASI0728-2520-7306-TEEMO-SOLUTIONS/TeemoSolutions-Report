@@ -695,3 +695,9 @@ El diagrama de despliegue muestra la distribución física de los contenedores d
 
 <img src="../..//assets/img/chapter-IV/deployment-diagram.png">
 
+
+## Diagrama Entidad-Relación Unificado del Sistema Mushroom
+
+El Diagrama Entidad-Relación Unificado del Sistema Teemo representa la integración de los siete bounded contexts que conforman la arquitectura del proyecto: IAM, Profiles and Preferences, Assets & Resource Management, A* / AI Process, Service Design & Planning, Notifications y Service Operation & Monitoring. Este modelo consolida las entidades principales, sus relaciones y restricciones clave, reflejando la estructura lógica del dominio. Su propósito es proporcionar una visión completa del ecosistema de datos, permitiendo comprender cómo interactúan los módulos de autenticación, perfiles de usuario, gestión de puertos y rutas, evaluación de servicios, notificaciones y monitoreo operacional dentro de una misma plataforma.
+
+![Mushroom DB](../../assets/img/chapter-IV/Mushroom_DB.png)
