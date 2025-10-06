@@ -1373,6 +1373,297 @@ Esta vista detallada facilita una comprensión integral del modelo conceptual de
 
 ##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
+### 4.2.5. Bounded Context: Service Design and Planning
+
+En el contexto táctico, el Bounded Context Asset and Resource Management agrupa toda la funcionalidad vinculada a la gestión de los Incoterms y mejores opciones para los usuarios dentro de Mushroom. 
+
+Se encarga exclusivamente del cálculo, recomendación y cálculo de precio asociado al Incoterm para una operación dada. Recibe como entrada una vista de ruta (RouteView) y datos de la operación, ejecuta la calculadora de Incoterm (reglas con estimador de coste) y produce una recomendación justificable y un desglose de coste. Publica eventos para Service Operation and Monitoring, A*/AI Process y Notification.
+
+#### 4.2.5.1. Service Design and Planning Bounded Context Domain Layer
+
+En la capa de dominio de Service Design and Planning se modela la lógica de negocio mínima necesaria para validar los inputs, ejecutar reglas de Incoterm y producir resultados trazables.
+
+**IncotermAssessment:**
+
+###### Tabla 
+*Descripción de IncotermAssessment en el Domain Layer de Service Design and Planning*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre	|IncotermAssessment|
+|Categoría| Aggregate Root (colección incoterm_assessments)|
+|Propósito|	Representa un cálculo de Incoterm para una operación (route). Contiene entrada (referencia a RouteView), resultados recomendados, justificación, desglose de precio y metadatos.|
+
+###### Tabla 2
+*Atributos de IncotermAssessment en el Domain Layer de Service Design and Planning*
+
+|Nombre	|Tipo de dato	|Visibilidad|	Descripción|
+|-|-|-|-|
+|id	|UUID|private	|Identificador único.|
+|routeId	|String	|private	|Referencia a la ruta y al plan sobre el que se calcula el Incoterm.|
+|requestedBy|	String|	private|	Actor que solicitó el cálculo del Incoterm (userId).
+|recommendedIncoterm	|String|	private|	Incoterm recomendado según la ruta dada por el usuario.|
+|justification|	Array < Object >	|private	|Lista breve de razones cuantitativas para la selección del Incoterm. |
+|priceBreakdown|	Object	|private|	Montos de pago dados por el Incoterm que puede revisar el usuario.|
+|status|	String|	private	| Estado del proceso de revisión de Incoterms |
+|createdAt	|Date	|private|	Fecha de cálculo.|
+|updatedAt|	Date	|private	Última actualización.|
+
+###### Tabla 3 
+*Métodos de IncotermAssessment en el Domain Layer de Service Design and Planning*
+
+|Nombre|	Tipo de retorno|	Visibilidad	|Descripción|
+|-|-|-|-|
+|IncotermAssessment(...)	|constructor |	public	|Crea con un modelo de input  que valida datos mínimos.|
+|markCalculated(incoterm, justification, priceBreakdown, modelVersion, actor)	|void|	public|	Registra resultado, indica que el status es CALCULATED y genera evento IncotermCalculated.
+|markFailedInsufficientData(missingFields, actor)	| void|	public|	Marca FAILED_INSUFFICIENT_DATA y genera evento IncotermCalculationFailed.|
+|toView()|	IncotermAssessmentView|	public|	DTO para read models/UI.|
+
+---
+
+**IncotermType:**
+
+###### Tabla 4
+*Value Object de IncotermType en el Domain Layer de Service Design and Planning*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre|IncotermType|
+|Propósito|	Enum con lista de Incoterms soportados para representarlos al momento de calcular.|
+|Valores| FAS (Franco al costado del buque), FOB (Franco a bordo), CFR (Coste y Flete) y CIF (Coste, Seguro y Flete)|
+
+---
+
+**Status:**
+
+###### Tabla 5
+*Value Object de Status en el Domain Layer de Service Design and Planning*
+
+|Propiedad|Valor|
+|-|-|
+|Nombre|Status|
+|Propósito| Enum con la lista de valores posibles del estado de evaluación de recomendación de Incoterms en la aplicación.|
+|Valores| CALCULATED, FAILED_INSUFFICIENT_DATA|
+
+---
+
+**Domain Services:**
+
+###### Tabla 6
+
+*Descripción de IncotermCalculatorService en el Domain Layer de Service Design and Planning*
+
+|Propiedad | Valor|
+|-|-|
+| Nombre | IncotermCalculatorService |
+| Categoría | Domain Service |
+| Propósito | Ejecutar reglas (business rules) que relacionan origen/destino/cargo profile y proponer Incoterm(es). |
+
+###### Tabla 7
+
+*Descripción de CostEstimationService en el Domain Layer de Service Design and Planning*
+
+|Propiedad|Valor|
+|-|-|
+| Nombre | CostEstimationService |
+| Categoría | Domain Service |
+| Propósito | Calcular desglose de coste asociado al Incoterm: flete, seguro, aduanas y cargos estimados. |
+
+###### Tabla 8
+
+*Descripción de ValidationService en el Domain Layer de Service Design and Planning*
+
+|Propiedad|Valor|
+|-|-|
+| Nombre | ValidationService |
+| Categoría | Domain Service |
+| Propósito | Verificar que RouteView y datos complementarios están completos para cálculo.. |
+
+---
+
+**Domain Events:**
+
+###### Tabla 11
+
+*Tabla de eventos de dominio en el Domain Layer de Service Design and Planning*
+
+|Evento	|Descripción|
+|-|-|
+|IncotermCalculated	|Assessment completado con Incoterm recomendado y desglose.|
+|IncotermCalculationFailed	|Falló cálculo por datos insuficientes (lista de campos faltantes).|
+
+---
+
+#### 4.2.5.2. Service Design and Planning Bounded Context Interface Layer
+
+En la capa de interfaz del Bounded Context de Service Design and Planning se exponen los endpoints REST necesarios para solicitar cálculos y consultar resultados. También se realiza la publicación de eventos asincrónicos "incoterm.events".
+
+**IncotermController:**
+
+###### Tabla 12
+
+*Descripción de IncotermController en el Interface Layer de Service Design and Planning*
+
+|Propiedad	|Valor|
+|-|-|
+|Nombre	|IncotermController|
+|Categoría|	Controller (REST)|
+|Propósito|	Endpoints para calcular Incoterm, consultar resultados y simular precio.|
+|Ruta base	|/api/v1/incoterms|
+
+###### Tabla 12
+
+*Métodos de IncotermController en el Interface Layer de Service Design and Planning*
+
+|Nombre	|Ruta	|Acción|	Handle|
+|-|-|-|-|
+|calculateIncoterm|	POST /calculate	|Recibe RouteView y datos de la operación, luego devuelve assessmentId o resultado directo	|CalculateIncotermCommand -> CalculateIncotermCommandHandler|
+|getAssessment|	GET /{assessmentId}	|Obtener resultado detallado de Assessment|	GetIncotermAssessmentQuery -> GetIncotermAssessmentQueryHandler|
+
+###### Tabla 14
+
+*Descripción de Eventos asincronos relevantes publicados por el Interface Layer de Service Design and Planning*
+
+|Eventos|	Propósito|
+|-|-|
+|incoterm.events	|Publica IncotermCalculated e IncotermCalculationFailed para los Bounded Context relacionados|
+
+---
+
+#### 4.2.5.3. Service Design and Planning Bounded Context Application Layer
+
+La capa de aplicación del Bounded Context de Service Design and Planning coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones relacionadas al Aggregate de Incoterms. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
+
+**Command Handlers:**
+
+###### Tabla 15
+
+*Listado de Command Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre	|Categoría	|Propósito	|Comando|
+|-|-|-|-|
+|CalculateIncotermCommandHandler | Command Handler |Valida input, invoca ValidationService, IncotermCalculatorService y CostEstimationService, persiste IncotermAssessment. |	CalculateIncotermCommand|
+
+---
+
+**Query Handlers:**
+
+###### Tabla 16
+
+*Listado de Query Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre|	Categoría	|Propósito	|Query|
+|-|-|-|-|
+|GetIncotermAssessmentQueryHandler| Query Handler|	Recuperar IncotermAssessmentView desde incoterm_read.|	GetIncotermAssessmentQuery |
+
+---
+
+**Event Handlers:**
+
+###### Tabla 17
+
+*Listado de Event Handlers del Application Layer de Assets and Resource Management*
+
+|Nombre	|Categoría	|Propósito	|Evento consumido|
+|-|-|-|-|
+|PortUpdatedEventHandler| Event Handler |Si RouteView cambia por cambio de puerto, marcar assessments relacionados para re-evaluar | PortUpdated (consumido desde Asset & Resource Management)|
+
+---
+
+#### 4.2.5.4. Service Design and Planning Bounded Context Infrastructure Layer
+
+La capa de infraestructura del Bounded Context de Service Design and Planning actúa como el vínculo entre la lógica de negocio y las tecnologías subyacentes que permiten la persistencia, comunicación e integración con sistemas externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, y modelos de Incoterm necesarios.
+
+Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, facilitando la evolución tecnológica sin afectar la consistencia de las reglas de negocio. Asimismo, garantiza eficiencia y confiabilidad en la obtención de la información necesaria para el cálculo de los Incoterms asociados a cada ruta.
+
+**Repositorios:**
+
+###### Tabla 18
+
+*Listado de repositorios en el Infrastructure Layer de Service Design and Planning*
+
+|Nombre|	Categoría	|Propósito	|Interfaz|
+|-|-|-|-|
+|IncotermRepository	| Repositorio |Persistir incoterm_assessments	|IIncotermRepository|
+|IncotermReadRepository	|Gestionar incoterm_read para consultas rápidas	|IIncotermReadRepository|
+
+###### Tabla 19
+
+*Métodos de IPortRepository en el Infrastructure Layer de Service Design and Planning*
+
+|Nombre	|Tipo de retorno|	Descripción|
+|-|-|-|
+|findById(assessmentId)|	IncotermAssessment|	Recupera por id.|
+|findByRouteId(routeId)|	List<IncotermAssessment>|	Recupera assessments asociados a route.|
+
+---
+
+**Implementaciones MongoDB:**
+
+###### Tabla 20
+
+*Tabla de colecciones y notas de implementación para MongoDB en el Infrastructure Layer de Service Design and Planning*
+
+|Colección	|Propósito	|
+|-|-|
+|incoterm_assessments	|Persiste documento IncotermAssessment	|
+|incoterm_read|	Read-model denormalizado para UI.	|
+
+#### 4.2.5.5. Service Design and Planning Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Service Design and Planning. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión de de puertos y sus ubicaciones en mapa dentro de Mushroom.
+
+Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
+
+###### Figura 90
+*Participación del Bounded Context de Service Design and Planning con la aplicación móvil mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-MobileComponent.png"></image>
+
+###### Figura 91
+*Participación del Bounded Context de Service Design and Planning con la aplicación web mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-WebComponent.png"></image>
+
+###### Figura 92
+*Participación del Bounded Context de Service Design and Planning con la Cloud API mediante el diagrama de componentes*
+
+<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-APIComponent.png"></image>
+
+#### 4.2.5.6. Service Design and Planning Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Service Design and Planning, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
+
+Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
+
+##### 4.2.5.6.1. Service Design and Planning Bounded Context Domain Layer Class Diagrams
+
+En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Service Design and Planning. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en la gestión de ubicaciones de puertos y estados en la plataforma de Mushroom.
+
+El nivel de detalle abarca la definición de atributos y métodos para cada clase, especificando su tipo de dato, visibilidad y propósito en el modelo. Asimismo, se incluyen las relaciones entre elementos del dominio, cualificadas mediante nombres representativos, dirección cuando aplica y multiplicidad adecuada para reflejar con precisión las asociaciones entre entidades.
+
+Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
+
+###### Figura 93
+*Diagrama de clases de la capa de dominio del Bounded Context de Service Design and Planning*
+
+<image src="../assets/img/capitulo-4/bounded-context-pot-management/class-diagram-pot-management.png"></image>
+
+##### 4.2.5.6.2. Service Design and Planning Bounded Context Database Design Diagram
+
+En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Service Design and Planning. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
+
+El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
+
+Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
+
+###### Figura 94
+*Diagrama de base de datos del Bounded Context de Service Design and Planning*
+
+<image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
+
+---
+
 ### 4.2.4. Bounded Context: Notification
 
 Este bounded context **Notification** cubre dos usos bien acotados en Mushroom:
@@ -1380,8 +1671,6 @@ Este bounded context **Notification** cubre dos usos bien acotados en Mushroom:
 2) **Notificaciones in-app** básicas en el **Dashboard** (listar, marcar como leídas y eliminar).
 
 Se mantiene deliberadamente **simple** y desacoplado del resto de BCs. La capa de infraestructura usa un adaptador de e-mail (SMTP — configurado con Gmail en este MVP) y un repositorio para persistir notificaciones in-app.
-
----
 
 #### 4.2.4.1. Notification Bounded Context **Domain Layer**
 
