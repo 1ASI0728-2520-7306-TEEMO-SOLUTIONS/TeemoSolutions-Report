@@ -1860,4 +1860,607 @@ Se mantiene deliberadamente **simple** y desacoplado del resto de BCs. La capa d
 
 ##### 4.2.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
+### 5.7. Bounded Context: Service Operation and Monitoring
+En el contexto táctico, el Bounded Context Service Operation and Monitoring concentra la observabilidad, el monitoreo operativo y el control de las operaciones de Mushroom. Su objetivo es ofrecer una fuente única de verdad sobre el estado del sistema (servicios internos y dependencias externas como IA, clima y geopolítica) y sobre la ejecución de rutas marítimas (cumplimiento de ETA, desvíos, incidencias y cambios de riesgo), habilitando la detección temprana de anomalías y la reacción informada ante eventos.
+
+Este módulo centraliza métricas, logs y eventos operativos, normaliza su semántica y los transforma en señales accionables: estados de servicio (ServiceStatus), alertas críticas (SystemAlert) y registros de error (ErrorLog). Desde allí, expone interfaces claras para que otros bounded contexts—por ejemplo, Report (que genera documentos descargables de desempeño, riesgos y emisiones) y Notification (que comunica fallos, desviaciones y cambios de ETA a usuarios finales)—consuman información consistente y confiable. Además, provee capacidades de control operacional (p. ej., pausar/reanudar monitoreo de una ruta, ajustar umbrales de alerta, forzar revalidaciones) que cierran el ciclo entre la supervisión y la acción.
+
+Los límites de este bounded context están definidos para evitar acoplamientos indebidos: no calcula rutas ni optimiza trayectorias (responsabilidad del Core de Cálculo de Rutas), ni gestiona identidades o permisos (IAM). En su lugar, observa la ejecución, correla eventos de sistema y de operación, evalúa condiciones contra SLO/umbrales, y publica estados/alertas estandarizados. En el monolito con DDD, sus responsabilidades se organizan por capas (Domain, Application, Interface, Infrastructure) y se integran con el resto de la plataforma mediante servicios de aplicación e interfaces explícitas, manteniendo baja complejidad (sin brokers ni event bus) y privilegiando integraciones HTTP sencillas con las APIs externas.
+
+#### 5.7.1. Service Operation and Monitoring Bounded Context Domain Layer
+
+Entities & Aggregates
+
+ServiceStatus
+
+Tabla de ServiceStatus en Domain Layer
+
+| Propiedad     | Valor                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------- |
+| **Nombre**    | ServiceStatus                                                                         |
+| **Categoría** | **Aggregate Root**                                                                    |
+| **Propósito** | Representar el estado “vivo” de un servicio (interno/externo) y su última evaluación. |
+
+Atributos
+
+| Nombre      | Tipo                   | Visibilidad | Descripción                                          |
+| ----------- | ---------------------- | ----------- | ---------------------------------------------------- |
+| id          | `ServiceId`            | private     | Identidad del servicio monitorizado                  |
+| name        | `ServiceName`          | private     | Nombre canónico (p. ej. `RouteEngine`, `WeatherAPI`) |
+| kind        | `ServiceKind` (enum)   | private     | `INTERNAL` / `EXTERNAL`                              |
+| endpoint    | `EndpointUrl?`         | private     | URL base si aplica (servicio externo)                |
+| status      | `ServiceHealth` (enum) | private     | `UP` / `DEGRADED` / `DOWN` / `MAINTENANCE`           |
+| lastCheck   | `Instant`              | private     | Timestamp de última evaluación                       |
+| lastLatency | `Duration?`            | private     | Latencia reciente agregada                           |
+| errorRate   | `Double?`              | private     | % de errores reciente (ventana corta)                |
+| version     | `long`                 | private     | Versión para control de concurrencia optimista       |
+
+Métodos
+
+| Nombre                       | Retorno          | Visibilidad | Descripción                                                                                  |
+| ---------------------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------- |
+| applyHealthCheck             | `void`           | public      | Aplica un `HealthCheckResult` y actualiza `status`, `lastLatency`, `errorRate`, `lastCheck`. |
+| markMaintenance              | `void`           | public      | Pone el servicio en `MAINTENANCE`.                                                           |
+| markDown                     | `void`           | public      | Pone el servicio en `DOWN`.                                                                  |
+| markUp                       | `void`           | public      | Pone el servicio en `UP` y limpia métricas degradadas.                                       |
+| toDomainEventIfStatusChanged | `StatusChanged?` | public      | Devuelve evento si cambió el estado desde la última evaluación.                              |
+
+SystemAlert
+
+Tabla de SystemAlert en Domain Layer
+
+| Propiedad     | Valor                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
+| **Nombre**    | SystemAlert                                                                                           |
+| **Categoría** | **Aggregate Root**                                                                                    |
+| **Propósito** | Gestionar el ciclo de vida de una alerta (apertura, actualización, resolución) con severidad y causa. |
+
+Atributos
+
+| Nombre       | Tipo                     | Visibilidad | Descripción                                             |
+| ------------ | ------------------------ | ----------- | ------------------------------------------------------- |
+| id           | `AlertId`                | private     | Identificador de alerta                                 |
+| serviceId    | `ServiceId`              | private     | Servicio afectado                                       |
+| type         | `AlertType` (enum)       | private     | `AVAILABILITY`, `LATENCY`, `ERROR_SPIKE`, `INTEGRATION` |
+| severity     | `Severity` (VO)          | private     | Severidad estándar (mapea a OTel)                       |
+| status       | `AlertStatus` (enum)     | private     | `OPEN` / `ACKED` / `RESOLVED`                           |
+| title        | `String`                 | private     | Resumen                                                 |
+| description  | `String`                 | private     | Detalle técnico/negocio                                 |
+| openedAt     | `Instant`                | private     | Fecha de apertura                                       |
+| lastUpdateAt | `Instant`                | private     | Última actualización                                    |
+| resolvedAt   | `Instant?`               | private     | Fecha de resolución si aplica                           |
+| evidence     | `List<IncidentEvidence>` | private     | Evidencias adjuntas (latencias, errores, eventos)       |
+
+Métodos
+
+| Nombre        | Retorno                       | Visibilidad | Descripción                                         |
+| ------------- | ----------------------------- | ----------- | --------------------------------------------------- |
+| escalate      | `void`                        | public      | Incrementa severidad (p. ej., de `WARN` a `ERROR`). |
+| acknowledge   | `void`                        | public      | Marca como reconocida por operaciones.              |
+| addEvidence   | `void`                        | public      | Adjunta `IncidentEvidence`.                         |
+| resolve       | `void`                        | public      | Cierra la alerta, set `RESOLVED` y `resolvedAt`.    |
+| toDomainEvent | `AlertRaised`/`AlertResolved` | public      | Emite evento de apertura/cierre.                    |
+
+ErrorLog
+
+Tabla de ErrorLog en Domain Layer
+
+| Propiedad     | Valor                                                                         |
+| ------------- | ----------------------------------------------------------------------------- |
+| **Nombre**    | ErrorLog                                                                      |
+| **Categoría** | **Entity**                                                                    |
+| **Propósito** | Registrar errores o eventos inesperados con severidad y trazabilidad opcional |
+
+Atributos
+
+| Nombre     | Tipo                  | Visibilidad | Descripción                                        |
+| ---------- | --------------------- | ----------- | -------------------------------------------------- |
+| id         | `ErrorId`             | private     | Identificador                                      |
+| serviceId  | `ServiceId?`          | private     | Servicio asociado (si aplica)                      |
+| occurredAt | `Instant`             | private     | Momento de ocurrencia                              |
+| severity   | `Severity`            | private     | Nivel de severidad                                 |
+| code       | `String?`             | private     | Código o categoría (p. ej., `WEATHER_API_TIMEOUT`) |
+| message    | `String`              | private     | Mensaje                                            |
+| details    | `Map<String,Object>?` | private     | Datos estructurados (requestId, endpoint, etc.)    |
+| traceId    | `String?`             | private     | Correlación con trazas                             |
+| spanId     | `String?`             | private     | Correlación con spans                              |
+
+Value Objects (VO)
+
+ServiceId
+
+| Propiedad     | Valor                           |
+| ------------- | ------------------------------- |
+| **Nombre**    | ServiceId                       |
+| **Categoría** | Value Object                    |
+| **Propósito** | Encapsular el ID de un servicio |
+
+ServiceName
+
+| Propiedad     | Valor                                |
+| ------------- | ------------------------------------ |
+| **Nombre**    | ServiceName                          |
+| **Categoría** | Value Object                         |
+| **Propósito** | Nombre legible y único en el dominio |
+
+EndpointUrl
+
+| Propiedad     | Valor                             |
+| ------------- | --------------------------------- |
+| **Nombre**    | EndpointUrl                       |
+| **Categoría** | Value Object                      |
+| **Propósito** | URL válida de dependencia externa |
+
+Severity
+
+| Propiedad     | Valor                                     |
+| ------------- | ----------------------------------------- |
+| **Nombre**    | Severity                                  |
+| **Categoría** | Value Object                              |
+| **Propósito** | Nivel estándar de severidad interoperable |
+
+| Propiedad     | Valor                                     |
+| ------------- | ----------------------------------------- |
+| **Nombre**    | Severity                                  |
+| **Categoría** | Value Object                              |
+| **Propósito** | Nivel estándar de severidad interoperable |
+
+HealthCheckResult
+
+| Propiedad     | Valor                                      |
+| ------------- | ------------------------------------------ |
+| **Nombre**    | HealthCheckResult                          |
+| **Categoría** | Value Object                               |
+| **Propósito** | Resultado inmutable de un chequeo de salud |
+
+IncidentEvidence
+
+| Propiedad     | Valor                                      |
+| ------------- | ------------------------------------------ |
+| **Nombre**    | IncidentEvidence                           |
+| **Categoría** | Value Object                               |
+| **Propósito** | Evidencia compacta que respalda una alerta |
+
+Enums
+
+ServiceKind: INTERNAL, EXTERNAL
+
+ServiceHealth: UP, DEGRADED, DOWN, MAINTENANCE
+
+AlertType: AVAILABILITY, LATENCY, ERROR_SPIKE, INTEGRATION
+
+AlertStatus: OPEN, ACKED, RESOLVED
+
+HealthAssessmentService
+
+| Propiedad     | Valor                                                                        |
+| ------------- | ---------------------------------------------------------------------------- |
+| **Nombre**    | HealthAssessmentService                                                      |
+| **Categoría** | Domain Service                                                               |
+| **Propósito** | Evaluar un `HealthCheckResult` y decidir `ServiceHealth` + si amerita alerta |
+
+Métodos
+
+| Nombre           | Retorno         | Descripción                                                               |
+| ---------------- | --------------- | ------------------------------------------------------------------------- |
+| assess           | `ServiceHealth` | Aplica reglas (umbral latencia, % error, reachability) y devuelve estado. |
+| shouldRaiseAlert | `boolean`       | Determina si se abre/escala alerta según política y estado previo.        |
+| buildAlertFor    | `SystemAlert`   | Crea instancia inicial de `SystemAlert` usando `SystemAlertFactory`.      |
+
+Factories
+
+SystemAlertFactory
+
+| Propósito | Construir `SystemAlert` válido (ID, timestamps, severidad inicial) a partir de un `ServiceId`, `AlertType` y evidencia. |
+| --------- | ----------------------------------------------------------------------------------------------------------------------- |
+
+Repositories
+
+ServiceStatusRepository
+
+| Método     | Retorno               | Descripción                               |
+| ---------- | --------------------- | ----------------------------------------- |
+| findById   | `ServiceStatus?`      | Busca por `ServiceId`.                    |
+| findAll    | `List<ServiceStatus>` | Lista todos.                              |
+| save       | `ServiceStatus`       | Persiste (upsert) con control de versión. |
+| findByKind | `List<ServiceStatus>` | Filtra por `INTERNAL/EXTERNAL`.           |
+
+SystemAlertRepository
+
+| Método                   | Retorno             | Descripción                        |
+| ------------------------ | ------------------- | ---------------------------------- |
+| findOpenByServiceAndType | `SystemAlert?`      | Alerta abierta para servicio+tipo. |
+| save                     | `SystemAlert`       | Persiste/actualiza.                |
+| findOpen                 | `List<SystemAlert>` | Todas abiertas.                    |
+| findById                 | `SystemAlert?`      | Por `AlertId`.                     |
+
+ErrorLogRepository
+
+| Método              | Retorno          | Descripción                |
+| ------------------- | ---------------- | -------------------------- |
+| save                | `ErrorLog`       | Persiste log.              |
+| findRecentByService | `List<ErrorLog>` | Últimos N por `serviceId`. |
+| findByTraceId       | `List<ErrorLog>` | Útiles para correlación.   |
+
+#### 5.7.2. Service Operation and Monitoring Bounded Context Interface Layer
+
+OpsStatusController
+
+Tabla de OpsStatusController
+
+| Propiedad     | Valor                                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| **Nombre**    | OpsStatusController                                                                           |
+| **Categoría** | Controller                                                                                    |
+| **Propósito** | Exponer el **estado de servicios** internos/externos del sistema (vista simple de operación). |
+| **Ruta base** | `/api/ops/status`                                                                             |
+
+Tabla de endpoints
+
+| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
+| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
+| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
+| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
+| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
+| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
+
+OpsAlertController
+
+Tabla de OpsAlertController
+
+| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
+| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
+| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
+| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
+| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
+| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
+
+Tabla de endpoints
+
+| Nombre      | Ruta                 | Método | Acción                                                                                      | Handle (Application)      |
+| ----------- | -------------------- | ------ | ------------------------------------------------------------------------------------------- | ------------------------- |
+| List        | `/`                  | GET    | Lista alertas con filtros `status`, `type`, `serviceId` y paginación simple (`page`,`size`) | `ListAlertsQuery`         |
+| GetById     | `/{alertId}`         | GET    | Detalle de una alerta (incluye evidencias)                                                  | `GetAlertByIdQuery`       |
+| Open        | `/`                  | POST   | (Opcional) Abrir alerta manual (para pruebas)                                               | `OpenAlertCommand`        |
+| Acknowledge | `/{alertId}/ack`     | POST   | Marcar alerta como **reconocida**                                                           | `AcknowledgeAlertCommand` |
+| Resolve     | `/{alertId}/resolve` | POST   | Cerrar alerta con mensaje de resolución                                                     | `ResolveAlertCommand`     |
+
+OpsErrorController
+
+Tabla de OpsErrorController
+
+| Propiedad     | Valor                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| **Nombre**    | OpsErrorController                                                                        |
+| **Categoría** | Controller                                                                                |
+| **Propósito** | Consultar **registros de errores** del sistema de manera simple para soporte/diagnóstico. |
+| **Ruta base** | `/api/ops/errors`                                                                         |
+
+Tabla de endpoints
+
+| Nombre  | Ruta         | Método | Acción                                                                                                               | Handle (Application)   |
+| ------- | ------------ | ------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Search  | `/`          | GET    | Búsqueda por `serviceId`, rango de tiempo (`from`,`to`) y `severity` (INFO/WARN/ERROR/FATAL). Soporta `page`,`size`. | `SearchErrorLogsQuery` |
+| GetById | `/{errorId}` | GET    | Detalle de un error puntual                                                                                          | `GetErrorLogByIdQuery` |
+
+#### 5.7.1.3. Service Operation and Monitoring Bounded Context Application Layer 
+
+Command Handlers
+
+RecordHealthCheckCommandHandler
+
+| Propiedad     | Valor                                                                                                                      |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | RecordHealthCheckCommandHandler                                                                                            |
+| **Categoría** | Command Handler                                                                                                            |
+| **Propósito** | Registrar un `HealthCheckResult` y actualizar `ServiceStatus` (UP/DEGRADED/DOWN/MAINTENANCE) usando reglas del dominio.    |
+| **Comando**   | `RecordHealthCheckCommand { serviceId, measuredAt, latencyMs?, errorRate?, isReachable, notes? }`                          |
+| **Efectos**   | Llama a `HealthAssessmentService` (dominio), `ServiceStatusRepository.save`. Si cambia el estado, publica `StatusChanged`. |
+
+MarkServiceMaintenanceCommandHandler
+
+| Propiedad     | Valor                                                                           |
+| ------------- | ------------------------------------------------------------------------------- |
+| **Nombre**    | MarkServiceMaintenanceCommandHandler                                            |
+| **Categoría** | Command Handler                                                                 |
+| **Propósito** | Marcar un servicio como `MAINTENANCE`.                                          |
+| **Comando**   | `MarkServiceMaintenanceCommand { serviceId, reason? }`                          |
+| **Efectos**   | `ServiceStatus.markMaintenance()` + `save` y publica `StatusChanged` si aplica. |
+
+ClearServiceMaintenanceCommandHandler
+
+| Propiedad     | Valor                                                              |
+| ------------- | ------------------------------------------------------------------ |
+| **Nombre**    | ClearServiceMaintenanceCommandHandler                              |
+| **Categoría** | Command Handler                                                    |
+| **Propósito** | Salir de mantenimiento → `UP` (si corresponde).                    |
+| **Comando**   | `ClearServiceMaintenanceCommand { serviceId }`                     |
+| **Efectos**   | `ServiceStatus.markUp()` + `save` y `StatusChanged` si hay cambio. |
+
+OpenAlertCommandHandler
+
+| Propiedad     | Valor                                                                             |
+| ------------- | --------------------------------------------------------------------------------- |
+| **Nombre**    | OpenAlertCommandHandler                                                           |
+| **Categoría** | Command Handler                                                                   |
+| **Propósito** | Abrir alerta manual (para pruebas o acción operativa).                            |
+| **Comando**   | `OpenAlertCommand { serviceId, type, severity, title, description, evidence?[] }` |
+| **Efectos**   | Usa `SystemAlertFactory.create(...)`, persiste y publica `AlertRaised`.           |
+
+AcknowledgeAlertCommandHandler
+
+| Propiedad     | Valor                                        |
+| ------------- | -------------------------------------------- |
+| **Nombre**    | AcknowledgeAlertCommandHandler               |
+| **Categoría** | Command Handler                              |
+| **Propósito** | Marcar alerta como **ACKED**.                |
+| **Comando**   | `AcknowledgeAlertCommand { alertId, note? }` |
+| **Efectos**   | `SystemAlert.acknowledge()`, `save`.         |
+
+ResolveAlertCommandHandler
+
+| Propiedad     | Valor                                                     |
+| ------------- | --------------------------------------------------------- |
+| **Nombre**    | ResolveAlertCommandHandler                                |
+| **Categoría** | Command Handler                                           |
+| **Propósito** | Resolver alerta abierta.                                  |
+| **Comando**   | `ResolveAlertCommand { alertId, resolutionMessage? }`     |
+| **Efectos**   | `SystemAlert.resolve()`, `save`, publica `AlertResolved`. |
+
+LogErrorCommandHandler
+
+| Propiedad     | Valor                                                                            |
+| ------------- | -------------------------------------------------------------------------------- |
+| **Nombre**    | LogErrorCommandHandler                                                           |
+| **Categoría** | Command Handler                                                                  |
+| **Propósito** | Registrar un `ErrorLog` con severidad/código y detalles.                         |
+| **Comando**   | `LogErrorCommand { serviceId?, occurredAt, severity, code?, message, details? }` |
+| **Efectos**   | Crea `ErrorLog`, persiste y publica `ErrorLogged`.                               |
+
+Query Handlers
+
+ListServiceStatusQueryHandler
+
+| Propiedad     | Valor                                                                      |
+| ------------- | -------------------------------------------------------------------------- |
+| **Nombre**    | ListServiceStatusQueryHandler                                              |
+| **Categoría** | Query Handler                                                              |
+| **Propósito** | Listar estados con filtros (`kind`, `name`, `health`) y paginación simple. |
+| **Query**     | `ListServiceStatusQuery { filters..., page?, size? }`                      |
+| **Efectos**   | Lectura en `ServiceStatusRepository`.                                      |
+
+GetServiceStatusByIdQueryHandler
+
+| Propiedad     | Valor                                     |
+| ------------- | ----------------------------------------- |
+| **Nombre**    | GetServiceStatusByIdQueryHandler          |
+| **Categoría** | Query Handler                             |
+| **Propósito** | Obtener estado por `serviceId`.           |
+| **Query**     | `GetServiceStatusByIdQuery { serviceId }` |
+| **Efectos**   | Lectura en `ServiceStatusRepository`.     |
+
+ListAlertsQueryHandler
+
+| Propiedad     | Valor                                                                   |
+| ------------- | ----------------------------------------------------------------------- |
+| **Nombre**    | ListAlertsQueryHandler                                                  |
+| **Categoría** | Query Handler                                                           |
+| **Propósito** | Listar alertas por `status`, `type`, `serviceId`, severidad (paginado). |
+| **Query**     | `ListAlertsQuery { filters..., page?, size? }`                          |
+| **Efectos**   | Lectura en `SystemAlertRepository`.                                     |
+
+GetAlertByIdQueryHandler
+
+| Propiedad     | Valor                               |
+| ------------- | ----------------------------------- |
+| **Nombre**    | GetAlertByIdQueryHandler            |
+| **Categoría** | Query Handler                       |
+| **Propósito** | Detalle de alerta.                  |
+| **Query**     | `GetAlertByIdQuery { alertId }`     |
+| **Efectos**   | Lectura en `SystemAlertRepository`. |
+
+SearchErrorLogsQueryHandler
+
+| Propiedad     | Valor                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------- |
+| **Nombre**    | SearchErrorLogsQueryHandler                                                           |
+| **Categoría** | Query Handler                                                                         |
+| **Propósito** | Buscar `ErrorLog` por `serviceId`, rango de tiempo, severidad, `traceId`, paginación. |
+| **Query**     | `SearchErrorLogsQuery { criteria..., page?, size? }`                                  |
+| **Efectos**   | Lectura en `ErrorLogRepository`.                                                      |
+
+GetErrorLogByIdQueryHandler
+
+| Propiedad     | Valor                              |
+| ------------- | ---------------------------------- |
+| **Nombre**    | GetErrorLogByIdQueryHandler        |
+| **Categoría** | Query Handler                      |
+| **Propósito** | Detalle de un error.               |
+| **Query**     | `GetErrorLogByIdQuery { errorId }` |
+| **Efectos**   | Lectura en `ErrorLogRepository`.   |
+
+GetOpsHealthSummaryQueryHandler
+
+| Propiedad     | Valor                                                           |
+| ------------- | --------------------------------------------------------------- |
+| **Nombre**    | GetOpsHealthSummaryQueryHandler                                 |
+| **Categoría** | Query Handler                                                   |
+| **Propósito** | Resumen agregado (porcentaje UP/DEGRADED/DOWN, top degradados). |
+| **Query**     | `GetOpsHealthSummaryQuery { window? }`                          |
+| **Efectos**   | Lee `ServiceStatusRepository` y/o caches simples.               |
+
+GetOpsHealthByServiceQueryHandler
+
+| Propiedad     | Valor                                                       |
+| ------------- | ----------------------------------------------------------- |
+| **Nombre**    | GetOpsHealthByServiceQueryHandler                           |
+| **Categoría** | Query Handler                                               |
+| **Propósito** | Vista de salud para un servicio (últimos n chequeos).       |
+| **Query**     | `GetOpsHealthByServiceQuery { serviceId, window? }`         |
+| **Efectos**   | Lee `ServiceStatusRepository` (+ snapshots si los guardan). |
+
+Event Handlers
+
+OnStatusChangedEventHandler
+
+| Propiedad     | Valor                                                                                                           |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | OnStatusChangedEventHandler                                                                                     |
+| **Categoría** | Event Handler                                                                                                   |
+| **Evento**    | `StatusChanged { serviceId, previous, current, at }`                                                            |
+| **Propósito** | Política simple: si `current == DOWN` abrir alerta `AVAILABILITY`; si vuelve a `UP`, resolver alertas abiertas. |
+| **Efectos**   | Invoca `OpenAlertCommand` o `ResolveAlertCommand`.                                                              |
+
+OnAlertRaisedEventHandler
+
+| Propiedad     | Valor                                                                            |
+| ------------- | -------------------------------------------------------------------------------- |
+| **Nombre**    | OnAlertRaisedEventHandler                                                        |
+| **Categoría** | Event Handler                                                                    |
+| **Evento**    | `AlertRaised { alertId, serviceId, type, severity, at }`                         |
+| **Propósito** | Auditoría/notificación interna (ej.: persistir un registro de actividad simple). |
+| **Efectos**   | Guardar actividad en una colección simple (opcional).                            |
+
+OnAlertResolvedEventHandler
+
+| Propiedad     | Valor                                                      |
+| ------------- | ---------------------------------------------------------- |
+| **Nombre**    | OnAlertResolvedEventHandler                                |
+| **Categoría** | Event Handler                                              |
+| **Evento**    | `AlertResolved { alertId, serviceId, at }`                 |
+| **Propósito** | Auditoría al resolver; podría recalcular “score” de salud. |
+| **Efectos**   | Actualiza métricas resumidas (si las almacenan).           |
+
+OnErrorLoggedEventHandler
+
+| Propiedad     | Valor                                                                                                |
+| ------------- | ---------------------------------------------------------------------------------------------------- |
+| **Nombre**    | OnErrorLoggedEventHandler                                                                            |
+| **Categoría** | Event Handler                                                                                        |
+| **Evento**    | `ErrorLogged { errorId, serviceId?, severity, at }`                                                  |
+| **Propósito** | Correlacionar errores recientes con estado del servicio (si muchos errores → degradar/abrir alerta). |
+| **Efectos**   | Podría encadenar `OpenAlertCommand` tipo `ERROR_SPIKE`.                                              |
+
+#### 5.7.1.4. Service Operation and Monitoring Bounded Context Infrastructure Layer
+
+Configuración de acceso a datos
+
+MongoConfig (reutilizable)
+
+| Propiedad     | Valor                                                                    |
+| ------------- | ------------------------------------------------------------------------ |
+| **Nombre**    | `MongoConfig`                                                            |
+| **Categoría** | Configuración (DataSource/MongoTemplate)                                 |
+| **Propósito** | Exponer `MongoClient` y `MongoTemplate` para el resto de la capa.        |
+| **Detalles**  | Lee `spring.data.mongodb.uri` y base de datos; registra `MongoTemplate`. |
+
+ServiceStatusDocument
+
+| Propiedad     | Valor                                                                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `ServiceStatusDocument`                                                                                                                                              |
+| **Colección** | `ops_service_status`                                                                                                                                                 |
+| **Campos**    | `id:String`, `name:String` (único), `kind:String`, `endpoint:String?`, `status:String`, `lastCheck:Date`, `lastLatencyMs:Long?`, `errorRate:Double?`, `version:Long` |
+| **Índices**   | Único por `name`; secundario por `status` y `kind`                                                                                                                   |
+
+SystemAlertDocument
+
+| Propiedad     | Valor                                                                                                                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
+| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
+| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
+| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
+
+ErrorLogDocument
+
+| Propiedad     | Valor                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
+| **Colección** | `ops_error_logs`                                                                                                                        |
+| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
+| **Índices**   | **TTL en `occurredAt`** (por ejemplo 30 días) + `{ serviceId:1, occurredAt:-1 }`                                                        |
+
+ServiceStatusDocumentMapper
+
+| Propiedad     | Valor                                                                                                                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
+| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
+| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
+| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
+
+ErrorLogDocument
+
+| Propiedad     | Valor                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
+| **Colección** | `ops_error_logs`                                                                                                                        |
+| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
+| **Índices**   | **TTL en `occurredAt`** (por ejemplo 30 días) + `{ serviceId:1, occurredAt:-1 }`                                                        |
+
+ServiceStatusDocumentMapper
+
+| Propiedad     | Valor                                                                  |
+| ------------- | ---------------------------------------------------------------------- |
+| **Nombre**    | `ServiceStatusDocumentMapper`                                          |
+| **Categoría** | Mapper                                                                 |
+| **Propósito** | Convertir `ServiceStatus` (dominio) ↔ `ServiceStatusDocument` (infra). |
+
+SystemAlertDocumentMapper
+
+| Propiedad     | Valor                                                                       |
+| ------------- | --------------------------------------------------------------------------- |
+| **Nombre**    | `SystemAlertDocumentMapper`                                                 |
+| **Categoría** | Mapper                                                                      |
+| **Propósito** | Convertir `SystemAlert` ↔ `SystemAlertDocument` (incl. `IncidentEvidence`). |
+
+ErrorLogDocumentMapper
+
+| Propiedad     | Valor                                      |
+| ------------- | ------------------------------------------ |
+| **Nombre**    | `ErrorLogDocumentMapper`                   |
+| **Categoría** | Mapper                                     |
+| **Propósito** | Convertir `ErrorLog` ↔ `ErrorLogDocument`. |
+
+ServiceStatusMongoRepository
+
+| Propiedad     | Valor                                                              |
+| ------------- | ------------------------------------------------------------------ |
+| **Nombre**    | `ServiceStatusMongoRepository`                                     |
+| **Categoría** | Spring Data `MongoRepository<ServiceStatusDocument, String>`       |
+| **Propósito** | CRUD y búsquedas por convención                                    |
+| **Métodos**   | `findByName(String)`, `findByKind(String)`, `findByStatus(String)` |
+
+SystemAlertMongoRepository
+
+| Propiedad     | Valor                                                                          |
+| ------------- | ------------------------------------------------------------------------------ |
+| **Nombre**    | `SystemAlertMongoRepository`                                                   |
+| **Categoría** | `MongoRepository<SystemAlertDocument, String>`                                 |
+| **Propósito** | CRUD y listados                                                                |
+| **Métodos**   | `findByStatus(String, PageRequest)`, `findByServiceIdAndStatus(String,String)` |
+
+ErrorLogMongoRepository
+
+| Propiedad     | Valor                                                             |
+| ------------- | ----------------------------------------------------------------- |
+| **Nombre**    | `ErrorLogMongoRepository`                                         |
+| **Categoría** | `MongoRepository<ErrorLogDocument, String>`                       |
+| **Propósito** | CRUD y búsquedas con filtros                                      |
+| **Métodos**   | `findByServiceIdAndOccurredAtBetween(...)`, `findBySeverity(...)` |
+
+#### 5.7.1.5. Service Operation and Monitoring Bounded Context Software Architecture Component Level Diagrams
+
+[not_yet]
+
+#### 5.7.1.6. Service Operation and Monitoring Bounded Context Software Architecture Code Level Diagrams
+
+##### 5.7.1.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
+
+[not_yet]
+
+##### 5.7.1.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
+
+<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
 
