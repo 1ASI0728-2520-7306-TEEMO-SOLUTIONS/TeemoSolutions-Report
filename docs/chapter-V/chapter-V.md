@@ -2248,6 +2248,64 @@ En la capa de dominio de Service Operation and Monitoring se modela la lógica d
 | findRecentByService | `List<ErrorLog>` | Últimos N por `serviceId`. |
 | findByTraceId       | `List<ErrorLog>` | Útiles para correlación.   |
 
+*Tabla de PopularRoute en el Domain Layer*
+
+| Propiedad     | Valor                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| **Nombre**    | PopularRoute                                                                                       |
+| **Categoría** | Aggregate Root                                                                                     |
+| **Propósito** | Representar una ruta catalogada como “popular”, con métricas de uso y validación periódica por IA. |
+
+*Tabla de atributos de PopularRoute*
+
+| Nombre          | Tipo             | Visibilidad | Descripción                                       |
+| --------------- | ---------------- | ----------- | ------------------------------------------------- |
+| id              | `PopularRouteId` | private     | Identificador único de la ruta popular            |
+| routeId         | `RouteId`        | private     | Identificador de la ruta base calculada por A*/AI |
+| origin          | `PortCode`       | private     | Puerto de origen                                  |
+| destination     | `PortCode`       | private     | Puerto de destino                                 |
+| popularityScore | `double`         | private     | Puntaje compuesto de popularidad                  |
+| usageCount      | `long`           | private     | Conteo de usos/selecciones                        |
+| lastUsedAt      | `Instant`        | private     | Última vez que fue utilizada                      |
+| lastValidatedAt | `Instant?`       | private     | Última fecha en la que fue revalidada por IA      |
+| valid           | `boolean`        | private     | Indica si sigue siendo óptima/vigente             |
+| safetyScore     | `double?`        | private     | Métrica de seguridad        		       |
+| etaReliability  | `double?`        | private     | Confiabilidad de ETA       	               |
+
+*Tabla de métodos de PopularRoute*
+
+| Nombre         | Tipo de retorno | Visibilidad | Descripción                                          |
+| -------------- | --------------- | ----------- | ---------------------------------------------------- |
+| registerUsage  | `void`          | public      | Incrementa `usageCount` y actualiza `lastUsedAt`     |
+| recomputeScore | `void`          | public      | Recalcula `popularityScore` con la política definida |
+| markValidated  | `void`          | public      | Marca `valid` y setea `lastValidatedAt`              |
+
+*Tabla de PopularityScore en el Domain Layer*
+
+| Propiedad     | Valor                                |
+| ------------- | ------------------------------------ |
+| **Nombre**    | PopularityScore                      |
+| **Categoría** | Value Object                         |
+| **Propósito** | Encapsular el puntaje de popularidad |
+
+*Tabla de PopularRouteRepository en el Domain Layer*
+
+| Propiedad     | Valor                                      |
+| ------------- | ------------------------------------------ |
+| **Nombre**    | PopularRouteRepository                     |
+| **Categoría** | Repository                                 |
+| **Propósito** | Interfaz para persistencia de PopularRoute |
+
+*Tabla de métodos de PopularRouteRepository*
+
+| Nombre         | Tipo de retorno      | Visibilidad | Descripción                                         |
+| -------------- | -------------------- | ----------- | --------------------------------------------------- |
+| findTopN       | `List<PopularRoute>` | public      | Devuelve el top-N por `popularityScore`             |
+| findByOD       | `List<PopularRoute>` | public      | Busca por par `origin`–`destination`                |
+| save           | `PopularRoute`       | public      | Persiste/actualiza una PopularRoute                 |
+| incrementUsage | `void`               | public      | Incrementa `usageCount` de una ruta (por `routeId`) |
+
+
 ---
 
 #### 5.6.2. Service Operation and Monitoring Bounded Context Interface Layer
@@ -2328,6 +2386,38 @@ En la capa de interfaz del Bounded Context de Service Operation and Monitoring s
 | ------- | ------------ | ------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------- |
 | Search  | `/`          | GET    | Búsqueda por `serviceId`, rango de tiempo (`from`,`to`) y `severity` (INFO/WARN/ERROR/FATAL). Soporta `page`,`size`. | `SearchErrorLogsQuery` |
 | GetById | `/{errorId}` | GET    | Detalle de un error puntual                                                                                          | `GetErrorLogByIdQuery` |
+
+*Tabla de PopularRoutesController en el Interface Layer*
+
+| Propiedad     | Valor                                  |
+| ------------- | -------------------------------------- |
+| **Nombre**    | PopularRoutesController                |
+| **Categoría** | Controller                             |
+| **Propósito** | Exponer endpoints para rutas populares |
+| **Ruta base** | `/api/routes/popular`                  |
+
+*Tabla de endpoints de PopularRoutesController*
+
+| Nombre   | Ruta                  | Método | Acción                                                | Handle                        |
+| -------- | --------------------- | ------ | ----------------------------------------------------- | ----------------------------- |
+| List     | `/`                   | GET    | Listar top (filtros `origin`, `destination`, `limit`) | `GetPopularRoutesQuery`       |
+| Detail   | `/{routeId}`          | GET    | Ficha detallada                                       | `GetPopularRouteDetailQuery`  |
+| Validate | `/{routeId}/validate` | POST   | Revalidar (A*/AI) y marcar vigente                    | `ValidatePopularRouteCommand` |
+
+*Tabla de RouteReportsController en el Interface Layer*
+
+| Propiedad     | Valor                                   |
+| ------------- | --------------------------------------- |
+| **Nombre**    | RouteReportsController                  |
+| **Categoría** | Controller                              |
+| **Propósito** | Generar informe descargable de una ruta |
+| **Ruta base** | `/api/reports/routes`                   |
+
+*Tabla de endpoints de RouteReportsController*
+
+| Nombre   | Ruta         | Método | Acción                                                                                       | Handle                        |
+| -------- | ------------ | ------ | -------------------------------------------------------------------------------------------- | ----------------------------- |
+| Generate | `/{routeId}` | POST   | Genera informe (Excel/PDF) con tiempos, eventos, emisiones; usa histórico + métricas de “ops” | `GenerateRouteReportCommand`* |
 
 ---
 
@@ -2573,6 +2663,42 @@ La capa de aplicación del Bounded Context de Service Operation and Monitoring c
 | **Propósito** | Correlacionar errores recientes con estado del servicio (si muchos errores → degradar/abrir alerta). |
 | **Efectos**   | Podría encadenar `OpenAlertCommand` tipo `ERROR_SPIKE`.                                              |
 
+*Tabla de RegisterRouteUsageCommandHandler en el Application Layer*
+
+| Propiedad     | Valor                                           |
+| ------------- | ----------------------------------------------- |
+| **Nombre**    | RegisterRouteUsageCommandHandler                |
+| **Categoría** | Command Handler                                 |
+| **Propósito** | Registrar uso de una ruta popular               |
+| **Comando**   | `RegisterRouteUsageCommand { routeId, usedAt }` |
+
+*Tabla de ValidatePopularRouteCommandHandler en el Application Layer*
+
+| Propiedad     | Valor                                                        |
+| ------------- | ------------------------------------------------------------ |
+| **Nombre**    | ValidatePopularRouteCommandHandler                           |
+| **Categoría** | Command Handler                                              |
+| **Propósito** | Revalidar una ruta popular contra A*/AI (clima/geo actuales) |
+| **Comando**   | `ValidatePopularRouteCommand { routeId }`                    |
+
+*Tabla de GetPopularRoutesQueryHandler en el Application Layer*
+
+| Propiedad     | Valor                          |
+| ------------- | ------------------------------ |
+| **Nombre**    | GetPopularRoutesQueryHandler   |
+| **Categoría** | Query Handler                  |
+| **Propósito** | Obtener top de rutas populares |
+| **Query**     | `GetPopularRoutesQuery`        |
+
+*Tabla de GetPopularRouteDetailQueryHandler en el Application Layer*
+
+| Propiedad     | Valor                                       |
+| ------------- | ------------------------------------------- |
+| **Nombre**    | GetPopularRouteDetailQueryHandler           |
+| **Categoría** | Query Handler                               |
+| **Propósito** | Obtener ficha detallada de una ruta popular |
+| **Query**     | `GetPopularRouteDetailQuery { routeId }`    |
+
 ---
 
 #### 5.6.4. Service Operation and Monitoring Bounded Context Infrastructure Layer
@@ -2755,6 +2881,30 @@ Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, f
 | **Categoría** | `MongoRepository<ErrorLogDocument, String>`                       |
 | **Propósito** | CRUD y búsquedas con filtros                                      |
 | **Métodos**   | `findByServiceIdAndOccurredAtBetween(...)`, `findBySeverity(...)` |
+
+
+*Tabla de PopularRouteMongoRepository*
+
+| Propiedad     | Valor                                |
+| ------------- | ------------------------------------ |
+| **Nombre**    | PopularRouteMongoRepository          |
+| **Categoría** | Spring Data Repository               |
+| **Propósito** | Persistir y consultar `PopularRoute` |
+
+*Tabla de RouteReportMongoRepository*
+
+| Propiedad     | Valor                                       |
+| ------------- | ------------------------------------------- |
+| **Nombre**    | RouteReportMongoRepository                  |
+| **Categoría** | Spring Data Repository                      |
+| **Propósito** | Persistir y consultar documentos de reporte |
+
+*Tabla combinada de componentes de generación de reportes*
+
+| Componente           | Capa           | Propósito                                                         |
+| -------------------- | -------------- | ----------------------------------------------------------------- |
+| RouteReportGenerator | Application    | Orquesta la construcción del informe                              |
+| PdfExporter          | Infrastructure | Exporta/serializa el informe a PDF (y/o Excel) listo para descarga |
 
 #### 5.7.1.5. Service Operation and Monitoring Bounded Context Software Architecture Component Level Diagrams
 
