@@ -41,28 +41,23 @@ En el contexto táctico, el Bounded Context IAM (Identity and Access Management)
 
 #### 5.1.1. IAM Bounded Context Domain Layer
 
-En la capa de dominio de IAM se definen las entidades y objetos de valor esenciales junto con sus reglas de negocio. Además, en este nivel residen los Domain Services encargados de orquestar procesos complejos, garantizando la coherencia y la reutilización de toda la lógica central.
+En la capa de dominio de IAM se definen las entidades y objetos de valor esenciales junto con sus reglas de negocio. Además, en este nivel residen los Domain Services encargados de orquestar procesos complejos, garantizando la coherencia y la reutilización de toda la lógica central referente al control de usuarios y permisos.
 
+**AuditableAbstractAggregateRoot:** 
 
----
+###### Tabla 24
 
-##  User 
-
-## **AuditableAbstractAggregateRoot** 
-
-###### Tabla 17
-
-## Tabla de AuditableAbstractAggregateRoot en el Domain Layer 
+*Descripción de AuditableAbstractAggregateRoot en el Domain Layer de IAM* 
 
 | Propiedad     | Valor                                                                                                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nombre**    | AuditableAbstractAggregateRoot<T extends AbstractAggregateRoot<T>>                                                                        |
 | **Categoría** | Base Class (Aggregate Root con auditoría)                                                                                                 |
-| **Propósito** | Proveer a los aggregate roots campos de identificación y auditoría (**id**, **createdAt**, **updatedAt**) y soporte de eventos de dominio |
+| **Propósito** | Proveer a los aggregate roots campos de identificación y auditoría (id, createdAt, updatedAt) y soporte de eventos de dominio |
 
-###### Tabla 2
+###### Tabla 25
 
-## Atributos de AuditableAbstractAggregateRoot
+*Atributos de AuditableAbstractAggregateRoot en el Domain Layer de IAM*
 
 | Nombre    | Tipo de dato | Visibilidad | Descripción                               |
 | --------- | ------------ | ----------- | ----------------------------------------- |
@@ -72,11 +67,11 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 
 ---
 
-## **User**
+**User:**
 
-###### Tabla 18
+###### Tabla 26
 
-## Tabla de User en el Domain Layer 
+*Descripción de User en el Domain Layer de IAM*
 
 | Propiedad     | Valor                                                                                                      |
 | ------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -84,9 +79,9 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 | **Categoría** | Aggregate Root (extiende `AuditableAbstractAggregateRoot<User>`)                                           |
 | **Propósito** | Representar a un usuario del sistema con credenciales y roles, con trazabilidad de creación/actualización. |
 
-###### Tabla 19
+###### Tabla 27
 
-## Atributos de User
+*Atributos de User en el Domain Layer de IAM*
 
 | Nombre    | Tipo de dato | Visibilidad | Descripción                                                               |
 | --------- | ------------ | ----------- | ------------------------------------------------------------------------- |
@@ -97,9 +92,9 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 | password  | `String`     | private     | Contraseña **codificada/hasheada** (`@NotBlank`, `@Size(max=120)`)        |
 | roles     | `Set<Role>`  | private     | Conjunto de roles asociados al usuario (inicializa con `new HashSet<>()`) |
 
-###### Tabla 20
+###### Tabla 28
 
-# Métodos de User
+*Métodos de User en el Domain Layer de IAM*
 
 | Nombre                                                   | Tipo de retorno | Visibilidad | Descripción                                                                                    |
 | -------------------------------------------------------- | --------------- | ----------- | ---------------------------------------------------------------------------------------------- |
@@ -110,11 +105,11 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 
 ---
 
-## Role
+**Role:**
 
-###### Tabla 21
+###### Tabla 29
 
-## Tabla de Role
+*Descripción de Role en el Domain Layer de IAM*
 
 | Propiedad     | Valor                                                     |
 | ------------- | --------------------------------------------------------- |
@@ -122,22 +117,22 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 | **Categoría** | Entity (`@Document(collection = "roles")`)                |
 | **Propósito** | Representar un rol del sistema basado en el enum `Roles`. |
 
-###### Tabla 22
+###### Tabla 30
 
-## Atributos de Role
+*Atributos de Role en el Domain Layer de IAM*
 
 | Nombre | Tipo de dato | Visibilidad | Descripción                                  |
 | ------ | ------------ | ----------- | -------------------------------------------- |
 | id     | `String`     | private     | Identificador único del rol (`@Id`)          |
 | name   | `Roles`      | private     | Valor del rol (`ROLE_USER`, `ROLE_ADMIN`, …) |
 
-###### Tabla 23
+###### Tabla 31
 
-## Métodos de Role
+*Métodos de Role en el Domain Layer de IAM*
 
 | Nombre                      | Tipo de retorno | Visibilidad   | Descripción                                                                    |
 | --------------------------- | --------------- | ------------- | ------------------------------------------------------------------------------ |
-| Role(Roles name)            | — (ctor)        | public        | Crea un rol con el valor del enum.                                             |
+| Role(Roles name)            | constructor       | public        | Crea un rol con el valor del enum.                                             |
 | getStringName()             | `String`        | public        | Devuelve el nombre del enum (`name.name()`).                                   |
 | getDefaultRole()            | `Role`          | public static | Retorna el rol por defecto (`ROLE_USER`).                                      |
 | toRoleFromName(String name) | `Role`          | public static | Convierte el nombre a enum y construye `Role`.                                 |
@@ -145,11 +140,11 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 
 ---
 
-## Roles (enum)
+**Roles (enum):**
 
-###### Tabla 24
+###### Tabla 32
 
-## Tabla de Roles
+*Descripción de Roles (enum) en el Domain Layer de IAM*
 
 | Propiedad     | Valor                                                   |
 | ------------- | ------------------------------------------------------- |
@@ -157,32 +152,26 @@ En la capa de dominio de IAM se definen las entidades y objetos de valor esencia
 | **Categoría** | Enum                                                    |
 | **Propósito** | Definir los valores válidos para los roles del sistema. |
 
-###### Tabla 25
+###### Tabla 33
 
-## Valores de Roles
+*Listado de valores de Roles (enum) en el Domain Layer de IAM*
 
 | Valor             | Descripción                               |
 | ----------------- | ----------------------------------------- |
 | `ROLE_USER`       | Rol por defecto de usuario final.         |
 | `ROLE_ADMIN`      | Rol administrativo.                       |
-| `ROLE_INSTRUCTOR` | Rol de instructor (si aplica al dominio). |
 
 ---
-
 
 #### 5.1.2. IAM Bounded Context Interface Layer
 
 En la capa de interfaz del Bounded Context de IAM se exponen los endpoints necesarios para interactuar con las funcionalidades de autenticación, autorización y gestión de usuarios. A través de controladores especializados, esta capa actúa como punto de entrada para solicitudes externas, facilitando la comunicación entre clientes (como aplicaciones web o móviles) y la lógica de negocio. Su diseño busca garantizar una separación clara de responsabilidades, manteniendo la simplicidad en la orquestación de comandos y consultas sin comprometer la seguridad ni la escalabilidad del sistema.
 
-¡Perfecto, Fabrizio! Tomé tus controladores y los documenté en el **Interface Layer** con el mismo formato de tablas que mostraste (Nombre, Categoría, Propósito, Ruta + métodos con Ruta, Acción y Handle). Mantengo todo en español y agrego una nota breve por controlador con consideraciones de respuesta/seguridad.
+**AuthenticationController:**
 
----
+###### Tabla 34
 
-## **AuthenticationController**
-
-###### Tabla 26
-
-*Tabla de **AuthenticationController** en el Interface Layer*
+*Descripción de AuthenticationController en el Interface Layer de IAM*
 
 | Propiedad         | Valor                                           |
 | ----------------- | ----------------------------------------------- |
@@ -192,9 +181,9 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 | **Ruta**          | `/api/authentication`                           |
 | **Tag (OpenAPI)** | `Authentication`                                |
 
-###### Tabla 27
+###### Tabla 35
 
-*Tabla de métodos de **AuthenticationController***
+*Métodos de AuthenticationController en el Interface Layer de IAM*
 
 | Nombre | Ruta       | Acción                     | Handle                                        |
 | ------ | ---------- | -------------------------- | --------------------------------------------- |
@@ -203,15 +192,15 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 
 > **Notas:**
 > * `signUp` devuelve `201 Created` con `UserResource` o `400 Bad Request`.
-> * `signIn` devuelve `200 OK` con `AuthenticatedUserResource` o `404 Not Found` si credenciales inválidas.
+> * `signIn` devuelve `200 OK` con `AuthenticatedUserResource` o `404 Not Found` si las credenciales son inválidas.
 
 ---
 
-## **RolesController**
+**RolesController:**
 
-###### Tabla 28
+###### Tabla 36
 
-*Tabla de **RolesController** en el Interface Layer*
+*Descripción de RolesController en el Interface Layer de IAM*
 
 | Propiedad         | Valor                     |
 | ----------------- | ------------------------- |
@@ -221,26 +210,21 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 | **Ruta**          | `/api/roles`              |
 | **Tag (OpenAPI)** | `Roles`                   |
 
-###### Tabla 28
+###### Tabla 37
 
-*Tabla de métodos de **RolesController***
+*Métodos de RolesController en el Interface Layer de IAM*
 
 | Nombre      | Ruta | Acción                 | Handle                                         |
 | ----------- | ---- | ---------------------- | ---------------------------------------------- |
 | getAllRoles | `/`  | Listar todos los roles | `GetAllRolesQuery` → `roleQueryService.handle` |
 
-> **Notas:**
->
-> * Respuesta: `200 OK` con `List<RoleResource>`.
-> * Protección recomendada: solo accesible a `ROLE_ADMIN` si el catálogo no es público.
-
 ---
 
-## **UsersController**
+**UsersController:**
 
-###### Tabla 29
+###### Tabla 38
 
-*Tabla de **UsersController** en el Interface Layer*
+*Descripción de UsersController en el Interface Layer de IAM*
 
 | Propiedad     | Valor                                |
 | ------------- | ------------------------------------ |
@@ -249,9 +233,9 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 | **Propósito** | Exponer consultas de usuarios (CQRS) |
 | **Ruta**      | `/api/v1/users`                      |
 
-###### Tabla 30
+###### Tabla 39
 
-*Tabla de métodos de **UsersController***
+*Métodos de UsersController en el Interface Layer de IAM*
 
 | Nombre      | Ruta        | Acción                 | Handle                                         |
 | ----------- | ----------- | ---------------------- | ---------------------------------------------- |
@@ -262,35 +246,30 @@ En la capa de interfaz del Bounded Context de IAM se exponen los endpoints neces
 > * `getAllUsers`: `200 OK` con `List<UserResource>`.
 > * `getUserById`: `200 OK` con `UserResource` o `404 Not Found`.
 
-
 ---
-
 
 #### 4.2.1.3. IAM Bounded Context Application Layer 
 
-La capa de aplicación del Bounded Context de IAM coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin mezclar reglas de negocio. Aquí residen los Command Handlers, Query Handlers y Event Handlers, responsables de ejecutar operaciones como el registro, inicio o cierre de sesión, así como la gestión de eventos relacionados con la identidad de los usuarios. Esta capa asegura que las acciones se realicen de manera transaccional, manteniendo la integridad del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según corresponda.
+La capa de aplicación del Bounded Context de IAM coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin mezclar reglas de negocio. Aquí residen los Command Handlers, Query Handlers y Event Handlers, responsables de ejecutar operaciones como el registro, inicio o cierre de sesión, así como la gestión de eventos relacionados con la identidad de los usuarios. 
 
-## SeedRolesCommandHandler
-Tabla de SeedRolesCommandHandler en el Application Layer de IAM
+**Command Handlers:**
+
+###### Tabla 40
+
+*Descripción de SeedRolesCommandHandler en el Application Layer de IAM*
+
 | Propiedad        | Valor                                           |
 | ---------------- | ----------------------------------------------- |
 | **Nombre**       | SeedRolesCommandHandler                         |
 | **Categoría**    | Command Handler                                 |
-| **Propósito**    | Sembrar (crear si faltan) los roles del sistema |
+| **Propósito**    | Crear los roles del sistema |
 | **Comando**      | `SeedRolesCommand`                              |
 | **Dependencias** | `RoleRepositoryImpl`                            |
 
-## ApplicationReadyEventHandler
-Tabla de ApplicationReadyEventHandler en el Application Layer de IAM'
-| Propiedad           | Valor                                                 |
-| ------------------- | ----------------------------------------------------- |
-| **Nombre**          | ApplicationReadyEventHandler                          |
-| **Categoría**       | Event Handler (Application Event)                     |
-| **Propósito**       | Disparar la siembra de roles al iniciar la aplicación |
-| **Comando** | `SeedRolesCommand` → `RoleCommandService.handle`      |
+###### Tabla 41
 
-## SignUpCommandHandler
-Tabla de SignUpCommandHandler en el Application Layer de IAM
+*Descripción de SignUpCommandHandler en el Application Layer de IAM*
+
 | Propiedad        | Valor                                                |
 | ---------------- | ---------------------------------------------------- |
 | **Nombre**       | SignUpCommandHandler                                 |
@@ -299,8 +278,10 @@ Tabla de SignUpCommandHandler en el Application Layer de IAM
 | **Comando**      | `SignUpCommand`                                      |
 | **Dependencias** | `UserRepository`, `HashingService`, `RoleRepository` |
 
-## SignInCommandHandler
-Tabla de SignInCommandHandler en el Application Layer de IAM
+###### Tabla 42
+
+*Descripción de SignInCommandHandler en el Application Layer de IAM*
+
 | Propiedad        | Valor                                                     |
 | ---------------- | --------------------------------------------------------- |
 | **Nombre**       | SignInCommandHandler                                      |
@@ -310,14 +291,33 @@ Tabla de SignInCommandHandler en el Application Layer de IAM
 | **Dependencias** | `UserRepository`, `HashingService`, `TokenService`        |
 | **Retorno**      | `Optional<ImmutablePair<User, String>>` (usuario + token) |
 
+---
+
+**Event Handlers:**
+
+###### Tabla 43
+
+*Descripción de ApplicationReadyEventHandler en el Application Layer de IAM*
+
+| Propiedad           | Valor                                                 |
+| ------------------- | ----------------------------------------------------- |
+| **Nombre**          | ApplicationReadyEventHandler                          |
+| **Categoría**       | Event Handler (Application Event)                     |
+| **Propósito**       | Disparar la siembra de roles al iniciar la aplicación |
+| **Comando** | `SeedRolesCommand` -> `RoleCommandService.handle`      |
+
 #### 4.2.1.4. Infrastructure Layer
 
 La capa de infraestructura del Bounded Context de IAM actúa como el puente entre la lógica de negocio y los mecanismos técnicos de persistencia, comunicación y ejecución. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, proveedores de autenticación, mecanismos de almacenamiento de sesiones y otros servicios externos o compartidos.
 
 Esta capa concreta las abstracciones definidas en el dominio mediante implementaciones de repositorios. Su diseño busca mantener el desacoplamiento respecto a la lógica central, permitiendo la evolución tecnológica sin comprometer la integridad del dominio. Además, garantiza la eficiencia, seguridad y confiabilidad en la gestión de identidades, roles y sesiones, alineándose con los objetivos funcionales y no funcionales del sistema.
 
-## RoleRepository
-Tabla de RoleRepository en el Infrastructure Layer de IAM
+**Repositorios:**
+
+###### Tabla 44
+
+*Descripción de RoleRepository en el Infrastructure Layer de IAM*
+
 | Propiedad          | Valor                                       |
 | ------------------ | ------------------------------------------- |
 | **Nombre**         | RoleRepository                              |
@@ -328,7 +328,9 @@ Tabla de RoleRepository en el Infrastructure Layer de IAM
 | **Colección**      | `roles` (MongoDB)                           |
 | **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)       |
 
-Métodos de RoleRepository / RoleRepositoryImpl
+###### Tabla 45
+
+*Métodos de RoleRepository y RoleRepositoryImpl en el Infrastructure Layer de IAM*
 
 | Método         | Firma                                   | Descripción                               |
 | -------------- | --------------------------------------- | ----------------------------------------- |
@@ -337,9 +339,10 @@ Métodos de RoleRepository / RoleRepositoryImpl
 | `saveRole`     | `void saveRole(Role role)`              | Persiste/actualiza un `Role`.             |
 | `existsByName` | `boolean existsByName(Roles name)`      | Verifica existencia de un rol por nombre. |
 
+###### Tabla 46
 
-## UserRepository
-Tabla de UserRepository en el Infrastructure Layer de IAM
+*Descripción de UserRepository en el Infrastructure Layer de IAM*
+
 | Propiedad          | Valor                                       |
 | ------------------ | ------------------------------------------- |
 | **Nombre**         | UserRepository                              |
@@ -350,7 +353,10 @@ Tabla de UserRepository en el Infrastructure Layer de IAM
 | **Colección**      | `users` (MongoDB)                           |
 | **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)       |
 
-Métodos de UserRepository / UserRepositoryImpl
+###### Tabla 47
+
+*Métodos de UserRepository y UserRepositoryImpl en el Infrastructure Layer de IAM*
+
 | Método             | Firma                                            | Descripción                         |
 | ------------------ | ------------------------------------------------ | ----------------------------------- |
 | `findByUsername`   | `Optional<User> findByUsername(String username)` | Busca usuario por `username`.       |
@@ -359,11 +365,17 @@ Métodos de UserRepository / UserRepositoryImpl
 | `saveUser`         | `void saveUser(User user)`                       | Persiste/actualiza un `User`.       |
 | `existsByUsername` | `boolean existsByUsername(String username)`      | Verifica existencia por `username`. |
 
+---
+
 #### 4.2.1.5. IAM Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de IAM. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales del contexto de gestión de identidad y acceso.
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y seguridad del sistema.
+
+###### Figura 47
+
+*Diagrama de componentes del Bounded Context de IAM relacionado a ...*
 
 #### 4.2.1.6. IAM Bounded Context Software Architecture Code Level Diagrams
 
@@ -377,6 +389,10 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 Asimismo, se incluyen las relaciones entre elementos del dominio, calificadas con nombres descriptivos, direccionalidad cuando corresponde, y multiplicidad para reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada del diseño táctico favorece la comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación efectiva dentro de la arquitectura de software.
 
+###### Figura 48
+
+*Diagrama de clases del Bounded Context de IAM*
+
 ![IAM CLASS DIAGRAM](../../assets/img/chapter-V/iam-class-diagram.png)
 
 ##### 4.2.1.6.2. IAM Bounded Context Database Design Diagram
@@ -387,7 +403,9 @@ El diagrama incluye detalles esenciales como el tipo de dato y la visibilidad de
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del modelo conceptual, funcionando como un nexo clave entre el análisis de dominio y su posterior implementación en la arquitectura del sistema.
 
+###### Figura 49
 
+*Sección del diagrama entidad-relación correspondiente al Bounded Context de IAM*
 
 ---
 
@@ -395,20 +413,17 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 
 En el contexto táctico, el Bounded Context Profiles and Preferences concentra toda la funcionalidad relacionada con la gestión personalizada de los perfiles de usuario en la plataforma Mushroom. Este módulo se encarga de almacenar, actualizar y exponer información detallada sobre las preferencias individuales, hábitos de uso, configuraciones personalizadas y características del entorno del usuario. Entre sus responsabilidades se incluyen la edición de datos personales no sensibles y la persistencia de hábitos o preferencias.
 
-Profiles and Preferences permite adaptar la experiencia digital a las necesidades particulares de cada usuario, y lo hace mediante una interfaz limpia e interoperable, disponible para otros bounded contexts. Al ofrecer un punto centralizado para el perfilado y la personalización, garantiza consistencia, reutilización y separación de preocupaciones dentro de la arquitectura de la solución.
+Profiles and Preferences permite adaptar la experiencia digital a las necesidades particulares de cada usuario, y lo hace mediante una interfaz limpia e interoperable, disponible para otros bounded contexts. Al ofrecer un punto centralizado para el perfilado y la personalización, garantiza consistencia, reutilización y separación de preocupaciones dentro de la arquitectura de la solución. Este Bounded Context no gestiona credenciales ni roles, solo datos de cuenta y preferencias ligadas a UX/operación.
 
 #### 4.2.2.1. Profile and Preferences Bounded Context Domain Layer
 
 En la capa de dominio de Profiles and Preferences se modelan las entidades, objetos de valor y reglas de negocio fundamentales asociadas a la gestión de perfiles y preferencias personalizadas. Esta capa encapsula la lógica central vinculada al almacenamiento, validación y actualización de datos relacionados con la configuración del usuario, sus preferencias de uso y hábitos de interacción con la plataforma. Asimismo, se definen los Domain Services responsables de coordinar operaciones complejas que involucran múltiples objetos, asegurando la coherencia del comportamiento del sistema y promoviendo su reutilización en otros contextos.
 
+**Profile:**
 
-> **Límite del BC:** Perfil NO gestiona credenciales ni roles; solo datos de cuenta y preferencias ligadas a UX/operación.
+###### Tabla 48
 
-## **Profile**
-
-###### Tabla 11
-
-## Tabla de Profile en el Domain Layer 
+*Descripción de Profile en el Domain Layer de Profile and Preferences*
 
 | Propiedad     | Valor                                                                                 |
 | ------------- | ------------------------------------------------------------------------------------- |
@@ -416,9 +431,9 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 | **Categoría** | Aggregate Root (puede extender la clase base auditable si se desea consistencia)      |
 | **Propósito** | Gestionar datos de cuenta y preferencias del usuario (no sensibles de autenticación). |
 
-###### Tabla 12
+###### Tabla 49
 
-## Atributos de Profile
+*Atributos de Profile en el Domain Layer de Profile and Preferences*
 
 | Nombre               | Tipo de dato           | Visibilidad | Descripción                                                    |
 | -------------------- | ---------------------- | ----------- | -------------------------------------------------------------- |
@@ -434,9 +449,9 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 | createdAt            | `Date`                 | private     | Fecha de creación.                                             |
 | updatedAt            | `Date`                 | private     | Última modificación.                                           |
 
-###### Tabla 13
+###### Tabla 50
 
-## Métodos de Profile
+*Métodos de Profile en el Domain Layer de Profile and Preferences*
 
 | Nombre                 | Tipo de retorno | Visibilidad | Descripción                                             |
 | ---------------------- | --------------- | ----------- | ------------------------------------------------------- |
@@ -448,11 +463,11 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 
 ---
 
-## FullName 
+**FullName:**
 
-###### Tabla 14
+###### Tabla 51
 
-## Tabla de FullName 
+*Descripción de FullName en el Domain Layer de Profile and Preferences*
 
 | Propiedad     | Valor                                      |
 | ------------- | ------------------------------------------ |
@@ -460,9 +475,9 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 | **Categoría** | Value Object                               |
 | **Propósito** | Representar el nombre completo del usuario |
 
-###### Tabla 15
+###### Tabla 52
 
-## Atributos de FullName
+*Atributos de FullName en el Domain Layer de Profile and Preferences*
 
 | Nombre    | Tipo de dato | Visibilidad | Descripción |
 | --------- | ------------ | ----------- | ----------- |
@@ -471,11 +486,11 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 
 ---
 
-### **NotificationSettings** (VO en Profile)
+**NotificationSettings:** 
 
-###### Tabla 16
+###### Tabla 53
 
-## Tabla de NotificationSettings
+*Descripción de NotificationSettings en el Domain Layer de Profile and Preferences*
 
 | Propiedad     | Valor                                                  |
 | ------------- | ------------------------------------------------------ |
@@ -483,9 +498,9 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 | **Categoría** | Value Object                                           |
 | **Propósito** | Encapsular preferencias de notificaciones del usuario. |
 
-###### Tabla 17
+###### Tabla 54
 
-## Atributos de NotificationSettings
+*Atributos de NotificationSettings en el Domain Layer de Profile and Preferences*
 
 | Nombre     | Tipo de dato | Visibilidad | Descripción                                     |
 | ---------- | ------------ | ----------- | ----------------------------------------------- |
@@ -495,18 +510,15 @@ En la capa de dominio de Profiles and Preferences se modelan las entidades, obje
 
 ---
 
-
-
 #### 4.2.2.2. Profile and Preferences Bounded Context Interface Layer
 
-En la capa de interfaz del Bounded Context de Profiles and Preferences se exponen los endpoints necesarios para gestionar la información de perfil de usuario y sus preferencias personalizadas dentro de la plataforma Macetech. A través de controladores dedicados, esta capa actúa como intermediaria entre las aplicaciones cliente y la lógica de negocio, permitiendo operaciones como la visualización, edición y actualización de datos personales y configuraciones. Su diseño promueve una arquitectura segura, enfocada en mantener una experiencia fluida y adaptable para el usuario sin comprometer la coherencia del sistema.
+En la capa de interfaz del Bounded Context de Profiles and Preferences se exponen los endpoints necesarios para gestionar la información de perfil de usuario y sus preferencias personalizadas dentro de la plataforma de Mushroom. A través de controladores dedicados, esta capa actúa como intermediaria entre las aplicaciones cliente y la lógica de negocio, permitiendo operaciones como la visualización, edición y actualización de datos personales y configuraciones. Su diseño promueve una arquitectura segura, enfocada en mantener una experiencia fluida y adaptable para el usuario sin comprometer la coherencia del sistema.
 
+**ProfileController**
 
-## **ProfileController**
+###### Tabla 55
 
-###### Tabla PRF-1
-
-*Tabla de **ProfileController** en el Interface Layer (Profile)*
+*Descripción de Profile Controller en el Interface Layer de Profile and Preferences*
 
 | Propiedad         | Valor                                                        |
 | ----------------- | ------------------------------------------------------------ |
@@ -516,20 +528,18 @@ En la capa de interfaz del Bounded Context de Profiles and Preferences se expone
 | **Ruta base**     | `/api/v1/profiles`                                           |
 | **Tag (OpenAPI)** | `Profiles`                                                   |
 
-###### Tabla PRF-2
+###### Tabla 56
 
-*Métodos de **ProfileController***
+*Métodos de Profile Controller en el Interface Layer de Profile and Preferences*
 
 | Nombre            | Ruta                     | Acción                                           | Handle                                                      |
 | ----------------- | ------------------------ | ------------------------------------------------ | ----------------------------------------------------------- |
-| getByUserId       | `/{userId}`              | Obtener perfil por `userId`                      | `GetProfileByUserIdQuery` → `profileQueryService.handle`    |
-| updateDisplayName | `/{userId}/display-name` | Actualizar nombre mostrado                       | `UpdateDisplayNameCommand` → `profileCommandService.handle` |
-| updateFullName    | `/{userId}/full-name`    | Actualizar nombre completo (VO)                  | `UpdateFullNameCommand` → `profileCommandService.handle`    |
-| updateAvatar      | `/{userId}/avatar`       | Actualizar avatar                                | `UpdateAvatarCommand` → `profileCommandService.handle`      |
-| updateContact     | `/{userId}/contact`      | Actualizar teléfono u otros datos de contacto    | `UpdateContactInfoCommand` → `profileCommandService.handle` |
-| updatePreferences | `/{userId}/preferences`  | Actualizar preferencias (notifs/locale/timezone) | `UpdatePreferencesCommand` → `profileCommandService.handle` |
-
-
+| getByUserId       | `/{userId}`              | Obtener perfil por `userId`                      | `GetProfileByUserIdQuery` -> `profileQueryService.handle`    |
+| updateDisplayName | `/{userId}/display-name` | Actualizar nombre mostrado                       | `UpdateDisplayNameCommand` -> `profileCommandService.handle` |
+| updateFullName    | `/{userId}/full-name`    | Actualizar nombre completo (VO)                  | `UpdateFullNameCommand` -> `profileCommandService.handle`    |
+| updateAvatar      | `/{userId}/avatar`       | Actualizar avatar                                | `UpdateAvatarCommand` -> `profileCommandService.handle`      |
+| updateContact     | `/{userId}/contact`      | Actualizar teléfono u otros datos de contacto    | `UpdateContactInfoCommand` -> `profileCommandService.handle` |
+| updatePreferences | `/{userId}/preferences`  | Actualizar preferencias (notifs/locale/timezone) | `UpdatePreferencesCommand` -> `profileCommandService.handle` |
 
 ---
 
@@ -537,8 +547,11 @@ En la capa de interfaz del Bounded Context de Profiles and Preferences se expone
 
 La capa de aplicación del Bounded Context de Profiles and Preferences coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se implementan los Command Handlers, Query Handlers y Event Handlers responsables de operaciones como la edición de información personal, actualización de preferencias del usuario y notificación de cambios relevantes. Su rol es garantizar que dichas acciones se ejecuten de forma consistente y transaccional, delegando la lógica central al dominio y apoyándose en la infraestructura cuando sea necesario, manteniendo así la cohesión funcional del sistema.
 
-## UserCreatedEventHandler
-Tabla de UserCreatedEventHandler en el Application Layer de Profile
+**Event Handlers:**
+
+###### Tabla 57
+
+*Descripción de UserCreatedEventHandler en el Aplication Layer de Profile and Preferences*
 
 | Propiedad        | Valor                                            |
 | ---------------- | ------------------------------------------------ |
@@ -548,8 +561,13 @@ Tabla de UserCreatedEventHandler en el Application Layer de Profile
 | **Evento**       | `UserCreated`                  |
 | **Dependencias** | `ProfileRepository` |
 
-## GetProfileByUserIdQueryHandler
-Tabla de GetProfileByUserIdQueryHandler en el Application Layer de Profile
+---
+
+**Query Handlers:**
+
+###### Tabla 58
+
+*Descripción de GetProfileByUserIdQueryHandler en el Application Layer de Profile and Preferences*
 
 | Propiedad        | Valor                                        |
 | ---------------- | -------------------------------------------- |
@@ -559,9 +577,14 @@ Tabla de GetProfileByUserIdQueryHandler en el Application Layer de Profile
 | **Query**        | `GetProfileByUserIdQuery`                    |
 | **Dependencias** | `ProfileQueryRepository`/`ProfileRepository` |
 
+---
 
-## UpdateDisplayNameCommandHandler
-Tabla de UpdateDisplayNameCommandHandler en el Application Layer de Profile
+**Command Handlers:**
+
+###### Tabla 59
+
+*Descripción de UpdateDisplayNameCommandHandler en el Application Layer de Profile and Preferences*
+
 | Propiedad        | Valor                               |
 | ---------------- | ----------------------------------- |
 | **Nombre**       | UpdateDisplayNameCommandHandler     |
@@ -570,18 +593,21 @@ Tabla de UpdateDisplayNameCommandHandler en el Application Layer de Profile
 | **Comando**      | `UpdateDisplayNameCommand`          |
 | **Dependencias** | `ProfileRepository`                 |
 
-## UpdateFullNameCommandHandler
-Tabla de UpdateFullNameCommandHandler en el Application Layer de Profile
+###### Tabla 60
+
+*Descripción de UpdateFullNameCommandHandler en el Application Layer de Profile and Preferences*
+
 | Propiedad        | Valor                        |
 | ---------------- | ---------------------------- |
 | **Nombre**       | UpdateFullNameCommandHandler |
 | **Categoría**    | Command Handler              |
-| **Propósito**    | Actualizar `FullName` (VO)   |
+| **Propósito**    | Actualizar `FullName`    |
 | **Comando**      | `UpdateFullNameCommand`      |
 | **Dependencias** | `ProfileRepository`          |
 
-## UpdateAvatarCommandHandler
-Tabla de UpdateAvatarCommandHandler en el Application Layer de Profile
+###### Tabla 61
+
+*Descripción de UpdateAvatarCommandHandler en el Application Layer de Profile and Preferences*
 
 | Propiedad        | Valor                      |
 | ---------------- | -------------------------- |
@@ -591,8 +617,9 @@ Tabla de UpdateAvatarCommandHandler en el Application Layer de Profile
 | **Comando**      | `UpdateAvatarCommand`      |
 | **Dependencias** | `ProfileRepository`        |
 
-## UpdateContactInfoCommandHandler
-Tabla de UpdateContactInfoCommandHandler en el Application Layer de Profile
+###### Tabla 62
+
+*Descripción de UpdateContactInfoCommandHandler en el Application Layer de Profile and Preferences*
 
 | Propiedad        | Valor                                  |
 | ---------------- | -------------------------------------- |
@@ -602,8 +629,10 @@ Tabla de UpdateContactInfoCommandHandler en el Application Layer de Profile
 | **Comando**      | `UpdateContactInfoCommand`             |
 | **Dependencias** | `ProfileRepository`                    |
 
-## UpdatePreferencesCommandHandler
-Tabla de UpdatePreferencesCommandHandler en el Application Layer de Profile
+###### Tabla 63
+
+*Descripción de UpdatePreferencesCommandHandler en el Application Layer de Profile and Preferences*
+
 | Propiedad        | Valor                                                   |
 | ---------------- | ------------------------------------------------------- |
 | **Nombre**       | UpdatePreferencesCommandHandler                         |
@@ -612,15 +641,17 @@ Tabla de UpdatePreferencesCommandHandler en el Application Layer de Profile
 | **Comando**      | `UpdatePreferencesCommand`                              |
 | **Dependencias** | `ProfileRepository`                                     |
 
+---
 
 #### 4.2.2.4. Profile and Preferences Bounded Context Infrastructure Layer
 
 La capa de infraestructura del Bounded Context de Profile and Preferences sirve como enlace entre la lógica de negocio y los mecanismos técnicos que permiten la persistencia y comunicación con recursos externos. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos, servicios de almacenamiento y otros módulos relevantes que permiten gestionar la información de perfil y preferencias de los usuarios.
 
-Esta capa materializa las abstracciones definidas en el dominio mediante la implementación de repositorios y adaptadores técnicos. Su diseño favorece el desacoplamiento de la lógica central, facilitando la evolución tecnológica sin afectar la integridad del modelo. Asimismo, asegura una gestión consistente, eficiente y segura de los datos personales, configuraciones y preferencias del usuario, en línea con los objetivos funcionales y no funcionales del sistema.
+**Repositorios:**
 
-## ProfileRepository
-Tabla de ProfileRepository en el Infrastructure Layer de Profile
+###### Tabla 64
+
+*Descripción de ProfileRepository en el Infrastructure Layer de Profile and Preferences*
 
 | Propiedad          | Valor                                          |
 | ------------------ | ---------------------------------------------- |
@@ -632,7 +663,9 @@ Tabla de ProfileRepository en el Infrastructure Layer de Profile
 | **Colección**      | `profiles` (MongoDB)                           |
 | **Tecnología**     | `MongoTemplate` (Spring Data MongoDB)          |
 
-Métodos de ProfileRepository (propuestos)
+###### Tabla 65
+
+*Métodos de ProfileRepository en el Infrastructure Layer de Profile and Preferences*
 
 | Método           | Firma                                           | Descripción                                                         |
 | ---------------- | ----------------------------------------------- | ------------------------------------------------------------------- |
@@ -642,11 +675,17 @@ Métodos de ProfileRepository (propuestos)
 | `saveProfile`    | `void saveProfile(Profile profile)`             | Persiste/actualiza un `Profile`.                                    |
 | `existsByUserId` | `boolean existsByUserId(String userId)`         | Verifica existencia por `userId`.                                   |
 
+---
+
 #### 4.2.2.5. Profile and Preferences Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Profiles and Preferences. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías utilizadas y las interacciones entre ellos. Esta representación es fundamental para comprender en detalle cómo se organiza internamente cada parte del sistema, qué funcionalidades asume cada componente, y de qué manera colaboran para gestionar la información personal, preferencias y configuración personalizada del usuario dentro de Mushroom.
 
 Tal como establece el C4 Model, el nivel de componentes representa el cuarto nivel de abstracción en la visualización de arquitecturas de software, y resulta especialmente útil para desarrolladores y arquitectos al ofrecer una visión clara de las decisiones de diseño adoptadas en cada contenedor (Brown, 2023). Este nivel facilita la trazabilidad entre los elementos de alto nivel y su implementación específica, fortaleciendo la mantenibilidad, extensibilidad y coherencia del sistema.
+
+###### Figura 50
+
+*Sección del diagrama de componentes correspondiente al Bounded Context de Profile and Preferences*
 
 
 #### 4.2.2.6. Profile and Preferences Bounded Context Software Architecture Code Level Diagrams
@@ -661,11 +700,11 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 El nivel de detalle incluye la definición de atributos y métodos para cada clase, especificando sus tipos de datos, visibilidad y rol dentro del modelo, así como las relaciones fundamentales entre los distintos elementos del dominio. Estas relaciones se representan con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, lo que permite reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada facilita una comprensión común del modelo conceptual, sirviendo como puente entre el diseño del dominio y su posterior implementación técnica.
 
+###### Figura 51
 
+*Diagrama de clases del Bounded Context de Profile and Preferences*
 
 ![PROFILE CLASS DIAGRAM](../../assets/img/chapter-V//profile-class-diagram.png)
-
-
 
 ##### 4.2.2.6.2. Profile and Preferences Bounded Context Database Design Diagram
 
@@ -675,8 +714,9 @@ El diagrama refleja las relaciones entre las distintas tablas o entidades, indic
 
 Esta visualización resulta esencial para asegurar la coherencia entre el modelo conceptual y su implementación en la capa de persistencia, contribuyendo a una arquitectura sólida, escalable y alineada con los requerimientos funcionales y no funcionales del sistema.
 
-###### Figura 89
-*Diagrama de base de datos del Bounded Context de Profile and Preferences*
+###### Figura 52
+
+*Sección del diagrama entidad-relación correspondiente al Bounded Context de Profile and Preferences*
 
 <image src="../assets/img/capitulo-4/bounded-context-profile-and-personal-data/database-diagram-profile-and-personal-data.png"></image>
 
@@ -684,15 +724,17 @@ Esta visualización resulta esencial para asegurar la coherencia entre el modelo
 
 ### 4.2.3. Bounded Context: Asset and Resource Management
 
-
 En el contexto táctico, el Bounded Context Asset & Resource Management agrupa la funcionalidad asociada al catálogo y selección de puertos dentro de Mushroom. Este módulo expone los puertos con su identidad, nombre, continente y coordenadas, provee endpoints para listar/consultar puertos y habilita la selección de origen/destino (y opcionalmente intermedios) como paso previo a la visualización y cálculo de rutas. De manera complementaria, la interfaz de usuario consume un contrato de puertos cercanos/estado para apoyar la toma de decisiones operativas.  
 
 #### 4.2.3.1. Asset and Resource Management Bounded Context Domain Layer
-En la capa de dominio de Asset & Resource Management se definen las entidades y objetos de valor fundamentales relacionados con los puertos y mapas de navegación presentados en la aplicación. Esta capa encapsula las reglas de negocio desde la definición de cada puerto y su ubicación exacta, la revisión del estado de cada puerto y la selección de un puerto de inicio y uno final. Además, en este nivel se ubican los Domain Services encargados de la entrega de información de cada puerto específico para su visualización por el usuario, asegurando coherencia, integridad y rendimiento.
-**Port**
 
-###### Tabla 1
-_Tabla de Port en el Domain Layer de ARM_
+En la capa de dominio de Asset & Resource Management se definen las entidades y objetos de valor fundamentales relacionados con los puertos y mapas de navegación presentados en la aplicación. Esta capa encapsula las reglas de negocio desde la definición de cada puerto y su ubicación exacta, la revisión del estado de cada puerto y la selección de un puerto de inicio y uno final. Además, en este nivel se ubican los Domain Services encargados de la entrega de información de cada puerto específico para su visualización por el usuario, asegurando coherencia, integridad y rendimiento.
+
+**Port:**
+
+###### Tabla 66
+
+*Descripción de Port en el Domain Layer de Asset and Resource Management*
 
 | Propiedad     | Valor                                                                                                   |
 |---------------|---------------------------------------------------------------------------------------------------------|
@@ -700,8 +742,9 @@ _Tabla de Port en el Domain Layer de ARM_
 | **Categoría** | Entity                                                                                                  |
 | **Propósito** | Representa un puerto del catálogo maestro, con datos mínimos para selección y referencia geográfica.   |
 
-###### Tabla 2
-_Atributos de Port (alineado a `PortResource`)_
+###### Tabla 67
+
+*Atributos de Port en el Domain Layer de Asset and Resource Management*
 
 | Nombre                | Tipo de dato | Visibilidad | Descripción                         |
 |-----------------------|--------------|-------------|-------------------------------------|
@@ -711,10 +754,13 @@ _Atributos de Port (alineado a `PortResource`)_
 | coordinates.longitude | `number`     | private     | Longitud                            |
 | continent             | `string`     | private     | Continente                          |
 
-**GeoPoint (coordinates)**
+---
 
-###### Tabla 3
-_Tabla de GeoPoint_
+**GeoPoint (coordinates):**
+
+###### Tabla 68
+
+*Descripción de GeoPoint en el Domain Layer de Asset and Resource Management*
 
 | Propiedad     | Valor                                 |
 |---------------|---------------------------------------|
@@ -722,20 +768,24 @@ _Tabla de GeoPoint_
 | **Categoría** | Value Object                          |
 | **Propósito** | Encapsular `latitude` y `longitude`.  |
 
-###### Tabla 4
-_Atributos de GeoPoint_
+###### Tabla 69
+
+*Atributos de GeoPoint en el Domain Layer de Asset and Resource Management*
 
 | Nombre    | Tipo de dato | Visibilidad | Descripción |
 |-----------|--------------|-------------|-------------|
 | latitude  | `number`     | private     | Latitud     |
 | longitude | `number`     | private     | Longitud    |
 
-**PortStatus (Near-by / Estado)**
+---
 
-> La UI utiliza un servicio `NearbyPortService` que espera una lista de puertos cercanos con estado (`open/closed`), distancia y facilidades. Este contrato de front se mapea a entidad de estado/puerto cercano.
+**PortStatus:**
 
-###### Tabla 5
-_Tabla de PortStatus/NearbyPort en el Domain Layer de ARM_
+La UI utiliza un servicio `NearbyPortService` que espera una lista de puertos cercanos con estado (`open/closed`), distancia y facilidades. Este contrato de front se mapea a entidad de estado/puerto cercano.
+
+###### Tabla 70
+
+*Descripción de PortStatus en el Domain Layer de Asset and Resource Management*
 
 | Propiedad     | Valor                                                                                                   |
 |---------------|---------------------------------------------------------------------------------------------------------|
@@ -743,8 +793,9 @@ _Tabla de PortStatus/NearbyPort en el Domain Layer de ARM_
 | **Categoría** | Entity                                                                                                  |
 | **Propósito** | Representar el **estado operativo** y metadatos de puertos cercanos a una posición/vessel.              |
 
-###### Tabla 6
-_Atributos de PortStatus/NearbyPort (según la UI)_
+###### Tabla 71
+
+*Atributos de PortStatus en el Domain Layer de Asset and Resource Management*
 
 | Nombre       | Tipo de dato                   | Visibilidad | Descripción                                           |
 |--------------|--------------------------------|-------------|-------------------------------------------------------|
@@ -759,12 +810,15 @@ _Atributos de PortStatus/NearbyPort (según la UI)_
 | maxDepth     | `number`                        | private     | Calado máximo                                         |
 | contactInfo  | `{ phone,email,vhfChannel }`    | private     | Datos de contacto                                     |
 
-**SelectionSession**
+---
 
-> La UI mantiene una sesión de selección de origen/destino e intermedios para iniciar cálculo/visualización de ruta. Se modela como aggregate para mantener consistencia local.
+**SelectionSession:**
 
-###### Tabla 7
-_Tabla de SelectionSession en el Domain Layer de ARM_
+La UI mantiene una sesión de selección de origen/destino e intermedios para iniciar el cálculo y visualización de ruta. Se modela como aggregate para mantener consistencia local.
+
+###### Tabla 72
+
+*Descripción de SelectionSession en el Domain Layer de Asset and Resource Management*
 
 | Propiedad     | Valor                                                                                                                 |
 |---------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -772,8 +826,9 @@ _Tabla de SelectionSession en el Domain Layer de ARM_
 | **Categoría** | Aggregate Root                                                                                                        |
 | **Propósito** | Gestionar la **selección de puertos** (origen/destino/intermedios) del usuario y marcar la sesión lista para ruteo.  |
 
-###### Tabla 8
-_Atributos de SelectionSession_
+###### Tabla 73
+
+*Atributos de SelectionSession en el Domain Layer de Asset and Resource Management*
 
 | Nombre                | Tipo de dato   | Visibilidad | Descripción                                                 |
 |-----------------------|----------------|-------------|-------------------------------------------------------------|
@@ -785,8 +840,9 @@ _Atributos de SelectionSession_
 | createdAt             | `DateTime`     | private     | Fecha de creación                                           |
 | updatedAt             | `DateTime`     | private     | Última actualización                                        |
 
-###### Tabla 9
-_Métodos de SelectionSession_
+###### Tabla 74
+
+*Métodos de SelectionSession en el Domain Layer de Asset and Resource Management*
 
 | Nombre            | Tipo de retorno | Visibilidad | Descripción                                             |
 |-------------------|-----------------|-------------|---------------------------------------------------------|
@@ -798,10 +854,13 @@ _Métodos de SelectionSession_
 | validateReadiness | `boolean`       | public      | Verifica que origen y destino existan y no sean iguales |
 | markReady         | `void`          | public      | Establece `readyForRouting = true`                      |
 
-**Repositorios (interfaces)**
+---
 
-###### Tabla 10
-_Tabla de repositorios del Domain Layer de ARM_
+**Repositorios (interfaces):**
+
+###### Tabla 75
+
+*Descripción de las Interfaces de los Repositorios en el Domain Layer de Asset and Resource Management*
 
 | Nombre                       | Categoría  | Propósito                                |
 |-----------------------------|------------|------------------------------------------|
@@ -809,26 +868,31 @@ _Tabla de repositorios del Domain Layer de ARM_
 | PortStatusRepository        | Repository | Persistencia/consulta de `PortStatus`    |
 | SelectionSessionRepository  | Repository | Persistencia/consulta de `SelectionSession` |
 
-**Eventos de dominio (principales)**
+---
 
-###### Tabla 11
-_Tabla de eventos de dominio en ARM_
+**Eventos de dominio:**
+
+###### Tabla 76
+
+*Listado de eventos de dominio en el Domain Layer de Asset and Resource Management*
 
 | Evento                  | Descripción                                         |
 |------------------------|-----------------------------------------------------|
 | PortCatalogUpdated     | Actualización de catálogo de puertos                |
 | PortStatusChanged      | Cambio de estado de un puerto                       |
 | PortSelectionCompleted | Selección válida (origen/destino) lista para ruteo  |
+
 ---
 
 #### 4.2.3.2. Asset and Resource Management Bounded Context Interface Layer
 
 En la capa de interfaz del Bounded Context de Asset & Resource Management se exponen los endpoints necesarios para gestionar la información relacionada a cada puerto integrado en la página de Mushroom. Su diseño promueve una separación clara de responsabilidades, orquestando de forma eficiente comandos y consultas, al tiempo que garantiza trazabilidad, disponibilidad y consistencia de los recursos gestionados.
 
-**PortController (backend, código real)**
+**PortController:**
 
-###### Tabla 12
-_Tabla de PortController en el Interface Layer de ARM_
+###### Tabla 77
+
+*Descripción de PortController en el Interface Layer de Asset and Resource Management*
 
 | Propiedad     | Valor                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------|
@@ -838,8 +902,9 @@ _Tabla de PortController en el Interface Layer de ARM_
 | **Produces**  | `application/json`                                                                        |
 | **Descripción** | Endpoints REST para gestionar el catálogo de puertos.                                    |
 
-###### Tabla 13
-_Métodos expuestos por PortController (del código real)_
+###### Tabla 78
+
+*Métodos de PortController en el Interface Layer de Asset and Resource Management*
 
 | Método   | Ruta                         | Acción                                | Request body            | Response / Status                  |
 |----------|------------------------------|----------------------------------------|-------------------------|------------------------------------|
@@ -849,10 +914,13 @@ _Métodos expuestos por PortController (del código real)_
 | `DELETE` | `/api/ports/{portId}`        | Eliminar un puerto por **ID**          | —                       | `204 No Content`                   |
 | `GET`    | `/api/ports/all-ports`       | Listar **todos los puertos**           | —                       | `List<PortResource>` — `200 OK`    |
 
-**DTOs del back (código real)**
+---
 
-###### Tabla 14
-_`CreatePortResource`_
+**DTOs:**
+
+###### Tabla 79
+
+*DTO de CreatePortResource en el Interface Layer de Asset and Resource Management*
 
 | Campo        | Tipo               | Obligatorio | Descripción                 |
 |--------------|--------------------|-------------|-----------------------------|
@@ -860,8 +928,9 @@ _`CreatePortResource`_
 | coordinates  | `CoordinatesResource` | Sí       | Lat/Long                    |
 | continent    | `String`           | Sí          | Continente                  |
 
-###### Tabla 15
-_`PortResource`_
+###### Tabla 80
+
+*DTO de PortResource en el Interface Layer de Asset and Resource Management*
 
 | Campo        | Tipo                  | Descripción                           |
 |--------------|-----------------------|---------------------------------------|
@@ -870,19 +939,23 @@ _`PortResource`_
 | coordinates  | `CoordinatesResource` | Lat/Long                              |
 | continent    | `String`              | Continente                            |
 
-**Nearby Ports / Estado (frontend, código real)**
+---
 
-> En el front, `NearbyPortService` consulta `GET {environment.apiUrl}/api/v1/vessels/{vesselId}/nearby-ports` y espera un `NearbyPort[]`. Este es el **contrato consumido por la UI** para estado/puertos cercanos.
+**Nearby Ports:**
 
-###### Tabla 16
-_Contrato esperado por la UI (Nearby Ports)_
+En el frontend, `NearbyPortService` consulta `GET {environment.apiUrl}/api/v1/vessels/{vesselId}/nearby-ports` y espera un `NearbyPort[]`. Este es el **contrato consumido por la UI** para estado/puertos cercanos.
+
+###### Tabla 81
+
+*Contrato esperado por la UI de Nearby Ports en el Interface Layer de Asset and Resource Management*
 
 | Método | Ruta (consumida por el front)                        | Acción                                   | Response           |
 |--------|-------------------------------------------------------|------------------------------------------|--------------------|
 | `GET`  | `/api/v1/vessels/{vesselId}/nearby-ports`            | Puertos cercanos + estado/facilities     | `NearbyPort[]`     |
 
-###### Tabla 17
-_DTO `NearbyPort` esperado por la UI_
+###### Tabla 82
+
+*DTO de nearbyPort en el Interface Layer de Asset and Resource Management*
 
 | Campo        | Tipo                                                     |
 |--------------|----------------------------------------------------------|
@@ -897,12 +970,13 @@ _DTO `NearbyPort` esperado por la UI_
 | maxDepth     | `number`                                                 |
 | contactInfo  | `{ phone: string; email: string; vhfChannel: string }`   |
 
-**Selección de Puertos en la UI (frontend, código real)**
+**Selección de Puertos:**
 
-> `PortSelectorComponent` consume `PortService.getAllPorts()` para poblar **origen/destino** e **intermedios**, y dispara la visualización/cálculo de rutas mediante `RouteService`.
+`PortSelectorComponent` consume `PortService.getAllPorts()` para poblar **origen/destino** e **intermedios**, y dispara la visualización/cálculo de rutas mediante `RouteService`.
 
-###### Tabla 18
-_Interacciones UI relevantes_
+###### Tabla 83
+
+*Interacciones de PortSelectorComponent en el Interface Layer de Asset and Resource Management*
 
 | UI / Servicio                             | Propósito                                                                 |
 |-------------------------------------------|---------------------------------------------------------------------------|
@@ -916,15 +990,17 @@ _Interacciones UI relevantes_
 
 La capa de aplicación del Bounded Context de Asset & Resource Management coordina el flujo de trabajo entre la interfaz y el dominio, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones como el registro, actualización y seguimiento del estado de los puertos de Mushroom, así como el procesamiento de eventos vinculados a sus estados y ubicación exacta. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
 
-**Servicio de aplicación invocado por el Controller (backend)**
+**PortService:**
 
-###### Tabla 19
-_Tabla de servicios de aplicación invocados por el `PortController`_
+###### Tabla 84
+
+*Descripción de PortService en el Application Layer de Asset and Resource Management*
 
 | Servicio       | Método(s) en el Controller                                        | Propósito                                   |
 |----------------|--------------------------------------------------------------------|---------------------------------------------|
 | `PortService`  | `createPort(...)`, `getPortById(...)`, `getPortByName(...)`, `deletePort(...)`, `getAllPorts()` | Orquestar la lógica de gestión de puertos   |
 
+---
 
 #### 4.2.2.4. Asset and Resource Management Bounded Context Infrastructure Layer
 
@@ -934,15 +1010,15 @@ Esta capa concreta las abstracciones del dominio a través de implementaciones d
 
 **Repositorios:**
 
-###### Tabla 18
+###### Tabla 85
 
-*Listado de repositorios en el Infrastructure Layer de Asset and Resource Management*
+*Listado de Repositorios en el Infrastructure Layer de Asset and Resource Management*
 
 |Nombre|	Categoría	|Propósito	|Interfaz|
 |-|-|-|-|
 |PortRepository	|Repositorio	|Persistir y consultar documentos ports|	IPortRepository|
 
-###### Tabla 19
+###### Tabla 86
 
 *Métodos de IPortRepository en el Infrastructure Layer de Asset and Resource Management*
 
@@ -953,22 +1029,31 @@ Esta capa concreta las abstracciones del dominio a través de implementaciones d
 |save(port, session?)	|void|	Persiste aggregate (usar session para transacciones).|
 |updateStatus(portId, newStatus, actor, session?)|	void|	Actualiza estado con control optimista.|
 
+---
+
 **Implementaciones MongoDB:**
 
-###### Tabla 20
+###### Tabla 87
 
-**Tabla de colecciones y notas de implementación para MongoDB**
+*Tabla de colecciones y notas de implementación para MongoDB en el Infrastructure Layer de Asset and Resource Management*
 
 |Componente	|Colección|	Notas|
 |-|-|-|
 |Ports	|ports|	Documento Port. Índice único code. Índice 2dsphere en location. Campos createdAt y updatedAt. version para control optimista.|
 |Ports read|	ports_read	|Denormalización con resumen y geometría simplificada para UI; actualizada por event handlers.|
 
+---
+
 #### 4.2.3.5. Asset and Resource Management Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Asset and Resource Management. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión de de puertos y sus ubicaciones en mapa dentro de Mushroom.
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
+
+###### Figura 53
+
+*Sección del diagrama de componentes correspondiente al Bounded Context de Asset and Resource Management*
+
 
 #### 4.2.3.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
 
@@ -984,8 +1069,9 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
-###### Figura 93
-*Diagrama de clases de la capa de dominio del Bounded Context de Asset and Resource Management*
+###### Figura 54
+
+*Diagrama de clases del Bounded Context de Asset and Resource Management*
 
 ![DiagramaClasesARM](../../assets/img/chapter-V/DiagramaClasesARM.png)
 
@@ -997,12 +1083,16 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
-###### Figura 94
-*Diagrama de base de datos del Bounded Context de Asset and Resource Management*
+###### Figura 55
+
+*Sección del diagrama entidad-relación correspondiente al Bounded Context de Asset and Resource Management*
 
 <image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
 
+---
+
 ### 4.2.4. Bounded Context: A*/AI Process
+
 En el contexto táctico, el Bounded Context A/AI process* concentra la funcionalidad asociada al cálculo de rutas óptimas y a la predicción climática que complementa la experiencia de navegación. Este módulo encapsula la lógica del algoritmo A* para determinar la ruta mínima entre puntos definidos, integrando además un componente de inteligencia artificial orientado a anticipar condiciones meteorológicas que puedan afectar la planificación del trayecto.
 
 El proceso se apoya en datos obtenidos de APIs externas, que pueden proveer información climática en tiempo real o registros históricos especializados, según se defina en etapas posteriores del proyecto. A partir de esta información, el sistema ajusta dinámicamente las rutas propuestas, otorgando a los navegantes un soporte predictivo que incrementa tanto la eficiencia como la seguridad del recorrido.
@@ -1011,15 +1101,24 @@ De esta forma, el bounded context actúa como el núcleo de cálculo y predicci�
 
 #### 4.2.4.1. A*/AI Process Bounded Context Domain Layer
 
-Route:
-*Tabla de Route en el Domain Layer de A*/AI process*
+En la capa de dominio de A*/AI Process se definen las entidades y objetos de valor fundamentales relacionados con las rutas de navegación específicas entre puertos del mapa. Esta capa encapsula las reglas de negocio desde las especificaciones de cada ruta obtenida, los algoritmos utilizados para definir la mejor ruta y la información externa que puede involucrar el análisis de ML.
+
+**Route:**
+
+###### Tabla 88
+
+*Descripción de Route en el Domain Layer de A/AI process*
+
 | Propiedad   | Valor   |
 |-------------|---------|
 | Nombre | Route |
 | Categoría | Aggregate Root |
 | Propósito | Representar una ruta calculada por el algoritmo A*, incluyendo nodos, distancia y costo total. |
 
-*Tabla de Route en el Domain Layer de A*/AI process*
+###### Tabla 89
+
+*Atributos de Route en el Domain Layer de A/AI process*
+
 | Nombre | Tipo de dato | Visibilidad | Descripción |
 |--------|--------------|-------------|-------------|
 | Id | UUID | private | Identificador único de la ruta |
@@ -1028,22 +1127,34 @@ Route:
 | Cost | double | private | Costo acumulado según heurística A* |
 | CreatedAt | DateTime | private | Fecha en que fue calculada la ruta |
 
-*Tabla de métodos de Route en el Domain Layer de A*/AI process*
+###### Tabla 90
+
+*Métodos de Route en el Domain Layer de A/AI process*
+
 | Nombre | Tipo de retorno | Visibiilidad | Descripción |
 |--------|-----------------|--------------|-------------|
 | CalculateCost | void | public | Recalcula el costo total de la ruta |
 | AddNode | void | public | Agrega un nodo al trayecto de la ruta |
 | Optimize | void | public | Permite optimizar el orden de los nodos |
 
-Node:
-*Tabla de Node en el Domain Layer de A*/AI process*
+---
+
+**Node:**
+
+###### Tabla 91
+
+*Descripción de Node en el Domain Layer de A/AI process*
+
 | Propiedad   | Valor   |
 |-------------|---------|
 | Nombre | Node |
 | Categoría | Entity |
 | Propósito | Representar un punto geográfico o de grafo en el cálculo de rutas. |
 
-*Tabla de atributos de Node en el Domain Layer de A*/AI process*
+###### Tabla 92
+
+*Atributos de Node en el Domain Layer de A/AI process*
+
 | Nombre    | Tipo de dato | Visibilidad | Descripción |
 |-----------|--------------|-------------|-------------|
 | Id        | UUID         | private     | Identificador único del nodo |
