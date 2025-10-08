@@ -90,12 +90,14 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
 
 ### 1.1.2. Perfiles de Integrantes del equipo
 
+En esta sección se describen los perfiles de los integrantes clave del equipo de TeemoSolutions responsables del desarrollo de Mushroom. Cada perfil incluye la formación académica, los conocimientos de cada uno y las responsabilidades dentro del proyecto, con el fin de resaltar las competencias que impulsan la innovación en nuestra startup.
+
 <table>
   <tr>
   <th colspan="2">Mallma Quispe, Ruben Elias</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/rub-wus-here-lmao.png" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/profiles/ruben-mallma-profile.png" style="width:700px; height:auto;" alt=""></td>
     <td>Estudiante de 8vo ciclo de ingeniería de software en la UPC. Me percibo como rápido, sencillo y proactivo. Si alguien está leyendo esto, espero que tengas un muy buen día. Ayer fui a pasear y me di cuenta que no tengo tiempo: ¿qué hago paseando cuanto tengo muchas cosas que hacer? Pero aún así decidí pasear porque me hizo feliz por unos momentos.</td>
   </tr>
 
@@ -103,7 +105,7 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
     <th colspan="2">Riega Salas, Jose Miguel</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Jose-Riega.jpg" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/profiles/jose-riega-profile.jpg" style="width:700px; height:auto;" alt=""></td>
     <td>Estudiante de 7mo ciclo de ingeniería de software en la UPC. Autopercibido como polivalente y responsable con aprendizaje continuo.
 
   Poseo conocimientos en C + +, HTML, Javascript, Python, desarrollo de aplicaciones web y metodologías ágiles. Mis objetivos son concretarse y seguir aprendiendo y ejerciendo mi carrera desarrollándome a nivel personal y profesional.</td>
@@ -113,7 +115,7 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   <th colspan="2">Sanchez Zamora, Fabrizio Alessandro</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Fabrizio-Sanchez.png" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/profiles/fabrizio-sanchez-profile.png" style="width:700px; height:auto;" alt=""></td>
     <td>Mi nombre es Fabrizio Alessandro Sanchez Zamora con código de estudiante U202213652, soy estudiante de Ingeniería de Software. Entre mis conocimientos se encuentran el manejo de lenguajes de programacion como C++, JavaScript y Python, asi como también se manejar SQL, Html y CSS. Como miembro del equipo, me comprometo a colaborar con mis compañeros para poder presentar un buen proyecto grupal</td>
   </tr>
 
@@ -121,7 +123,7 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
   <th colspan="2">Trigueros Chumacero, Flavio Eduardo</th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Flavio.png" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/profiles/flavio-trigueros-profile.png" style="width:700px; height:auto;" alt=""></td>
     <td>Mi nombre es Flavio Eduardo Trigueros Chumacero, estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas en el 8° ciclo, con código de alumno U202210190. Me considero una persona meticulosa y profundamente dedicada, con un firme compromiso hacia la mejora continua en todas las áreas de mi trabajo. Mi enfoque detallista y preciso me permite avanzar de manera eficiente y ágil en los proyectos, con especial énfasis en la documentación, la identificación de errores y la detección de oportunidades de mejora.<br>Además, cuento con un amplio conocimiento en diversas áraes como Scrum y Ciberseguridad, y lenguajes de programación, incluyendo JavaScript, Python, HTML, CSS, MySQL, MongoDB, Flutter, y GitHub, entre otros. Estas competencias no solo son valiosas para el resultado del curso, sino que también aseguran un desarrollo favorable y multidisciplinario a lo largo del proyecto.</td>
   </tr>
 
@@ -129,16 +131,16 @@ Diseñamos para quienes operan en la práctica. Nuestras interfaces y flujos pri
     <th colspan="2">Valenzuela Huillcaya, Aldhair Johan Juan </th>
   </tr>
   <tr>
-    <td><img src="../../assets/img/chapter-I/Aldhair.png" style="width:700px; height:auto;" alt=""></td>
+    <td><img src="../../assets/img/chapter-I/profiles/aldhair-valenzuela-profile.png" style="width:700px; height:auto;" alt=""></td>
     <td>Soy estudiante de 8vo ciclo de la carrera Ingeniería de Software, con conocimientos en .NET, SQL Server, Flutter y desarrollo web. He participado en proyectos académicos y personales, aplicando metodologías ágiles y buenas prácticas de programación. Me caracterizo por ser responsable, colaborativo y aportar soluciones prácticas para cumplir los objetivos del equipo.</td>
   </tr>
 </table>
 
 ## 1.2. Solution Profile
 
-En Teemo Solutions diseñamos Mushroom como una plataforma integral pensada para enfrentar de forma práctica y escalable los retos que hoy condicionan el ruteo marítimo: pérdida de visibilidad operacional, riesgos de seguridad en corredores críticos y elevada volatilidad de costos que obligan a desviarse a rutas mucho más largas (United Nations Conference on Trade and Development, 2024; International Maritime Organization, 2024). Mushroom combina ingestión y mezcla de fuentes, modelado predictivo y un motor de optimización multi-criterio para ofrecer rutas recomendadas y alternativas evaluadas según tiempo estimado, coste proyectado, probabilidad de riesgo y métricas de sostenibilidad (emisiones estimadas). 
+En TeemoSolutions diseñamos Mushroom como una plataforma integral pensada para enfrentar de forma práctica y escalable los retos que hoy condicionan el ruteo marítimo: pérdida de visibilidad operacional, riesgos de seguridad en corredores críticos y elevada volatilidad de costos que obligan a desviarse a rutas mucho más largas (United Nations Conference on Trade and Development, 2024; International Maritime Organization, 2024). Mushroom combina ingestión y mezcla de fuentes, modelado predictivo y un motor de optimización multi-criterio para ofrecer rutas recomendadas y alternativas evaluadas según tiempo estimado, coste proyectado, probabilidad de riesgo y métricas de sostenibilidad (emisiones estimadas). 
 
-Funcionalidades principales de Mushroom:
+**Funcionalidades principales de Mushroom:**
 
 1.  Ingestión y normalización de datos, enlazada con feeds meteorológicos, avisos de autoridades, reportes de incidentes y datos portuarios para generar un contexto operativo unificado en tiempo real.<br><br>
 
@@ -154,7 +156,16 @@ Mushroom se concibe no solo como una herramienta de optimización, sino como un 
 
 ### 1.2.1. Antecedentes y Problemática
 
-Los antecedentes son esenciales para una comprensión profunda de la problemática que Teemo Solutions busca abordar. Para ello, se ha aplicado la técnica de análisis "5W 2H" (Who, What, Where, When, Why, How & How Much), que permite estructurar el diagnóstico de la situación desde distintas perspectivas clave:
+En los últimos años el transporte marítimo ha mostrado una doble cara: por un lado sigue siendo la columna vertebral del comercio internacional (más del 80 % del volumen global se mueve por mar), pero por otro lado la fragilidad de sus rutas ante tensiones geopolíticas, interrupciones operativas y variabilidad climática ha quedado patente. Desde finales de 2023 y durante 2024 se registraron episodios concentrados en corredores estratégicos, sobre todo en el Mar Rojo, que elevaron la percepción de riesgo, motivaron desvíos masivos y generaron efectos medibles en precios, tiempos y disponibilidad de espacio en los puertos (United Nations Conference on Trade and Development, 2024; International Maritime Organization, 2024). 
+
+Estos hechos han mostrado que la falta de visibilidad en tiempo real, la carencia de estimaciones confiables de tiempo y riesgo por tramo, y la ausencia de motores de decisión que integren múltiples criterios (tiempo, coste, riesgo y emisiones) convierten al ruteo marítimo en un punto crítico de vulnerabilidad para cadenas logísticas enteras.
+
+Frente a este escenario, resulta imperativo analizar en detalle las causas subyacentes a los problemas marítimos presentados. Con ello, se utilizará el modelo práctico de las 5Ws y 2Hs, el cual servirá de base para diseñar soluciones integrales, como una aplicación de identificación de las mejores rutas con integración de distintos factores con ML, para el apoyo a las necesidades de los usuarios, tanto los embarcaderos como los capitanes de barco.
+
+###### Tabla 1
+*Aplicación de la metodología de las 5Ws y 2Hs para el análisis de antecedentes y la identificación de la problemática del proyecto*
+
+|Guía de las 5Ws y 2Hs	|Preguntas	|Descripción|
 
 1. **What (¿Qué está ocurriendo?):**
 El comercio marítimo global se encuentra en una situación crítica debido a crecientes tensiones geopolíticas, especialmente en el corredor del Mar Rojo. Esta inestabilidad ha generado interrupciones severas en las rutas tradicionales, ocasionando incrementos en los costos logísticos, tiempos de entrega impredecibles y una sobrecarga significativa en rutas alternativas, como la que rodea el Cabo de Buena Esperanza. Las empresas se ven obligadas a replantear sus estrategias de inventario, distribución y planificación operativa.
