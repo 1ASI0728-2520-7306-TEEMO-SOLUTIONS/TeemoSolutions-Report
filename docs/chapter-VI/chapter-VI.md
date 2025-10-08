@@ -6,16 +6,16 @@ En esta seccion definiremos los estilos de diseño frontend que serán la base p
 #### 6.1.1.	General Style Guidelines.
 **Branding:** El branding del logo de nuestra plataforma “Mushroom” es una combinación de elementos que transmiten una imagen sólida y confiable. Nos enfocamos en la confianza de nuestro clientes al momento de tomar un servicio prestado. El nombre “Mushroom” se presenta en una tipografía elegante y profesional, mientras que la paleta de colores crea un contraste visual claro y transmite una sensación de miminalismo y profesionalismo. En resumen, este logo tiene un enfoque clásico y profesional, y podría ser un elemento distintivo en nuestro sitio web.
 
-<img src="../../assets/img/chapter-IV/Logo Mushroom.png" style="width:300px; height:auto;" alt="logo mushroom">
+<img src="../../assets/img/chapter-VI/Logo Mushroom.png" style="width:300px; height:auto;" alt="logo mushroom">
 
 **Typography:** Al seleccionar la tipografía para nuestro proyecto, hemos optado por utilizar Roboto siguiendo las pautas de estilo general. Ya que ofrece una combinación única de legibilidad, versatilidad y modernidad que se alinea perfectamente con la identidad visual y los objetivos de Mushroom. Su diseño limpio y contemporáneo proporciona una excelente lectura en una amplia gama de dispositivos, lo que garantiza una experiencia de usuario óptima para nuestros clientes, que incluyen tanto agencias de embarcaciones navieras como exportadores e importadores de alta rotacion.
 
-<img src="../../assets/img/chapter-IV/Tipografia.png" style="width:700px; height:auto;" alt="tipography">
+<img src="../../assets/img/chapter-VI/Tipografia.png" style="width:700px; height:auto;" alt="tipography">
 
 **Colors:** Hemos escogido una paleta basada en colores suaves y elegantes, algo fríos para dar sensación de premium . De tal modo, estos generan un ambiente profesional y acogedor para el usuario final.
 Los tonos más claros pueden ser utilizados para fondos o elementos de diseño amplios, mientras que los colores más oscuros serán para textos o detalles más específicos asegurando legibilidad y contraste entre ellos.
 
-<img src="../../assets/img/chapter-IV/Styles colors.png" style="width:700px; height:auto;" alt="colors">
+<img src="../../assets/img/chapter-VI/Styles colors.png" style="width:700px; height:auto;" alt="colors">
 
 #### 6.1.2.	Web, Mobile & Devices Style Guidelines.
 - Web Style Guidelines
@@ -144,129 +144,129 @@ Landing Page:
 El desarrollo del UI Design de la Landing Page está en el siguiente link: https://www.figma.com/design/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=0-1&p=f&t=xftwdiVWdTtj2j2G-0
 
 #### 6.3.1.	Landing Page Wireframe.
-<img src="../../assets/img/chapter-IV/wireframe-landing.jpg" style="width:700px; height:auto;" alt="wireframe landing page">
+<img src="../../assets/img/chapter-VI/wireframe-landing.jpg" style="width:700px; height:auto;" alt="wireframe landing page">
 
 #### 6.3.2.	Landing Page Mock-up.
-<img src="../../assets/img/chapter-IV/mockup-landing.jpg" style="width:700px; height:auto;" alt="mock up landing page">
+<img src="../../assets/img/chapter-VI/mockup-landing.jpg" style="width:700px; height:auto;" alt="mock up landing page">
 
 ### 6.4.	Applications UX/UI Design.
 #### 6.4.1.	Applications Wireframes.
 - Mobile Applications Wireframes
 
 - **El login y registro de usuarios:**
-<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Applications Wireframes 1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Todas los servicios que ofrece nuestra aplicacion:**
-<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Applications Wireframes 2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Todos los testimonios de otros usuarios:**
-<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Applications Wireframes 3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Seccion de contacto para con los administradores de la aplicacion:**
-<img src="../../assets/img/chapter-IV/Mobile Applications Wireframes 4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Applications Wireframes 4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - Web Applications Wireframes
-<img src="../../assets/img/chapter-IV/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/wireframe-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/wireframe-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/wireframe-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/wireframe-web-home.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/wireframe-web-home.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 
 #### 6.4.2.	Applications Wireflow Diagrams.
 - Mobile Applications Wireflow Diagrams
 
 - **Usuario que desea saber en tiempo real cual será la mejor ruta para el viaje que desea hacer**
-<img src="../../assets/img/chapter-IV/Wireflow diagram1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Usuario que desea saber algunas predicciones a posibles contratiempos que pueda sufrir la embarcacion:**
     
-<img src="../../assets/img/chapter-IV/Wireflow diagram2.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram2.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Usuario que desea recibir notificaciones o alertas de tormenta o problemas con el clima:**
 
-<img src="../../assets/img/chapter-IV/Wireflow diagram3.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram3.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Usuario que desea saber el costo posible del viaje para optimizar la ruta en base a costos:**
 
-<img src="../../assets/img/chapter-IV/Wireflow diagram4.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram4.png " style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Usuario que ademas de la ruta principal desea una ruta alternativa para poder saber cual es el mejor planteamiento de ruta:**
 
-<img src="../../assets/img/chapter-IV/Wireflow diagram5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Usuario que desea saber datos estadisticos de sus viajes:**
 
-<img src="../../assets/img/chapter-IV/Wireflow diagram6.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Wireflow diagram6.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - Web Applications Wireflow Diagrams
 
 - Inicio de sesión: El usuario debe ingresar a la plataforma, en esa sección se le muestra la opción de inicio de sesión y registrarse, al iniciar sesión ingresa a la plataforma.
 
-<img src="../../assets/img/chapter-IV/wireflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/wireflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 
 #### 6.4.2.	Applications Mock-ups.
 - Mobile Applications Mock-ups
 
 - **El login y registro de usuarios:**
-<img src="../../assets/img/chapter-IV/Mobile Mockup1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Mockup1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Todas los servicios que ofrece nuestra aplicacion:**
-<img src="../../assets/img/chapter-IV//Mobile Mockup2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI//Mobile Mockup2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Todos los testimonios de otros usuarios:**
-<img src="../../assets/img/chapter-IV/Mobile Mockup3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Mockup3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **Seccion de contacto para con los administradores de la aplicacion:**
-<img src="../../assets/img/chapter-IV/Mobile Mockup4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/Mobile Mockup4.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 
 - Web Applications Mock-ups
 
-<img src="../../assets/img/chapter-IV/mock-up-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-web-first.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-web-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-web-dashboard.png" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-web-dashboard.png" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-nearby-ports.png" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-nearby-ports.png" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-new-route.png" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-new-route.png" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-route-history.png" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-route-history.png" style="width:700px; height:auto;" alt="mock up web page">
 
-<img src="../../assets/img/chapter-IV/mock-up-shipment-reports.png" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/mock-up-shipment-reports.png" style="width:700px; height:auto;" alt="mock up web page">
 
 #### 6.4.3.	Applications User Flow Diagrams.
 - Mobile Applications User Flow Diagrams
 
 - **User Flow Goal 1:** Como capitán, quiero que el sistema sugiera automáticamente la ruta más corta y segura según el algoritmo, para llegar eficientemente al puerto destino.
 
-<img src="../../assets/img/chapter-IV/User flow1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/User flow1.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **User Flow Goal 2:** Como capitán, quiero recibir alertas si una ruta se vuelve no viable, para evitar zonas bloqueadas o peligrosas.
 
-<img src="../../assets/img/chapter-IV/User flow3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/User flow3.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **User Flow Goal 3:** Como capitán, quiero que el sistema recalcule la ruta si hay cambios inesperados durante la navegación.
 
-<img src="../../assets/img/chapter-IV/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **User Flow Goal 4:** Como capitán, quiero que se guarden los datos del viaje realizado, para poder revisarlos o reportarlos al finalizar.
 
-<img src="../../assets/img/chapter-IV/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/User flow5.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 - **User Flow Goal 5:** Como empresario, quiero ver un historial de rutas utilizadas en envíos pasados, para poder tomar decisiones basadas en evidencia. 
 
-<img src="../../assets/img/chapter-IV/User flow2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
+<img src="../../assets/img/chapter-VI/User flow2.png" style="width:500px; height:auto;" alt="wireframe mobile 1">
 
 
 
 - Web Applications User Flow Diagrams
 - Inicio de sesión: El usuario debe ingresar a la plataforma, en esa sección se le muestra la opción de inicio de sesión y registrarse, al iniciar sesión ingresa a la plataforma.
 
-<img src="../../assets/img/chapter-IV/userflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
+<img src="../../assets/img/chapter-VI/userflow-login.jpg" style="width:700px; height:auto;" alt="mock up web page">
 
 
 ### 6.5.	Applications Prototyping.
@@ -274,7 +274,7 @@ El desarrollo del UI Design de la Landing Page está en el siguiente link: https
 - Mobile Applications Prototyping
 
 <a href="https://youtu.be/9WosMPSuCxs" target="_blank">
-  <img src="../../assets/img/chapter-IV/Prototyping-Mushroom.png" alt="Haz clic para ver el video en YouTube">
+  <img src="../../assets/img/chapter-VI/Prototyping-Mushroom.png" alt="Haz clic para ver el video en YouTube">
 </a>
 
 https://www.figma.com/proto/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=180-2173&p=f&t=gTWw4q4ijvLKKjSU-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=206%3A40 
