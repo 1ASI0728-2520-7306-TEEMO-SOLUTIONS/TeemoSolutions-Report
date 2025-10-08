@@ -1611,10 +1611,10 @@ La capa de infraestructura contiene las implementaciones concretas que interact�
 
 | Propiedad               | Valor                                                                                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Ejemplos**            | Adaptadores para APIs externas de clima / geopolitica (no necesariamente ya implementados en código).                                                                                            |
+| **Ejemplos**            | Adaptadores para APIs externas de clima / geopolitica .                                                                                            |
 | **Categoría**           | External Adapter / HTTP Client                                                                                                                                                                   |
 | **Propósito**           | Implementar llamadas HTTP a proveedores externos (weather API, geopolitical API), parsear respuestas y exponer un contrato interno (p. ej. `WeatherApiClient` → `NavigationConditionsProvider`). |
-| **Tecnología sugerida** | `WebClient` (Spring WebFlux) o `RestTemplate` (simple) según preferencia del proyecto.                                                                                                           |
+| **Tecnología sugerida** | `WebClient` (Spring WebFlux) o `RestTemplate`.                                                                                                           |
 | **Consideración**       | Para la entrega del curso es aceptable simular (mocks) o usar un adapter con configuraciones que permitan habilitar/inhabilitar llamadas reales.                                                 |
 
 ---
@@ -1628,7 +1628,7 @@ La capa de infraestructura contiene las implementaciones concretas que interact�
 
 | Propiedad               | Valor                                                                                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**              | `ErrorLog` (modelo de persistencia), `ServiceStatus` (si se implementa)                                                                        |
+| **Nombre**              | `ErrorLog` (modelo de persistencia), `ServiceStatus`                                                                       |
 | **Categoría**           | Observability / Persistence                                                                                                                    |
 | **Propósito**           | Guardar registros de errores críticos, estado de servicios externos y alertas; pueden persistirse en MongoDB para auditoría y debugging.       |
 | **Operaciones típicas** | `save(ErrorLog)`, `findRecentByService(String)`, `storeServiceStatus(ServiceStatus)`                                                           |
