@@ -833,8 +833,8 @@ La UI mantiene una sesión de selección de origen/destino e intermedios para in
 | Nombre                | Tipo de dato   | Visibilidad | Descripción                                                 |
 |-----------------------|----------------|-------------|-------------------------------------------------------------|
 | sessionId             | `string`       | private     | Identificador de la sesión                                  |
-| originPortId          | `string?`      | private     | Puerto de origen                                            |
-| destinationPortId     | `string?`      | private     | Puerto de destino                                           |
+| originPortId          | `string`      | private     | Puerto de origen                                            |
+| destinationPortId     | `string`      | private     | Puerto de destino                                           |
 | intermediatePortIds   | `string[]`     | private     | Puertos intermedios seleccionados                           |
 | readyForRouting       | `boolean`      | private     | `true` si la selección es válida/completa                   |
 | createdAt             | `DateTime`     | private     | Fecha de creación                                           |
