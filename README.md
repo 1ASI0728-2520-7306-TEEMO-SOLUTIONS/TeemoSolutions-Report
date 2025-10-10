@@ -379,22 +379,40 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>Mallma Quispe, Rubén Elías - TB1:</strong>
         <br>Expone con objetividad la arquitectura de Mushroom, articulando el System Landscape, los diagramas Context/Container y el Deployment para audiencias técnicas y gerenciales. Demuestra dominio al explicar cómo las decisiones de capas, contenedores y nodos de despliegue soportan el cómputo de rutas con A* e IA, integrando el consumo de APIs de eventos meteorológicos y geopolíticos. Adapta el discurso según el nivel jerárquico, responde preguntas con evidencia y vincula la arquitectura con riesgos, disponibilidad y escalabilidad requeridas por clientes navieros.<br>
         <br><br>
+          <strong>TP:</strong>
+          <br>Comunica con objetividad la estructura y responsabilidades de las capas del bounded context Service Operations and Monitoring, articulando cómo cada componente soporta la observabilidad del sistema y la gestión de métricas de desempeño. Expone la integración entre monitoreo en tiempo real, registro de eventos y actualización de indicadores operativos ante públicos de distintas especialidades, explicando las decisiones técnicas que equilibran precisión de seguimiento y eficiencia en la transmisión de datos.<br>
+        <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong>
         <br>Presenta con claridad la organización, el Event Storming y el Domain Message Flow Modeling, destacando cómo los flujos de eventos (clima, incidentes, alertas de piratería) se transforman en comandos y proyecciones útiles para planeamiento de rutas seguras. Comunica a operaciones, data y management usando un lenguaje preciso y objetivos verificables; argumenta el valor del enfoque dirigido por dominio para reducir ambigüedades y alinear negocio-tecnología en el contexto marítimo.<br>
+        <br><br>
+          <strong>TP:</strong>
+          <br>Comunica con objetividad la arquitectura de capas del bounded context IAM, vinculando las políticas de autenticación y autorización con los requerimientos de seguridad del sistema. Presenta cómo los mecanismos de control de acceso, cifrado y gestión de roles garantizan confidencialidad y trazabilidad ante audiencias técnicas y gerenciales, explicando los compromisos entre robustez de seguridad y facilidad de uso.<br>
         <br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong>
         <br>Sustenta oralmente el Design purpose, los atributos de diseño de entrada, la funcionalidad primaria y los quality attributes, explicando cómo cada atributo (confiabilidad, rendimiento, resiliencia) impacta en la promesa de “ruta más segura y rápida”. Expone con ejemplos comprensibles para distintas especialidades y niveles jerárquicos, y justifica prioridades de diseño frente a restricciones reales (latencia del API, ventanas de actualización de datos, zonas de exclusión).<br>
         <br><br>
+          <strong>TP:</strong>
+          <br>Comunica con objetividad las capas del bounded context Profile and Preferences, mostrando cómo la estructura de datos y servicios permite la personalización de experiencias y configuraciones de usuario. Expone la relación entre modelos de dominio, preferencias almacenadas y comportamiento adaptativo del sistema, atendiendo preguntas de diferentes niveles jerárquicos y justificando el equilibrio entre flexibilidad del perfil y consistencia de la información.<br>
+        <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong>
         <br>Comunica con objetividad los requisitos funcionales y no funcionales y la sección de Candidate Context Mapping, enlazando necesidades de usuarios (planificadores, capitanes) con capacidades del sistema (cálculo A*, ingestión de eventos, monitor de riesgos). Co-presenta resultados del Event Storming, gestionando preguntas de diversas áreas y jerarquías; explica trade-offs entre precisión de predicción, costo computacional y experiencia de usuario en el puente de mando.<br>
         <br><br>
+          <strong>TP:</strong>
+          <br>Comunica con objetividad las capas del bounded context Notifications, describiendo cómo se orquesta el flujo de alertas proactivas ante eventos críticos del entorno marítimo. Presenta ante públicos de diversa especialidad las decisiones arquitectónicas que aseguran inmediatez, fiabilidad y relevancia de las notificaciones, explicando los compromisos entre frecuencia de envío, consumo de recursos y claridad del mensaje para el usuario.<br>
+        <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Explica con solvencia el Architectural Drivers Backlog, las decisiones de diseño arquitectural y los refinamientos de escenarios de quality attributes, mostrando trazabilidad desde drivers (seguridad, disponibilidad, actualizaciones de riesgo) hasta soluciones concretas (patrones, particionamiento, tolerancia a fallas). Adapta ejemplos y métricas para audiencias mixtas, y concluye con implicancias operativas para empresas navieras y reguladores.<br>
+        <br><br>
+          <strong>TP:</strong>
+          <br>Comunica con objetividad la estructura de las capas del bounded context A/AI Process*, enlazando los mecanismos de cálculo de rutas inteligentes con los objetivos de eficiencia y seguridad operacional. Co-presenta los resultados del diseño, explicando ante distintas jerarquías los trade-offs entre precisión del algoritmo A*, costo computacional y capacidad de respuesta en condiciones dinámicas del entorno marítimo.<br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
         <br>El equipo demostró, de forma objetiva y ante públicos de diversa especialidad y jerarquía, dominio integral del proyecto Temmo/Mushroom. La exposición abarcó desde la arquitectura (paisaje de sistema, contextos, contenedores y despliegue) hasta la traducción de eventos del dominio marítimo (meteorológicos y geopolíticos) en decisiones operativas mediante Event Storming y Domain Message Flow Modeling. Se evidenció capacidad para explicar el propósito de diseño, la funcionalidad primaria y los atributos de calidad —confiabilidad, rendimiento, resiliencia—, así como para argumentar drivers arquitecturales, decisiones y escenarios refinados que sustentan el cálculo de rutas óptimas con A* e IA.<br>
+        <br><br>
+        <strong>TP:</strong>
+          <br>El equipo de trabajo evidenció una comunicación objetiva y técnica al presentar los resultados y decisiones de diseño de cada bounded context. Cada integrante expuso con claridad la relación entre los requerimientos del usuario y las capacidades arquitectónicas del sistema, manteniendo coherencia conceptual y adecuando su discurso a distintos niveles jerárquicos y especialidades. Esta presentación conjunta reflejó un enfoque integral y colaborativo en el desarrollo del proyecto de ingeniería.<br>
         <br><br>
       </td>
       </tr>
@@ -405,22 +423,40 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>Mallma Quispe, Rubén Elías - TB1:</strong> message here
         <br>Documenta la arquitectura de Mushroom con System Landscape, Context/Container y Deployment Diagrams, empleando notación consistente, supuestos explícitos y criterios de aceptación. Redacta secciones que conectan la topología de servicios con el algoritmo A* y la integración de APIs climáticas/geopolíticas, asegurando comprensión transversal (desarrollo, operaciones, dirección) y facilitando decisiones de infraestructura.<br>
         <br><br>
+        <strong>TP:</strong>
+          <br>Redacta con precisión técnica los resultados del diseño de las capas del bounded context Service Operations and Monitoring, describiendo el flujo de información y la interacción entre componentes de seguimiento y métricas. Su documentación transmite objetivamente los alcances funcionales y las decisiones arquitectónicas, facilitando la comprensión de lectores con distintos niveles técnicos.<br>
+        <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong> message here
         <br>Elabora documentación de Event Storming y Domain Message Flow Modeling con catálogos de eventos, comandos y políticas, acompañados de glosario de términos del dominio marítimo. Presenta diagramas y narrativas breves que permiten a áreas técnicas y de negocio seguir el flujo de información desde los eventos (tormentas, cierres de rutas) hasta las actualizaciones de la ruta óptima, con criterios de objetividad y verificabilidad.<br>
+        <br><br>
+        <strong>TP:</strong>
+          <br>Elabora informes claros y estructurados sobre la arquitectura del bounded context IAM, explicando los mecanismos de autenticación, autorización y control de acceso. Su comunicación escrita destaca por la objetividad con que relaciona los requisitos de seguridad con las soluciones implementadas, dirigiéndose eficazmente a audiencias tanto técnicas como de gestión.<br>
         <br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong> message here
         <br>Produce el Design purpose, atributos de diseño de entrada, funcionalidad primaria y quality attributes, organizados en secciones trazables a riesgos y metas del cliente. Redacta tablas de escenarios (estímulo-ambiente-respuesta-métrica) que comunican, para distintos lectores, cómo el sistema mantiene tiempos de cómputo y precisión del ruteo bajo condiciones adversas, manteniendo lenguaje claro y evidencia técnica.<br>
         <br><br>
+        <strong>TP:</strong>
+          <br>Desarrolla documentos explicativos que presentan de manera ordenada la estructura de las capas del bounded context Profile and Preferences, conectando la personalización de usuario con los servicios de dominio. Su redacción combina precisión técnica y lenguaje accesible, lo que permite que distintos especialistas comprendan el propósito y la relevancia de cada componente.<br>
+        <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong> message here
         <br>Redacta los requisitos funcionales y no funcionales y la propuesta de Candidate Context Mapping con criterios de completitud, coherencia y testabilidad. Presenta historias de usuario, restricciones y criterios de aceptación que vinculan el cálculo de rutas con fuentes de datos externas, permitiendo a equipos de desarrollo, QA y stakeholders ejecutivos comprender alcance, supuestos y dependencias del sistema.<br>
         <br><br>
+        <strong>TP:</strong>
+          <br>Produce reportes detallados sobre el diseño del bounded context Notifications, destacando la secuencia de procesamiento de alertas y la integración con otros módulos del sistema. Su escritura evidencia objetividad al justificar decisiones sobre frecuencia, prioridad y alcance de notificaciones, adaptando la información según el nivel jerárquico del público lector.<br>
+        <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Compila el Architectural Drivers Backlog, las decisiones de diseño y los refinamientos de escenarios de calidad, registrando alternativas evaluadas, justificaciones y consecuencias. Emplea plantillas estandarizadas y matrices de decisión que permiten a lectores de diferentes especialidades y jerarquías contrastar opciones (p. ej., estrategias de resiliencia, patrones de integración) y entender su impacto en la operación marítima.<br>
+        <br><br>
+        <strong>TP:</strong>
+          <br>Redacta con rigor técnico los resultados obtenidos en el diseño de las capas del bounded context A/AI Process*, explicando de forma lógica la aplicación del algoritmo A* y su relación con el rendimiento del sistema. Su comunicación escrita muestra claridad en la exposición de trade-offs y fundamentos de diseño, permitiendo a diferentes áreas comprender el valor técnico del módulo.<br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
         <br><br>
         <br>La documentación producida por el equipo mostró objetividad, trazabilidad y claridad para lectores de distintas áreas y niveles. Se consolidaron entregables coherentes: arquitectura formal (System Landscape, Context/Container, Deployment), catálogos y narrativas de Event Storming y flujos de mensajes, definiciones de propósito de diseño, funcionalidad primaria y atributos de calidad, además de requisitos funcionales/no funcionales y Context Mapping candidatos. El backlog de drivers, las decisiones arquitecturales y los escenarios de calidad quedaron registrados con alternativas, justificaciones y consecuencias, empleando plantillas, tablas y métricas verificables que vinculan el algoritmo A*, la integración con APIs externas y las necesidades del cliente marítimo.<br>
+        <br><br>
+        <strong>TP:</strong>
+          <br>El grupo demostró solidez en la comunicación escrita al expresar con objetividad los resultados y decisiones técnicas de cada bounded context. La redacción fue coherente, precisa y adaptada a diversos niveles jerárquicos, reflejando madurez profesional y capacidad de documentación en el ámbito de la ingeniería.<br>
         <br><br>
       </td>
 </tr>
