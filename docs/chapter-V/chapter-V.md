@@ -376,6 +376,7 @@ Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de
 ###### Figura 47
 
 *Diagrama de componentes del Bounded Context de IAM relacionado a ...*
+![ DIAGRAM](../../assets/img/chapter-V/components-IAM.jpg)
 
 #### 5.1.6. IAM Bounded Context Software Architecture Code Level Diagrams
 
@@ -686,7 +687,7 @@ Tal como establece el C4 Model, el nivel de componentes representa el cuarto niv
 ###### Figura 50
 
 *Sección del diagrama de componentes correspondiente al Bounded Context de Profile and Preferences*
-
+![ DIAGRAM](../../assets/img/chapter-V/components-profile-preferences.jpg)
 
 #### 5.2.6. Profile and Preferences Bounded Context Software Architecture Code Level Diagrams
 
@@ -1053,7 +1054,7 @@ Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de
 ###### Figura 53
 
 *Sección del diagrama de componentes correspondiente al Bounded Context de Asset and Resource Management*
-
+![ DIAGRAM](../../assets/img/chapter-V/components-assets-resource-management.jpg)
 
 #### 5.3.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
 
@@ -1642,6 +1643,8 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
+![ DIAGRAM](../../assets/img/chapter-V/components-AIprocess.jpg)
+
 #### 5.4.6. A*/AI Process Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de A*/AI Process, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
@@ -1912,19 +1915,10 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
 ###### Figura 90
-*Participación del Bounded Context de Service Design and Planning con la aplicación móvil mediante el diagrama de componentes*
 
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-MobileComponent.png"></image>
+![ DIAGRAM](../../assets/img/chapter-V/components-service-planning.jpg)
 
-###### Figura 91
-*Participación del Bounded Context de Service Design and Planning con la aplicación web mediante el diagrama de componentes*
 
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-WebComponent.png"></image>
-
-###### Figura 92
-*Participación del Bounded Context de Service Design and Planning con la Cloud API mediante el diagrama de componentes*
-
-<image src="..\assets\img\capitulo-4\c4-model\structurizr-102464-Pot-APIComponent.png"></image>
 
 #### 5.5.6. Service Design and Planning Bounded Context Software Architecture Code Level Diagrams
 
@@ -1943,7 +1937,7 @@ Esta vista detallada del diseño táctico facilita una comprensión compartida d
 ###### Figura 93
 *Diagrama de clases de la capa de dominio del Bounded Context de Service Design and Planning*
 
-<image src="../assets/img/capitulo-4/bounded-context-pot-management/class-diagram-pot-management.png"></image>
+![ DIAGRAM](../../assets/img/chapter-V/classdiagramflavio.png)
 
 ##### 5.5.6.2. Service Design and Planning Bounded Context Database Design Diagram
 
@@ -2918,6 +2912,8 @@ En esta sección se profundiza en los aspectos internos de implementación del B
 
 Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
 
+![ DIAGRAM](../../assets/img/chapter-V/components-service-monitoring.jpg)
+
 ##### 5.7.1.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
 
 En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Service Operation and Monitoring. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en el monitoreo del rendimiento y salud de los Bounded Context de Mushroom.
@@ -3156,6 +3152,8 @@ Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, f
 En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Notifications. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con la gestión del desarrollo y envío de notificaciones en la aplicación.
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
+
+![ DIAGRAM](../../assets/img/chapter-V/components-notifications.jpg)
 
 #### 5.7.6. Notification Bounded Context Software Architecture Code Level Diagrams
 
