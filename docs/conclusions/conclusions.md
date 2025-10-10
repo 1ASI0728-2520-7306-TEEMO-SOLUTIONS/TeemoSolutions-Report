@@ -1,3 +1,5 @@
+# Conclusiones
+
 En esta sección, el equipo presenta las conclusiones generales del proyecto, contrastando los resultados obtenidos con los Problem Statements iniciales, los supuestos planteados sobre el comportamiento de los usuarios, las hipótesis formuladas y los criterios de éxito definidos en el marco del proceso Lean UX. A partir de los aprendizajes y validaciones alcanzadas, se proponen también una serie de recomendaciones clave para guiar los siguientes pasos del Roadmap, asegurando la evolución sostenida de los productos digitales incluidos en el modelo de negocio.
 
 - La aplicación estructurada del enfoque Lean UX en nuestro proyecto Mushroom ha sido clave para definir con claridad los segmentos de usuarios, los competidores directos y las principales demandas del mercado. Desde los problem statements iniciales hasta los hypothesis statements y el desarrollo del Lean UX canvas, cada fase ha fortalecido tanto la agilidad como la precisión en el diseño y evolución de nuestra solución.
