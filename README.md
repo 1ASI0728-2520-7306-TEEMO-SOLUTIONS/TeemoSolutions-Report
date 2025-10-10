@@ -221,7 +221,10 @@ Para este proyecto hemos utilizado las herramientas GitHub para gestionar el pro
 ## Team Collaborations Insights
 
 A continuación, se presentan los gráficos de colaboración de los integrantes del equipo en el repositorio de nuestro primer sprint. Estos gráficos ofrecen una representación visual de la cantidad de contribuciones realizadas por cada miembro del equipo, junto con la fecha en que se llevaron a cabo. Además, se presenta información sobre la cantidad de líneas de código que se han modificado en cada uno de los commits.
-
+<img src="assets/img/cover/insights1.jpg"  >
+<img src="assets/img/cover/insights2.jpg"  >
+<img src="assets/img/cover/insights3.jpg"  >
+<img src="assets/img/cover/insights4.jpg"  >
 - **Entregable TB1:**
 
 # Tabla de Contenidos
