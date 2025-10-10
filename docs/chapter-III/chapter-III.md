@@ -51,12 +51,12 @@ El procedimiento seguido por el equipo incluyó las siguientes etapas, alineadas
 
 A continuación se presentan capturas de los mapas To-Be Scenario Mapping generados en la herramienta asignada para cada User Persona, con sus respectivas filas Steps, Doing, Thinking y Feeling, que muestran de forma clara las mejoras proyectadas en la experiencia del usuario.
 
-###### Figura 19
+###### Figura 14
 *To-Be Scenario Mapping de nuestro segmento de agencias de embarcaciones navieras*
 
 <td><img src="../../assets/img/chapter-III/to-be-shipping-agency.png" style="width:1000px; height:auto;" alt=""></td>
 
-###### Figura 20
+###### Figura 15
 *To-Be Scenario Mapping de nuestro segmento de transportistas marítimos*
 
 <td><img src="../../assets/img/chapter-III/to-be-maritime-carrier.png" style="width:1000px; height:auto;" alt=""></td>
@@ -79,8 +79,8 @@ Para garantizar la calidad y efectividad de nuestras historias, aplicaremos las 
 
 Las User Stories son una herramienta fundamental para definir los requisitos del proyecto. Cada User Story incluye criterios de aceptación que deben ser comprobables y redactados en tiempo presente, tercera persona, siguiendo la estructura de Gherkin (Given-When-Then). Además, se consideran User Stories para el sitio web estático (Landing Page) y Technical Stories para los features del RESTful API.
 
-###### Tabla 11
-Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushroom
+###### Tabla 6
+*Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushroom*
 
 | **Epic / Story ID** | **Título**                                                | **Descripción**                                                                                                                                             | **Criterios de Aceptación**                                                                                                                                                         | **Relacionado con (Epic ID)** |
 |---------------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
@@ -96,6 +96,13 @@ Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushro
 | US010               | Visualizar historial de rutas contratadas                 | Como empresario, quiero ver un historial de rutas utilizadas en envíos pasados, para poder tomar decisiones basadas en evidencia.                          | El sistema debe listar todos los envíos previos con sus datos asociados, y permitir filtrado por fecha, destino o tipo de embarcación.                                               | EPIC003                       |
 
 ## 3.3. Requisitos Funcionales
+
+Los Requisitos Funcionales formalizan qué hace el sistema Mushroom desde la perspectiva del dominio y de los usuarios, sin entrar en detalles de diseño o tecnología. Esta sección traduce las épicas y las historias de usuario (user stories), previamente definidas por bounded context, en enunciados claros, verificables y priotizados que guían el desarrollo, las pruebas y la validación. Cada requisito funcional describe una capacidad obligatoria del sistema, su actor responsable y las condiciones necesarias para que la funcionalidad cumpla su propósito operacional.
+
+Los Requisitos Funcionales aquí incluidos cubren las funcionalidades de los bounded contexts principales del producto. No documentan interfaces gráficas ni decisiones de UI, se centran exclusivamente en la función qué hace la plataforma, la integridad de los datos, la orquestación entre capas (comandos, consultas y eventos) y las garantías mínimas esperadas.
+
+###### Tabla 7
+*Listado de requisitos funcionales a desarrollar en el proyecto de Mushroom*
 
 | **ID** | **Actor** | **Descripción** |
 |--------|-----------|-----------------|
@@ -123,6 +130,13 @@ Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushro
 
 ## 3.4. Requisitos No Funcionales
 
+Los Requisitos No Funcionales describen cómo debe comportarse el sistema Mushroom más allá de las funciones concretas: establecen criterios de calidad, restricciones y expectativas medibles que garantizan la calidad del producto final para los usuarios. Mientras los Requisitos Funcionales definen capacidades observables (qué hace el sistema), los Requisitos No Funcionales fijan las condiciones bajo las cuales esas capacidades deben operar para ser aceptables para clientes y operaciones.
+
+Esta sección cubre las propiedades de calidad aplicables a todos los bounded contexts relevantes. Incluye métricas objetivs y criterios claros de verificación. Los Requisitos No Funcionales no dictan la implementación (no indican llamadas de API concretas ni tecnología) pero sí imponen límites y garantías que la implementación debe cumplir.
+
+###### Tabla 8
+*Listado de requisitos no funcionales necesarios para mantener la calidad en el proyecto de Mushroom*
+
 | **ID** | **Categoría (QA)** | **Descripción** |
 |--------|--------------------|-----------------|
 | RNF001 | Rendimiento | El tiempo de respuesta de todas las páginas de la aplicación debe ser de 2.0 segundos como máximo. Para peticiones en base a las funcionalidades de cálculo de rutas y valores predictivos, debe ser 5.0 segundos como máximo. Ambas métricas son bajo una carga de 100 peticiones concurrentes. |
@@ -139,15 +153,32 @@ Listado de épicas e historias de usuario a desarrollar en el proyecto de Mushro
 
 ## 3.5. Impact Mapping
 
-##### Segmento 1:
+En esta sección presentamos el Impact Mapping diseñado para el modelo de negocio digital de Mushroom. A través de capturas de la herramienta utilizada, mostraremos cómo hemos formalizado este ejercicio de planificación estratégica en cuatro niveles interrelacionados: Business Goals, Actors/Personas, Impacts y Deliverables. Partiendo de objetivos de negocio definidos bajo criterios SMART, vinculamos cada meta con los User Personas identificados en secciones anteriores, respondiendo a la pregunta “¿Quiénes me ayudarán a lograr la meta?”.
+
+A continuación detallamos los comportamientos deseados de esos actores (“¿Qué tendrían que hacer?”) y, finalmente, los entregables o iniciativas concretas que el negocio debe desarrollar para provocar dichos cambios.
+
+El uso del Impact Mapping garantiza que cada User Story y cada funcionalidad propuesta estén alineadas con los objetivos estratégicos de la startup, evitando el desarrollo de características innecesarias. La columna de Deliverables recoge las acciones digitales, desde campañas de onboarding personalizado hasta módulos de recomendación inteligente, que buscamos implementar para influir en los impactos definidos. Esta metodología, tal como la describe Flewelling (2018), facilita una hoja de ruta clara y adaptable, centrada en resultados medibles y en la creación de valor real para nuestros usuarios y stakeholders.
+
+###### Figura 16
+*Impact Mapping de nuestro segmento objetivo de agencias de embarcaciones navieras*
+
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-2.png" style="width:1000px; height:auto;" alt=""></td>
 
-##### Segmento 2: Capitán o Jefe de Navegación
+###### Figura 17
+*Impact Mapping de nuestro segmento de transportistas marítimos*
+
 <td><img src="../../assets/img/chapter-III/Impact-Mapping-1.png" style="width:1000px; height:auto;" alt=""></td>
 
-##### 3.4. Product Backlog
+##### 3.6. Product Backlog
 
-# **Product Backlog - Funcionalidades de Teemo**
+En esta sección presentamos el Product Backlog de Macetech, donde hemos recopilado y ordenado todas las User Stories y Technical Stories identificadas a lo largo del proyecto, incluyendo aquellas vinculadas a la Landing Page, la plataforma web y móvil, y las integraciones de backend. Cada historia está estimada en función de su complejidad, riesgo y esfuerzo, y priorizada según su valor para el usuario, urgencia, impacto en el negocio y viabilidad técnica.
+
+Para asegurar la transparencia y facilitar la colaboración con todos los stakeholders, incluimos una captura del Backlog alojado en la herramienta designada, junto con el enlace público de acceso. Este enfoque sigue las recomendaciones de User Story Mapping de Patton (2021), que subraya la necesidad de alinear la priorización con los resultados de negocio deseados, y las buenas prácticas de Stevenson (2020) sobre estimación y redacción de historias, garantizando que cada entrada cuente con criterios claros de aceptación y sea comprensible para el equipo de desarrollo.
+
+El orden de las entradas en el Backlog refleja la máxima creación de valor en cada sprint: las historias relacionadas con la experiencia del visitante en el sitio web estático ocupan los primeros puestos, mientras que los requisitos de seguridad o autenticación, aunque críticos, han sido ubicados de forma estratégica para no retrasar la entrega de funcionalidades de alto impacto inicial.
+
+###### Tabla 9
+*Product Backlog priorizado para el proyecto de Mushroom*
 
 | **ID** | **Título** | **Descripción (Formato User Story)** | **Story Points** |
 |-------|-------------|---------------------------------------|------------------|
