@@ -373,9 +373,9 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y seguridad del sistema.
 
-###### Figura 47
+###### Figura 45
 
-*Diagrama de componentes del Bounded Context de IAM relacionado a ...*
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de IAM*
 ![ DIAGRAM](../../assets/img/chapter-V/components-IAM.jpg)
 
 #### 5.1.6. IAM Bounded Context Software Architecture Code Level Diagrams
@@ -390,7 +390,7 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 Asimismo, se incluyen las relaciones entre elementos del dominio, calificadas con nombres descriptivos, direccionalidad cuando corresponde, y multiplicidad para reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada del diseño táctico favorece la comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación efectiva dentro de la arquitectura de software.
 
-###### Figura 48
+###### Figura 46
 
 *Diagrama de clases del Bounded Context de IAM*
 
@@ -404,9 +404,9 @@ El diagrama incluye detalles esenciales como el tipo de dato y la visibilidad de
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del modelo conceptual, funcionando como un nexo clave entre el análisis de dominio y su posterior implementación en la arquitectura del sistema.
 
-###### Figura 49
+###### Figura 47
 
-*Sección del diagrama entidad-relación correspondiente al Bounded Context de IAM*
+*Sección del diagrama entidad-relación de Mushroom correspondiente al Bounded Context de IAM*
 ![ DIAGRAM](../../assets/img/chapter-V/ER-IAM.jpg)
 ---
 
@@ -684,9 +684,9 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como establece el C4 Model, el nivel de componentes representa el cuarto nivel de abstracción en la visualización de arquitecturas de software, y resulta especialmente útil para desarrolladores y arquitectos al ofrecer una visión clara de las decisiones de diseño adoptadas en cada contenedor (Brown, 2023). Este nivel facilita la trazabilidad entre los elementos de alto nivel y su implementación específica, fortaleciendo la mantenibilidad, extensibilidad y coherencia del sistema.
 
-###### Figura 50
+###### Figura 48
 
-*Sección del diagrama de componentes correspondiente al Bounded Context de Profile and Preferences*
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de Profile and Preferences*
 ![ DIAGRAM](../../assets/img/chapter-V/components-profile-preferences.jpg)
 
 #### 5.2.6. Profile and Preferences Bounded Context Software Architecture Code Level Diagrams
@@ -701,7 +701,7 @@ En esta subsección se presenta el diagrama de clases UML correspondiente al Dom
 
 El nivel de detalle incluye la definición de atributos y métodos para cada clase, especificando sus tipos de datos, visibilidad y rol dentro del modelo, así como las relaciones fundamentales entre los distintos elementos del dominio. Estas relaciones se representan con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, lo que permite reflejar con precisión el grado de asociación entre las entidades. Esta vista detallada facilita una comprensión común del modelo conceptual, sirviendo como puente entre el diseño del dominio y su posterior implementación técnica.
 
-###### Figura 51
+###### Figura 49
 
 *Diagrama de clases del Bounded Context de Profile and Preferences*
 
@@ -715,9 +715,9 @@ El diagrama refleja las relaciones entre las distintas tablas o entidades, indic
 
 Esta visualización resulta esencial para asegurar la coherencia entre el modelo conceptual y su implementación en la capa de persistencia, contribuyendo a una arquitectura sólida, escalable y alineada con los requerimientos funcionales y no funcionales del sistema.
 
-###### Figura 52
+###### Figura 50
 
-*Sección del diagrama entidad-relación correspondiente al Bounded Context de Profile and Preferences*
+*Sección del diagrama entidad-relación de Mushroom correspondiente al Bounded Context de Profile and Preferences*
 
 ![ DIAGRAM](../../assets/img/chapter-V/ER-profile.jpg)
 
@@ -1051,9 +1051,9 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
-###### Figura 53
+###### Figura 51
 
-*Sección del diagrama de componentes correspondiente al Bounded Context de Asset and Resource Management*
+*Sección del diagrama de componentes de Mushroom correspondiente al Bounded Context de Asset and Resource Management*
 ![ DIAGRAM](../../assets/img/chapter-V/components-assets-resource-management.jpg)
 
 #### 5.3.6. Asset and Resource Management Bounded Context Software Architecture Code Level Diagrams
@@ -1070,7 +1070,7 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
-###### Figura 54
+###### Figura 52
 
 *Diagrama de clases del Bounded Context de Asset and Resource Management*
 
@@ -1084,9 +1084,9 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
-###### Figura 55
+###### Figura 53
 
-*Sección del diagrama entidad-relación correspondiente al Bounded Context de Asset and Resource Management*
+*Sección del diagrama entidad-relación de Mushroom correspondiente al Bounded Context de Asset and Resource Management*
 
 ![ DIAGRAM](../../assets/img/chapter-V/ER-assestandresource.jpg)
 
@@ -1643,6 +1643,9 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
+###### Figura 54
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de A/AI Process*
+
 ![ DIAGRAM](../../assets/img/chapter-V/components-AIprocess.jpg)
 
 #### 5.4.6. A*/AI Process Bounded Context Software Architecture Code Level Diagrams
@@ -1658,9 +1661,11 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
+###### Figura 55
+
+*Diagrama de clases del Bounded Context de A/AI Process*
 
 ![A*/AI CLASS DIAGRAM](../../assets/img/chapter-V/AI-Process-Class-Diagram.jpg)
-
 
 ##### 5.4.6.2. A*/AI Process Bounded Context Database Design Diagram
 
@@ -1669,6 +1674,10 @@ En esta subsección se presenta el diagrama de base de datos correspondiente al 
 El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
+
+###### Figura 56
+
+*Sección del diagrama entidad-relación de Mushroom correspondiente al Bounded Context de A/AI Process*
 
 ![ DIAGRAM](../../assets/img/chapter-V/ER-AIprocess.jpg)
 
@@ -1916,11 +1925,10 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
-###### Figura 90
+###### Figura 57
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de Service Design and Planning*
 
 ![ DIAGRAM](../../assets/img/chapter-V/components-service-planning.jpg)
-
-
 
 #### 5.5.6. Service Design and Planning Bounded Context Software Architecture Code Level Diagrams
 
@@ -1936,8 +1944,8 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
-###### Figura 93
-*Diagrama de clases de la capa de dominio del Bounded Context de Service Design and Planning*
+###### Figura 58
+*Diagrama de clases del Bounded Context de Service Design and Planning*
 
 ![ DIAGRAM](../../assets/img/chapter-V/classdiagramflavio.png)
 
@@ -1949,8 +1957,9 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
-###### Figura 94
-*Diagrama de base de datos del Bounded Context de Service Design and Planning*
+###### Figura 59
+
+*Sección del diagrama entidad-relación de Mushroom correspondiente al Bounded Context de Service Design and Planning*
 
 ![ DIAGRAM](../../assets/img/chapter-V/ER-serviceandplanning.jpg)
 
@@ -2916,6 +2925,9 @@ En esta sección se profundiza en los aspectos internos de implementación del B
 
 Estos recursos visuales permiten identificar entidades, objetos de valor, relaciones, atributos, operaciones, estructuras persistentes y sus vínculos, sirviendo como puente entre el diseño arquitectónico de alto nivel y la implementación concreta. Esta aproximación asegura que las decisiones tomadas a nivel táctico se traduzcan en estructuras sólidas, coherentes y alineadas con los objetivos del dominio, aportando claridad al proceso de desarrollo y mantenimiento del sistema.
 
+###### Figura 60
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de Service Operation and Monitoring*
+
 ![ DIAGRAM](../../assets/img/chapter-V/components-service-monitoring.jpg)
 
 ##### 5.7.1.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
@@ -2926,6 +2938,9 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
+###### Figura 61
+*Diagrama de clases del Bounded Context de Service Operation and Monitoring*
+
 <img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
 
 ##### 5.7.1.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
@@ -2935,6 +2950,10 @@ En esta subsección se presenta el diagrama de base de datos correspondiente al 
 El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
+
+###### Figura 62
+
+*Sección del diagrama entidad-relación correspondiente al Bounded Context de Service Operation and Monitoring*
 
 ![ DIAGRAM](../../assets/img/chapter-V/ER-serviceandmonitoring.jpg)
 
@@ -3159,6 +3178,9 @@ En esta sección se presentan los diagramas de componentes correspondientes a lo
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
+###### Figura 63
+*Sección del diagrama de componentes de Mushroom referente al Bounded Context de Notifications*
+
 ![ DIAGRAM](../../assets/img/chapter-V/components-notifications.jpg)
 
 #### 5.7.6. Notification Bounded Context Software Architecture Code Level Diagrams
@@ -3175,6 +3197,9 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
+###### Figura 64
+*Diagrama de clases del Bounded Context de Notifications*
+
 ![NotificationsClassDiagram](../../assets/img/chapter-V/NotificationsDiagramC.png)
 
 ##### 5.7.6.2. Notification Bounded Context Database Diagram
@@ -3185,5 +3210,8 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
-![ DIAGRAM](../../assets/img/chapter-V/ER-notifications.jpg)
+###### Figura 65
 
+*Sección del diagrama entidad-relación correspondiente al Bounded Context de Notifications*
+
+![ DIAGRAM](../../assets/img/chapter-V/ER-notifications.jpg)
