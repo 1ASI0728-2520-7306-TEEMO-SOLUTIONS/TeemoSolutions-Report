@@ -29,12 +29,14 @@
   }
 </style>
 
+
+
 # Universidad Peruana de Ciencias Aplicadas
 
 ---
 
 <p allign="center">
-  <img src="assets/img/chapter-I/upc_logo.svg"  style="width:250px; height:auto;" alt="">
+  <img src="assets/img/cover/upc_logo.png"  style="width:250px; height:auto;" alt="">
 </p>
 
 
