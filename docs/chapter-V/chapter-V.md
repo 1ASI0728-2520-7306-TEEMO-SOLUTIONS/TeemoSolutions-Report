@@ -407,7 +407,7 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 ###### Figura 49
 
 *Sección del diagrama entidad-relación correspondiente al Bounded Context de IAM*
-
+![ DIAGRAM](../../assets/img/chapter-V/ER-IAM.jpg)
 ---
 
 ### 5.2. Bounded Context: Profile and Preferences
@@ -719,7 +719,7 @@ Esta visualización resulta esencial para asegurar la coherencia entre el modelo
 
 *Sección del diagrama entidad-relación correspondiente al Bounded Context de Profile and Preferences*
 
-<image src="../assets/img/capitulo-4/bounded-context-profile-and-personal-data/database-diagram-profile-and-personal-data.png"></image>
+![ DIAGRAM](../../assets/img/chapter-V/ER-profile.jpg)
 
 ---
 
@@ -1088,7 +1088,7 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 
 *Sección del diagrama entidad-relación correspondiente al Bounded Context de Asset and Resource Management*
 
-<image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
+![ DIAGRAM](../../assets/img/chapter-V/ER-assestandresource.jpg)
 
 ---
 
@@ -1670,6 +1670,8 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
+![ DIAGRAM](../../assets/img/chapter-V/ER-AIprocess.jpg)
+
 ---
 
 ### 5.5. Bounded Context: Service Design and Planning
@@ -1950,7 +1952,7 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 ###### Figura 94
 *Diagrama de base de datos del Bounded Context de Service Design and Planning*
 
-<image src="../assets/img/capitulo-4/bounded-context-pot-management/database-diagram-pot-management.png"></image>
+![ DIAGRAM](../../assets/img/chapter-V/ER-serviceandplanning.jpg)
 
 ---
 
@@ -1960,6 +1962,8 @@ En el contexto táctico, el Bounded Context Service Operation and Monitoring con
 Este módulo centraliza métricas, logs y eventos operativos, normaliza su semántica y los transforma en señales accionables: estados de servicio (ServiceStatus), alertas críticas (SystemAlert) y registros de error (ErrorLog). Desde allí, expone interfaces claras para que otros bounded contexts—por ejemplo, Report (que genera documentos descargables de desempeño, riesgos y emisiones) y Notification (que comunica fallos, desviaciones y cambios de ETA a usuarios finales)—consuman información consistente y confiable. Además, provee capacidades de control operacional (p. ej., pausar/reanudar monitoreo de una ruta, ajustar umbrales de alerta, forzar revalidaciones) que cierran el ciclo entre la supervisión y la acción.
 
 Los límites de este bounded context están definidos para evitar acoplamientos indebidos: no calcula rutas ni optimiza trayectorias (responsabilidad del Core de Cálculo de Rutas), ni gestiona identidades o permisos (IAM). En su lugar, observa la ejecución, correla eventos de sistema y de operación, evalúa condiciones contra SLO/umbrales, y publica estados/alertas estandarizados. En el monolito con DDD, sus responsabilidades se organizan por capas (Domain, Application, Interface, Infrastructure) y se integran con el resto de la plataforma mediante servicios de aplicación e interfaces explícitas, manteniendo baja complejidad (sin brokers ni event bus) y privilegiando integraciones HTTP sencillas con las APIs externas.
+
+
 
 ---
 
@@ -2922,6 +2926,8 @@ El nivel de detalle abarca la definición de atributos y métodos para cada clas
 
 Esta vista detallada del diseño táctico facilita una comprensión compartida del modelo conceptual, sirviendo como puente entre el análisis del dominio y su implementación técnica, y asegurando la coherencia estructural en la gestión y trazabilidad de recursos en la plataforma.
 
+<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
+
 ##### 5.7.1.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
 
 En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Service Operation and Monitoring. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
@@ -2930,7 +2936,7 @@ El diagrama incluye detalles fundamentales como los tipos de datos, las restricc
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
-<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
+![ DIAGRAM](../../assets/img/chapter-V/ER-serviceandmonitoring.jpg)
 
 ---
 
@@ -3178,3 +3184,6 @@ En esta subsección se presenta el diagrama de base de datos correspondiente al 
 El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
+
+![ DIAGRAM](../../assets/img/chapter-V/ER-notifications.jpg)
+
