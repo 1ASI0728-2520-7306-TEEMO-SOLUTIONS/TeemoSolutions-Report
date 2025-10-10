@@ -1,3 +1,5 @@
+# Anexos
+
 En esta sección se incorporan elementos complementarios al cuerpo principal del informe, tales como tablas extensas, documentos técnicos, gráficos detallados, esquemas de arquitectura, entrevistas u otros insumos relevantes. Su inclusión permite ampliar y sustentar los hallazgos expuestos sin afectar la fluidez del texto principal. Cada anexo se presenta en una nueva página, identificado con una letra mayúscula y un título correspondiente que facilite su localización y consulta.
 
 **Anexo A – Video de exposición del Trabajo Final Descripción** 
@@ -28,7 +30,7 @@ Enlace: About-The-Product
 
 Sesiones completas de entrevistas cualitativas y cuantitativas con usuarios finales, organizadas por segmentos y preguntas guía. 
 
-Enlace: Entrevistas de Usuario para el Proyecto Mushroom – Equipo de Teemo Solutions
+Enlace: [Entrevistas de Usuario para el Proyecto Mushroom – Equipo de TeemoSolutions](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a955_upc_edu_pe/ERshpHqBeD1Btquo46R2npsBg3-ZqoIrr90kLY8Ix_a4qw?e=brkSf8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ---
 
@@ -44,7 +46,7 @@ Enlace: Product Backlog en Jira Software
 
 Tablero con fases, eventos de dominio y legendas que ilustran el mapeo colaborativo de flujos de negocio. 
 
-Enlace: [Tablero de EventStorming en Miro](https://miro.com/app/board/uXjVJI6dvpE=/?share_link_id=953455470379)
+Enlace: [Tablero de EventStorming en Miro](https://miro.com/app/board/uXjVJFURxpk=/)
 
 ---
 
