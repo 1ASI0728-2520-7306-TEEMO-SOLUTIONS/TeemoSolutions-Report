@@ -29,8 +29,12 @@
   }
 </style>
 
+# Bibliografía
+
 ---
+
 **Marco Teórico:**
+
 ---
 
 Abofol, T., Erev, I. & Sulitzeanu-Kenan, R. (2023). Conformity and Group Performance. Human Nature, 34. 381–399. https://doi.org/10.1007/s12110-023-09454-2
@@ -111,7 +115,9 @@ Zeldman, J. (2024). Web Standards. Zeldman on Web and Interaction Design. Recupe
 Zimarev, A. (2019). Hands-On Domain-Driven Design with .NET Core: Tackling complexity in the heart of software by putting DDD principles into practice. Packt Publishing. https://www.amazon.com/-/es/Hands-Domain-Driven-Design-NET-Core/dp/1788834097
 
 ---
+
 **Sustento e Investigación:**
+
 ---
 
 Cyrill, M. (2024, 14 de marzo). La actual crisis del Mar Rojo obliga al transporte marítimo mundial a buscar nuevas rutas. *India Briefing*. https://www.india-briefing.com/news/la-actual-crisis-del-mar-rojo-obliga-al-transporte-maritimo-mundial-a-buscar-nuevas-rutas-31590.html
