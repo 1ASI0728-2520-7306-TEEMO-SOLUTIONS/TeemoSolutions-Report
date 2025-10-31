@@ -1965,961 +1965,345 @@ Esta visualización detallada contribuye significativamente a la comprensión co
 
 ---
 
-### 5.6. Bounded Context: Service Operation and Monitoring
-En el contexto táctico, el Bounded Context Service Operation and Monitoring concentra la observabilidad, el monitoreo operativo y el control de las operaciones de Mushroom. Su objetivo es ofrecer una fuente única de verdad sobre el estado del sistema (servicios internos y dependencias externas como IA, clima y geopolítica) y sobre la ejecución de rutas marítimas (cumplimiento de ETA, desvíos, incidencias y cambios de riesgo), habilitando la detección temprana de anomalías y la reacción informada ante eventos.
+### 5.6.  Bounded Context: Service Operation and Monitoring
 
-Este módulo centraliza métricas, logs y eventos operativos, normaliza su semántica y los transforma en señales accionables: estados de servicio (ServiceStatus), alertas críticas (SystemAlert) y registros de error (ErrorLog). Desde allí, expone interfaces claras para que otros bounded contexts—por ejemplo, Report (que genera documentos descargables de desempeño, riesgos y emisiones) y Notification (que comunica fallos, desviaciones y cambios de ETA a usuarios finales)—consuman información consistente y confiable. Además, provee capacidades de control operacional (p. ej., pausar/reanudar monitoreo de una ruta, ajustar umbrales de alerta, forzar revalidaciones) que cierran el ciclo entre la supervisión y la acción.
+En el contexto táctico, el Bounded Context **Service Operation and Monitoring** concentra la observabilidad y el control operativo del sistema y de las rutas en **Mushroom**. Este módulo actúa como **fuente única de verdad** del estado operativo: consolida métricas de viajes, eventos durante la travesía, estado/validez de rutas y salud de las integraciones externas. Orquesta la **revalidación de rutas populares** antes de su uso apoyándose en datos meteo-oceánicos y en la evaluación del motor de enrutamiento (A* + IA del Core Domain), y mantiene un catálogo actualizado con su condición (válida/obsoleta), popularidad y riesgos, de modo que la selección sea segura y eficiente.
 
-Los límites de este bounded context están definidos para evitar acoplamientos indebidos: no calcula rutas ni optimiza trayectorias (responsabilidad del Core de Cálculo de Rutas), ni gestiona identidades o permisos (IAM). En su lugar, observa la ejecución, correla eventos de sistema y de operación, evalúa condiciones contra SLO/umbrales, y publica estados/alertas estandarizados. En el monolito con DDD, sus responsabilidades se organizan por capas (Domain, Application, Interface, Infrastructure) y se integran con el resto de la plataforma mediante servicios de aplicación e interfaces explícitas, manteniendo baja complejidad (sin brokers ni event bus) y privilegiando integraciones HTTP sencillas con las APIs externas.
-
-
+Además, **Service Operation and Monitoring** captura y normaliza la telemetría de operación (tiempos, distancias, incidencias, emisiones estimadas), expone **interfaces limpias** para su consumo por otros bounded contexts (p. ej., entrega datos consolidados al contexto **Report** para la generación de PDF/Excel) y habilita puntos de control para la operación diaria (validación on-demand, refresco de popularidad).
 
 ---
 
-#### 5.6.1. Service Operation and Monitoring Bounded Context Domain Layer
+#### 5.7.1. Service Operation and Monitoring Bounded Context Domain Layer
 
-En la capa de dominio de Service Operation and Monitoring se modela la lógica de negocio mínima necesaria para validar los inputs, realizar una revisión de estado de los otros Bounded Context, desarrollar reportes y verificar puntajes de rutas con respecto a su popularidad o influencia.
+### **Port**
 
-**ServiceStatus:**
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | Port |
+| **Categoría** | **Aggregate Root** (extiende `AuditableAbstractAggregateRoot<Port>`) |
+| **Propósito** | Representa un **puerto** (nodo del grafo de navegación) con su nombre, coordenadas y continente; es la unidad raíz que se referencia en rutas y cálculos de A*. |
 
-###### Tabla 146
+**Atributos**
 
-*Descripción de ServiceStatus en el Domain Layer de Service Operation and Monitoring*
+| Nombre | Tipo | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| id | `String` | inherited | Identificador Mongo (heredado de `AuditableAbstractAggregateRoot`) |
+| createdAt | `Date` | inherited | Marca de creación (auditoría) |
+| updatedAt | `Date` | inherited | Marca de actualización (auditoría) |
+| name | `String` | private | Nombre del puerto |
+| coordinates | `Coordinates` | private | Coordenadas geográficas (VO) |
+| continent | `String` | private | Continente del puerto |
 
-| Propiedad     | Valor                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------- |
-| **Nombre**    | ServiceStatus                                                                         |
-| **Categoría** | **Aggregate Root**                                                                    |
-| **Propósito** | Representar el estado “vivo” de un servicio (interno/externo) y su última evaluación. |
+**Métodos**
 
-###### Tabla 147
-
-*Atributos de ServiceStatus en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre      | Tipo                   | Visibilidad | Descripción                                          |
-| ----------- | ---------------------- | ----------- | ---------------------------------------------------- |
-| id          | `ServiceId`            | private     | Identidad del servicio monitorizado                  |
-| name        | `ServiceName`          | private     | Nombre canónico (p. ej. `RouteEngine`, `WeatherAPI`) |
-| kind        | `ServiceKind` (enum)   | private     | `INTERNAL` / `EXTERNAL`                              |
-| endpoint    | `EndpointUrl?`         | private     | URL base si aplica (servicio externo)                |
-| status      | `ServiceHealth` (enum) | private     | `UP` / `DEGRADED` / `DOWN` / `MAINTENANCE`           |
-| lastCheck   | `Instant`              | private     | Timestamp de última evaluación                       |
-| lastLatency | `Duration?`            | private     | Latencia reciente agregada                           |
-| errorRate   | `Double?`              | private     | % de errores reciente (ventana corta)                |
-| version     | `long`                 | private     | Versión para control de concurrencia optimista       |
-
-###### Tabla 148
-
-*Métodos de ServiceStatus en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre                       | Retorno          | Visibilidad | Descripción                                                                                  |
-| ---------------------------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------- |
-| applyHealthCheck             | `void`           | public      | Aplica un `HealthCheckResult` y actualiza `status`, `lastLatency`, `errorRate`, `lastCheck`. |
-| markMaintenance              | `void`           | public      | Pone el servicio en `MAINTENANCE`.                                                           |
-| markDown                     | `void`           | public      | Pone el servicio en `DOWN`.                                                                  |
-| markUp                       | `void`           | public      | Pone el servicio en `UP` y limpia métricas degradadas.                                       |
-| toDomainEventIfStatusChanged | `StatusChanged?` | public      | Devuelve evento si cambió el estado desde la última evaluación.                              |
+| Nombre | Retorno | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| (getters) | — | public | Accesores generados por Lombok |
+| equals / hashCode | `boolean` / `int` | public | Igualdad por `name` + `continent` |
+| (ctor) | — | public | Crea una instancia válida con nombre, coordenadas y continente |
 
 ---
 
-**SystemAlert:**
+### **Route**
 
-###### Tabla 149
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | Route |
+| **Categoría** | Entity |
+| **Propósito** | Representa una **arista dirigida** entre dos puertos con la distancia base usada por el cálculo. |
 
-*Descripción de SystemAlert en el Domain Layer de Service Operation and Monitoring*
+**Atributos**
 
-| Propiedad     | Valor                                                                                                 |
-| ------------- | ----------------------------------------------------------------------------------------------------- |
-| **Nombre**    | SystemAlert                                                                                           |
-| **Categoría** | **Aggregate Root**                                                                                    |
-| **Propósito** | Gestionar el ciclo de vida de una alerta (apertura, actualización, resolución) con severidad y causa. |
+| Nombre | Tipo | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| homePort | `Port` | private final | Puerto origen |
+| destinationPort | `Port` | private final | Puerto destino |
+| distance | `Double` | private final | Distancia base entre puertos |
 
-###### Tabla 150
+**Métodos**
 
-*Atributos de SystemAlert en el Domain Layer de Service Operation and Monitoring*
-
-
-| Nombre       | Tipo                     | Visibilidad | Descripción                                             |
-| ------------ | ------------------------ | ----------- | ------------------------------------------------------- |
-| id           | `AlertId`                | private     | Identificador de alerta                                 |
-| serviceId    | `ServiceId`              | private     | Servicio afectado                                       |
-| type         | `AlertType` (enum)       | private     | `AVAILABILITY`, `LATENCY`, `ERROR_SPIKE`, `INTEGRATION` |
-| severity     | `Severity` (VO)          | private     | Severidad estándar (mapea a OTel)                       |
-| status       | `AlertStatus` (enum)     | private     | `OPEN` / `ACKED` / `RESOLVED`                           |
-| title        | `String`                 | private     | Resumen                                                 |
-| description  | `String`                 | private     | Detalle técnico/negocio                                 |
-| openedAt     | `Instant`                | private     | Fecha de apertura                                       |
-| lastUpdateAt | `Instant`                | private     | Última actualización                                    |
-| resolvedAt   | `Instant?`               | private     | Fecha de resolución si aplica                           |
-| evidence     | `List<IncidentEvidence>` | private     | Evidencias adjuntas (latencias, errores, eventos)       |
-
-###### Tabla 151
-
-*Métodos de SystemAlert en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre        | Retorno                       | Visibilidad | Descripción                                         |
-| ------------- | ----------------------------- | ----------- | --------------------------------------------------- |
-| escalate      | `void`                        | public      | Incrementa severidad (p. ej., de `WARN` a `ERROR`). |
-| acknowledge   | `void`                        | public      | Marca como reconocida por operaciones.              |
-| addEvidence   | `void`                        | public      | Adjunta `IncidentEvidence`.                         |
-| resolve       | `void`                        | public      | Cierra la alerta, set `RESOLVED` y `resolvedAt`.    |
-| toDomainEvent | `AlertRaised`/`AlertResolved` | public      | Emite evento de apertura/cierre.                    |
+| Nombre | Retorno | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| (getters) | — | public | Accesores |
+| (ctor) | — | public | Inicializa la arista con sus extremos y distancia |
 
 ---
 
-**ErrorLog:**
+### **Coordinates**
 
-###### Tabla 152
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | Coordinates |
+| **Categoría** | Value Object (Java `record`) |
+| **Propósito** | Coordenadas geográficas inmutables (`latitude`, `longitude`). |
 
-*Descripción de ErrorLog en el Domain Layer de Service Operation and Monitoring*
+**Atributos**
 
-| Propiedad     | Valor                                                                         |
-| ------------- | ----------------------------------------------------------------------------- |
-| **Nombre**    | ErrorLog                                                                      |
-| **Categoría** | **Entity**                                                                    |
-| **Propósito** | Registrar errores o eventos inesperados con severidad y trazabilidad opcional |
-
-###### Tabla 153
-
-*Atributos de ErrorLog en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre     | Tipo                  | Visibilidad | Descripción                                        |
-| ---------- | --------------------- | ----------- | -------------------------------------------------- |
-| id         | `ErrorId`             | private     | Identificador                                      |
-| serviceId  | `ServiceId?`          | private     | Servicio asociado (si aplica)                      |
-| occurredAt | `Instant`             | private     | Momento de ocurrencia                              |
-| severity   | `Severity`            | private     | Nivel de severidad                                 |
-| code       | `String?`             | private     | Código o categoría (p. ej., `WEATHER_API_TIMEOUT`) |
-| message    | `String`              | private     | Mensaje                                            |
-| details    | `Map<String,Object>?` | private     | Datos estructurados (requestId, endpoint, etc.)    |
-| traceId    | `String?`             | private     | Correlación con trazas                             |
-| spanId     | `String?`             | private     | Correlación con spans                              |
+| Nombre | Tipo | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| latitude | `double` | public (record) | Latitud en grados |
+| longitude | `double` | public (record) | Longitud en grados |
 
 ---
 
-**ServiceId:**
-
-###### Tabla 154
-
-*Value Object de ServiceId en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                           |
-| ------------- | ------------------------------- |
-| **Nombre**    | ServiceId                       |
-| **Categoría** | Value Object                    |
-| **Propósito** | Encapsular el ID de un servicio |
-
-**ServiceName:**
-
-###### Tabla 155
-
-*Value Object de ServiceName en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                |
-| ------------- | ------------------------------------ |
-| **Nombre**    | ServiceName                          |
-| **Categoría** | Value Object                         |
-| **Propósito** | Nombre legible y único en el dominio |
-
-**EndpointUrl:**
-
-###### Tabla 156
-
-*Value Object de EndpintUrl en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                             |
-| ------------- | --------------------------------- |
-| **Nombre**    | EndpointUrl                       |
-| **Categoría** | Value Object                      |
-| **Propósito** | URL válida de dependencia externa |
-
-**Severity:**
-
-###### Tabla 157
-
-*Value Object de Severity en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                     |
-| ------------- | ----------------------------------------- |
-| **Nombre**    | Severity                                  |
-| **Categoría** | Value Object                              |
-| **Propósito** | Nivel estándar de severidad interoperable |
-
-**HealthCheckResult:**
-
-###### Tabla 158
-
-*Value Object de HealthCheckResult en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | HealthCheckResult                          |
-| **Categoría** | Value Object                               |
-| **Propósito** | Resultado inmutable de un chequeo de salud |
-
-**IncidentEvidence:**
-
-###### Tabla 159
-
-*Value Object de IncidentEvidence en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | IncidentEvidence                           |
-| **Categoría** | Value Object                               |
-| **Propósito** | Evidencia compacta que respalda una alerta |
-
----
-
-**Enums:**
-
-###### Tabla 160
-
-*Listado de enums en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre | Valores |
-|-|-|
-|ServiceKind |INTERNAL, EXTERNAL|
-|ServiceHealth | 1UP, DEGRADED, DOWN, MAINTENANCE|
-|AlertType | AVAILABILITY, LATENCY, ERROR_SPIKE, INTEGRATION
-|AlertStatus | OPEN, HACKED, RESOLVED |
-
----
-
-**HealthAssessmentService:**
-
-###### Tabla 161
-
-*Descripción de HealthAssessmentService en el Domain Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                        |
-| ------------- | ---------------------------------------------------------------------------- |
-| **Nombre**    | HealthAssessmentService                                                      |
-| **Categoría** | Domain Service                                                               |
-| **Propósito** | Evaluar un `HealthCheckResult` y decidir `ServiceHealth` + si amerita alerta |
-
-###### Tabla 162
-
-*Métodos de HealthAssessmentService en el Domain Layer de Service Operation and Monitoring*
-
-| Nombre           | Retorno         | Descripción                                                               |
-| ---------------- | --------------- | ------------------------------------------------------------------------- |
-| assess           | `ServiceHealth` | Aplica reglas (umbral latencia, % error, reachability) y devuelve estado. |
-| shouldRaiseAlert | `boolean`       | Determina si se abre/escala alerta según política y estado previo.        |
-| buildAlertFor    | `SystemAlert`   | Crea instancia inicial de `SystemAlert` usando `SystemAlertFactory`.      |
-
----
-
-**SystemAlertFactory:**
-
-###### Tabla 163
-
-*Descripción de SystemAlertFactory en el Domain Layer de Service Operation and Monitoring*
-
-| Propósito | Construir `SystemAlert` válido (ID, timestamps, severidad inicial) a partir de un `ServiceId`, `AlertType` y evidencia. |
-| --------- | ----------------------------------------------------------------------------------------------------------------------- |
-
----
-
-**Repositorios:**
-
-###### Tabla 164
-
-*Métodos de ServiceStatusRepository en el Domain Layer de Service Operation and Monitoring*
-
-| Método     | Retorno               | Descripción                               |
-| ---------- | --------------------- | ----------------------------------------- |
-| findById   | `ServiceStatus?`      | Busca por `ServiceId`.                    |
-| findAll    | `List<ServiceStatus>` | Lista todos.                              |
-| save       | `ServiceStatus`       | Persiste (upsert) con control de versión. |
-| findByKind | `List<ServiceStatus>` | Filtra por `INTERNAL/EXTERNAL`.           |
-
-###### Tabla 165
-
-*Métodos de SystemAlertRepository en el Domain Layer de Service Operation and Monitoring*
-
-| Método                   | Retorno             | Descripción                        |
-| ------------------------ | ------------------- | ---------------------------------- |
-| findOpenByServiceAndType | `SystemAlert?`      | Alerta abierta para servicio+tipo. |
-| save                     | `SystemAlert`       | Persiste/actualiza.                |
-| findOpen                 | `List<SystemAlert>` | Todas abiertas.                    |
-| findById                 | `SystemAlert?`      | Por `AlertId`.                     |
-
-###### Tabla 166
-
-*Métodos de ErrorLogRepository en el Domain Layer de Service Operation and Monitoring*
-
-| Método              | Retorno          | Descripción                |
-| ------------------- | ---------------- | -------------------------- |
-| save                | `ErrorLog`       | Persiste log.              |
-| findRecentByService | `List<ErrorLog>` | Últimos N por `serviceId`. |
-| findByTraceId       | `List<ErrorLog>` | Útiles para correlación.   |
-
-*Tabla de PopularRoute en el Domain Layer*
-
-| Propiedad     | Valor                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------- |
-| **Nombre**    | PopularRoute                                                                                       |
-| **Categoría** | Aggregate Root                                                                                     |
-| **Propósito** | Representar una ruta catalogada como “popular”, con métricas de uso y validación periódica por IA. |
-
-*Tabla de atributos de PopularRoute*
-
-| Nombre          | Tipo             | Visibilidad | Descripción                                       |
-| --------------- | ---------------- | ----------- | ------------------------------------------------- |
-| id              | `PopularRouteId` | private     | Identificador único de la ruta popular            |
-| routeId         | `RouteId`        | private     | Identificador de la ruta base calculada por A*/AI |
-| origin          | `PortCode`       | private     | Puerto de origen                                  |
-| destination     | `PortCode`       | private     | Puerto de destino                                 |
-| popularityScore | `double`         | private     | Puntaje compuesto de popularidad                  |
-| usageCount      | `long`           | private     | Conteo de usos/selecciones                        |
-| lastUsedAt      | `Instant`        | private     | Última vez que fue utilizada                      |
-| lastValidatedAt | `Instant?`       | private     | Última fecha en la que fue revalidada por IA      |
-| valid           | `boolean`        | private     | Indica si sigue siendo óptima/vigente             |
-| safetyScore     | `double?`        | private     | Métrica de seguridad        		       |
-| etaReliability  | `double?`        | private     | Confiabilidad de ETA       	               |
-
-*Tabla de métodos de PopularRoute*
-
-| Nombre         | Tipo de retorno | Visibilidad | Descripción                                          |
-| -------------- | --------------- | ----------- | ---------------------------------------------------- |
-| registerUsage  | `void`          | public      | Incrementa `usageCount` y actualiza `lastUsedAt`     |
-| recomputeScore | `void`          | public      | Recalcula `popularityScore` con la política definida |
-| markValidated  | `void`          | public      | Marca `valid` y setea `lastValidatedAt`              |
-
-*Tabla de PopularityScore en el Domain Layer*
-
-| Propiedad     | Valor                                |
-| ------------- | ------------------------------------ |
-| **Nombre**    | PopularityScore                      |
-| **Categoría** | Value Object                         |
-| **Propósito** | Encapsular el puntaje de popularidad |
-
-*Tabla de PopularRouteRepository en el Domain Layer*
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | PopularRouteRepository                     |
-| **Categoría** | Repository                                 |
-| **Propósito** | Interfaz para persistencia de PopularRoute |
-
-*Tabla de métodos de PopularRouteRepository*
-
-| Nombre         | Tipo de retorno      | Visibilidad | Descripción                                         |
-| -------------- | -------------------- | ----------- | --------------------------------------------------- |
-| findTopN       | `List<PopularRoute>` | public      | Devuelve el top-N por `popularityScore`             |
-| findByOD       | `List<PopularRoute>` | public      | Busca por par `origin`–`destination`                |
-| save           | `PopularRoute`       | public      | Persiste/actualiza una PopularRoute                 |
-| incrementUsage | `void`               | public      | Incrementa `usageCount` de una ruta (por `routeId`) |
-
+### **RouteGraph**
+
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | RouteGraph |
+| **Categoría** | Value Object |
+| **Propósito** | Grafo **no dirigido** de navegación. Mantiene la lista de adyacencia `Port -> List<Route>` y utilitarios de consulta. |
+
+**Atributos**
+
+| Nombre | Tipo | Visibilidad | Descripción |
+| --- | --- | --- | --- |
+| adjacencyList | `Map<Port, List<Route>>` | private final | Lista de adyacencia del grafo |
+
+**Métodos (principales)**
+
+| Nombre | Retorno | Descripción |
+| --- | --- | --- |
+| `addNode(Port)` | `void` | Agrega un nodo (puerto) |
+| `addEdge(Route)` | `void` | Agrega una arista (ruta) **y su reversa** para grafo no-dirigido |
+| `getAdjacentEdges(Port)` | `List<Route>` | Devuelve aristas salientes del puerto |
+| `containsNode(Port)` | `boolean` | Verifica existencia de nodo |
+| `getNodeCount()` | `int` | Número de nodos |
+| `getEdgeCount()` | `int` | Número de aristas **no dirigidas** |
+| `getAllNodes()` | `Set<Port>` | Conjunto de nodos |
 
 ---
 
 #### 5.6.2. Service Operation and Monitoring Bounded Context Interface Layer
 
-En la capa de interfaz del Bounded Context de Service Operation and Monitoring se exponen los endpoints REST necesarios para solicitar revisiones, revisar estados y consultar resultados tras cada reporte. Esta capa debe preservar un alto rendimiento para asegurar que la solución de problemas en el sistema se resuelva con rapidez y se eviden problemas a corto y largo plazo.
+### PortController
 
-**OpsStatusController:**
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `PortController` |
+| **Categoría** | Controller |
+| **Propósito** | Exponer endpoints para crear, consultar, listar y eliminar **puertos** (insumo clave del cálculo/monitoreo de rutas). |
+| **Ruta base** | `/api/ports` |
 
-###### Tabla 167
-
-*Descripción de OpsStatusController en el Interface Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------- |
-| **Nombre**    | OpsStatusController                                                                           |
-| **Categoría** | Controller                                                                                    |
-| **Propósito** | Exponer el **estado de servicios** internos/externos del sistema (vista simple de operación). |
-| **Ruta base** | `/api/ops/status`                                                                             |
-
-###### Tabla 168
-
-*Endpoints de OpsStatusController en el Interface Layer de Service Operation and Monitoring*
-
-| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
-| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
-| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
-| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
-| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
-| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
+| Nombre | Método/Ruta | Acción | Handle (Servicio) |
+| --- | --- | --- | --- |
+| `createPort` | **POST** `/api/ports` | Crea un puerto a partir del cuerpo JSON. | `PortService.createPort(...)` (usa `CreatePortCommandFromResourceAssembler`) |
+| `getPortById` | **GET** `/api/ports/{portId}` | Obtiene un puerto por ID. | `PortService.getPortById(...)` |
+| `getPortByName` | **GET** `/api/ports/name/{name}` | Obtiene un puerto por nombre. | `PortService.getPortByName(...)` |
+| `deletePort` | **DELETE** `/api/ports/{portId}` | Elimina un puerto por ID. | `PortService.deletePort(...)` |
+| `getAllPorts` | **GET** `/api/ports/all-ports` | Lista todos los puertos (mapeados a `PortResource`). | `PortService.getAllPorts()` |
 
 ---
 
-**OpsAlertController:**
+### RouteController
 
-###### Tabla 169
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `RouteController` |
+| **Categoría** | Controller |
+| **Propósito** | Exponer endpoints para **calcular rutas óptimas** y **consultar distancia** entre puertos, además de listar rutas persistidas. |
+| **Ruta base** | `/api/routes` |
 
-*Descripción de OpsAlertController en el Interface Layer de Service Operation and Monitoring.*
-
-| Nombre           | Ruta                             | Método | Acción                                                        | Handle (Application)             |
-| ---------------- | -------------------------------- | ------ | ------------------------------------------------------------- | -------------------------------- |
-| GetAll           | `/`                              | GET    | Lista estados con filtros opcionales `kind`, `name`, `health` | `ListServiceStatusQuery`         |
-| GetById          | `/{serviceId}`                   | GET    | Obtiene el estado de un servicio por id                       | `GetServiceStatusByIdQuery`      |
-| MarkMaintenance  | `/{serviceId}/maintenance`       | POST   | Marca un servicio en **mantenimiento**                        | `MarkServiceMaintenanceCommand`  |
-| ClearMaintenance | `/{serviceId}/maintenance/clear` | POST   | Sale de mantenimiento → **UP**                                | `ClearServiceMaintenanceCommand` |
-
-###### Tabla 170
-
-*Endpoints de OpsAlertController en el Interface Layer de Service Operation and Monitoring*
-
-| Nombre      | Ruta                 | Método | Acción                                                                                      | Handle (Application)      |
-| ----------- | -------------------- | ------ | ------------------------------------------------------------------------------------------- | ------------------------- |
-| List        | `/`                  | GET    | Lista alertas con filtros `status`, `type`, `serviceId` y paginación simple (`page`,`size`) | `ListAlertsQuery`         |
-| GetById     | `/{alertId}`         | GET    | Detalle de una alerta (incluye evidencias)                                                  | `GetAlertByIdQuery`       |
-| Open        | `/`                  | POST   | (Opcional) Abrir alerta manual (para pruebas)                                               | `OpenAlertCommand`        |
-| Acknowledge | `/{alertId}/ack`     | POST   | Marcar alerta como **reconocida**                                                           | `AcknowledgeAlertCommand` |
-| Resolve     | `/{alertId}/resolve` | POST   | Cerrar alerta con mensaje de resolución                                                     | `ResolveAlertCommand`     |
+| Nombre | Método/Ruta | Parámetros | Acción | Handle (Servicio) |
+| --- | --- | --- | --- | --- |
+| `calculateOptimalRoute` | **POST** `/api/routes/calculate-optimal-route` | `startPort`, `endPort` (query params) | Calcula la **ruta óptima** y retorna `RouteCalculationResource` (pasos, distancia total, advertencias, mapeo de coordenadas). | `RouteService.calculateOptimalRoute(startPort, endPort)` |
+| `getDistanceBetweenPorts` | **GET** `/api/routes/distance-between-ports` | `startPort`, `endPort` (query params) | Devuelve `RouteDistanceResource` con **distancia** (derivada del cálculo óptimo) + mensajes/meta. | (Internamente reutiliza) `RouteService.calculateOptimalRoute(...)` |
+| `getAllRoutes` | **GET** `/api/routes/all-routes` | — | Lista todas las rutas persistidas (`List<RouteDocument>`). | `RouteService.findAllRoutes()` |
 
 ---
 
-**OpsErrorController:**
+### EventController
 
-###### Tabla 171
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `EventController` |
+| **Categoría** | Controller |
+| **Propósito** | Exponer consultas auxiliares relacionadas a **eventos** (operación/monitoreo) relevantes para rutas. |
+| **Ruta base** | `/api/events` |
 
-*Descripción de OpsErrorController en el Interface Layer de Service Operation and Monitoring.*
-
-| Propiedad     | Valor                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| **Nombre**    | OpsErrorController                                                                        |
-| **Categoría** | Controller                                                                                |
-| **Propósito** | Consultar **registros de errores** del sistema de manera simple para soporte/diagnóstico. |
-| **Ruta base** | `/api/ops/errors`                                                                         |
-
-###### Tabla 172
-
-*Endpoints de OpsErrorController en el Interface Layer de Service Operation and Monitoring*
-
-| Nombre  | Ruta         | Método | Acción                                                                                                               | Handle (Application)   |
-| ------- | ------------ | ------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Search  | `/`          | GET    | Búsqueda por `serviceId`, rango de tiempo (`from`,`to`) y `severity` (INFO/WARN/ERROR/FATAL). Soporta `page`,`size`. | `SearchErrorLogsQuery` |
-| GetById | `/{errorId}` | GET    | Detalle de un error puntual                                                                                          | `GetErrorLogByIdQuery` |
-
-*Tabla de PopularRoutesController en el Interface Layer*
-
-| Propiedad     | Valor                                  |
-| ------------- | -------------------------------------- |
-| **Nombre**    | PopularRoutesController                |
-| **Categoría** | Controller                             |
-| **Propósito** | Exponer endpoints para rutas populares |
-| **Ruta base** | `/api/routes/popular`                  |
-
-*Tabla de endpoints de PopularRoutesController*
-
-| Nombre   | Ruta                  | Método | Acción                                                | Handle                        |
-| -------- | --------------------- | ------ | ----------------------------------------------------- | ----------------------------- |
-| List     | `/`                   | GET    | Listar top (filtros `origin`, `destination`, `limit`) | `GetPopularRoutesQuery`       |
-| Detail   | `/{routeId}`          | GET    | Ficha detallada                                       | `GetPopularRouteDetailQuery`  |
-| Validate | `/{routeId}/validate` | POST   | Revalidar (A*/AI) y marcar vigente                    | `ValidatePopularRouteCommand` |
-
-*Tabla de RouteReportsController en el Interface Layer*
-
-| Propiedad     | Valor                                   |
-| ------------- | --------------------------------------- |
-| **Nombre**    | RouteReportsController                  |
-| **Categoría** | Controller                              |
-| **Propósito** | Generar informe descargable de una ruta |
-| **Ruta base** | `/api/reports/routes`                   |
-
-*Tabla de endpoints de RouteReportsController*
-
-| Nombre   | Ruta         | Método | Acción                                                                                       | Handle                        |
-| -------- | ------------ | ------ | -------------------------------------------------------------------------------------------- | ----------------------------- |
-| Generate | `/{routeId}` | POST   | Genera informe (Excel/PDF) con tiempos, eventos, emisiones; usa histórico + métricas de “ops” | `GenerateRouteReportCommand`* |
+| Nombre | Método/Ruta | Acción | Handle (Servicio) |
+| --- | --- | --- | --- |
+| `getDistinctOriginPorts` | **GET** `/api/events/origin-ports` | Devuelve **puertos de origen únicos** registrados en eventos (útil para monitoreo/analítica). | `EventService.getAllDistinctOriginPorts()` |
 
 ---
+
+## Resources / DTOs (Interface Layer)
+
+| Recurso | Tipo | Campos |
+| --- | --- | --- |
+| `CoordinatesResource` | `record` | `double latitude`, `double longitude` |
+| `CreatePortResource` | `record` | `String name`, `CoordinatesResource coordinates`, `String continent` |
+| `PortResource` | `record` | `String id`, `String name`, `CoordinatesResource coordinates`, `String continent` |
+| `RouteRequestResource` | `record` | `String startPort`, `String endPort`, `String continent` |
+| `RouteCalculationResource` | `record` | `List<String> optimalRoute`, `double totalDistance`, `List<String> warnings`, `Map<String, CoordinatesResource> coordinatesMapping` |
+| `RouteDistanceResource` | `record` | `Double distance`, `List<String> messages`, `Map<String, Object> meta` |
+| `ErrorResponse` | `record` | `String message`, `LocalDateTime timestamp`, `List<String> details (opcional)` |
+
+---
+
+## Assemblers
+
+| Clase | Rol | Detalle |
+| --- | --- | --- |
+| `CreatePortCommandFromResourceAssembler` | **Resource → Command** | Convierte `CreatePortResource` a `CreatePortCommand` (y mapea `CoordinatesResource` → `Coordinates`). |
+| `PortResourceFromEntityAssembler` | **Entity → Resource** | Convierte `Port` a `PortResource` (incluyendo coordenadas). |
 
 #### 5.6.3. Service Operation and Monitoring Bounded Context Application Layer 
 
-La capa de aplicación del Bounded Context de Service Operation and Monitoring coordina el flujo de revisión de estados y procesos de todo el sistema con el fin de mantener seguridad y rendimiento continuo, encapsulando la lógica de orquestación sin incorporar reglas de negocio. En esta capa se ubican los Command Handlers, Query Handlers y Event Handlers, encargados de gestionar operaciones relacionadas al monitoreo y salud del sistema. Esta capa garantiza que las interacciones se realicen de manera segura y transaccional, manteniendo la coherencia del sistema y delegando la lógica específica al dominio o a componentes de infraestructura según sea necesario.
+### PortService
 
-**Command Handlers:**
-
-###### Tabla 173
-
-*Descripción de RecordHealthCheckCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                                      |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | RecordHealthCheckCommandHandler                                                                                            |
-| **Categoría** | Command Handler                                                                                                            |
-| **Propósito** | Registrar un `HealthCheckResult` y actualizar `ServiceStatus` (UP/DEGRADED/DOWN/MAINTENANCE) usando reglas del dominio.    |
-| **Comando**   | `RecordHealthCheckCommand { serviceId, measuredAt, latencyMs?, errorRate?, isReachable, notes? }`                          |
-| **Efectos**   | Llama a `HealthAssessmentService` (dominio), `ServiceStatusRepository.save`. Si cambia el estado, publica `StatusChanged`. |
-
-###### Tabla 174
-
-*Descripción de MarkServiceMaintenanceCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                           |
-| ------------- | ------------------------------------------------------------------------------- |
-| **Nombre**    | MarkServiceMaintenanceCommandHandler                                            |
-| **Categoría** | Command Handler                                                                 |
-| **Propósito** | Marcar un servicio como `MAINTENANCE`.                                          |
-| **Comando**   | `MarkServiceMaintenanceCommand { serviceId, reason? }`                          |
-| **Efectos**   | `ServiceStatus.markMaintenance()` + `save` y publica `StatusChanged` si aplica. |
-
-###### Tabla 175
-
-*Descripción de ClearServiceMaintenanceCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                              |
-| ------------- | ------------------------------------------------------------------ |
-| **Nombre**    | ClearServiceMaintenanceCommandHandler                              |
-| **Categoría** | Command Handler                                                    |
-| **Propósito** | Salir de mantenimiento → `UP` (si corresponde).                    |
-| **Comando**   | `ClearServiceMaintenanceCommand { serviceId }`                     |
-| **Efectos**   | `ServiceStatus.markUp()` + `save` y `StatusChanged` si hay cambio. |
-
-###### Tabla 176
-
-*Descripción de OpenAlertCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                             |
-| ------------- | --------------------------------------------------------------------------------- |
-| **Nombre**    | OpenAlertCommandHandler                                                           |
-| **Categoría** | Command Handler                                                                   |
-| **Propósito** | Abrir alerta manual (para pruebas o acción operativa).                            |
-| **Comando**   | `OpenAlertCommand { serviceId, type, severity, title, description, evidence?[] }` |
-| **Efectos**   | Usa `SystemAlertFactory.create(...)`, persiste y publica `AlertRaised`.           |
-
-###### Tabla 177
-
-*Descripción de AcknowledgeAlertCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                        |
-| ------------- | -------------------------------------------- |
-| **Nombre**    | AcknowledgeAlertCommandHandler               |
-| **Categoría** | Command Handler                              |
-| **Propósito** | Marcar alerta como **ACKED**.                |
-| **Comando**   | `AcknowledgeAlertCommand { alertId, note? }` |
-| **Efectos**   | `SystemAlert.acknowledge()`, `save`.         |
-
-###### Tabla 178
-
-*Descripción de ResolveAlertCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                     |
-| ------------- | --------------------------------------------------------- |
-| **Nombre**    | ResolveAlertCommandHandler                                |
-| **Categoría** | Command Handler                                           |
-| **Propósito** | Resolver alerta abierta.                                  |
-| **Comando**   | `ResolveAlertCommand { alertId, resolutionMessage? }`     |
-| **Efectos**   | `SystemAlert.resolve()`, `save`, publica `AlertResolved`. |
-
-###### Tabla 179
-
-*Descripción de LogErrorCommandHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                            |
-| ------------- | -------------------------------------------------------------------------------- |
-| **Nombre**    | LogErrorCommandHandler                                                           |
-| **Categoría** | Command Handler                                                                  |
-| **Propósito** | Registrar un `ErrorLog` con severidad/código y detalles.                         |
-| **Comando**   | `LogErrorCommand { serviceId?, occurredAt, severity, code?, message, details? }` |
-| **Efectos**   | Crea `ErrorLog`, persiste y publica `ErrorLogged`.                               |
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Application Service** (Command & Query Handler) |
+| **Propósito** | Gestionar puertos (crear, listar, buscar, eliminar) como insumo del enrutamiento/monitoreo. |
+| **Orquesta** | `PortRepository` (Mongo) + mapeos a dominio (`PortDocument` ⇄ `Port`). |
+| **Entradas** | `CreatePortCommand`, ids/criterios simples. |
+| **Salidas** | `Port` (dominio) y documentos persistidos. |
 
 ---
 
-**Query Handlers:**
+### RouteServic
 
-###### Tabla 180
-
-*Descripción de ListServiceStatusQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                      |
-| ------------- | -------------------------------------------------------------------------- |
-| **Nombre**    | ListServiceStatusQueryHandler                                              |
-| **Categoría** | Query Handler                                                              |
-| **Propósito** | Listar estados con filtros (`kind`, `name`, `health`) y paginación simple. |
-| **Query**     | `ListServiceStatusQuery { filters..., page?, size? }`                      |
-| **Efectos**   | Lectura en `ServiceStatusRepository`.                                      |
-
-###### Tabla 181
-
-*Descripción de GetServiceStatusByIdQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                     |
-| ------------- | ----------------------------------------- |
-| **Nombre**    | GetServiceStatusByIdQueryHandler          |
-| **Categoría** | Query Handler                             |
-| **Propósito** | Obtener estado por `serviceId`.           |
-| **Query**     | `GetServiceStatusByIdQuery { serviceId }` |
-| **Efectos**   | Lectura en `ServiceStatusRepository`.     |
-
-###### Tabla 182
-
-*Descripción de ListAlertsQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                   |
-| ------------- | ----------------------------------------------------------------------- |
-| **Nombre**    | ListAlertsQueryHandler                                                  |
-| **Categoría** | Query Handler                                                           |
-| **Propósito** | Listar alertas por `status`, `type`, `serviceId`, severidad (paginado). |
-| **Query**     | `ListAlertsQuery { filters..., page?, size? }`                          |
-| **Efectos**   | Lectura en `SystemAlertRepository`.                                     |
-
-###### Tabla 183
-
-*Descripción de GetAlertByIdQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                               |
-| ------------- | ----------------------------------- |
-| **Nombre**    | GetAlertByIdQueryHandler            |
-| **Categoría** | Query Handler                       |
-| **Propósito** | Detalle de alerta.                  |
-| **Query**     | `GetAlertByIdQuery { alertId }`     |
-| **Efectos**   | Lectura en `SystemAlertRepository`. |
-
-###### Tabla 184
-
-*Descripción de SearchErrorLogsQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------- |
-| **Nombre**    | SearchErrorLogsQueryHandler                                                           |
-| **Categoría** | Query Handler                                                                         |
-| **Propósito** | Buscar `ErrorLog` por `serviceId`, rango de tiempo, severidad, `traceId`, paginación. |
-| **Query**     | `SearchErrorLogsQuery { criteria..., page?, size? }`                                  |
-| **Efectos**   | Lectura en `ErrorLogRepository`.                                                      |
-
-###### Tabla 185
-
-*Descripción de GetErrorLogByIdQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                              |
-| ------------- | ---------------------------------- |
-| **Nombre**    | GetErrorLogByIdQueryHandler        |
-| **Categoría** | Query Handler                      |
-| **Propósito** | Detalle de un error.               |
-| **Query**     | `GetErrorLogByIdQuery { errorId }` |
-| **Efectos**   | Lectura en `ErrorLogRepository`.   |
-
-###### Tabla 186
-
-*Descripción de GetOpsHealthSummaryQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                           |
-| ------------- | --------------------------------------------------------------- |
-| **Nombre**    | GetOpsHealthSummaryQueryHandler                                 |
-| **Categoría** | Query Handler                                                   |
-| **Propósito** | Resumen agregado (porcentaje UP/DEGRADED/DOWN, top degradados). |
-| **Query**     | `GetOpsHealthSummaryQuery { window? }`                          |
-| **Efectos**   | Lee `ServiceStatusRepository` y/o caches simples.               |
-
-###### Tabla 187
-
-*Descripción de GetOpsHealthByServiceQueryHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                       |
-| ------------- | ----------------------------------------------------------- |
-| **Nombre**    | GetOpsHealthByServiceQueryHandler                           |
-| **Categoría** | Query Handler                                               |
-| **Propósito** | Vista de salud para un servicio (últimos n chequeos).       |
-| **Query**     | `GetOpsHealthByServiceQuery { serviceId, window? }`         |
-| **Efectos**   | Lee `ServiceStatusRepository` (+ snapshots si los guardan). |
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Application Service** (Query/Orquestación) |
+| **Propósito** | Resolver el **cálculo de ruta óptima** (A* + reglas), distancias y mantenimiento de rutas persistidas. |
+| **Orquesta** | `RouteCalculatorServiceImpl` (dominio), `SafetyValidatorImpl`, `RouteGraphBuilder`, `RouteRepository`, `PortRepository`. |
+| **Entradas** | `startPortName`, `endPortName`. |
+| **Salidas** | `RouteCalculationResource` (ruta óptima, distancia total, advertencias, mapeo de coordenadas). |
 
 ---
 
-**Event Handlers:**
+### EventService
 
-###### Tabla 188
-
-*Descripción de OnStatusChangedEventHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                           |
-| ------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | OnStatusChangedEventHandler                                                                                     |
-| **Categoría** | Event Handler                                                                                                   |
-| **Evento**    | `StatusChanged { serviceId, previous, current, at }`                                                            |
-| **Propósito** | Política simple: si `current == DOWN` abrir alerta `AVAILABILITY`; si vuelve a `UP`, resolver alertas abiertas. |
-| **Efectos**   | Invoca `OpenAlertCommand` o `ResolveAlertCommand`.                                                              |
-
-###### Tabla 189
-
-*Descripción de OnAlertRaisedEventHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                            |
-| ------------- | -------------------------------------------------------------------------------- |
-| **Nombre**    | OnAlertRaisedEventHandler                                                        |
-| **Categoría** | Event Handler                                                                    |
-| **Evento**    | `AlertRaised { alertId, serviceId, type, severity, at }`                         |
-| **Propósito** | Auditoría/notificación interna (ej.: persistir un registro de actividad simple). |
-| **Efectos**   | Guardar actividad en una colección simple                            |
-
-###### Tabla 190
-
-*Descripción de OnAlertResolvedEventHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                      |
-| ------------- | ---------------------------------------------------------- |
-| **Nombre**    | OnAlertResolvedEventHandler                                |
-| **Categoría** | Event Handler                                              |
-| **Evento**    | `AlertResolved { alertId, serviceId, at }`                 |
-| **Propósito** | Auditoría al resolver; podría recalcular “score” de salud. |
-| **Efectos**   | Actualiza métricas resumidas (si las almacenan).           |
-
-###### Tabla 191
-
-*Descripción de OnErrorLoggedEventHandler en el Application Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------- |
-| **Nombre**    | OnErrorLoggedEventHandler                                                                            |
-| **Categoría** | Event Handler                                                                                        |
-| **Evento**    | `ErrorLogged { errorId, serviceId?, severity, at }`                                                  |
-| **Propósito** | Correlacionar errores recientes con estado del servicio (si muchos errores → degradar/abrir alerta). |
-| **Efectos**   | Podría encadenar `OpenAlertCommand` tipo `ERROR_SPIKE`.                                              |
-
-*Tabla de RegisterRouteUsageCommandHandler en el Application Layer*
-
-| Propiedad     | Valor                                           |
-| ------------- | ----------------------------------------------- |
-| **Nombre**    | RegisterRouteUsageCommandHandler                |
-| **Categoría** | Command Handler                                 |
-| **Propósito** | Registrar uso de una ruta popular               |
-| **Comando**   | `RegisterRouteUsageCommand { routeId, usedAt }` |
-
-*Tabla de ValidatePopularRouteCommandHandler en el Application Layer*
-
-| Propiedad     | Valor                                                        |
-| ------------- | ------------------------------------------------------------ |
-| **Nombre**    | ValidatePopularRouteCommandHandler                           |
-| **Categoría** | Command Handler                                              |
-| **Propósito** | Revalidar una ruta popular contra A*/AI (clima/geo actuales) |
-| **Comando**   | `ValidatePopularRouteCommand { routeId }`                    |
-
-*Tabla de GetPopularRoutesQueryHandler en el Application Layer*
-
-| Propiedad     | Valor                          |
-| ------------- | ------------------------------ |
-| **Nombre**    | GetPopularRoutesQueryHandler   |
-| **Categoría** | Query Handler                  |
-| **Propósito** | Obtener top de rutas populares |
-| **Query**     | `GetPopularRoutesQuery`        |
-
-*Tabla de GetPopularRouteDetailQueryHandler en el Application Layer*
-
-| Propiedad     | Valor                                       |
-| ------------- | ------------------------------------------- |
-| **Nombre**    | GetPopularRouteDetailQueryHandler           |
-| **Categoría** | Query Handler                               |
-| **Propósito** | Obtener ficha detallada de una ruta popular |
-| **Query**     | `GetPopularRouteDetailQuery { routeId }`    |
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Application Service** (Query Handler) |
+| **Propósito** | Consultas auxiliares de operación/monitoreo sobre **eventos** (p. ej., puertos de origen únicos). |
+| **Orquesta** | `MongoEventRepository`. |
+| **Salidas** | Listas simples ordenadas para UI/analític |
 
 ---
+
+### RouteCalculatorServiceImpl
+
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Inbound Application Service** (implementa `RouteCalculatorService`) |
+| **Propósito** | Ejecutar `AStarPathfinder` con un `RouteGraph` **dinámico**. |
+| **Orquesta** | `AStarPathfinder` + `RouteGraphBuilder`. |
+| **Entrada/Salida** | `Port start, Port end` → `List<Port>` (secuencia óptima) |
+
+---
+
+### RouteGraphBuilder
+
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Builder de caso de uso** |
+| **Propósito** | Construir un `RouteGraph` desde Mongo (puertos + rutas) para el cálculo. |
+| **Orquesta** | `PortRepository`, `RouteRepository`, VO `RouteGraph`. |
+
+---
+
+### SafetyValidatorImpl
+
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Domain Service Implementation** (implementa `SafetyValidator`) |
+| **Propósito** | Reglas de **seguridad**: puertos inseguros y **advertencias** para una ruta completa. |
+| **Orquesta** | `EventRepository` (Mongo), filtrado y *set* de puertos inseguros. |
+
+---
+
+### NavigationConditionsService
+
+| Propiedad | Valor |
+| --- | --- |
+| **Categoría** | **Domain Service Implementation** (implementa `NavigationConditionsProvider`) |
+| **Propósito** | Reglas **determinísticas** de corrientes/clima (p. ej., monzones, hielo Ártico) que **ajustan el coste** de A*. |
+| **Entrada** | `Route`, `Port`, `Clock` |
+| **Salida** | `double` (coste ajustado), predicados booleanos (corriente a favor/en contra). |
 
 #### 5.6.4. Service Operation and Monitoring Bounded Context Infrastructure Layer
 
-La capa de infraestructura del Bounded Context de Service Operation and Monitoring actúa como el vínculo entre la lógica de negocio y las tecnologías subyacentes que permiten la persistencia, comunicación e integración del monitoreo y la gestión de reportes puntuales. En este nivel se implementan las dependencias necesarias para interactuar con bases de datos y desarrollo de reportes necesarios.
+**PortDocument**
 
-Su diseño busca preservar el desacoplamiento respecto al núcleo del sistema, facilitando la evolución tecnológica sin afectar la consistencia de las reglas de negocio.
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `PortDocument` |
+| **Categoría** | Documento Mongo (`@Document("ports")`) |
+| **Propósito** | Representar un puerto en la colección `ports`. Incluye un índice único **compuesto** por `name` + `continent`. |
+| **Campos** | `id`, `name`, `coordinates` *(inner class `CoordinatesDocument { latitude, longitude }`)*, `continent` |
+| **Notas** | Método `toDomain()` mapea a `Port` (dominio). |
 
-**MongoConfig:**
+**RouteDocument**
 
-###### Tabla 192
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `RouteDocument` |
+| **Categoría** | Documento Mongo (`@Document("routes")`) |
+| **Propósito** | Representar una arista documentada entre puertos (distancia base). |
+| **Campos** | `id`, `homePort`, `homePortContinent`, `destinationPort`, `destinationPortContinent`, `distance` |
 
-*Descripción de Mongo Configuration en el Infrastructure Layer de Service Operation and Monitoring*
+**EventDocument**
 
-| Propiedad     | Valor                                                                    |
-| ------------- | ------------------------------------------------------------------------ |
-| **Nombre**    | `MongoConfig`                                                            |
-| **Categoría** | Configuración (DataSource/MongoTemplate)                                 |
-| **Propósito** | Exponer `MongoClient` y `MongoTemplate` para el resto de la capa.        |
-| **Detalles**  | Lee `spring.data.mongodb.uri` y base de datos; registra `MongoTemplate`. |
-
----
-
-**ServiceStatusDocument:**
-
-###### Tabla 193
-
-*Descripción de ServiceStatusDocument en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                                                                                |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ServiceStatusDocument`                                                                                                                                              |
-| **Colección** | `ops_service_status`                                                                                                                                                 |
-| **Campos**    | `id:String`, `name:String` (único), `kind:String`, `endpoint:String?`, `status:String`, `lastCheck:Date`, `lastLatencyMs:Long?`, `errorRate:Double?`, `version:Long` |
-| **Índices**   | Único por `name`; secundario por `status` y `kind`                                                                                                                   |
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `EventDocument` |
+| **Categoría** | Documento Mongo (`@Document("events-documents")`) |
+| **Propósito** | Persistir eventos operativos/geopolíticos auxiliares para validación/monitoreo. |
+| **Campos** | `puertoOrigen`, `problemaGeopolitico` *(campo con nombre corregido en código)*, `descripcion` |
+| **Notas** | Extiende `AuditableAbstractAggregateRoot<EventDocument>` (campos de auditoría) |
 
 ---
 
-**SystemAlertDocument:**
+**PortRepository**
 
-###### Tabla 194
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `PortRepository` |
+| **Categoría** | Repository (`MongoRepository<PortDocument, String>`) |
+| **Propósito** | CRUD y consultas de `ports`. |
+| **Métodos clave** | `findByNameAndContinent(name, continent)`, `findByName(name)`, `existsByNameAndContinent(name, continent)`, `deleteById(id)`, `deleteAll()` |
 
-*Descripción de SystemAlertDocument en el Infrastructure Layer de Service Operation and Monitoring*
+**RouteRepository**
 
-| Propiedad     | Valor                                                                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
-| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
-| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
-| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `RouteRepository` |
+| **Categoría** | Repository (`MongoRepository<RouteDocument, String>`) |
+| **Propósito** | Acceso a `routes` y búsqueda de distancias documentadas. |
+| **Métodos clave** | `existsByHomePortAndDestinationPort(home, dest)`, `findByHomePortAndDestinationPort(home, dest)`, `deleteAll()` |
 
----
+**EventRepository / MongoEventRepository**
 
-**ErrorLogDocument:**
-
-###### Tabla 195
-
-*Descripción de ErrorLogDocument en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
-| **Colección** | `ops_error_logs`                                                                                                                        |
-| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
-| **Índices**   | **TTL en `occurredAt`** (por ejemplo 30 días) + `{ serviceId:1, occurredAt:-1 }`                                                        |
-
----
-
-**ServiceStatusDocumentMapper:**
-
-###### Tabla 196
-
-*Descripción de ServiceStatusDocumentMapper en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocument`                                                                                                                                                                              |
-| **Colección** | `ops_system_alerts`                                                                                                                                                                                |
-| **Campos**    | `id:String`, `serviceId:String`, `type:String`, `severity:String`, `status:String`, `title:String`, `description:String`, `openedAt:Date`, `lastUpdateAt:Date`, `resolvedAt:Date?`, `evidence:[…]` |
-| **Índices**   | `{ serviceId:1, status:1, openedAt:-1 }` para listar abiertas y por servicio                                                                                                                       |
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `EventRepository` / `MongoEventRepository` |
+| **Categoría** | Repository (interfaz + implementación con `MongoTemplate`) |
+| **Propósito** | Consultas específicas sobre eventos válidos y **distintos puertos de origen**. |
+| **Métodos clave** | `findValidEvents()` *(interfaz)*, `findValidEvents()` y `findDistinctOriginPorts()` *(impl.)* |
+| **Colección** | `"events-documents"` |
 
 ---
 
-**ErrorLogDocument:**
+**PortMapper**
 
-###### Tabla 197
+| Propiedad | Valor |
+| --- | --- |
+| **Nombre** | `PortMapper` |
+| **Categoría** | Mapper (`@Component`) |
+| **Propósito** | Conversión **Documento ⇄ Dominio** para puertos, y utilitarios para `CoordinatesResource` (Interface Layer). |
+| **Funciones típicas** | `toDomain(PortDocument)`, `toResource(Port)` |
 
-*Descripción de ErrorLogDocument en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogDocument`                                                                                                                      |
-| **Colección** | `ops_error_logs`                                                                                                                        |
-| **Campos**    | `id:String`, `serviceId:String?`, `occurredAt:Date`, `severity:String`, `code:String?`, `message:String`, `details:Map<String,Object>?` |
-| **Índices**   | **TTL en `occurredAt`** + `{ serviceId:1, occurredAt:-1 }`                                                        |
-
----
-
-**ServiceStatusDocumentMapper:**
-
-###### Tabla 198
-
-*Descripción de ServiceStatusDocumentMapper en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                  |
-| ------------- | ---------------------------------------------------------------------- |
-| **Nombre**    | `ServiceStatusDocumentMapper`                                          |
-| **Categoría** | Mapper                                                                 |
-| **Propósito** | Convertir `ServiceStatus` (dominio) <-> `ServiceStatusDocument` (infra). |
-
----
-
-**SystemAlertDocumentMapper:**
-
-###### Tabla 199
-
-*Descripción de SystemAlertDocumentMapper en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                       |
-| ------------- | --------------------------------------------------------------------------- |
-| **Nombre**    | `SystemAlertDocumentMapper`                                                 |
-| **Categoría** | Mapper                                                                      |
-| **Propósito** | Convertir `SystemAlert` <-> `SystemAlertDocument` (incl. `IncidentEvidence`). |
-
----
-
-**ErrorLogDocumentMapper:**
-
-###### Tabla 200
-
-*Descripción de ErrorLogDocumentMapper en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                      |
-| ------------- | ------------------------------------------ |
-| **Nombre**    | `ErrorLogDocumentMapper`                   |
-| **Categoría** | Mapper                                     |
-| **Propósito** | Convertir `ErrorLog` <-> `ErrorLogDocument`. |
-
----
-
-**ServiceStatusMongoRepository:**
-
-###### Tabla 201
-
-*Descripción de ServiceStatusMongoRepository en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                              |
-| ------------- | ------------------------------------------------------------------ |
-| **Nombre**    | `ServiceStatusMongoRepository`                                     |
-| **Categoría** | Spring Data `MongoRepository<ServiceStatusDocument, String>`       |
-| **Propósito** | CRUD y búsquedas por convención                                    |
-| **Métodos**   | `findByName(String)`, `findByKind(String)`, `findByStatus(String)` |
-
----
-
-**SystemAlertMongoRepository:**
-
-###### Tabla 202
-
-*Descripción de SystemAlertMongoRepository en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                                          |
-| ------------- | ------------------------------------------------------------------------------ |
-| **Nombre**    | `SystemAlertMongoRepository`                                                   |
-| **Categoría** | `MongoRepository<SystemAlertDocument, String>`                                 |
-| **Propósito** | CRUD y listados                                                                |
-| **Métodos**   | `findByStatus(String, PageRequest)`, `findByServiceIdAndStatus(String,String)` |
-
----
-
-**ErrorLogMongoRepository:**
-
-###### Tabla 203
-
-*Descripción de ErrorLogMongoRepository en el Infrastructure Layer de Service Operation and Monitoring*
-
-| Propiedad     | Valor                                                             |
-| ------------- | ----------------------------------------------------------------- |
-| **Nombre**    | `ErrorLogMongoRepository`                                         |
-| **Categoría** | `MongoRepository<ErrorLogDocument, String>`                       |
-| **Propósito** | CRUD y búsquedas con filtros                                      |
-| **Métodos**   | `findByServiceIdAndOccurredAtBetween(...)`, `findBySeverity(...)` |
-
-
-*Tabla de PopularRouteMongoRepository*
-
-| Propiedad     | Valor                                |
-| ------------- | ------------------------------------ |
-| **Nombre**    | PopularRouteMongoRepository          |
-| **Categoría** | Spring Data Repository               |
-| **Propósito** | Persistir y consultar `PopularRoute` |
-
-*Tabla de RouteReportMongoRepository*
-
-| Propiedad     | Valor                                       |
-| ------------- | ------------------------------------------- |
-| **Nombre**    | RouteReportMongoRepository                  |
-| **Categoría** | Spring Data Repository                      |
-| **Propósito** | Persistir y consultar documentos de reporte |
-
-*Tabla combinada de componentes de generación de reportes*
-
-| Componente           | Capa           | Propósito                                                         |
-| -------------------- | -------------- | ----------------------------------------------------------------- |
-| RouteReportGenerator | Application    | Orquesta la construcción del informe                              |
-| PdfExporter          | Infrastructure | Exporta/serializa el informe a PDF (y/o Excel) listo para descarga |
-
-#### 5.7.1.5. Service Operation and Monitoring Bounded Context Software Architecture Component Level Diagrams
+#### 5.6.5. Service Operation and Monitoring Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presentan los diagramas de componentes correspondientes a los principales containers definidos dentro del Bounded Context de Service Operation and Monitoring. Estos diagramas permiten descomponer cada contenedor en sus componentes internos, identificando sus responsabilidades específicas, las tecnologías involucradas y las interacciones entre ellos. Esta representación es clave para comprender con mayor precisión cómo se estructura internamente cada parte del sistema, qué tareas cumple cada componente, y cómo colaboran para satisfacer los requerimientos funcionales y no funcionales relacionados con el monitoreo del rendimiento y salud de los otros Bounded Context de Mushroom.
 
 Tal como lo establece el C4 Model, el nivel de componentes es el cuarto nivel de detalle en la visualización de arquitecturas de software, y resulta útil tanto para desarrolladores como para arquitectos, al proporcionar una perspectiva clara de las decisiones de diseño que se toman dentro de cada contenedor (Brown, 2023). Este nivel permite una mayor trazabilidad entre la arquitectura lógica y la implementación concreta, reforzando así la mantenibilidad, escalabilidad y eficiencia del sistema.
 
-#### 5.7.1.6. Service Operation and Monitoring Bounded Context Software Architecture Code Level Diagrams
+#### 5.6.6 Service Operation and Monitoring Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se profundiza en los aspectos internos de implementación del Bounded Context de Service Operation and Monitoring, presentando diagramas que permiten visualizar con mayor detalle la estructura y composición de sus componentes clave. A través de representaciones estructuradas, como los diagramas de clases de la capa de dominio y el diagrama de base de datos, se facilita la comprensión técnica de cómo se organizan e interrelacionan los elementos dentro del sistema.
 
@@ -2930,7 +2314,7 @@ Estos recursos visuales permiten identificar entidades, objetos de valor, relaci
 
 ![ DIAGRAM](../../assets/img/chapter-V/components-service-monitoring.jpg)
 
-##### 5.7.1.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
+##### 5.6.6.1. Service Operation and Monitoring Bounded Context Domain Layer Class Diagrams
 
 En esta subsección se presenta el diagrama de clases UML correspondiente al Domain Layer del bounded context de Service Operation and Monitoring. Esta representación estructurada permite visualizar con claridad las clases, interfaces y enumeraciones que conforman la lógica del dominio, centrada en el monitoreo del rendimiento y salud de los Bounded Context de Mushroom.
 
@@ -2943,11 +2327,12 @@ Esta vista detallada del diseño táctico facilita una comprensión compartida d
 
 <img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
 
-##### 5.7.1.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
+##### 5.6.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
 
 En esta subsección se presenta el diagrama de base de datos correspondiente al bounded context de Service Operation and Monitoring. Esta representación permite visualizar de forma estructurada y precisa las entidades persistentes que forman parte de la gestión de puertos y estados en Mushroom, así como sus atributos, claves primarias, claves foráneas y relaciones asociadas.
 
-El diagrama incluye detalles fundamentales como los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
+El diagrama incluye detalles fundamentales c<img width="1989" height="1160" alt="Screenshot 2025-10-30 193025" src="https://github.com/user-attachments/assets/954d3c63-7a9c-4f95-a588-7c3bbdd0d17a" />
+omo los tipos de datos, las restricciones y la cardinalidad de las asociaciones entre tablas, lo que permite entender cómo se organiza la información a nivel de almacenamiento. Asimismo, se especifican las relaciones entre los distintos elementos, con nombres descriptivos, direccionalidad, cuando aplica, y multiplicidad, reflejando de forma fidedigna la estructura lógica del modelo persistente.
 
 Esta visualización detallada contribuye significativamente a la comprensión compartida del diseño de datos, sirviendo como puente entre el modelo de dominio y la implementación técnica de la base de datos, y asegurando que la arquitectura sea coherente, mantenible y alineada con los requerimientos del sistema.
 
