@@ -2325,7 +2325,7 @@ Esta vista detallada del diseño táctico facilita una comprensión compartida d
 ###### Figura 61
 *Diagrama de clases del Bounded Context de Service Operation and Monitoring*
 
-<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram.png">
+<img src="../..//assets/img/chapter-V/service-operation-and-monitoring-class-diagram-new.png">
 
 ##### 5.6.6.2. Service Operation and Monitoring Bounded Context Database Design Diagram
 
