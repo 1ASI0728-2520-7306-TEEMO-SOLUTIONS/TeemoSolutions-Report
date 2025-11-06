@@ -125,8 +125,7 @@ Esta sección se dedica al diseño de la arquitectura de producto a través de l
 
   EEn el contexto de Mushroom, Structurizr DSL se utilizó para documentar exhaustivamente la arquitectura modular del sistema siguiendo el modelo C4. Primero, se definió un diagrama de Contexto que situó a los usuarios frente a Mushroom, dejando claro qué sistemas externos interactúan con la solución. A continuación, en el diagrama de Contenedores, se representaron contenedores clave de toda la plataforma. Cada contenedor se etiquetó según su responsabilidad funcional y se describieron sus protocolos de comunicación. Finalmente, se generaron diagramas de Componentes para cada contenedor no trivial, especificando componentes de alto impacto y relevancia. Gracias a Structurizr DSL, estos diagramas se mantienen sincronizados con el repositorio de código, permitiendo actualizar la arquitectura textualmente y regenerar las vistas, lo que garantiza una documentación arquitectónica coherente y actualizada en todo momento.
 
-
-  * Página oficial de Structurizr DSL: https://structurizr.com/dsl
+    * Página oficial de Structurizr DSL: https://structurizr.com/dsl
 
 * **Diagramas de base de datos - Vertabelo**
 
@@ -134,120 +133,88 @@ Esta sección se dedica al diseño de la arquitectura de producto a través de l
 
     En el proyecto Mushroom, Vertabelo se utilizó para modelar de forma estructurada las distintas áreas de datos correspondientes a los Bounded Contexts identificados previamente. El equipo pudo generar el script DDL correspondiente, garantizar que los modelos respondieran a los requerimientos de escalabilidad y consultar la documentación. Asimismo, el versionado de los modelos permitió comparar iteraciones, revertir cambios en caso de inconsistencias y coordinar revisiones entre desarrolladores backend y especialistas en base de datos, asegurando que la implementación de la capa de almacenamiento de Mushroom estuviera alineada con la visión arquitectónica y los criterios de rendimiento definidos.
 
-*   Página oficial de Vertabelo: https://vertabelo.com/
+  *   Página oficial de Vertabelo: https://vertabelo.com/
 
 **Software Development**
 
 Esta sección contempla la definición estratégica del stack tecnológico y la configuración de los entornos de desarrollo requeridos para la implementación integral de cada uno de los componentes que conforman la solución digital, los cuales incluyen la Landing Page, la aplicación móvil (Mobile App), la aplicación web (Web App), los servicios web (Web Services) y los mecanismos de pruebas (Testing). Se establecerán los lineamientos técnicos y operativos que orientarán la selección de frameworks, arquitecturas y metodologías de codificación, con el objetivo de asegurar la coherencia tecnológica, la eficiencia en el desarrollo, la escalabilidad de las soluciones y su alineamiento con los principios de mantenibilidad, seguridad y rendimiento. Asimismo, se garantizará la integración fluida entre los distintos entornos de desarrollo y pruebas, permitiendo una colaboración efectiva entre equipos multidisciplinarios, una gestión eficiente del ciclo de vida del software y una trazabilidad completa desde la codificación inicial hasta el despliegue en producción.
 
+* **Lenguajes de etiqueta y estilo - HTML5 & CSS3**
 
-Lenguajes de etiqueta y estilo - HTML5 & CSS3
+  HTML5 y CSS constituyen las tecnologías fundamentales para la construcción de la Landing Page de Mushroom y para la implementación de los aspectos estáticos de las plantillas en la aplicación web. Con HTML5, se define una estructura semántica robusta que facilita tanto la accesibilidad como el SEO. Se emplean etiquetas específicas para organizar el contenido de la Landing Page, asegurando claridad en la jerarquía de información y compatibilidad con estándares modernos de navegadores.
 
-HTML5 y CSS constituyen las tecnologías fundamentales para la construcción de la Landing Page de Mushroom y para la implementación de los aspectos estáticos de las plantillas en la aplicación web. Con HTML5, se define una estructura semántica robusta que facilita tanto la accesibilidad como el SEO. Se emplean etiquetas específicas para organizar el contenido de la Landing Page, asegurando claridad en la jerarquía de información y compatibilidad con estándares modernos de navegadores.
+  Por su parte, CSS se encarga de la presentación visual y del comportamiento responsivo tanto de la Landing Page como de las plantillas estáticas de la aplicación web. Se aplican sistemas de diseño basados en CSS Grid para garantizar adaptabilidad en múltiples tamaños de pantalla, desde dispositivos móviles hasta pantallas de escritorio. Asimismo, se definen variables CSS para mantener coherencia en la paleta de colores y estilos tipográficos acordes con las Style Guidelines acordadas en Figma, permitiendo cambios globales de forma centralizada. Gracias a esta combinación de HTML5 y CSS, la Landing Page y las plantillas de Mushroom presentan un rendimiento óptimo, una experiencia de usuario uniforme y una base sólida para futuras iteraciones de diseño.
 
+  * Página de guía de HTML5 de W3C (World Wide Web Consortium): https://dev.w3.org/html5/spec-LC/
+  * Página de guía de HTML5 de W3Schools: https://www.w3schools.com/html/
+  * Página de guía de CSS3 de Mozilla Developer Network: https://developer.mozilla.org/es/docs/Web/CSS
+  * Página de guía de CSS3 de W3Schools: https://www.w3schools.com/css/default.asp
 
-Por su parte, CSS se encarga de la presentación visual y del comportamiento responsivo tanto de la Landing Page como de las plantillas estáticas de la aplicación web. Se aplican sistemas de diseño basados en CSS Grid para garantizar adaptabilidad en múltiples tamaños de pantalla, desde dispositivos móviles hasta pantallas de escritorio. Asimismo, se definen variables CSS para mantener coherencia en la paleta de colores y estilos tipográficos acordes con las Style Guidelines acordadas en Figma, permitiendo cambios globales de forma centralizada. Gracias a esta combinación de HTML5 y CSS, la Landing Page y las plantillas de Mushroom presentan un rendimiento óptimo, una experiencia de usuario uniforme y una base sólida para futuras iteraciones de diseño.
+* **Herramientas para la programación del Web Application (Front-End) - JavaScript & TypeScript, con Angular Framework**
 
+  JavaScript es un lenguaje de programación interpretado, dinámico y orientado a prototipos, que se ejecuta directamente en el navegador y posibilita la creación de interfaces interactivas y reactivas. Gracias a su capacidad de manipular el Document Object Model (DOM) en tiempo real, JavaScript permite actualizar el contenido de páginas web sin necesidad de recargas completas, gestionar eventos de usuario (clics, desplazamientos) y realizar peticiones asíncronas a APIs. En el contexto de Mushroom, JavaScript sirve como base para la lógica de interacción en el frontend, gestionando comportamientos dinámicos y operaciones en tiempo real que mejoran la experiencia del usuario, como validaciones de formularios, animaciones y consumo de servicios REST. 
 
-Página de guía de HTML5 de W3C (World Wide Web Consortium): https://dev.w3.org/html5/spec-LC/
-Página de guía de HTML5 de W3Schools: https://www.w3schools.com/html/
-Página de guía de CSS3 de Mozilla Developer Network: https://developer.mozilla.org/es/docs/Web/CSS
-Página de guía de CSS3 de W3Schools: https://www.w3schools.com/css/default.asp
+  TypeScript es un superset tipado de JavaScript, desarrollado por Microsoft, que incorpora un sistema de tipos estáticos opcionales, clases, interfaces y módulos. Al compilarse a JavaScript estándar, TypeScript añade una capa de verificación en tiempo de compilación que detecta errores de sintaxis y de tipo antes de que el código se ejecute en el navegador, lo cual incrementa la robustez y mantenibilidad. En el desarrollo de Mushroom, TypeScript facilita la detección temprana de inconsistencias, permitiendo refactorizaciones más seguras y documentación implícita mediante anotaciones de tipo. Su integración con entornos de desarrollo modernos ofrece autocompletado y refactorización asistida, lo que acelera la productividad del equipo y minimiza errores.
 
-Herramientas para la programación del Web Application (Front-End) - JavaScript & TypeScript, con Angular Framework
+  El Framework Angular es una plataforma de desarrollo front-end basada en TypeScript que sigue una arquitectura basada en componentes, inyección de dependencias y un sistema modular. Angular organiza la aplicación en módulos que agrupan componentes, directivas, servicios y pipes de manera coherente, facilitando la escalabilidad y la separación de responsabilidades. Los componentes en Angular encapsulan la lógica de presentación, el estilo y el comportamiento, promoviendo la reutilización y la cohesión. Angular también proporciona un sistema de enrutamiento integrado que permite definir rutas y parámetros. Para la interfaz de usuario, se utiliza Angular Material, una colección de componentes UI que implementa las pautas de Material Design de Google. Angular Material ofrece una amplia variedad de elementos preconstruidos, como botones, barras de navegación, tarjetas, menús desplegables, diálogos y tablas, optimizados para accesibilidad y rendimiento. Al emplear Angular con JavaScript y TypeScript, junto con Angular Material, el equipo de Mushroom puede desarrollar un front-end consistente, modular y mantenible, con componentes estandarizados que garantizan coherencia visual, comportamiento uniforme y experiencias de usuario responsivas en múltiples dispositivos.
 
-JavaScript es un lenguaje de programación interpretado, dinámico y orientado a prototipos, que se ejecuta directamente en el navegador y posibilita la creación de interfaces interactivas y reactivas. Gracias a su capacidad de manipular el Document Object Model (DOM) en tiempo real, JavaScript permite actualizar el contenido de páginas web sin necesidad de recargas completas, gestionar eventos de usuario (clics, desplazamientos) y realizar peticiones asíncronas a APIs. En el contexto de Mushroom, JavaScript sirve como base para la lógica de interacción en el frontend, gestionando comportamientos dinámicos y operaciones en tiempo real que mejoran la experiencia del usuario, como validaciones de formularios, animaciones y consumo de servicios REST.
+    * Página oficial de Angular: https://angular.dev/
+    * Página de documentación oficial de Angular: https://docs.angular.lat/docs
+    * Página de guía de JavaScript de Mozilla Developer Network: https://developer.mozilla.org/es/docs/Web/JavaScript
+    * Página oficial de TypeScript: https://www.typescriptlang.org/
+    * Página de guía de TypeScript de W3Schools: https://www.w3schools.com/typescript/typescript_intro.php
+    * Página oficial de Material Design: https://m3.material.io/
+    * Página oficial de Angular Material: https://material.angular.dev/
 
+* **Herramientas para la programación del Web Services (Back-End) - RESTful API con Java y con Spring Boot**
 
-TypeScript es un superset tipado de JavaScript, desarrollado por Microsoft, que incorpora un sistema de tipos estáticos opcionales, clases, interfaces y módulos. Al compilarse a JavaScript estándar, TypeScript añade una capa de verificación en tiempo de compilación que detecta errores de sintaxis y de tipo antes de que el código se ejecute en el navegador, lo cual incrementa la robustez y mantenibilidad. En el desarrollo de Mushroom, TypeScript facilita la detección temprana de inconsistencias, permitiendo refactorizaciones más seguras y documentación implícita mediante anotaciones de tipo. Su integración con entornos de desarrollo modernos ofrece autocompletado y refactorización asistida, lo que acelera la productividad del equipo y minimiza errores.
+  Java es un lenguaje de programación multiparadigma, maduro y orientado a objetos, que se ejecuta sobre la Máquina Virtual de Java (JVM) y combina características de tipado estático con capacidades para programación funcional. Su ecosistema y herramientas (JDK, compiladores, gestores de dependencias como Maven/Gradle) permiten generar binarios portables y optimizados para entornos de producción. En el contexto de Mushroom, Java se utiliza para implementar la lógica de negocio del backend con precisión y robustez, aprovechando su sistema de tipos para definir modelos de datos estrictos y facilitar la detección temprana de errores en tiempo de compilación. Además, el ecosistema Java incluye un amplio conjunto de bibliotecas y proyectos probados (por ejemplo, Jackson para serialización JSON, bibliotecas de persistencia como JPA/Hibernate y utilidades para manejo de excepciones), lo que facilita la reutilización de componentes maduros para acceso a datos, serialización y conexión a servicios externos.
 
+  Spring Boot (parte del ecosistema Spring) es un framework para desarrollar aplicaciones Java de manera productiva, modular y listo para producción, diseñado para construir servicios y aplicaciones modernas. Su enfoque “con convención sobre configuración” y su arquitectura basada en componentes permite configurar canales de procesamiento HTTP y gestionar de forma sencilla el ciclo de vida de la aplicación. En Mushroom, Spring Boot se emplea para hospedar el servidor de API RESTful, gestionando tareas como enrutamiento de endpoints (controladores REST), autenticación y autorización (con Spring Security y soporte para JWT), interacción con la base de datos (mediante Spring Data JPA / Hibernate), y registro estructurado de eventos (con herramientas de logging y trazabilidad).
 
-El Framework Angular es una plataforma de desarrollo frontend basada en TypeScript que sigue una arquitectura basada en componentes, inyección de dependencias y un sistema modular. Angular organiza la aplicación en módulos que agrupan componentes, directivas, servicios y pipes de manera coherente, facilitando la escalabilidad y la separación de responsabilidades. Los componentes en Angular encapsulan la lógica de presentación, el estilo y el comportamiento, promoviendo la reutilización y la cohesión. Angular también proporciona un sistema de enrutamiento integrado que permite definir rutas y parámetros. Para la interfaz de usuario, se utiliza Angular Material, una colección de componentes UI que implementa las pautas de Material Design de Google. Angular Material ofrece una amplia variedad de elementos preconstruidos, como botones, barras de navegación, tarjetas, menús desplegables, diálogos y tablas, optimizados para accesibilidad y rendimiento. Al emplear Angular con JavaScript y TypeScript, junto con Angular Material, el equipo de Mushroom puede desarrollar un frontend consistente, modular y mantenible, con componentes estandarizados que garantizan coherencia visual, comportamiento uniforme y experiencias de usuario responsivas en múltiples dispositivos.
+  El Diseño de Arquitectura RESTful API se basa en principios de uniformidad, recursos identificables y operaciones basadas en verbos HTTP (GET, POST, PUT, DELETE). Este enfoque promueve una separación clara entre cliente y servidor, fomentando la reutilización y la escalabilidad del sistema. En el caso de Mushroom, la API RESTful define múltiples recursos que exponen operaciones CRUD y acciones específicas. Cada endpoint retorna respuestas en formato JSON (normalmente gestionado por Jackson), incluyendo códigos HTTP adecuados y encabezados para control de caché o paginación. Al adoptar RESTful API con Spring Boot y Java, se logra un backend que puede atender solicitudes simultáneas provenientes de la aplicación web, la aplicación móvil y el dispositivo embebido, garantizando coherencia en la representación de datos, facilidad para versionar la API y compatibilidad con estándares de seguridad como JWT (JSON Web Tokens) en la capa de autenticación.
 
+    * Página oficial de Java (Oracle): https://www.oracle.com/java/
+    * Guía y tutoriales de Java (Oracle): https://docs.oracle.com/javase/tutorial/
+    * Página oficial de Spring Boot: https://spring.io/projects/spring-boot
+    * Guía rápida de crear un servicio REST con Spring: https://spring.io/guides/gs/rest-service
+    * Página de guía de RESTful API (principios generales): https://restfulapi.net/
+    * Documentación de Spring sobre REST y Web MVC / WebFlux: https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#rest
 
-Página oficial de Angular: https://angular.dev/
-Página de documentación oficial de Angular: https://docs.angular.lat/docs
-Página de guía de JavaScript de Mozilla Developer Network: https://developer.mozilla.org/es/docs/Web/JavaScript
-Página oficial de TypeScript: https://www.typescriptlang.org/
-Página de guía de TypeScript de W3Schools: https://www.w3schools.com/typescript/typescript_intro.php
-Página oficial de Material Design: https://m3.material.io/
-Página oficial de Angular Material: https://material.angular.dev/
+* **Herramientas para la programación del Mobile Application - Dart con Flutter Framework**
 
-Herramientas para la programación del Web Services (Back-End) - RESTful API con C# y con ASP .NET Core Framework
+  Dart es un lenguaje de programación de propósito general, desarrollado por Google, que está optimizado para crear aplicaciones de alto rendimiento en cliente. Con sintaxis moderna, tipado estático opcional y recolección de basura, Dart permite desarrollar código eficiente tanto para compilación anticipada (AOT) como para compilación just-in-time (JIT). Estas características hacen de Dart una opción idónea para aplicaciones móviles, donde la rapidez en el arranque y la fluidez en la interacción son cruciales. Además, su compatibilidad con la arquitectura de Flutter facilita la construcción de interfaces reactivas y la gestión de estado, utilizando un modelo de widgets declarativo que simplifica la creación de componentes reutilizables.
 
-C# es un lenguaje de programación multiparadigma, desarrollado por Microsoft, que combina características de tipado estático, orientación a objetos y programación funcional. Su sintaxis clara y su compatibilidad con el Common Language Runtime (CLR) permiten compilar código seguro y altamente optimizado para entornos de producción. En el contexto de Mushroom, C# se utiliza para implementar la lógica de negocio del backend con precisión y robustez, aprovechando su sistema de tipos para definir modelos de datos estrictos y facilitar la detección temprana de errores durante la compilación. Además, el ecosistema de C# incluye un amplio conjunto de bibliotecas de .NET, lo que permite reutilizar componentes probados para manejo de excepciones, serialización JSON y acceso a servicios externos.
-
-
-El Framework ASP .NET Core es una plataforma de desarrollo de aplicaciones web de alto rendimiento, multiplataforma y de código abierto, diseñada para construir servicios y aplicaciones modernas en C#. Su arquitectura modular basada en middlewares posibilita configurar canales de procesamiento HTTP de manera granular, gestionando solicitudes de forma eficiente. En Mushroom, ASP .NET Core se emplea para hospedar el servidor de API RESTful, gestionando tareas como enrutamiento de endpoints, autenticación y autorización, interacción con la base de datos (mediante Entity Framework Core) y registro estructurado de eventos.
-
-
-El Diseño de Arquitectura RESTful API se basa en principios de uniformidad, recursos identificables y operaciones basadas en verbos HTTP (GET, POST, PUT, DELETE). Este enfoque promueve una separación clara entre cliente y servidor, fomentando la reutilización y la escalabilidad del sistema. En el caso de Mushroom, la API RESTful define múltiples recursos que exponen operaciones CRUD y acciones específicas. Cada endpoint retorna respuestas en formato JSON, incluyendo códigos HTTP adecuados y encabezados para control de caché o paginación. Al adoptar RESTful API con ASP .NET Core y C#, se logra un backend que puede atender solicitudes simultáneas provenientes de la aplicación web, la aplicación móvil y el dispositivo embebido, garantizando coherencia en la representación de datos, facilidad para versionar la API y compatibilidad con estándares de seguridad como JWT (JSON Web Tokens) en la capa de autenticación.
-
-
-Página oficial de C#: https://dotnet.microsoft.com/es-es/languages/csharp
-Página de guía de C# de Microsoft: https://learn.microsoft.com/es-es/dotnet/csharp/
-Página oficial de ASP.NET Core: https://dotnet.microsoft.com/es-es/apps/aspnet
-Página de guía de ASP.NET Core de Microsoft: https://learn.microsoft.com/es-es/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0
-Página de guía de RESTful API de restfulapi.net: https://restfulapi.net/
-Página de guía de RESTful API con ASP.NET Core de Microsoft: https://dotnet.microsoft.com/en-us/apps/aspnet/apis
-Herramientas para la programación del Mobile Application - Dart con Flutter Framework
-
-Dart es un lenguaje de programación de propósito general, desarrollado por Google, que está optimizado para crear aplicaciones de alto rendimiento en cliente. Con sintaxis moderna, tipado estático opcional y recolección de basura, Dart permite desarrollar código eficiente tanto para compilación anticipada (AOT) como para compilación just-in-time (JIT). Estas características hacen de Dart una opción idónea para aplicaciones móviles, donde la rapidez en el arranque y la fluidez en la interacción son cruciales. Además, su compatibilidad con la arquitectura de Flutter facilita la construcción de interfaces reactivas y la gestión de estado, utilizando un modelo de widgets declarativo que simplifica la creación de componentes reutilizables.
+  El framework Flutter, también creado por Google, se apoya en Dart para proporcionar un kit de herramientas UI (UI toolkit) que compila de manera nativa tanto en iOS como en Android, asegurando un rendimiento cercano al código nativo. Flutter incluye un motor de renderizado propio, lo que permite dibujar cada elemento de la interfaz, animaciones y transiciones, con control total sobre los píxeles, sin depender de componentes nativos específicos de cada plataforma. Esto resulta en una experiencia visual y de interacción consistente en dispositivos diversos. En el contexto de Mushroom, Flutter y Dart se utilizan para desarrollar la aplicación móvil multiplataforma que complementa la funcionalidad del dispositivo IoT y la plataforma web. El equipo ha estructurado la aplicación en módulos claros, separando la capa de presentación, la capa de lógica de negocio y la capa de datos.
 
 
-El framework Flutter, también creado por Google, se apoya en Dart para proporcionar un kit de herramientas UI (UI toolkit) que compila de manera nativa tanto en iOS como en Android, asegurando un rendimiento cercano al código nativo. Flutter incluye un motor de renderizado propio, lo que permite dibujar cada elemento de la interfaz, animaciones y transiciones, con control total sobre los píxeles, sin depender de componentes nativos específicos de cada plataforma. Esto resulta en una experiencia visual y de interacción consistente en dispositivos diversos. En el contexto de Mushroom, Flutter y Dart se utilizan para desarrollar la aplicación móvil multiplataforma que complementa la funcionalidad del dispositivo IoT y la plataforma web. El equipo ha estructurado la aplicación en módulos claros, separando la capa de presentación, la capa de lógica de negocio y la capa de datos.
+    * Página oficial de Flutter: https://flutter.dev/
+    * Página de guía de Flutter: https://docs.flutter.dev/
+    * Página oficial de Dart: https://dart.dev/
+    * Página de guía de Dart: https://dart.dev/docs
+    * Página de guía y seguimiento para el modelo del Material Design: https://m3.material.io/
 
+* **Entornos de Desarrollo Integrado - Webstorm, Rider, Android Studio, PyCharm, Wokwi y Visual Studio Code**
 
-Página oficial de Flutter: https://flutter.dev/
-Página de guía de Flutter: https://docs.flutter.dev/
-Página oficial de Dart: https://dart.dev/
-Página de guía de Dart: https://dart.dev/docs
-Página de guía y seguimiento para el modelo del Material Design: https://m3.material.io/
+  Las Entornos de Desarrollo Integrados (IDEs) constituyen herramientas fundamentales para optimizar la productividad y la calidad del código en cada área del proyecto Mushroom. En función del lenguaje y la tecnología utilizada, se han seleccionado entornos especializados que ofrecen características avanzadas de análisis estático, depuración, refactorización y soporte de frameworks específicos:
 
-Herramientas para la programación del Embedded Application - C++
+  * **Android Studio** se utiliza para el desarrollo de la aplicación móvil en Dart con Flutter, gracias a su integración nativa con SDKs de Android y emuladores. Android Studio incluye un editor Visual UI para diseñar interfaces de Flutter, un depurador con visualización de la jerarquía de widgets y herramientas de perfilado que miden el rendimiento en tiempo real (CPU, memoria, GPU). Su sistema de gestión de paquetes y el acceso directo al Flutter Inspector permiten inspeccionar y modificar la estructura de la UI sobre la marcha, ajustando propiedades de widgets, temas y estilos con retroalimentación instantánea.
 
-C++ es un lenguaje de programación de propósito general que combina características de alto nivel (orientación a objetos, abstracción, plantillas genéricas) con un control de bajo nivel sobre recursos de hardware (manejo explícito de memoria, acceso directo a periféricos). Su naturaleza compilada y tipado estático permite generar binarios altamente optimizados para arquitecturas embebidas con recursos limitados, lo que lo convierte en la opción idónea para el desarrollo de firmware en dispositivos IoT. Adicionalmente, la disponibilidad de bibliotecas de C++ específicas para microcontroladores y la compatibilidad con sistemas operativos en tiempo real facilitan la implementación de bucles de control predictibles, gestión de interrupciones y protocolos de comunicación (MQTT).
+  * **PyCharm** se ha adoptado como el IDE de referencia para el desarrollo en Python, principalmente en el desarrollo de la aplicación edge. PyCharm ofrece inspección de código basada en PEP8, autocompletado inteligente, análisis de dependencias y detección temprana de errores. Su integración con entornos virtuales (venv, Conda) facilita la gestión de librerías, y el depurador permite establecer puntos de interrupción tanto en código local como remoto (SSH), junto con la visualización de variables en tiempo real.
 
+  * **Visual Studio Code (VS Code)** se configura como alternativa para aquellos miembros del equipo que no dispongan de acceso a WebStorm o Rider, o para el desarrollo en C++ de la aplicación embebida. VS Code soporta extensiones específicas, como C# for Visual Studio Code, C/C++ (Microsoft), Dart & Flutter, Angular Language Service y Prettier, que dotan al editor de capacidades de autocompletado, linting, depuración y tareas de construcción. Su arquitectura ligera y multiplataforma permite a los desarrolladores trabajar en entornos diversos con una configuración unificada.
 
-En el contexto de Mushroom, el IoT Embedded Application se implementa en C++ para garantizar un control preciso de los sensores (medición de humedad, temperatura, luminosidad, pH y salinidad), la lógica de riego automático y la comunicación bidireccional con el backend. El firmware se organiza en módulos C++ que encapsulan la inicialización de periféricos, el muestreo periódico de lecturas y el algoritmo de decisión que activa los actuadores de riego según umbrales configurables. Gracias a la capacidad de C++ para manejar interrupciones de hardware y realizar operaciones de alta frecuencia con ciclos de CPU reducidos, se logra un tiempo de respuesta alto.
+  * **WebStorm** se emplea como el IDE principal para el desarrollo de JavaScript, TypeScript y el framework Angular. WebStorm ofrece inspecciones inteligentes de código, autocompletado contextual, navegación rápida entre símbolos y soporte nativo para Angular CLI, lo que permite generar componentes y servicios. Asimismo, facilita la configuración de tareas de compilación mediante archivos de configuración integrados. Su depurador integrado permite establecer puntos de interrupción en tiempo real, evaluando expresiones de JavaScript/TypeScript y trazando el flujo de ejecución del frontend, lo que resulta esencial para detectar problemas de rendimiento.
 
+  Con esta selección de IDEs, el equipo de Mushroom garantiza que cada desarrollador disponga de un entorno adaptado a las necesidades de su área de trabajo, promoviendo un flujo de desarrollo ágil, coherente y alineado con las mejores prácticas de cada tecnología empleada.
 
-Página oficial de C++ : https://isocpp.org/
-Página de guía de C con programas IoT: https://learn.microsoft.com/en-us/azure/iot/concepts-developer-guide-device
+    * Página oficial de Android Studio: https://developer.android.com/studio?hl=es-419
+    * Página oficial de PyCharm: https://www.jetbrains.com/es-es/pycharm/#
+    * Página oficial de Visual Studio Code: https://code.visualstudio.com/
+    * Página oficial de Webstorm: https://www.jetbrains.com/es-es/webstorm/
 
-Entornos de Desarrollo Integrado - Webstorm, Rider, Android Studio, PyCharm, Wokwi y Visual Studio Code
-
-Las Entornos de Desarrollo Integrados (IDEs) constituyen herramientas fundamentales para optimizar la productividad y la calidad del código en cada área del proyecto Mushroom. En función del lenguaje y la tecnología utilizada, se han seleccionado entornos especializados que ofrecen características avanzadas de análisis estático, depuración, refactorización y soporte de frameworks específicos:
-
-
-Android Studio se utiliza para el desarrollo de la aplicación móvil en Dart con Flutter, gracias a su integración nativa con SDKs de Android y emuladores. Android Studio incluye un editor Visual UI para diseñar interfaces de Flutter, un depurador con visualización de la jerarquía de widgets y herramientas de perfilado que miden el rendimiento en tiempo real (CPU, memoria, GPU). Su sistema de gestión de paquetes y el acceso directo al Flutter Inspector permiten inspeccionar y modificar la estructura de la UI sobre la marcha, ajustando propiedades de widgets, temas y estilos con retroalimentación instantánea.
-
-
-PyCharm se ha adoptado como el IDE de referencia para el desarrollo en Python, principalmente en el desarrollo de la aplicación edge. PyCharm ofrece inspección de código basada en PEP8, autocompletado inteligente, análisis de dependencias y detección temprana de errores. Su integración con entornos virtuales (venv, Conda) facilita la gestión de librerías, y el depurador permite establecer puntos de interrupción tanto en código local como remoto (SSH), junto con la visualización de variables en tiempo real.
-
-
-Rider se ha elegido para el desarrollo del backend con C# y ASP.NET Core, debido a su integración profunda con el ecosistema de .NET. Rider proporciona análisis estático de código C#, refactorizaciones seguras (reorganización de namespaces, renombrado de símbolos, extracción de métodos), así como un depurador avanzado que permite adjuntar el proceso de ASP.NET Core en ejecución, inspeccionar objetos en memoria y analizar llamadas asíncronas.
-
-
-Visual Studio Code (VS Code) se configura como alternativa para aquellos miembros del equipo que no dispongan de acceso a WebStorm o Rider, o para el desarrollo en C++ de la aplicación embebida. VS Code soporta extensiones específicas, como C# for Visual Studio Code, C/C++ (Microsoft), Dart & Flutter, Angular Language Service y Prettier, que dotan al editor de capacidades de autocompletado, linting, depuración y tareas de construcción. Su arquitectura ligera y multiplataforma permite a los desarrolladores trabajar en entornos diversos con una configuración unificada.
-
-
-WebStorm se emplea como el IDE principal para el desarrollo de JavaScript, TypeScript y el framework Angular. WebStorm ofrece inspecciones inteligentes de código, autocompletado contextual, navegación rápida entre símbolos y soporte nativo para Angular CLI, lo que permite generar componentes y servicios. Asimismo, facilita la configuración de tareas de compilación mediante archivos de configuración integrados. Su depurador integrado permite establecer puntos de interrupción en tiempo real, evaluando expresiones de JavaScript/TypeScript y trazando el flujo de ejecución del frontend, lo que resulta esencial para detectar problemas de rendimiento.
-
-
-Wokwi es la plataforma online elegida para la simulación y validación inicial de los circuitos y firmware en los microcontroladores utilizados por Mushroom en su aplicación embebida. Con Wokwi podemos cargar esquemáticos de Arduino, ESP32 y otros chips compatibles, emular periféricos (sensores de humedad, temperatura, pH) y observar la ejecución paso a paso del código en un entorno sandbox sin necesidad de hardware físico. Su editor integrado de código, consola serial virtual y capacidad de compartir proyectos mediante URL pública aceleran la colaboración del equipo de firmware y electrónica.
-
-
-Con esta selección de IDEs, el equipo de Mushroom garantiza que cada desarrollador disponga de un entorno adaptado a las necesidades de su área de trabajo, promoviendo un flujo de desarrollo ágil, coherente y alineado con las mejores prácticas de cada tecnología empleada.
-
-
-Página oficial de Android Studio: https://developer.android.com/studio?hl=es-419
-Página oficial de PyCharm: https://www.jetbrains.com/es-es/pycharm/#
-Página oficial de Rider: https://www.jetbrains.com/es-es/rider/
-Página oficial de Visual Studio Code: https://code.visualstudio.com/
-Página oficial de Webstorm: https://www.jetbrains.com/es-es/webstorm/
-Página oficial de Wokwi: https://wokwi.com/
 Software Testing
+
 Esta sección aborda la estrategia integral de aseguramiento de la calidad del software a través de la planificación, ejecución y seguimiento de actividades de verificación y validación orientadas a garantizar la funcionalidad, confiabilidad, usabilidad, seguridad y rendimiento de cada componente del sistema. Se establecerá un enfoque estructurado que incluirá pruebas a nivel unitario, de integración, de sistema y de aceptación. Asimismo, se definirá un conjunto de métricas clave, criterios de cobertura y protocolos de gestión de incidencias que permitan medir de manera objetiva el grado de cumplimiento de los requisitos funcionales y no funcionales. La planificación de pruebas estará alineada con el ciclo de vida del desarrollo, integrándose de forma continua en los flujos de trabajo para facilitar la detección temprana de errores, la reducción del retrabajo y la mejora sostenida del producto.
 
 Behavior-Driven Development - Cucumber
