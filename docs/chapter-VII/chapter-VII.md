@@ -287,9 +287,26 @@ Para organizar el flujo de trabajo en Git, se implementará el modelo GitFlow pr
 
 - Back-End Platform: https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging
 
-Integrantes de la organización: En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto de Teemo Solutions, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
+**Integrantes de la organización:** 
+
+En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto de Teemo Solutions, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
+
+###### Tabla 252
+
+*Modelo de integrantes del equipo de SevenSync dentro de la página de organización de Github*
+
+|**Nombre de Usuario**|**Imagen de Perfil**|**Nombre del Integrante del Equipo**|
+| ----- | ------ | ----- |
+| RubDaShen | <img src="/assets/img/capitulo-6/profile-pictures/ruben-mallma-github-profile-picture.png" alt="Mallma Quispe, Rubén Elías"> | Mallma Quispe, Rubén Elías - u202214234 |
+| Luiggi Paredes - DevLuiggi |  <img src="/assets/img/capitulo-6/profile-pictures/luiggi-paredes-github-profile-picture.png" alt="Paredes Zapata, Luiggi Gianfranco"> | Paredes Zapata, Luiggi Gianfranco - u202218996|
+| JuanPescoran | <img src="/assets/img/capitulo-6/profile-pictures/juan-pescoran-github-profile-picture.png" alt="Pescorán Angulo, Juan Fabritzzio">| Pescorán Angulo, Juan Fabritzzio - u20221C936 |
+| FlavioTrigueros | <img src="/assets/img/capitulo-6/profile-pictures/flavio-trigueros-github-profile-picture.png" alt="Trigueros Chumacero, Flavio Eduardo"> | Trigueros Chumacero, Flavio Eduardo - u202210190 |
+| Fabrizio0711 | <img src="/assets/img/capitulo-6/profile-pictures/fabrizio-sanchez-github-profile-picture.png" alt="Sanchez Zamora, Fabrizio Alessandro"> |  Sanchez Zamora, Fabrizio Alessandro - u202213652 |
+| LucioY250 | <img src="/assets/img/capitulo-6/profile-pictures/lucio-yen-github-profile-picture.png" alt="Yen Cerna, Lucio Heli"> | Yen Cerna, Lucio Heli - u202213143 |
 
 ### 7.1.3. Source Code Style Guide & Conventions
+
+
 
 ### 7.1.4. Software Deployment Configuration
 
