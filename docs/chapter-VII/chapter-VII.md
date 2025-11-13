@@ -291,18 +291,18 @@ Para organizar el flujo de trabajo en Git, se implementará el modelo GitFlow pr
 
 En esta sección, se presentarán todos los usuarios que forman parte de la organización de GitHub del proyecto de Teemo Solutions, junto con sus nombres de usuario correspondientes. El objetivo es evitar confusiones sobre los autores de los commits en GitHub y facilitar la identificación de los colaboradores al revisar y analizar el reporte y el código desarrollado por nuestro equipo.
 
-###### Tabla 252
+###### Tabla 217
 
-*Modelo de integrantes del equipo de SevenSync dentro de la página de organización de Github*
+*Modelo de integrantes del equipo de Teemo Solutions dentro de la página de organización de Github*
 
 |**Nombre de Usuario**|**Imagen de Perfil**|**Nombre del Integrante del Equipo**|
 | ----- | ------ | ----- |
-| RubDaShen | <img src="/assets/img/capitulo-6/profile-pictures/ruben-mallma-github-profile-picture.png" alt="Mallma Quispe, Rubén Elías"> | Mallma Quispe, Rubén Elías - u202214234 |
-| Luiggi Paredes - DevLuiggi |  <img src="/assets/img/capitulo-6/profile-pictures/luiggi-paredes-github-profile-picture.png" alt="Paredes Zapata, Luiggi Gianfranco"> | Paredes Zapata, Luiggi Gianfranco - u202218996|
-| JuanPescoran | <img src="/assets/img/capitulo-6/profile-pictures/juan-pescoran-github-profile-picture.png" alt="Pescorán Angulo, Juan Fabritzzio">| Pescorán Angulo, Juan Fabritzzio - u20221C936 |
-| FlavioTrigueros | <img src="/assets/img/capitulo-6/profile-pictures/flavio-trigueros-github-profile-picture.png" alt="Trigueros Chumacero, Flavio Eduardo"> | Trigueros Chumacero, Flavio Eduardo - u202210190 |
-| Fabrizio0711 | <img src="/assets/img/capitulo-6/profile-pictures/fabrizio-sanchez-github-profile-picture.png" alt="Sanchez Zamora, Fabrizio Alessandro"> |  Sanchez Zamora, Fabrizio Alessandro - u202213652 |
-| LucioY250 | <img src="/assets/img/capitulo-6/profile-pictures/lucio-yen-github-profile-picture.png" alt="Yen Cerna, Lucio Heli"> | Yen Cerna, Lucio Heli - u202213143 |
+| JoseRiega | <img src="/assets/img/chapter-VII/jose-riega-github-profile-picture.jpeg" alt="Riega Salas, Jose Miguel"> |  Riega Salas, Jose Miguel - u202211254 |
+| RubDaShen | <img src="/assets/img/chapter-VII/ruben-mallma-github-profile-picture.jpeg" alt="Mallma Quispe, Rubén Elías"> | Mallma Quispe, Rubén Elías - u202214234 |
+| Fasz0711 | <img src="/assets/img/chapter-VII/fabrizio-sanchez-github-profile-picture.png" alt="Sanchez Zamora, Fabrizio Alessandro"> |  Sanchez Zamora, Fabrizio Alessandro - u202213652 |
+| FlavioTrigueros | <img src="/assets/img/chapter-VII/flavio-trigueros-github-profile-picture.jpeg" alt="Trigueros Chumacero, Flavio Eduardo"> | Trigueros Chumacero, Flavio Eduardo - u202210190 |
+| AldhaValenzuelaH | <img src="/assets/img/chapter-VII/aldhair-valenzuela-github-profile-picture.jpeg" alt="Valenzuela Huillcaya, Aldhair Johan Juan"> |  Valenzuela Huillcaya, Aldhair Johan Juan - u20201f572 |
+
 
 ### 7.1.3. Source Code Style Guide & Conventions
 
@@ -312,9 +312,81 @@ En esta sección, se presentarán todos los usuarios que forman parte de la orga
 
 ### 7.2. Solution Implementation
 
+La implementación de la página estática de negocio, los servicios y las aplicaciones es un paso fundamental en nuestro proceso de desarrollo. Nos permite materializar el diseño y la funcionalidad planificados, transformando los conceptos en productos tangibles y listos para su uso. Esta fase nos permite traducir las especificaciones y requisitos en código, desarrollando la estructura de la página, los servicios y las aplicaciones de acuerdo con las necesidades identificadas.
+
 ### 7.2.1. Sprint 1
 
+El primer sprint es un hito importante en nuestro proceso de desarrollo ágil. Durante este período, nos enfocamos en la implementación de las características y funcionalidades prioritarias identificadas en la planificación inicial. Esto implica traducir los requisitos y especificaciones en código funcional, desarrollando las bases de nuestro producto de manera iterativa.
+
 #### 7.2.1.1. Sprint Planning 1
+
+###### Tabla 253
+*Sprint Planning del primer sprint de desarrollo de Macetech*
+
+<table  style="text-align: center;">
+    <tbody>
+        <tr>
+			<td colspan="1">Sprint #</td>
+            <td colspan="1"> Sprint 1  </td>
+		</tr>
+        <tr>
+			<td colspan="2">Sprint Planning Background </td>
+		</tr>
+        <tr>
+			<td colspan="1">Date</td>
+            <td colspan="1"> 2025-05-09 </td>
+		</tr>
+        <tr>
+			<td colspan="1">Time</td>
+            <td colspan="1"> 01:00 PM </td>
+		</tr>
+        <tr>
+			<td colspan="1">Location</td>
+            <td colspan="1">Discord (Reunion virtual)</td>
+		</tr>
+        <tr>
+			<td colspan="1">Prepared By</td>
+            <td colspan="1"> Yen Cerna, Lucio Heli - Team Leader</td>
+		</tr>
+        <tr>
+			<td colspan="1"> Attendees (to planning meeting)</td>
+            <td colspan="1">Mallma Quispe, Rubén Elías; Pescorán Ángulo, Juan Fabritzzio; Paredes Zapata, Luiggi Gianfranco; Sanchez Zamora,
+Fabrizio Alessandro; Trigueros Chumacero, Flavio Eduardo; Yen Cerna, Lucio Heli
+ </td>
+		</tr>
+         <tr>
+			<td colspan="1">Sprint 1 – 1 Review Summary </td>
+            <td colspan="1">El sprint 1 concluyó con el desarrollo de la página web de negocio. Los integrantes del equipo finalizaron este producto y comenzaron a preparar el ambiente de desarrollo para los siguientes productos. El profesor observó que el formulario de contacto no debe estar ubicado al final de la página, además, sostenió que se debe contar con i18n para realizar el cambio de lenguaje. 
+            </td>
+		</tr>
+         <tr>
+			<td colspan="1">Sprint 1 – 1 Retrospective Summary </td>
+            <td colspan="1">Tras completar el primer Sprint, el equipo identificó varios puntos de mejora como la gestión del tiempo y la responsabilidad en el cumplimiento de tareas. Como reflexión, no se cumplió el objetivo debido a que el sprint 1 debió cubrir la página web de negocio y la plataforma web. Sim embargo, por falta de tiempo no se pudo contemplar el desarrollo del segundo producto. El equipo encara este obstáculo con optimismo para cumplir en el siguiente entregable.</td>
+		</tr>
+         <tr>
+			<td colspan="2">Sprint Goal & User Stories </td>
+		</tr>
+         <tr>
+			<td>Sprint 1 Goal</td>
+            <td><strong>Nuestro enfoque es</strong> convertir a los visitantes interesados en jardinería y tecnología para el cuidado de plantas en clientes potenciales, mediante el desarrollo y publicación de la primera versión de la página web de negocio de Macetech. Esta página presentará, de forma clara y visualmente atractiva, el valor diferencial de nuestra maceta inteligente: un sistema automatizado de riego combinado con un algoritmo que adapta el cuidado según el tipo de planta, las condiciones ambientales y los hábitos del usuario. Para generar confianza, incluiremos testimonios reales de los primeros testers, junto a un video donde el equipo fundador explica la visión de Macetech y demuestra el funcionamiento del producto.
+Asimismo, la página mostrará una comparación accesible entre las funcionalidades estándar —como el monitoreo básico de humedad, alertas de riego y recomendaciones genéricas— y las funcionalidades premium —como sugerencias personalizadas por especie, programación avanzada de riego y acceso al historial inteligente de crecimiento— con el propósito de despertar la curiosidad por futuras suscripciones.
+<br>
+<strong>Creemos que esto proporciona</strong> validación temprana del atractivo comercial de Macetech, posicionándonos como una solución tecnológica confiable y deseable dentro del ecosistema de jardinería inteligente. También permite evaluar el interés real de usuarios tempranos y orientar los siguientes pasos de producto y marketing con datos objetivos.
+
+<strong>Esto se confirmará</strong> cuando al menos el 40 % de los visitantes interactúe con la sección de funcionamiento inteligente, el tiempo promedio de permanencia supere los 90 segundos, y recibamos al menos 30 mensajes a través del formulario de contacto solicitando más información o demostraciones del producto.
+</td>
+		</tr>
+        <tr>
+			<td colspan="1">Sprint 1 Velocity </td>
+            <td colspan="1">19</td>
+		</tr>
+        <tr>
+			<td colspan="1">Sum of Story Points </td>
+            <td colspan="1">19</td>
+		</tr>
+</tbody>
+</table>
+
 
 #### 7.2.1.2. Sprint Backlog 1
 
