@@ -1646,9 +1646,69 @@ Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber co
 
 #### 7.2.1.5. Execution Evidence for Sprint Review
 
+El equipo ha implementado con éxito las mejoras continuas e innovadoras de Mushroom para que funcione como una herramienta operativa con tecnología emergente Se completaron los flujos que permiten calcular rutas optimizadas, visualizar la geometría y la animación de trayectos en dispositivos móviles, solicitar justificaciones cuantitativas entre alternativas y persistir las consultas para trazabilidad. Todas las historias asignadas a este sprint se ejecutaron y entregaron integradas, lo que permitió validar el recorrido completo desde la selección de puertos hasta el almacenamiento del registro de la ruta.
+
+###### Figura 70
+*Muestra con evidencia de la selección de puertas con la geometría incluida en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-1.jpg" alt="Mobile App Evidence 1">
+
+###### Figura 71
+*Muestra con evidencia de la animación de rutas entre dos puertos en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-2.jpg" alt="Mobile App Evidence 2">
+
+###### Figura 72
+*Muestra con evidencia de cierre automático de puertos en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-3.jpg" alt="Mobile App Evidence 3">
+
+###### Figura 73
+*Muestra con evidencia del cálculo de Incoterms en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-4.jpg" alt="Mobile App Evidence 4">
+
+En paralelo se desarrollaron las funciones asociadas a la gestión operativa. Se diseñó e implementó el API de persistencia de viajes y el servicio de historial con filtros y paginación. También se puso en marcha el servicio de pricing básico que estima costos y sugiere Incoterms, integrándolo con las vistas web y móviles para que los usuarios obtengan desglose y recomendaciones comerciales en el mismo flujo de decisión.
+
+###### Figura 74
+*Muestra con evidencia de los endpoints de puertos en el Web Services*
+
+<img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-1.jpg" alt="Web Services Evidence 1">
+
+###### Figura 75
+*Muestra con evidencia de los endpoints de rutas en el Web Services*
+
+<img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-2.jpg" alt="Web Services Evidence 2">
+
+Para mejorar la experiencia se trabajó en una interfaz móvil y web coherente y fluida que facilita la interpretación de métricas y justificaciones, se adoptaron mecanismos de reintento y sincronización para la persistencia en condiciones de conectividad variable, y se dejó preparado el entorno para soportar internacionalización e instrumentos de telemetría. Con esta base, el equipo dispone ahora de un producto mínimo operativo que permite recoger feedback real de operadores y priorizar las mejoras de inteligencia y rendimiento en los próximos sprints.
+
+###### Figura 76
+*Muestra con evidencia de la administración de puertos habilitados y deshabilitados en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Web Application Evidence 1">
+
+###### Figura 77
+*Muestra con evidencia de la función de deshabilitación de puertos en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-2.jpg" alt="Web Application Evidence 2">
+
+###### Figura 78
+*Muestra con evidencia de la función de cambio de estado operativo en puertos por riesgo en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-3.jpg" alt="Web Application Evidence 3">
+
+###### Figura 79
+*Muestra con evidencia de la función de cálculo de Incoterms recomendados en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-4.jpg" alt="Web Application Evidence 4">
+
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
 
+
+
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
+
+
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
