@@ -1604,24 +1604,45 @@ Estas características son fundamentales para establecer la base del proceso de 
 
 #### 7.2.1.3. Development Evidence for Sprint Review
 
-En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint indicado. En esta iteración, lo principal fue el añadido de las funciones de recálculo de rutas con Inteligencia Artificial, la integración del sistema de Incoterms, 
+En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1. En esta iteración, se implementaron las primeras funciones de mejora continua e innovadora con nuestra tecnología emergente de Inteligencia Artificial (IA). Se integró el cálculo de mejor ruta con distintos datos disponibles por ruta, tanto en móvil y web, además de la visualización de mapas, mejoras de UI y diseño de las políticas y de la calculadora de Incoterms actualizados.
 
-implementó la Landing Page en su totalidad con todas las secciones Hero Section, funcionalidades clave y beneficios, about-the-team, about-the-product, benchmark de membresías, formulario de contacto, acceso a la platforma de descarga, i18n y diseño responsivo. 
+Se mostrarán los commits clave por cada repositorio específico, los cuales muestran el ciclo de vida del proyecto, y toda la información que se usó, usa y usará para el desarrollo del proyecto:
 
-Primero, se mostrarán los commits más importantes para el Reporte, los cuales muestran el ciclo de vida del proyecto, y toda la información que se usó, usa y usará para el desarrollo del proyecto:
-
-###### Tabla 257
-*Development Evidence del primer sprint de desarrollo de Macetech*
+###### Tabla 221
+*Development Evidence del primer sprint de desarrollo de Mushroom*
 
 | Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
 | ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
-|DevLuiggi/[upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page](https://github.com/SevenSync/upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page)|main|a6a5d97|Initial commit|-|09/05/2025|
-|DevLuiggi/[upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page](https://github.com/SevenSync/upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page)|main|fba81eb|feat: add initial HTML structure for landing page|-|09/05/2025|
-|DevLuiggi/[upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page](https://github.com/SevenSync/upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page)|main|641c995|feat: add JavaScript functionality for landing page interactions|-|09/05/2025|
-|DevLuiggi/[upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page](https://github.com/SevenSync/upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page)|main|e352c30|feat: add CSS styles for responsive landing page|-|09/05/2025|
-|DevLuiggi/[upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page](https://github.com/SevenSync/upc-pre-202510-1asi0572-2956-SevenSync-Landing-Page)|main|e65d1c5|feat: add assets (images, videos, icons) for landing page|-|09/05/2025|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|cbb6368|feat: UI adaptation and integration for the AI|-|2025-11-01|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|de803d7|feat: update route calculation and visualization features|-|2025-11-02|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|1479ead|feat: update map route and information|-|2025-11-04|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|5ac8080|feat: fix map on phone|-|2025-11-04|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|69c68f6|feat: update incoterm page and form|-|2025-11-05|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|940e08d|feat: UI dashboard adaptation|-|2025-11-06|
+|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|240004c|feat: add PDF and Excel download functionality in incoterm calculator|-|2025-11-06|
+|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|d4c8864|refactor: calculate incoterm|-|2025-11-06|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b9f89a0|feat: fix buttons and UI in selector ports|-|2025-11-06|
+|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|fbc1e63|feat: add settings screen and navigation to settings, pdf generation for shipment reports and fix links for quick buttons|-|2025-11-10|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|6a542c9|feat: UI dashboard changes|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b66e502|feat: Port dehabilitation and route recalculation|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|ffeead8|feat: UI and parameters adapted|-|2025-11-11|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b213ecf|feat: add curvature to the map|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|825351f|feat: Recalculated route v2|-|2025-11-12|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|843b52b|feat: apply inmediate route history save|-|2025-11-13|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|22d6e49|feat: add IA service and UI|-|2025-11-13|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|4103e16|feat: implement weather delay prediction and land mask service for route visualization|-|2025-11-13|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|a2a356b|feat: update route history function|-|2025-11-14|
 
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber con sintaxis Gherkin, integrándolo en Visual Studio Code para facilitar la escritura y mantenimiento de los escenarios en las historias de usuario en este sprint 1. Esta elección permite definir casos de prueba en un lenguaje natural alineado con las historias de usuario, asegurando que el comportamiento esperado de la aplicación sea comprendido por todos los involucrados. 
+
+###### Tabla 222
+*Testing Suite Evidence del primer sprint de desarrollo de Mushroom*
+
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+|FlavioTrigueros/[TeemoSolutions-AcceptanceCriteria-Gherkin](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/TeemoSolutions-Report)|main|b73525f|test: gherkin test for sprint 1|-|2025-11-14|
 
 #### 7.2.1.5. Execution Evidence for Sprint Review
 
