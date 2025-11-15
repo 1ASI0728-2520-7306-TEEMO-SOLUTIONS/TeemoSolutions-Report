@@ -1658,23 +1658,26 @@ Nuestro equipo se reunió tanto en persona como virtualmente para asignar tareas
 
 Además, programamos sesiones regulares de brainstorming y resolución de problemas, donde compartimos ideas y abordamos cualquier duda o dificultad que surgiera durante el proceso de desarrollo. 
 
-###### Figura 88
-*Reporte completo de contribuciones para el desarrollo del Reporte Principal del Proyecto de Propertunity del Sprint 2.*
+###### Figura 85
+*Reporte completo de contribuciones para el desarrollo del Web Application de Mushroom en el Sprint 1.*
 
-<img src="/assets/img/Pulse for Main Branch2.png" alt="Pulse for Main Branch2">
-<img src="/assets/img/Contributions for Main2.png" alt="Contributions for Main2">
-<img src="/assets/img/Individual Contributions for Main Branch2 - 1.png" alt="Individual Contributions for Main Branch2 - 1">
-<img src="/assets/img/Individual Contributions for Main Branch2 - 2.png" alt="Individual Contributions for Main Branch2 - 2">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/pulse-web-app-sprint1.png" alt="Pulse for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/total-contribution-web-app-sprint1.png" alt="Contribution for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/contributors-web-app-sprint1-.png" alt="Individual Contributions for Web Application">
 
-###### Figura 89
-*Reporte completo de contribuciones para el desarrollo del FrontEnd del Web Application del Proyecto de Propertunity del Sprint 2.*
+###### Figura 86
+*Reporte completo de contribuciones para el desarrollo del Mobile Application de Mushroom en el Sprint 1.*
 
-<img src="/assets/img/Pulse for FrontEnd Web Application.png" alt="Pulse for FrontEnd Web Application">
-<img src="/assets/img/Contributions for FrontEnd Web Application.png" alt="Contributions for FrontEnd Web Application">
-<img src="/assets/img/Individual Contributions for FrontEnd Web Application - 1.png" alt="Individual Contributions for FrontEnd Web Application - 1">
-<img src="/assets/img/Individual Contributions for FrontEnd Web Application - 2.png" alt="Individual Contributions for FrontEnd Web Application - 2">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/pulse-mobile-app-sprint1.png" alt="Pulse for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/total-contribution-mobile-app-sprint1.png" alt="Contribution for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/contributors-mobile-app-sprint1.png" alt="Individual Contributions for Mobile Application">
 
+###### Figura 87
+*Reporte completo de contribuciones para el desarrollo del Web Services de Mushroom en el Sprint 1.*
 
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint1.png" alt="Pulse for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/total-contribution-web-services-sprint1.png" alt="Contribution for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint1.png" alt="Individual Contributions for Web Services">
 
 ## 7.3. Validation Interviews
 
@@ -2025,10 +2028,6 @@ La lista de reportes no incluye paginación, scroll infinito ni agrupación.
 
 **Recomendación:**
 Implementar paginación o carga progresiva.
-
-
-
-
 
 ## 7.4.  Video About-the-Product
 
