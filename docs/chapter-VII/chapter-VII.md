@@ -283,7 +283,7 @@ Para organizar el flujo de trabajo en Git, se implementará el modelo GitFlow pr
 
 - **Mobile Application:** https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Movil <br><br>
 
-- **Back-End Platform:** https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging <br><br>
+- **Back-End Platform:** https://github.com/1ASI0732-2510-4441-TEEMO-SOLUTIONS/Teemo-Backend-Staging <br><br>
 
 **Integrantes de la organización:** 
 
@@ -295,8 +295,8 @@ En esta sección, se presentarán todos los usuarios que forman parte de la orga
 
 |**Nombre de Usuario**|**Imagen de Perfil**|**Nombre del Integrante del Equipo**|
 | ----- | ------ | ----- |
-| JoseRiega | <img src="/assets/img/chapter-VII/jose-riega-github-profile-picture.jpeg" alt="Riega Salas, Jose Miguel"> |  Riega Salas, Jose Miguel - u202211254 |
-| RubDaShen | <img src="/assets/img/chapter-VII/ruben-mallma-github-profile-picture.jpeg" alt="Mallma Quispe, Rubén Elías"> | Mallma Quispe, Rubén Elías - u202214234 |
+| JoseRiega | <img src="/assets/img/chapter-VII/github-profile/jose-riega-github-profile-picture.jpeg" alt="Riega Salas, Jose Miguel"> |  Riega Salas, Jose Miguel - u202211254 |
+| RubDaShen | <img src="/assets/img/chapter-VII/github-profile/ruben-mallma-github-profile-picture.jpeg" alt="Mallma Quispe, Rubén Elías"> | Mallma Quispe, Rubén Elías - u202214234 |
 | Fasz0711 | <img src="/assets/img/chapter-VII/fabrizio-sanchez-github-profile-picture.png" alt="Sanchez Zamora, Fabrizio Alessandro"> |  Sanchez Zamora, Fabrizio Alessandro - u202213652 |
 | FlavioTrigueros | <img src="/assets/img/chapter-VII/flavio-trigueros-github-profile-picture.jpeg" alt="Trigueros Chumacero, Flavio Eduardo"> | Trigueros Chumacero, Flavio Eduardo - u202210190 |
 | AldhaValenzuelaH | <img src="/assets/img/chapter-VII/aldhair-valenzuela-github-profile-picture.jpeg" alt="Valenzuela Huillcaya, Aldhair Johan Juan"> |  Valenzuela Huillcaya, Aldhair Johan Juan - u20201f572 |
@@ -1093,19 +1093,19 @@ El sprint planning es una reunión en la metodología ágil donde el equipo plan
 		</tr>
          <tr>
 			<td colspan="1">Sprint 1 – 1 Review Summary </td>
-            <td colspan="1">El sprint 1 concluyó con el desarrollo de la página web de negocio. Los integrantes del equipo finalizaron este producto y comenzaron a preparar el ambiente de desarrollo para los siguientes productos. El profesor observó que el formulario de contacto no debe estar ubicado al final de la página, además, sostenió que se debe contar con i18n para realizar el cambio de lenguaje. 
+            <td colspan="1">El Sprint 1 se concentró en establecer las capacidades núcleo de la plataforma necesarias para las pruebas operativas en este proceso de mejora continua e innovadora. Se entregó una versión mínima viable que permite solicitar rutas, visualizarlas en móvil, registrar consultas y generar evidencia para trazabilidad; además, el equipo dejó el entorno de desarrollo y las integraciones básicas listas para continuar con las siguientes iteraciones. En la revisión se validaron los flujos end-to-end y se priorizaron mejoras en la experiencia de captura de interesados, soporte de internacionalización (i18n) y métricas de rendimiento y trazabilidad más visibles para facilitar la evaluación técnica y comercial. 
             </td>
 		</tr>
          <tr>
 			<td colspan="1">Sprint 1 – 1 Retrospective Summary </td>
-            <td colspan="1">Tras completar el primer Sprint, el equipo identificó varios puntos de mejora como la gestión del tiempo y la responsabilidad en el cumplimiento de tareas. Como reflexión, no se cumplió el objetivo debido a que el sprint 1 debió cubrir la página web de negocio y la plataforma web. Sim embargo, por falta de tiempo no se pudo contemplar el desarrollo del segundo producto. El equipo encara este obstáculo con optimismo para cumplir en el siguiente entregable.</td>
+            <td colspan="1">Tras completar el sprint, el equipo identificó áreas de mejora en la estimación de esfuerzo, la granularidad de las tareas y la coordinación entre disciplinas; parte del alcance previsto quedó pendiente por problemas de priorización y gestión del tiempo. Como resultado, el equipo acuerda ajustar la descomposición de historias, reforzar las definiciones de “done” y mejorar la comunicación diaria para asegurar que los elementos críticos avancen en el próximo sprint.</td>
 		</tr>
          <tr>
 			<td colspan="2">Sprint Goal & User Stories </td>
 		</tr>
          <tr>
 			<td>Sprint 1 Goal</td>
-            <td><strong>Nuestro enfoque es</strong> convertir a los visitantes interesados en jardinería y tecnología para el cuidado de plantas en clientes potenciales, mediante el desarrollo y publicación de la primera versión de la página web de negocio de Macetech. Esta página presentará, de forma clara y visualmente atractiva, el valor diferencial de nuestra maceta inteligente: un sistema automatizado de riego combinado con un algoritmo que adapta el cuidado según el tipo de planta, las condiciones ambientales y los hábitos del usuario. Para generar confianza, incluiremos testimonios reales de los primeros testers, junto a un video donde el equipo fundador explica la visión de Macetech y demuestra el funcionamiento del producto. Asimismo, la página mostrará una comparación accesible entre las funcionalidades estándar —como el monitoreo básico de humedad, alertas de riego y recomendaciones genéricas— y las funcionalidades premium —como sugerencias personalizadas por especie, programación avanzada de riego y acceso al historial inteligente de crecimiento— con el propósito de despertar la curiosidad por futuras suscripciones. <br> <strong>Creemos que esto proporciona</strong> validación temprana del atractivo comercial de Macetech, posicionándonos como una solución tecnológica confiable y deseable dentro del ecosistema de jardinería inteligente. También permite evaluar el interés real de usuarios tempranos y orientar los siguientes pasos de producto y marketing con datos objetivos. <strong>Esto se confirmará</strong> cuando al menos el 40 % de los visitantes interactúe con la sección de funcionamiento inteligente, el tiempo promedio de permanencia supere los 90 segundos, y recibamos al menos 30 mensajes a través del formulario de contacto solicitando más información o demostraciones del producto.
+            <td><strong>Nuestro enfoque es</strong> validar las capacidades operativas mínimas de Mushroom para soportar decisiones de ruteo basadas en evidencia, mediante el desarrollo y despliegue de un flujo completo que permita calcular rutas multi-criterio, visualizar geometría y animaciones en móvil, persistir consultas para trazabilidad y ofrecer justificaciones cuantitativas comparables; todo ello integrado con los endpoints de historial y generación de reportes para que operadores y probadores puedan usar la plataforma en condiciones reales. <br><br> <strong>Creemos que esto proporciona</strong> una base técnica y comercial verificable que reduce la incertidumbre operativa, aumenta la confianza de los usuarios en las recomendaciones del sistema y genera datos reales para priorizar las mejoras de IA y UX en las siguientes iteraciones; además, facilita la medición de impacto operacional y la preparación de pilotos con clientes tempranos. <br><br> <strong>Esto se confirmará</strong> cuando el 80 % de las solicitudes de cálculo de ruta reciban respuesta completa en 10 segundos o menos, cuando se hayan persistido al menos 20 rutas en el historial para trazabilidad y auditoría.
 </td>
 		</tr>
         <tr>
@@ -1651,6 +1651,30 @@ Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber co
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1, nos enfocamos en el desarrollo colaborativo de las mejoras continuas e innovadoras para el Web Application y Mobile Application de Mushroom, junto a las mejoras de Web Services. Cada miembro del equipo contribuyó con sus habilidades y conocimientos. Esta colaboración se refleja en los numerosos commits realizados en nuestros repositorios de código, los cuales están respaldados por capturas de pantalla adjuntas para una documentación detallada.
+
+Nuestro equipo se reunió tanto en persona como virtualmente para asignar tareas y discutir la estrategia de desarrollo del proyecto. Estas reuniones fueron cruciales para clarificar nuestras responsabilidades individuales y asegurar un desempeño óptimo. Para maximizar la eficiencia, decidimos asignar a cada miembro del equipo una sección específica del código para desarrollar, lo que nos permitió avanzar rápidamente y cumplir con los plazos establecidos.
+
+Además, programamos sesiones regulares de brainstorming y resolución de problemas, donde compartimos ideas y abordamos cualquier duda o dificultad que surgiera durante el proceso de desarrollo. 
+
+###### Figura 88
+*Reporte completo de contribuciones para el desarrollo del Reporte Principal del Proyecto de Propertunity del Sprint 2.*
+
+<img src="/assets/img/Pulse for Main Branch2.png" alt="Pulse for Main Branch2">
+<img src="/assets/img/Contributions for Main2.png" alt="Contributions for Main2">
+<img src="/assets/img/Individual Contributions for Main Branch2 - 1.png" alt="Individual Contributions for Main Branch2 - 1">
+<img src="/assets/img/Individual Contributions for Main Branch2 - 2.png" alt="Individual Contributions for Main Branch2 - 2">
+
+###### Figura 89
+*Reporte completo de contribuciones para el desarrollo del FrontEnd del Web Application del Proyecto de Propertunity del Sprint 2.*
+
+<img src="/assets/img/Pulse for FrontEnd Web Application.png" alt="Pulse for FrontEnd Web Application">
+<img src="/assets/img/Contributions for FrontEnd Web Application.png" alt="Contributions for FrontEnd Web Application">
+<img src="/assets/img/Individual Contributions for FrontEnd Web Application - 1.png" alt="Individual Contributions for FrontEnd Web Application - 1">
+<img src="/assets/img/Individual Contributions for FrontEnd Web Application - 2.png" alt="Individual Contributions for FrontEnd Web Application - 2">
+
+
 
 ## 7.3. Validation Interviews
 
