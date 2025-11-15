@@ -1704,7 +1704,51 @@ Para mejorar la experiencia se trabajó en una interfaz móvil y web coherente y
 
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
 
+En esta sección, presentamos la relación de Endpoints documentados con OpenAPI, que están directamente vinculados con el alcance del Sprint 1 de Mushroom. Iniciamos con una breve introducción que resume los logros alcanzados en relación con la Documentación de Web Services durante este período de desarrollo. A continuación, proporcionamos una tabla detallada que enumera cada Endpoint, junto con las acciones implementadas y los enlaces correspondientes a la documentación desplegada o la URL local en Sprints anteriores al despliegue de Web Services.
 
+En la tabla, se indican las acciones soportadas para cada Endpoint, incluyendo el verbo HTTP (GET, POST, PUT, DELETE, PATCH), la sintaxis de llamada, la especificación de posibles parámetros y se incluye un ejemplo junto con una explicación del response correspondiente. 
+
+###### Tabla 223
+*Listado de Endpoints de Eventos de Mushroom*
+
+|Método|	Descripción|	Ejemplo de llamada|Parámetros|	Respuesta|
+|-|-|-|-|-|
+|GET	|Lista puertos origen asociados a eventos; útil para feeds de eventos geopolíticos/navegación.	|GET /api/events/origin-ports	|Ninguno|	200 OK → ["portId1","portId2", ...]|
+
+###### Tabla 224
+*Listado de Endpoints del desglose de los Incoterms de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
+|-|-|-|-|-|
+|POST|	Calcula desglose de coste y recomienda Incoterm según parámetros comerciales y ruta.|	POST /api/incoterms/calculate
+Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2", ... }	|Body JSON con campos como cargoType, cargoValue, cargoWeight, seller, buyer, sellerCountry, buyerCountry, paymentTerms, insurance (bool), originPort, destinationPort, distance (num), etc.|	200 OK → objeto IncotermCalculationResult con marketConditions, recommendedIncoterm (code/name/description/costBreakdown), alternatives (lista), routeDetails (distance/estimatedTime/riskLevel) y warnings.|
+
+###### Tabla 225
+*Listado de Endpoints de los Puertos de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada|	Parámetros	|Respuesta|
+|-|-|-|-|-|
+|POST|	Crear un puerto con nombre, coordenadas y continente.	|POST /api/ports | Body: { "name":"Callao", "coordinates": { "latitude": -12.0, "longitude": -77.0 }, "continent":"South America" }	Body JSON: name (string), coordinates.latitude (number), coordinates.longitude (number), continent (string)	| 200 OK → { "id":"string","name":"string","coordinates":{ "latitude":0,"longitude":0 },"continent":"string" }|
+|GET|	Obtener detalle de un puerto por id.|	GET /api/ports/{portId}	|Path: portId (string)	|200 OK → PortResource { id, name, coordinates, continent }|
+|DELETE	|Eliminar puerto por id.	|DELETE /api/ports/{portId}|	Path: portId (string)|	200 OK → success (no content or simple status)|
+|GET|	Obtener todos los puertos registrados (listado).	|GET /api/ports/all-ports|	Ninguno|	200 OK → Array de PortResource|
+|GET|	Buscar puerto por nombre.|	GET /api/ports/name/{name}	|Path: name (string)|	200 OK → PortResource (o 404 si no existe)|
+
+###### Tabla 226
+*Listado de Endpoints de Rutas asignadas entre puertos de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
+|-|-|-|-|-|
+|GET|	Listar rutas registradas o históricas.	|GET /api/routes/all-routes	|Ninguno	|200 OK → Array de objetos con { id, homePort, homePortContinent, destinationPort, destinationPortContinent, distance }|
+|POST	|Calcular ruta óptima entre dos puertos (A* + pesos).|	POST /api/routes/calculate-optimal-route?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "optimalRoute":[...], "totalDistance":0, "warnings":[...], "coordinatesMapping": { portId: { latitude, longitude } } }
+|GET|	Obtener distancia entre dos puertos.|	GET /api/routes/distance-between-ports?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "distance": 0, "messages":["string"], "meta": { ... } }|
+
+###### Tabla 227
+*Listado de Endpoints de Inteligencia Artificial relacionadas a la predicción de estado de rutas de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada|	Parámetros|	Respuesta|
+|-|-|-|-|-|
+|POST	|Predecir demora por condiciones meteorológicas/oceanográficas entre origen y destino (modelo ML).|	POST /api/ai/predict-weather-delay| Body: { "distanceKm":1000, "cruiseSpeedKnots":20, "avgWindKnots":15, "maxWaveM":3, "departureTimeIso":"2025-11-14T10:00:00Z", "originLat":-12.0464, "originLon":-77.0428, "destLat":35.6762, "destLon":139.6503 }	Body JSON: distanceKm (num), cruiseSpeedKnots (num), avgWindKnots (num), maxWaveM (num), departureTimeIso (ISO string), originLat/Long, destLat/Long	|200 OK → Modelo devuelve predicción (estructura dependiente del modelo). En swagger original la respuesta es un objeto vacío como placeholder; en producción se espera { "estimatedDelayHours": number, "confidence": number, "factors":[...], "notes": "string" } o estructura análoga. |
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
