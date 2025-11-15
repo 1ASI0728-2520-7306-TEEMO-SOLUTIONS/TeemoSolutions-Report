@@ -1681,8 +1681,36 @@ Además, programamos sesiones regulares de brainstorming y resolución de proble
 Con el objetivo de validar las funcionalidades, beneficios y nivel de adopción potencial de la solución Mushroom, se realizaron entrevistas con personas que representan a nuestros segmentos objetivo. Estas entrevistas permitieron recopilar percepciones reales sobre la utilidad, facilidad de uso y valor percibido de la solución, así como identificar oportunidades de mejora. Las respuestas obtenidas ayudaron a confirmar hipótesis clave del producto y a ajustar el diseño en función de las necesidades y expectativas de los usuarios.
 
 ### 7.3.1. Diseño de Entrevistas
+Estas son las preguntas que se le hicieron a cada entrevistado: 
+
+1. ¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?
+
+2. ¿Consideras que guardar automáticamente el último viaje realizado facilitaría la evaluación y trazabilidad de las operaciones?
+
+3. ¿Crees que ofrecer un reporte final que incluya la ruta tomada, eventos y tiempos de recorrido mejoraría la capacidad de análisis post-viaje?
+
+5. ¿Incrementará la satisfacción del usuario la integración de un sistema de notificaciones personalizadas ante eventos críticos en rutas marítimas?
+
+4. ¿Consideras útil que el formulario de registro incluya una lista desplegable con empresas navieras internacionales reconocidas, para validar el proceso de identificación y asociación con una organización?
+
+6. ¿Te resultaría valioso que la plataforma calcule los costos aproximados de importación o exportación según los tipos de Incoterm, para anticipar gastos logísticos?
 
 ### 7.3.2. Registro de Entrevistas
+
+Entrevista 1:
+https://youtu.be/Y2cJzHYxXtw
+
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%201.png" style="width:500px; height:auto;" alt="entrevista1">
+
+Entrevista 2:
+https://youtu.be/XF05WypyvtU 
+
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%202.png" style="width:500px; height:auto;" alt="entrevista1">
+
+Entrevista 3:
+https://youtu.be/M0mf7QSNkeE
+
+<img src="assets/img/chapter-VIII/Evidencia%20Entrevista%203.png" style="width:500px; height:auto;" alt="entrevista1">
 
 ### 7.3.3. Evaluaciones según heurísticas
 
