@@ -1641,6 +1641,322 @@ Con el objetivo de validar las funcionalidades, beneficios y nivel de adopción 
 
 ### 7.3.3. Evaluaciones según heurísticas
 
+<center> <b> UX Heuristics & Principles Evaluation </b> </center>
+<center> <b> Usability – Inclusive Design – Information Architecture </b> </center>
+
+- **CARRERA:** Ingeniería de Software
+- **CURSO:** Arquitecturas De Software Emergentes
+- **SECCIÓN:** 7306
+- **PROFESORES:** Ernesto Ocampo Tello
+- **AUDITOR:** Teemo
+- **CLIENTE:** Teemo
+- **SITE o APP A EVALUAR:** Mushroom
+
+
+---
+
+### TAREAS EVALUADAS
+
+El alcance de esta evaluación incluye las principales interacciones detectadas en las pantallas web y móviles proporcionadas:
+
+1. Selección de puertos de origen y destino
+2. Búsqueda de puertos
+3. Visualización de ruta marítima
+4. Interpretación de alertas geopolíticas
+5. Visualización del mapa de ruta
+6. Lectura de detalles de la ruta (distancia, tiempo, riesgo)
+7. Visualización del desglose de Incoterms recomendados
+8. Revisión de alternativas de Incoterms
+9. Interpretación del porcentaje de compatibilidad de cada Incoterm
+10. Consulta de costos totales y desglosados
+11. Navegación hacia reportes generados
+12. Uso de filtros en la sección de reportes
+13. Descarga de reportes (PDF / Excel)
+14. Visualización de lista de reportes
+15. Acceso al detalle de cada reporte
+16. Interacción con botones de acción (View / Download)
+17. Uso de la sección de configuración
+18. Gestión de notificaciones y modo oscuro
+
+---
+
+### ESCALA DE SEVERIDAD
+
+| **Nivel** | **Descripción**                                                                        |
+| --------- | -------------------------------------------------------------------------------------- |
+| **1**     | Problema superficial, baja frecuencia o impacto. No urgente.                           |
+| **2**     | Problema menor, afecta fluidez. Prioridad baja.                                        |
+| **3**     | Problema mayor, afecta tareas clave. Alta prioridad.                                   |
+| **4**     | Problema crítico, bloquea funciones esenciales. Debe corregirse antes del lanzamiento. |
+
+---
+
+### Tabla de Problemas Detectados
+
+###### *Resumen de la evaluación heurística de la aplicación (web + móvil)*
+
+| #  | Problema                                                                                                             | Severidad | Heurística violada                           |
+| -- | -------------------------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------- |
+| 1  | Las listas de puertos no muestran cuántos resultados coinciden con la búsqueda                                       | 2         | Visibilidad del estado del sistema           |
+| 2  | La selección de puertos depende del color y puede ser poco clara                                                     | 2         | Consistencia y estándares                    |
+| 3  | Las alertas geopolíticas no se diferencian visualmente por nivel de riesgo                                           | 3         | Visibilidad / Reconocer situaciones críticas |
+| 4  | En la vista inicial no se indica claramente que la ruta tiene múltiples puertos intermedios                          | 2         | Correspondencia entre sistema y mundo real   |
+| 5  | La sección “Información de la Ruta” repite campos (distancia total) causando ruido visual                            | 1         | Estética y diseño minimalista                |
+| 6  | El mapa no permite zoom ni interacción                                                                               | 3         | Control y libertad del usuario               |
+| 7  | El porcentaje de compatibilidad del Incoterm no explica cómo se calcula                                              | 2         | Ayuda y documentación                        |
+| 8  | El desglose de costos no muestra totales por categoría o explicación del cálculo                                     | 2         | Reconocer en lugar de recordar               |
+| 9  | No hay retroalimentación después de presionar “Crear Informe”                                                        | 3         | Feedback inmediato                           |
+| 10 | Los botones “Volver al formulario”, “Crear informe”, “Descargar PDF/Excel” no mantienen consistencia visual entre sí | 2         | Consistencia y estándares                    |
+| 11 | El filtro de reportes no tiene etiquetas claras (solo “All”)                                                         | 2         | Claridad de acciones                         |
+| 12 | En reportes, el botón “View” no indica qué información mostrará                                                      | 2         | Correspondencia sistema–mundo real           |
+| 13 | El estado “Calculado” no explica si el reporte está finalizado o en borrador                                         | 2         | Visibilidad del sistema                      |
+| 14 | Los reportes no muestran un icono distintivo para su tipo o estado                                                   | 1         | Visibilidad del estado del sistema           |
+| 15 | El menú de configuración usa un diseño muy compacto que puede generar toques accidentales                            | 2         | Prevención de errores                        |
+| 16 | No se explica qué tipo de notificaciones se habilitan                                                                | 2         | Claridad de acciones                         |
+| 17 | El interruptor de modo oscuro no muestra vista previa o explicación                                                  | 1         | Ayuda y documentación                        |
+| 18 | La vista de reportes no muestra paginación ni scroll infinito                                                        | 3         | Control y libertad del usuario               |
+
+
+### DESCRIPCIÓN DETALLADA DE PROBLEMAS
+
+
+##### **PROBLEMA #1**
+
+**Severidad:** 2
+**Heurística violada:** Visibilidad del estado del sistema
+
+**Problema:**
+La caja de búsqueda de puertos no indica cuántos resultados coinciden con el texto ingresado.
+
+**Recomendación:**
+Mostrar una etiqueta “X resultados encontrados” para apoyar la navegación.
+
+---
+
+##### **PROBLEMA #2**
+
+**Severidad:** 2
+**Heurística violada:** Consistencia y estándares
+
+**Problema:**
+La selección de un puerto se representa únicamente con un fondo azul tenue, lo cual puede pasar desapercibido.
+
+**Recomendación:**
+Añadir un check, borde o icono que acompañe el estado de selección.
+
+---
+
+##### **PROBLEMA #3**
+
+**Severidad:** 3
+**Heurística violada:** Visibilidad / Reconocer situaciones críticas
+
+**Problema:**
+Las alertas geopolíticas de los puertos son todas idénticas visualmente, aunque algunas pueden ser más graves.
+
+**Recomendación:**
+Incluir niveles de riesgo (bajo, medio, alto) con colores diferenciados.
+
+---
+
+##### **PROBLEMA #4**
+
+**Severidad:** 2
+**Heurística violada:** Correspondencia entre sistema y mundo real
+
+**Problema:**
+En la primera vista, la ruta no deja claro que existen puertos intermedios como Busan → Shanghai.
+
+**Recomendación:**
+Añadir una sección “Puertos intermedios” antes del mapa.
+
+---
+
+##### **PROBLEMA #5**
+
+**Severidad:** 1
+**Heurística violada:** Estética y diseño minimalista
+
+**Problema:**
+El campo “Distancia Total” se repite en múltiples tarjetas.
+
+**Recomendación:**
+Agrupar información redundante.
+
+---
+
+##### **PROBLEMA #6**
+
+**Severidad:** 3
+**Heurística violada:** Control y libertad del usuario
+
+**Problema:**
+El mapa no ofrece zoom, movimientos, ni permite ver detalles adicionales.
+
+**Recomendación:**
+Habilitar interacción táctil estándar (pan, zoom).
+
+---
+
+##### **PROBLEMA #7**
+
+**Severidad:** 2
+**Heurística violada:** Ayuda y documentación
+
+**Problema:**
+El 98% de compatibilidad del Incoterm no explica su cálculo.
+
+**Recomendación:**
+Añadir tooltip “¿Cómo se calcula la compatibilidad?”.
+
+---
+
+##### **PROBLEMA #8**
+
+**Severidad:** 2
+**Heurística violada:** Reconocer en lugar de recordar
+
+**Problema:**
+El desglose de costos es correcto, pero no explica cómo se llegó al total.
+
+**Recomendación:**
+Agregar subtotales o notas aclaratorias.
+
+---
+
+##### **PROBLEMA #9**
+
+**Severidad:** 3
+**Heurística violada:** Feedback inmediato
+
+**Problema:**
+Tras presionar “Crear Informe”, no hay confirmación visible.
+
+**Recomendación:**
+Incluir un loader, mensaje “Generando reporte…” o toast de éxito.
+
+---
+
+##### **PROBLEMA #10**
+
+**Severidad:** 2
+**Heurística violada:** Consistencia y estándares
+
+**Problema:**
+Los botones de acción con tamaños y colores distintos generan confusión visual.
+
+**Recomendación:**
+Uniformizar color primario / secundario en toda la vista.
+
+---
+
+##### **PROBLEMA #11**
+
+**Severidad:** 2
+**Heurística violada:** Claridad de acciones
+
+**Problema:**
+El filtro de reportes solo indica `All`, sin mostrar opciones disponibles.
+
+**Recomendación:**
+Añadir etiquetas claras: `Calculado`, `Pendiente`, `Entregado`.
+
+---
+
+##### **PROBLEMA #12**
+
+**Severidad:** 2
+**Heurística violada:** Correspondencia sistema–mundo real
+
+**Problema:**
+El botón “View” no deja claro qué detalle se mostrará.
+
+**Recomendación:**
+Cambiar por “Ver Detalles” o acompañar con un icono de documento.
+
+---
+
+##### **PROBLEMA #13**
+
+**Severidad:** 2
+**Heurística violada:** Visibilidad del estado del sistema
+
+**Problema:**
+El estado “Calculado” es ambiguo: no se sabe si significa finalizado o en progreso.
+
+**Recomendación:**
+Agregar texto complementario o tooltip.
+
+---
+
+##### **PROBLEMA #14**
+
+**Severidad:** 1
+**Heurística violada:** Visibilidad
+
+**Problema:**
+Los reportes no usan iconos diferenciadores para tipo, estado o prioridad.
+
+**Recomendación:**
+Agregar iconos estándar (documento, alerta, reloj, etc.).
+
+---
+
+##### **PROBLEMA #15**
+
+**Severidad:** 2
+**Heurística violada:** Prevención de errores
+
+**Problema:**
+En configuración, los interruptores están muy próximos entre sí y pueden generar clics accidentales.
+
+**Recomendación:**
+Aumentar separación vertical.
+
+---
+
+##### **PROBLEMA #16**
+
+**Severidad:** 2
+**Heurística violada:** Claridad de acciones
+
+**Problema:**
+“Habilitar notificaciones” no especifica qué tipo de alertas enviará la app.
+
+**Recomendación:**
+Añadir un subtítulo:
+“Recibirás alertas de rutas, riesgos, costos y eventos importantes”.
+
+---
+
+##### **PROBLEMA #17**
+
+**Severidad:** 1
+**Heurística violada:** Ayuda y documentación
+
+**Problema:**
+El interruptor de modo oscuro no deja claro qué elementos cambiarán.
+
+**Recomendación:**
+Agregar una vista previa o pequeño mockup.
+
+---
+
+##### **PROBLEMA #18**
+
+**Severidad:** 3
+**Heurística violada:** Control y libertad del usuario
+
+**Problema:**
+La lista de reportes no incluye paginación, scroll infinito ni agrupación.
+
+**Recomendación:**
+Implementar paginación o carga progresiva.
+
+
+
+
+
 ## 7.4.  Video About-the-Product
 
 El Video About-the-Product constituye una pieza audiovisual diseñada estratégicamente para comunicar, de manera clara y atractiva, el valor diferencial de la solución digital desarrollada. Orientado principalmente a dos públicos objetivos, los visitantes del Landing Page interesados en el modelo de negocio, y los usuarios finales de las aplicaciones que desean comprender mejor sus funcionalidades, este video sintetiza los aspectos clave del producto desde una perspectiva funcional, técnica y experiencial.
