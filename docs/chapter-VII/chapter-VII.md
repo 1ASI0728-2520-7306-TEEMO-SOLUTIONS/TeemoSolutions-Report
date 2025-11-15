@@ -882,58 +882,6 @@ No exponer directamente entidades de base de datos; usar DTOs.
 
 ---
 
-**C++**
-
-**1. Extensiones y organización de archivos**
-
-.hpp/.h para encabezados, .cpp para implementación.
-
-Un directorio include/ y otro src/.
-
-**2. Guards y #pragma once**
-
-    #pragma once
-
-    namespace MyApp {
-      class MyClass { … };
-    }
-
-**3. Nombres y espacios de nombres**
-
-Clases en PascalCase, funciones y variables en snake_case.
-
-Evitar using namespace std; en headers.
-
-**4. Orden de includes**
-
-1. Encabezado correspondiente
-2. Bibliotecas estándar <…>
-3. Dependencias de terceros
-4. Encabezados propios
-
-        #include "my_class.hpp"
-
-        #include <vector>
-        #include <string>
-
-        #include "third_party/lib.hpp"
-
-**5. Memoria y punteros**
-
-Preferir "std::unique_ptr" y "std::shared_ptr" sobre punteros crudos.
-
-Evitar fugas de memoria y condiciones de carrera.
-
-**6. Estilo**
-
-Sangría de 2 o 4 espacios (consistente).
-
-Línea máxima ~100 caracteres.
-
-Comentarios // para breves aclaraciones, /** … */ para documentación.
-
----
-
 **Python**
 
 **1. PEP 8: Estilo de código**
@@ -979,72 +927,99 @@ Utilizar hints en funciones y variables.
 
     def fetch_data(url: str) -> dict[str, Any]:
         """Obtiene datos de la URL dada."""
-        ...
-
----
-
-**Wokwi**
-
-**1. Archivos de simulación**
-
-Extensión .wkw.json o .wokwi.json.
-
-Incluir metadatos: nombre, descripción, dependencias de hardware.
-
-**2. Estructura interna**
-
-"parts": lista de componentes (microcontroladores, sensores).
-
-"sketch": código fuente embebido (Arduino/C++ o MicroPython).
-
-**3. Comentarios y pruebas**
-
-Comentar secciones críticas del firmware.
-
-Definir escenarios de simulación en archivos separados.
-
-**4. Compartir y versionar**
-
-Cada simulación debe incluir una URL pública en la documentación del repositorio.
-
-Incluir en CI un paso que valide que el JSON esté bien formado.
-
----
-
-**xUnit (.NET)**
-
-**1. Nomenclatura de pruebas**
-
-Método de prueba: MethodName_StateUnderTest_ExpectedBehavior.
-
-    [Fact]
-    public void CalculateTotal_WhenNoItems_ReturnsZero() { … }
-
-**2. Atributos**
-
-[Fact] para casos de prueba sin parámetros.
-
-[Theory] + [InlineData] para casos parametrizados.
-
-**3. Configuración y fixtures**
-
-Usar clases fixture para compartir contexto de prueba.
-
-Implementar IClassFixture<T> y ICollectionFixture<T> según alcance.
-
-**4. Asserts claros**
-
-Preferir Assert.Equal(expected, actual) y mensajes personalizados.
-
-Evitar lógica compleja dentro de las aserciones.
-
-**5. Organización**
-
-Cada clase de prueba corresponde a una clase de producción.
-
-Agrupar proyectos de test en una carpeta tests/ o MyApp.Tests/.
 
 ### 7.1.4. Software Deployment Configuration
+
+En esta sección, procederemos a detallar de manera exhaustiva la configuración necesaria para implementar y desplegar nuestra solución. A lo largo de este análisis, enfatizaremos las mejores prácticas que deben seguirse, así como las herramientas más adecuadas a utilizar y los flujos de trabajo recomendados para garantizar una implementación eficaz y coordinada de ambas partes de nuestra solución. Además, discutiremos cómo cada decisión técnica impacta en la funcionalidad y la experiencia del usuario, proporcionando así un enfoque integral para el desarrollo de nuestras aplicaciones.
+
+**Landing Page:**
+
+**1. Creación del repositorio en GitHub:**
+Abrir GitHub, crear un nuevo repositorio público con un nombre claro y descriptivo para el Landing Page, y subir todos los archivos HTML, CSS, JavaScript y recursos asociados. Esta base organizará el flujo de trabajo y facilitará la colaboración del equipo.
+
+###### Figura 75
+
+_Repositorio de la Landing Page de Mushroom_
+
+<img src="/assets/img/chapter-VII/deployment/landing-page/landing-page-deployment-evidence-1.png" alt="Evidencia de Uso de Github Pages">
+
+**2. Habilitación de GitHub Pages:**
+En la sección Settings -> Pages, activar GitHub Pages para el repositorio. Ahí se puede elegir la rama de despliegue y, opcionalmente, un dominio personalizado, siguiendo la interfaz guiada que ofrece GitHub.
+
+###### Figura 76
+
+_Habilitación de Github Pages de la Landing Page de Mushroom_
+
+<img src="/assets/img/chapter-VII/deployment/landing-page/landing-page-deployment-evidence-2.png" alt="Evidencia de Uso de Github Pages en Settings">
+
+**3. Configuración de la rama y directorio de publicación:**
+Dentro de Settings -> Pages, seleccionar la rama main y el directorio raíz desde el que se servirán los archivos estáticos. Esto define exactamente qué contenido se publicará en el sitio.
+
+**4. Selección definitiva de la rama de despliegue:**
+Confirmar en el apartado Branch que la rama elegida (main) contiene la versión actualizada del Landing Page. Mantener las demás opciones en valores predeterminados salvo requisitos especiales.
+
+**5. Verificación del enlace público:**
+Tras guardar la configuración, GitHub generará automáticamente la URL de acceso al sitio. Cualquier push a la rama main actualizará en tiempo real la página desplegada.
+
+###### Figura 77
+
+_Verificación del enlace público de la Landing Page de Macetech_
+
+<img src="/assets/img/chapter-VII/deployment/landing-page/landing-page-deployment-evidence-3.png" alt="Evidencia de Uso de Github Pages">
+
+**6. Pruebas finales y acceso al sitio:**
+Acceder al enlace generado (https://1asi0732-2510-4441-teemo-solutions.github.io/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-LandingPage/), comprobar funcionamiento y apariencia en distintos navegadores y dispositivos, y corregir posibles desviaciones de forma inmediata para garantizar una experiencia óptima.
+
+---
+
+**Web Application**
+
+**1. Creación y configuración del proyecto en Firebase**
+Accede a Firebase Console, crea un nuevo proyecto o selecciona el existente asociado a la Web Application. En el menú lateral, habilita App Distribution y registra tu aplicación web, vinculándola al dominio que servirá los archivos estáticos.
+
+En tu entorno local, instala la herramienta de línea de comandos de Firebase y autentícate con firebase login. Asegúrate de haber seleccionado el proyecto correcto con firebase use.
+
+###### Figura 78
+
+_Selección y configuración del proyecto de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-1.png" alt="Evidencia de despliegue en Firebase">
+
+**2. Construcción de la aplicación**
+Ejecuta el comando de build de tu framework para generar los archivos estáticos listos para producción en la carpeta de salida designada.
+
+###### Figura 79
+
+_Construcción de la aplicación para el proyecto de la Web Application de Mushrooom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-2.png" alt="Evidencia de despliegue en Firebase">
+
+**3. Configuración de Firebase Hosting**
+Inicializa Firebase Hosting con firebase init, selecciona el proyecto y la carpeta de salida generada en el paso anterior. Cuando se te pregunte si deseas sobrescribir archivos de configuración, confirma solo los necesarios.
+
+###### Figura 80
+
+_Configuración de Firebase Hosting para el despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-3.png" alt="Evidencia de despliegue en Firebase">
+
+**4. Despliegue en App Distribution**
+Utilizar comandos (firebase deploy) de despliegue en Firebase para subir el paquete de la Web Application a App Distribution. Este comando empaqueta automáticamente el build y lo hace disponible para el grupo de desarrolladores configurado.
+
+###### Figura 81
+
+_Despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-4.png" alt="Evidencia de despliegue en Firebase">
+
+**5. Obtención del enlace de distribución**
+Una vez completada la subida, Firebase mostrará en consola la URL de App Distribution. Comparte este enlace con los desarrolladores o stakeholders para que puedan acceder y descargar la última versión de la Web Application directamente desde Firebase App Distribution.
+
+###### Figura 82
+
+_Página de la Web Application de Mushroom ya desplegada_
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Evidencia de despliegue en Firebase">
 
 ### 7.2. Solution Implementation
 
@@ -1648,56 +1623,56 @@ Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber co
 
 El equipo ha implementado con éxito las mejoras continuas e innovadoras de Mushroom para que funcione como una herramienta operativa con tecnología emergente Se completaron los flujos que permiten calcular rutas optimizadas, visualizar la geometría y la animación de trayectos en dispositivos móviles, solicitar justificaciones cuantitativas entre alternativas y persistir las consultas para trazabilidad. Todas las historias asignadas a este sprint se ejecutaron y entregaron integradas, lo que permitió validar el recorrido completo desde la selección de puertos hasta el almacenamiento del registro de la ruta.
 
-###### Figura 70
+###### Figura 83
 *Muestra con evidencia de la selección de puertas con la geometría incluida en la aplicación móvil*
 
 <img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-1.jpg" alt="Mobile App Evidence 1">
 
-###### Figura 71
+###### Figura 84
 *Muestra con evidencia de la animación de rutas entre dos puertos en la aplicación móvil*
 
 <img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-2.jpg" alt="Mobile App Evidence 2">
 
-###### Figura 72
+###### Figura 85
 *Muestra con evidencia de cierre automático de puertos en la aplicación móvil*
 
 <img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-3.jpg" alt="Mobile App Evidence 3">
 
-###### Figura 73
+###### Figura 86
 *Muestra con evidencia del cálculo de Incoterms en la aplicación móvil*
 
 <img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-4.jpg" alt="Mobile App Evidence 4">
 
 En paralelo se desarrollaron las funciones asociadas a la gestión operativa. Se diseñó e implementó el API de persistencia de viajes y el servicio de historial con filtros y paginación. También se puso en marcha el servicio de pricing básico que estima costos y sugiere Incoterms, integrándolo con las vistas web y móviles para que los usuarios obtengan desglose y recomendaciones comerciales en el mismo flujo de decisión.
 
-###### Figura 74
+###### Figura 87
 *Muestra con evidencia de los endpoints de puertos en el Web Services*
 
 <img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-1.jpg" alt="Web Services Evidence 1">
 
-###### Figura 75
+###### Figura 88
 *Muestra con evidencia de los endpoints de rutas en el Web Services*
 
 <img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-2.jpg" alt="Web Services Evidence 2">
 
 Para mejorar la experiencia se trabajó en una interfaz móvil y web coherente y fluida que facilita la interpretación de métricas y justificaciones, se adoptaron mecanismos de reintento y sincronización para la persistencia en condiciones de conectividad variable, y se dejó preparado el entorno para soportar internacionalización e instrumentos de telemetría. Con esta base, el equipo dispone ahora de un producto mínimo operativo que permite recoger feedback real de operadores y priorizar las mejoras de inteligencia y rendimiento en los próximos sprints.
 
-###### Figura 76
+###### Figura 89
 *Muestra con evidencia de la administración de puertos habilitados y deshabilitados en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Web Application Evidence 1">
 
-###### Figura 77
+###### Figura 90
 *Muestra con evidencia de la función de deshabilitación de puertos en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-2.jpg" alt="Web Application Evidence 2">
 
-###### Figura 78
+###### Figura 91
 *Muestra con evidencia de la función de cambio de estado operativo en puertos por riesgo en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-3.jpg" alt="Web Application Evidence 3">
 
-###### Figura 79
+###### Figura 92
 *Muestra con evidencia de la función de cálculo de Incoterms recomendados en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-4.jpg" alt="Web Application Evidence 4">
@@ -1752,7 +1727,52 @@ Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
+**1. Creación y configuración del proyecto en Firebase**
+Accede a Firebase Console, crea un nuevo proyecto o selecciona el existente asociado a la Web Application. En el menú lateral, habilita App Distribution y registra tu aplicación web, vinculándola al dominio que servirá los archivos estáticos.
 
+En tu entorno local, instala la herramienta de línea de comandos de Firebase y autentícate con firebase login. Asegúrate de haber seleccionado el proyecto correcto con firebase use.
+
+###### Figura 93
+
+_Selección y configuración del proyecto de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-1.png" alt="Evidencia de despliegue en Firebase">
+
+**2. Construcción de la aplicación**
+Ejecuta el comando de build de tu framework para generar los archivos estáticos listos para producción en la carpeta de salida designada.
+
+###### Figura 94
+
+_Construcción de la aplicación para el proyecto de la Web Application de Mushrooom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-2.png" alt="Evidencia de despliegue en Firebase">
+
+**3. Configuración de Firebase Hosting**
+Inicializa Firebase Hosting con firebase init, selecciona el proyecto y la carpeta de salida generada en el paso anterior. Cuando se te pregunte si deseas sobrescribir archivos de configuración, confirma solo los necesarios.
+
+###### Figura 95
+
+_Configuración de Firebase Hosting para el despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-3.png" alt="Evidencia de despliegue en Firebase">
+
+**4. Despliegue en App Distribution**
+Utilizar comandos (firebase deploy) de despliegue en Firebase para subir el paquete de la Web Application a App Distribution. Este comando empaqueta automáticamente el build y lo hace disponible para el grupo de desarrolladores configurado.
+
+###### Figura 96
+
+_Despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-4.png" alt="Evidencia de despliegue en Firebase">
+
+**5. Obtención del enlace de distribución**
+Una vez completada la subida, Firebase mostrará en consola la URL de App Distribution. Comparte este enlace con los desarrolladores o stakeholders para que puedan acceder y descargar la última versión de la Web Application directamente desde Firebase App Distribution.
+
+###### Figura 97
+
+_Página de la Web Application de Mushroom ya desplegada_
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Evidencia de despliegue en Firebase">
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
@@ -1762,21 +1782,21 @@ Nuestro equipo se reunió tanto en persona como virtualmente para asignar tareas
 
 Además, programamos sesiones regulares de brainstorming y resolución de problemas, donde compartimos ideas y abordamos cualquier duda o dificultad que surgiera durante el proceso de desarrollo. 
 
-###### Figura 85
+###### Figura 98
 *Reporte completo de contribuciones para el desarrollo del Web Application de Mushroom en el Sprint 1.*
 
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/pulse-web-app-sprint1.png" alt="Pulse for Web Application">
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/total-contribution-web-app-sprint1.png" alt="Contribution for Web Application">
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/contributors-web-app-sprint1-.png" alt="Individual Contributions for Web Application">
 
-###### Figura 86
+###### Figura 99
 *Reporte completo de contribuciones para el desarrollo del Mobile Application de Mushroom en el Sprint 1.*
 
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/pulse-mobile-app-sprint1.png" alt="Pulse for Mobile Application">
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/total-contribution-mobile-app-sprint1.png" alt="Contribution for Mobile Application">
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/contributors-mobile-app-sprint1.png" alt="Individual Contributions for Mobile Application">
 
-###### Figura 87
+###### Figura 100
 *Reporte completo de contribuciones para el desarrollo del Web Services de Mushroom en el Sprint 1.*
 
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint1.png" alt="Pulse for Web Services">
@@ -2143,12 +2163,12 @@ El contenido incluye una descripción breve del modelo de negocio freemium-suscr
 
 Esta sección también especifica los enlaces oficiales al video, tanto en su versión publicada en Microsoft Stream como en YouTube, esta última utilizada para su incrustación en el Landing Page. Asimismo, se detalla su duración total y se incluye un screenshot representativo del contenido audiovisual, asegurando su adecuada contextualización dentro del ecosistema digital del proyecto.
 
-[Vídeo About-The-Product]()
+[Vídeo About-The-Product](https://youtu.be/KDW8eWmyO9s)
 
-Duración:  minutos
+Duración: 5:35 minutos
 
 ###### Figura 204
 
 _Evidencia del desarrollo del vídeo About-The-Product de Mushroom_
 
-<img src="/assets/img/portada/about-the-product.png" alt="Video About The Product">
+<img src="/assets/img/chapter-VII/about-the-product-evidence.png" alt="Video About The Product">
