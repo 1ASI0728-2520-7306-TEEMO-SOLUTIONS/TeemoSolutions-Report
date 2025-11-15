@@ -278,7 +278,7 @@ El desarrollo del UI Design de la Landing Page está en el siguiente link: https
 - Mobile Applications Prototyping
 
 <a href="https://youtu.be/9WosMPSuCxs" target="_blank">
-  <img src="../../assets/img/chapter-VI/Prototyping-Mushroom.png" alt="Haz clic para ver el video en YouTube">
+  <img src="../../assets/img/chapter-VI/Proto1.jpg" alt="Haz clic para ver el video en YouTube">
 </a>
 
 https://www.figma.com/proto/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=180-2173&p=f&t=gTWw4q4ijvLKKjSU-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=206%3A40 
@@ -286,7 +286,9 @@ https://www.figma.com/proto/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-i
 
 - Web Applications Prototyping
 
-<a href="https://youtu.be/29B8cJ20IKA" target="_blank">Video</a>
+<a href="https://youtu.be/29B8cJ20IKA" target="_blank">
+<img src="../../assets/img/chapter-VI/proto2.jpg" alt="Haz clic para ver el video en YouTube">
+</a>
 
 https://www.figma.com/proto/fRCN5nwxmvlgyTYYHrenag/TEEMOSolutions---Figma?node-id=180-2173&p=f&t=gTWw4q4ijvLKKjSU-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=206%3A40 
 
