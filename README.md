@@ -386,6 +386,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
           <strong>TP:</strong>
           <br>Comunica con objetividad la estructura y responsabilidades de las capas del bounded context Service Operations and Monitoring, articulando cómo cada componente soporta la observabilidad del sistema y la gestión de métricas de desempeño. Expone la integración entre monitoreo en tiempo real, registro de eventos y actualización de indicadores operativos ante públicos de distintas especialidades, explicando las decisiones técnicas que equilibran precisión de seguimiento y eficiencia en la transmisión de datos.<br>
+          <strong>TB2:</strong>
+          <br>Presenta las mejoras a la arquitectura de Mushroom, contrastando explícitamente los cambios respecto a TB1. Comunica con objetividad cómo estas mejoras responden a retroalimentación previa y fortalecen la capacidad del sistema para reducir riesgos operacionales, optimizar consumo de recursos y mitigar impactos ambientales derivados de rutas ineficientes. Adapta su discurso a audiencias técnicas y gerenciales, explicando con claridad las implicancias económicas, regulatorias y de seguridad marítima de las decisiones arquitectónicas.<br>
         <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong>
         <br>Presenta con claridad la organización, el Event Storming y el Domain Message Flow Modeling, destacando cómo los flujos de eventos (clima, incidentes, alertas de piratería) se transforman en comandos y proyecciones útiles para planeamiento de rutas seguras. Comunica a operaciones, data y management usando un lenguaje preciso y objetivos verificables; argumenta el valor del enfoque dirigido por dominio para reducir ambigüedades y alinear negocio-tecnología en el contexto marítimo.<br>
@@ -393,11 +395,17 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
           <strong>TP:</strong>
           <br>Comunica con objetividad la arquitectura de capas del bounded context IAM, vinculando las políticas de autenticación y autorización con los requerimientos de seguridad del sistema. Presenta cómo los mecanismos de control de acceso, cifrado y gestión de roles garantizan confidencialidad y trazabilidad ante audiencias técnicas y gerenciales, explicando los compromisos entre robustez de seguridad y facilidad de uso.<br>
         <br><br>
+        <strong>TB2:</strong>
+          <br>Expone las mejoras en el Event Storming y el Domain Message Flow Modeling, destacando la inclusión de nuevos eventos y flujos excepcionales. Comunica con objetividad cómo los flujos refinados reducen ambigüedades y ayudan a tomar decisiones informadas sobre rutas más seguras y responsables.<br>
+        <br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong>
         <br>Sustenta oralmente el Design purpose, los atributos de diseño de entrada, la funcionalidad primaria y los quality attributes, explicando cómo cada atributo (confiabilidad, rendimiento, resiliencia) impacta en la promesa de “ruta más segura y rápida”. Expone con ejemplos comprensibles para distintas especialidades y niveles jerárquicos, y justifica prioridades de diseño frente a restricciones reales (latencia del API, ventanas de actualización de datos, zonas de exclusión).<br>
         <br><br>
           <strong>TP:</strong>
           <br>Comunica con objetividad las capas del bounded context Profile and Preferences, mostrando cómo la estructura de datos y servicios permite la personalización de experiencias y configuraciones de usuario. Expone la relación entre modelos de dominio, preferencias almacenadas y comportamiento adaptativo del sistema, atendiendo preguntas de diferentes niveles jerárquicos y justificando el equilibrio entre flexibilidad del perfil y consistencia de la información.<br>
+        <br><br>
+        <strong>TB2:</strong>
+          <br>Presenta la versión refinada del Design purpose, la funcionalidad primaria y los quality attributes, enfatizando cómo se ajustaron métricas y escenarios para reflejar mejor el impacto en tiempos de tránsito, costos operativos, emisiones y niveles de riesgo. Comunica con ejemplos concretos para diferentes especialidades cómo los trade-offs entre rendimiento, confiabilidad y seguridad se han reevaluado, argumentando decisiones que priorizan rutas responsables frente a opciones que podrían ser económicamente atractivas pero más riesgosas o ambientalmente costosas.<br>
         <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong>
         <br>Comunica con objetividad los requisitos funcionales y no funcionales y la sección de Candidate Context Mapping, enlazando necesidades de usuarios (planificadores, capitanes) con capacidades del sistema (cálculo A*, ingestión de eventos, monitor de riesgos). Co-presenta resultados del Event Storming, gestionando preguntas de diversas áreas y jerarquías; explica trade-offs entre precisión de predicción, costo computacional y experiencia de usuario en el puente de mando.<br>
@@ -405,11 +413,17 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
           <strong>TP:</strong>
           <br>Comunica con objetividad las capas del bounded context Notifications, describiendo cómo se orquesta el flujo de alertas proactivas ante eventos críticos del entorno marítimo. Presenta ante públicos de diversa especialidad las decisiones arquitectónicas que aseguran inmediatez, fiabilidad y relevancia de las notificaciones, explicando los compromisos entre frecuencia de envío, consumo de recursos y claridad del mensaje para el usuario.<br>
         <br><br>
+        <strong>TB2:</strong>
+          <br>Comunica oralmente las mejoras en los requisitos funcionales y no funcionales, así como el refinamiento del Candidate Context Mapping. Explica con objetividad cómo se ajustaron historias de usuario, restricciones y dependencias para reflejar nuevos requerimientos de trazabilidad, regulaciones internacionales y alertas tempranas ante eventos de riesgo. Ante audiencias de distintas jerarquías, expone los compromisos entre granularidad de la información, carga de trabajo para la tripulación y claridad operativa en el puente de mando, vinculando estos cambios con una toma de decisiones más segura y responsable.<br>
+        <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Explica con solvencia el Architectural Drivers Backlog, las decisiones de diseño arquitectural y los refinamientos de escenarios de quality attributes, mostrando trazabilidad desde drivers (seguridad, disponibilidad, actualizaciones de riesgo) hasta soluciones concretas (patrones, particionamiento, tolerancia a fallas). Adapta ejemplos y métricas para audiencias mixtas, y concluye con implicancias operativas para empresas navieras y reguladores.<br>
         <br><br>
           <strong>TP:</strong>
           <br>Comunica con objetividad la estructura de las capas del bounded context A/AI Process*, enlazando los mecanismos de cálculo de rutas inteligentes con los objetivos de eficiencia y seguridad operacional. Co-presenta los resultados del diseño, explicando ante distintas jerarquías los trade-offs entre precisión del algoritmo A*, costo computacional y capacidad de respuesta en condiciones dinámicas del entorno marítimo.<br>
+        <br><br>
+        <strong>TB2:</strong>
+          <br>Presenta las mejoras al Architectural Drivers Backlog y a las decisiones arquitectónicas asociadas, destacando cómo se incorporaron con mayor énfasis drivers relacionados con seguridad, cumplimiento normativo, sostenibilidad y transparencia frente a reguladores. Comunica con objetividad las alternativas consideradas y justifica las decisiones finales, explicando ante públicos técnicos y gerenciales cómo la arquitectura actualizada permite un seguimiento más responsable del riesgo, de las emisiones y de la continuidad operativa en contextos globales complejos.<br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
@@ -418,6 +432,10 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TP:</strong>
           <br>El equipo de trabajo evidenció una comunicación objetiva y técnica al presentar los resultados y decisiones de diseño de cada bounded context. Cada integrante expuso con claridad la relación entre los requerimientos del usuario y las capacidades arquitectónicas del sistema, manteniendo coherencia conceptual y adecuando su discurso a distintos niveles jerárquicos y especialidades. Esta presentación conjunta reflejó un enfoque integral y colaborativo en el desarrollo del proyecto de ingeniería.<br>
+        <br><br>
+        <strong>TB2:</strong>
+          <br>El equipo fortaleció su capacidad de comunicación oral al presentar no solo el estado del proyecto, sino también las mejoras realizadas respecto a TB1 y su justificación frente a responsabilidades profesionales y contextos de impacto. Cada integrante expuso con objetividad cómo los cambios en arquitectura, requisitos, flujos de eventos y drivers arquitecturales responden a riesgos reales del dominio marítimo, a regulaciones internacionales y a la necesidad de operar de manera más segura, eficiente y sostenible.<br>
+          <br><br>
         <br><br>
       </td>
       </tr>
@@ -431,11 +449,17 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TP:</strong>
           <br>Redacta con precisión técnica los resultados del diseño de las capas del bounded context Service Operations and Monitoring, describiendo el flujo de información y la interacción entre componentes de seguimiento y métricas. Su documentación transmite objetivamente los alcances funcionales y las decisiones arquitectónicas, facilitando la comprensión de lectores con distintos niveles técnicos.<br>
         <br><br>
+        <strong>TB2:</strong>
+          <br>Actualiza la documentación de la arquitectura de Mushroom incorporando comparaciones explícitas entre TB1 y la versión mejorada: se detallan cambios en System Landscape, Context/Container y Deployment Diagrams, así como nuevas decisiones de particionamiento y resiliencia. Redacta secciones que explican por qué estos ajustes son necesarios para mejorar la continuidad operativa, la gestión de fallas y el uso responsable de recursos en entornos marítimos globales. Su escritura mantiene objetividad y precisión, facilitando que lectores de diferentes niveles jerárquicos comprendan cómo la arquitectura refinada contribuye a mitigar impactos económicos y ambientales de rutas subóptimas.<br>
+        <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong> message here
         <br>Elabora documentación de Event Storming y Domain Message Flow Modeling con catálogos de eventos, comandos y políticas, acompañados de glosario de términos del dominio marítimo. Presenta diagramas y narrativas breves que permiten a áreas técnicas y de negocio seguir el flujo de información desde los eventos (tormentas, cierres de rutas) hasta las actualizaciones de la ruta óptima, con criterios de objetividad y verificabilidad.<br>
         <br><br>
         <strong>TP:</strong>
           <br>Elabora informes claros y estructurados sobre la arquitectura del bounded context IAM, explicando los mecanismos de autenticación, autorización y control de acceso. Su comunicación escrita destaca por la objetividad con que relaciona los requisitos de seguridad con las soluciones implementadas, dirigiéndose eficazmente a audiencias tanto técnicas como de gestión.<br>
+        <br><br>
+        <strong>TB2:</strong>
+          <br>Mejora la documentación de Event Storming y Domain Message Flow Modeling, añadiendo catálogos de eventos extendidos, flujos alternos y condiciones excepcionales. Redacta narrativas claras que muestran cómo estos flujos actualizados permiten una mejor detección de riesgos (tormentas súbitas, zonas restringidas, conflictos geopolíticos) y una reacción más responsable por parte del sistema. Optimiza y mejora el sistema de enrutamiento implementando A/AI Process*.<br>
         <br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong> message here
         <br>Produce el Design purpose, atributos de diseño de entrada, funcionalidad primaria y quality attributes, organizados en secciones trazables a riesgos y metas del cliente. Redacta tablas de escenarios (estímulo-ambiente-respuesta-métrica) que comunican, para distintos lectores, cómo el sistema mantiene tiempos de cómputo y precisión del ruteo bajo condiciones adversas, manteniendo lenguaje claro y evidencia técnica.<br>
@@ -443,17 +467,26 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TP:</strong>
           <br>Desarrolla documentos explicativos que presentan de manera ordenada la estructura de las capas del bounded context Profile and Preferences, conectando la personalización de usuario con los servicios de dominio. Su redacción combina precisión técnica y lenguaje accesible, lo que permite que distintos especialistas comprendan el propósito y la relevancia de cada componente.<br>
         <br><br>
+        <strong>TB2:</strong>
+          <br>Revisa y refina la documentación de Design purpose, funcionalidad primaria y quality attributes, ajustando escenarios y métricas para reflejar de manera más precisa el impacto de la solución en tiempos de entrega, consumo de combustible, emisiones y exposición al riesgo. Redacta tablas comparativas entre versiones de diseño, justificando por escrito por qué ciertos atributos. Redacción, clara y estructurada, permite que lectores de distintas especialidades comprendan cómo estas decisiones contribuyen a una operación marítima más ética y sostenible.<br>
+        <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong> message here
         <br>Redacta los requisitos funcionales y no funcionales y la propuesta de Candidate Context Mapping con criterios de completitud, coherencia y testabilidad. Presenta historias de usuario, restricciones y criterios de aceptación que vinculan el cálculo de rutas con fuentes de datos externas, permitiendo a equipos de desarrollo, QA y stakeholders ejecutivos comprender alcance, supuestos y dependencias del sistema.<br>
         <br><br>
         <strong>TP:</strong>
           <br>Produce reportes detallados sobre el diseño del bounded context Notifications, destacando la secuencia de procesamiento de alertas y la integración con otros módulos del sistema. Su escritura evidencia objetividad al justificar decisiones sobre frecuencia, prioridad y alcance de notificaciones, adaptando la información según el nivel jerárquico del público lector.<br>
         <br><br>
+        <strong>TB2:</strong>
+          <br>Actualiza los requisitos funcionales y no funcionales y la propuesta de Context Mapping candidatos, reorganizando la documentación para destacar trazabilidad, prioridad y dependencia entre requisitos. Redacta descripciones más precisas de restricciones y criterios de aceptación ligados a normativas internacionales, ventanas de actualización de datos de riesgo y necesidades de notificación oportuna.<br>
+        <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Compila el Architectural Drivers Backlog, las decisiones de diseño y los refinamientos de escenarios de calidad, registrando alternativas evaluadas, justificaciones y consecuencias. Emplea plantillas estandarizadas y matrices de decisión que permiten a lectores de diferentes especialidades y jerarquías contrastar opciones (p. ej., estrategias de resiliencia, patrones de integración) y entender su impacto en la operación marítima.<br>
         <br><br>
         <strong>TP:</strong>
           <br>Redacta con rigor técnico los resultados obtenidos en el diseño de las capas del bounded context A/AI Process*, explicando de forma lógica la aplicación del algoritmo A* y su relación con el rendimiento del sistema. Su comunicación escrita muestra claridad en la exposición de trade-offs y fundamentos de diseño, permitiendo a diferentes áreas comprender el valor técnico del módulo.<br>
+        <strong>TB2:</strong>
+          <br>Fortalece la documentación del Architectural Drivers Backlog y de las decisiones arquitectónicas, incorporando matrices que relacionan drivers con tácticas específicas implementadas. Redacta análisis comparativos entre alternativas descartadas y seleccionadas, explicando el impacto esperado de cada decisión en la operación marítima y en la relación con reguladores y clientes.<br>
+        <br><br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
@@ -462,6 +495,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TP:</strong>
           <br>El grupo demostró solidez en la comunicación escrita al expresar con objetividad los resultados y decisiones técnicas de cada bounded context. La redacción fue coherente, precisa y adaptada a diversos niveles jerárquicos, reflejando madurez profesional y capacidad de documentación en el ámbito de la ingeniería.<br>
+        <br><br>
+        <strong>TB2:</strong>
+          <br>La comunicación escrita del equipo mostró un avance significativo en objetividad, profundidad y vinculación explícita con las responsabilidades profesionales del proyecto. Las actualizaciones de arquitectura, requisitos, flujos de eventos, propósito de diseño y drivers arquitecturales no solo corrigieron y ordenaron la información de TB1, sino que también incorporaron con mayor claridad los impactos económicos, ambientales, operativos y regulatorios de la solución.<br>
         <br><br>
       </td>
 </tr>
