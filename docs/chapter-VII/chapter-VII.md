@@ -1034,7 +1034,7 @@ El primer sprint es un hito importante en nuestro proceso de desarrollo ágil. D
 El sprint planning es una reunión en la metodología ágil donde el equipo planifica las actividades del próximo sprint. Define qué trabajo se hará, cuánto tiempo tomará y quién será responsable. El objetivo es establecer un plan claro y alcanzable para el equipo, fomentando la colaboración y asegurando que todos estén alineados en cuanto a objetivos y prioridades.
 
 ###### Tabla 219
-*Sprint Planning del primer sprint de desarrollo de Macetech*
+*Sprint Planning del primer sprint de desarrollo de Mushroom de TeemoSolutions*
 
 <table  style="text-align: center;">
     <tbody>
@@ -1101,7 +1101,787 @@ En este primer sprint del proceso de mejora, nos enfocamos en la implementación
 Estas características son fundamentales para establecer la base del proceso de mejora continua e innovador de nuestro producto y proporcionar una experiencia de usuario sólida y coherente.
 
 ###### Tabla 220
-*Sprint Backlog del primer sprint de desarrollo de Macetech*
+*Sprint Backlog del primer sprint de desarrollo de Mushroom de TeemoSolutions*
+
+<table>
+  <tbody>
+    <tr>
+      <td>Sprint #</td>
+      <td colspan="7">Sprint 1</td>
+    </tr>
+    <tr>
+      <td colspan="2">User Story</td>
+      <td colspan="6">Work - Item / Task</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>Title</td>
+      <td>Task Id</td>
+      <td>Task Title</td>
+      <td>Task Description</td>
+      <td>Estimation (Hours)</td>
+      <td>Assigned To</td>
+      <td>Status (To-Do / In-Process / To-Review / Done)</td>
+    </tr>
+    <tr>
+      <td>US-18</td>
+      <td>Mapa interactivo en la aplicación móvil</td>
+      <td>T1</td>
+      <td>Implementar vista de mapa móvil</td>
+      <td>Desarrollar pantalla y contenedor de mapa interactivo en la app móvil (markers, zoom, pan).</td>
+      <td>6</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T2</td>
+      <td>Integrar datos de puertos y marcadores</td>
+      <td>Consumir API de puertos y renderizar markers con estados operativos (operativo/restringido).</td>
+      <td>2</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T3</td>
+      <td>QA y correcciones</td>
+      <td>Pruebas en dispositivos, corrección de bugs y optimización de rendimiento inicial.</td>
+      <td>4</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-36</td>
+      <td>Visualización geométrica y animación de rutas para la aplicación móvil</td>
+      <td>T4</td>
+      <td>Implementar renderer de geometría y animación</td>
+      <td>Agregar motor en cliente para dibujar GeoJSON, segmentos y animar la progresión entre nodos.</td>
+      <td>6</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T5</td>
+      <td>Definir/parsear formato GeoJSON</td>
+      <td>Definir cómo se consumirá la geometría (schema mínimo) y parseo en cliente móvil.</td>
+      <td>3</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T6</td>
+      <td>Pruebas y ajuste de rendimiento</td>
+      <td>Probar animaciones, optimizar uso de CPU/GPU en dispositivos y ajustes visuales.</td>
+      <td>3</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-25</td>
+      <td>Cálculo de ruta optimizada multi-criterio para la aplicación web</td>
+      <td>T7</td>
+      <td>Integración del motor de cálculo (backend)</td>
+      <td>Implementar/consumir endpoint que solicite al motor A* los resultados optimizados.</td>
+      <td>8</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T8</td>
+      <td>Desarrollar UI de solicitud y presentación de ruta</td>
+      <td>Formulario/flow para seleccionar origen/destino, mostrar nodos, distancia y ETA.</td>
+      <td>8</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T9</td>
+      <td>Tests e2e y unitarios</td>
+      <td>Pruebas automáticas para la integración web-backend y validación de métricas devueltas.</td>
+      <td>4</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-26</td>
+      <td>Cálculo de ruta optimizada multi-criterio para la aplicación móvil</td>
+      <td>T10</td>
+      <td>Implementar llamada a API de cálculo desde móvil</td>
+      <td>Consumir endpoint de cálculo y manejar respuestas (top route, nodos, ETA).</td>
+      <td>8</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T11</td>
+      <td>UIs para mostrar nodos/ETA/distancia</td>
+      <td>Diseñar y programar vistas móviles con detalle de ruta y métricas clave.</td>
+      <td>8</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T12</td>
+      <td>QA y pruebas en dispositivos</td>
+      <td>Pruebas en diferentes dispositivos y corrección de UI/UX y errores de integración.</td>
+      <td>4</td>
+      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-31</td>
+      <td>Justificación cuantitativa de elección para la aplicación web</td>
+      <td>T13</td>
+      <td>Implementar consumo del endpoint de comparación</td>
+      <td>Consumir API que devuelve deltas numéricos entre rutas y drivers principales.</td>
+      <td>6</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T14</td>
+      <td>Panel UI para justificar elección</td>
+      <td>Crear componente que muestre las diferencias (delta distancia, ETA, riesgo) y texto explicativo.</td>
+      <td>4</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T15</td>
+      <td>Pruebas y validación</td>
+      <td>QA para verificar expresiones numéricas y consistencia con datos del backend.</td>
+      <td>2</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-32</td>
+      <td>Justificación cuantitativa de elección para la aplicación móvil</td>
+      <td>T16</td>
+      <td>Consumir endpoint de comparación en móvil</td>
+      <td>Lógica para solicitar comparación y recibir deltas numéricos para mostrar en móvil.</td>
+      <td>6</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T17</td>
+      <td>UI móvil para mostrar justificación</td>
+      <td>Diseñar componente móvil que muestre diferencias numéricas y explicación breve.</td>
+      <td>4</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T18</td>
+      <td>QA móvil</td>
+      <td>Pruebas funcionales en móvil y ajuste de formatos numéricos/localización.</td>
+      <td>2</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-43</td>
+      <td>Almacenamiento automático de la última ruta consultada para la aplicación web</td>
+      <td>T19</td>
+      <td>Integración cliente con persistencia</td>
+      <td>Implementar llamada desde la UI para guardar la ruta seleccionada al historial.</td>
+      <td>6</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T20</td>
+      <td>Soporte backend para persistir</td>
+      <td>Endpoint para recibir la ruta final seleccionada y persistir metadatos (ID, distancia, emisiones).</td>
+      <td>4</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T21</td>
+      <td>Verificación y reintentos</td>
+      <td>Mecanismo de reintento si falla la persistencia y notificación al usuario si no se guarda.</td>
+      <td>2</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-44</td>
+      <td>Almacenamiento automático de la última ruta consultada para la aplicación móvil</td>
+      <td>T22</td>
+      <td>Implementar almacenamiento desde móvil</td>
+      <td>Call a endpoint para persistir la última ruta desde la app móvil y manejo de éxito/fallo.</td>
+      <td>6</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T23</td>
+      <td>Cache local y sincronización</td>
+      <td>Guardar localmente si no hay conexión y sincronizar en background cuando vuelva la conectividad.</td>
+      <td>4</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T24</td>
+      <td>QA y pruebas de sincronización</td>
+      <td>Pruebas con conexiones intermitentes y verificación de consistencia de datos.</td>
+      <td>2</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-18</td>
+      <td>API: persistencia de historial de viajes</td>
+      <td>T25</td>
+      <td>Diseñar esquema DB para historial</td>
+      <td>Modelado de tabla/colección con campos: id, user, routeName, start/end, distance_nm, emissions, timestamps.</td>
+      <td>4</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T26</td>
+      <td>Implementar POST de trips</td>
+      <td>Endpoint que persiste el payload del viaje y devuelve id de registro.</td>
+      <td>6</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T27</td>
+      <td>Tests y documentación</td>
+      <td>Tests unitarios/integración y documentación OpenAPI del endpoint.</td>
+      <td>2</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-47</td>
+      <td>Historial de rutas con filtros y paginación para la aplicación web</td>
+      <td>T28</td>
+      <td>UI historial con filtros</td>
+      <td>Crear pantalla con filtros por fecha/origen/destino y paginación en web.</td>
+      <td>6</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T29</td>
+      <td>Integración con API de historial</td>
+      <td>Consumir TS-20, mostrar resultados paginados y manejar estados vacíos/errores.</td>
+      <td>4</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T30</td>
+      <td>QA funcional</td>
+      <td>Pruebas de filtros, casos límite y rendimiento de paginación.</td>
+      <td>2</td>
+      <td>Trigueros Chumacero, Flavio Eduardo</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-48</td>
+      <td>Historial de rutas con filtros y paginación para la aplicación móvil</td>
+      <td>T31</td>
+      <td>UI historial móvil</td>
+      <td>Desarrollar pantalla de historial con filtros y paginación adecuada para móvil.</td>
+      <td>6</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T32</td>
+      <td>Integración con API de historial</td>
+      <td>Consumir endpoint TS-20 y mostrar resultados con paginación/infinite scroll.</td>
+      <td>4</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T33</td>
+      <td>QA móvil</td>
+      <td>Pruebas de usabilidad y consistencia de paginación en dispositivos móviles.</td>
+      <td>2</td>
+      <td>Sanchez Zamora, Fabrizio Alessandro</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-20</td>
+      <td>API historial: filtros y paginación</td>
+      <td>T34</td>
+      <td>Implementar GET /api/trips</td>
+      <td>Endpoint con filtros por fecha/origen/destino y parámetros de paginación (limit/offset/page).</td>
+      <td>6</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T35</td>
+      <td>Indexación y optimización de consultas</td>
+      <td>Crear índices y optimizar consultas para rendimiento en grandes volúmenes de datos.</td>
+      <td>4</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T36</td>
+      <td>Tests y documentación</td>
+      <td>Tests de integración, pruebas de límite y OpenAPI docs.</td>
+      <td>2</td>
+      <td>Riega Salas, Jose Miguel</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-39</td>
+      <td>Estimación de coste e Incoterm recomendado para la aplicación web</td>
+      <td>T37</td>
+      <td>Formulario web para parámetros</td>
+      <td>Formulario para ingresar peso, valor, preferencia de Incoterm, origen/destino.</td>
+      <td>3</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T38</td>
+      <td>Integración con servicio pricing</td>
+      <td>Consumir TS-16 y mostrar desglose de flete, seguro y recomendación de Incoterm.</td>
+      <td>3</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T39</td>
+      <td>QA y validación de cálculo</td>
+      <td>Pruebas con distintos inputs y verificación de consistencia del desglose.</td>
+      <td>2</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>US-40</td>
+      <td>Estimación de coste e Incoterm recomendado para la aplicación móvil</td>
+      <td>T40</td>
+      <td>Formulario móvil para parámetros</td>
+      <td>Implementar UI móvil para ingresar parámetros y solicitar estimación.</td>
+      <td>3</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T41</td>
+      <td>Integración con servicio pricing</td>
+      <td>Consumir TS-16 y mostrar desglose y recomendación en móvil.</td>
+      <td>3</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T42</td>
+      <td>QA móvil</td>
+      <td>Pruebas en móvil y validación de formatos monetarios/localización.</td>
+      <td>2</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>TS-16</td>
+      <td>Servicio de pricing y reglas comerciales (Incoterms)</td>
+      <td>T43</td>
+      <td>Implementar lógica de cálculo</td>
+      <td>Servicio que calcula flete estimado, seguros y aplica reglas para recomendar Incoterm.</td>
+      <td>4</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T44</td>
+      <td>Integración API y tests</td>
+      <td>Exponer endpoint y crear tests unitarios/integración del cálculo.</td>
+      <td>3</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>T45</td>
+      <td>Documentación</td>
+      <td>Documentar parámetros, respuesta y ejemplos de uso.</td>
+      <td>1</td>
+      <td>Mallma Quispe, Rubén Elías</td>
+      <td>Done</td>
+    </tr>
+  </tbody>
+</table>
+
+
+#### 7.2.1.3. Development Evidence for Sprint Review
+
+En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1. En esta iteración, se implementaron las primeras funciones de mejora continua e innovadora con nuestra tecnología emergente de Inteligencia Artificial (IA). Se integró el cálculo de mejor ruta con distintos datos disponibles por ruta, tanto en móvil y web, además de la visualización de mapas, mejoras de UI y diseño de las políticas y de la calculadora de Incoterms actualizados.
+
+Se mostrarán los commits clave por cada repositorio específico, los cuales muestran el ciclo de vida del proyecto, y toda la información que se usó, usa y usará para el desarrollo del proyecto:
+
+###### Tabla 221
+*Development Evidence del primer sprint de desarrollo de Mushroom*
+
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|cbb6368|feat: UI adaptation and integration for the AI|-|2025-11-01|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|de803d7|feat: update route calculation and visualization features|-|2025-11-02|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|1479ead|feat: update map route and information|-|2025-11-04|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|5ac8080|feat: fix map on phone|-|2025-11-04|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|69c68f6|feat: update incoterm page and form|-|2025-11-05|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|940e08d|feat: UI dashboard adaptation|-|2025-11-06|
+|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|240004c|feat: add PDF and Excel download functionality in incoterm calculator|-|2025-11-06|
+|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|d4c8864|refactor: calculate incoterm|-|2025-11-06|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b9f89a0|feat: fix buttons and UI in selector ports|-|2025-11-06|
+|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|fbc1e63|feat: add settings screen and navigation to settings, pdf generation for shipment reports and fix links for quick buttons|-|2025-11-10|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|6a542c9|feat: UI dashboard changes|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b66e502|feat: Port dehabilitation and route recalculation|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|ffeead8|feat: UI and parameters adapted|-|2025-11-11|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b213ecf|feat: add curvature to the map|-|2025-11-11|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|825351f|feat: Recalculated route v2|-|2025-11-12|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|843b52b|feat: apply inmediate route history save|-|2025-11-13|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|22d6e49|feat: add IA service and UI|-|2025-11-13|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|4103e16|feat: implement weather delay prediction and land mask service for route visualization|-|2025-11-13|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|a2a356b|feat: update route history function|-|2025-11-14|
+
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber con sintaxis Gherkin, integrándolo en Visual Studio Code para facilitar la escritura y mantenimiento de los escenarios en las historias de usuario en este sprint 1. Esta elección permite definir casos de prueba en un lenguaje natural alineado con las historias de usuario, asegurando que el comportamiento esperado de la aplicación sea comprendido por todos los involucrados. 
+
+###### Tabla 222
+*Testing Suite Evidence del primer sprint de desarrollo de Mushroom*
+
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+|FlavioTrigueros/[TeemoSolutions-AcceptanceCriteria-Gherkin](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/TeemoSolutions-Report)|main|b73525f|test: gherkin test for sprint 1|-|2025-11-14|
+
+#### 7.2.1.5. Execution Evidence for Sprint Review
+
+El equipo ha implementado con éxito las mejoras continuas e innovadoras de Mushroom para que funcione como una herramienta operativa con tecnología emergente Se completaron los flujos que permiten calcular rutas optimizadas, visualizar la geometría y la animación de trayectos en dispositivos móviles, solicitar justificaciones cuantitativas entre alternativas y persistir las consultas para trazabilidad. Todas las historias asignadas a este sprint se ejecutaron y entregaron integradas, lo que permitió validar el recorrido completo desde la selección de puertos hasta el almacenamiento del registro de la ruta.
+
+###### Figura 83
+*Muestra con evidencia de la selección de puertas con la geometría incluida en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-1.jpg" alt="Mobile App Evidence 1">
+
+###### Figura 84
+*Muestra con evidencia de la animación de rutas entre dos puertos en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-2.jpg" alt="Mobile App Evidence 2">
+
+###### Figura 85
+*Muestra con evidencia de cierre automático de puertos en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-3.jpg" alt="Mobile App Evidence 3">
+
+###### Figura 86
+*Muestra con evidencia del cálculo de Incoterms en la aplicación móvil*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-4.jpg" alt="Mobile App Evidence 4">
+
+En paralelo se desarrollaron las funciones asociadas a la gestión operativa. Se diseñó e implementó el API de persistencia de viajes y el servicio de historial con filtros y paginación. También se puso en marcha el servicio de pricing básico que estima costos y sugiere Incoterms, integrándolo con las vistas web y móviles para que los usuarios obtengan desglose y recomendaciones comerciales en el mismo flujo de decisión.
+
+###### Figura 87
+*Muestra con evidencia de los endpoints de puertos en el Web Services*
+
+<img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-1.jpg" alt="Web Services Evidence 1">
+
+###### Figura 88
+*Muestra con evidencia de los endpoints de rutas en el Web Services*
+
+<img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-2.jpg" alt="Web Services Evidence 2">
+
+Para mejorar la experiencia se trabajó en una interfaz móvil y web coherente y fluida que facilita la interpretación de métricas y justificaciones, se adoptaron mecanismos de reintento y sincronización para la persistencia en condiciones de conectividad variable, y se dejó preparado el entorno para soportar internacionalización e instrumentos de telemetría. Con esta base, el equipo dispone ahora de un producto mínimo operativo que permite recoger feedback real de operadores y priorizar las mejoras de inteligencia y rendimiento en los próximos sprints.
+
+###### Figura 89
+*Muestra con evidencia de la administración de puertos habilitados y deshabilitados en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Web Application Evidence 1">
+
+###### Figura 90
+*Muestra con evidencia de la función de deshabilitación de puertos en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-2.jpg" alt="Web Application Evidence 2">
+
+###### Figura 91
+*Muestra con evidencia de la función de cambio de estado operativo en puertos por riesgo en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-3.jpg" alt="Web Application Evidence 3">
+
+###### Figura 92
+*Muestra con evidencia de la función de cálculo de Incoterms recomendados en el Web Application*
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-4.jpg" alt="Web Application Evidence 4">
+
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+
+En esta sección, presentamos la relación de Endpoints documentados con OpenAPI, que están directamente vinculados con el alcance del Sprint 1 de Mushroom. Iniciamos con una breve introducción que resume los logros alcanzados en relación con la Documentación de Web Services durante este período de desarrollo. A continuación, proporcionamos una tabla detallada que enumera cada Endpoint, junto con las acciones implementadas y los enlaces correspondientes a la documentación desplegada o la URL local en Sprints anteriores al despliegue de Web Services.
+
+En la tabla, se indican las acciones soportadas para cada Endpoint, incluyendo el verbo HTTP (GET, POST, PUT, DELETE, PATCH), la sintaxis de llamada, la especificación de posibles parámetros y se incluye un ejemplo junto con una explicación del response correspondiente. 
+
+###### Tabla 223
+*Listado de Endpoints de Eventos de Mushroom de TeemoSolutions*
+
+|Método|	Descripción|	Ejemplo de llamada|Parámetros|	Respuesta|
+|-|-|-|-|-|
+|GET	|Lista puertos origen asociados a eventos; útil para feeds de eventos geopolíticos/navegación.	|GET /api/events/origin-ports	|Ninguno|	200 OK → ["portId1","portId2", ...]|
+
+###### Tabla 224
+*Listado de Endpoints del desglose de los Incoterms de Mushroom de TeemoSolutions*
+
+|Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
+|-|-|-|-|-|
+|POST|	Calcula desglose de coste y recomienda Incoterm según parámetros comerciales y ruta.|	POST /api/incoterms/calculate
+Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2", ... }	|Body JSON con campos como cargoType, cargoValue, cargoWeight, seller, buyer, sellerCountry, buyerCountry, paymentTerms, insurance (bool), originPort, destinationPort, distance (num), etc.|	200 OK → objeto IncotermCalculationResult con marketConditions, recommendedIncoterm (code/name/description/costBreakdown), alternatives (lista), routeDetails (distance/estimatedTime/riskLevel) y warnings.|
+
+###### Tabla 225
+*Listado de Endpoints de los Puertos de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada|	Parámetros	|Respuesta|
+|-|-|-|-|-|
+|POST|	Crear un puerto con nombre, coordenadas y continente.	|POST /api/ports | Body: { "name":"Callao", "coordinates": { "latitude": -12.0, "longitude": -77.0 }, "continent":"South America" }	Body JSON: name (string), coordinates.latitude (number), coordinates.longitude (number), continent (string)	| 200 OK → { "id":"string","name":"string","coordinates":{ "latitude":0,"longitude":0 },"continent":"string" }|
+|GET|	Obtener detalle de un puerto por id.|	GET /api/ports/{portId}	|Path: portId (string)	|200 OK → PortResource { id, name, coordinates, continent }|
+|DELETE	|Eliminar puerto por id.	|DELETE /api/ports/{portId}|	Path: portId (string)|	200 OK → success (no content or simple status)|
+|GET|	Obtener todos los puertos registrados (listado).	|GET /api/ports/all-ports|	Ninguno|	200 OK → Array de PortResource|
+|GET|	Buscar puerto por nombre.|	GET /api/ports/name/{name}	|Path: name (string)|	200 OK → PortResource (o 404 si no existe)|
+
+###### Tabla 226
+*Listado de Endpoints de Rutas asignadas entre puertos de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
+|-|-|-|-|-|
+|GET|	Listar rutas registradas o históricas.	|GET /api/routes/all-routes	|Ninguno	|200 OK → Array de objetos con { id, homePort, homePortContinent, destinationPort, destinationPortContinent, distance }|
+|POST	|Calcular ruta óptima entre dos puertos (A* + pesos).|	POST /api/routes/calculate-optimal-route?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "optimalRoute":[...], "totalDistance":0, "warnings":[...], "coordinatesMapping": { portId: { latitude, longitude } } }
+|GET|	Obtener distancia entre dos puertos.|	GET /api/routes/distance-between-ports?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "distance": 0, "messages":["string"], "meta": { ... } }|
+
+###### Tabla 227
+*Listado de Endpoints de Inteligencia Artificial relacionadas a la predicción de estado de rutas de Mushroom*
+
+|Método	|Descripción	|Ejemplo de llamada|	Parámetros|	Respuesta|
+|-|-|-|-|-|
+|POST	|Predecir demora por condiciones meteorológicas/oceanográficas entre origen y destino (modelo ML).|	POST /api/ai/predict-weather-delay| Body: { "distanceKm":1000, "cruiseSpeedKnots":20, "avgWindKnots":15, "maxWaveM":3, "departureTimeIso":"2025-11-14T10:00:00Z", "originLat":-12.0464, "originLon":-77.0428, "destLat":35.6762, "destLon":139.6503 }	Body JSON: distanceKm (num), cruiseSpeedKnots (num), avgWindKnots (num), maxWaveM (num), departureTimeIso (ISO string), originLat/Long, destLat/Long	|200 OK → Modelo devuelve predicción (estructura dependiente del modelo). En swagger original la respuesta es un objeto vacío como placeholder; en producción se espera { "estimatedDelayHours": number, "confidence": number, "factors":[...], "notes": "string" } o estructura análoga. |
+
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+
+**1. Creación y configuración del proyecto en Firebase**
+Accede a Firebase Console, crea un nuevo proyecto o selecciona el existente asociado a la Web Application. En el menú lateral, habilita App Distribution y registra tu aplicación web, vinculándola al dominio que servirá los archivos estáticos.
+
+En tu entorno local, instala la herramienta de línea de comandos de Firebase y autentícate con firebase login. Asegúrate de haber seleccionado el proyecto correcto con firebase use.
+
+###### Figura 93
+
+_Selección y configuración del proyecto de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-1.png" alt="Evidencia de despliegue en Firebase">
+
+**2. Construcción de la aplicación**
+Ejecuta el comando de build de tu framework para generar los archivos estáticos listos para producción en la carpeta de salida designada.
+
+###### Figura 94
+
+_Construcción de la aplicación para el proyecto de la Web Application de Mushrooom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-2.png" alt="Evidencia de despliegue en Firebase">
+
+**3. Configuración de Firebase Hosting**
+Inicializa Firebase Hosting con firebase init, selecciona el proyecto y la carpeta de salida generada en el paso anterior. Cuando se te pregunte si deseas sobrescribir archivos de configuración, confirma solo los necesarios.
+
+###### Figura 95
+
+_Configuración de Firebase Hosting para el despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-3.png" alt="Evidencia de despliegue en Firebase">
+
+**4. Despliegue en App Distribution**
+Utilizar comandos (firebase deploy) de despliegue en Firebase para subir el paquete de la Web Application a App Distribution. Este comando empaqueta automáticamente el build y lo hace disponible para el grupo de desarrolladores configurado.
+
+###### Figura 96
+
+_Despliegue de la Web Application de Mushroom en Firebase_
+
+<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-4.png" alt="Evidencia de despliegue en Firebase">
+
+**5. Obtención del enlace de distribución**
+Una vez completada la subida, Firebase mostrará en consola la URL de App Distribution. Comparte este enlace con los desarrolladores o stakeholders para que puedan acceder y descargar la última versión de la Web Application directamente desde Firebase App Distribution.
+
+###### Figura 97
+
+_Página de la Web Application de Mushroom ya desplegada_
+
+<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Evidencia de despliegue en Firebase">
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1, nos enfocamos en el desarrollo colaborativo de las mejoras continuas e innovadoras para el Web Application y Mobile Application de Mushroom, junto a las mejoras de Web Services. Cada miembro del equipo contribuyó con sus habilidades y conocimientos. Esta colaboración se refleja en los numerosos commits realizados en nuestros repositorios de código, los cuales están respaldados por capturas de pantalla adjuntas para una documentación detallada.
+
+Nuestro equipo se reunió tanto en persona como virtualmente para asignar tareas y discutir la estrategia de desarrollo del proyecto. Estas reuniones fueron cruciales para clarificar nuestras responsabilidades individuales y asegurar un desempeño óptimo. Para maximizar la eficiencia, decidimos asignar a cada miembro del equipo una sección específica del código para desarrollar, lo que nos permitió avanzar rápidamente y cumplir con los plazos establecidos.
+
+Además, programamos sesiones regulares de brainstorming y resolución de problemas, donde compartimos ideas y abordamos cualquier duda o dificultad que surgiera durante el proceso de desarrollo. 
+
+###### Figura 98
+*Reporte completo de contribuciones para el desarrollo del Web Application de Mushroom en el Sprint 1.*
+
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/pulse-web-app-sprint1.png" alt="Pulse for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/total-contribution-web-app-sprint1.png" alt="Contribution for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/contributors-web-app-sprint1-.png" alt="Individual Contributions for Web Application">
+
+###### Figura 99
+*Reporte completo de contribuciones para el desarrollo del Mobile Application de Mushroom en el Sprint 1.*
+
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/pulse-mobile-app-sprint1.png" alt="Pulse for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/total-contribution-mobile-app-sprint1.png" alt="Contribution for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/contributors-mobile-app-sprint1.png" alt="Individual Contributions for Mobile Application">
+
+###### Figura 100
+*Reporte completo de contribuciones para el desarrollo del Web Services de Mushroom en el Sprint 1.*
+
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint1.png" alt="Pulse for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/total-contribution-web-services-sprint1.png" alt="Contribution for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint1.png" alt="Individual Contributions for Web Services">
+
+---
+
+### 7.2.2. Sprint 2
+
+El segundo sprint es el último hito requerido para nuestro proceso de mejora continua con tecnologías emergentes y desarrollo ágil. Durante este período, nos enfocamos en la implementación final de nuestro modelo de Machine Learning junto con los pipelines de obtención de datos oceanográficos y meterológicos, las cuales son bases para nuestra propuesta emergente. Seguiremos un modelo iterativo, traduciendo los requisitos y especificaciones en código funcional.
+
+#### 7.2.2.1. Sprint Planning 2
+
+El sprint planning es una reunión en la metodología ágil donde el equipo planifica las actividades del próximo sprint. Define qué trabajo se hará, cuánto tiempo tomará y quién será responsable. El objetivo es establecer un plan claro y alcanzable para el equipo, fomentando la colaboración y asegurando que todos estén alineados en cuanto a objetivos y prioridades.
+
+###### Tabla 228
+*Sprint Planning del segundo sprint de desarrollo de Mushroom de TeemoSolutions*
+
+<table  style="text-align: center;">
+    <tbody>
+        <tr>
+			<td colspan="1">Sprint #</td>
+            <td colspan="1"> Sprint 2</td>
+		</tr>
+        <tr>
+			<td colspan="2">Sprint Planning Background</td>
+		</tr>
+        <tr>
+			<td colspan="1">Date</td>
+            <td colspan="1"> 2025-11-16</td>
+		</tr>
+        <tr>
+			<td colspan="1">Time</td>
+            <td colspan="1"> 21:10</td>
+		</tr>
+        <tr>
+			<td colspan="1">Location</td>
+            <td colspan="1">Discord (Reunión virtual)</td>
+		</tr>
+        <tr>
+			<td colspan="1">Prepared By</td>
+            <td colspan="1">Trigueros Chumacero, Flavio Eduardo - Team Leader</td>
+		</tr>
+        <tr>
+			<td colspan="1"> Attendees (to planning meeting)</td>
+            <td colspan="1">Mallma Quispe, Rubén Elías; Riega Salas, Jose Miguel; Valenzuela Huillcaya, Aldhair Johan Juan; Sanchez Zamora, Fabrizio Alessandro; Trigueros Chumacero, Flavio Eduardo
+ </td>
+		</tr>
+         <tr>
+			<td colspan="1">Sprint 2 – 2 Review Summary </td>
+            <td colspan="1">El Sprint 2 se concentró en integrar y desarrollar las funcionalidades referentes a las tecnologías emergentes planteadas para la mejora continua de nuestro proyecto. Se entregó la versión final completa que permite solicitar rutas, visualizarlas, y aplicarles distintas métricas basadas en la obtención de datos de APIs externas de oceanografía y meteorología. Luego, el modelo de Machine Learning analizara los datos y, a partir de eso, brindara sus propias recomendaciones, mediciones de riesgo y caminos alternativos más viables. Junto a estas funcionalidades, se realizó el despliegue de los servicios web y el BackEnd. En la revisión se validaron los flujos end-to-end y se priorizaron mejoras en la experiencia de captura de interesados y métricas de rendimiento y trazabilidad más visibles para facilitar la evaluación técnica.
+            </td>
+		</tr>
+         <tr>
+			<td colspan="1">Sprint 2 – 2 Retrospective Summary </td>
+            <td colspan="1">Tras completar este segundo sprint, el equipo identificó aún más oportunidades de mejora en un futuro para la aplicación, agregando nuevas tecnologías emergentes para el desarrollo de aún más alternativas de rutas, evaluación profunda de Incoterms, visualización dinámica e incluso posible añadido de funciones IoT para seguimiento en vivo de cada embarcación en las rutas establecidas. Junto a estas oportunidades de mejora, incluimos unas pequeñas áreas de mejora en nuestro sprint actual, más centrado en las áreas de rendimiento de los procesos de identificación de rutas alternativas, identificación de rutas de riesgo y mejorar la comunicación diaria entre distintos integrantes del grupo.</td>
+		</tr>
+         <tr>
+			<td colspan="2">Sprint Goal & User Stories </td>
+		</tr>
+         <tr>
+			<td>Sprint 1 Goal</td>
+            <td><strong>Nuestro enfoque es</strong> validar las capacidades operativas mínimas de Mushroom para soportar decisiones de ruteo basadas en evidencia, mediante el desarrollo y despliegue de un flujo completo que permita calcular rutas multi-criterio, visualizar geometría y animaciones en móvil, persistir consultas para trazabilidad y ofrecer justificaciones cuantitativas comparables; todo ello integrado con los endpoints de historial y generación de reportes para que operadores y probadores puedan usar la plataforma en condiciones reales. <br><br> <strong>Creemos que esto proporciona</strong> una base técnica y comercial verificable que reduce la incertidumbre operativa, aumenta la confianza de los usuarios en las recomendaciones del sistema y genera datos reales para priorizar las mejoras de IA y UX en las siguientes iteraciones; además, facilita la medición de impacto operacional y la preparación de pilotos con clientes tempranos. <br><br> <strong>Esto se confirmará</strong> cuando el 80 % de las solicitudes de cálculo de ruta reciban respuesta completa en 10 segundos o menos, cuando se hayan persistido al menos 20 rutas en el historial para trazabilidad y auditoría.
+</td>
+		</tr>
+        <tr>
+			<td colspan="1">Sprint 2 Velocity </td>
+            <td colspan="1">46</td>
+		</tr>
+        <tr>
+			<td colspan="1">Sum of Story Points </td>
+            <td colspan="1">44</td>
+		</tr>
+</tbody>
+</table>
+
+#### 7.2.1.2. Sprint Backlog 1
+
+En este primer sprint del proceso de mejora, nos enfocamos en la implementación de las funcionalidades relacionadas a tecnologías emergentes planeadas para nuestro producto, además de otras funciones pequeñas que mejoren la calidad y la facilidad de navegación, incluyendo el cálculo de rutas optimizadas según distintos datos disponibles, la justificación cuantitativa de elección de distintas rutas y las políticas de cálculo de Incoterms junto a un sistema de almacenamiento. 
+
+Estas características son fundamentales para establecer la base del proceso de mejora continua e innovador de nuestro producto y proporcionar una experiencia de usuario sólida y coherente.
+
+###### Tabla 220
+*Sprint Backlog del segundo sprint de desarrollo de Mushroom de TeemoSolutions*
 
 <table>
   <tbody>
@@ -1801,7 +2581,7 @@ Además, programamos sesiones regulares de brainstorming y resolución de proble
 
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint1.png" alt="Pulse for Web Services">
 <img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/total-contribution-web-services-sprint1.png" alt="Contribution for Web Services">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint1.png" alt="Individual Contributions for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint1.png" alt="Individual Contributions for Web Services"
 
 ## 7.3. Validation Interviews
 
