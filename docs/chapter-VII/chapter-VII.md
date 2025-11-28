@@ -1874,7 +1874,7 @@ El sprint planning es una reunión en la metodología ágil donde el equipo plan
 </tbody>
 </table>
 
-#### 7.2.1.2. Sprint Backlog 1
+#### 7.2.1.2. Sprint Backlog 2
 
 En este primer sprint del proceso de mejora, nos enfocamos en la implementación de las funcionalidades relacionadas a tecnologías emergentes planeadas para nuestro producto, además de otras funciones pequeñas que mejoren la calidad y la facilidad de navegación, incluyendo el cálculo de rutas optimizadas según distintos datos disponibles, la justificación cuantitativa de elección de distintas rutas y las políticas de cálculo de Incoterms junto a un sistema de almacenamiento. 
 
@@ -1887,7 +1887,7 @@ Estas características son fundamentales para establecer la base del proceso de 
   <tbody>
     <tr>
       <td>Sprint #</td>
-      <td colspan="7">Sprint 1</td>
+      <td colspan="7">Sprint 2</td>
     </tr>
     <tr>
       <td colspan="2">User Story</td>
@@ -1903,459 +1903,308 @@ Estas características son fundamentales para establecer la base del proceso de 
       <td>Assigned To</td>
       <td>Status (To-Do / In-Process / To-Review / Done)</td>
     </tr>
-    <tr>
-      <td>US-18</td>
-      <td>Mapa interactivo en la aplicación móvil</td>
-      <td>T1</td>
-      <td>Implementar vista de mapa móvil</td>
-      <td>Desarrollar pantalla y contenedor de mapa interactivo en la app móvil (markers, zoom, pan).</td>
-      <td>6</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T2</td>
-      <td>Integrar datos de puertos y marcadores</td>
-      <td>Consumir API de puertos y renderizar markers con estados operativos (operativo/restringido).</td>
-      <td>2</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T3</td>
-      <td>QA y correcciones</td>
-      <td>Pruebas en dispositivos, corrección de bugs y optimización de rendimiento inicial.</td>
-      <td>4</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-36</td>
-      <td>Visualización geométrica y animación de rutas para la aplicación móvil</td>
-      <td>T4</td>
-      <td>Implementar renderer de geometría y animación</td>
-      <td>Agregar motor en cliente para dibujar GeoJSON, segmentos y animar la progresión entre nodos.</td>
-      <td>6</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T5</td>
-      <td>Definir/parsear formato GeoJSON</td>
-      <td>Definir cómo se consumirá la geometría (schema mínimo) y parseo en cliente móvil.</td>
-      <td>3</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T6</td>
-      <td>Pruebas y ajuste de rendimiento</td>
-      <td>Probar animaciones, optimizar uso de CPU/GPU en dispositivos y ajustes visuales.</td>
-      <td>3</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-25</td>
-      <td>Cálculo de ruta optimizada multi-criterio para la aplicación web</td>
-      <td>T7</td>
-      <td>Integración del motor de cálculo (backend)</td>
-      <td>Implementar/consumir endpoint que solicite al motor A* los resultados optimizados.</td>
-      <td>8</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T8</td>
-      <td>Desarrollar UI de solicitud y presentación de ruta</td>
-      <td>Formulario/flow para seleccionar origen/destino, mostrar nodos, distancia y ETA.</td>
-      <td>8</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T9</td>
-      <td>Tests e2e y unitarios</td>
-      <td>Pruebas automáticas para la integración web-backend y validación de métricas devueltas.</td>
-      <td>4</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-26</td>
-      <td>Cálculo de ruta optimizada multi-criterio para la aplicación móvil</td>
-      <td>T10</td>
-      <td>Implementar llamada a API de cálculo desde móvil</td>
-      <td>Consumir endpoint de cálculo y manejar respuestas (top route, nodos, ETA).</td>
-      <td>8</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T11</td>
-      <td>UIs para mostrar nodos/ETA/distancia</td>
-      <td>Diseñar y programar vistas móviles con detalle de ruta y métricas clave.</td>
-      <td>8</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T12</td>
-      <td>QA y pruebas en dispositivos</td>
-      <td>Pruebas en diferentes dispositivos y corrección de UI/UX y errores de integración.</td>
-      <td>4</td>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-31</td>
-      <td>Justificación cuantitativa de elección para la aplicación web</td>
-      <td>T13</td>
-      <td>Implementar consumo del endpoint de comparación</td>
-      <td>Consumir API que devuelve deltas numéricos entre rutas y drivers principales.</td>
-      <td>6</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T14</td>
-      <td>Panel UI para justificar elección</td>
-      <td>Crear componente que muestre las diferencias (delta distancia, ETA, riesgo) y texto explicativo.</td>
-      <td>4</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T15</td>
-      <td>Pruebas y validación</td>
-      <td>QA para verificar expresiones numéricas y consistencia con datos del backend.</td>
-      <td>2</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-32</td>
-      <td>Justificación cuantitativa de elección para la aplicación móvil</td>
-      <td>T16</td>
-      <td>Consumir endpoint de comparación en móvil</td>
-      <td>Lógica para solicitar comparación y recibir deltas numéricos para mostrar en móvil.</td>
-      <td>6</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T17</td>
-      <td>UI móvil para mostrar justificación</td>
-      <td>Diseñar componente móvil que muestre diferencias numéricas y explicación breve.</td>
-      <td>4</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T18</td>
-      <td>QA móvil</td>
-      <td>Pruebas funcionales en móvil y ajuste de formatos numéricos/localización.</td>
-      <td>2</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-43</td>
-      <td>Almacenamiento automático de la última ruta consultada para la aplicación web</td>
-      <td>T19</td>
-      <td>Integración cliente con persistencia</td>
-      <td>Implementar llamada desde la UI para guardar la ruta seleccionada al historial.</td>
-      <td>6</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T20</td>
-      <td>Soporte backend para persistir</td>
-      <td>Endpoint para recibir la ruta final seleccionada y persistir metadatos (ID, distancia, emisiones).</td>
-      <td>4</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T21</td>
-      <td>Verificación y reintentos</td>
-      <td>Mecanismo de reintento si falla la persistencia y notificación al usuario si no se guarda.</td>
-      <td>2</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-44</td>
-      <td>Almacenamiento automático de la última ruta consultada para la aplicación móvil</td>
-      <td>T22</td>
-      <td>Implementar almacenamiento desde móvil</td>
-      <td>Call a endpoint para persistir la última ruta desde la app móvil y manejo de éxito/fallo.</td>
-      <td>6</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T23</td>
-      <td>Cache local y sincronización</td>
-      <td>Guardar localmente si no hay conexión y sincronizar en background cuando vuelva la conectividad.</td>
-      <td>4</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T24</td>
-      <td>QA y pruebas de sincronización</td>
-      <td>Pruebas con conexiones intermitentes y verificación de consistencia de datos.</td>
-      <td>2</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>TS-18</td>
-      <td>API: persistencia de historial de viajes</td>
-      <td>T25</td>
-      <td>Diseñar esquema DB para historial</td>
-      <td>Modelado de tabla/colección con campos: id, user, routeName, start/end, distance_nm, emissions, timestamps.</td>
-      <td>4</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T26</td>
-      <td>Implementar POST de trips</td>
-      <td>Endpoint que persiste el payload del viaje y devuelve id de registro.</td>
-      <td>6</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T27</td>
-      <td>Tests y documentación</td>
-      <td>Tests unitarios/integración y documentación OpenAPI del endpoint.</td>
-      <td>2</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-47</td>
-      <td>Historial de rutas con filtros y paginación para la aplicación web</td>
-      <td>T28</td>
-      <td>UI historial con filtros</td>
-      <td>Crear pantalla con filtros por fecha/origen/destino y paginación en web.</td>
-      <td>6</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T29</td>
-      <td>Integración con API de historial</td>
-      <td>Consumir TS-20, mostrar resultados paginados y manejar estados vacíos/errores.</td>
-      <td>4</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T30</td>
-      <td>QA funcional</td>
-      <td>Pruebas de filtros, casos límite y rendimiento de paginación.</td>
-      <td>2</td>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-48</td>
-      <td>Historial de rutas con filtros y paginación para la aplicación móvil</td>
-      <td>T31</td>
-      <td>UI historial móvil</td>
-      <td>Desarrollar pantalla de historial con filtros y paginación adecuada para móvil.</td>
-      <td>6</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T32</td>
-      <td>Integración con API de historial</td>
-      <td>Consumir endpoint TS-20 y mostrar resultados con paginación/infinite scroll.</td>
-      <td>4</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T33</td>
-      <td>QA móvil</td>
-      <td>Pruebas de usabilidad y consistencia de paginación en dispositivos móviles.</td>
-      <td>2</td>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>TS-20</td>
-      <td>API historial: filtros y paginación</td>
-      <td>T34</td>
-      <td>Implementar GET /api/trips</td>
-      <td>Endpoint con filtros por fecha/origen/destino y parámetros de paginación (limit/offset/page).</td>
-      <td>6</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T35</td>
-      <td>Indexación y optimización de consultas</td>
-      <td>Crear índices y optimizar consultas para rendimiento en grandes volúmenes de datos.</td>
-      <td>4</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T36</td>
-      <td>Tests y documentación</td>
-      <td>Tests de integración, pruebas de límite y OpenAPI docs.</td>
-      <td>2</td>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-39</td>
-      <td>Estimación de coste e Incoterm recomendado para la aplicación web</td>
-      <td>T37</td>
-      <td>Formulario web para parámetros</td>
-      <td>Formulario para ingresar peso, valor, preferencia de Incoterm, origen/destino.</td>
-      <td>3</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T38</td>
-      <td>Integración con servicio pricing</td>
-      <td>Consumir TS-16 y mostrar desglose de flete, seguro y recomendación de Incoterm.</td>
-      <td>3</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T39</td>
-      <td>QA y validación de cálculo</td>
-      <td>Pruebas con distintos inputs y verificación de consistencia del desglose.</td>
-      <td>2</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>US-40</td>
-      <td>Estimación de coste e Incoterm recomendado para la aplicación móvil</td>
-      <td>T40</td>
-      <td>Formulario móvil para parámetros</td>
-      <td>Implementar UI móvil para ingresar parámetros y solicitar estimación.</td>
-      <td>3</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T41</td>
-      <td>Integración con servicio pricing</td>
-      <td>Consumir TS-16 y mostrar desglose y recomendación en móvil.</td>
-      <td>3</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T42</td>
-      <td>QA móvil</td>
-      <td>Pruebas en móvil y validación de formatos monetarios/localización.</td>
-      <td>2</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td>TS-16</td>
-      <td>Servicio de pricing y reglas comerciales (Incoterms)</td>
-      <td>T43</td>
-      <td>Implementar lógica de cálculo</td>
-      <td>Servicio que calcula flete estimado, seguros y aplica reglas para recomendar Incoterm.</td>
-      <td>4</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T44</td>
-      <td>Integración API y tests</td>
-      <td>Exponer endpoint y crear tests unitarios/integración del cálculo.</td>
-      <td>3</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>T45</td>
-      <td>Documentación</td>
-      <td>Documentar parámetros, respuesta y ejemplos de uso.</td>
-      <td>1</td>
-      <td>Mallma Quispe, Rubén Elías</td>
-      <td>Done</td>
-    </tr>
+<tr>
+  <td>TS-15</td>
+  <td>Pipeline ingestión meteorológica y mapeo a grafo</td>
+  <td>T46</td>
+  <td>Diseño de esquema y normalización</td>
+  <td>Definir esquema interno del forecast, mapeo a aristas del grafo y reglas de vigencia/versionado.</td>
+  <td>6</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T47</td>
+  <td>Implementación del pipeline y actualización del grafo</td>
+  <td>Consumer que procesa feeds, normaliza datos, actualiza atributos de aristas (tiempo, riesgo, vigencia) y versión del forecast.</td>
+  <td>10</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T48</td>
+  <td>Tests, monitor y documentación</td>
+  <td>Crear pruebas con datasets, métricas de ingestión, alertas y documentación de esquema/contratos.</td>
+  <td>4</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>TS-09</td>
+  <td>Motor A*/AI con servicio de cálculo de rutas (ML híbrido)</td>
+  <td>T49</td>
+  <td>Implementar núcleo A* con interfaz de pesos dinámicos</td>
+  <td>Desarrollar motor A* modular que acepte pesos por arista y exponga interfaz para inyectar factores dinámicos.</td>
+  <td>8</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T50</td>
+  <td>Integración con proveedor de pesos ML</td>
+  <td>Conectar servicio con el componente que devuelve pesos dinámicos (modelo ML), normalizar entradas y outputs.</td>
+  <td>8</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T51</td>
+  <td>Endpoint y pruebas de rendimiento</td>
+  <td>Exponer endpoint de cálculo, añadir métricas de latencia y tests de carga básicos para validar tiempos.</td>
+  <td>4</td>
+  <td>Riega Salas, Jose Miguel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>TS-11</td>
+  <td>API para generación y ranking de alternativas</td>
+  <td>T52</td>
+  <td>Implementar generación y scoring</td>
+  <td>Desarrollar proceso que genere variantes (mutaciones del camino) y calcule puntaje combinado (distancia, riesgo, emisiones).</td>
+  <td>8</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T53</td>
+  <td>Exponer API y cache</td>
+  <td>Crear endpoint que entregue top-3 con justificación y añadir cache corto para respuestas frecuentes.</td>
+  <td>8</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T54</td>
+  <td>Tests, validación y docs</td>
+  <td>Pruebas de exactitud del ranking, casos límite y documentación OpenAPI del nuevo endpoint.</td>
+  <td>4</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>TS-13</td>
+  <td>Pipeline de eventos y recalculo automático</td>
+  <td>T55</td>
+  <td>Consumidor de eventos y validación</td>
+  <td>Implementar ingesta de eventos externos (webhooks/cola), validar esquema y normalizar payloads.</td>
+  <td>4</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T56</td>
+  <td>Trigger de recalculo y persistencia de diferencias</td>
+  <td>Disparar recalculo en motor A*, persistir nueva ruta y registrar diferencia métricas frente a la previa.</td>
+  <td>6</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T57</td>
+  <td>Monitoreo y reintentos</td>
+  <td>Agregar mecanismo de reintentos y alertas para eventos corruptos o fallos críticos.</td>
+  <td>2</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-29</td>
+  <td>Top-3 alternativas en la aplicación web</td>
+  <td>T58</td>
+  <td>Frontend: consumir top-3 y presentar ranking</td>
+  <td>Implementar componente que solicite el endpoint de alternativas y muestre rutas ordenadas con métricas comparativas.</td>
+  <td>8</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T59</td>
+  <td>Integración con justificación numérica</td>
+  <td>Solicitar comparación entre rutas para mostrar deltas y una breve explicación que justifique el ranking.</td>
+  <td>8</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T60</td>
+  <td>QA y pruebas UX</td>
+  <td>Verificar consistencia de métricas, estados de error y comportamiento con datos parciales.</td>
+  <td>4</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-33</td>
+  <td>Recalculo automático ante eventos en la aplicación web</td>
+  <td>T61</td>
+  <td>Backend: lógica de detección y recalculo</td>
+  <td>Implementar punto de enlace que reciba la notificación de recalculo y ejecute el proceso con persistencia.</td>
+  <td>6</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T62</td>
+  <td>Persistencia de nueva ruta y diferencias</td>
+  <td>Guardar la ruta recalculada y registrar deltas (distance, ETA, riesgo) en historial comparativo.</td>
+  <td>4</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T63</td>
+  <td>Notificación y estado en UI</td>
+  <td>Marcar la ruta activa como actualizada y exponer estado en la UI para que el usuario revise cambios.</td>
+  <td>2</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-37</td>
+  <td>Ingestión de pronósticos y mapeo a aristas en la aplicación web</td>
+  <td>T64</td>
+  <td>Backend: endpoint para consultar validez de forecast por arista</td>
+  <td>Exponer API que devuelva por tramo la versión del forecast, vigencia y los parámetros que afectan tiempo/riesgo.</td>
+  <td>8</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T65</td>
+  <td>Frontend para mostrar validez del forecast en la vista de ruta</td>
+  <td>Integrar la información de vigencia/versión en la presentación de la ruta y resaltar aristas con forecast activo.</td>
+  <td>8</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T66</td>
+  <td>QA y validación de datos</td>
+  <td>Probar escenarios con forecasts caducos, múltiples versiones y ausencia de datos.</td>
+  <td>4</td>
+  <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-30</td>
+  <td>Top-3 alternativas en la aplicación móvil</td>
+  <td>T67</td>
+  <td>Implementar consumo de top-3 en móvil</td>
+  <td>Agregar lógica en app móvil para solicitar y recibir top-3 con métricas comparativas y ranking.</td>
+  <td>8</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T68</td>
+  <td>Diseñar vistas de comparación en móvil</td>
+  <td>Crear pantallas para mostrar rutas alternativas, deltas y selección de opción preferida.</td>
+  <td>8</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T69</td>
+  <td>QA móvil</td>
+  <td>Pruebas en dispositivos, manejo de errores de red y consistencia con versión web.</td>
+  <td>4</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-34</td>
+  <td>Recalculo automático ante eventos en la aplicación móvil</td>
+  <td>T70</td>
+  <td>Móvil: consumidor de notificaciones de recalculo</td>
+  <td>Implementar en móvil la recepción de eventos que indiquen recalculo y actualizar la ruta activa.</td>
+  <td>6</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T71</td>
+  <td>Persistencia local y sincronización</td>
+  <td>Guardar cambios localmente y sincronizar estado con backend; manejar conflictos simples.</td>
+  <td>4</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T72</td>
+  <td>Notificación al usuario y QA</td>
+  <td>Mostrar notificación clara al usuario sobre la nueva sugerencia y validar comportamiento en pruebas.</td>
+  <td>2</td>
+  <td>Mallma Quispe, Rubén Elías</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td>US-38</td>
+  <td>Ingestión de pronósticos y mapeo a aristas en la aplicación móvil</td>
+  <td>T73</td>
+  <td>Consumir endpoint de validez de forecast en móvil</td>
+  <td>Implementar llamada en móvil para obtener estado/vigencia del forecast por tramo y mapear en UI.</td>
+  <td>8</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T74</td>
+  <td>Indicar visibilidad/alertas por tramo</td>
+  <td>Marcar en el mapa móvil las secciones con forecast vigente o caducado e incluir tooltip explicativo.</td>
+  <td>8</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>T75</td>
+  <td>QA móvil y localización</td>
+  <td>Validar formatos de fecha/hora, unidades y visualización en distintos dispositivos.</td>
+  <td>4</td>
+  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Done</td>
+</tr>
   </tbody>
-</table>
-
+</table>      
 
 #### 7.2.1.3. Development Evidence for Sprint Review
 
