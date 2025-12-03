@@ -1865,7 +1865,7 @@ El sprint planning es una reunión en la metodología ágil donde el equipo plan
 		</tr>
         <tr>
 			<td colspan="1">Sprint 2 Velocity </td>
-            <td colspan="1">46</td>
+            <td colspan="1">44</td>
 		</tr>
         <tr>
 			<td colspan="1">Sum of Story Points </td>
@@ -1874,13 +1874,13 @@ El sprint planning es una reunión en la metodología ágil donde el equipo plan
 </tbody>
 </table>
 
-#### 7.2.1.2. Sprint Backlog 2
+#### 7.2.2.2. Sprint Backlog 2
 
-En este primer sprint del proceso de mejora, nos enfocamos en la implementación de las funcionalidades relacionadas a tecnologías emergentes planeadas para nuestro producto, además de otras funciones pequeñas que mejoren la calidad y la facilidad de navegación, incluyendo el cálculo de rutas optimizadas según distintos datos disponibles, la justificación cuantitativa de elección de distintas rutas y las políticas de cálculo de Incoterms junto a un sistema de almacenamiento. 
+En el Sprint 2 del proceso de mejora continua de Mushroom el equipo centrará su trabajo en la capa de inteligencia operacional y en las integraciones necesarias para que dicha inteligencia sea explotable por usuarios web y móviles. Se implementarán el pipeline de ingestión y normalización de pronósticos meteorológicos y oceanográficos, el motor híbrido de ruteo, el servicio de generación y scoring de alternativas (top-3) con justificación cuantitativa, y el pipeline de eventos que dispara recalculos automáticos y persiste las diferencias métricas. Además se desarrollarán las integraciones front-to-back para presentar alternativas y validez de forecast en la UI.
 
-Estas características son fundamentales para establecer la base del proceso de mejora continua e innovador de nuestro producto y proporcionar una experiencia de usuario sólida y coherente.
+Estas entregas establecen la base técnica para decisiones operativas reproducibles en entornos volátiles: aseguran que el motor use datos actualizados, que las alternativas sean justificables numéricamente y que los cambios por eventos se registren y notifiquen.
 
-###### Tabla 220
+###### Tabla 229
 *Sprint Backlog del segundo sprint de desarrollo de Mushroom de TeemoSolutions*
 
 <table>
@@ -2000,7 +2000,7 @@ Estas características son fundamentales para establecer la base del proceso de 
   <td>Consumidor de eventos y validación</td>
   <td>Implementar ingesta de eventos externos (webhooks/cola), validar esquema y normalizar payloads.</td>
   <td>4</td>
-  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
   <td>Done</td>
 </tr>
 <tr>
@@ -2010,7 +2010,7 @@ Estas características son fundamentales para establecer la base del proceso de 
   <td>Trigger de recalculo y persistencia de diferencias</td>
   <td>Disparar recalculo en motor A*, persistir nueva ruta y registrar diferencia métricas frente a la previa.</td>
   <td>6</td>
-  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
   <td>Done</td>
 </tr>
 <tr>
@@ -2020,7 +2020,7 @@ Estas características son fundamentales para establecer la base del proceso de 
   <td>Monitoreo y reintentos</td>
   <td>Agregar mecanismo de reintentos y alertas para eventos corruptos o fallos críticos.</td>
   <td>2</td>
-  <td>Sanchez Zamora, Fabrizio Alessandro</td>
+  <td>Trigueros Chumacero, Flavio Eduardo</td>
   <td>Done</td>
 </tr>
 <tr>
@@ -2206,120 +2206,145 @@ Estas características son fundamentales para establecer la base del proceso de 
   </tbody>
 </table>      
 
-#### 7.2.1.3. Development Evidence for Sprint Review
+#### 7.2.2.3. Development Evidence for Sprint Review
 
-En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1. En esta iteración, se implementaron las primeras funciones de mejora continua e innovadora con nuestra tecnología emergente de Inteligencia Artificial (IA). Se integró el cálculo de mejor ruta con distintos datos disponibles por ruta, tanto en móvil y web, además de la visualización de mapas, mejoras de UI y diseño de las políticas y de la calculadora de Incoterms actualizados.
+En esta sección se documentan los avances de implementación correspondientes al alcance definido para el Sprint 2. Durante esta iteración el equipo entregó las capacidades necesarias para dotar a Mushroom de inteligencia operacional: se implementó el pipeline de ingestión, normalización y versionado de pronósticos meteorológicos y oceanográficos y su mapeo a las aristas del grafo; se desarrolló el motor híbrido de ruteo y el servicio de generación y scoring de alternativas que devuelve un top-3 justificable numéricamente; además se puso en marcha el pipeline de ingestión de eventos que dispara recalculos automáticos, se persistieron las diferencias métricas y se añadieron endpoints para exponer la validez de forecast por tramo. Complementariamente se integraron las piezas front-to-back para mostrar alternativas y la validez del forecast en web y móvil, y se realizaron pruebas, monitorización y documentación técnica asociada.
 
-Se mostrarán los commits clave por cada repositorio específico, los cuales muestran el ciclo de vida del proyecto, y toda la información que se usó, usa y usará para el desarrollo del proyecto:
+A continuación se presentan los commits clave por repositorio, los artefactos generados y los registros de despliegue que demuestran el ciclo de vida de las entregas y los datos empleados durante el desarrollo.
 
-###### Tabla 221
-*Development Evidence del primer sprint de desarrollo de Mushroom*
-
-| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
-| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|cbb6368|feat: UI adaptation and integration for the AI|-|2025-11-01|
-|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|de803d7|feat: update route calculation and visualization features|-|2025-11-02|
-|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|1479ead|feat: update map route and information|-|2025-11-04|
-|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|5ac8080|feat: fix map on phone|-|2025-11-04|
-|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|69c68f6|feat: update incoterm page and form|-|2025-11-05|
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|940e08d|feat: UI dashboard adaptation|-|2025-11-06|
-|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|240004c|feat: add PDF and Excel download functionality in incoterm calculator|-|2025-11-06|
-|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|d4c8864|refactor: calculate incoterm|-|2025-11-06|
-|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b9f89a0|feat: fix buttons and UI in selector ports|-|2025-11-06|
-|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|fsanchez_branch|fbc1e63|feat: add settings screen and navigation to settings, pdf generation for shipment reports and fix links for quick buttons|-|2025-11-10|
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|6a542c9|feat: UI dashboard changes|-|2025-11-11|
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b66e502|feat: Port dehabilitation and route recalculation|-|2025-11-11|
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|ffeead8|feat: UI and parameters adapted|-|2025-11-11|
-|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|b213ecf|feat: add curvature to the map|-|2025-11-11|
-|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|825351f|feat: Recalculated route v2|-|2025-11-12|
-|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|843b52b|feat: apply inmediate route history save|-|2025-11-13|
-|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|22d6e49|feat: add IA service and UI|-|2025-11-13|
-|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|4103e16|feat: implement weather delay prediction and land mask service for route visualization|-|2025-11-13|
-|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|a2a356b|feat: update route history function|-|2025-11-14|
-
-#### 7.2.1.4. Testing Suite Evidence for Sprint Review
-
-Para la ejecución de las pruebas automatizadas se decidió utilizar Cucumber con sintaxis Gherkin, integrándolo en Visual Studio Code para facilitar la escritura y mantenimiento de los escenarios en las historias de usuario en este sprint 1. Esta elección permite definir casos de prueba en un lenguaje natural alineado con las historias de usuario, asegurando que el comportamiento esperado de la aplicación sea comprendido por todos los involucrados. 
-
-###### Tabla 222
-*Testing Suite Evidence del primer sprint de desarrollo de Mushroom*
+###### Tabla 230
+*Development Evidence del segundo sprint de desarrollo de Mushroom*
 
 | Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
 | ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
-|FlavioTrigueros/[TeemoSolutions-AcceptanceCriteria-Gherkin](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/TeemoSolutions-Report)|main|b73525f|test: gherkin test for sprint 1|-|2025-11-14|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|4fd36cf|feat: Enhance route history component with pagination and filtering features|-|2025-11-16|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|5cffa44|feat: add preprocessing for weather model with new features and encoders|-|2025-11-18|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|09f7142|fix: update NoaaAlertsClient to use WebClient directly and ensure query parameters are encoded|-|2025-11-19|
+|FlavioTrigueros/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|cf1aeb8|feat: Refactor map component|-|2025-11-19|
+|Fasz0711/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|4c3fec7|feat: Add Vanta.js background effects and improve layout for map and route history components|-|2025-11-19|
+|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b5bdc92|feat: Remove success modal display after route creation|-|2025-11-19|
+|RubDaShen/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|89b326e|feat: add Jeddah port and update routes to include connections to Aden|-|2025-11-22|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|5216dc4|feat: Implement dark mode styling across various components|-|2025-11-22|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|45bcad1|feat: integrate authentication headers in API services for secure requests|-|2025-11-22|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|d891192|feat: add Livorno port and update routes with new connections|-|2025-11-24|
+|FlavioTrigueros/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|12c66fe|feat: Remove configuration modal and enhance route label resolution with fallback names|-|2025-11-24|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|d8f88cc|feat: implement route history feature with recent routes display and loading from backend|-|2025-11-24|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|7f475f5|feat: enhance AuthenticatedUserResource with roles and add report endpoints to API|-|2025-11-25|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|0ae4552|feat: add RouteReportController and services for generating PDF and Excel reports|-|2025-11-25|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|dbba4ad|feat: implement PortOverview API with operational status filtering and response structure|-|2025-11-25|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|2ab5119|feat: Enhance report download functionality with support for Excel format and improve user feedback on download status|-|2025-11-25|
+|FlavioTrigueros/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|5f8429f|feat: Refactor nearby port service and component to support enhanced port overview with operational status and improved data handling|-|2025-11-25|
+|FlavioTrigueros/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|13bbf7c|feat: refactor dashboard screen to improve route loading and add help dialog|-|2025-11-25|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|67822f2|feat: add popular routes endpoint and implement route popularity tracking|-|2025-11-26|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|65428ee|feat: Revamp configuration modal with enhanced theme customization options and improved UI elements|-|2025-11-26|
+|FlavioTrigueros/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b2754fc|feat: Add popular routes loading state and error handling in dashboard component|-|2025-11-26|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|62b52e4|feat: enhance route history loading, and improve dashboard navigation|-|2025-11-26|
+|RubDaShen/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|cc5e5ad|feat: added email confirmation|-|2025-11-27|
+|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|79a2bb0|feat: email|-|2025-11-27|
+|RubDaShen/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|a7cb4b7|feat: Enhance popular route mapping with fallback handling and normalization functions|-|2025-11-27|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|83dd6a0|feat: Add Dockerfile and nginx configuration for Angular application deployment|-|2025-11-28|
+|AldhaValenzuelaH/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|aldha_branch|022c9ba|feat: add cancel port and waypoints in map|-|2025-11-28|
+|AldhaValenzuelaH/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|66d90e0|feat: implement notification system for port status changes with read tracking|-|2025-11-30|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|ac38251|feat: Implement notification service with UI integration for real-time notifications|-|2025-11-30|
+|JoseRiega/[Teemo-Backend-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-Backend-Staging)|master|66d90e0|feat: add new routes to DataInitializer for enhanced route coverage|-|2025-12-01|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|4747fdb|feat: Add risk level handling and UI updates for delay overlay component|-|2025-12-02|
+|AldhaValenzuelaH/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|21d03c0|feat: Enhance risk level determination with delay hours consideration|-|2025-12-02|
+|JoseRiega/[Teemo-FrontEnd-Staging](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/Teemo-FrontEnd-Staging)|main|b5c6d59|feat: Add user profile component and enhance user-related functionality across the application|-|2025-12-02|
+|Fasz0711/[TeemoSolutions-mobile](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/upc-pre-202501-cc-1asi0732-4441-TeemoSolutions-mobile)|fsanchez_branch|5c34426|feat: add notifications screen, and integrate notification handling|-|2025-12-02|
 
-#### 7.2.1.5. Execution Evidence for Sprint Review
+#### 7.2.2.4. Testing Suite Evidence for Sprint Review
 
-El equipo ha implementado con éxito las mejoras continuas e innovadoras de Mushroom para que funcione como una herramienta operativa con tecnología emergente Se completaron los flujos que permiten calcular rutas optimizadas, visualizar la geometría y la animación de trayectos en dispositivos móviles, solicitar justificaciones cuantitativas entre alternativas y persistir las consultas para trazabilidad. Todas las historias asignadas a este sprint se ejecutaron y entregaron integradas, lo que permitió validar el recorrido completo desde la selección de puertos hasta el almacenamiento del registro de la ruta.
+Para la ejecución de las pruebas automatizadas en el Sprint 2 se mantiene Cucumber con sintaxis Gherkin integrado en Visual Studio Code, ampliando su uso más allá de las pruebas funcionales de interfaz para cubrir escenarios de aceptación end-to-end relacionados con pipelines de ingestión de forecast, disparo de eventos y recalculo de rutas, y la generación y ranking de alternativas. Esta aproximación permite describir en lenguaje natural escenarios complejos facilitando la validación por parte de stakeholders no técnicos y la trazabilidad entre historias de usuario y pruebas. Los escenarios de Cucumber se complementan con suites de pruebas unitarias e integración (para los servicios backend y jobs) y con pruebas de rendimiento básicas, todo ello orquestado en el flujo de CI para ejecución automática en cada despliegue.
 
-###### Figura 83
-*Muestra con evidencia de la selección de puertas con la geometría incluida en la aplicación móvil*
+###### Tabla 231
+*Testing Suite Evidence del segundo sprint de desarrollo de Mushroom*
 
-<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-1.jpg" alt="Mobile App Evidence 1">
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+|FlavioTrigueros/[TeemoSolutions-AcceptanceCriteria-Gherkin](https://github.com/1ASI0728-2520-7306-TEEMO-SOLUTIONS/TeemoSolutions-Report)|main|b62595f|test: gherkin test for sprint 2|-|2025-12-02|
 
-###### Figura 84
+#### 7.2.2.5. Execution Evidence for Sprint Review
+
+El equipo ha completado las entregas planificadas del Sprint 2, dotando a Mushroom de su capa de inteligencia operacional. Se implementaron y desplegaron los pipelines de ingestión, normalización y versionado de pronósticos meteorológicos y oceanográficos con mapeo a las aristas del grafo; se desarrolló el motor híbrido de ruteo (A* con pesos dinámicos aportados por modelos ML) y el servicio de generación y scoring de alternativas que devuelve un top-3 justificable numéricamente. Además, se puso en marcha el pipeline de eventos que ingiere notificaciones externas y dispara recalculos automáticos, persiste las rutas resultantes y registra las diferencias métricas.
+
+###### Figura 101
+*Muestra con evidencia de la selección de puertos con alertas presentadas con Inteligencia Artificial y manejo de APIs*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-5.png" alt="Mobile App Evidence 5">
+
+###### Figura 102
 *Muestra con evidencia de la animación de rutas entre dos puertos en la aplicación móvil*
 
-<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-2.jpg" alt="Mobile App Evidence 2">
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-6.png" alt="Mobile App Evidence 6">
 
-###### Figura 85
-*Muestra con evidencia de cierre automático de puertos en la aplicación móvil*
+###### Figura 103
+*Muestra con evidencia del cálculo y recomendación de Incoterm para una ruta*
 
-<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-3.jpg" alt="Mobile App Evidence 3">
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-7.png" alt="Mobile App Evidence 7">
 
-###### Figura 86
-*Muestra con evidencia del cálculo de Incoterms en la aplicación móvil*
+###### Figura 104
+*Muestra con evidencia de la explicación con IA generativa del porque otras alternativas de Incoterm no son adecuadas*
 
-<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-4.jpg" alt="Mobile App Evidence 4">
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-8.png" alt="Mobile App Evidence 8">
 
-En paralelo se desarrollaron las funciones asociadas a la gestión operativa. Se diseñó e implementó el API de persistencia de viajes y el servicio de historial con filtros y paginación. También se puso en marcha el servicio de pricing básico que estima costos y sugiere Incoterms, integrándolo con las vistas web y móviles para que los usuarios obtengan desglose y recomendaciones comerciales en el mismo flujo de decisión.
+###### Figura 105
+*Muestra con evidencia de los reportes de ruta con opción para descarga en PDF o Excel*
 
-###### Figura 87
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-9.png" alt="Mobile App Evidence 9">
+
+###### Figura 106
+*Muestra con evidencia de las notificaciones tras deshabilitación de puertos*
+
+<img src="/assets/img/chapter-VII/evidence/mobile-app/evidence-mobile-app-10.png" alt="Mobile App Evidence 10">
+
+Estas capacidades se integraron con las vistas web y móviles para exponer alternativas, deltas cuantitativos y la vigencia del forecast; se añadieron mecanismos de reintento y sincronización para condiciones de conectividad variable, y se completaron pruebas, monitorización y documentación técnica asociada. Durante la iteración se validaron flujos end-to-end con datos de prueba, se recogieron métricas clave de desempeño (latencia de cálculo y tasa de ingestión) y se corrigieron cuellos de botella identificados, mejorando la estabilidad del servicio.
+
+###### Figura 107
 *Muestra con evidencia de los endpoints de puertos en el Web Services*
 
 <img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-1.jpg" alt="Web Services Evidence 1">
 
-###### Figura 88
+###### Figura 108
 *Muestra con evidencia de los endpoints de rutas en el Web Services*
 
 <img src="/assets/img/chapter-VII/evidence/web-services/evidence-web-services-2.jpg" alt="Web Services Evidence 2">
 
-Para mejorar la experiencia se trabajó en una interfaz móvil y web coherente y fluida que facilita la interpretación de métricas y justificaciones, se adoptaron mecanismos de reintento y sincronización para la persistencia en condiciones de conectividad variable, y se dejó preparado el entorno para soportar internacionalización e instrumentos de telemetría. Con esta base, el equipo dispone ahora de un producto mínimo operativo que permite recoger feedback real de operadores y priorizar las mejoras de inteligencia y rendimiento en los próximos sprints.
+Con esto, el producto alcanza una base robusta para decisiones operativas reproducibles y queda listo para pilotos controlados y para la próxima fase centrada en afinar la precisión de los modelos, ampliar cobertura de fuentes de datos y escalar el procesamiento.
 
-###### Figura 89
+###### Figura 109
 *Muestra con evidencia de la administración de puertos habilitados y deshabilitados en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Web Application Evidence 1">
 
-###### Figura 90
+###### Figura 110
 *Muestra con evidencia de la función de deshabilitación de puertos en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-2.jpg" alt="Web Application Evidence 2">
 
-###### Figura 91
+###### Figura 111
 *Muestra con evidencia de la función de cambio de estado operativo en puertos por riesgo en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-3.jpg" alt="Web Application Evidence 3">
 
-###### Figura 92
+###### Figura 112
 *Muestra con evidencia de la función de cálculo de Incoterms recomendados en el Web Application*
 
 <img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-4.jpg" alt="Web Application Evidence 4">
 
-#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+#### 7.2.2.6. Services Documentation Evidence for Sprint Review
 
-En esta sección, presentamos la relación de Endpoints documentados con OpenAPI, que están directamente vinculados con el alcance del Sprint 1 de Mushroom. Iniciamos con una breve introducción que resume los logros alcanzados en relación con la Documentación de Web Services durante este período de desarrollo. A continuación, proporcionamos una tabla detallada que enumera cada Endpoint, junto con las acciones implementadas y los enlaces correspondientes a la documentación desplegada o la URL local en Sprints anteriores al despliegue de Web Services.
+En esta sección se presenta el conjunto de endpoints documentados con OpenAPI que soportan las entregas del Sprint 2 de Mushroom. Se incluye una breve introducción que resume los avances en la documentación de Web Services durante la iteración y a continuación una tabla detallada que lista cada endpoint, los verbos HTTP soportados, la sintaxis de llamada, parámetros relevantes y ejemplos de petición y respuesta. 
 
-En la tabla, se indican las acciones soportadas para cada Endpoint, incluyendo el verbo HTTP (GET, POST, PUT, DELETE, PATCH), la sintaxis de llamada, la especificación de posibles parámetros y se incluye un ejemplo junto con una explicación del response correspondiente. 
+La documentación incorpora además esquemas (request/response), códigos de error y notas sobre contratos de datos y vigencia. Para cada entrada se indican, cuando procede, las URLs locales utilizadas en los entornos de desarrollo y enlaces a la especificación OpenAPI correspondiente.
 
-###### Tabla 223
+###### Tabla 232
 *Listado de Endpoints de Eventos de Mushroom*
 
 |Método|	Descripción|	Ejemplo de llamada|Parámetros|	Respuesta|
 |-|-|-|-|-|
 |GET	|Lista puertos origen asociados a eventos; útil para feeds de eventos geopolíticos/navegación.	|GET /api/events/origin-ports	|Ninguno|	200 OK → ["portId1","portId2", ...]|
 
-###### Tabla 224
+###### Tabla 233
 *Listado de Endpoints del desglose de los Incoterms de Mushroom*
 
 |Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
@@ -2327,7 +2352,7 @@ En la tabla, se indican las acciones soportadas para cada Endpoint, incluyendo e
 |POST|	Calcula desglose de coste y recomienda Incoterm según parámetros comerciales y ruta.|	POST /api/incoterms/calculate
 Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2", ... }	|Body JSON con campos como cargoType, cargoValue, cargoWeight, seller, buyer, sellerCountry, buyerCountry, paymentTerms, insurance (bool), originPort, destinationPort, distance (num), etc.|	200 OK → objeto IncotermCalculationResult con marketConditions, recommendedIncoterm (code/name/description/costBreakdown), alternatives (lista), routeDetails (distance/estimatedTime/riskLevel) y warnings.|
 
-###### Tabla 225
+###### Tabla 234
 *Listado de Endpoints de los Puertos de Mushroom*
 
 |Método	|Descripción	|Ejemplo de llamada|	Parámetros	|Respuesta|
@@ -2338,7 +2363,7 @@ Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2
 |GET|	Obtener todos los puertos registrados (listado).	|GET /api/ports/all-ports|	Ninguno|	200 OK → Array de PortResource|
 |GET|	Buscar puerto por nombre.|	GET /api/ports/name/{name}	|Path: name (string)|	200 OK → PortResource (o 404 si no existe)|
 
-###### Tabla 226
+###### Tabla 235
 *Listado de Endpoints de Rutas asignadas entre puertos de Mushroom*
 
 |Método	|Descripción	|Ejemplo de llamada	|Parámetros	|Respuesta|
@@ -2347,96 +2372,54 @@ Body: { "cargoType":"", "cargoValue":0, "originPort":"P1", "destinationPort":"P2
 |POST	|Calcular ruta óptima entre dos puertos (A* + pesos).|	POST /api/routes/calculate-optimal-route?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "optimalRoute":[...], "totalDistance":0, "warnings":[...], "coordinatesMapping": { portId: { latitude, longitude } } }
 |GET|	Obtener distancia entre dos puertos.|	GET /api/routes/distance-between-ports?startPort=CALLAO&endPort=ROTTERDAM	|Query: startPort (string), endPort (string)	|200 OK → { "distance": 0, "messages":["string"], "meta": { ... } }|
 
-###### Tabla 227
+###### Tabla 236
 *Listado de Endpoints de Inteligencia Artificial relacionadas a la predicción de estado de rutas de Mushroom*
 
 |Método	|Descripción	|Ejemplo de llamada|	Parámetros|	Respuesta|
 |-|-|-|-|-|
 |POST	|Predecir demora por condiciones meteorológicas/oceanográficas entre origen y destino (modelo ML).|	POST /api/ai/predict-weather-delay| Body: { "distanceKm":1000, "cruiseSpeedKnots":20, "avgWindKnots":15, "maxWaveM":3, "departureTimeIso":"2025-11-14T10:00:00Z", "originLat":-12.0464, "originLon":-77.0428, "destLat":35.6762, "destLon":139.6503 }	Body JSON: distanceKm (num), cruiseSpeedKnots (num), avgWindKnots (num), maxWaveM (num), departureTimeIso (ISO string), originLat/Long, destLat/Long	|200 OK → Modelo devuelve predicción (estructura dependiente del modelo). En swagger original la respuesta es un objeto vacío como placeholder; en producción se espera { "estimatedDelayHours": number, "confidence": number, "factors":[...], "notes": "string" } o estructura análoga. |
 
-#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+#### 7.2.2.7. Software Deployment Evidence for Sprint Review
 
-**1. Creación y configuración del proyecto en Firebase**
-Accede a Firebase Console, crea un nuevo proyecto o selecciona el existente asociado a la Web Application. En el menú lateral, habilita App Distribution y registra tu aplicación web, vinculándola al dominio que servirá los archivos estáticos.
-
-En tu entorno local, instala la herramienta de línea de comandos de Firebase y autentícate con firebase login. Asegúrate de haber seleccionado el proyecto correcto con firebase use.
-
-###### Figura 93
-
-_Selección y configuración del proyecto de la Web Application de Mushroom en Firebase_
-
-<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-1.png" alt="Evidencia de despliegue en Firebase">
-
-**2. Construcción de la aplicación**
-Ejecuta el comando de build de tu framework para generar los archivos estáticos listos para producción en la carpeta de salida designada.
-
-###### Figura 94
-
-_Construcción de la aplicación para el proyecto de la Web Application de Mushrooom en Firebase_
-
-<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-2.png" alt="Evidencia de despliegue en Firebase">
-
-**3. Configuración de Firebase Hosting**
-Inicializa Firebase Hosting con firebase init, selecciona el proyecto y la carpeta de salida generada en el paso anterior. Cuando se te pregunte si deseas sobrescribir archivos de configuración, confirma solo los necesarios.
-
-###### Figura 95
-
-_Configuración de Firebase Hosting para el despliegue de la Web Application de Mushroom en Firebase_
-
-<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-3.png" alt="Evidencia de despliegue en Firebase">
-
-**4. Despliegue en App Distribution**
-Utilizar comandos (firebase deploy) de despliegue en Firebase para subir el paquete de la Web Application a App Distribution. Este comando empaqueta automáticamente el build y lo hace disponible para el grupo de desarrolladores configurado.
-
-###### Figura 96
-
-_Despliegue de la Web Application de Mushroom en Firebase_
-
-<img src="/assets/img/chapter-VII/deployment/web-application/web-app-deployment-4.png" alt="Evidencia de despliegue en Firebase">
-
-**5. Obtención del enlace de distribución**
-Una vez completada la subida, Firebase mostrará en consola la URL de App Distribution. Comparte este enlace con los desarrolladores o stakeholders para que puedan acceder y descargar la última versión de la Web Application directamente desde Firebase App Distribution.
-
-###### Figura 97
-
-_Página de la Web Application de Mushroom ya desplegada_
-
-<img src="/assets/img/chapter-VII/evidence/web-app/evidence-web-app-1.jpg" alt="Evidencia de despliegue en Firebase">
+Para el desarrollo de este sprint 2 no hemos realizado ningún proceso de despliegue debido a que todas las áreas y productos respectivos ya estaban desplegados desde el sprint 1, incluyendo los modelos ONNX con respecto a la IA y la app móvil y web.
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
-Durante el Sprint 1, nos enfocamos en el desarrollo colaborativo de las mejoras continuas e innovadoras para el Web Application y Mobile Application de Mushroom, junto a las mejoras de Web Services. Cada miembro del equipo contribuyó con sus habilidades y conocimientos. Esta colaboración se refleja en los numerosos commits realizados en nuestros repositorios de código, los cuales están respaldados por capturas de pantalla adjuntas para una documentación detallada.
+Durante el Sprint 2 el equipo trabajó de forma coordinada para entregar la capa de inteligencia operacional de Mushroom con pipelines de ingestión y versionado de forecast, motor híbrido de ruteo, generación y ranking de alternativas y el pipeline de eventos con recalculo automático. 
 
-Nuestro equipo se reunió tanto en persona como virtualmente para asignar tareas y discutir la estrategia de desarrollo del proyecto. Estas reuniones fueron cruciales para clarificar nuestras responsabilidades individuales y asegurar un desempeño óptimo. Para maximizar la eficiencia, decidimos asignar a cada miembro del equipo una sección específica del código para desarrollar, lo que nos permitió avanzar rápidamente y cumplir con los plazos establecidos.
+Cada integrante aportó desde su especialidad (backend, mobile, frontend), lo que se refleja en commits, pull requests y merges documentados en los repositorios y en la ejecución de pipelines de CI. La comunicación se sostuvo mediante reuniones periódicas, revisiones de código y pair programming en tareas críticas, lo que permitió distribuir responsabilidades, resolver bloqueos rápidamente y mantener la calidad del código y la trazabilidad de las decisiones técnicas.
 
 Además, programamos sesiones regulares de brainstorming y resolución de problemas, donde compartimos ideas y abordamos cualquier duda o dificultad que surgiera durante el proceso de desarrollo. 
 
-###### Figura 98
-*Reporte completo de contribuciones para el desarrollo del Web Application de Mushroom en el Sprint 1.*
+###### Figura 113
+*Reporte completo de contribuciones para el desarrollo del Web Application de Mushroom en el Sprint 2.*
 
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/pulse-web-app-sprint1.png" alt="Pulse for Web Application">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/total-contribution-web-app-sprint1.png" alt="Contribution for Web Application">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/contributors-web-app-sprint1-.png" alt="Individual Contributions for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/pulse-web-app-sprint2.png" alt="Pulse for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/total-contribution-web-app-sprint2.png" alt="Contribution for Web Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-application/contributors-web-app-sprint2.png" alt="Individual Contributions for Web Application">
 
-###### Figura 99
+###### Figura 114
 *Reporte completo de contribuciones para el desarrollo del Mobile Application de Mushroom en el Sprint 1.*
 
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/pulse-mobile-app-sprint1.png" alt="Pulse for Mobile Application">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/total-contribution-mobile-app-sprint1.png" alt="Contribution for Mobile Application">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/contributors-mobile-app-sprint1.png" alt="Individual Contributions for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/pulse-mobile-app-sprint2.png" alt="Pulse for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/total-contribution-mobile-app-sprint2.png" alt="Contribution for Mobile Application">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/mobile-application/contributors-mobile-app-sprint2.png" alt="Individual Contributions for Mobile Application">
 
-###### Figura 100
+###### Figura 115
 *Reporte completo de contribuciones para el desarrollo del Web Services de Mushroom en el Sprint 1.*
 
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint1.png" alt="Pulse for Web Services">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/total-contribution-web-services-sprint1.png" alt="Contribution for Web Services">
-<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint1.png" alt="Individual Contributions for Web Services"
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/pulse-web-services-sprint2.png" alt="Pulse for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/total-contribution-web-services-sprint2.png" alt="Contribution for Web Services">
+<img src="/assets/img/chapter-VII/team-collaboration-insights/sprint1/web-services/contributors-web-services-sprint2.png" alt="Individual Contributions for Web Services"
+
+---
 
 ## 7.3. Validation Interviews
 
 Con el objetivo de validar las funcionalidades, beneficios y nivel de adopción potencial de la solución Mushroom, se realizaron entrevistas con personas que representan a nuestros segmentos objetivo. Estas entrevistas permitieron recopilar percepciones reales sobre la utilidad, facilidad de uso y valor percibido de la solución, así como identificar oportunidades de mejora. Las respuestas obtenidas ayudaron a confirmar hipótesis clave del producto y a ajustar el diseño en función de las necesidades y expectativas de los usuarios.
 
 ### 7.3.1. Diseño de Entrevistas
+
 Estas son las preguntas que se le hicieron a cada entrevistado: 
 
 1. ¿Crees que permitir a los capitanes ver información detallada del puerto (nombre, país, estado) ayudaría a tomar mejores decisiones?
