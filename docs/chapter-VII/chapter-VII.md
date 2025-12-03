@@ -313,7 +313,7 @@ También presentamos ramas secundarias de feature, hotfix o release. Cada rama s
 
   ###### Figura 172
 
-  _Evidencia del uso de Gitflow para el desarrollo en los repositorios de Macetech_
+  _Evidencia del uso de Gitflow para el desarrollo en los repositorios de Mushroom_
 
   <img src="/assets/img/capitulo-6/evidence/gitflow-evidence.png" alt="Evidencia de GitFlow">
 
@@ -963,7 +963,7 @@ Tras guardar la configuración, GitHub generará automáticamente la URL de acce
 
 ###### Figura 77
 
-_Verificación del enlace público de la Landing Page de Macetech_
+_Verificación del enlace público de la Landing Page de Mushroom_
 
 <img src="/assets/img/chapter-VII/deployment/landing-page/landing-page-deployment-evidence-3.png" alt="Evidencia de Uso de Github Pages">
 
