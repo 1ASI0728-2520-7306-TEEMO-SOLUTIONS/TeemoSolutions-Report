@@ -55,38 +55,11 @@
 
 ## Integrantes
 
-<table>
-  <thead>
-    <tr>
-      <th style="background-color: #333; color: #fff;">Apellidos y Nombres</th>
-      <th style="background-color: #333; color: #fff;">Código de Alumno</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mallma Quispe, Ruben Elias</td>
-      <td>u202214234</td>
-    </tr>
-    <tr>
-      <td>Sanchez Zamora, Fabrizio Alessandro</td>
-      <td>u202213652</td>
-    </tr>
-    <tr>
-      <td>Riega Salas, Jose Miguel</td>
-      <td>u202211254</td>
-    </tr>
-    <tr>
-      <td>Trigueros Chumacero, Flavio Eduardo</td>
-      <td>u202210190</td>
-    </tr>
-    <tr>
-      <td>Valenzuela Huillcaya, Aldhair Johan Juan</td>
-      <td>u20201f572</td>
-    </tr>
-  </tbody>
-</table>
-
---- 
+- Mallma Quispe, Ruben Elias, u202214234
+- Sanchez Zamora, Fabrizio Alessandro, u202213652
+- Riega Salas, Jose Miguel, u202211254
+- Trigueros Chumacero, Flavio Eduardo, u202210190
+- Valenzuela Huillcaya, Aldhair Johan Juan, u20201f572
 
 **Lima, 03 de diciembre**
 
