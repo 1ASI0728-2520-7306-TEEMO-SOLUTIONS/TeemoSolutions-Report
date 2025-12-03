@@ -695,7 +695,7 @@ El Bounded Context Canvas es una herramienta que guía el diseño de dominios ac
 <img src="../..//assets/img/chapter-IV/MONITORING CANVAS.png">
 
 ### 4.2.5.	Context Mapping
-En esta sección, el equipo documenta el proceso de elaboración de varios context maps, diagramas que muestran las relaciones estructurales y de dependencia entre los bounded contexts definidos previamente. A partir de la información recolectada en las sesiones de Candidate Context Discovery y los Bounded Context Canvases, se generan diseños candidatos que permiten visualizar claramente los flujos de datos, las integraciones y los puntos de acoplamiento. El objetivo es iterar sobre estas propuestas hasta dar con la topología más coherente y sostenible para la arquitectura de Macetech.
+En esta sección, el equipo documenta el proceso de elaboración de varios context maps, diagramas que muestran las relaciones estructurales y de dependencia entre los bounded contexts definidos previamente. A partir de la información recolectada en las sesiones de Candidate Context Discovery y los Bounded Context Canvases, se generan diseños candidatos que permiten visualizar claramente los flujos de datos, las integraciones y los puntos de acoplamiento. El objetivo es iterar sobre estas propuestas hasta dar con la topología más coherente y sostenible para la arquitectura de Mushroom.
 
 **IAM process ➔ Profile**
 Descripción: IAM actúa como proveedor de identidad y autenticación. El contexto de Profile consume esta información para validar usuarios y gestionar credenciales de forma segura.
