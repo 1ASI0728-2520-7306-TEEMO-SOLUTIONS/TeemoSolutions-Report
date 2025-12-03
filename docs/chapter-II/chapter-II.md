@@ -293,7 +293,7 @@ El proceso de needfinding, según Patnaik (2017), consiste en la investigación 
 ### 2.3.1. User Persona
 En esta sección describimos en detalle la construcción de las fichas de User Persona para cada uno de nuestros segmentos objetivo, integrando tanto los insights cualitativos extraídos de las entrevistas como los aprendizajes obtenidos del análisis competitivo en el mercado de jardinería inteligente. Partimos de los patrones de comportamientos, frustraciones y motivaciones identificados y los contrastamos con las propuestas de valor de competidores clave. De este modo, cada ficha de User Persona combina atributos demográficos y psicográficos con las funcionalidades diferenciales que Mushroom deberá ofrecer para cubrir vacíos detectados en otras soluciones.
 
-Siguiendo las mejores prácticas de creación de personas establecidas por Nielsen (2019), cada ficha incluye información sobre metas, escenarios de uso, nivel de competencia tecnológica, canales de interacción preferidos y actitudes emocionales. Además, incorporamos referencias cruzadas entre los artefactos—User Task Matrix, User Journey Maps, Empathy Mapping y As‑Is Scenario Mapping—y las características clave surgidas tanto de las entrevistas como del benchmark competitivo. Esta integración garantiza que las User Personas no solo reflejen quiénes son nuestros usuarios y cómo piensan, sino también cómo Macetech se posiciona para ofrecerles propuestas de valor únicas frente a las alternativas existentes, cimentando una estrategia de producto centrada en necesidades reales y oportunidades de diferenciación.
+Siguiendo las mejores prácticas de creación de personas establecidas por Nielsen (2019), cada ficha incluye información sobre metas, escenarios de uso, nivel de competencia tecnológica, canales de interacción preferidos y actitudes emocionales. Además, incorporamos referencias cruzadas entre los artefactos—User Task Matrix, User Journey Maps, Empathy Mapping y As‑Is Scenario Mapping—y las características clave surgidas tanto de las entrevistas como del benchmark competitivo. Esta integración garantiza que las User Personas no solo reflejen quiénes son nuestros usuarios y cómo piensan, sino también cómo Mushroom se posiciona para ofrecerles propuestas de valor únicas frente a las alternativas existentes, cimentando una estrategia de producto centrada en necesidades reales y oportunidades de diferenciación.
 
 ###### Figura 6
 *User persona de nuestro segmento de Empresas Navieras y Operadoras Logísticas Globales*
@@ -439,7 +439,7 @@ El propósito de este ejercicio es profundizar en la empatía con nuestros usuar
 * ¿Con quién estamos empatizando?
 * ¿Qué tareas necesita realizar?
 * ¿Qué barreras enfrenta?
-* ¿Qué incentivos podrían motivarlo a adoptar Macetech?
+* ¿Qué incentivos podrían motivarlo a adoptar Mushroom?
 
 Para ello, combinamos los insights del Empathy Mapping con las metas y comportamientos declarados en las entrevistas, siguiendo además las pautas de Nielsen (2019) para asegurar que cada hallazgo sea accionable. De este modo, garantizamos que los futuros diseños de interfaz y las funcionalidades propuestas respondan directamente a las necesidades reales de los jardineros, contribuyendo a una solución verdaderamente centrada en el usuario.
 
