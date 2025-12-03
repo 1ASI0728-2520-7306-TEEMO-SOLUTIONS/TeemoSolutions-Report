@@ -500,8 +500,8 @@ El concepto de Ubiquitous Language fue formalizado por Eric Evans en su obra pri
 |IdempotentCommand	|ComandoIdempotente	|Comando diseñado para ser re-ejecutable sin producir efectos duplicados gracias a idempotencia.|
 |IdempotencyKey|	ClaveDeIdempotencia	|Token único que evita efectos duplicados al reintentar comandos externos.|
 |IncotermAssessment	|EvaluaciónDeIncoterm|	Aggregate que representa el cálculo y recomendación de Incoterm para una operación (routeId, justificación, desglose).|
-|IncotermType	|TipoDeIncoterm	|Los Incoterms son un conjunto de reglas internacionales que definen las obligaciones, riesgos y costos entre el comprador y el vendedor en una compraventa internacional. Estas reglas establecen los términos y condiciones de entrega de mercancías en el comercio internacional, regulando las responsabilidades de ambas partes en cada etapa del proceso de entrega. |
-|Incoterms	| Definicion Incoterms	|Enum con Incoterms soportados (por ejemplo: FAS, FOB, CFR, CIF).|
+|IncotermType	|TipoDeIncoterm	|Enum con Incoterms soportados (por ejemplo: FAS, FOB, CFR, CIF).|
+|Incoterms	| Definicion Incoterms	|Los Incoterms son un conjunto de reglas internacionales que definen las obligaciones, riesgos y costos entre el comprador y el vendedor en una compraventa internacional. Estas reglas establecen los términos y condiciones de entrega de mercancías en el comercio internacional, regulando las responsabilidades de ambas partes en cada etapa del proceso de entrega.|
 |Justification|Justificación	|Explicación puntuable y estructurada de por qué se eligió una recomendación (lista de razones con score).|
 |NavigationGraph|	GrafoDeNavegación|	Representación topológica de nodos y aristas utilizada por el algoritmo A* y motores de optimización.|
 |Notification|	NotificaciónSaliente	|Mensaje enviado a usuarios con información sobre justificación de una ruta específica. |
