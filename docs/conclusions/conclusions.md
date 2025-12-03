@@ -13,3 +13,28 @@ En esta sección, el equipo presenta las conclusiones generales del proyecto, co
 - El diagrama de componentes (nivel C4) ha hecho explícitos los puntos de integración críticos: handlers de comando, query services, repositorios, adaptadores a feeds externos, outbox y componentes de read model. Al identificar estas piezas se han detectado dependencias técnicas y posibles cuellos de botella (p. ej., puntos de I/O con feeds externos o el componente de outbox), lo que permite priorizar pruebas de integración, definir contratos API/MSG y diseñar mecanismos de resiliencia (reintentos idempotentes, fallbacks, degradado controlado y circuit breaker).
 
 - La combinación práctica de DDD (límite de contexto y lenguaje ubicuo) con un enfoque de diseño por atributos (Attribute Driven Design) y los diagramas de componentes genera trazabilidad completa desde requisitos hasta implementación: cada user story y requisito funcional puede mapearse a componentes concretos, a eventos y a pruebas de aceptación. Esto mejora la gobernanza arquitectónica (toma de decisiones justificadas), facilita la instrumentación para observabilidad (métricas por componente, SLIs) y acorta el ciclo de validación técnico–negocio, reduciendo el riesgo al pasar a producción.
+- Las piezas técnicas entregadas funcionan de forma integrada en flujos end-to-end en entornos de staging: los pipelines de ingestión y versionado de forecast alimentan consistentemente al motor híbrido A* y al servicio de scoring, y el pipeline de eventos habilita recalculos automáticos con persistencia de diferencias. Durante la iteración se obtuvieron perfiles operacionales (latencias de cálculo, tasas de ingestión y tiempos de procesado de eventos) que permiten definir SLAs iniciales y dimensionar recursos para próximos despliegues; esto confirma que la arquitectura es adecuada para operar en tiempo real y soportar cargas de trabajo representativas del dominio.
+- La capacidad de producir alternativas justificables numéricamente (top-3 con deltas y factores de riesgo) y de persistir los cambios derivados de eventos proporciona trazabilidad operativa y evidencia que es utilizable para auditoría, reclamaciones y negociación comercial (seguros, clientes). Este nivel de explicabilidad y registro transforma la plataforma de una herramienta analítica a una herramienta operativa con gobernanza: queda preparada para realizar pilotos con operadores reales y recopilar métricas de impacto (reducción de reroutes, mejora de ETA, ahorro en combustible/demurrage) que validen en campo el retorno de la inversión de la capa de ML.
+
+### Uso de tecnología emergente y el como soluciona el problema
+
+El empleo de Machine Learning (ML) para la revisión y ponderación dinámica de rutas marítimas es una solución técnicamente adecuada y estratégicamente necesaria frente a la inseguridad en corredores críticos y a los sobrecostes derivados de ETA imprecisos, porque combina tres capacidades que son imprescindibles en entornos volátiles y de alta incertidumbre. 
+
+Primero, fusión y modelado de señales heterogéneas y temporales: los modelos ML pueden incorporar de forma nativa flujos AIS, pronósticos meteorológicos, avisos de seguridad, estado portuario e históricos de tránsito, capturando interacciones complejas.
+
+Segundo, predicción probabilística y cuantificación de incertidumbre: más allá de un ETA puntual, los modelos modernos producen distribuciones (o intervalos de confianza) y estimaciones de probabilidad de incidentes por tramo; esa información convierte decisiones binaria en decisiones basadas en riesgo esperado y coste esperado, permitiendo optimizar trade-offs entre tiempo, seguridad y emisiones. 
+
+Tercero, alimentación en tiempo real a optimizadores: los outputs del ML (pesos dinámicos por arista que representan tiempo esperado, probabilidad de incidente, factor de emisiones y coste estimado) se usan como insumos para un motor A* híbrido o un optimizador multi-objetivo, generando top-k alternativas comparables y justificables numéricamente.
+
+En la práctica esto ofrece beneficios operativos claros:
+
+* Reducción de reroutes innecesarios al anticipar riesgos
+* Decisiones proactivas ante eventos detectados
+* Mejoras en precisión de ETA que bajan costos por demurrage y combustibles
+* Trazabilidad numérica para reclamaciones y seguros. 
+
+Para que estos beneficios sean reales y sostenibles, la solución incorpora elementos de ingeniería y gobernanza con pipelines robustos de validación y versionado de datos y reentrenamiento continuo. Asimismo, la explicabilidad forma un punto importante a tomar en cuenta al explicar de forma detallada porque cada parte fue tomada por la Inteligencia Artificial combinada con Machine Learning y los beneficios que trae tomar tal decisión.
+
+Complementariamente, la integración con modelos de coste (consumo por velocidad, tarifas de flete, seguros, emisiones) traduce mejoras técnicas en métricas económicas concretas, facilitando la medición del ROI. 
+
+En conjunto, el Machine Learning transforma señales dispersas y volátiles en predicciones cuantificables y accionables, habilitando un motor de ruteo que no solo minimiza distancia o tiempo, sino que optimiza por seguridad, coste y sostenibilidad, con trazabilidad y mecanismos de gobernanza que permiten su uso confiable en operaciones críticas.
