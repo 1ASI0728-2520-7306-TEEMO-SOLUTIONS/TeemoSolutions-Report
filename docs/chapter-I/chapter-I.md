@@ -317,7 +317,7 @@ En este sentido, el proceso de segmentación de mercado implica analizar, identi
 En un mercado donde más del 80 % del volumen del comercio mundial se mueve por vía marítima, Mushroom posiciona a Teemo Solutions como una plataforma de resiliencia logística orientada a actores que sufren directamente las consecuencias de interrupciones en corredores críticos (p. ej. Mar Rojo, Canal de Suez) y la volatilidad de precios y tiempos de tránsito. Nuestro enfoque no es solo optimizar millas o reducir ETA, sino convertir señales heterogéneas (avisos de autoridades, meteorología, eventos de seguridad, estado portuario y datos históricos) en recomendaciones justificadas que balanceen tiempo, coste, riesgo y sostenibilidad. Esto genera valor en tres planos: operativo (decisiones más rápidas y menos excepciones), económico (reducción de sobrecostes por desvíos, combustible y demurrage) y contractual (evidencia trazable para reclamaciones, seguros y negociación de Incoterms). A continuación se presenta la segmentación ampliada y una matriz comparativa con atributos clave que facilitan diseñar ofertas comerciales, pilotos y métricas de éxito para cada tipo de cliente.
 
 ###### Tabla 2
-*Especificación de cada uno de los segmentos objetivos identificados para el proyecto de Macetech*
+*Especificación de cada uno de los segmentos objetivos identificados para el proyecto de Mushroom*
 
 <table>
   <thead>
