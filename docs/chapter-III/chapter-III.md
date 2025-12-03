@@ -35,7 +35,7 @@ Este capítulo establece de manera precisa la especificación de requisitos de M
 
 ## 3.1. To-Be Scenario Mapping
 
-En esta sección se documenta el proceso metodológico y los resultados obtenidos del To-Be Scenario Mapping, una herramienta clave para diseñar la experiencia futura de cada User Persona y compararla con el escenario actual (As-Is). A partir de un análisis detallado de los mapas As-Is, se proyectan las acciones, pensamientos y emociones del usuario a través de las columnas Steps, Doing, Thinking y Feeling, de manera que quede claro cómo Macetech transformará cada etapa de la interacción.
+En esta sección se documenta el proceso metodológico y los resultados obtenidos del To-Be Scenario Mapping, una herramienta clave para diseñar la experiencia futura de cada User Persona y compararla con el escenario actual (As-Is). A partir de un análisis detallado de los mapas As-Is, se proyectan las acciones, pensamientos y emociones del usuario a través de las columnas Steps, Doing, Thinking y Feeling, de manera que quede claro cómo Mushroom transformará cada etapa de la interacción.
 
 El procedimiento seguido por el equipo incluyó las siguientes etapas, alineadas con las recomendaciones de Kalbach (2020) para el mapeo de experiencias:
 
@@ -227,7 +227,7 @@ El uso del Impact Mapping garantiza que cada User Story y cada funcionalidad pro
 
 ##### 3.6. Product Backlog
 
-En esta sección presentamos el Product Backlog de Macetech, donde hemos recopilado y ordenado todas las User Stories y Technical Stories identificadas a lo largo del proyecto, incluyendo aquellas vinculadas a la Landing Page, la plataforma web y móvil, y las integraciones de backend. Cada historia está estimada en función de su complejidad, riesgo y esfuerzo, y priorizada según su valor para el usuario, urgencia, impacto en el negocio y viabilidad técnica.
+En esta sección presentamos el Product Backlog de Mushroom, donde hemos recopilado y ordenado todas las User Stories y Technical Stories identificadas a lo largo del proyecto, incluyendo aquellas vinculadas a la Landing Page, la plataforma web y móvil, y las integraciones de backend. Cada historia está estimada en función de su complejidad, riesgo y esfuerzo, y priorizada según su valor para el usuario, urgencia, impacto en el negocio y viabilidad técnica.
 
 Para asegurar la transparencia y facilitar la colaboración con todos los stakeholders, incluimos una captura del Backlog alojado en la herramienta designada, junto con el enlace público de acceso. Este enfoque sigue las recomendaciones de User Story Mapping de Patton (2021), que subraya la necesidad de alinear la priorización con los resultados de negocio deseados, y las buenas prácticas de Stevenson (2020) sobre estimación y redacción de historias, garantizando que cada entrada cuente con criterios claros de aceptación y sea comprensible para el equipo de desarrollo.
 
