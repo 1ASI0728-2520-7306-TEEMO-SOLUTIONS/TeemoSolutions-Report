@@ -14,7 +14,7 @@ Enlace: [Vídeo de Exposición]((https://youtu.be/KDW8eWmyO9s))
 
 Breve introducción al equipo de la startup de Teemo Solutions, roles y contribuciones de cada miembro en todo el trabajo, además de como consiguieron la competencia de curso. 
 
-Enlace: About-The-Team
+Enlace: [About-The-Team](https://www.youtube.com/watch?v=-Bsbq1tIG5E)
 
 ---
 
