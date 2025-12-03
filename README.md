@@ -31,24 +31,27 @@
 
 
 
-# Universidad Peruana de Ciencias Aplicadas
 
----
 
 <p allign="center">
   <img src="assets/img/cover/upc_logo.png"  style="width:250px; height:auto;" alt="">
 </p>
 
+## Universidad Peruana de Ciencias Aplicadas
 
-# Arquitecturas De Software Emergentes - 1ASI0728 - 7306
+## Ingeniería de Software
 
----
+## 1ASI0728 Arquitecturas De Software Emergentes 
 
-## Informe del Trabajo Final
+## 202520
+
+### NRC: 7306
 
 ### Profesor: Ernesto Ocampo Tello
-### StartUp: Teemo Solutions
-### Producto: Mushroom
+
+### Informe del trabajo final
+
+### Nombre del producto: Mushroom
 
 ## Integrantes
 
@@ -85,7 +88,7 @@
 
 --- 
 
-**2025-20**
+**Lima, 03 de diciembre**
 
 ---
 
@@ -174,6 +177,7 @@
       <td>Avance capítulo III: Desarrollo de las historias de usuario junto a los requisitos funcionales y los requisitos no funcionales de Mushroom</td>
     </tr>
      <tr> <td>1.12.0</td> <td>21/09/25</td> <td>Riega Salas, Jose Miguel</td> <td>Avance capítulo IV — formalización de los Bounded Contexts Asset & Resource Management y Notifications tras EventStorming; eliminación y corrección de referencias en Asset & Resource Management (ahora solo puertos y ubicaciones).</td> </tr> <tr> <td>1.13.0</td> <td>22/09/25</td> <td>Mallma Quispe, Ruben Elias</td> <td> Diagrama de Componentes (nivel C4) completo y consecciones divididas para cada Bounded Context. Documentación de cada capa dedicada para Service Operation and Monitoring.</td> </tr> <tr> <td>1.14.0</td> <td>24/09/25</td> <td>Valenzuela Huillcaya, Aldhair Johan Juan</td> <td>Infraestructura: Diseño de esquema MongoDB y notas de implementación para las colecciones `ports` y `ports_read` (índice 2dsphere en location, índice único code, campos createdAt/updatedAt y versión para control optimista). Actualización de contratos de repositorios (IPortRepository).</td> </tr> <tr> <td>1.15.0</td> <td>26/09/25</td> <td>Sanchez Zamora, Fabrizio Alessandro</td> <td>Dominio: Modelado detallado de IncotermAssessment (aggregate), IncotermType y Status; definición de Domain Services (IncotermCalculatorService, CostEstimationService, ValidationService) y eventos (IncotermCalculated / IncotermCalculationFailed). Se documentó idempotencyKey como requisito para el comando de cálculo.</td> </tr> <tr> <td>1.16.0</td> <td>28/09/25</td> <td>Mallma Quispe, Ruben Elias</td> <td>User Stories: Revisión y ampliación de historias de usuario (web y móvil), criterios de aceptación en formato Gherkin (happy / unhappy path), agrupación por épicas alineadas a los 7 bounded contexts y creación de Technical Stories (rol: Developer) para features no expuestos al usuario.</td> </tr> <tr> <td>1.17.0</td> <td>30/09/25</td> <td>Todos los integrantes del equipo</td> <td>Requisitos: Redacción y consolidación de Requisitos Funcionales (RF) y Requisitos No Funcionales (RNF) —incluyendo 15 RNF base y 3 adicionales (eficiencia, compatibilidad, portabilidad)— con métricas, métodos de verificación y prioridad.</td> </tr> <tr> <td>1.18.0</td> <td>02/10/25</td> <td>Riega Salas, Jose Miguel y Trigueros Chumacero, Flavio Eduardo</td> <td>Artefactos técnicos: Creación y actualización del diagrama de clases en PlantUML para IncotermAssessment y Asset & Resource Management; unificación del campo justification (eliminando briefJustification) y eliminación de modelVersion en la entidad, según decisión del equipo.</td> </tr> <tr> <td>1.19.0</td> <td>04/10/25</td> <td>Valenzuela Huillcaya, Aldhair Johan Juan y Sanchez Zamora, Fabrizio Alessandro</td> <td>Arquitectura/Operacional: documentación técnica sobre Outbox (patrón), explicación y ejemplos de idempotencyKey, clarificación de score en justificationItem y reglas de negocio para estados (CALCULATED, FAILED_INSUFFICIENT_DATA, OBSOLETE). Actualización del lenguaje ubicuo (Ubiquitous Language) y tabla Inglés/Español.</td> </tr> <tr> <td>1.20.0</td> <td>06/10/25</td> <td>Mallma Quispe, Ruben Elias y Todos los integrantes</td> <td>UX/UI: Ajustes en Capítulo VI — Style Guidelines y Wireframes; adición de estilos CSS para sangría de primera línea y sangría francesa por sección, y documentación de uso para impresión/formato del informe.</td> </tr> <tr> <td>1.21.0</td> <td>08/10/25</td> <td>Riega Salas, Jose Miguel</td> <td>Solution Profile y ML: Integración del plan de incorporación de Machine Learning (A* + ML híbrido), justificación técnica, métricas objetivo (reducción error medio en predicción de tránsito) y actualización del Solution Profile con estadísticas de impacto operativo y referencias internas.</td> </tr> <tr> <td>1.22.0</td> <td>09/10/25</td> <td>Todos los integrantes del equipo</td> <td>Consolidación final: Correcciones solicitadas por revisión, actualización del registro de versiones (este documento), determinación de entregables pendientes y checklist para la siguiente iteración del roadmap. Aprobación para iniciar la ejecución de las Technical Stories priorizadas.</td> </tr>
+     <tr> <td>1.23.0</td> <td>11/10/25</td> <td>Mallma Quispe, Ruben Elias; Valenzuela Huillcaya, Aldhair Johan Juan</td> <td>Documentación del sprint: objetivo, alcance, sprint backlog y Definition of Done. Evidencias de desarrollo: lista de commits y pull requests relevantes, enlaces a PRs y notas de revisión. Evidencia Swagger: colección exportada con endpoints iniciales para Service Operation and Monitoring y contracts básicos. Insight: identificación de dependencias críticas entre bounded contexts y ajuste de prioridades en el backlog.</td> </tr> <tr> <td>1.24.0</td> <td>13/10/25</td> <td>Sanchez Zamora, Fabrizio Alessandro</td> <td>Desarrollo y pruebas: implementación de Domain Services para IncotermCalculatorService (endpoints mock en Swagger) y pruebas unitarias iniciales. Evidencia: reportes de cobertura y logs de pipeline. Entrevistas de validación: resumen de 2 entrevistas con usuarios (planificadores) sobre requisitos de cálculo y formatos de resultado; ajustes solicitados incorporados en technical stories.</td> </tr> <tr> <td>1.25.0</td> <td>15/10/25</td> <td>Riega Salas, Jose Miguel y Trigueros Chumacero, Flavio Eduardo</td> <td>Artefactos de validación: guion y resultados de entrevistas de validación con capitanes y planificadores, retroalimentación sobre prioridad de alertas y formato de reportes. Documentación: acta de reunión de validación y lista de acciones para next sprint. Insight: necesidad de mejorar trazabilidad y justificaciones en justificationItem.</td> </tr> <tr> <td>1.26.0</td> <td>17/10/25</td> <td>Todos los integrantes del equipo</td> <td>Pruebas heurísticas de UX/UI: checklist de heurísticas aplicado a wireframes y prototipos móviles; hallazgos y recomendaciones priorizadas (alta/medio/baja). Evidencias: capturas de pantalla anotadas y registro de issues en el backlog. Sprint backlog: reasignación de tareas UX para TB2 según resultados.</td> </tr> <tr> <td>1.27.0</td> <td>20/10/25</td> <td>Mallma Quispe, Ruben Elias</td> <td>Documentación técnica: actualización del Diagrama de Componentes (C4) con componentes internos para Outbox y repositorios; inclusión de contrato Swagger actualizado y ejemplos de requests/responses para endpoints críticos. Evidencia de desarrollo: snapshot de colección Swagger y Postman con escenarios de integración.</td> </tr> <tr> <td>1.28.0</td> <td>23/10/25</td> <td>Valenzuela Huillcaya, Aldhair Johan Juan</td> <td>Infraestructura y pruebas: despliegue de ambiente de integración (staging) para pruebas end-to-end; scripts de seed y datos de prueba para `ports`/`ports_read`. Evidencias: logs de despliegue, endpoints Swagger disponibles en staging y runbook de pruebas de integración.</td> </tr> <tr> <td>1.29.0</td> <td>26/10/25</td> <td>Sanchez Zamora, Fabrizio Alessandro y Mallma Quispe, Ruben Elias</td> <td>Calidad de software: ejecución de pruebas de integración y contract testing para IPortRepository; reporte de defectos y resolución de issues críticos. Evidencia Swagger: contratos versionados y tests automáticos que validan schema de respuesta. Insight: ajuste en contratos para soportar idempotencyKey en comandos.</td> </tr> <tr> <td>1.30.0</td> <td>29/10/25</td> <td>Riega Salas, Jose Miguel</td> <td>ML / Solution Profile: documentación de experimentos A* + ML (dataset sintético), métricas objetivo y resultados preliminares; registro de notebooks y endpoints de inferencia documentados en Swagger para pruebas controladas. Evidencias: reporte de experimentos, dashboard de métricas y recomendaciones para pipeline de producción.</td> </tr> <tr> <td>1.31.0</td> <td>02/11/25</td> <td>Trigueros Chumacero, Flavio Eduardo</td> <td>Validación de UX técnico: sesiones de prueba con usuarios operativos (usability testing) y registro de tiempos de tarea y errores; ajustes en UI y especificaciones para mensajes de alerta (niveles de confianza). Evidencias: scripts de test, grabaciones y matriz de hallazgos con priorización para backlog.</td> </tr> <tr> <td>1.32.0</td> <td>07/11/25</td> <td>Todos los integrantes del equipo</td> <td>Consolidación de sprint: entrega de artefactos del sprint (documentación, evidencia Swagger, PRs cerrados) y demo interna. Sprint retrospective: lecciones aprendidas documentadas (mejor estimación de tareas, comunicación inter-bounded contexts) y acciones de mejora incorporadas al roadmap. Evidencia: acta de retro y checklist completada.</td> </tr> <tr> <td>1.33.0</td> <td>14/11/25</td> <td>Mallma Quispe, Ruben Elias; Sanchez Zamora, Fabrizio Alessandro</td> <td>Pruebas de aceptación y evidencia de integración: ejecución de Acceptance Tests en staging contra colecciones reales de prueba; reporte de resultados y firma de aceptación parcial por stakeholders. Documentación: guía de uso de endpoints (Swagger + ejemplos) y changelog de contratos. Insight: necesidad de pruebas de carga para endpoints de ruteo.</td> </tr> <tr> <td>1.34.0</td> <td>21/11/25</td> <td>Riega Salas, Jose Miguel y Todos los integrantes</td> <td>Consolidación final de iteración: registro de evidencias de desarrollo (PRs, issues cerrados), colección Swagger finalizada con ejemplos y documentación auto-generada, lista de entrevistas de validación realizadas y resumen de pruebas heurísticas completadas. Sprint backlog actualizado con prioridades para la siguiente iteración y aprobación para despliegue de features no críticas a staging.</td> </tr>
   </tbody>
 </table>
 
@@ -388,6 +392,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
           <br>Comunica con objetividad la estructura y responsabilidades de las capas del bounded context Service Operations and Monitoring, articulando cómo cada componente soporta la observabilidad del sistema y la gestión de métricas de desempeño. Expone la integración entre monitoreo en tiempo real, registro de eventos y actualización de indicadores operativos ante públicos de distintas especialidades, explicando las decisiones técnicas que equilibran precisión de seguimiento y eficiencia en la transmisión de datos.<br>
           <strong>TB2:</strong>
           <br>Presenta las mejoras a la arquitectura de Mushroom, contrastando explícitamente los cambios respecto a TB1. Comunica con objetividad cómo estas mejoras responden a retroalimentación previa y fortalecen la capacidad del sistema para reducir riesgos operacionales, optimizar consumo de recursos y mitigar impactos ambientales derivados de rutas ineficientes. Adapta su discurso a audiencias técnicas y gerenciales, explicando con claridad las implicancias económicas, regulatorias y de seguridad marítima de las decisiones arquitectónicas.<br>
+          <strong>TF:</strong>
+          <br>Demostró la capacidad de reconocer responsabilidades éticas y profesionales al diseñar e implementar los Web Services y el backend de Mushroom, priorizando la seguridad, trazabilidad y disponibilidad de datos en contextos marinos críticos. En sus entregables (TB1/TP/TB2) justificó decisiones técnicas —control de acceso, cifrado, políticas de logging y límites de recursos— con explicaciones claras sobre cómo esas elecciones protegen la confidencialidad de tripulaciones y clientes, minimizan riesgos operativos y cumplen con requisitos regulatorios internacionales. Además evaluó trade-offs económicos (costos de cómputo vs. precisión de ruteo) y ambientales (optimizaciones que reducen consumo de combustible), demostrando juicios informados que integran impactos técnicos, sociales y globales en la solución final.<br>
         <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong>
         <br>Presenta con claridad la organización, el Event Storming y el Domain Message Flow Modeling, destacando cómo los flujos de eventos (clima, incidentes, alertas de piratería) se transforman en comandos y proyecciones útiles para planeamiento de rutas seguras. Comunica a operaciones, data y management usando un lenguaje preciso y objetivos verificables; argumenta el valor del enfoque dirigido por dominio para reducir ambigüedades y alinear negocio-tecnología en el contexto marítimo.<br>
@@ -398,6 +404,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TB2:</strong>
           <br>Expone las mejoras en el Event Storming y el Domain Message Flow Modeling, destacando la inclusión de nuevos eventos y flujos excepcionales. Comunica con objetividad cómo los flujos refinados reducen ambigüedades y ayudan a tomar decisiones informadas sobre rutas más seguras y responsables.<br>
         <br><br>
+                  <strong>TF:</strong>
+          <br>Aplicó un enfoque profesional y ético al desarrollar los componentes de IA y el front-end, documentando las implicancias de diseño sobre la transparencia, confiabilidad y sesgo en los algoritmos de ruteo. En presentaciones y entregables (TB1/TP/TB2) comunicó cómo las señales de eventos (clima, incidentes, alertas de seguridad) se transforman en decisiones automáticas y en qué condiciones humanas deben intervenir, defendiendo mecanismos de trazabilidad y control humano para evitar decisiones peligrosas o injustas. También evaluó el impacto social y económico de la interfaz (claridad, carga informativa en el puente de mando) y propuso ajustes que equilibran usabilidad con seguridad y responsabilidad operacional.<br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong>
         <br>Sustenta oralmente el Design purpose, los atributos de diseño de entrada, la funcionalidad primaria y los quality attributes, explicando cómo cada atributo (confiabilidad, rendimiento, resiliencia) impacta en la promesa de “ruta más segura y rápida”. Expone con ejemplos comprensibles para distintas especialidades y niveles jerárquicos, y justifica prioridades de diseño frente a restricciones reales (latencia del API, ventanas de actualización de datos, zonas de exclusión).<br>
         <br><br>
@@ -405,7 +413,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
           <br>Comunica con objetividad las capas del bounded context Profile and Preferences, mostrando cómo la estructura de datos y servicios permite la personalización de experiencias y configuraciones de usuario. Expone la relación entre modelos de dominio, preferencias almacenadas y comportamiento adaptativo del sistema, atendiendo preguntas de diferentes niveles jerárquicos y justificando el equilibrio entre flexibilidad del perfil y consistencia de la información.<br>
         <br><br>
         <strong>TB2:</strong>
-          <br>Presenta la versión refinada del Design purpose, la funcionalidad primaria y los quality attributes, enfatizando cómo se ajustaron métricas y escenarios para reflejar mejor el impacto en tiempos de tránsito, costos operativos, emisiones y niveles de riesgo. Comunica con ejemplos concretos para diferentes especialidades cómo los trade-offs entre rendimiento, confiabilidad y seguridad se han reevaluado, argumentando decisiones que priorizan rutas responsables frente a opciones que podrían ser económicamente atractivas pero más riesgosas o ambientalmente costosas.<br>
+          <br>Presenta la versión refinada del Design purpose, la funcionalidad primaria y los quality attributes, enfatizando cómo se ajustaron métricas y escenarios para reflejar mejor el impacto en tiempos de tránsito, costos operativos, emisiones y niveles de riesgo. Comunica con ejemplos concretos para diferentes especialidades cómo los trade-offs entre rendimiento, confiabilidad y seguridad se han reevaluado, argumentando decisiones que priorizan rutas responsables frente a opciones que podrían ser económicamente atractivas pero más riesgosas o ambientalmente costosas.<br><br>
+                            <strong>TF:</strong>
+          <br>Demostró conciencia ética y profesional al diseñar mejoras de UI enfocadas en la claridad operativa y reducción de carga cognitiva en el puente de mando —priorizando la seguridad de la tripulación y la interpretabilidad de alertas críticas—. En TB1/TP/TB2 argumentó cómo la presentación de alertas, niveles de confianza y recomendaciones de ruteo debe balancear precisión informativa y facilidad de uso para evitar errores humanos en decisiones de alto riesgo. Sus propuestas consideraron además efectos sociales (capacitación y accesibilidad) y regulatorios (registro de decisiones), contribuyendo a una solución que integra usabilidad, responsabilidad y mitigación de impactos.<br>
         <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong>
         <br>Comunica con objetividad los requisitos funcionales y no funcionales y la sección de Candidate Context Mapping, enlazando necesidades de usuarios (planificadores, capitanes) con capacidades del sistema (cálculo A*, ingestión de eventos, monitor de riesgos). Co-presenta resultados del Event Storming, gestionando preguntas de diversas áreas y jerarquías; explica trade-offs entre precisión de predicción, costo computacional y experiencia de usuario en el puente de mando.<br>
@@ -415,6 +425,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TB2:</strong>
           <br>Comunica oralmente las mejoras en los requisitos funcionales y no funcionales, así como el refinamiento del Candidate Context Mapping. Explica con objetividad cómo se ajustaron historias de usuario, restricciones y dependencias para reflejar nuevos requerimientos de trazabilidad, regulaciones internacionales y alertas tempranas ante eventos de riesgo. Ante audiencias de distintas jerarquías, expone los compromisos entre granularidad de la información, carga de trabajo para la tripulación y claridad operativa en el puente de mando, vinculando estos cambios con una toma de decisiones más segura y responsable.<br>
+          <strong>TF:</strong>
+          <br>Mostró juicio informado y responsabilidad profesional al concentrarse en las mejoras de rendimiento del cliente móvil, priorizando latencia, resiliencia y consumo energético para minimizar riesgos en escenarios marinos reales. Sus cambios (TB1 → TB2) consideraron implicancias económicas (costos de transmisión y procesamiento), ambientales (optimización que reduce uso de recursos y emisiones indirectas) y de seguridad (robustez frente a conectividad intermitente), justificando decisiones de diseño técnico con métricas y escenarios de calidad que evidencian un enfoque responsable y orientado al impacto global de la solución.<br>
         <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Explica con solvencia el Architectural Drivers Backlog, las decisiones de diseño arquitectural y los refinamientos de escenarios de quality attributes, mostrando trazabilidad desde drivers (seguridad, disponibilidad, actualizaciones de riesgo) hasta soluciones concretas (patrones, particionamiento, tolerancia a fallas). Adapta ejemplos y métricas para audiencias mixtas, y concluye con implicancias operativas para empresas navieras y reguladores.<br>
@@ -424,6 +436,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TB2:</strong>
           <br>Presenta las mejoras al Architectural Drivers Backlog y a las decisiones arquitectónicas asociadas, destacando cómo se incorporaron con mayor énfasis drivers relacionados con seguridad, cumplimiento normativo, sostenibilidad y transparencia frente a reguladores. Comunica con objetividad las alternativas consideradas y justifica las decisiones finales, explicando ante públicos técnicos y gerenciales cómo la arquitectura actualizada permite un seguimiento más responsable del riesgo, de las emisiones y de la continuidad operativa en contextos globales complejos.<br>
+        <br><br>
+        <strong>TF:</strong>
+          <br>Evidenció responsabilidad profesional y ética en la elaboración de la documentación y los diagramas (System Landscape, Context/Container, Deployment, Candidate Context Mapping), cuidando la objetividad, trazabilidad y verificabilidad de supuestos y criterios de aceptación. Sus entregables presentaron narrativas y tablas que explican cómo decisiones de diseño afectan seguridad operativa, coste y emisiones, facilitando a stakeholders regulatorios y operacionales la evaluación del impacto socio-económico y ambiental. El trabajo de F hizo explícitos los riesgos, dependencias y criterios de testabilidad, permitiendo juicios informados y responsables por parte del equipo y terceros.<br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
@@ -435,6 +450,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TB2:</strong>
           <br>El equipo fortaleció su capacidad de comunicación oral al presentar no solo el estado del proyecto, sino también las mejoras realizadas respecto a TB1 y su justificación frente a responsabilidades profesionales y contextos de impacto. Cada integrante expuso con objetividad cómo los cambios en arquitectura, requisitos, flujos de eventos y drivers arquitecturales responden a riesgos reales del dominio marítimo, a regulaciones internacionales y a la necesidad de operar de manera más segura, eficiente y sostenible.<br>
+          <br><br>
+            <strong>TF:</strong>
+          <br>El equipo, en su conjunto, demostró la capacidad de reconocer responsabilidades éticas y profesionales y de tomar juicios informados que consideran impactos globales, económicos, ambientales y sociales. A través de presentaciones orales y documentación técnica (TB1, TP y TB2) se evidenció un enfoque integrado: seguridad y trazabilidad en el backend, documentación transparente y verificable, transparencia y control humano en IA y UI, y optimizaciones de rendimiento con consciencia ambiental y operacional. Las decisiones fueron justificadas con métricas, escenarios de calidad y análisis de trade-offs, mostrando que el equipo no solo desarrolló una solución técnica viable, sino que también incorporó principios profesionales y éticos para minimizar riesgos, cumplir regulaciones y mitigar impactos económicos y ambientales en el dominio marítimo.<br>
           <br><br>
         <br><br>
       </td>
@@ -452,6 +470,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TB2:</strong>
           <br>Actualiza la documentación de la arquitectura de Mushroom incorporando comparaciones explícitas entre TB1 y la versión mejorada: se detallan cambios en System Landscape, Context/Container y Deployment Diagrams, así como nuevas decisiones de particionamiento y resiliencia. Redacta secciones que explican por qué estos ajustes son necesarios para mejorar la continuidad operativa, la gestión de fallas y el uso responsable de recursos en entornos marítimos globales. Su escritura mantiene objetividad y precisión, facilitando que lectores de diferentes niveles jerárquicos comprendan cómo la arquitectura refinada contribuye a mitigar impactos económicos y ambientales de rutas subóptimas.<br>
         <br><br>
+                <strong>TF:</strong>
+          <br>Demostró competencia en comunicación escrita al documentar los Web Services y el backend de Mushroom con precisión técnica, empleando System Landscape, diagramas de despliegue y secciones que enlazan la topología de servicios con el algoritmo A* y las integraciones de APIs externas; sus informes (TB1/TP/TB2) incluyen supuestos explícitos, criterios de aceptación y tablas que facilitan la evaluación por parte de desarrolladores, operaciones y dirección, y comunican objetivamente cómo las decisiones de seguridad, logging y escalamiento impactan la confidencialidad, disponibilidad, costes operativos y cumplimiento regulatorio en contextos marítimos.<br>
+        <br><br>
         <strong>Riega Salas, José Miguel - TB1:</strong> message here
         <br>Elabora documentación de Event Storming y Domain Message Flow Modeling con catálogos de eventos, comandos y políticas, acompañados de glosario de términos del dominio marítimo. Presenta diagramas y narrativas breves que permiten a áreas técnicas y de negocio seguir el flujo de información desde los eventos (tormentas, cierres de rutas) hasta las actualizaciones de la ruta óptima, con criterios de objetividad y verificabilidad.<br>
         <br><br>
@@ -460,6 +481,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TB2:</strong>
           <br>Mejora la documentación de Event Storming y Domain Message Flow Modeling, añadiendo catálogos de eventos extendidos, flujos alternos y condiciones excepcionales. Redacta narrativas claras que muestran cómo estos flujos actualizados permiten una mejor detección de riesgos (tormentas súbitas, zonas restringidas, conflictos geopolíticos) y una reacción más responsable por parte del sistema. Optimiza y mejora el sistema de enrutamiento implementando A/AI Process*.<br>
+                  <strong>TF:</strong>
+          <br>Mostró habilidad para escribir informes técnicos y narrativas de diseño que describen el flujo de señales desde eventos del dominio hasta decisiones algorítmicas, documentando catálogos de entradas, métricas y condiciones de intervención humana; en TB1/TP/TB2 redactó secciones que abordan transparencia del modelo, mitigación de sesgos y evaluación de impacto en usabilidad operativa, comunicando con objetividad tanto a equipos de datos como a stakeholders no técnicos las implicancias de diseño sobre confiabilidad, interpretabilidad y responsabilidades profesionales..<br>
         <br><br>
         <strong>Sánchez Zamora, Fabrizio Alessandro - TB1:</strong> message here
         <br>Produce el Design purpose, atributos de diseño de entrada, funcionalidad primaria y quality attributes, organizados en secciones trazables a riesgos y metas del cliente. Redacta tablas de escenarios (estímulo-ambiente-respuesta-métrica) que comunican, para distintos lectores, cómo el sistema mantiene tiempos de cómputo y precisión del ruteo bajo condiciones adversas, manteniendo lenguaje claro y evidencia técnica.<br>
@@ -470,6 +493,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TB2:</strong>
           <br>Revisa y refina la documentación de Design purpose, funcionalidad primaria y quality attributes, ajustando escenarios y métricas para reflejar de manera más precisa el impacto de la solución en tiempos de entrega, consumo de combustible, emisiones y exposición al riesgo. Redacta tablas comparativas entre versiones de diseño, justificando por escrito por qué ciertos atributos. Redacción, clara y estructurada, permite que lectores de distintas especialidades comprendan cómo estas decisiones contribuyen a una operación marítima más ética y sostenible.<br>
         <br><br>
+                <strong>TF:</strong>
+          <br>Produjo documentación escrita enfocada en la presentación de alertas, niveles de confianza y flujos UI en el puente de mando, incluyendo tablas de escenarios estímulo-ambiente-respuesta y guías de uso que reducen ambigüedad y carga cognitiva; en TB1/TP/TB2 explicó de forma objetiva cómo las decisiones de diseño de interfaz afectan la toma de decisiones humanas, la formación requerida y la trazabilidad de acciones, comunicando a distintos niveles jerárquicos los compromisos entre claridad, seguridad y accesibilidad.<br>
+        <br><br>
         <strong>Trigueros Chumacero, Flavio Eduardo - TB1:</strong> message here
         <br>Redacta los requisitos funcionales y no funcionales y la propuesta de Candidate Context Mapping con criterios de completitud, coherencia y testabilidad. Presenta historias de usuario, restricciones y criterios de aceptación que vinculan el cálculo de rutas con fuentes de datos externas, permitiendo a equipos de desarrollo, QA y stakeholders ejecutivos comprender alcance, supuestos y dependencias del sistema.<br>
         <br><br>
@@ -479,6 +505,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <strong>TB2:</strong>
           <br>Actualiza los requisitos funcionales y no funcionales y la propuesta de Context Mapping candidatos, reorganizando la documentación para destacar trazabilidad, prioridad y dependencia entre requisitos. Redacta descripciones más precisas de restricciones y criterios de aceptación ligados a normativas internacionales, ventanas de actualización de datos de riesgo y necesidades de notificación oportuna.<br>
         <br><br>
+                <strong>TF::</strong>
+          <br>Evidenció excelencia en comunicación escrita al producir documentación clara y trazable —catálogos de eventos, Context Mapping, requisitos funcionales y no funcionales— empleando plantillas, tablas de criterios y escenarios testables; sus entregables conectan de modo objetivo las historias de usuario y dependencias con el algoritmo de ruteo y las necesidades del cliente, explicando de forma accesible los trade-offs entre precisión, coste y carga operativa, lo que permite a audiencias técnicas y gerenciales comprender riesgos, supuestos y obligaciones regulatorias.<br>
+        <br><br>
         <strong>Valenzuela Huillcaya, Aldhair Johan Juan - TB1:</strong>
         <br>Compila el Architectural Drivers Backlog, las decisiones de diseño y los refinamientos de escenarios de calidad, registrando alternativas evaluadas, justificaciones y consecuencias. Emplea plantillas estandarizadas y matrices de decisión que permiten a lectores de diferentes especialidades y jerarquías contrastar opciones (p. ej., estrategias de resiliencia, patrones de integración) y entender su impacto en la operación marítima.<br>
         <br><br>
@@ -486,7 +515,8 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
           <br>Redacta con rigor técnico los resultados obtenidos en el diseño de las capas del bounded context A/AI Process*, explicando de forma lógica la aplicación del algoritmo A* y su relación con el rendimiento del sistema. Su comunicación escrita muestra claridad en la exposición de trade-offs y fundamentos de diseño, permitiendo a diferentes áreas comprender el valor técnico del módulo.<br>
         <strong>TB2:</strong>
           <br>Fortalece la documentación del Architectural Drivers Backlog y de las decisiones arquitectónicas, incorporando matrices que relacionan drivers con tácticas específicas implementadas. Redacta análisis comparativos entre alternativas descartadas y seleccionadas, explicando el impacto esperado de cada decisión en la operación marítima y en la relación con reguladores y clientes.<br>
-        <br><br>
+                  <strong>TF:</strong>
+          <br>Comunicó por escrito las mejoras de rendimiento del cliente móvil mediante reportes que detallan métricas de latencia, consumo energético y tolerancia a fallos, explicando claramente las decisiones de optimización, sus pruebas y sus efectos sobre costos de transmisión y disponibilidad en escenarios marítimos; sus documentos vinculan técnicamente las mejoras con beneficios operativos y ambientales, posibilitando que audiencias técnicas y gerenciales evalúen objetivamente el balance entre inversión de recursos y reducción de impactos.<br>
         <br><br>
       <td>
         <strong>ENTREGABLE TB1:</strong>
@@ -498,6 +528,9 @@ En la siguiente tabla se visualiza cómo las tareas de cada integrante contribuy
         <br><br>
         <strong>TB2:</strong>
           <br>La comunicación escrita del equipo mostró un avance significativo en objetividad, profundidad y vinculación explícita con las responsabilidades profesionales del proyecto. Las actualizaciones de arquitectura, requisitos, flujos de eventos, propósito de diseño y drivers arquitecturales no solo corrigieron y ordenaron la información de TB1, sino que también incorporaron con mayor claridad los impactos económicos, ambientales, operativos y regulatorios de la solución.<br>
+        <br><br>
+                <strong>TF:</strong>
+          <br>El equipo, colectivamente, demostró la capacidad de comunicar por escrito ideas y resultados con objetividad y adaptabilidad: la documentación técnica abarcó arquitectura, flujos de dominio, requisitos, quality attributes y decisiones de diseño con trazabilidad, criterios de aceptación y métricas verificables (TB1, TP, TB2). Esta escritura permitió a públicos con distintas especialidades y jerarquías —desde desarrolladores hasta gerencia y reguladores— entender supuestos, trade-offs y consecuencias operativas, económicas y ambientales, evidenciando madurez profesional y cumplimiento de la competencia en el marco del proyecto de ingeniería.<br>
         <br><br>
       </td>
 </tr>
